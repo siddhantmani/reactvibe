@@ -2,10 +2,10 @@
 
 import ReactVibeLogo from '@/components/ReactVibeLogo'
 import { Separator } from '@/components/ui/separator'
-import { Star } from 'lucide-react'
 import React from 'react'
 import { motion } from "framer-motion"
 import { Figtree, Manrope } from 'next/font/google'
+import GithubStars from '@/components/GithubStars'
 
 const footerFont = Manrope({
     weight: "800",
@@ -101,10 +101,7 @@ function DeskHeader() {
                     }}
 
                 >
-                    <div className='flex items-center gap-3'>
-                        <h1 className={`${menuItemFont.className} text-sm`}>Github </h1>
-                        <Star className='h-4 w-4 stroke-white fill-white' />
-                    </div>
+                    <GithubStars />
                 </motion.div>
             </div>
         </div>

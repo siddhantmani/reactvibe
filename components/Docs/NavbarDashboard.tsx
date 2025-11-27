@@ -9,8 +9,8 @@ import ReactVibeLogo from '../ReactVibeLogo'
 
 import { motion } from "framer-motion"
 import { Manrope } from 'next/font/google'
-import GitHubStars from './GitHubStars'
 import Separator from './Separator'
+import GithubStars from '../GithubStars'
 
 const ReactVibeFontLogo = Manrope({
     weight: "800",
@@ -62,7 +62,7 @@ function NavbarDashboard() {
                     className='dark:bg-white/15 bg-black/15'
                 />
                 <div>
-                    <GitHubStars />
+                    <GithubStars />
                 </div>
                 <div className='lg:hidden'>
                     <MobileSidebar />
