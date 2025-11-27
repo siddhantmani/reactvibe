@@ -103,7 +103,7 @@ function DeskHeader() {
                 >
                     <div className='flex items-center gap-3'>
                         <h1 className={`${menuItemFont.className} text-sm`}>Github </h1>
-                        <Star className='h-4 w-4 stroke-white fill-white' />
+                        <Star className='h-4 w-4 stroke-yellow-500 fill-yellow-500' />
                     </div>
                 </motion.div>
             </div>
