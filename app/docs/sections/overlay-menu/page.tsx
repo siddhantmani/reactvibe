@@ -1,11 +1,11 @@
 import RenderOnRoute from '@/components/RenderOnRoute'
-import OverlayMenuItems from '@/components/Docs/Components/Overlay-Menu/OverlayMenuItems'
+import OverlayMenuItems from '@/components/Docs/Sections/Overlay-Menu/OverlayMenuItems'
 import React from 'react'
 
 function OverlayMenu() {
     return (
         <div className='relative'>
-            <RenderOnRoute path="/docs/components/overlay-menu" withTransition>
+            <RenderOnRoute path="/docs/sections/overlay-menu" withTransition>
                 <OverlayMenuItems />
             </RenderOnRoute>
         </div>

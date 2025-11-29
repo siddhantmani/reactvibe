@@ -24,7 +24,7 @@ const AnimatedFont = DM_Serif_Display({
 
 export default function Home() {
   return (
-    <div className="overflow-hidden text-white">
+    <div className="overflow-hidden dark:text-white text-white">
       <div>
         <RenderOnRoute path="/" withTransition>
           <VibeHeroAnimation />

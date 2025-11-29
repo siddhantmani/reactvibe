@@ -1,6 +1,6 @@
+import FramerMotionGlobalInstalation from '@/components/Docs/FramerMotionGlobalInstalation';
 import TestimonialsCode from './TestimonialsCode';
 import { Separator } from '@/components/ui/separator';
-import FramerMotionGlobalInstalation from '../../FramerMotionGlobalInstalation';
 
 
 function TestimonialsItemsPreviewSourceCode() {

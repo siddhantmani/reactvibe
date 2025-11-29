@@ -14,7 +14,7 @@ function TestimonialsItems() {
             <LinearReveal
                 as={'h1'}
                 className={`${LinearRevealFont.className} text-5xl py-10`}
-                text='Testimonials'
+                text='Testimonial Flow'
             />
             <div className='border-black rounded-2xl'>
                 <TestimonialsItemsPreview />

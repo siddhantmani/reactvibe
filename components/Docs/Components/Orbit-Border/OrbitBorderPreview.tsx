@@ -1,5 +1,5 @@
 "use client"
-import OrderBorderGlobalPreview from './OrbitBorderGlobalPreview'
+import OrbitBorderGlobalPreview from './OrbitBorderGlobalPreview'
 import { motion } from "framer-motion"
 
 function OrbitBorderPreview() {
@@ -21,7 +21,7 @@ function OrbitBorderPreview() {
                 }}
 
             >
-                <OrderBorderGlobalPreview
+                <OrbitBorderGlobalPreview
                     className='bg-[#ffffff] rounded-full p-3 text-black px-5'
                     RingColors={["#0a52f0", "#ffffff", "#f5e2ae", "#dcd7fc"]}
                     style={{
@@ -32,7 +32,7 @@ function OrbitBorderPreview() {
                     }}
                 >
                     Orbit Border
-                </OrderBorderGlobalPreview>
+                </OrbitBorderGlobalPreview>
             </motion.div>
         </div>
     )

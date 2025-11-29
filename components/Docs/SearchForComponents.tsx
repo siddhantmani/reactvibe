@@ -46,11 +46,11 @@ export default function SearchForComponents() {
             <div className="text-muted-foreground text-sm">
                 <div className="hidden md:inline-block">
                     <div onClick={handleClicked} className=' p-[3px] rounded-md bg-[#ececec] dark:bg-gradient-to-r from-[#2c2b2b] from-[33%] to-[#222121] to-47% flex items-center gap-3 w-[220px] px-3'>
-                        <span className="text-xl dark:text-white flex items-center gap-1"><ImWindows8 className="text-sm" /> J</span>
+                        <span className="text-xl dark:text-white text-black flex items-center gap-1"><ImWindows8 className="text-sm text-black dark:text-white" /> J</span>
                         <input
                             type="text"
-                            placeholder='Search'
-                            className='dark:text-white outline-none dark:placeholder:text-white text-sm'
+                            placeholder='Search docs...'
+                            className='dark:text-white text-black placeholder:text-black outline-none dark:placeholder:text-white text-sm'
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
                         />

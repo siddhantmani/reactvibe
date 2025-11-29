@@ -8,7 +8,7 @@ interface LinearRevealProps {
     className?: string
     colorClass?: string
     delay?: number
-    as?: React.ElementType  // <-- Type-safe
+    as?: React.ElementType 
 }
 
 export default function LinearReveal({

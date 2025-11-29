@@ -21,7 +21,7 @@ const LinearRevealSubHeadingFont = JetBrains_Mono({
 
 import { motion } from "framer-motion"
 
-function StudioPage() {
+function DocsPage() {
   return (
     <div className='max-w-4xl xl:ml-24 px-3 pb-52'>
       <motion.div
@@ -193,4 +193,4 @@ Just single-purpose components you control.
   )
 }
 
-export default StudioPage
+export default DocsPage

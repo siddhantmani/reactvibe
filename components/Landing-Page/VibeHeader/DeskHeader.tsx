@@ -1,13 +1,14 @@
 "use client"
 
-import ReactVibeLogo from '@/components/ReactVibeLogo'
 import { Separator } from '@/components/ui/separator'
 import React from 'react'
 import { motion } from "framer-motion"
 import { Figtree, Manrope } from 'next/font/google'
 import GithubStars from '@/components/GithubStars'
+import ReactVibeLogoHero from '@/components/ReactVibeLogoHero'
+import Link from 'next/link'
 
-const footerFont = Manrope({
+const ReactVibeFontLogo = Manrope({
     weight: "800",
     subsets: ["latin"],
 })
@@ -19,7 +20,9 @@ const menuItemFont = Figtree({
 
 function DeskHeader() {
 
-    const items = ['Docs', 'Github']
+    const items = [
+        { subMenu: "GitHub", subMenu_key: 'github', link: 'https://github.com/siddhantmani/reactvibe' }
+    ]
 
     return (
         <div className='max-w-7xl mx-auto xl:py-10 py-5 px-2 md:px-5'>
@@ -27,7 +30,7 @@ function DeskHeader() {
                 <div className='flex items-center xl:gap-10 md:gap-5'>
                     <div className='flex items-center gap-3'>
                         <div className='scale-[52%]'>
-                            <ReactVibeLogo />
+                            <ReactVibeLogoHero />
                         </div>
                         <motion.div
                             initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -45,7 +48,7 @@ function DeskHeader() {
                             }}
 
                         >
-                            <h1 className={`${footerFont.className} text-xl`}>React Vibe</h1>
+                            <h1 className={`${ReactVibeFontLogo.className} text-xl whitespace-nowrap`}>React Vibe</h1>
                         </motion.div>
                     </div>
                     <motion.div
@@ -79,7 +82,9 @@ function DeskHeader() {
                                     animate={{ filter: "blur(0px)", opacity: 1 }}
                                     transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
                                 >
-                                    {item}
+                                    <Link href={item.link} target='_blank'>
+                                        {item.subMenu}
+                                    </Link>
                                 </motion.li>
                             ))}
                         </ul>

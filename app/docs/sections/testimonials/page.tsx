@@ -1,11 +1,11 @@
+import TestimonialsItems from '@/components/Docs/Sections/Testimonials/TestimonialsItems'
 import RenderOnRoute from '@/components/RenderOnRoute'
-import TestimonialsItems from '@/components/Docs/Components/TestimonialsItems'
 import React from 'react'
 
 function TestimonialsPage() {
     return (
         <div>
-            <RenderOnRoute path="/docs/components/testimonials" withTransition>
+            <RenderOnRoute path="/docs/sections/testimonials" withTransition>
                 <TestimonialsItems />
             </RenderOnRoute>
         </div>

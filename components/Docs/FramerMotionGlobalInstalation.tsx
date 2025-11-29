@@ -54,10 +54,10 @@ function FramerMotionGlobalInstalation() {
                 <div className='space-y-3'>
                     {/* framer motion */}
                     <TabGroup className="mt-2 space-y-1">
-                        <div className=" z-0 inset-0 flex justify-between ">
-                            <TabList className="h-10 inline-flex p-0 w-full max-w-[60px] gap-0">
+                        <div className="z-0 inset-0 flex justify-between ">
+                            <TabList className="inline-flex p-0 w-full max-w-[60px]">
                                 <Tab
-                                    className="h-full cursor-pointer w-full text-md border border-dashed border-gray-400 bg-[#eeeeee]  dark:bg-[#171616] rounded-md outline-none"
+                                    className="h-full cursor-pointer w-full text-md border border-dashed border-gray-400 bg-[#eeeeee] dark:bg-[#171616] rounded-md outline-none p-1"
                                 >
                                     npm
                                 </Tab>

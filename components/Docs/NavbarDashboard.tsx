@@ -19,12 +19,12 @@ const ReactVibeFontLogo = Manrope({
 
 function NavbarDashboard() {
     return (
-        <div className=' w-full bg-transparent backdrop-blur-md py-3 flex items-center justify-between rounded-md px-1 md:px-5'>
+        <div className='w-full bg-transparent backdrop-blur-md py-3 flex items-center justify-between rounded-md px-1 md:px-5'>
             <div>
                 <button className='pb-0' >
-                    <Link href="/docs">
+                    <Link href="/">
                         <div className='flex items-center gap-3'>
-                            <div className='scale-[52%]'>
+                            <div className='scale-[52%] '>
                                 <ReactVibeLogo />
                             </div>
                             <motion.div

@@ -23,23 +23,41 @@ const LinearRevealHeadingFont = JetBrains_Mono({
 })
 
 import { motion } from "framer-motion"
+import PingtoNew from './WhatsNew/PingtoNew';
 
 function Sidebar({ onItemClick }: SidebarProps) {
+    function isNew(createdAt: string) {
+        const created = new Date(createdAt);
+        const now = new Date();
+        const diff = (now.getTime() - created.getTime()) / (1000 * 60 * 60 * 24);
+        return diff <= 15;
+    }
+
+
     const BackgroundMenuItems = [
-        { subMenu: 'Gradient Halo', subMenu_key: 'GradientHalo', link: '/docs/backgrounds/gradient-halo' },
-        { subMenu: 'Shining Star', subMenu_key: 'shiningStar', link: '/docs/backgrounds/shining-star' },
-        { subMenu: 'Lord Star', subMenu_key: 'lordStar', link: '/docs/backgrounds/lord-star' },
-        { subMenu: 'Dark Fusion', subMenu_key: 'darkFusion', link: '/docs/backgrounds/dark-fusion' },
+        { subMenu: 'Gradient Halo', subMenu_key: 'GradientHalo', link: '/docs/backgrounds/gradient-halo', createdAt: "11-29-2025" },
+        { subMenu: 'Shining Star', subMenu_key: 'shiningStar', link: '/docs/backgrounds/shining-star', createdAt: "11-29-2025" },
+        { subMenu: 'Lord Star', subMenu_key: 'lordStar', link: '/docs/backgrounds/lord-star', createdAt: "11-29-2025" },
+        { subMenu: 'Dark Fusion', subMenu_key: 'darkFusion', link: '/docs/backgrounds/dark-fusion', createdAt: "11-29-2025" },
     ];
+
+    const HeroSectionMenuItems = [
+        { subMenu: "Wave CTA", subMenu_key: 'waveCTA', link: '/docs/hero-section/wave-cta', createdAt: "11-29-2025" }
+    ]
+
+    const SectionsItems = [
+        { subMenu: "Aurora Pricing", subMenu_key: "auroraPricing", link: '/docs/sections/aurora-pricing', createdAt: "11-29-2025" },
+        { subMenu: 'Testimonials', subMenu_key: 'testimonials', link: '/docs/sections/testimonials', createdAt: "11-29-2025" },
+        { subMenu: 'Overlay Menu', subMenu_key: 'overlayMenu', link: '/docs/sections/overlay-menu', createdAt: "11-29-2025" }
+    ]
+
     const ComponentsMenuItems = [
-        { subMenu: 'Testimonials', subMenu_key: 'testimonials', link: '/docs/components/testimonials' },
-        { subMenu: 'Orbit Border', subMenu_key: 'orbitBorder', link: '/docs/components/orbit-border' },
-        { subMenu: 'Overlay Menu', subMenu_key: 'overlayMenu', link: '/docs/components/overlay-menu' },
-        { subMenu: 'Separator', subMenu_key: 'separator', link: '/docs/components/separator' },
+        { subMenu: 'Orbit Border', subMenu_key: 'orbitBorder', link: '/docs/components/orbit-border', createdAt: "11-29-2025" },
+        { subMenu: 'Separator', subMenu_key: 'separator', link: '/docs/components/separator', createdAt: "11-29-2025" }
     ];
 
     const TextMotionMenuItems = [
-        { subMenu: 'Linear Reveal', subMenu_key: 'LinearReveal', link: '/docs/text-motion/linear-reveal' },
+        { subMenu: 'Linear Reveal', subMenu_key: 'LinearReveal', link: '/docs/text-motion/linear-reveal', createdAt: "11-29-2025" },
     ];
 
     return (
@@ -88,6 +106,7 @@ function Sidebar({ onItemClick }: SidebarProps) {
                                                     <div onClick={onItemClick} className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md flex-1 w-[230px] hover:text-black'>
                                                         <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#454545]   rounded-md flex-1 w-[230px] hover:text-black'>
                                                             <p className={`${LinearRevealFont.className} text-[14px]`}>{item.subMenu}</p>
+                                                            {isNew(item.createdAt) && <PingtoNew />}
                                                         </div>
                                                     </div>
                                                 </Link>
@@ -98,6 +117,66 @@ function Sidebar({ onItemClick }: SidebarProps) {
                             </CollapsibleContent>
                         </SidebarMenuItem>
                     </Collapsible>
+                    {/* Hero Section */}
+                    <Collapsible asChild defaultOpen={true} className="group/collapsible">
+                        <SidebarMenuItem>
+                            <CollapsibleTrigger asChild className='w-64 dark:hover:bg-[#323232]'>
+                                <SidebarMenuButton>
+                                    <span className={`${LinearRevealHeadingFont.className} text-[17px]`}>Hero Section</span>
+                                    <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                                </SidebarMenuButton>
+                            </CollapsibleTrigger>
+                            <CollapsibleContent>
+                                {HeroSectionMenuItems.map((item, index) => (
+                                    <SidebarMenuSub key={index} className='border-gray-400'>
+                                        <SidebarMenuItem className='grid grid-cols-1'>
+                                            <button>
+                                                <Link href={item.link}>
+                                                    <div onClick={onItemClick} className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md flex-1 w-[230px] hover:text-black'>
+                                                        <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#454545]   rounded-md flex-1 w-[230px] hover:text-black'>
+                                                            <p className={`${LinearRevealFont.className} text-[14px]`}>{item.subMenu}</p>
+                                                            {isNew(item.createdAt) && <PingtoNew />}
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </button>
+                                        </SidebarMenuItem>
+                                    </SidebarMenuSub>
+                                ))}
+                            </CollapsibleContent>
+                        </SidebarMenuItem>
+                    </Collapsible>
+
+                    {/* Sections */}
+                    <Collapsible asChild defaultOpen={true} className="group/collapsible">
+                        <SidebarMenuItem>
+                            <CollapsibleTrigger asChild className='w-64 dark:hover:bg-[#323232]'>
+                                <SidebarMenuButton>
+                                    <span className={`${LinearRevealHeadingFont.className} text-[17px]`}>Sections</span>
+                                    <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                                </SidebarMenuButton>
+                            </CollapsibleTrigger>
+                            <CollapsibleContent>
+                                {SectionsItems.map((item, index) => (
+                                    <SidebarMenuSub key={index} className='border-gray-400'>
+                                        <SidebarMenuItem className='grid grid-cols-1'>
+                                            <button>
+                                                <Link href={item.link}>
+                                                    <div onClick={onItemClick} className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md flex-1 w-[230px] hover:text-black'>
+                                                        <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#454545]   rounded-md flex-1 w-[230px] hover:text-black'>
+                                                            <p className={`${LinearRevealFont.className} text-[14px]`}>{item.subMenu}</p>
+                                                            {isNew(item.createdAt) && <PingtoNew />}
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </button>
+                                        </SidebarMenuItem>
+                                    </SidebarMenuSub>
+                                ))}
+                            </CollapsibleContent>
+                        </SidebarMenuItem>
+                    </Collapsible>
+
                     <Collapsible asChild defaultOpen={true} className="group/collapsible">
                         <SidebarMenuItem>
                             <CollapsibleTrigger asChild className='w-64 dark:hover:bg-[#323232]'>
@@ -115,6 +194,7 @@ function Sidebar({ onItemClick }: SidebarProps) {
                                                     <div onClick={onItemClick} className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md flex-1 w-[230px] hover:text-black text-base/5'>
                                                         <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#454545]   rounded-md flex-1 w-[230px] hover:text-black'>
                                                             <p className={`${LinearRevealFont.className} text-[14px]`}>{item.subMenu}</p>
+                                                            {isNew(item.createdAt) && <PingtoNew />}
                                                         </div>
                                                     </div>
                                                 </Link>
@@ -125,6 +205,7 @@ function Sidebar({ onItemClick }: SidebarProps) {
                             </CollapsibleContent>
                         </SidebarMenuItem>
                     </Collapsible>
+
                     <Collapsible asChild defaultOpen={true} className="group/collapsible">
                         <SidebarMenuItem>
                             <CollapsibleTrigger asChild className='w-64 dark:hover:bg-[#323232]'>
@@ -143,6 +224,7 @@ function Sidebar({ onItemClick }: SidebarProps) {
                                                     <div onClick={onItemClick} className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md flex-1 w-[230px] hover:text-black'>
                                                         <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#454545]   rounded-md flex-1 w-[230px] hover:text-black'>
                                                             <p className={`${LinearRevealFont.className} text-[14px]`}>{item.subMenu}</p>
+                                                            {isNew(item.createdAt) && <PingtoNew />}
                                                         </div>
                                                     </div>
                                                 </Link>

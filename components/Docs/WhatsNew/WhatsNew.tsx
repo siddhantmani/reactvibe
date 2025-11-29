@@ -5,6 +5,7 @@ import OrbitBorderGlobalPreview from "../Components/Orbit-Border/OrbitBorderGlob
 import LinearReveal from "@/components/LinearReveal";
 import { Manrope } from "next/font/google";
 import Link from "next/link";
+import PingtoNew from "./PingtoNew";
 
 const LinearRevealFont = Manrope({
     weight: "400",
@@ -81,7 +82,6 @@ function WhatsNew() {
                     />
                     🎉
                 </OrbitBorderGlobalPreview>
-
                 {/* Right text */}
                 <LinearReveal
                     className={`${NewComponent.className} text-[16px] cursor-pointer`}

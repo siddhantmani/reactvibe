@@ -23,7 +23,7 @@ function LordStarItems() {
                     SceneBackgroundColor="#000000"
 
                     // Camera
-                    CameraFOV={15}
+                    CameraFOV={4}
                     CameraNear={0.1}
                     CameraFar={1000}
                     CameraPositionX={0}

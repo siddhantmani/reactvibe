@@ -5,6 +5,9 @@ const ListSearchableComponents = [
     { name: "Shinning Star", path: "/docs/backgrounds/shining-star" },
     { name: "Lord Star", path: "/docs/backgrounds/lord-star" },
     { name: "Dark Fusion", path: "/docs/backgrounds/dark-fusion" },
+    
+    // HeroSection
+    { name: "Wave CTA", path: "/docs/hero-section/wave-cta" },
 
     // Components
     { name: "Testimonials", path: "/docs/components/testimonials" },
