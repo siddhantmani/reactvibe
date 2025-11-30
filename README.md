@@ -1,18 +1,16 @@
 <p align="center">
-  <img src="./public/reactvibe-logo.png" alt="ReactVibe Logo" width="140" />
+  <img src="./public/reactvibe-logo.png" alt="ReactVibe Logo" width="180" style="vertical-align: middle; margin-right: 20px;" />
 </p>
 
-<h1 align="center">ReactVibe</h1>
-
 <p align="center">
-  Motion-first React components powered by Framer Motion + Tailwind.
-  <br />
+  Motion-first React components powered by Framer Motion + Tailwind.<br />
   Beautiful, production-ready UI elements for landing pages, dashboards, and modern apps.
 </p>
 
 <p align="center">
   ⭐ <strong>Stars</strong> • MIT License
 </p>
+
 
 ---
 
