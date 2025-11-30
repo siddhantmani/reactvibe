@@ -1,3 +1,4 @@
+import Footer from "@/components/Docs/Footer";
 import ForSiedebarProvider from "@/components/Docs/ForSiedebarProvider";
 import NavbarDashboard from "@/components/Docs/NavbarDashboard";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -67,9 +68,10 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                             <ForSiedebarProvider />
                         </div>
 
-                        <div className="w-full">
+                        <div className="w-full pb-44">
                             {children}
                             <Toaster position="top-center" />
+                            <Footer />
                         </div>
                     </div>
                 </ThemeProvider>

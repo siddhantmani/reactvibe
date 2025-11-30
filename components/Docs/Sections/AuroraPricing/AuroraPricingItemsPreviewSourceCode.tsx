@@ -1,8 +1,6 @@
 "use client"
 
 import React, { useRef, useState } from 'react'
-import FramerMotionGlobalInstalation from '../FramerMotionGlobalInstalation'
-import Separator from '../Separator'
 
 import { motion } from "framer-motion"
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
@@ -10,6 +8,8 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 import { Copy, CopyCheck } from 'lucide-react'
 import { toast } from 'sonner'
 import AuroraPricingOpenCode from './AuroraPricingOpenCode'
+import FramerMotionGlobalInstalation from '../../FramerMotionGlobalInstalation'
+import Separator from '../../Separator'
 
 function AuroraPricingItemsPreviewSourceCode() {
     const ref = useRef<null | HTMLDivElement>(null)

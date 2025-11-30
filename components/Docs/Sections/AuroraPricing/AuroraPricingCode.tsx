@@ -3,8 +3,8 @@
 import LinearReveal from "@/components/LinearReveal";
 import { motion } from "framer-motion"
 import { Manrope } from "next/font/google";
-import OrbitBorderGlobalPreview from "../Components/Orbit-Border/OrbitBorderGlobalPreview";
 import TogglePricing from "./TogglePricing";
+import OrbitBorderGlobalPreview from "../../Components/Orbit-Border/OrbitBorderGlobalPreview";
 
 const MainHeading = Manrope({
     weight: "600",
@@ -49,11 +49,26 @@ function AuroraPricingCode() {
                         Pricing
                     </OrbitBorderGlobalPreview>
                 </motion.div>
-                <LinearReveal
-                    as={'h1'}
-                    text="Simple plans, no surprises."
-                    className={`${MainHeading.className} dark:text-white text-black text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}
-                />
+                <motion.div
+                    initial={{ opacity: 0, filter: "blur(8px)" }}
+                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                    viewport={{
+                        once: true,
+                        amount: 0.2, // Trigger when 20% visible
+                        margin: "50px"
+                    }}
+                    transition={{
+                        duration: 1.2,
+                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                        delay: 0.2
+                    }}
+                >
+                    <LinearReveal
+                        as={'h1'}
+                        text="Simple plans, no surprises."
+                        className={`${MainHeading.className} dark:text-white text-black text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}
+                    />
+                </motion.div>
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, filter: "blur(0px)" }}

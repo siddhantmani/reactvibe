@@ -1,4 +1,4 @@
-import AuroraPricingItems from '@/components/Docs/AuroraPricing/AuroraPricingItems'
+import AuroraPricingItems from '@/components/Docs/Sections/AuroraPricing/AuroraPricingItems'
 import RenderOnRoute from '@/components/RenderOnRoute'
 import React from 'react'
 

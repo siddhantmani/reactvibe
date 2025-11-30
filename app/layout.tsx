@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   creator: "Siddhant Mani",
   publisher: "ReactVibe",
 
-  metadataBase: new URL("https://reactvibe.com"), // replace with your actual domain
+  metadataBase: new URL("https://reactvibe.com"), 
 
   openGraph: {
     title: "ReactVibe – Motion-First React UI Components",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "ReactVibe",
     images: [
       {
-        url: "/og.png", // Add once you create it
+        url: "/og.png", 
         width: 1200,
         height: 630,
         alt: "ReactVibe – Motion UI Kit",
