@@ -1,6 +1,6 @@
 "use client"
 
-import { DM_Serif_Display, Figtree, JetBrains_Mono } from 'next/font/google'
+import { DM_Serif_Display, JetBrains_Mono } from 'next/font/google'
 import React from 'react'
 
 const footerFont = JetBrains_Mono({
