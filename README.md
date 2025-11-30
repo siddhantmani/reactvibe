@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/reactvibe-logo.png" alt="ReactVibe Logo" width="380" style="vertical-align: middle; margin-right: 20px;" />
+  <img src="./public/reactvibe-logo.png" alt="ReactVibe Logo" width="1000" style="vertical-align: middle; margin-right: 20px;" />
 </p>
 
 <p align="center">
