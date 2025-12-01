@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   creator: "Siddhant Mani",
   publisher: "ReactVibe",
 
-  metadataBase: new URL("https://reactvibe.com"), 
+  metadataBase: new URL("https://reactvibe.com"),
 
   openGraph: {
     title: "ReactVibe – Motion-First React UI Components",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "ReactVibe",
     images: [
       {
-        url: "/og.png", 
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "ReactVibe – Motion UI Kit",
@@ -107,6 +108,8 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider >
+
+        <Analytics />
       </body>
     </html>
   );
