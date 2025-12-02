@@ -13,7 +13,7 @@ const minitagline = Manrope({
     subsets: ["latin"],
 });
 
-function Review() {
+function Page() {
     return (
         <div className='flex flex-col md:flex-row md:items-center justify-center gap-10 py-10 px-3'>
             <div className='flex flex-col justify-start items-start'>
@@ -89,10 +89,9 @@ function Review() {
                 >
                     <ReviewItems />
                 </motion.div>
-
             </div>
         </div>
     )
 }
 
-export default Review
+export default Page

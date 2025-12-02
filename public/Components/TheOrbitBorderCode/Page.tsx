@@ -14,7 +14,6 @@ export default function Page() {
                      `,
                 }}
             >
-
                 The Orbit Border
             </OrbitBorder>
         </div>

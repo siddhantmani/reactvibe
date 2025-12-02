@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { motion, Variants } from "framer-motion"
-import React from "react"
+import { motion, Variants, useInView } from "framer-motion";
+import React, { useRef } from "react";
 
 interface LinearRevealProps {
-    text: string
-    className?: string
-    colorClass?: string
-    delay?: number
-    as?: React.ElementType 
+    text: string;
+    className?: string;
+    colorClass?: string;
+    delay?: number;
+    as?: React.ElementType;
 }
 
 export default function LinearReveal({
@@ -18,7 +18,13 @@ export default function LinearReveal({
     delay = 0,
     as: Tag = "div",
 }: LinearRevealProps) {
-    const MotionTag = motion(Tag)
+    const ref = useRef(null);
+    const isInView = useInView(ref, {
+        once: true,
+        margin: "0px 0px -15% 0px", 
+    });
+
+    const MotionTag = motion(Tag);
 
     const container: Variants = {
         hidden: { opacity: 0 },
@@ -29,7 +35,7 @@ export default function LinearReveal({
                 delayChildren: delay,
             },
         },
-    }
+    };
 
     const child: Variants = {
         hidden: { opacity: 0, y: 10, filter: "blur(8px)" },
@@ -39,13 +45,13 @@ export default function LinearReveal({
             filter: "blur(0px)",
             transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
         },
-    }
+    };
 
     return (
         <MotionTag
+            ref={ref}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            animate={isInView ? "visible" : "hidden"}
             variants={container}
             className={className}
         >
@@ -59,5 +65,5 @@ export default function LinearReveal({
                 </motion.span>
             ))}
         </MotionTag>
-    )
+    );
 }

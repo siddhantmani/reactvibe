@@ -1,10 +1,10 @@
 import React from 'react'
-import LinearRevealPublicCode from './LinearRevealPublicCode'
+import LinearReveal from './LinearReveal'
 
-function LinearRevealImport() {
+function Page() {
     return (
         <div>
-            <LinearRevealPublicCode
+            <LinearReveal
                 as={'h2'} //You can select heading from h1-h6
                 text='The Linear Reveal'
                 className='text-4xl'
@@ -13,4 +13,4 @@ function LinearRevealImport() {
     )
 }
 
-export default LinearRevealImport
+export default Page

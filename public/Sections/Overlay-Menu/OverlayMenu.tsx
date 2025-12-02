@@ -19,9 +19,8 @@ const socialIcons = [
     <FaLinkedinIn key="s4" size={50} />,
 ];
 
-export default function TheOverlayMenuCodeOpenSource() {
+export default function OverlayMenu() {
     const [open, setOpen] = useState(false);
-
 
     const menuItems = [
         { subMenu: 'Home', subMenu_key: 'Go to home page', link: '/' },

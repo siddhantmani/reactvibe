@@ -14,11 +14,10 @@ const LinearRevealFont = Bricolage_Grotesque({
 
 
 function SeparatorItemsPreviewSourceCode() {
-    // 👇 Folder & File Tree
     const fileTree = {
         Components: [
+            { name: "Page.tsx", path: "/Components/Separator/Page.tsx" },
             { name: "Separator.tsx", path: "/Components/Separator/Separator.tsx" },
-            { name: "ExportingSeparator.tsx", path: "/Components/Separator/ExportingSeparator.tsx" },
         ],
     };
 
@@ -55,7 +54,7 @@ function SeparatorItemsPreviewSourceCode() {
         <div>
             <LinearReveal
                 as={"h2"}
-                className={`${LinearRevealFont.className} text-4xl pb-3 pt-7`}
+                className={`${LinearRevealFont.className} text-4xl pb-3 pt-7 text-black dark:text-white`}
                 text='Steps'
             />
 

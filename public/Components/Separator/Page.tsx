@@ -1,9 +1,8 @@
 import React from 'react'
 import Separator from './Separator'
 
-function ExportingSeparator() {
+function Page() {
     return (
-
         <div className="flex flex-col items-start gap-1">
             <span>React Vibe</span>
             <Separator
@@ -12,8 +11,7 @@ function ExportingSeparator() {
             />
             <span>An open-source UI platform.</span>
         </div>
-
     )
 }
 
-export default ExportingSeparator
+export default Page

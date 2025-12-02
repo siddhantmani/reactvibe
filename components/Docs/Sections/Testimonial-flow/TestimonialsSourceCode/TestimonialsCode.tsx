@@ -17,10 +17,10 @@ function TestimonialsCode() {
     // 👇 Folder & File Tree
     const fileTree = {
         Components: [
-            { name: "Review.tsx", path: "/Testimonials/code/Review.tsx" },
-            { name: "ReviewItems.tsx", path: "/Testimonials/code/ReviewItems.tsx" },
-            { name: "ReviewItemsOne.tsx", path: "/Testimonials/code/ReviewItemsOne.tsx" },
-            { name: "ReviewItemsTwo.tsx", path: "/Testimonials/code/ReviewItemsTwo.tsx" },
+            { name: "Page.tsx", path: "/Sections/Testimonial-Flow/Page.tsx" },
+            { name: "ReviewItems.tsx", path: "/Sections/Testimonial-Flow/ReviewItems.tsx" },
+            { name: "ReviewItemsOne.tsx", path: "/Sections/Testimonial-Flow/ReviewItemsOne.tsx" },
+            { name: "ReviewItemsTwo.tsx", path: "/Sections/Testimonial-Flow/ReviewItemsTwo.tsx" },
         ],
     };
 

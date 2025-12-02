@@ -17,8 +17,8 @@ function OverlayMenuOpenCode() {
     // 👇 Folder & File Tree
     const fileTree = {
         Components: [
-            { name: "TheOverlayMenuImport.tsx", path: "/Components/Overlay-Menu/TheOverlayMenuImport.tsx" },
-            { name: "TheOverlayMenuCodeOpenSource.tsx", path: "/Components/Overlay-Menu/TheOverlayMenuCodeOpenSource.tsx" },
+            { name: "Page.tsx", path: "/Sections/Overlay-Menu/Page.tsx" },
+            { name: "OverlayMenu.tsx", path: "/Sections/Overlay-Menu/OverlayMenu.tsx" },
         ],
     };
 

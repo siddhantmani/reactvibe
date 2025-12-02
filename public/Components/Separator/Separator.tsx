@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 
 interface SeparatorProps {
@@ -14,8 +13,6 @@ export default function Separator({
     const vertical = direction === "vertical";
 
     return (
-        <div
-            className={`${vertical ? "h-[23px] w-[1px]" : "w-[250px] h-[1px]"} ${className}`}
-        />
+        <div className={`${vertical ? "h-[23px] w-[1px]" : "w-[250px] h-[1px]"} ${className}`} />
     );
 }

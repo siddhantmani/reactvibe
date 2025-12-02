@@ -4,7 +4,7 @@ import LinearReveal from "@/components/LinearReveal";
 import { motion } from "framer-motion"
 import { Manrope } from "next/font/google";
 import OrbitBorder from "@/public/Components/TheOrbitBorderCode/OrbitBorder";
-import TogglePricing from "./TogglePricing";
+import AuroraPricing from "./AuroraPricing";
 
 const MainHeading = Manrope({
     weight: "600",
@@ -74,7 +74,7 @@ function Page() {
 
             </div>
             <div className="w-full">
-                <TogglePricing />
+                <AuroraPricing />
             </div>
         </div>
     )

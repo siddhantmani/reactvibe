@@ -31,8 +31,6 @@ function WaveCTA() {
                 }}
             >
                 <div className="relative flex items-center justify-center w-[800px] h-[200px] ">
-
-                
                     <svg
                         viewBox="0 0 800 400"
                         className="absolute inset-0 w-full h-full"

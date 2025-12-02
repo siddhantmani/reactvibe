@@ -9,11 +9,14 @@ const ListSearchableComponents = [
     // HeroSection
     { name: "Wave CTA", path: "/docs/hero-section/wave-cta" },
 
+    // Sections
+    { name: "Aurora Pricing", path: "/docs/sections/aurora-pricing" },
+    { name: "Testimonial Flow", path: "/docs/sections/testimonial-flow" },
+    { name: "Overlay Menu", path: "/docs/sections/overlay-menu" },
+
     // Components
-    { name: "Testimonials", path: "/docs/components/testimonials" },
     { name: "Orbit Border", path: "/docs/components/orbit-border" },
     { name: "Separator", path: "/docs/components/separator" },
-    { name: "Overlay Menu", path: "/docs/components/overlay-menu" },
 
     // Text motion
     { name: "Linear Reveal", path: "/docs/text-motion/linear-reveal" },

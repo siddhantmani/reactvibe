@@ -7,7 +7,7 @@ interface OrbitBorderProps
     extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag'> {
     children: ReactNode
     className?: string
-    RingColors?: string[]   // <-- new prop
+    RingColors?: string[]   
 }
 
 export default function OrbitBorder({

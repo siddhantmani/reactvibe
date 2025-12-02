@@ -17,8 +17,8 @@ function LinearRevealCode() {
     // 👇 Folder & File Tree
     const fileTree = {
         Components: [
-            { name: "LinearRevealImport.tsx", path: "/Text-Motion/LinearReveal/LinearRevealImport.tsx" },
-            { name: "LinearRevealPublicCode.tsx", path: "/Text-Motion/LinearReveal/LinearRevealPublicCode.tsx" },
+            { name: "Page.tsx", path: "/Text-Motion/LinearReveal/Page.tsx" },
+            { name: "LinearReveal.tsx", path: "/Text-Motion/LinearReveal/LinearReveal.tsx" },
         ],
     };
 
@@ -75,7 +75,7 @@ function LinearRevealCode() {
             >
                 <div className="flex bg-[#1e1e1e] rounded-lg overflow-hidden border border-[#2d2d2d] shadow-lg">
                     {/* Sidebar */}
-                    <div className="max-w-sm bg-[#252526] border-r border-[#333] text-gray-300 p-2 text-sm">
+                    <div className="w-64 bg-[#252526] border-r border-[#333] text-gray-300 p-2 text-sm">
 
                         {Object.entries(fileTree).map(([folderName, files]) => (
                             <div key={folderName}>
