@@ -28,7 +28,7 @@ const miniPara = Manrope({
 })
 
 
-function AuroraPricing({ yearly, setYearly }: { yearly: boolean; setYearly: (value: boolean) => void }) {
+function AuroraPricingSection({ yearly, setYearly }: { yearly: boolean; setYearly: (value: boolean) => void }) {
     return (
         <div className="flex justify-center mb-8">
             <div className="flex items-center gap-3 py-4 dark:text-white text-black">
@@ -40,7 +40,7 @@ function AuroraPricing({ yearly, setYearly }: { yearly: boolean; setYearly: (val
     )
 }
 
-function PricingSection() {
+function AuroraPricing() {
     const [yearly, setYearly] = React.useState(false)
 
     // Motion value for rotating gradient
@@ -107,7 +107,7 @@ function PricingSection() {
 
     return (
         <div className="w-full flex flex-col items-center justify-center py-5 px-4">
-            <AuroraPricing yearly={yearly} setYearly={setYearly} />
+            <AuroraPricingSection yearly={yearly} setYearly={setYearly} />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
                 {plans.map((plan, index) => {
@@ -252,4 +252,4 @@ function PricingSection() {
     )
 }
 
-export default PricingSection
+export default AuroraPricing

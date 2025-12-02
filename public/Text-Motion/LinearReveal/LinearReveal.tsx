@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants, useInView } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useRef, forwardRef } from "react";
 
 interface LinearRevealProps {
     text: string;
@@ -11,6 +11,24 @@ interface LinearRevealProps {
     as?: React.ElementType;
 }
 
+type PolymorphicProps<T extends React.ElementType> = {
+    as?: T;
+} & React.ComponentPropsWithoutRef<T>;
+
+const MotionWrapper = motion(
+    forwardRef(function Wrapper<T extends React.ElementType = "div">(
+        { as, children, ...props }: PolymorphicProps<T>,
+        ref: React.Ref<HTMLDivElement>
+    ) {
+        const Tag = as || "div";
+        return (
+            <Tag ref={ref} {...props}>
+                {children}
+            </Tag>
+        );
+    })
+);
+
 export default function LinearReveal({
     text,
     className = "",
@@ -18,13 +36,11 @@ export default function LinearReveal({
     delay = 0,
     as: Tag = "div",
 }: LinearRevealProps) {
-    const ref = useRef(null);
+    const ref = useRef<HTMLDivElement>(null);
     const isInView = useInView(ref, {
         once: true,
         margin: "0px 0px -15% 0px",
     });
-
-    const MotionTag = motion(Tag);
 
     const container: Variants = {
         hidden: { opacity: 0 },
@@ -48,7 +64,8 @@ export default function LinearReveal({
     };
 
     return (
-        <MotionTag
+        <MotionWrapper
+            as={Tag}
             ref={ref}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -64,6 +81,6 @@ export default function LinearReveal({
                     {char === " " ? "\u00A0" : char}
                 </motion.span>
             ))}
-        </MotionTag>
+        </MotionWrapper>
     );
 }
