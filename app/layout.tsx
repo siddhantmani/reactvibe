@@ -16,36 +16,36 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "ReactVibe – Motion-First React UI Components",
+    default: "React Vibe – Animated, Motion-First UI Components for React",
     template: "%s | ReactVibe",
   },
 
   description:
-    "ReactVibe is a motion-first React component library powered by Framer Motion + Tailwind CSS. Drop-in, customizable UI components designed for modern web apps, landing pages, and SaaS projects.",
+    "Motion-first, fully animated React components built with Framer Motion and Tailwind CSS. Open source. Zero dependencies. Zero setup. Copy, paste, and ship smooth interactions.",
 
   keywords: [
+    "animated UI components",
     "React components",
     "Tailwind components",
     "Framer Motion UI",
     "React animations",
     "motion components",
-    "UI kit",
     "ReactVibe",
     "React design system",
-    "developer components",
+    "React UI kit",
     "frontend UI components",
   ],
 
   authors: [{ name: "Siddhant Mani" }],
   creator: "Siddhant Mani",
-  publisher: "ReactVibe",
+  publisher: "React Vibe",
 
   metadataBase: new URL("https://reactvibe.com"),
 
   openGraph: {
-    title: "ReactVibe – Motion-First React UI Components",
+    title: "React Vibe – Animated, Motion-First UI Components for React",
     description:
-      "Copy-paste React components with beautiful motion, built using Framer Motion + Tailwind CSS. Zero dependencies, fully customizable.",
+      "Motion-first, fully animated React components built with Framer Motion and Tailwind CSS. Open source. Zero dependencies. Zero setup. Copy, paste, and ship smooth interactions.",
     url: "https://reactvibe.com",
     siteName: "ReactVibe",
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "ReactVibe – Motion UI Kit",
+        alt: "React Vibe – Animated, Motion-First React UI Components",
       },
     ],
     locale: "en_US",
@@ -62,9 +62,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "ReactVibe – Motion-First React UI Components",
+    title: "React Vibe – Animated, Motion-First UI Components for React",
     description:
-      "Motion-first React components built with Framer Motion + Tailwind CSS. Your UI deserves better motion.",
+      "Motion-first, fully animated React components built with Framer Motion and Tailwind CSS. Open source. Zero dependencies. Zero setup. Copy, paste, and ship smooth interactions.",
     images: ["/og.png"],
     creator: "@_siddhantmani",
   },

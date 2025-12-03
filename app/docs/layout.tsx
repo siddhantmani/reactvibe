@@ -7,23 +7,30 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: {
-        default: "ReactVibe Docs",
+        default: "React Vibe Docs",
         template: "%s | ReactVibe Docs",
     },
+
     description:
-        "Explore the full ReactVibe documentation — motion-first React components built with Framer Motion and Tailwind CSS.",
+        "Documentation for React Vibe — motion-first, fully animated React UI components built with Framer Motion and Tailwind CSS. Learn how to use, customize, and ship components fast.",
+
     keywords: [
-        "ReactVibe docs",
-        "React documentation",
-        "Tailwind component docs",
+        "React Vibe docs",
+        "animated UI components",
+        "React animations",
         "Framer Motion components",
-        "UI component documentation",
-        "React component library docs",
+        "Tailwind UI components",
+        "React component documentation",
+        "ReactVibe",
+        "motion-first UI docs",
     ],
+
+    metadataBase: new URL("https://reactvibe.com"),
+
     openGraph: {
-        title: "ReactVibe Documentation",
+        title: "React Vibe Docs – Animated, Motion-First React Components",
         description:
-            "Learn how to use ReactVibe motion components. Copy-paste UI components built with Framer Motion and Tailwind CSS.",
+            "Learn how to use React Vibe's motion-first, fully animated React UI components built with Framer Motion and Tailwind CSS. Simple, customizable, production-ready.",
         url: "https://reactvibe.com/docs",
         siteName: "ReactVibe Docs",
         images: [
@@ -31,25 +38,28 @@ export const metadata: Metadata = {
                 url: "/og-docs.png",
                 width: 1200,
                 height: 630,
-                alt: "ReactVibe Documentation",
+                alt: "React Vibe Documentation – Motion-First Animated React UI Components",
             },
         ],
         locale: "en_US",
         type: "article",
     },
+
     twitter: {
         card: "summary_large_image",
-        title: "ReactVibe Documentation",
+        title: "React Vibe Docs – Animated, Motion-First UI Components for React",
         description:
-            "Documentation for ReactVibe — motion-first React components powered by Framer Motion and Tailwind CSS.",
+            "Step-by-step documentation for React Vibe's animated, motion-first React UI components. Built with Framer Motion + Tailwind CSS. Copy, paste, and ship.",
         images: ["/og-docs.png"],
         creator: "@_siddhantmani",
     },
+
     robots: {
         index: true,
         follow: true,
     },
 };
+
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
     return (
