@@ -4,7 +4,7 @@ import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
 
 const AnimatedFont = Figtree({
-    weight: "700",
+    weight: "600",
     subsets: ["latin"],
 })
 const HeroSubHeading = Bricolage_Grotesque({
@@ -70,7 +70,7 @@ function VibeHero() {
 
                 >
                     <h2 className={`${HeroSubHeading.className} text-center capitalize`}>
-                        Zero Dependencies. Zero Setup
+                        Production-Ready Motion Components. Copy, Paste, Ship.
                     </h2>
                 </motion.div>
                 <motion.div

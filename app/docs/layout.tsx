@@ -12,25 +12,24 @@ export const metadata: Metadata = {
     },
 
     description:
-        "Documentation for React Vibe — motion-first, fully animated React UI components built with Framer Motion and Tailwind CSS. Learn how to use, customize, and ship components fast.",
+        "Documentation for React Vibe — motion-first, fully animated React UI components. Learn how to use, customize, and ship components fast.",
 
     keywords: [
         "React Vibe docs",
         "animated UI components",
         "React animations",
-        "Framer Motion components",
-        "Tailwind UI components",
-        "React component documentation",
+        "motion-first components",
+        "React UI documentation",
         "ReactVibe",
-        "motion-first UI docs",
+        "React UI kit docs",
     ],
 
     metadataBase: new URL("https://reactvibe.com"),
 
     openGraph: {
-        title: "React Vibe Docs – Animated, Motion-First React Components",
+        title: "React Vibe Docs – Motion-First Animated React Components",
         description:
-            "Learn how to use React Vibe's motion-first, fully animated React UI components built with Framer Motion and Tailwind CSS. Simple, customizable, production-ready.",
+            "Learn how to use and customize React Vibe's motion-first, fully animated React UI components. Simple, flexible, and production-ready.",
         url: "https://reactvibe.com/docs",
         siteName: "ReactVibe Docs",
         images: [
@@ -47,9 +46,9 @@ export const metadata: Metadata = {
 
     twitter: {
         card: "summary_large_image",
-        title: "React Vibe Docs – Animated, Motion-First UI Components for React",
+        title: "React Vibe Docs – Motion-First UI Components for React",
         description:
-            "Step-by-step documentation for React Vibe's animated, motion-first React UI components. Built with Framer Motion + Tailwind CSS. Copy, paste, and ship.",
+            "Step-by-step documentation for React Vibe's motion-first, animated React UI components. Copy, paste, and ship.",
         images: ["/og-docs.png"],
         creator: "@_siddhantmani",
     },
@@ -59,6 +58,7 @@ export const metadata: Metadata = {
         follow: true,
     },
 };
+
 
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {

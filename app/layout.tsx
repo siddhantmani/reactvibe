@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Motion-first, fully animated React components built with Framer Motion and Tailwind CSS. Open source. Zero dependencies. Zero setup. Copy, paste, and ship smooth interactions.",
+    "Motion-first, fully animated React components. Open source, production-ready, and easy to drop into any project. Copy, paste, and ship smooth interactions.",
 
   keywords: [
     "animated UI components",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "React Vibe – Animated, Motion-First UI Components for React",
     description:
-      "Motion-first, fully animated React components built with Framer Motion and Tailwind CSS. Open source. Zero dependencies. Zero setup. Copy, paste, and ship smooth interactions.",
+      "Motion-first, fully animated React components. Open source, production-ready, and easy to drop into any project. Copy, paste, and ship smooth interactions.",
     url: "https://reactvibe.com",
     siteName: "ReactVibe",
     images: [
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "React Vibe – Animated, Motion-First UI Components for React",
     description:
-      "Motion-first, fully animated React components built with Framer Motion and Tailwind CSS. Open source. Zero dependencies. Zero setup. Copy, paste, and ship smooth interactions.",
+      "Motion-first, fully animated React components. Open source, production-ready, and easy to drop into any project. Copy, paste, and ship smooth interactions.",
     images: ["/og.png"],
     creator: "@_siddhantmani",
   },
@@ -87,6 +87,7 @@ export const metadata: Metadata = {
     },
   },
 };
+
 
 export default function RootLayout({
   children,
