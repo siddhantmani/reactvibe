@@ -52,11 +52,11 @@ function OverlayMenuOpenCode() {
     };
 
     return (
-        <div>
+        <div className="space-y-3">
             <LinearReveal
                 as={"h2"}
                 className={`${LinearRevealFont.className} text-4xl`}
-                text='Steps'
+                text='Steps 1'
             />
 
             <motion.div

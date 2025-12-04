@@ -5,14 +5,14 @@ const ListSearchableComponents = [
     { name: "Shinning Star", path: "/docs/backgrounds/shining-star" },
     { name: "Lord Star", path: "/docs/backgrounds/lord-star" },
     { name: "Dark Fusion", path: "/docs/backgrounds/dark-fusion" },
-    
+
     // HeroSection
     { name: "Wave CTA", path: "/docs/hero-section/wave-cta" },
+    { name: "Overlay Menu", path: "/docs/hero-section/overlay-menu" },
 
     // Sections
     { name: "Aurora Pricing", path: "/docs/sections/aurora-pricing" },
     { name: "Testimonial Flow", path: "/docs/sections/testimonial-flow" },
-    { name: "Overlay Menu", path: "/docs/sections/overlay-menu" },
 
     // Components
     { name: "Orbit Border", path: "/docs/components/orbit-border" },

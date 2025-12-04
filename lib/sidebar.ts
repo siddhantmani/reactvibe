@@ -13,7 +13,8 @@ export const sidebarConfig = [
         title: "Hero Section",
         base: "/docs/hero-section/",
         items: [
-            { name: "Wave CTA", slug: "wave-cta", createdAt: "2025-11-29" }
+            { name: "Wave CTA", slug: "wave-cta", createdAt: "2025-11-29" },
+            { name: "Overlay Menu", slug: "overlay-menu", createdAt: "2025-11-29" },
         ]
     },
     {
@@ -22,7 +23,6 @@ export const sidebarConfig = [
         items: [
             { name: "Aurora Pricing", slug: "aurora-pricing", createdAt: "2025-11-29" },
             { name: "Testimonial Flow", slug: "testimonial-flow", createdAt: "2025-11-29" },
-            { name: "Overlay Menu", slug: "overlay-menu", createdAt: "2025-11-29" },
         ]
     },
     {
