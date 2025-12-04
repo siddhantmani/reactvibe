@@ -3,15 +3,15 @@
 import React from "react";
 
 interface SeparatorProps {
-    orientation?: "vertical" | "horizontal";
+    direction?: "vertical" | "horizontal";
     className?: string;
 }
 
 export default function Separator({
-    orientation = "vertical",
+    direction = "vertical",
     className,
 }: SeparatorProps) {
-    const vertical = orientation === "vertical";
+    const vertical = direction === "vertical";
 
     return (
         <div

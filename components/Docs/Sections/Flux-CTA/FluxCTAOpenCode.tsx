@@ -8,16 +8,15 @@ import LinearReveal from "@/components/LinearReveal";
 import { Bricolage_Grotesque } from "next/font/google";
 
 const LinearRevealFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700',
     subsets: ['vietnamese']
 });
 
-function OverlayMenuOpenCode() {
-    // 👇 Folder & File Tree
+function FluxCTAOpenCode() {
     const fileTree = {
         Components: [
-            { name: "Page.tsx", path: "/Hero-Section/Overlay-Menu/Page.tsx" },
-            { name: "OverlayMenu.tsx", path: "/Hero-Section/Overlay-Menu/OverlayMenu.tsx" },
+            { name: "Page.tsx", path: "/Sections/Flux-CTA/Page.tsx" },
+            { name: "FluxCTA.tsx", path: "/Sections/Flux-CTA/FluxCTA.tsx" },
         ],
     };
 
@@ -25,9 +24,7 @@ function OverlayMenuOpenCode() {
     const [code, setCode] = useState("");
     const [activeFile, setActiveFile] = useState<null | { name: string; path: string }>(null);
 
-    // Fetch code when a file is selected
     useEffect(() => {
-        // toast.success('Copied!');
         if (!activeFile) return;
         fetch(activeFile.path)
             .then((res) => res.text())
@@ -51,7 +48,7 @@ function OverlayMenuOpenCode() {
     };
 
     return (
-        <div className="space-y-3">
+        <div className="space-y-4">
             <LinearReveal
                 as={"h2"}
                 className={`${LinearRevealFont.className} text-4xl`}
@@ -75,12 +72,11 @@ function OverlayMenuOpenCode() {
             >
                 <div className="flex bg-[#1e1e1e] rounded-lg overflow-hidden border border-[#2d2d2d] shadow-lg">
                     {/* Sidebar */}
-                    <div className="max-w-sm bg-[#252526] border-r border-[#333] text-gray-300 p-2 text-sm">
+                    <div className="w-64 bg-[#252526] border-r border-[#333] text-gray-300 p-2 text-sm">
 
                         {Object.entries(fileTree).map(([folderName, files]) => (
                             <div key={folderName}>
                                 <motion.div layout>
-
                                     <div onClick={() => setIsOpen(!isOpen)} className="flex items-center justify-between gap-2 px-2 py-1 text-gray-400 hover:bg-[#2f2f35] rounded cursor-pointer">
                                         <div className="flex items-center gap-1">
                                             <Folder size={15} /> <span>{folderName}</span>
@@ -161,4 +157,4 @@ function OverlayMenuOpenCode() {
     );
 }
 
-export default OverlayMenuOpenCode;
+export default FluxCTAOpenCode;

@@ -12,12 +12,12 @@ const LinearRevealFont = Bricolage_Grotesque({
     subsets: ['vietnamese']
 });
 
-function OverlayMenuOpenCode() {
+function RadiantFrameOpenCode() {
     // 👇 Folder & File Tree
     const fileTree = {
         Components: [
-            { name: "Page.tsx", path: "/Hero-Section/Overlay-Menu/Page.tsx" },
-            { name: "OverlayMenu.tsx", path: "/Hero-Section/Overlay-Menu/OverlayMenu.tsx" },
+            { name: "Page.tsx", path: "/Sections/Radiant-Frame/Page.tsx" },
+            { name: "RadiantFrame.tsx", path: "/Sections/Radiant-Frame/RadiantFrame.tsx" },
         ],
     };
 
@@ -161,4 +161,4 @@ function OverlayMenuOpenCode() {
     );
 }
 
-export default OverlayMenuOpenCode;
+export default RadiantFrameOpenCode;

@@ -23,6 +23,8 @@ export const sidebarConfig = [
         items: [
             { name: "Aurora Pricing", slug: "aurora-pricing", createdAt: "2025-11-29" },
             { name: "Testimonial Flow", slug: "testimonial-flow", createdAt: "2025-11-29" },
+            { name: "Flux CTA", slug: "flux-cta", createdAt: "2025-12-04" },
+            { name: "Radiant Frame", slug: "radiant-frame", createdAt: "2025-12-04" }
         ]
     },
     {

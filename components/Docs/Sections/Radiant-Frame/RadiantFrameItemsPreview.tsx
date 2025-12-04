@@ -1,14 +1,14 @@
 "use client"
-
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
-import { Code, Eye } from 'lucide-react';
 import React, { useRef, useState } from 'react'
-import RefrashContent from '../../RefrashContent';
-import OverlayMenuPreview from './OverlayMenuPreview';
-import OverlayMenuItemsPreviewSourceCode from './OverlayMenuItemsPreviewSourceCode';
 
 import { motion } from "framer-motion"
-function OverlayMenuItemsPreview() {
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
+import { Code, Eye } from 'lucide-react';
+import RadiantFramePreview from './RadiantFramePreview';
+import RadiantFramePreviewSourceCode from './RadiantFramePreviewSourceCode';
+
+
+function RadiantFrameItemsPreview() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const mountRef = useRef<HTMLDivElement>(null)
     return (
@@ -17,6 +17,7 @@ function OverlayMenuItemsPreview() {
                 <div className="z-0 inset-0 flex justify-between">
                     <TabList className="h-10 flex justify-between p-1 w-full gap-1">
                         <div className='flex items-center gap-2 max-w-[130px] '>
+
                             <motion.div
                                 initial={{ opacity: 0, filter: "blur(8px)" }}
                                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -58,9 +59,6 @@ function OverlayMenuItemsPreview() {
                                 </Tab>
                             </motion.div>
                         </div>
-                        <div>
-                            <RefrashContent />
-                        </div>
 
                     </TabList>
                 </div>
@@ -73,17 +71,15 @@ function OverlayMenuItemsPreview() {
                     >
                         <div
                             ref={mountRef}
-                            className="w-full xl:h-[650px] lg:h-[550px] md:h-[550px] h-[550px] rounded-2xl"
+                            className="w-full rounded-2xl py-10"
                         >
-                            <div
-                                className=" text-white z-40 w-full rounded-2xl h-full"
-                            >
-                                <OverlayMenuPreview />
+                            <div className="text-white z-40 w-full rounded-2xl h-full scale-[90%]">
+                                <RadiantFramePreview />
                             </div>
                         </div>
                     </TabPanel>
                     <TabPanel static hidden={selectedIndex !== 1}>
-                        <OverlayMenuItemsPreviewSourceCode />
+                        <RadiantFramePreviewSourceCode />
                     </TabPanel>
                 </TabPanels>
             </TabGroup>
@@ -91,4 +87,4 @@ function OverlayMenuItemsPreview() {
     )
 }
 
-export default OverlayMenuItemsPreview
+export default RadiantFrameItemsPreview
