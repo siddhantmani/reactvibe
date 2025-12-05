@@ -26,7 +26,7 @@ function SeparatorPreview() {
                 <div className="flex flex-col items-start gap-1">
                     <span>React Vibe</span>
                     <Separator
-                        orientation="horizontal"
+                        direction="horizontal"
                         className='dark:bg-white/15 bg-black/15'
                     />
                     <span>An open-source UI platform.</span>
@@ -51,12 +51,12 @@ function SeparatorPreview() {
                 <div className="flex items-center  gap-3">
                     <span>React Vibe</span>
                     <Separator
-                        orientation="vertical"
+                        direction="vertical"
                         className='dark:bg-white/15 bg-black/15'
                     />
                     <span>Components</span>
                     <Separator
-                        orientation="vertical"
+                        direction="vertical"
                         className='dark:bg-white/15 bg-black/15'
                     />
                     <span>Docs</span>

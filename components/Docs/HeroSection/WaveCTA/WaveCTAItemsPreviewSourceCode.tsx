@@ -8,7 +8,7 @@ function WaveCTAItemsPreviewSourceCode() {
         <div>
             <FramerMotionGlobalInstalation />
             <div className='py-5'>
-                <Separator orientation='horizontal' className='dark:bg-white/15 bg-black/20 w-full' />
+                <Separator direction='horizontal' className='dark:bg-white/15 bg-black/20 w-full' />
             </div>
             <div>
                 <WaveCTACode />

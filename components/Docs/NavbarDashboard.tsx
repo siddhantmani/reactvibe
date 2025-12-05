@@ -58,7 +58,7 @@ function NavbarDashboard() {
                 </div>
                 {/* <div className='h-[20px] w-[1px] bg-[#ffffff] opacity-15' /> */}
                 <Separator
-                    orientation='vertical'
+                    direction='vertical'
                     className='dark:bg-white/15 bg-black/15'
                 />
                 <div>

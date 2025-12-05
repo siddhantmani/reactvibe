@@ -132,7 +132,7 @@ function AuroraPricingItemsPreviewSourceCode() {
             </div>
             <div className='py-5'>
                 <Separator
-                    orientation='horizontal'
+                    direction='horizontal'
                     className='bg-black/20 dark:bg-white/20 w-full'
                 />
             </div>
