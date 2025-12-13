@@ -10,7 +10,6 @@ import {
 } from "framer-motion"
 import { Check } from "lucide-react"
 import { Manrope } from "next/font/google"
-import { Switch } from "@/components/ui/switch"
 
 const CTAButton = Manrope({
     weight: "500",
@@ -33,7 +32,24 @@ function AuroraPricingSection({ yearly, setYearly }: { yearly: boolean; setYearl
         <div className="flex justify-center mb-8">
             <div className="flex items-center gap-3 py-4 dark:text-white text-black">
                 <label>Monthly</label>
-                <Switch checked={yearly} onCheckedChange={setYearly} />
+                <label className='flex cursor-pointer select-none items-center'>
+                    <div className='relative'>
+                        <input
+                            type='checkbox'
+                            checked={yearly}
+                            onChange={setYearly.bind(null, !yearly)}
+                            className='sr-only'
+                        />
+                        <div className="scale-[75%]">
+                            <div className='block h-8 w-14 rounded-full bg-[#E5E7EB]'></div>
+                            <motion.div
+                                className="dot absolute top-1 h-6 w-6 rounded-full bg-white"
+                                animate={{ left: yearly ? '1.75rem' : '0.25rem' }} // left-7 ≈ 1.75rem, left-1 ≈ 0.25rem
+                                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                            />
+                        </div>
+                    </div>
+                </label>
                 <label>Yearly</label>
             </div>
         </div>

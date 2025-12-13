@@ -7,7 +7,7 @@ type PingtoNewProps = {
     size?: number
 }
 
-function PingtoNew({ size = 10 }: PingtoNewProps) {
+function PulsePing({ size = 10 }: PingtoNewProps) {
     const angle = useMotionValue(0)
     const colorIndex = useMotionValue(0)
 
@@ -85,4 +85,4 @@ function PingtoNew({ size = 10 }: PingtoNewProps) {
     )
 }
 
-export default PingtoNew
+export default PulsePing

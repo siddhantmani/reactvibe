@@ -66,7 +66,7 @@ function AuroraPricingCode() {
                     <LinearReveal
                         as={'h1'}
                         text="Simple plans, no surprises."
-                        className={`${MainHeading.className} dark:text-white text-black text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}
+                        className={`${MainHeading.className}  text-black text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}
                     />
                 </motion.div>
                 <motion.div
@@ -84,7 +84,7 @@ function AuroraPricingCode() {
                     }}
 
                 >
-                    <p className={`${miniPara.className} dark:text-white text-black text-sm  max-w-sm xl:text-lg xl:max-w-sm md:max-w-sm text-center`}>From Idea to Build-Ready in 3 Steps.</p>
+                    <p className={`${miniPara.className}  text-black text-sm  max-w-sm xl:text-lg xl:max-w-sm md:max-w-sm text-center`}>From Idea to Build-Ready in 3 Steps.</p>
                 </motion.div>
 
             </div>

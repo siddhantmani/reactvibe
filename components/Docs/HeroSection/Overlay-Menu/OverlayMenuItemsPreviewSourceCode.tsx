@@ -54,7 +54,7 @@ function OverlayMenuItemsPreviewSourceCode() {
                     }}
                 >
                     <div className='space-y-3'>
-                        {/* framer motion */}
+                        {/* react icons*/}
                         <TabGroup className="mt-2 space-y-1">
                             <div className="z-0 inset-0 flex justify-between ">
                                 <TabList className="inline-flex p-0 w-full max-w-[60px]">

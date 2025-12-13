@@ -76,7 +76,7 @@ function OverlayMenuItemsPreview() {
                             className="w-full xl:h-[650px] lg:h-[550px] md:h-[550px] h-[550px] rounded-2xl"
                         >
                             <div
-                                className=" text-white z-40 w-full rounded-2xl h-full"
+                                className="z-40 w-full rounded-2xl h-full bg-white"
                             >
                                 <OverlayMenuPreview />
                             </div>

@@ -1,23 +1,22 @@
 "use client"
-import React, { useRef, useState } from 'react'
 
 import { motion } from "framer-motion"
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import { Code, Eye } from 'lucide-react';
-import AuroraPricingPreview from './AuroraPricingPreview';
-import AuroraPricingItemsPreviewSourceCode from './AuroraPricingItemsPreviewSourceCode';
+import React, { useRef, useState } from 'react'
+import RefrashContent from "@/components/Docs/RefrashContent";
+import OverlayNavPreview from "./OverlayNavPreview";
+import OverlayNavItemsPreviewSourceCode from "./OverlayNavItemsPreviewSourceCode";
 
-function AuroraPricingItemsPreview() {
+function OverlayNavItemsPreview() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const mountRef = useRef<HTMLDivElement>(null)
-
     return (
         <div className='relative'>
             <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
                 <div className="z-0 inset-0 flex justify-between">
                     <TabList className="h-10 flex justify-between p-1 w-full gap-1">
                         <div className='flex items-center gap-2 max-w-[130px] '>
-
                             <motion.div
                                 initial={{ opacity: 0, filter: "blur(8px)" }}
                                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -59,6 +58,9 @@ function AuroraPricingItemsPreview() {
                                 </Tab>
                             </motion.div>
                         </div>
+                        <div>
+                            <RefrashContent />
+                        </div>
 
                     </TabList>
                 </div>
@@ -71,15 +73,17 @@ function AuroraPricingItemsPreview() {
                     >
                         <div
                             ref={mountRef}
-                            className="w-full rounded-2xl py-10 bg-white"
+                            className="w-full xl:h-[650px] lg:h-[550px] md:h-[550px] h-[550px] rounded-2xl"
                         >
-                            <div className="text-black z-40 w-full rounded-2xl h-full scale-[100%]">
-                                <AuroraPricingPreview />
+                            <div
+                                className=" bg-white z-40 w-full rounded-2xl h-full"
+                            >
+                                <OverlayNavPreview />
                             </div>
                         </div>
                     </TabPanel>
                     <TabPanel static hidden={selectedIndex !== 1}>
-                        <AuroraPricingItemsPreviewSourceCode />
+                        <OverlayNavItemsPreviewSourceCode />
                     </TabPanel>
                 </TabPanels>
             </TabGroup>
@@ -87,4 +91,4 @@ function AuroraPricingItemsPreview() {
     )
 }
 
-export default AuroraPricingItemsPreview
+export default OverlayNavItemsPreview

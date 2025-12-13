@@ -33,7 +33,7 @@ export default function OrbitBorder({
 
     return (
         <motion.div
-            className="rounded-full p-[1px] inline-block"
+            className="rounded-full p-[2px] inline-block"
             style={{ background: animatedBorder }}
         >
             <motion.button

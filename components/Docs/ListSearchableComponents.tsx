@@ -8,6 +8,7 @@ const ListSearchableComponents = [
 
     // HeroSection
     { name: "Wave CTA", path: "/docs/hero-section/wave-cta" },
+    { name: "Overlay Nav", path: "/docs/hero-section/overlay-nav" },
     { name: "Overlay Menu", path: "/docs/hero-section/overlay-menu" },
 
     // Sections
@@ -17,6 +18,7 @@ const ListSearchableComponents = [
     // Components
     { name: "Orbit Border", path: "/docs/components/orbit-border" },
     { name: "Separator", path: "/docs/components/separator" },
+    { name: "Brand Loop", path: "/docs/components/brand-loop" },
 
     // Text motion
     { name: "Linear Reveal", path: "/docs/text-motion/linear-reveal" },

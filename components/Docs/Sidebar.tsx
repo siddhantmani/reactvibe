@@ -33,7 +33,6 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
     return (
         <div>
             <div>
-
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -58,7 +57,7 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                 </motion.div>
             </div>
 
-            <SidebarMenu>
+            <SidebarMenu className="pb-32">
                 {sidebarConfig.map((section, i) => (
                     <Collapsible key={i} asChild defaultOpen className="group/collapsible">
                         <SidebarMenuItem>
@@ -126,7 +125,7 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                                                         <p className={`${LinearRevealFont.className} text-[14px]`}>
                                                             {item.name}
                                                         </p>
-                                                        {isNew(item.createdAt) && <PingtoNew />}
+                                                        {isNew(item.createdAt) && <PingtoNew size={7}/>}
                                                     </div>
                                                 </motion.div>
                                             </Link>

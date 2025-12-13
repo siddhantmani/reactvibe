@@ -3,12 +3,11 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import { Code, Eye } from 'lucide-react';
 import React, { useRef, useState } from 'react'
-import OrbitBorderPreview from './OrbitBorderPreview';
-import OrbitBorderItemsPreviewSourceCode from './OrbitBorderItemsPreviewSourceCode';
-
 import { motion } from "framer-motion"
+import BrandLogoPreview from './BrandLogoPreview';
+import BrandLogoItemsPreviewSourceCode from './BrandLogoItemsPreviewSourceCode';
 
-function OrbitBorderItemsPreview() {
+function BrandLogoItemsPreview() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const mountRef = useRef<HTMLDivElement>(null)
 
@@ -74,14 +73,14 @@ function OrbitBorderItemsPreview() {
                             className="w-full xl:h-[350px] lg:h-[550px] md:h-[550px] h-[550px] rounded-2xl"
                         >
                             <div
-                                className="flex justify-center items-center z-40 w-full rounded-2xl h-full"
+                                className="flex justify-center items-center bg-white z-40 w-full rounded-2xl h-full"
                             >
-                                <OrbitBorderPreview />
+                                <BrandLogoPreview />
                             </div>
                         </div>
                     </TabPanel>
                     <TabPanel static hidden={selectedIndex !== 1}>
-                        <OrbitBorderItemsPreviewSourceCode />
+                        <BrandLogoItemsPreviewSourceCode />
                     </TabPanel>
                 </TabPanels>
             </TabGroup>
@@ -89,4 +88,4 @@ function OrbitBorderItemsPreview() {
     )
 }
 
-export default OrbitBorderItemsPreview
+export default BrandLogoItemsPreview

@@ -3,15 +3,14 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import { Code, Eye } from 'lucide-react';
 import React, { useRef, useState } from 'react'
-import OrbitBorderPreview from './OrbitBorderPreview';
-import OrbitBorderItemsPreviewSourceCode from './OrbitBorderItemsPreviewSourceCode';
 
 import { motion } from "framer-motion"
+import PulsePingPreview from './PulsePingPreview';
+import PulsePingItemsPreviewSourceCode from './PulsePingItemsPreviewSourceCode';
 
-function OrbitBorderItemsPreview() {
+function PulsePingItemsPreview() {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const mountRef = useRef<HTMLDivElement>(null)
-
     return (
         <div className='relative'>
             <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
@@ -76,12 +75,12 @@ function OrbitBorderItemsPreview() {
                             <div
                                 className="flex justify-center items-center z-40 w-full rounded-2xl h-full"
                             >
-                                <OrbitBorderPreview />
+                                <PulsePingPreview />
                             </div>
                         </div>
                     </TabPanel>
                     <TabPanel static hidden={selectedIndex !== 1}>
-                        <OrbitBorderItemsPreviewSourceCode />
+                        <PulsePingItemsPreviewSourceCode />
                     </TabPanel>
                 </TabPanels>
             </TabGroup>
@@ -89,4 +88,4 @@ function OrbitBorderItemsPreview() {
     )
 }
 
-export default OrbitBorderItemsPreview
+export default PulsePingItemsPreview

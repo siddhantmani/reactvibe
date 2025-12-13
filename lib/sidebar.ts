@@ -14,6 +14,7 @@ export const sidebarConfig = [
         base: "/docs/hero-section/",
         items: [
             { name: "Wave CTA", slug: "wave-cta", createdAt: "2025-11-29" },
+            { name: "Overlay Nav", slug: "overlay-nav", createdAt: "2025-12-07" },
             { name: "Overlay Menu", slug: "overlay-menu", createdAt: "2025-11-29" },
         ]
     },
@@ -32,7 +33,9 @@ export const sidebarConfig = [
         base: "/docs/components/",
         items: [
             { name: "Orbit Border", slug: "orbit-border", createdAt: "2025-11-29" },
-            { name: "Separator", slug: "separator", createdAt: "2025-11-29" }
+            { name: "Separator", slug: "separator", createdAt: "2025-11-29" },
+            { name: "Brand Loop", slug: "brand-loop", createdAt: "2025-12-09" },
+            { name: "Pulse Ping", slug: "pulse-ping", createdAt: "2025-12-09" }
         ]
     },
     {
