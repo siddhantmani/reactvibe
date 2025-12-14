@@ -83,7 +83,7 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                                             />
                                         </span>
                                     </motion.div>
-                                    <motion.div
+                                    {/* <motion.div
                                         initial={{ opacity: 0, filter: "blur(8px)" }}
                                         whileInView={{ opacity: 1, filter: "blur(0px)" }}
                                         viewport={{
@@ -98,7 +98,7 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                                         }}
                                     >
                                         <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90 h-5 w-5" />
-                                    </motion.div>
+                                    </motion.div> */}
                                 </SidebarMenuButton>
                             </CollapsibleTrigger>
 

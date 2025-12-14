@@ -10,8 +10,8 @@ import {
     CommandList
 } from "@/components/ui/command"
 
-// Import the data array directly instead of the component
-import searchableComponents from "@/components/Docs/ListSearchableComponents";
+import { searchableComponents } from "@/lib/searchable-components";
+
 
 import { ImWindows8 } from "react-icons/im";
 import Link from "next/link";
@@ -35,10 +35,6 @@ export default function SearchForComponents() {
 
     const handleClicked = () => {
         setOpen(true);
-    }
-
-    const CommandItemsClicked = () => {
-        setOpen(false);
     }
 
     return (
@@ -65,17 +61,18 @@ export default function SearchForComponents() {
                 <CommandList>
                     <CommandEmpty>No results found.</CommandEmpty>
                     {searchableComponents
-                        .filter((c) => c.name.toLowerCase().includes(query.toLowerCase()))
+                        .filter((c) =>
+                            c.name.toLowerCase().includes(query.toLowerCase())
+                        )
                         .map((c) => (
-                            <CommandItem onClick={CommandItemsClicked} key={c.path} asChild>
-                                <Link
-                                    href={c.path}
-                                    onClick={() => {
-                                        setOpen(false)  // close search
-                                        setQuery("")    // optional: clear input
-                                    }}
-                                >
-                                    {c.name}
+                            <CommandItem key={c.path} asChild>
+                                <Link href={c.path} onClick={() => setOpen(false)}>
+                                    <div className="flex flex-col">
+                                        <span>{c.name}</span>
+                                        <span className="text-xs text-muted-foreground">
+                                            {c.section}
+                                        </span>
+                                    </div>
                                 </Link>
                             </CommandItem>
                         ))}

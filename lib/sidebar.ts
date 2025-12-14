@@ -25,7 +25,8 @@ export const sidebarConfig = [
             { name: "Aurora Pricing", slug: "aurora-pricing", createdAt: "2025-11-29" },
             { name: "Testimonial Flow", slug: "testimonial-flow", createdAt: "2025-11-29" },
             { name: "Flux CTA", slug: "flux-cta", createdAt: "2025-12-04" },
-            { name: "Radiant Frame", slug: "radiant-frame", createdAt: "2025-12-04" }
+            { name: "Radiant Frame", slug: "radiant-frame", createdAt: "2025-12-04" },
+            { name: "Glide Accordion", slug: "glide-accordion", createdAt: "2025-12-14" }
         ]
     },
     {
@@ -35,7 +36,8 @@ export const sidebarConfig = [
             { name: "Orbit Border", slug: "orbit-border", createdAt: "2025-11-29" },
             { name: "Separator", slug: "separator", createdAt: "2025-11-29" },
             { name: "Brand Loop", slug: "brand-loop", createdAt: "2025-12-09" },
-            { name: "Pulse Ping", slug: "pulse-ping", createdAt: "2025-12-09" }
+            { name: "Pulse Ping", slug: "pulse-ping", createdAt: "2025-12-09" },
+            { name: "Motion Switch", slug: "motion-switch", createdAt: "2025-12-14" }
         ]
     },
     {
