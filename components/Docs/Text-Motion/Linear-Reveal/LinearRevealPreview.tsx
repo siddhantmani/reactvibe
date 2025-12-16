@@ -1,10 +1,10 @@
-import AnimatedText from '@/components/LinearReveal'
+import LinearReveal from '@/components/LinearReveal'
 import React from 'react'
 
 function LinearRevealPreview() {
     return (
         <div>
-            <AnimatedText
+            <LinearReveal
                 className='text-5xl'
                 text='The Linear Text'
             />
