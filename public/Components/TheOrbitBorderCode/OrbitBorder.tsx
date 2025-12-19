@@ -7,13 +7,19 @@ interface OrbitBorderProps
     extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag'> {
     children: ReactNode
     className?: string
-    RingColors?: string[]   
+    RingColors?: string[]
+    rotate?: number
+    padding?: number
+    rounded?: number
 }
 
 export default function OrbitBorder({
     children,
     className = "",
     RingColors = ["#0a52f0", "#ffffff", "#f5e2ae", "#dcd7fc"], // default colors
+    rotate = 0,
+    padding = 0,
+    rounded = 0,
     ...props
 }: OrbitBorderProps) {
     const angle = useMotionValue(0)
@@ -33,8 +39,13 @@ export default function OrbitBorder({
 
     return (
         <motion.div
-            className="rounded-full p-[2px] inline-block"
-            style={{ background: animatedBorder }}
+            className="inline-block"
+            style={{
+                background: animatedBorder,
+                rotate: `${rotate}deg`,
+                padding: `${padding}px`,
+                borderRadius: `${rounded}px`
+            }}
         >
             <motion.button
                 whileHover={{ scale: 1.05 }}

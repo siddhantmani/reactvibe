@@ -32,10 +32,10 @@ export default function OverlayMenu() {
     ];
 
     return (
-        <div className="">
+        <div className="overflow-hidden ">
             {/* Top Bar */}
             <div hidden={open} className="flex justify-between px-5 p-3 z-50 ">
-                <h1 className={`${CTAButton.className} text-2xl  text-black`}>Overlay Menu</h1>
+                <h1 className={`${CTAButton.className} text-2xl  text-black`}>Subsence</h1>
                 <button onClick={() => setOpen(!open)} className=" text-black">
                     {open ? <X /> : <Menu />}
                 </button>
@@ -48,12 +48,12 @@ export default function OverlayMenu() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="flex flex-col justify-between z-40 p-5 rounded-xl"
+                        className="flex flex-col justify-between z-40 p-5 overflow-hidden h-screen bg-white"
                     >
                         <div className="h-full flex-1">
                             {/* Header */}
                             <div className="flex justify-between text-black">
-                                <h1 className={`${CTAButton.className} text-2xl`}>Overlay Menu</h1>
+                                <h1 className={`${CTAButton.className} text-2xl`}>Subsence</h1>
 
                                 <motion.div
                                     onClick={() => setOpen(false)}
@@ -110,7 +110,7 @@ export default function OverlayMenu() {
                         </div>
 
                         {/* Social icons */}
-                        <div className="w-full absolute bottom-4">
+                        <div className="w-full ">
                             <h1 className={`${CTAButton.className} text-2xl text-black`}>Social proof</h1>
                             <motion.div
                                 className="flex space-x-4 mt-6 "
