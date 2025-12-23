@@ -7,6 +7,7 @@ export const sidebarConfig = [
             { name: "Shining Star", slug: "shining-star", createdAt: "2025-11-29" },
             { name: "Lord Star", slug: "lord-star", createdAt: "2025-11-29" },
             { name: "Dark Fusion", slug: "dark-fusion", createdAt: "2025-11-29" },
+            { name: "Path Flow", slug: "path-flow", createdAt: "2025-12-23" },
         ]
     },
     {

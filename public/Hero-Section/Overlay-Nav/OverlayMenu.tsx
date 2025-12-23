@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaInstagram, FaLinkedinIn, FaThreads, FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
-import LinearReveal from "@/public/LinearReveal";
+import LinearReveal from "@/public/Text-Motion/LinearReveal/LinearReveal";
 
 const CTAButton = Manrope({
     weight: "500",
