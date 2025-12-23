@@ -27,7 +27,8 @@ export const sidebarConfig = [
             { name: "Testimonial Flow", slug: "testimonial-flow", createdAt: "2025-11-29" },
             { name: "Flux CTA", slug: "flux-cta", createdAt: "2025-12-04" },
             { name: "Radiant Frame", slug: "radiant-frame", createdAt: "2025-12-04" },
-            { name: "Glide Accordion", slug: "glide-accordion", createdAt: "2025-12-14" }
+            { name: "Glide Accordion", slug: "glide-accordion", createdAt: "2025-12-14" },
+            { name: "Voice Flow", slug: "voice-flow", createdAt: "2025-12-23" },
         ]
     },
     {
