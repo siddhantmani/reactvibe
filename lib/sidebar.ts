@@ -39,7 +39,8 @@ export const sidebarConfig = [
             { name: "Brand Loop", slug: "brand-loop", createdAt: "2025-12-09" },
             { name: "Pulse Ping", slug: "pulse-ping", createdAt: "2025-12-09" },
             { name: "Motion Switch", slug: "motion-switch", createdAt: "2025-12-14" },
-            { name: "Motion Dropdown", slug: "motion-dropdown", createdAt: "2025-12-16" }
+            { name: "Motion Dropdown", slug: "motion-dropdown", createdAt: "2025-12-16" },
+            { name: "Shadow Button", slug: "shadow-button", createdAt: "2025-12-23" }
         ]
     },
     {

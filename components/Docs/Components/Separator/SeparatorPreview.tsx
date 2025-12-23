@@ -6,7 +6,6 @@ import Separator from '../../Separator'
 import { motion } from "framer-motion"
 function SeparatorPreview() {
     return (
-
         <div className='flex flex-col justify-center items-center h-full space-y-10'>
             <motion.div
                 initial={{ opacity: 0, filter: "blur(8px)" }}

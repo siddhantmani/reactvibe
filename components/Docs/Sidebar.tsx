@@ -122,10 +122,10 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                                                     }}
                                                 >
                                                     <div className="flex items-center space-x-2 p-[8px] hover:bg-muted rounded-md w-56">
-                                                        <p className={`${LinearRevealFont.className} text-[14px]`}>
+                                                        <p className={`${LinearRevealFont.className} text-[15px]`}>
                                                             {item.name}
                                                         </p>
-                                                        {isNew(item.createdAt) && <PingtoNew size={7}/>}
+                                                        {isNew(item.createdAt) && <PingtoNew size={7} />}
                                                     </div>
                                                 </motion.div>
                                             </Link>
