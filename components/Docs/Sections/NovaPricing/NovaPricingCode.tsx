@@ -13,11 +13,12 @@ const LinearRevealFont = Bricolage_Grotesque({
 });
 
 
-function SeparatorItemsPreviewSourceCode() {
+function NovaPricingCode() {
+    // 👇 Folder & File Tree
     const fileTree = {
         Components: [
-            { name: "Page.tsx", path: "/Components/Separator/Page.tsx" },
-            { name: "Separator.tsx", path: "/Components/Separator/Separator.tsx" },
+            { name: "Page.tsx", path: "/Sections/Nova-Pricing/Page.tsx" },
+            { name: "NovaPricing.tsx", path: "/Sections/Nova-Pricing/NovaPricing.tsx" },
         ],
     };
 
@@ -53,9 +54,8 @@ function SeparatorItemsPreviewSourceCode() {
     return (
         <div>
             <LinearReveal
-                as={"h2"}
-                className={`${LinearRevealFont.className} text-4xl pb-3 pt-7 text-black dark:text-white`}
-                text='Steps'
+                className={`${LinearRevealFont.className} text-4xl mb-4`}
+                text='Step 1'
             />
 
             <motion.div
@@ -115,6 +115,7 @@ function SeparatorItemsPreviewSourceCode() {
                                         </div>
                                     </motion.div>
                                 </motion.div>
+
                             </div>
                         ))}
                     </div>
@@ -161,4 +162,4 @@ function SeparatorItemsPreviewSourceCode() {
     );
 }
 
-export default SeparatorItemsPreviewSourceCode;
+export default NovaPricingCode;

@@ -29,6 +29,9 @@ export const sidebarConfig = [
             { name: "Radiant Frame", slug: "radiant-frame", createdAt: "2025-12-04" },
             { name: "Glide Accordion", slug: "glide-accordion", createdAt: "2025-12-14" },
             { name: "Voice Flow", slug: "voice-flow", createdAt: "2025-12-23" },
+            { name: "Nova Pricing", slug: "nova-pricing", createdAt: "2025-12-27" },
+            { name: "Stratus", slug: "stratus", createdAt: "2025-12-27" },
+            { name: "Aura Base", slug: "aura-base", createdAt: "2025-12-27" },
         ]
     },
     {

@@ -8,16 +8,16 @@ import LinearReveal from "@/components/LinearReveal";
 import { Bricolage_Grotesque } from "next/font/google";
 
 const LinearRevealFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700',
     subsets: ['vietnamese']
 });
 
 
-function SeparatorItemsPreviewSourceCode() {
+function StratusCode() {
     const fileTree = {
         Components: [
-            { name: "Page.tsx", path: "/Components/Separator/Page.tsx" },
-            { name: "Separator.tsx", path: "/Components/Separator/Separator.tsx" },
+            { name: "Page.tsx", path: "/Sections/Stratus/Page.tsx" },
+            { name: "Stratus.tsx", path: "/Sections/Stratus/Stratus.tsx" },
         ],
     };
 
@@ -53,8 +53,7 @@ function SeparatorItemsPreviewSourceCode() {
     return (
         <div>
             <LinearReveal
-                as={"h2"}
-                className={`${LinearRevealFont.className} text-4xl pb-3 pt-7 text-black dark:text-white`}
+                className={`${LinearRevealFont.className} text-4xl mb-4`}
                 text='Steps'
             />
 
@@ -115,6 +114,7 @@ function SeparatorItemsPreviewSourceCode() {
                                         </div>
                                     </motion.div>
                                 </motion.div>
+
                             </div>
                         ))}
                     </div>
@@ -161,4 +161,4 @@ function SeparatorItemsPreviewSourceCode() {
     );
 }
 
-export default SeparatorItemsPreviewSourceCode;
+export default StratusCode;
