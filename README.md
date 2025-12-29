@@ -3,64 +3,100 @@
 </p>
 
 <p align="center">
-  Motion-first React components powered by Framer Motion + Tailwind.<br />
-  Beautiful, production-ready UI elements for landing pages, dashboards, and modern apps.
+  Motion-first React components built with Framer Motion and Tailwind CSS.  
+  Production-ready UI sections and interactions for modern web apps.
 </p>
 
 <p align="center">
-  ⭐ <strong>Stars</strong> • MIT License
+  ⭐ Star the repo · 🧾 MIT License
 </p>
-
 
 ---
 
-## 📘 Documentation
-👉 Revealing Soon...
-
 ## 👋 About
-Motion-first React components — powered by Framer Motion + Tailwind.
-Premium, production-ready components designed to level up landing pages, SaaS dashboards, and modern web apps.
 
-## ⭐ Key Features
+React Vibe is a **motion-first React component collection** focused on interaction quality, smooth animations, and clean UI patterns.
 
-- Motion-first components (smooth, fluid, modern)
-- Beautifully designed UI patterns
-- Fully customizable with Tailwind
-- Zero external dependencies
-- Dark-mode ready
-- Copy–paste friendly
-- Growing library (new components weekly)
+It’s built for developers who care about **how interfaces feel**, not just how they look.
 
+No black-box abstractions.  
+No custom libraries.  
+Just well-crafted components you can drop into real projects.
+
+---
+
+## ⭐ Why React Vibe
+
+- **Motion-first by design** — animations are not an afterthought
+- **Copy–paste friendly** — full control over the code you ship
+- **Built on familiar tools** — Three.js + Framer Motion + Tailwind CSS
+- **Production-ready** — designed for landing pages, dashboards, and SaaS apps
+- **Easy to customize** — no hidden styling logic
+
+---
 
 ## 🧩 Categories
 
+React Vibe includes a growing set of components and sections:
+
 - Backgrounds
-- Hero Sections
+- Hero Section
 - Sections
 - Components
 - Text Motion
 
+Each component is designed to be **self-contained, readable, and extensible**.
 
-## 🚀 Install (Coming Soon)
+---
 
-ReactVibe will ship as an NPM package after launch.
-For now, use the components as described in the documentation.
+## 🚀 Usage
 
-## 🛠 Tech
+React Vibe is **not shipped as a dependency**.
 
-- Next.js 15
-- Framer Motion
-- Tailwind CSS
+You copy the component code and use it directly in your project.
+
+This keeps:
+- Your bundle clean
+- Your codebase fully owned by you
+- No version-lock or abstraction tax
+
+Most components rely on:
+- **Three.js + Framer Motion** for animation
+- **Tailwind CSS** for styling
+
+---
+
+## 🛠 Tech Stack
+
+- Next.js
+- React
 - TypeScript
+- Tailwind CSS
+- Framer Motion
+- Three.js
 
+---
 
 ## ⭐ Support
 
-If you like ReactVibe:
-👉 Star the repo — it helps a lot.
+If React Vibe helps you build better interfaces:
 
-## 🤝 Contribute
-Contributions are welcome. Open an issue or PR.
+👉 **Star the repository** — it genuinely helps.
 
-📜 License
+---
+
+## 🤝 Contributing
+
+Contributions are welcome.
+
+- Open an issue for bugs or ideas
+- Submit a PR for improvements or new components
+
+Please keep contributions aligned with React Vibe’s philosophy:
+**clean code, intentional motion, real-world usability**
+
+---
+
+## 📄 License
+
 MIT License.
