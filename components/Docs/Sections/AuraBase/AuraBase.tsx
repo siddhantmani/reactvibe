@@ -95,8 +95,7 @@ function AuraBase() {
                                             <p
                                                 className={`${miniPara.className} text-sm text-gray-700 max-w-sm`}
                                             >
-                                                A dynamic, color-shifting frame built for modern landing pages and sections.
-                                                Perfect for footers, feature blocks, and callouts.
+                                                The foundational layer for motion-driven interfaces. Aura Base sets the visual tone of your layout with subtle depth, soft gradients, and a premium surface — without stealing attention from your content.
                                             </p>
                                         </motion.div>
 
@@ -120,7 +119,7 @@ function AuraBase() {
                                             <p
                                                 className={`${miniPara.className} text-sm text-gray-700 max-w-sm`}
                                             >
-                                                Need a flexible layout? Radiant Frame adapts to any content you drop inside.
+                                                Built to adapt. Drop any content inside and let Aura Base handle spacing, balance, and atmosphere across sections, footers, and feature blocks.
                                             </p>
                                         </motion.div>
                                     </div>

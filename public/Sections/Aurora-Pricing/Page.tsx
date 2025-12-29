@@ -19,7 +19,7 @@ const miniPara = Manrope({
 
 function Page() {
     return (
-        <div>
+        <div className="py-2">
             <div className='flex flex-col justify-center items-center space-y-3'>
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -37,6 +37,9 @@ function Page() {
 
                 >
                     <OrbitBorder
+                        rotate={0}
+                        padding={2}
+                        rounded={100}
                         RingColors={["#0a52f0", "#ffffff", "#f5e2ae", "#dcd7fc"]}
                         className='bg-[#ffffff] rounded-full p-2 text-black px-5'
                         style={{

@@ -20,26 +20,25 @@ export default function Stratus() {
 
     const faqs = [
         {
-            title: "How does the app track my subscriptions automatically?",
+            title: "Is React Vibe a dependency or a component library I install?",
             content:
-                "Users usually wonder if they need to add everything manually or if the app scans emails, bank statements, etc."
+                "No. React Vibe is not a package you install. You copy the component code directly into your project and use familiar tools like Framer Motion, Tailwind CSS, and Three.js. No hidden abstractions, no lock-in."
         },
         {
-            title: "Will the app notify me before a subscription renews?",
+            title: "Can I fully customize the components?",
             content:
-                "No. React Vibe does not ship as a dependency. You copy the component code and use tools you already trust, like Three.js, Framer Motion and Tailwind CSS. This keeps your bundle clean and your code fully owned by you.",
+                "Yes. You own the code. Modify animations, layouts, colors, logic, or structure however you want. React Vibe components are meant to be edited — not configured through rigid props or APIs."
         },
         {
-            title: "Is my financial and personal data secure?",
+            title: "What makes React Vibe different from other UI libraries?",
             content:
-                "Most UI libraries focus on structure. React Vibe focuses on motion quality. Every component is designed with smooth easing, visual polish, and interaction feel as a first-class concern — not an afterthought.",
+                "Most UI libraries prioritize structure first and motion last. React Vibe is motion-first. Every component is designed with easing, timing, and interaction feel as a primary concern — not an afterthought."
         },
         {
-            title: "Can I cancel subscriptions through the app?",
+            title: "Will using React Vibe bloat my bundle?",
             content:
-                "Yes. Because you own the code, you can customize layouts, animations, colors, and logic without fighting a rigid API. React Vibe components are meant to be edited, not configured through endless props.",
+                "No. Since you only copy the components you actually need and rely on tools already in your stack, there’s no unnecessary code, runtime overhead, or unused abstractions added to your bundle."
         }
-
     ]
 
     const toggleFAQ = (index: number) => {

@@ -82,6 +82,9 @@ function OverlayNav() {
 
                     >
                         <OrbitBorder
+                            rotate={0}
+                            padding={2}
+                            rounded={50}
                             className='bg-[#ffffff] rounded-full p-3 text-black px-4'
                             RingColors={["#0a52f0, #ffffff, #ffffff, #f5e2ae, #dcd7fc"]}
                             style={{
