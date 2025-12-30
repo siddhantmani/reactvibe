@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  Motion-first React components built with Framer Motion and Tailwind CSS.  
+  Motion-first React components built with Three.js, Framer Motion and Tailwind CSS.  
   Production-ready UI sections and interactions for modern web apps.
 </p>
 
