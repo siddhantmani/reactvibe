@@ -13,7 +13,7 @@ const LinearRevealFont = Bricolage_Grotesque({
 })
 
 function TheDarkFusionCode() {
-    // 👇 Folder & File Tree
+    // Folder & File Tree
     const fileTree = {
         Components: [
             { name: "Page.tsx", path: "/Backgrounds/Dark-Fusion/Page.tsx" },
@@ -27,7 +27,6 @@ function TheDarkFusionCode() {
 
     // Fetch code when a file is selected
     useEffect(() => {
-        // toast.success('Copied!');
         if (!activeFile) return;
         fetch(activeFile.path)
             .then((res) => res.text())
@@ -156,7 +155,6 @@ function TheDarkFusionCode() {
                     </div>
                 </div>
             </motion.div>
-
         </div>
     );
 }

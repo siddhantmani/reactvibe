@@ -416,7 +416,7 @@ export default function LordStar(rawProps: Props) {
 
         animationId = requestAnimationFrame(animate);
 
-        // ------- Cleanup -------
+        // Cleanup
         return () => {
             disposed = true;
 

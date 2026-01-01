@@ -12,7 +12,6 @@ const LinearRevealFont = Bricolage_Grotesque({
     subsets: ['vietnamese']
 });
 
-
 function StratusCode() {
     const fileTree = {
         Components: [
@@ -27,7 +26,6 @@ function StratusCode() {
 
     // Fetch code when a file is selected
     useEffect(() => {
-        // toast.success('Copied!');
         if (!activeFile) return;
         fetch(activeFile.path)
             .then((res) => res.text())

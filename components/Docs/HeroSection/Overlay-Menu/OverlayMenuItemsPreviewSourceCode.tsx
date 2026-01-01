@@ -27,10 +27,9 @@ function OverlayMenuItemsPreviewSourceCode() {
     const ref = useRef<null | HTMLDivElement>(null)
     const [copied, setCopied] = useState<boolean>(false)
 
-    // copy to farmer motion
     const copyToClipboardFramerMotion = () => {
         toast.success('Copied!');
-        navigator.clipboard.writeText(' npm i react-icons').then(() => {
+        navigator.clipboard.writeText('npm i react-icons').then(() => {
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         });

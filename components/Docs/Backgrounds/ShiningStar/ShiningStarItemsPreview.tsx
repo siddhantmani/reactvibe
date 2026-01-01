@@ -168,7 +168,7 @@ export default function ShiningStarItemsPreview(
         let localBeamCount = p.BeamCount;
         let localParticleCount = p.ParticleCount;
 
-        // ------------------- Renderer (safe creation) -------------------
+        // Renderer (safe creation) 
         let renderer: THREE.WebGLRenderer;
         try {
             renderer = new THREE.WebGLRenderer({
@@ -191,7 +191,7 @@ export default function ShiningStarItemsPreview(
 
         mount.appendChild(renderer.domElement);
 
-        // ------------------ GPU auto-optimization ----------------------
+        // GPU auto-optimization 
         const gl = renderer.getContext();
         const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
 
@@ -216,7 +216,7 @@ export default function ShiningStarItemsPreview(
             }
         }
 
-        // ------------------ Scene + Camera ------------------------------
+        // Scene + Camera 
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(p.SceneBackgroundColor);
 
@@ -232,7 +232,7 @@ export default function ShiningStarItemsPreview(
             p.CameraPositionZ
         );
 
-        // ------------------ Composer + Bloom ---------------------------
+        // Composer + Bloom 
         const composer = new EffectComposer(renderer);
         composer.addPass(new RenderPass(scene, camera));
 
@@ -244,7 +244,7 @@ export default function ShiningStarItemsPreview(
         );
         composer.addPass(bloomPass);
 
-        // --- tracking for proper disposal
+        // tracking for proper disposal
         const objects: THREE.Object3D[] = [];
         const geometries: THREE.BufferGeometry[] = [];
         const materials: THREE.Material[] = [];
@@ -276,7 +276,7 @@ export default function ShiningStarItemsPreview(
             return tex;
         };
 
-        // ---------------------- Beam System ----------------------------
+        // Beam System 
         const beamUniforms = {
             uTime: { value: 0 },
             uColorCore: { value: new THREE.Color(p.BeamColorCore) },
@@ -395,7 +395,7 @@ export default function ShiningStarItemsPreview(
             objects.push(mesh);
         }
 
-        // ---------------------- Pool -----------------------------------
+        // Pool 
         const poolTex = makeCircleTexture(
             256,
             p.PoolInnerColor,
@@ -419,7 +419,7 @@ export default function ShiningStarItemsPreview(
         scene.add(pool);
         objects.push(pool);
 
-        // ---------------------- Particles ------------------------------
+        // Particles 
         const particlesGeo = new THREE.BufferGeometry();
         const pos = new Float32Array(localParticleCount * 3);
 
@@ -457,7 +457,7 @@ export default function ShiningStarItemsPreview(
         scene.add(particles);
         objects.push(particles);
 
-        // ---------------------- Animation Loop -------------------------
+        // Animation Loop 
         const clock = new THREE.Clock();
         let rafId = 0;
 
@@ -493,7 +493,7 @@ export default function ShiningStarItemsPreview(
         isRunningRef.current = true;
         rafId = requestAnimationFrame(animate);
 
-        // ---------------------- Resize --------------------------------
+        // Resize 
         const handleResize = () => {
             const el = mountRef.current;
             if (!el) return;
@@ -525,7 +525,7 @@ export default function ShiningStarItemsPreview(
             false
         );
 
-        // ---------------------- Cleanup --------------------------------
+        // Cleanup 
         return () => {
             cancelAnimationFrame(rafId);
             window.removeEventListener("resize", handleResize);

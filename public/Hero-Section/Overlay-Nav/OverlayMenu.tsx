@@ -22,7 +22,6 @@ const socialIcons = [
 export default function OverlayMenu() {
     const [open, setOpen] = useState(false);
 
-
     const menuItems = [
         { subMenu: 'Home', subMenu_key: 'homePage', link: '/' },
         { subMenu: 'Platforms', subMenu_key: 'platForms', link: '/platforms' },

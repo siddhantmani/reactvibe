@@ -88,7 +88,6 @@ function Page() {
                         text="From Our Community"
                         className={`${logoFont.className} xl:text-[17px] text-[#454B57]`}
                     />
-                    {/* <h1 ></h1> */}
                 </div>
             </motion.div>
             <motion.div

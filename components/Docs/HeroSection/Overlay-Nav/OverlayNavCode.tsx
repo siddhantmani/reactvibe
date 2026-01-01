@@ -4,7 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 import { Manrope } from 'next/font/google';
-// import NavbarCTA from './NavbarCTA';
 import OrbitBorderGlobalPreview from '@/components/Docs/Components/Orbit-Border/OrbitBorderGlobalPreview';
 
 const logoFont = Manrope({

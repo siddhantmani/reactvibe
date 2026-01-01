@@ -4,7 +4,6 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import React, { useEffect } from "react";
 
 function WaveCTAPreview() {
-    // 🔥 Rotating border setup (same as Footer / NavbarCTA)
     const angle = useMotionValue(0);
     const animatedBorder = useTransform(
         angle,
@@ -34,7 +33,7 @@ function WaveCTAPreview() {
                 {/* FIXED container */}
                 <div className="relative flex items-center justify-center w-[800px] h-[200px] ">
 
-                    {/* --- SVG ANIMATIONS (untouched) --- */}
+                    {/* SVG ANIMATIONS (untouched)  */}
                     <svg
                         viewBox="0 0 800 400"
                         className="absolute inset-0 w-full h-full"
@@ -162,7 +161,7 @@ function WaveCTAPreview() {
                         </motion.circle>
                     </svg>
 
-                    {/* --- BUTTON WITH ROTATING BORDER --- */}
+                    {/* BUTTON WITH ROTATING BORDER */}
                     <div className="relative z-10 flex items-center justify-center">
                         {/* Rotating border wrapper */}
                         <motion.div

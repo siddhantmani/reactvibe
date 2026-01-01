@@ -8,12 +8,12 @@ import { toast } from "sonner";
 import LinearReveal from "@/components/LinearReveal";
 
 const OrbitFontFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700', 
     subsets: ['vietnamese']
 });
 
 function MotionSwitchOpenCode() {
-    // 👇 Folder & File Tree
+    // Folder & File Tree
     const fileTree = {
         Components: [
             { name: "Page.tsx", path: "/Components/Motion-Switch/Page.tsx" },
@@ -27,7 +27,6 @@ function MotionSwitchOpenCode() {
 
     // Fetch code when a file is selected
     useEffect(() => {
-        // toast.success('Copied!');
         if (!activeFile) return;
         fetch(activeFile.path)
             .then((res) => res.text())

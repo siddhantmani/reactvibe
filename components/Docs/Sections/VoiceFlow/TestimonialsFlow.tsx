@@ -20,7 +20,6 @@ type TestimonialsProps = {
     showDots?: boolean
 }
 
-// Fixed: Removed 'key' from the props since it should not be spread
 function TestimonialCard({ review, image, name, work }: Omit<ReviewItem, 'key'>) {
     return (
         <div className="flex flex-col gap-4 space-y-8">

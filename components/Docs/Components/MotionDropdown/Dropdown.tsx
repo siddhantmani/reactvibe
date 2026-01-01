@@ -207,7 +207,6 @@ export function DropdownItem({
 
     const handleMouseEnter = () => {
         if (interaction === "keyboard") {
-            // When mouse enters after keyboard interaction, switch to mouse mode
             setInteraction("mouse")
             setActiveIndex(-1)
         }

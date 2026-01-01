@@ -36,9 +36,7 @@ function GradientHaloItem() {
 
                     // Renderer
                     RendererAntialias={true}
-                    RendererPowerPreference="default"
-                    // RendererPowerPreference="high-performance"
-                    // RendererPowerPreference="low-power"
+                    RendererPowerPreference="high-performance"
 
                     RendererSetPixelRatio={2}
 
@@ -71,8 +69,6 @@ function GradientHaloItem() {
                     CubeRotationX={0.001}
                     CubeRotationY={0.001}
                 />
-
-
             </div>
             <div>
                 <TablePorpsForGradientHaloPreview />

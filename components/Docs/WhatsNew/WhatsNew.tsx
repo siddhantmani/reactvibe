@@ -46,7 +46,7 @@ const LiquidGlassMicro: React.FC = () => {
 
 function WhatsNew() {
     return (
-        <Link href="/docs/components/orbit-border">
+        <Link href="/docs/backgrounds/shining-star">
             <div
                 className="
                     relative flex items-center space-x-5
@@ -54,6 +54,7 @@ function WhatsNew() {
                     p-3 px-3 xl:scale-[85%] scale-[63%]
                     cursor-pointer overflow-hidden
                     backdrop-blur-xl bg-white/5
+                    hover:scale-90 transition-transform duration-150 ease-in-out
                 "
             >
                 {/* Liquid Glass Background */}
@@ -85,7 +86,7 @@ function WhatsNew() {
                 <LinearReveal
                     className={`${NewComponent.className} text-[16px] cursor-pointer`}
                     as="label"
-                    text="Orbit Border →"
+                    text="Shining Star →"
                 />
             </div>
         </Link>

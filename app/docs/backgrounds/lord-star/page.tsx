@@ -1,6 +1,5 @@
 import RenderOnRoute from '@/components/RenderOnRoute'
 import LordStarItems from '@/components/Docs/Backgrounds/LordStar/LordStarItems'
-import React from 'react'
 
 function LordStar() {
     return (

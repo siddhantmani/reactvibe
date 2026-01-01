@@ -36,7 +36,6 @@ function DarkFusionBestSettingOneAnimation() {
                 ShaderWaveSpeed={1.0}
                 ShaderWaveFrequency={10.0}
                 ShaderGlowIntensity={400.0}
-                      
             />
         </div>
     )

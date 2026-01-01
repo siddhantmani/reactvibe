@@ -68,7 +68,7 @@ function DarkFusionItemsPreview(props: DarkWavePropsInterface) {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [webglError, setWebglError] = useState<string | null>(null);
 
-    // “Is showcase tab active?” – used to freeze/unfreeze animation
+    // freeze/unfreeze animation
     const isActiveRef = useRef(true);
 
     // keep latest props in a ref so the WebGL effect doesn't re-init on rerender
@@ -89,7 +89,7 @@ function DarkFusionItemsPreview(props: DarkWavePropsInterface) {
         const mount = mountRef.current;
         if (!mount) return;
 
-        // clear old error (deferred to avoid setState-in-effect warning)
+        // clear old error 
         queueMicrotask(() => {
             setWebglError(null);
         });
@@ -121,7 +121,7 @@ function DarkFusionItemsPreview(props: DarkWavePropsInterface) {
 
         const p = propsRef.current;
 
-        // ---------------- GPU profiling + quality tier ----------------
+        // GPU profiling + quality tier
         const renderer = new THREE.WebGLRenderer({
             antialias: p.RendererAntialias,
         });
@@ -180,7 +180,7 @@ function DarkFusionItemsPreview(props: DarkWavePropsInterface) {
         renderer.setPixelRatio(pixelRatio);
         mount.appendChild(renderer.domElement);
 
-        // ---------------- Scene + Camera ----------------
+        //  Scene + Camera 
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(p.SceneBackgroundColor);
 
@@ -196,13 +196,13 @@ function DarkFusionItemsPreview(props: DarkWavePropsInterface) {
             p.CameraPositionZ
         );
 
-        // ---------------- Orbit Controls ----------------
+        // Orbit Controls 
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = p.OrbitEnableDamping;
         controls.enableZoom = false;
         controls.enablePan = false;
 
-        // ---------------- Shader Material ----------------
+        //  Shader Material 
         const uniforms = {
             time: { value: 0 },
             color1: { value: new THREE.Color(p.ShaderColor1) },
@@ -243,7 +243,7 @@ function DarkFusionItemsPreview(props: DarkWavePropsInterface) {
         const mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
 
-        // ---------------- Postprocessing (Bloom) ----------------
+        //  Postprocessing (Bloom) 
         const composer = new EffectComposer(renderer);
         composer.addPass(new RenderPass(scene, camera));
 
@@ -255,7 +255,7 @@ function DarkFusionItemsPreview(props: DarkWavePropsInterface) {
         );
         composer.addPass(bloomPass);
 
-        // ---------------- WebGL context lost handling ----------------
+        //  WebGL context lost handling
         const handleContextLost = (event: Event) => {
             event.preventDefault();
             queueMicrotask(() => {
@@ -271,7 +271,7 @@ function DarkFusionItemsPreview(props: DarkWavePropsInterface) {
             false
         );
 
-        // ---------------- Animation ----------------
+        // Animation 
         const clock = new THREE.Clock();
         let animationFrameId: number;
 
@@ -291,7 +291,7 @@ function DarkFusionItemsPreview(props: DarkWavePropsInterface) {
 
         animationFrameId = requestAnimationFrame(animate);
 
-        // ---------------- Resize ----------------
+        //  Resize
         const handleResize = () => {
             const el = mountRef.current;
             if (!el) return;
@@ -307,7 +307,7 @@ function DarkFusionItemsPreview(props: DarkWavePropsInterface) {
 
         window.addEventListener("resize", handleResize);
 
-        // ---------------- Cleanup ----------------
+        // Cleanup 
         return () => {
             window.removeEventListener("resize", handleResize);
             renderer.domElement.removeEventListener(

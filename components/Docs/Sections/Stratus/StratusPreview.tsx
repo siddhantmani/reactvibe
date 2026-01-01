@@ -3,13 +3,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Inter_Tight, Manrope } from "next/font/google"
-import { Plus, Minus, Heart, ShieldQuestionMark } from "lucide-react"
-
-
-const logoFont = Manrope({
-    weight: "700",
-    subsets: ["latin"],
-});
+import { Plus, Minus, ShieldQuestionMark } from "lucide-react"
 
 const heading = Inter_Tight({
     weight: "600",
@@ -175,6 +169,6 @@ export default function StratusPreview() {
                     </motion.div>
                 ))}
             </div>
-        </div >
+        </div>
     )
 }

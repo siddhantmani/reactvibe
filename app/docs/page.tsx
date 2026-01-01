@@ -50,9 +50,9 @@ function DocsPage() {
           <p className={`${LinearRevealParaFont.className} whitespace-pre-wrap`}>
             {`Motion-first React components you copy–paste. Production-ready, fully animated, and easy to drop into any project.
 
-ReactVibe isn't a traditional component library. There's no installation, no package imports, and no bundle weight to worry about.
+React Vibe isn't a traditional component library. You don't need to install React Vibe, no package imports experience, and no bundle weight to worry about.
 
-Instead, ReactVibe gives you the actual component code — clean, animation-ready, and built to integrate directly into your codebase. Copy it, paste it, customize it, ship it.`}
+Instead, React Vibe gives you the actual component code — clean, animation-ready, and built to integrate directly into your codebase. Copy it, paste it, customize it, ship it.`}
           </p>
         </div>
 
@@ -69,7 +69,7 @@ Instead, ReactVibe gives you the actual component code — clean, animation-read
 
 Animations break, styles fight you, and you end up wrapping component after component just to make layouts behave.
 
-ReactVibe solves this by removing the library entirely.
+React Vibe solves this by removing the library entirely.
 
 You get real component code — clean, readable, and yours from the start. No wrappers. No hidden logic. No “magic configuration”. Just components that fit naturally into your project.`}
           </p>
@@ -91,11 +91,11 @@ You get real component code — clean, readable, and yours from the start. No wr
           />
 
           <p className={`${LinearRevealParaFont.className} whitespace-pre-wrap`}>
-            {`ReactVibe doesn't live in NPM. There's nothing to install and nothing to configure.
+            {`React Vibe doesn't live in NPM. There's nothing to install and nothing to configure.
 
 Every component is standalone. Copy it, paste it, and you're done.
 
-If a component uses Framer Motion or Three.js, you install those directly — not ReactVibe.`}
+If a component uses Framer Motion or Three.js, you install those directly — not React Vibe.`}
           </p>
 
           {/* 2 */}
@@ -106,7 +106,7 @@ If a component uses Framer Motion or Three.js, you install those directly — no
           />
 
           <p className={`${LinearRevealParaFont.className} whitespace-pre-wrap`}>
-            {`ReactVibe doesn't force you into a framework or design system.
+            {`React Vibe doesn't force you into a framework or design system.
 
 Each component relies only on widely used tools — nothing custom, nothing proprietary, nothing that locks you in.
 
@@ -144,7 +144,7 @@ No setup hell. No fragile configs. The animations simply work.`}
           />
 
           <p className={`${LinearRevealParaFont.className} whitespace-pre-wrap`}>
-            {`You don't import ReactVibe — you own ReactVibe.
+            {`You don't import React Vibe — you own React Vibe.
 
 Since you get raw component code:
 

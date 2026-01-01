@@ -51,7 +51,6 @@ export default function Home() {
             ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
             delay: 0.8
           }}
-
         >
           <footer className=" relative top-12 flex flex-col justify-center items-center space-y-5">
             <div className={`${footerFont.className} flex items-center gap-1 capitalize py-0 text-sm`}>

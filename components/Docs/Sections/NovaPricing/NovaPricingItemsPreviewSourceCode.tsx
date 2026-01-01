@@ -39,8 +39,6 @@ function NovaPricingItemsPreviewSourceCode() {
                 <p className={`${LinearRevealFont.className} dark:text-white text-black text-sm`}>Use <Link href="/docs/text-motion/linear-reveal">
                     <span className='underline underline-offset-2'>Linear Reveal</span></Link> </p>
             </div>
-
-
         </div>
     )
 }

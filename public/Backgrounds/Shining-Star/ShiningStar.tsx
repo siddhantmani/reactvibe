@@ -78,14 +78,14 @@ export default function ShiningStar(props: ShiningStarProps) {
         const mount = mountRef.current;
         if (!mount) return;
 
-        // --- Clear previous errors ---
+        // Clear previous errors
         {
             queueMicrotask(() => {
                 setWebglError(null);
             })
         }
 
-        // --- Check WebGL support ---
+        // Check WebGL support 
         if (!canUseWebGL()) {
             queueMicrotask(() => {
                 setWebglError("WebGL is not supported on this device.");
@@ -93,7 +93,7 @@ export default function ShiningStar(props: ShiningStarProps) {
             return;
         }
 
-        // --- Container size check ---
+        // Container size check 
         let width = mount.clientWidth;
         let height = mount.clientHeight;
 
@@ -117,7 +117,7 @@ export default function ShiningStar(props: ShiningStarProps) {
         let localBeamCount = p.BeamCount;
         let localParticleCount = p.ParticleCount;
 
-        // ---------------- Renderer ----------------
+        // Renderer 
         let renderer: THREE.WebGLRenderer;
         try {
             renderer = new THREE.WebGLRenderer({
@@ -140,7 +140,7 @@ export default function ShiningStar(props: ShiningStarProps) {
 
         mount.appendChild(renderer.domElement);
 
-        // ---------------- GPU Detection ----------------
+        // GPU Detection 
         const gl = renderer.getContext();
         const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
 
@@ -160,7 +160,7 @@ export default function ShiningStar(props: ShiningStarProps) {
             }
         }
 
-        // ---------------- Scene & Camera ----------------
+        // Scene & Camera 
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(p.SceneBackgroundColor);
 
@@ -172,7 +172,7 @@ export default function ShiningStar(props: ShiningStarProps) {
         );
         camera.position.set(p.CameraPositionX, p.CameraPositionY, p.CameraPositionZ);
 
-        // ---------------- Composer ----------------
+        // Composer 
         const composer = new EffectComposer(renderer);
         composer.addPass(new RenderPass(scene, camera));
 
@@ -209,7 +209,7 @@ export default function ShiningStar(props: ShiningStarProps) {
             return tex;
         };
 
-        // ---------------- Beam Shader ----------------
+        // Beam Shader 
         const beamUniforms = {
             uTime: { value: 0 },
             uColorCore: { value: new THREE.Color(p.BeamColorCore) },
@@ -327,7 +327,7 @@ export default function ShiningStar(props: ShiningStarProps) {
             beams.push(mesh);
         }
 
-        // ---------------- Pool (Glow Circle) ----------------
+        // Pool (Glow Circle) 
         const poolTex = makeCircleTexture(256, p.PoolInnerColor, p.PoolOuterColor);
         textures.push(poolTex);
 
@@ -349,7 +349,7 @@ export default function ShiningStar(props: ShiningStarProps) {
         scene.add(pool);
         objects.push(pool);
 
-        // ---------------- Particles ----------------
+        // Particles 
         const particlesGeo = new THREE.BufferGeometry();
         const pos = new Float32Array(localParticleCount * 3);
 
@@ -385,7 +385,7 @@ export default function ShiningStar(props: ShiningStarProps) {
         scene.add(particles);
         objects.push(particles);
 
-        // ---------------- Animation ----------------
+        // Animation 
         const clock = new THREE.Clock();
         let rafId = 0;
 
@@ -412,7 +412,7 @@ export default function ShiningStar(props: ShiningStarProps) {
 
         rafId = requestAnimationFrame(animate);
 
-        // ---------------- Resize ----------------
+        // Resize 
         const handleResize = () => {
             const el = mountRef.current;
             if (!el) return;
@@ -430,7 +430,7 @@ export default function ShiningStar(props: ShiningStarProps) {
 
         window.addEventListener("resize", handleResize);
 
-        // ---------------- Cleanup ----------------
+        // Cleanup 
         const mountEl = mount; // safe reference snapshot
 
         return () => {

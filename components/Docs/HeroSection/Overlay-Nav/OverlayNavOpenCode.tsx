@@ -8,12 +8,12 @@ import LinearReveal from "@/components/LinearReveal";
 import { Bricolage_Grotesque } from "next/font/google";
 
 const LinearRevealFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700',
     subsets: ['vietnamese']
 });
 
 function OverlayNavOpenCode() {
-    // 👇 Folder & File Tree
+    // Folder & File Tree
     const fileTree = {
         Components: [
             { name: "Page.tsx", path: "/Hero-Section/Overlay-Nav/Page.tsx" },
@@ -28,7 +28,6 @@ function OverlayNavOpenCode() {
 
     // Fetch code when a file is selected
     useEffect(() => {
-        // toast.success('Copied!');
         if (!activeFile) return;
         fetch(activeFile.path)
             .then((res) => res.text())

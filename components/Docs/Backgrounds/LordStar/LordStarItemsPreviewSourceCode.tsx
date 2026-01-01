@@ -12,7 +12,6 @@ function LordStarItemsPreviewSourceCode() {
             <div>
                 <TheLordStarCode />
             </div>
-
         </div>
     )
 }

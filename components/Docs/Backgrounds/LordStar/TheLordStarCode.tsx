@@ -14,7 +14,7 @@ const LinearRevealFont = Bricolage_Grotesque({
 
 
 function TheLordStarCode() {
-    // 👇 Folder & File Tree
+    // Folder & File Tree
     const fileTree = {
         Components: [
             { name: "Page.tsx", path: "/Backgrounds/Lord-Star/Page.tsx" },
@@ -28,7 +28,6 @@ function TheLordStarCode() {
 
     // Fetch code when a file is selected
     useEffect(() => {
-        // toast.success('Copied!');
         if (!activeFile) return;
         fetch(activeFile.path)
             .then((res) => res.text())
@@ -158,7 +157,6 @@ function TheLordStarCode() {
                     </div>
                 </div>
             </motion.div>
-
         </div>
     );
 }

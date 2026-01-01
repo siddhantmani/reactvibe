@@ -175,7 +175,7 @@ export default function GradientHalo({
         renderer.setSize(width, height);
         container.appendChild(renderer.domElement);
 
-        // 🔥 Detect low-end GPU and disable heavy post-processing
+        // Detect low-end GPU and disable heavy post-processing
         const gl = renderer.getContext();
         const info = gl.getExtension("WEBGL_debug_renderer_info");
 
@@ -196,7 +196,7 @@ export default function GradientHalo({
             }
         }
 
-        // 🔥 If low-end GPU → disable bloom & rgbShift
+        // If low-end GPU → disable bloom & rgbShift
         if (isLowEndGPU) {
             console.warn("Low-end GPU detected → disabling post-processing");
         }
@@ -251,8 +251,6 @@ export default function GradientHalo({
         composer.addPass(bloomPass);
         bloomPass.resolution = new THREE.Vector2(256, 256);
 
-
-
         // RGB Shift
         const rgbShiftPass = new ShaderPass(RGBShiftShader);
         rgbShiftPass.uniforms["amount"].value = RGBShiftAmount;
@@ -296,7 +294,7 @@ export default function GradientHalo({
             renderer.dispose();
             scene.clear();
 
-            // 🧹 Remove previous canvas
+            // Remove previous canvas
             if (renderer.domElement && container.contains(renderer.domElement)) {
                 container.removeChild(renderer.domElement);
             }

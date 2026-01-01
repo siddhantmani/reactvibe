@@ -46,7 +46,7 @@ function TablePropsForDarkFusionItems() {
 
                 <TableBody>
 
-                    {/* ------------------ Scene ------------------ */}
+                    {/*  Scene */}
                     <TableRow>
                         <TableCell className={SectionLabel.className}>#Scene</TableCell>
                     </TableRow>
@@ -60,7 +60,7 @@ function TablePropsForDarkFusionItems() {
                         </TableCell>
                     </TableRow>
 
-                    {/* ------------------ Camera ------------------ */}
+                    {/*  Camera */}
                     <TableRow>
                         <TableCell className={SectionLabel.className}>#Camera</TableCell>
                     </TableRow>
@@ -119,7 +119,7 @@ function TablePropsForDarkFusionItems() {
                         </TableCell>
                     </TableRow>
 
-                    {/* ------------------ Renderer ------------------ */}
+                    {/* Renderer */}
                     <TableRow>
                         <TableCell className={SectionLabel.className}>#Renderer</TableCell>
                     </TableRow>
@@ -142,7 +142,7 @@ function TablePropsForDarkFusionItems() {
                         </TableCell>
                     </TableRow>
 
-                    {/* ------------------ Orbit Controls ------------------ */}
+                    {/* Orbit Controls */}
                     <TableRow>
                         <TableCell className={SectionLabel.className}>#Orbit Controls</TableCell>
                     </TableRow>
@@ -156,7 +156,7 @@ function TablePropsForDarkFusionItems() {
                         </TableCell>
                     </TableRow>
 
-                    {/* ------------------ Shader Colors ------------------ */}
+                    {/* Shader Colors */}
                     <TableRow>
                         <TableCell className={SectionLabel.className}>#Shader Colors</TableCell>
                     </TableRow>
@@ -179,7 +179,7 @@ function TablePropsForDarkFusionItems() {
                         </TableCell>
                     </TableRow>
 
-                    {/* ------------------ Bloom ------------------ */}
+                    {/* Bloom */}
                     <TableRow>
                         <TableCell className={SectionLabel.className}>#Bloom</TableCell>
                     </TableRow>
@@ -211,7 +211,7 @@ function TablePropsForDarkFusionItems() {
                         </TableCell>
                     </TableRow>
 
-                    {/* ------------------ Animation ------------------ */}
+                    {/* Animation */}
                     <TableRow>
                         <TableCell className={SectionLabel.className}>#Animation</TableCell>
                     </TableRow>
@@ -242,7 +242,6 @@ function TablePropsForDarkFusionItems() {
                             Glow intensity applied across the shader surface.
                         </TableCell>
                     </TableRow>
-
                 </TableBody>
             </Table>
         </div>

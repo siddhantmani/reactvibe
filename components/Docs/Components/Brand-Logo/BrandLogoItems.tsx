@@ -1,10 +1,9 @@
 import LinearReveal from '@/components/LinearReveal'
 import { Bricolage_Grotesque } from 'next/font/google';
-import React from 'react'
 import BrandLogoItemsPreview from './BrandLogoItemsPreview';
 
 const OrbitFontFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700',
     subsets: ['vietnamese']
 });
 

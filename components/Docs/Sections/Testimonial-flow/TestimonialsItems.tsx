@@ -4,7 +4,7 @@ import TestimonialsItemsPreview from './TestimonialsItemsPreview';
 import LinearReveal from '@/components/LinearReveal';
 
 const LinearRevealFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700',
     subsets: ['vietnamese']
 });
 

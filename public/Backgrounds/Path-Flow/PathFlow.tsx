@@ -40,7 +40,7 @@ function PathFlow() {
                 {/* FIXED container */}
                 <div className="relative flex items-center justify-center w-[500px] h-[500px] scale-[250%]">
 
-                    {/* --- SVG ANIMATIONS --- */}
+                    {/* SVG ANIMATIONS */}
                     <svg
                         viewBox="0 0 800 400"
                         className="absolute inset-0 w-full h-full"

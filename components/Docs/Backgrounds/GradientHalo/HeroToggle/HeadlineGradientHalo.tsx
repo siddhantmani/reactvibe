@@ -5,15 +5,15 @@ import Image from 'next/image';
 import React from 'react'
 
 const HeadlineHeading = Manrope({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700',  
     subsets: ['latin']
 });
 const TaglineMainHeading = Manrope({
-    weight: '600', // Specify the font weight if needed  
+    weight: '600', 
     subsets: ['latin']
 });
 const TaglineMainPara = Manrope({
-    weight: '400', // Specify the font weight if needed  
+    weight: '400', 
     subsets: ['latin']
 });
 
@@ -50,9 +50,6 @@ function HeadlinesGradientHalo() {
                     <h3 className={`${TaglineMainHeading.className} text-xs xl:text-sm bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent`}>AI-Powered Cryptocurrency Management</h3>
                 </div>
             </motion.div>
-            {/* <div>
-                <HeadLineAnimation />
-            </div> */}
 
             <div className='space-y-2'>
                 <motion.div
