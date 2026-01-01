@@ -11,15 +11,15 @@ import { Bricolage_Grotesque, Handlee, JetBrains_Mono } from 'next/font/google';
 import LinearReveal from '@/components/LinearReveal';
 
 const Property = JetBrains_Mono({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700', 
     subsets: ['vietnamese']
 });
 const PropertyPoint = JetBrains_Mono({
-    weight: '300', // Specify the font weight if needed  
+    weight: '300',
     subsets: ['vietnamese']
 });
 const SceneSpecify = Handlee({
-    weight: '400', // Specify the font weight if needed  
+    weight: '400', 
     subsets: ['latin']
 });
 
@@ -328,7 +328,6 @@ function TablePorpsForGradientHaloPreview() {
                             Amount to rotate the cube around the Y‑axis on each animation frame.
                         </TableCell>
                     </TableRow>
-
                 </TableBody>
             </Table>
         </div>

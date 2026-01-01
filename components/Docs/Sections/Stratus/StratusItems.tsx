@@ -5,11 +5,11 @@ import React from 'react'
 import StratusItemsPreview from './StratusItemsPreview';
 
 const LinearRevealFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700', 
     subsets: ['vietnamese']
 });
 const CreditFont = JetBrains_Mono({
-    weight: '300', // Specify the font weight if needed  
+    weight: '300',
     subsets: ['vietnamese']
 });
 function StratusItems() {

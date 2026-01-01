@@ -131,7 +131,7 @@ function PricingSection() {
                     const isPro = plan.name === "Pro"
 
                     if (isPro) {
-                        // 🔹 PRO PLAN WITH ANIMATED BORDER
+                        // PRO PLAN WITH ANIMATED BORDER
                         return (
                             <motion.div
                                 key={plan.name}
@@ -216,7 +216,7 @@ function PricingSection() {
                         )
                     }
 
-                    // 🔸 FREE & ENTERPRISE (STATIC)
+                    //  FREE & ENTERPRISE (STATIC)
                     return (
                         <motion.div
                             key={plan.name}

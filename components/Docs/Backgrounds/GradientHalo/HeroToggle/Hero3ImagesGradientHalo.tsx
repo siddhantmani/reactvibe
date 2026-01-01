@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 
 import HeroLeftIMG from "@/images/hero/HeroLeft.svg"
 import HeroCenterIMG from "@/images/hero/HeroCenter.svg"

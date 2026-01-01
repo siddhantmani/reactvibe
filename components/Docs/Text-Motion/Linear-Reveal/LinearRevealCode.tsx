@@ -8,13 +8,13 @@ import LinearReveal from "@/components/LinearReveal";
 import { Bricolage_Grotesque } from "next/font/google";
 
 const LinearRevealFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700', 
     subsets: ['vietnamese']
 });
 
 
 function LinearRevealCode() {
-    // 👇 Folder & File Tree
+    // Folder & File Tree
     const fileTree = {
         Components: [
             { name: "Page.tsx", path: "/Text-Motion/LinearReveal/Page.tsx" },

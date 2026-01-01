@@ -3,7 +3,7 @@ import { Bricolage_Grotesque } from 'next/font/google';
 import React from 'react'
 import PathFlowItemsPreview from './PathFlowItemsPreview';
 const LinearRevealFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700',
     subsets: ['vietnamese']
 });
 

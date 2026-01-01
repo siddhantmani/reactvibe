@@ -45,11 +45,9 @@ function BestSettingsForDarkFusion() {
                             </div>
                         </DrawerContent>
                     </Drawer>
-
                 </div>
             </div>
-
-        </div >
+        </div>
     )
 }
 

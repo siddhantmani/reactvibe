@@ -12,8 +12,7 @@ function GradientHaloPreviewSourceCode() {
             <div>
                 <TheHeroAnimationCode />
             </div>
-
-        </div >
+        </div>
     )
 }
 

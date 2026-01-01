@@ -25,7 +25,6 @@ function OverlayNavItemsPreviewSourceCode() {
     const ref = useRef<null | HTMLDivElement>(null)
     const [copied, setCopied] = useState<boolean>(false)
 
-    // copy to react icons
     const copyToClipboardReactIcons = () => {
         toast.success('Copied!');
         navigator.clipboard.writeText('npm i react-icons').then(() => {
@@ -34,7 +33,6 @@ function OverlayNavItemsPreviewSourceCode() {
         });
     };
 
-    // copy to lucide react
     const copyToClipboardLucideReact = () => {
         toast.success('Copied!');
         navigator.clipboard.writeText('npm i lucide-reacts').then(() => {

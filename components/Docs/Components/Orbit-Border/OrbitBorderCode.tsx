@@ -8,12 +8,12 @@ import { toast } from "sonner";
 import LinearReveal from "@/components/LinearReveal";
 
 const OrbitFontFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700', 
     subsets: ['vietnamese']
 });
 
 function OrbitBorderCode() {
-    // 👇 Folder & File Tree
+    // Folder & File Tree
     const fileTree = {
         Components: [
             { name: "Page.tsx", path: "/Components/TheOrbitBorderCode/Page.tsx" },

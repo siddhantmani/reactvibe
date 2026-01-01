@@ -61,8 +61,6 @@ function MotionDropdownItemsPreview() {
                                     Source
                                 </Tab>
                             </motion.div>
-
-
                         </div>
                         <div>
                             <RefrashContent />

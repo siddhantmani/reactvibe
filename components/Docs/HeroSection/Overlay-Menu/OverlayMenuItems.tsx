@@ -3,7 +3,7 @@ import React from 'react'
 import OverlayMenuItemsPreview from './OverlayMenuItemsPreview'
 import { Bricolage_Grotesque } from 'next/font/google';
 const LinearRevealFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700', 
     subsets: ['vietnamese']
 });
 

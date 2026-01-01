@@ -1,6 +1,5 @@
 import GradientHaloItem from '@/components/Docs/Backgrounds/GradientHalo/GradientHaloItem'
 import RenderOnRoute from '@/components/RenderOnRoute'
-import React from 'react'
 
 function GradientHalo() {
     return (

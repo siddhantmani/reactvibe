@@ -5,7 +5,7 @@ import Editor from "@monaco-editor/react";
 import { Folder, FileCode, ChevronDown } from "lucide-react";
 
 const LinearRevealFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700',
     subsets: ['vietnamese']
 });
 
@@ -14,7 +14,7 @@ import LinearReveal from "@/components/LinearReveal";
 import { toast } from "sonner";
 
 function TestimonialsCode() {
-    // 👇 Folder & File Tree
+    // Folder & File Tree
     const fileTree = {
         Components: [
             { name: "Page.tsx", path: "/Sections/Testimonial-Flow/Page.tsx" },
@@ -30,7 +30,6 @@ function TestimonialsCode() {
 
     // Fetch code when a file is selected
     useEffect(() => {
-        // toast.success('Copied!');
         if (!activeFile) return;
         fetch(activeFile.path)
             .then((res) => res.text())

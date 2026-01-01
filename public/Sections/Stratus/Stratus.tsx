@@ -10,8 +10,6 @@ const heading = Inter_Tight({
     subsets: ["latin"],
 });
 
-
-
 const tagLine = Manrope({ weight: "600", subsets: ["latin"] })
 const minitagline = Manrope({ weight: "400", subsets: ["latin"] })
 

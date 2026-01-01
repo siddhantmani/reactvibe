@@ -14,9 +14,7 @@ import MountWhenActive from "@/components/MountWhenActive";
 import GradientHaloToggleContent from "../GradientHalo/HeroToggle/GradientHaloToggleContent";
 import { motion } from "framer-motion";
 
-/* ----------------------------------------------
-   Helpers
----------------------------------------------- */
+/* Helpers*/
 
 function canUseWebGL(): boolean {
     try {
@@ -30,9 +28,7 @@ function canUseWebGL(): boolean {
     }
 }
 
-/* ----------------------------------------------
-   Types
----------------------------------------------- */
+/* Types */
 
 interface Props {
     SceneBackgroundColor: string;
@@ -93,9 +89,7 @@ interface ThreeRef {
     animationId: number | null;
 }
 
-/* ----------------------------------------------
-   Component
----------------------------------------------- */
+/* Component */
 
 export default function LordStarItemsPreview(props: Props) {
     const mountRef = useRef<HTMLDivElement>(null);
@@ -118,9 +112,7 @@ export default function LordStarItemsPreview(props: Props) {
     // global play/pause flag (tab + visibility)
     const isRunningRef = useRef(true);
 
-    /* ----------------------------------------------
-       INIT — runs ONCE
-    ---------------------------------------------- */
+    /* INIT — runs ONCE*/
     useEffect(() => {
         const mount = mountRef.current;
         if (!mount) return;
@@ -425,9 +417,7 @@ export default function LordStarItemsPreview(props: Props) {
         };
     }, [props]);
 
-    /* ----------------------------------------------
-       Pause / resume on tab + visibility
-    ---------------------------------------------- */
+    /* Pause / resume on tab + visibility */
     useEffect(() => {
         const handleVisibility = () => {
             isRunningRef.current = !document.hidden && selectedIndex === 0;
@@ -449,9 +439,7 @@ export default function LordStarItemsPreview(props: Props) {
         );
     }
 
-    /* ----------------------------------------------
-       UI
-    ---------------------------------------------- */
+    // UI 
     return (
         <div className="overflow-hidden">
             <div className="relative">

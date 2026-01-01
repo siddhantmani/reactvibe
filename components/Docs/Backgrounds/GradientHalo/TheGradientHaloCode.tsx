@@ -14,7 +14,7 @@ const LinearRevealFont = Bricolage_Grotesque({
 
 
 function TheGradientHaloCode() {
-    // 👇 Folder & File Tree
+    // Folder & File Tree
     const fileTree = {
         Components: [
             { name: "Page.tsx", path: "/Backgrounds/Gradient-Halo/Page.tsx" },
@@ -28,7 +28,6 @@ function TheGradientHaloCode() {
 
     // Fetch code when a file is selected
     useEffect(() => {
-        // toast.success('Copied!');
         if (!activeFile) return;
         fetch(activeFile.path)
             .then((res) => res.text())

@@ -13,7 +13,7 @@ const LinearRevealFont = Bricolage_Grotesque({
 });
 
 function OverlayMenuOpenCode() {
-    // 👇 Folder & File Tree
+    // Folder & File Tree
     const fileTree = {
         Components: [
             { name: "Page.tsx", path: "/Hero-Section/Overlay-Menu/Page.tsx" },
@@ -27,7 +27,6 @@ function OverlayMenuOpenCode() {
 
     // Fetch code when a file is selected
     useEffect(() => {
-        // toast.success('Copied!');
         if (!activeFile) return;
         fetch(activeFile.path)
             .then((res) => res.text())

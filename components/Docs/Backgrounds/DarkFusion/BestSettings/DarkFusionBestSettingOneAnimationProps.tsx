@@ -6,7 +6,6 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
-// import HeroSection from "../HeroSection";
 
 interface DarkFusionBestSettingOneAnimationPropsInterface {
     // Scene
@@ -85,10 +84,10 @@ export default function DarkFusionBestSettingOneAnimationProps({
 
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = OrbitEnableDamping;
-        controls.enableZoom = false; // 👈 Prevent zooming on scroll
+        controls.enableZoom = false; //  Prevent zooming on scroll
         controls.enablePan = false;  // (optional) lock camera position
 
-        // === Shader Material ===
+        // Shader Material
         const uniforms = {
             time: { value: 0 },
             color1: { value: new THREE.Color(ShaderColor1) },
@@ -128,7 +127,7 @@ export default function DarkFusionBestSettingOneAnimationProps({
         const mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
 
-        // === Bloom ===
+        // Bloom 
         const composer = new EffectComposer(renderer);
         composer.addPass(new RenderPass(scene, camera));
 
@@ -159,7 +158,6 @@ export default function DarkFusionBestSettingOneAnimationProps({
         };
         window.addEventListener("resize", handleResize);
 
-        // ✅ CLEANUP
         return () => {
             window.removeEventListener("resize", handleResize);
             cancelAnimationFrame(animationFrameId);
@@ -169,7 +167,7 @@ export default function DarkFusionBestSettingOneAnimationProps({
             renderer.dispose();
             composer.dispose();
 
-            // 🧹 Remove previous canvas
+            // Remove previous canvas
             if (renderer.domElement && mount.contains(renderer.domElement)) {
                 mount.removeChild(renderer.domElement);
             }

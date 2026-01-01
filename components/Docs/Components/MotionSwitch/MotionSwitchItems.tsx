@@ -4,7 +4,7 @@ import React from 'react'
 import MotionSwitchItemsPreview from './MotionSwitchItemsPreview';
 
 const OrbitFontFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700',
     subsets: ['vietnamese']
 });
 
