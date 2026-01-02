@@ -38,7 +38,6 @@ function DocsPage() {
           delay: 0.2
         }}
       >
-
         {/* INTRO */}
         <div>
           <LinearReveal
@@ -55,7 +54,22 @@ React Vibe isn't a traditional component library. You don't need to install Reac
 Instead, React Vibe gives you the actual component code — clean, animation-ready, and built to integrate directly into your codebase. Copy it, paste it, customize it, ship it.`}
           </p>
         </div>
+      </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+          margin: "50px"
+        }}
+        transition={{
+          duration: 1.2,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          delay: 0.2
+        }}
+      >
         {/* WHY IT EXISTS */}
         <div>
           <LinearReveal
@@ -74,7 +88,22 @@ React Vibe solves this by removing the library entirely.
 You get real component code — clean, readable, and yours from the start. No wrappers. No hidden logic. No “magic configuration”. Just components that fit naturally into your project.`}
           </p>
         </div>
+      </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+          margin: "50px"
+        }}
+        transition={{
+          duration: 1.2,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          delay: 0.2
+        }}
+      >
         {/* CORE PRINCIPLES */}
         <div>
           <LinearReveal
@@ -84,11 +113,7 @@ You get real component code — clean, readable, and yours from the start. No wr
           />
 
           {/* 1 */}
-          <LinearReveal
-            as={'h3'}
-            className={`${LinearRevealSubHeadingFont.className} text-xl py-3 pt-5 text-[#aaa]`}
-            text='1. No Installation'
-          />
+          <h3 className={`${LinearRevealSubHeadingFont.className} text-xl py-3 pt-5 text-[#aaa]`}>1. No Installation</h3>
 
           <p className={`${LinearRevealParaFont.className} whitespace-pre-wrap`}>
             {`React Vibe doesn't live in NPM. There's nothing to install and nothing to configure.
@@ -99,11 +124,7 @@ If a component uses Framer Motion or Three.js, you install those directly — no
           </p>
 
           {/* 2 */}
-          <LinearReveal
-            as={'h3'}
-            className={`${LinearRevealSubHeadingFont.className} text-xl py-3 pt-5 text-[#aaa]`}
-            text='2. Minimal, Honest Dependencies'
-          />
+          <h3 className={`${LinearRevealSubHeadingFont.className} text-xl py-3 pt-5 text-[#aaa]`}>2. Minimal, Honest Dependencies</h3>
 
           <p className={`${LinearRevealParaFont.className} whitespace-pre-wrap`}>
             {`React Vibe doesn't force you into a framework or design system.
@@ -113,14 +134,25 @@ Each component relies only on widely used tools — nothing custom, nothing prop
 No bloat. No unexpected abstractions. Just real React components.`}
           </p>
         </div>
+      </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+          margin: "50px"
+        }}
+        transition={{
+          duration: 1.2,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          delay: 0.2
+        }}
+      >
         {/* 3 Motion-First */}
         <div>
-          <LinearReveal
-            as={'h3'}
-            className={`${LinearRevealSubHeadingFont.className} text-xl py-3 pt-5 text-[#aaa]`}
-            text='3. Motion-First Design'
-          />
+          <h3 className={`${LinearRevealSubHeadingFont.className} text-xl py-3 pt-5 text-[#aaa]`}>3. Motion-First Design</h3>
 
           <p className={`${LinearRevealParaFont.className} whitespace-pre-wrap`}>
             {`Every component is built around animation and interaction:
@@ -134,14 +166,25 @@ No bloat. No unexpected abstractions. Just real React components.`}
 No setup hell. No fragile configs. The animations simply work.`}
           </p>
         </div>
+      </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+          margin: "50px"
+        }}
+        transition={{
+          duration: 1.2,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          delay: 0.2
+        }}
+      >
         {/* 4 Own the Code */}
         <div>
-          <LinearReveal
-            as={'h3'}
-            className={`${LinearRevealSubHeadingFont.className} text-xl py-3 pt-5 text-[#aaa]`}
-            text='4. You Own the Code'
-          />
+          <h3 className={`${LinearRevealSubHeadingFont.className} text-xl py-3 pt-5 text-[#aaa]`}>4. You Own the Code</h3>
 
           <p className={`${LinearRevealParaFont.className} whitespace-pre-wrap`}>
             {`You don't import React Vibe — you own React Vibe.
@@ -156,14 +199,25 @@ Since you get raw component code:
 It's the opposite of a black-box UI kit.`}
           </p>
         </div>
+      </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+          margin: "50px"
+        }}
+        transition={{
+          duration: 1.2,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          delay: 0.2
+        }}
+      >
         {/* 5 Modularity */}
         <div>
-          <LinearReveal
-            as={'h3'}
-            className={`${LinearRevealSubHeadingFont.className} text-xl py-3 pt-5 text-[#aaa]`}
-            text='5. Component-Level Modularity'
-          />
+          <h3 className={`${LinearRevealSubHeadingFont.className} text-xl py-3 pt-5 text-[#aaa]`}>5. Component-Level Modularity</h3>
 
           <p className={`${LinearRevealParaFont.className} whitespace-pre-wrap`}>
             {`Pick only what you need:
@@ -176,7 +230,22 @@ It's the opposite of a black-box UI kit.`}
 No bundles. No tree-shaking fights. Just focused components that stay under your control.`}
           </p>
         </div>
+      </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+          margin: "50px"
+        }}
+        transition={{
+          duration: 1.2,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          delay: 0.2
+        }}
+      >
         {/* IN SHORT */}
         <div>
           <LinearReveal
@@ -189,8 +258,8 @@ No bundles. No tree-shaking fights. Just focused components that stay under your
             {`React Vibe is a collection of motion-first React components designed to be copied, pasted, customized, and shipped — without ever installing a UI library.`}
           </p>
         </div>
-
       </motion.div>
+
     </div>
   )
 }
