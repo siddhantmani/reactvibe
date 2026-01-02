@@ -3,7 +3,6 @@
 import { sidebarConfig } from "@/lib/sidebar";
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub } from "../ui/sidebar";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
-import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import PingtoNew from "./WhatsNew/PingtoNew";
 import { JetBrains_Mono } from "next/font/google";
@@ -83,22 +82,6 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                                             />
                                         </span>
                                     </motion.div>
-                                    {/* <motion.div
-                                        initial={{ opacity: 0, filter: "blur(8px)" }}
-                                        whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                                        viewport={{
-                                            once: true,
-                                            amount: 0.2, // Trigger when 20% visible
-                                            margin: "50px"
-                                        }}
-                                        transition={{
-                                            duration: 1.2,
-                                            ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                                            delay: 0.2
-                                        }}
-                                    >
-                                        <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90 h-5 w-5" />
-                                    </motion.div> */}
                                 </SidebarMenuButton>
                             </CollapsibleTrigger>
 

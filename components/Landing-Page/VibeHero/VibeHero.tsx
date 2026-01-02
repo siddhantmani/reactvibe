@@ -19,8 +19,8 @@ import WhatsNew from "@/components/Docs/WhatsNew/WhatsNew";
 function VibeHero() {
     return (
 
-        <div className="flex flex-col justify-center items-center xl:space-y-12 space-y-14 overflow-hidden">
-            <div className="relative xl:top-8 top-14">
+        <div className="flex flex-col justify-center items-center xl:space-y-12 overflow-hidden">
+            <div className="relative xl:top-8 top-0">
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -85,8 +85,8 @@ function VibeHero() {
                     }}
 
                 >
-                    <h2 className={`${HeroSubHeading.className} text-center capitalize`}>
-                        Production-Ready Motion Components. Copy, Paste, Ship.
+                    <h2 className={`${HeroSubHeading.className} text-center capitalize px-20`}>
+                        Production-Ready Motion Components. <br /> Copy, Paste, Ship.
                     </h2>
                 </motion.div>
                 <motion.div
