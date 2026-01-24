@@ -8,6 +8,9 @@ import RefrashContent from '../../RefrashContent';
 import { useRef, useState } from 'react';
 import PathFlowPreview from './PathFlowPreview';
 import PathFlowPreviewSourceCode from './PathFlowPreviewSourceCode';
+import Separator from '../../Separator';
+import { CgLivePhoto } from "react-icons/cg";
+import Link from 'next/link';
 
 function PathFlowItemsPreview() {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -58,6 +61,34 @@ function PathFlowItemsPreview() {
                                     Source
                                 </Tab>
                             </motion.div>
+                            <Separator
+                                direction='vertical'
+                                className='bg-black/15 dark:bg-white/15 w-full'
+                            />
+                            <Link href="https://subsence.vercel.app/" target='_blank'>
+                                <motion.div
+                                    initial={{ opacity: 0, filter: "blur(8px)" }}
+                                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                                    exit={{ opacity: 0 }}
+                                    viewport={{
+                                        once: true,
+                                        amount: 0.2, // Trigger when 20% visible
+                                        margin: "50px"
+                                    }}
+                                    transition={{
+                                        duration: 1.2,
+                                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                                        delay: 0.3
+                                    }}
+                                >
+
+                                    <div className="h-full gap-2 flex items-center px-2 py-1 cursor-pointer w-full text-sm border border-dashed border-gray-400 bg-[#eeeeee] dark:bg-[#171616] rounded-md outline-none whitespace-nowrap">
+                                        <CgLivePhoto />
+                                        Live preview
+                                    </div>
+                                </motion.div>
+                            </Link>
+
                         </div>
                         <div>
                             <RefrashContent />
