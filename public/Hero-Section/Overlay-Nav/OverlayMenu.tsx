@@ -1,4 +1,4 @@
-"use client";
+c"use client";
 import { Manrope } from "next/font/google";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -52,7 +52,7 @@ export default function OverlayMenu() {
                         <div className="flex-1 bg-black">
                             {/* Header */}
                             <div className="flex justify-between text-white bg-black">
-                                <h1 className={`${CTAButton.className} text-2xl`}>CryptoFi</h1>
+                                <h1 className={`${CTAButton.className} text-2xl`}>React Vibe</h1>
 
                                 <motion.div
                                     onClick={() => setOpen(false)}
