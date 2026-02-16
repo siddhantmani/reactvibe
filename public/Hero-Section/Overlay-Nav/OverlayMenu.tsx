@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaInstagram, FaLinkedinIn, FaThreads, FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
-import LinearReveal from "@/public/Text-Motion/LinearReveal/LinearReveal";
+import LinearReveal from "@/components/LinearReveal";
 
 const CTAButton = Manrope({
     weight: "500",
@@ -31,12 +31,12 @@ export default function OverlayMenu() {
     ];
 
     return (
-        <div className="">
+        <div className=" bg-black">
             {/* Top Bar */}
-            <div hidden={open} className="flex justify-between px-5 p-3 z-50 ">
-                <h1 className={`${CTAButton.className} text-2xl  text-black`}>Overlay Menu</h1>
-                <button onClick={() => setOpen(!open)} className=" text-black">
-                    {open ? <X /> : <Menu />}
+            <div className={`flex justify-between px-5 p-3 z-50  ${open ? 'hidden' : ''}`}>
+                <h1 className={`${CTAButton.className} text-2xl text-white`}>React Vibe</h1>
+                <button onClick={() => setOpen(!open)} className="text-white">
+                    <Menu />
                 </button>
             </div>
 
@@ -47,12 +47,12 @@ export default function OverlayMenu() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="flex flex-col justify-between z-40 p-5 rounded-xl"
+                        className="fixed inset-0 flex flex-col h-screen w-screen justify-between z-50 p-5 bg-black"
                     >
-                        <div className="h-full flex-1">
+                        <div className="flex-1 bg-black">
                             {/* Header */}
-                            <div className="flex justify-between text-black">
-                                <h1 className={`${CTAButton.className} text-2xl`}>Overlay Menu</h1>
+                            <div className="flex justify-between text-white bg-black">
+                                <h1 className={`${CTAButton.className} text-2xl`}>CryptoFi</h1>
 
                                 <motion.div
                                     onClick={() => setOpen(false)}
@@ -98,26 +98,25 @@ export default function OverlayMenu() {
                                             <Link href={item.link}>
                                                 <LinearReveal
                                                     text={item.subMenu}
-                                                    className="text-[35px] text-black"
+                                                    className="text-[35px] text-white"
                                                 />
                                             </Link>
                                         </div>
                                     </motion.div>
                                 ))}
-
                             </motion.div>
                         </div>
 
                         {/* Social icons */}
-                        <div className="w-full absolute bottom-4">
-                            <h1 className={`${CTAButton.className} text-2xl text-black`}>Social proof</h1>
+                        <div className="w-full pb-4 bg-black">
+                            <h1 className={`${CTAButton.className} text-2xl text-white`}>Social proof</h1>
                             <motion.div
-                                className="flex space-x-4 mt-6 "
+                                className="flex space-x-4 mt-6"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                             >
                                 {socialIcons.map((icon, idx) => (
-                                    <div key={idx} className="text-black">
+                                    <div key={idx} className="text-white">
                                         {icon}
                                     </div>
                                 ))}
