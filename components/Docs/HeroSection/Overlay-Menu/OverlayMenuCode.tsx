@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaInstagram, FaLinkedinIn, FaThreads, FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
-import AnimatedText from "@/components/LinearReveal";
+import LinearReveal from "@/components/LinearReveal";
 
 const CTAButton = Manrope({
     weight: "500",
@@ -13,15 +13,14 @@ const CTAButton = Manrope({
 });
 
 const socialIcons = [
-    <FaXTwitter key="s1" size={45} />,
-    <FaThreads key="s2" size={45} />,
-    <FaInstagram key="s3" size={45} />,
-    <FaLinkedinIn key="s4" size={45} />,
+    <FaXTwitter key="s1" size={50} />,
+    <FaThreads key="s2" size={50} />,
+    <FaInstagram key="s3" size={50} />,
+    <FaLinkedinIn key="s4" size={50} />,
 ];
 
 export default function OverlayMenuCode() {
     const [open, setOpen] = useState(false);
-
 
     const menuItems = [
         { subMenu: 'Home', subMenu_key: 'homePage', link: '/' },
@@ -32,12 +31,12 @@ export default function OverlayMenuCode() {
     ];
 
     return (
-        <div className="relative ">
+        <div className=" bg-black">
             {/* Top Bar */}
-            <div hidden={open} className="flex justify-between px-5 p-3 z-50 ">
-                <h1 className={`${CTAButton.className} text-2xl  text-black`}>Overlay Menu</h1>
-                <button onClick={() => setOpen(!open)} className=" text-black">
-                    {open ? <X /> : <Menu />}
+            <div className={`flex justify-between px-5 p-3 z-50  ${open ? 'hidden' : ''}`}>
+                <h1 className={`${CTAButton.className} text-2xl text-white`}>React Vibe</h1>
+                <button onClick={() => setOpen(!open)} className="text-white">
+                    <Menu />
                 </button>
             </div>
 
@@ -48,12 +47,12 @@ export default function OverlayMenuCode() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="flex flex-col justify-between xl:h-[650px] lg:h-[550px] md:h-[550px] h-[550px] z-40 p-5 rounded-xl"
+                        className="fixed inset-0 flex flex-col justify-between z-50 p-5 bg-black"
                     >
-                        <div className="h-full flex-1">
+                        <div className="flex-1 bg-black">
                             {/* Header */}
-                            <div className="flex justify-between text-black">
-                                <h1 className={`${CTAButton.className} text-2xl`}>Overlay Menu</h1>
+                            <div className="flex justify-between text-white bg-black">
+                                <h1 className={`${CTAButton.className} text-2xl`}>CryptoFi</h1>
 
                                 <motion.div
                                     onClick={() => setOpen(false)}
@@ -97,28 +96,27 @@ export default function OverlayMenuCode() {
                                     >
                                         <div aria-label={item.subMenu_key}>
                                             <Link href={item.link}>
-                                                <AnimatedText
+                                                <LinearReveal
                                                     text={item.subMenu}
-                                                    className="text-[27px] text-black"
+                                                    className="text-[35px] text-white"
                                                 />
                                             </Link>
                                         </div>
                                     </motion.div>
                                 ))}
-
                             </motion.div>
                         </div>
 
                         {/* Social icons */}
-                        <div>
-                            <h1 className={`${CTAButton.className} text-2xl text-black`}>Social proof</h1>
+                        <div className="w-full pb-4 bg-black">
+                            <h1 className={`${CTAButton.className} text-2xl text-white`}>Social proof</h1>
                             <motion.div
-                                className="flex space-x-4 mt-6 "
+                                className="flex space-x-4 mt-6"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                             >
                                 {socialIcons.map((icon, idx) => (
-                                    <div key={idx} className="text-black">
+                                    <div key={idx} className="text-white">
                                         {icon}
                                     </div>
                                 ))}
