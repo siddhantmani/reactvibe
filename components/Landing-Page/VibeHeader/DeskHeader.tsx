@@ -25,7 +25,7 @@ function DeskHeader() {
     ]
 
     return (
-        <div className='max-w-7xl mx-auto xl:py-10 py-5 px-2 md:px-5'>
+        <div className='max-w-7xl mx-auto xl:py-5 py-5 px-2 md:px-5'>
             <div className='flex items-center justify-between'>
                 <div className='flex items-center xl:gap-10 md:gap-5'>
                     <div className='flex items-center gap-3'>

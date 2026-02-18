@@ -1,4 +1,5 @@
 "use client";
+
 import { Manrope } from "next/font/google";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
