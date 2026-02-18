@@ -52,7 +52,7 @@ export default function Home() {
             delay: 0.8
           }}
         >
-          <footer className=" relative top-12 flex flex-col justify-center items-center space-y-5">
+          <footer className="relative top-12 flex flex-col justify-center items-center space-y-5">
             <div className={`${footerFont.className} flex items-center gap-1 capitalize py-0 text-sm`}>
               <h1>Created by</h1>
               <div>

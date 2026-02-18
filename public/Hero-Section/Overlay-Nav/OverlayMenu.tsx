@@ -1,4 +1,5 @@
 "use client";
+
 import { Manrope } from "next/font/google";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -109,7 +110,7 @@ export default function OverlayMenu() {
 
                         {/* Social icons */}
                         <div className="w-full pb-4 bg-black">
-                            <h1 className={`${CTAButton.className} text-2xl text-white`}>Social proof</h1>
+                            <h1 className={`${CTAButton.className} text-2xl text-white`}>Social Proof</h1>
                             <motion.div
                                 className="flex space-x-4 mt-6"
                                 initial={{ opacity: 0 }}
