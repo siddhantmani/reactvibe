@@ -23,6 +23,11 @@ export const sidebarConfig = [
         title: "Sections",
         base: "/docs/sections/",
         items: [
+            { name: "Prime", slug: "prime", createdAt: "2026-3-28" },
+            { name: "Signature", slug: "signature", createdAt: "2026-3-28" },
+            { name: "Resolve", slug: "resolve", createdAt: "2026-3-28" },
+            { name: "Zenith", slug: "zenith", createdAt: "2026-3-28" },
+            { name: "Spotlight", slug: "spotlight", createdAt: "2026-3-28" },
             { name: "Aurora Pricing", slug: "aurora-pricing", createdAt: "2026-1-1" },
             { name: "Testimonial Flow", slug: "testimonial-flow", createdAt: "2026-1-1" },
             { name: "Flux CTA", slug: "flux-cta", createdAt: "2026-1-1" },

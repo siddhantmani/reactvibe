@@ -1,6 +1,5 @@
 import GlideAccordionItems from '@/components/Docs/Sections/GlideAccordion/GlideAccordionItems'
 import RenderOnRoute from '@/components/RenderOnRoute'
-import React from 'react'
 
 function GlideAccordion() {
     return (
