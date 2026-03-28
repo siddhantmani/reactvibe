@@ -45,7 +45,6 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
-    "-": "^0.0.1",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
