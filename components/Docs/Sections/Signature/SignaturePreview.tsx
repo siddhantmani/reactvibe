@@ -379,7 +379,7 @@ function SignaturePreview() {
                                 </div>
                                 <div className="flex items-center gap-1 hover:underline hover:cursor-pointer hover:text-white">
                                     <FaRegCopyright className="text-xs text-[#EBEBEB99]" />
-                                    <p className="text-[12px] text-[#EBEBEB99] hover:text-white ">2025 React Vibe, Inc. All rights reserved.</p>
+                                    <p className="text-[12px] text-[#EBEBEB99] hover:text-white ">{new Date().getFullYear()} React Vibe, Inc. All rights reserved.</p>
                                 </div>
                             </div>
                         </div>
