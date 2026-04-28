@@ -3,8 +3,8 @@
 </p>
 
 <p align="center">
-  Motion-first React components built with Three.js, Framer Motion and Tailwind CSS.  
-  Production-ready UI sections and interactions for modern web apps.
+  A React animation library with copy-paste UI components built using Framer Motion, Three.js, and Tailwind CSS.  
+  Open source, production-ready React components for modern web apps.
 </p>
 
 <p align="center">
@@ -15,73 +15,88 @@
 
 ## 👋 About
 
-React Vibe is a **motion-first React component collection** focused on interaction quality, smooth animations, and clean UI patterns.
+React Vibe is an **open source React animation library** focused on building **animated React components**, UI sections, and interaction patterns that feel smooth and intentional.
 
-It’s built for developers who care about **how interfaces feel**, not just how they look.
+Unlike traditional React UI libraries, React Vibe gives you:
 
-No black-box abstractions.  
-No custom libraries.  
-Just well-crafted components you can drop into real projects.
+- **Copy-paste React components** (no package install)
+- Full control over code and styling
+- Clean, reusable React components built for real-world use
+
+Built for developers who care about **interaction, motion, and performance**.
 
 ---
 
 ## ⭐ Why React Vibe
 
-- **Motion-first by design** — animations are not an afterthought
-- **Copy–paste friendly** — full control over the code you ship
-- **Built on familiar tools** — Three.js + Framer Motion + Tailwind CSS
-- **Production-ready** — designed for landing pages, dashboards, and SaaS apps
-- **Easy to customize** — no hidden styling logic
+- **React animation library** — built with Framer Motion and modern animation patterns  
+- **Copy-paste React components** — no lock-in, no hidden abstractions  
+- **Production-ready React components** — ready for SaaS apps, dashboards, and landing pages  
+- **Reusable React components** — clean, extensible, and easy to modify  
+- **Tailwind React components** — fast styling with full flexibility  
+- **Open source React UI library** — free to use and customize  
 
 ---
 
-## 🧩 Categories
+## 🧩 Components & UI Categories
 
-React Vibe includes a growing set of components and sections:
+React Vibe includes a growing collection of:
 
-- Backgrounds
-- Hero Section
-- Sections
-- Components
-- Text Motion
+- **Animated React components**
+- **React UI components for websites and SaaS apps**
+- **Background animations (Three.js + motion)**
+- **Hero sections and landing page UI blocks**
+- **Pricing sections, testimonials, and CTAs**
+- **Text animation components**
 
-Each component is designed to be **self-contained, readable, and extensible**.
+Each component is designed to be:
+
+- Self-contained  
+- Easy to integrate  
+- Fully customizable  
 
 ---
 
 ## 🚀 Usage
 
-React Vibe is **not shipped as a dependency**.
+React Vibe is not a traditional React component library.
 
-You copy the component code and use it directly in your project.
+Instead of installing a package, you:
 
-This keeps:
-- Your bundle clean
-- Your codebase fully owned by you
-- No version-lock or abstraction tax
+1. Copy the component code  
+2. Paste it into your project  
+3. Customize it freely  
 
-Most components rely on:
-- **Three.js + Framer Motion** for animation
-- **Tailwind CSS** for styling
+This approach gives you:
+
+- **Full control over your React components**
+- No dependency overhead  
+- No version lock-in  
+
+Most components use:
+
+- **Framer Motion React animations**
+- **Three.js for advanced visual effects**
+- **Tailwind CSS UI styling**
 
 ---
 
 ## 🛠 Tech Stack
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Three.js
+- React  
+- Next.js  
+- TypeScript  
+- Tailwind CSS  
+- Framer Motion  
+- Three.js  
 
 ---
 
 ## ⭐ Support
 
-If React Vibe helps you build better interfaces:
+If React Vibe helps you:
 
-👉 **Star the repository** — it genuinely helps.
+👉 Star the repo — it helps this React UI library reach more developers.
 
 ---
 
@@ -89,14 +104,15 @@ If React Vibe helps you build better interfaces:
 
 Contributions are welcome.
 
-- Open an issue for bugs or ideas
-- Submit a PR for improvements or new components
+- Open issues for bugs or ideas  
+- Submit PRs for new components or improvements  
 
-Please keep contributions aligned with React Vibe’s philosophy:
-**clean code, intentional motion, real-world usability**
+Keep contributions aligned with:
+
+**Clean code · Reusable React components · High-quality animations**
 
 ---
 
 ## 📄 License
 
-MIT License.
+MIT License
