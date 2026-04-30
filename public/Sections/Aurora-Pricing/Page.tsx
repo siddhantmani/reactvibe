@@ -1,6 +1,5 @@
 "use client"
 
-import LinearReveal from "@/components/LinearReveal";
 import { motion } from "framer-motion"
 import { Manrope } from "next/font/google";
 import OrbitBorder from "@/public/Components/TheOrbitBorderCode/OrbitBorder";
@@ -52,11 +51,9 @@ function Page() {
                         Pricing
                     </OrbitBorder>
                 </motion.div>
-                <LinearReveal
-                    as={'h1'}
-                    text="Simple plans, no surprises."
-                    className={`${MainHeading.className} dark:text-white text-black text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}
-                />
+                
+                <h1 className={`${MainHeading.className} text-black text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}>Simple plans, no surprises.</h1>
+
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -72,7 +69,7 @@ function Page() {
                     }}
 
                 >
-                    <p className={`${miniPara.className} dark:text-white text-black text-sm  max-w-sm xl:text-lg xl:max-w-sm md:max-w-sm text-center`}>From Idea to Build-Ready in 3 Steps.</p>
+                    <p className={`${miniPara.className} text-black text-sm  max-w-sm xl:text-lg xl:max-w-sm md:max-w-sm text-center`}>From Idea to Build-Ready in 3 Steps.</p>
                 </motion.div>
 
             </div>

@@ -30,7 +30,7 @@ const miniPara = Manrope({
 function AuroraPricingSection({ yearly, setYearly }: { yearly: boolean; setYearly: (value: boolean) => void }) {
     return (
         <div className="flex justify-center mb-8">
-            <div className="flex items-center gap-3 py-4 dark:text-white text-black">
+            <div className="flex items-center gap-3 py-4 text-black">
                 <label>Monthly</label>
                 <label className='flex cursor-pointer select-none items-center'>
                     <div className='relative'>

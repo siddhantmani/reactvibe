@@ -3,7 +3,7 @@ import AuroraPricingCode from './AuroraPricingCode'
 
 function AuroraPricingPreview() {
     return (
-        <div>
+        <div className='scale-[85%]'>
             <AuroraPricingCode />
         </div>
     )

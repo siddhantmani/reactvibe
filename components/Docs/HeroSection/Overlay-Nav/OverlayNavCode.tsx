@@ -82,6 +82,8 @@ function OverlayNavCode() {
 
                     >
                         <OrbitBorderGlobalPreview
+                        rounded={50}
+                        padding={1}
                             className='bg-[#ffffff] rounded-full p-3 text-black px-4'
                             RingColors={["#0a52f0, #ffffff, #ffffff, #f5e2ae, #dcd7fc"]}
                             style={{

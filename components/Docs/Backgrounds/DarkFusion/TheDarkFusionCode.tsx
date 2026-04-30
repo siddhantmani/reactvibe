@@ -52,7 +52,7 @@ function TheDarkFusionCode() {
     return (
         <div>
             <AnimatedText
-                text="Steps"
+                Text="Steps"
                 className={`text-4xl mb-4 ${LinearRevealFont.className}`}
             />
 

@@ -5,12 +5,12 @@ import WaveCTACode from './WaveCTACode'
 
 function WaveCTAItemsPreviewSourceCode() {
     return (
-        <div>
+        <div className=''>
             <FramerMotionGlobalInstalation />
             <div className='py-5'>
                 <Separator direction='horizontal' className='dark:bg-white/15 bg-black/20 w-full' />
             </div>
-            <div>
+            <div className=''>
                 <WaveCTACode />
             </div>
         </div>

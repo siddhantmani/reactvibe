@@ -201,7 +201,7 @@ function NovaPricingCard() {
                                                 }}
                                             >
                                                 <LinearReveal
-                                                    text={plan.name}
+                                                    Text={plan.name}
                                                     as={'h3'}
                                                     className={`${MainHeading.className} text-lg text-[#454B57]`}
                                                 />
@@ -216,7 +216,7 @@ function NovaPricingCard() {
                                                 className={`${MainHeading.className} text-4xl mt-3 text-[#454B57]`}
                                             >
                                                 <LinearReveal
-                                                    text={plan.price}
+                                                    Text={plan.price}
                                                     as="span"
                                                 />
                                             </motion.p>
@@ -316,7 +316,7 @@ function NovaPricingCard() {
                                                             className="h-5 w-5 bg-white p-1 rounded-full fill-white" />
                                                     </span>
                                                     <LinearReveal
-                                                        text={f}
+                                                        Text={f}
                                                         as="span"
                                                         className={`${miniPara.className} text-sm text-[#454B57]`}
                                                     />
@@ -356,7 +356,7 @@ function NovaPricingCard() {
                                     }}
                                 >
                                     <LinearReveal
-                                        text={plan.name}
+                                        Text={plan.name}
                                         as={'h3'}
                                         className={`${MainHeading.className} text-lg text-[#454B57]`}
                                     />
@@ -372,7 +372,7 @@ function NovaPricingCard() {
                                     className={` ${MainHeading.className} text-3xl mt-3 text-[#454B57]`}
                                 >
                                     <LinearReveal
-                                        text={plan.price}
+                                        Text={plan.price}
                                         as="span"
                                     />
                                 </motion.p>
@@ -452,7 +452,7 @@ function NovaPricingCard() {
                                                     />
                                                 </span>
                                                 <LinearReveal
-                                                    text={f}
+                                                    Text={f}
                                                     as="span"
                                                     className={`${miniPara.className} text-sm text-[#454B57]`}
                                                 />
@@ -510,7 +510,7 @@ function NovaPricingCard() {
                                             }}
                                         >
                                             <LinearReveal
-                                                text={plan.name}
+                                                Text={plan.name}
                                                 as={'h3'}
                                                 className={`${MainHeading.className} text-lg text-[#454B57]`}
                                             />
@@ -525,7 +525,7 @@ function NovaPricingCard() {
                                             className={` ${MainHeading.className} text-3xl text-gray-900`}
                                         >
                                             <LinearReveal
-                                                text={plan.price}
+                                                Text={plan.price}
                                                 as="span"
                                             />
                                         </motion.p>
@@ -617,7 +617,7 @@ function NovaPricingCard() {
                                                     />
                                                 </span>
                                                 <LinearReveal
-                                                    text={f}
+                                                    Text={f}
                                                     as="span"
                                                     className={`${miniPara.className} text-sm text-[#454B57]`}
                                                 />

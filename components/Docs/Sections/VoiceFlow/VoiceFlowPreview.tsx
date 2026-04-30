@@ -64,7 +64,7 @@ function VoiceFlowPreview() {
         // more…
     ]
     return (
-        <div className='space-y-8'>
+        <div className='space-y-8 py-20 scale-[100%]'>
             <motion.div
                 initial={{ opacity: 0, filter: "blur(8px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
@@ -85,7 +85,7 @@ function VoiceFlowPreview() {
                     <Heart className='text-[27px] text-[#454B57]' />
                     <LinearReveal
                         as={'h1'} //You can select heading from h1-h6
-                        text="From Our Community"
+                        Text="From Our Community"
                         className={`${logoFont.className} xl:text-[17px] text-[#454B57]`}
                     />
                 </div>

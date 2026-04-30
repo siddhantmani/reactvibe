@@ -105,16 +105,10 @@ function FluxCTACode() {
             style={{ background }}
 
         >
-            {/* Heading */}
 
-            <LinearReveal
-                as={'h1'}
-                text="Flux CTA from React Vibe"
-                className={`${MainHeading.className} text-white text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}
-            />
+            <h1 className={`${MainHeading.className} text-white text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}>Flux CTA from React Vibe</h1>
 
 
-            {/* Description */}
             <motion.p
                 initial={{ opacity: 0, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -129,7 +123,6 @@ function FluxCTACode() {
                 A fully responsive CTA with live gradient transitions and auto-synced button styling.
             </motion.p>
 
-            {/* CTA Button */}
             <motion.button
                 initial={{ opacity: 0, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}

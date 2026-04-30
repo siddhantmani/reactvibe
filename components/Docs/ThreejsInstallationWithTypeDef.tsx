@@ -42,7 +42,7 @@ function ThreejsInstallationWithTypeDef() {
             <AnimatedText
                 as={'h2'}
                 className={`${LinearRevealFont.className} text-4xl`}
-                text='Installation'
+                Text='Installation'
             />
 
             <motion.div

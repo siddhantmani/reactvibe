@@ -55,7 +55,7 @@ function SeparatorItemsPreviewSourceCode() {
             <LinearReveal
                 as={"h2"}
                 className={`${LinearRevealFont.className} text-4xl pb-3 pt-7 text-black dark:text-white`}
-                text='Steps'
+                Text='Steps'
             />
 
             <motion.div

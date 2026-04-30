@@ -1,3 +1,5 @@
+"use client"
+
 import OrbitBorder from '@/public/Components/TheOrbitBorderCode/OrbitBorder';
 import { Zap } from 'lucide-react';
 import { Manrope } from 'next/font/google';
@@ -13,12 +15,30 @@ const subHeading = Manrope({
     subsets: ['latin']
 });
 
+import { motion } from "framer-motion";
+
 function ZenithPreview() {
     return (
-        <div>
-            <div className='space-y-5'>
+        <div className='bg-gradient-to-t from-[#141313] to-[#141313] py-5'>
+            <motion.div
+                initial={{ opacity: 0, filter: "blur(8px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                whileInView={{ opacity: 1 }}
+                viewport={{
+                    once: true,
+                    amount: 0.2, // Trigger when 20% visible
+                    margin: "50px"
+                }}
+                transition={{
+                    duration: 1.2,
+                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                    delay: 0.4
+                }}
+                exit={{ opacity: 0, y: -10 }}
+                className='space-y-5'>
                 <div className=' max-w-36 mx-auto'>
                     <OrbitBorder
+                        as="div"
                         rotate={0}
                         padding={1}
                         rounded={50}
@@ -59,7 +79,8 @@ function ZenithPreview() {
                     <h1 className={`${labelName.className} xl:text-4xl lg:text-4xl md:text-4xl sm:text-3xl text-2xl px-5 sm:px-0 md:px-0 opacity-90 text-center text-white`}>Flexible Pricing for Every Team</h1>
                     <p className={`${subHeading.className} mx-auto xl:text-[12px] lg:text-[16px] md:text-[15px] sm:text-[10px] text-[12px] px-2 opacity-55 text-center text-white/90 max-w-[70%] md:max-w-[60%]`}>Choose the plan that fits your workflow and scale at your own pace. No hidden fees.</p>
                 </div>
-            </div>
+            </motion.div>
+
             <div className="w-full">
                 <ZenithCode />
             </div>

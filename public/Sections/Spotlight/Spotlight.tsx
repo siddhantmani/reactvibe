@@ -88,7 +88,7 @@ function TestimonialCard({ review, image, name, work }: Omit<ReviewItem, 'key'>)
                         >
                             <LinearReveal
                                 as={'h2'}
-                                text={name}
+                                Text={name}
                                 className='text-[12px] md:text-sm text-white'
                             />
                         </motion.div>
@@ -111,7 +111,7 @@ function TestimonialCard({ review, image, name, work }: Omit<ReviewItem, 'key'>)
                         >
                             <LinearReveal
                                 as={'p'}
-                                text={work}
+                                Text={work}
                                 className='text-[8px] md:text-xs text-[#f4f4f4]'
                             />
                         </motion.div>

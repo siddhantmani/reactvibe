@@ -52,7 +52,7 @@ function GlideAccordionOpenCode() {
             <LinearReveal
                 as={"h2"}
                 className={`${LinearRevealFont.className} text-4xl`}
-                text='Steps 1'
+                Text='Step 1'
             />
 
             <motion.div

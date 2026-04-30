@@ -20,7 +20,7 @@ function PathFlowItems() {
             <LinearReveal
                 as={'h1'}
                 className={`${LinearRevealFont.className} text-5xl py-10`}
-                text='Path Flow'
+                Text='Path Flow'
             />
             <div className='border-black rounded-2xl'>
                 <PathFlowItemsPreview />

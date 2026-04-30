@@ -65,7 +65,7 @@ export default function GlideAccordioPreview({ align = "left" }: AccordianProps)
     }
 
     return (
-        <div className="space-y-20">
+        <div className="space-y-12 py-10">
             <div className='flex flex-col justify-center items-center space-y-3'>
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -83,6 +83,8 @@ export default function GlideAccordioPreview({ align = "left" }: AccordianProps)
 
                 >
                     <OrbitBorderGlobalPreview
+                        rounded={50}
+                        padding={1}
                         className='bg-[#ffffff] rounded-full p-2 text-black px-5'
                         RingColors={["#0a52f0", "#ffffff", "#ffffff", "#f5e2ae", "#dcd7fc"]}
                         style={{
@@ -108,7 +110,7 @@ export default function GlideAccordioPreview({ align = "left" }: AccordianProps)
                     transition={{
                         duration: 1.2,
                         ease: [0.25, 0.46, 0.45, 0.94],
-                        delay: 0.7
+                        delay: 0.5
                     }}
 
                 >
@@ -128,7 +130,7 @@ export default function GlideAccordioPreview({ align = "left" }: AccordianProps)
                     transition={{
                         duration: 1.2,
                         ease: [0.25, 0.46, 0.45, 0.94],
-                        delay: 0.7
+                        delay: 0.5
                     }}
 
                 >
@@ -140,7 +142,18 @@ export default function GlideAccordioPreview({ align = "left" }: AccordianProps)
                 {faqs.map((faq, i) => (
                     <motion.div
                         key={i}
-                        transition={{ layout: { duration: 1, ease: "easeInOut" } }}
+                        initial={{ opacity: 0, filter: "blur(8px)" }}
+                        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                        viewport={{
+                            once: true,
+                            amount: 0.2,
+                            margin: "50px"
+                        }}
+                        transition={{
+                            duration: 1.2,
+                            ease: [0.25, 0.46, 0.45, 0.94],
+                            delay: 0.9
+                        }}
                         className={`flex flex-col ${align === "right" ? "items-end" : "items-start"}`}
                     >
                         {/* Question bubble */}

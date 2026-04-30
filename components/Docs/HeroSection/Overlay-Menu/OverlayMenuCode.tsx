@@ -97,7 +97,7 @@ export default function OverlayMenuCode() {
                                         <div aria-label={item.subMenu_key}>
                                             <Link href={item.link}>
                                                 <LinearReveal
-                                                    text={item.subMenu}
+                                                    Text={item.subMenu}
                                                     className="text-[35px] text-white"
                                                 />
                                             </Link>

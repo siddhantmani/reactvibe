@@ -53,7 +53,7 @@ function ShadowButtonCode() {
             <LinearReveal
                 as={"h2"}
                 className={`${OrbitFontFont.className} text-4xl mb-4`}
-                text='Steps'
+                Text='Steps'
             />
 
             <motion.div

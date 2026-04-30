@@ -61,7 +61,7 @@ function SpotlightPreview() {
     ]
 
     return (
-        <div>
+        <div className="bg-gradient-to-t from-[#141313] to-[#141313] py-20">
             <div className='space-y-5'>
                 <div className=' max-w-36 mx-auto'>
                     <OrbitBorder

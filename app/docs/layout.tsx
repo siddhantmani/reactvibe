@@ -14,16 +14,6 @@ export const metadata: Metadata = {
     description:
         "Documentation for React Vibe — motion-first, fully animated React UI components. Learn how to use, customize, and ship components fast.",
 
-    keywords: [
-        "React Vibe docs",
-        "animated UI components",
-        "React animations",
-        "motion-first components",
-        "React UI documentation",
-        "ReactVibe",
-        "React UI kit docs",
-    ],
-
     metadataBase: new URL("https://reactvibe.com"),
 
     openGraph: {

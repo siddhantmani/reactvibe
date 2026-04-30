@@ -14,7 +14,7 @@ function LordStarItems() {
         <div className='mx-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-6xl lg:max-w-3xl'>
             <LinearReveal
                 as={'h1'}
-                text='Lord Star'
+                Text='Lord Star'
                 className={`${LinearRevealFont.className} text-5xl py-10`}
             />
             <div className=' border-black rounded-2xl'>

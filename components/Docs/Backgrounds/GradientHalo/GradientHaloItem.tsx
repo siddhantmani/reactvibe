@@ -15,7 +15,7 @@ function GradientHaloItem() {
         <div className='mx-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-6xl lg:max-w-3xl'>
             <LinearReveal
                 as={'h1'}
-                text='Gradient Halo'
+                Text='Gradient Halo'
                 className={`${LinearRevealFont.className} text-5xl py-10`}
             />
 

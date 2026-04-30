@@ -5,8 +5,9 @@ function Page() {
     return (
         <div>
             <LinearReveal
-                as={'h2'} //You can select heading from h1-h6
-                text='The Linear Reveal'
+                Text='The Linear Reveal'
+                as={'h1'} 
+                delay={0.2}
                 className='text-4xl'
             />
         </div>

@@ -42,7 +42,7 @@ function RadiantFrameCode() {
                             <div className="space-y-3">
                                 <LinearReveal
                                     as={'h1'}
-                                    text="Radiant Frame"
+                                    Text="Radiant Frame"
                                     className={`${MainHeading.className} text-black text-2xl font-semibold`}
                                 />
                                 <motion.div

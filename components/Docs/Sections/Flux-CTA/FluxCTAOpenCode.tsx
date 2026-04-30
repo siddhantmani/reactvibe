@@ -52,7 +52,7 @@ function FluxCTAOpenCode() {
             <LinearReveal
                 as={"h2"}
                 className={`${LinearRevealFont.className} text-4xl`}
-                text='Steps 1'
+                Text='Steps'
             />
 
             <motion.div

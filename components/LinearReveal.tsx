@@ -1,42 +1,26 @@
 "use client";
 
 import { motion, Variants, useInView } from "framer-motion";
-import React, { useRef, forwardRef } from "react";
+import React, { useRef } from "react";
 
 interface LinearRevealProps {
-    text: string;
+    Text: string;
     className?: string;
     colorClass?: string;
     delay?: number;
-    as?: React.ElementType;
+    as?: keyof React.JSX.IntrinsicElements;
+    style?: React.CSSProperties;
 }
 
-type PolymorphicProps<T extends React.ElementType> = {
-    as?: T;
-} & React.ComponentPropsWithoutRef<T>;
-
-const MotionWrapper = motion(
-    forwardRef(function Wrapper<T extends React.ElementType = "div">(
-        { as, children, ...props }: PolymorphicProps<T>,
-        ref: React.Ref<HTMLDivElement>
-    ) {
-        const Tag = as || "div";
-        return (
-            <Tag ref={ref} {...props}>
-                {children}
-            </Tag>
-        );
-    })
-);
-
 export default function LinearReveal({
-    text,
+    Text,
     className = "",
     colorClass = "",
     delay = 0,
     as: Tag = "div",
+    style,
 }: LinearRevealProps) {
-    const ref = useRef<HTMLDivElement>(null);
+    const ref = useRef<HTMLElement>(null);
     const isInView = useInView(ref, {
         once: true,
         margin: "0px 0px 0% 0px",
@@ -63,16 +47,18 @@ export default function LinearReveal({
         },
     };
 
+    const MotionTag = motion[Tag as keyof typeof motion] as typeof motion.div;
+
     return (
-        <MotionWrapper
-            as={Tag}
-            ref={ref}
+        <MotionTag
+            ref={ref as React.RefObject<HTMLDivElement>}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={container}
             className={className}
+            style={style}
         >
-            {text.split("").map((char, i) => (
+            {Text.split("").map((char, i) => (
                 <motion.span
                     key={i}
                     variants={child}
@@ -81,6 +67,6 @@ export default function LinearReveal({
                     {char === " " ? "\u00A0" : char}
                 </motion.span>
             ))}
-        </MotionWrapper>
+        </MotionTag>
     );
 }

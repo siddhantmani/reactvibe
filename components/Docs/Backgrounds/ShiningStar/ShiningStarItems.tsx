@@ -16,7 +16,7 @@ function ShiningStarItems() {
         <div className='mx-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-6xl lg:max-w-3xl'>
             <LinearReveal
                 as={'h1'}
-                text='Shining Star'
+                Text='Shining Star'
                 className={`${ShiningStarFont.className} text-5xl py-10`}
             />
             <div className=' border-black rounded-2xl'>
