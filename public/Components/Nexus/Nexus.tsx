@@ -4,12 +4,12 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { animate, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
-import zAPIERimg from "@/images/brands/zapier-1.svg";
-import SlacIMG from "@/images/brands/slac-2.svg";
-import StripeIMG from "@/images/brands/stripe-3.svg";
-import NothionIMG from "@/images/brands/nothion.svg";
-import SheetIMg from "@/images/brands/sheet.svg";
-import FinalIMG from "@/images/brands/final.svg";
+import zAPIERimg from "@/Images/brands/zapier-1.svg";
+import SlacIMG from "@/Images/brands/slac-2.svg";
+import StripeIMG from "@/Images/brands/stripe-3.svg";
+import NothionIMG from "@/Images/brands/nothion.svg";
+import SheetIMg from "@/Images/brands/sheet.svg";
+import FinalIMG from "@/Images/brands/final.svg";
 
 import { Geist } from "next/font/google";
 
