@@ -12,7 +12,7 @@ const FooterHeading = Manrope({ weight: "600", subsets: ["latin"] })
 const miniPara = Manrope({ weight: "200", subsets: ["latin"] })
 
 function SignaturePreview() {
-
+    const currentYear = new Date().getFullYear()
     const quickLinks = [
         { subMenu: 'Features', subMenu_key: 'features', link: '#' },
         { subMenu: 'Integrations', subMenu_key: 'testimonials', link: '#' },
@@ -379,7 +379,7 @@ function SignaturePreview() {
                                 </div>
                                 <div className="flex items-center gap-1 hover:underline hover:cursor-pointer hover:text-white">
                                     <FaRegCopyright className="text-xs text-[#EBEBEB99]" />
-                                    <p className="text-[12px] text-[#EBEBEB99] hover:text-white ">2025 React Vibe, Inc. All rights reserved.</p>
+                                    <p className="text-[12px] text-[#EBEBEB99] hover:text-white ">{currentYear} React Vibe, Inc. All rights reserved.</p>
                                 </div>
                             </div>
                         </div>
