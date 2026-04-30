@@ -3,11 +3,11 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-// import TopIconIMG from "@/Images/services/firstcard/topIcons.svg";
-// import paypalIMG from "@/Images/services/firstcard/paypal.svg";
-// import CardIMG from "@/Images/services/firstcard/card.svg";
-// import BankBitcoin from "@/Images/services/firstcard/bank.svg";
-// import Bitcoin from "@/Images/services/firstcard/bitcoin.svg";
+// import TopIconIMG from "@/images/services/firstcard/topIcons.svg";
+// import paypalIMG from "@/images/services/firstcard/paypal.svg";
+// import CardIMG from "@/images/services/firstcard/card.svg";
+// import BankBitcoin from "@/images/services/firstcard/bank.svg";
+// import Bitcoin from "@/images/services/firstcard/bitcoin.svg";
 
 import { Manrope } from "next/font/google";
 
