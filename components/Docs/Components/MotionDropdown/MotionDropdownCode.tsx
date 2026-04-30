@@ -54,7 +54,7 @@ function MotionDropdownCode() {
         <div>
             <LinearReveal
                 className={`${LinearRevealFont.className} text-4xl mb-4`}
-                text='Step 1'
+                Text='Step 1'
             />
 
             <motion.div

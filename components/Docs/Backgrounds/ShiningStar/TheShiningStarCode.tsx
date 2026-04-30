@@ -55,7 +55,7 @@ function TheShiningStarCode() {
             <LinearReveal
                 as={"h2"}
                 className={`${ShiningStarFont.className} text-4xl`}
-                text='Steps'
+                Text='Steps'
             />
 
             <motion.div

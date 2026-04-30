@@ -1,12 +1,20 @@
 import LinearReveal from '@/components/LinearReveal'
+import {Manrope } from 'next/font/google';
 import React from 'react'
+
+const LinearRevealFont = Manrope({
+    weight: '700',
+    subsets: ['vietnamese']
+});
 
 function LinearRevealPreview() {
     return (
-        <div>
+        <div className='flex justify-center items-center h-screen '>
             <LinearReveal
-                className='text-5xl'
-                text='The Linear Text'
+                as='h1'
+                className={`${LinearRevealFont.className} text-7xl`}
+                Text='The Linear Reveal'
+                delay={0.4}
             />
         </div>
     )

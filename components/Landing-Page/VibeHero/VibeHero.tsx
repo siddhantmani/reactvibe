@@ -57,12 +57,12 @@ function VibeHero() {
                 <div className="text-center xl:text-base/18 text-base/12">
                     <LinearReveal
                         as={"h1"}
-                        text="Motion-first"
+                        Text="Motion-first"
                         className={` ${AnimatedFont.className} xl:text-[90px] text-[40px]`}
                     />
                     <LinearReveal
                         as={"h1"}
-                        text="React Components"
+                        Text="React Components"
                         className={` ${AnimatedFont.className} xl:text-[90px] text-[40px]`}
                     />
                 </div>

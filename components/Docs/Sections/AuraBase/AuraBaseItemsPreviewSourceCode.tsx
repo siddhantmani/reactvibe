@@ -52,7 +52,7 @@ function AuraBaseItemsPreviewSourceCode() {
                 <LinearReveal
                     as={"h2"}
                     className={`${LinearRevealStep2Font.className} text-4xl`}
-                    text='Steps 2'
+                    Text='Steps 2'
                 />
                 <p className={`${LinearRevealFont.className} dark:text-white text-black text-sm`}>Use <Link href="/docs/text-motion/linear-reveal">
                     <span className='underline underline-offset-2'>Linear Reveal</span></Link> </p>
@@ -67,7 +67,7 @@ function AuraBaseItemsPreviewSourceCode() {
                 <LinearReveal
                     as={"h2"}
                     className={`${LinearRevealStep2Font.className} text-4xl`}
-                    text='Steps 3'
+                    Text='Steps 3'
                 />
                 <p className={`${LinearRevealFont.className} dark:text-white text-black text-sm`}>Use <Link href="/docs/components/separator">
                     <span className='underline underline-offset-2'>Separator</span></Link> </p>

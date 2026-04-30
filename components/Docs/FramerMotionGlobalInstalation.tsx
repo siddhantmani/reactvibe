@@ -33,7 +33,7 @@ function FramerMotionGlobalInstalation() {
             <LinearReveal
                 as={'h2'}
                 className={`${LinearRevealFont.className} text-4xl mb-4`}
-                text='Installation'
+                Text='Installation'
             />
 
             <motion.div

@@ -17,20 +17,20 @@ function SignaturePreview() {
         { subMenu: 'Features', subMenu_key: 'features', link: '#' },
         { subMenu: 'Integrations', subMenu_key: 'testimonials', link: '#' },
         { subMenu: 'Pricing', subMenu_key: 'pricing', link: '#' },
-        { subMenu: 'Changelog', subMenu_key: 'pricing', link: '#' },
-        { subMenu: 'Roadmap', subMenu_key: 'pricing', link: '#' }
+        { subMenu: 'Changelog', subMenu_key: 'changelog', link: '#' },
+        { subMenu: 'Roadmap', subMenu_key: 'roadmap', link: '#' }
     ];
 
     const companyLinks = [
         { subMenu: 'Our team', subMenu_key: 'about', link: '#' },
-        { subMenu: 'Our values', subMenu_key: 'blog', link: '#' },
+        { subMenu: 'Our values', subMenu_key: 'values', link: '#' },
         { subMenu: 'Blog', subMenu_key: 'blog', link: '#' },
     ];
 
     const ResourcesLinks = [
-        { subMenu: 'Downloads', subMenu_key: 'about', link: '#' },
-        { subMenu: 'Documentation', subMenu_key: 'blog', link: '#' },
-        { subMenu: 'Contact', subMenu_key: 'blog', link: '#' },
+        { subMenu: 'Downloads', subMenu_key: 'downloads', link: '#' },
+        { subMenu: 'Documentation', subMenu_key: 'documentation', link: '#' },
+        { subMenu: 'Contact', subMenu_key: 'contact', link: '#' },
     ];
 
     const policyLinks = [
@@ -142,7 +142,7 @@ function SignaturePreview() {
                                         >
                                             <LinearReveal
                                                 as={'h1'}
-                                                text="Signature"
+                                                Text="Signature"
                                                 className={`${MainHeading.className} text-[#ffffff] text-[18px] font-semibold`}
                                             />
                                         </motion.div>
@@ -390,7 +390,7 @@ function SignaturePreview() {
             <div className="absolute bottom-[-15px] md:bottom-[-30px] xl:bottom-[-50px] left-0 w-full text-center z-10">
                 <LinearReveal
                     as={'h1'}
-                    text="React Vibe"
+                    Text="React Vibe"
                     className={`
             ${FooterHeading.className}
             text-[70px] md:text-[130px] lg:text-[130px] xl:text-[200px]

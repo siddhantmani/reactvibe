@@ -323,7 +323,7 @@ function PrimePreview() {
                                             }}
                                         >
                                             <LinearReveal
-                                                text={plan.name}
+                                                Text={plan.name}
                                                 as={'h3'}
                                                 className={`${MainHeading.className} text-2xl text-[#454B57]`}
                                             />
@@ -358,7 +358,7 @@ function PrimePreview() {
                                             className={` ${MainHeading.className} text-3xl mt-2 text-[#454B57]`}
                                         >
                                             <LinearReveal
-                                                text={plan.price}
+                                                Text={plan.price}
                                                 as="span"
                                             />
                                         </motion.p>
@@ -546,7 +546,7 @@ function PrimePreview() {
                                                 }}
                                             >
                                                 <LinearReveal
-                                                    text={plan.name}
+                                                    Text={plan.name}
                                                     as={'h3'}
                                                     className={`${MainHeading.className} text-2xl text-[#ffffff]`}
                                                 />
@@ -581,7 +581,7 @@ function PrimePreview() {
                                                 className={` ${MainHeading.className} mt-2 text-3xl text-white`}
                                             >
                                                 <LinearReveal
-                                                    text={plan.price}
+                                                    Text={plan.price}
                                                     as="span"
                                                 />
                                             </motion.p>

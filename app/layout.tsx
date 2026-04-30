@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from '@vercel/analytics/next';
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,19 +23,6 @@ export const metadata: Metadata = {
 
   description:
     "Motion-first, fully animated React components. Open source, production-ready, and easy to drop into any project. Copy, paste, and ship smooth interactions.",
-
-  keywords: [
-    "animated UI components",
-    "React components",
-    "Tailwind components",
-    "Framer Motion UI",
-    "React animations",
-    "motion components",
-    "ReactVibe",
-    "React design system",
-    "React UI kit",
-    "frontend UI components",
-  ],
 
   authors: [{ name: "Siddhant Mani" }],
   creator: "Siddhant Mani",
@@ -94,9 +82,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `}
+            </Script>
+          </>
+        )}
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider
           attribute="class"

@@ -32,7 +32,7 @@ const brands = [
 
 function BrandLogoPreview() {
     return (
-        <div className="space-y-12 overflow-hidden">
+        <div className="space-y-12 overflow-hidden py-28 md:scale-[100%] lg:scale-[100%] xl:scale-[110%]">
             <motion.div
                 initial={{ opacity: 0, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}

@@ -52,7 +52,7 @@ function StratusCode() {
         <div>
             <LinearReveal
                 className={`${LinearRevealFont.className} text-4xl mb-4`}
-                text='Steps'
+                Text='Steps'
             />
 
             <motion.div

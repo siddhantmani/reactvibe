@@ -53,7 +53,7 @@ function TheGradientHaloCode() {
     return (
         <div>
             <AnimatedText
-                text="Steps"
+                Text="Steps"
                 className={`${LinearRevealFont.className} text-4xl mb-4`}
 
             />

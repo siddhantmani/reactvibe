@@ -111,7 +111,7 @@ export default function GlideAccordion({ align = "left" }: AccordianProps) {
                     transition={{
                         duration: 1.2,
                         ease: [0.25, 0.46, 0.45, 0.94],
-                        delay: 0.7
+                        delay: 0.5
                     }}
 
                 >
@@ -131,7 +131,7 @@ export default function GlideAccordion({ align = "left" }: AccordianProps) {
                     transition={{
                         duration: 1.2,
                         ease: [0.25, 0.46, 0.45, 0.94],
-                        delay: 0.7
+                        delay: 0.5
                     }}
 
                 >
@@ -143,7 +143,18 @@ export default function GlideAccordion({ align = "left" }: AccordianProps) {
                 {faqs.map((faq, i) => (
                     <motion.div
                         key={i}
-                        transition={{ layout: { duration: 1, ease: "easeInOut" } }}
+                        initial={{ opacity: 0, filter: "blur(8px)" }}
+                        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                        viewport={{
+                            once: true,
+                            amount: 0.2,
+                            margin: "50px"
+                        }}
+                        transition={{
+                            duration: 1.2,
+                            ease: [0.25, 0.46, 0.45, 0.94],
+                            delay: 0.9
+                        }}
                         className={`flex flex-col ${align === "right" ? "items-end" : "items-start"}`}
                     >
                         {/* Question bubble */}

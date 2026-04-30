@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import OrbitBorderGlobalPreview from "../Components/Orbit-Border/OrbitBorderGlobalPreview";
 import LinearReveal from "@/components/LinearReveal";
@@ -46,7 +44,7 @@ const LiquidGlassMicro: React.FC = () => {
 
 function WhatsNew() {
     return (
-        <Link href="/docs/sections/prime">
+        <Link href="/docs/explore-components">
             <div
                 className="
                     relative flex items-center space-x-5
@@ -63,6 +61,8 @@ function WhatsNew() {
                 {/* Left badge */}
                 <OrbitBorderGlobalPreview
                     RingColors={["#6af04f", "#ffa600", "#000000", "#ef49f2"]}
+                    rounded={20}
+                    padding={1}
                     className="
                         rounded-full px-2 py-1 text-sm font-medium
                         bg-gradient-to-b from-[#131212] via-[#131313] to-[#131212]
@@ -78,7 +78,7 @@ function WhatsNew() {
                     <LinearReveal
                         className={`${LinearRevealFont.className} text-xs`}
                         as="label"
-                        text="New"
+                        Text="New"
                     />
                     🎉
                 </OrbitBorderGlobalPreview>
@@ -86,7 +86,7 @@ function WhatsNew() {
                 <LinearReveal
                     className={`${NewComponent.className} text-[16px] cursor-pointer`}
                     as="label"
-                    text="Prime →"
+                    Text="Explore Components →"
                 />
             </div>
         </Link>

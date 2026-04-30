@@ -10,6 +10,7 @@ const LinearRevealFont = JetBrains_Mono({
     weight: "400",
     subsets: ["latin"],
 })
+
 const LinearRevealStep2Font = Bricolage_Grotesque({
     weight: "700",
     subsets: ["latin"],
@@ -34,7 +35,7 @@ function NovaPricingItemsPreviewSourceCode() {
                 <LinearReveal
                     as={"h2"}
                     className={`${LinearRevealStep2Font.className} text-4xl`}
-                    text='Steps 2'
+                    Text='Step 2'
                 />
                 <p className={`${LinearRevealFont.className} dark:text-white text-black text-sm`}>Use <Link href="/docs/text-motion/linear-reveal">
                     <span className='underline underline-offset-2'>Linear Reveal</span></Link> </p>

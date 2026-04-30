@@ -1,10 +1,28 @@
 "use client"
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion"
-import { useEffect, ReactNode, ButtonHTMLAttributes } from "react"
+import { useEffect, ReactNode, forwardRef } from "react"
 
-interface OrbitBorderProps
-    extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag'> {
+type OrbitBorderComponentProps = {
+    as?: React.ElementType
+    children?: ReactNode
+} & Record<string, unknown>
+
+const MotionComponent = motion(
+    forwardRef(function MotionComponent(
+        { as: Tag = "button", children, ...props }: OrbitBorderComponentProps,
+        ref: React.Ref<unknown>
+    ) {
+        return (
+            <Tag ref={ref} {...props}>
+                {children}
+            </Tag>
+        )
+    })
+)
+
+interface OrbitBorderProps {
+    as?: React.ElementType
     children: ReactNode
     className?: string
     RingColors?: string[]
@@ -14,14 +32,15 @@ interface OrbitBorderProps
 }
 
 export default function OrbitBorder({
+    as: Component = "button",
     children,
     className = "",
-    RingColors = ["#0a52f0", "#ffffff", "#f5e2ae", "#dcd7fc"], // default colors
+    RingColors = ["#0a52f0", "#ffffff", "#f5e2ae", "#dcd7fc"],
     rotate = 0,
     padding = 0,
     rounded = 0,
     ...props
-}: OrbitBorderProps) {
+}: OrbitBorderProps & Record<string, unknown>) {
     const angle = useMotionValue(0)
 
     const animatedBorder = useTransform(
@@ -47,14 +66,15 @@ export default function OrbitBorder({
                 borderRadius: `${rounded}px`
             }}
         >
-            <motion.button
+            <MotionComponent
+                as={Component}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 {...props}
-                className={` ${className}`}
+                className={className}
             >
                 {children}
-            </motion.button>
+            </MotionComponent>
         </motion.div>
     )
 }

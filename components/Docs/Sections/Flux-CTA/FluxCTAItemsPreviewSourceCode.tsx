@@ -29,15 +29,7 @@ function FluxCTAItemsPreviewSourceCode() {
             <div>
                 <FluxCTAOpenCode />
             </div>
-            <div className='pt-4 space-y-4'>
-                <LinearReveal
-                    as={"h2"}
-                    className={`${LinearRevealStep2Font.className} text-4xl`}
-                    text='Steps 2'
-                />
-                <p className={`${LinearRevealFont.className} dark:text-white text-black text-sm`}>Use <Link href="/docs/text-motion/linear-reveal">
-                    <span className='underline underline-offset-2'>Linear Reveal</span></Link> </p>
-            </div>
+
         </div>
     )
 }

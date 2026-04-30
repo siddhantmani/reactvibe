@@ -14,7 +14,7 @@ function Signature() {
 
     const quickLinks = [
         { subMenu: 'Features', subMenu_key: 'features', link: '#' },
-        { subMenu: 'Integrations', subMenu_key: 'testimonials', link: '#' },
+        { subMenu: 'Integrations', subMenu_key: 'integrations', link: '#' },
         { subMenu: 'Pricing', subMenu_key: 'pricing', link: '#' },
         { subMenu: 'Changelog', subMenu_key: 'changelog', link: '#' },
         { subMenu: 'Roadmap', subMenu_key: 'roadmap', link: '#' }
@@ -22,12 +22,12 @@ function Signature() {
 
     const companyLinks = [
         { subMenu: 'Our team', subMenu_key: 'about', link: '#' },
-        { subMenu: 'Our values', subMenu_key: 'outvalues', link: '#' },
+        { subMenu: 'Our values', subMenu_key: 'values', link: '#' },
         { subMenu: 'Blog', subMenu_key: 'blog', link: '#' },
     ];
 
     const ResourcesLinks = [
-        { subMenu: 'Downloads', subMenu_key: 'about', link: '#' },
+        { subMenu: 'Downloads', subMenu_key: 'downloads', link: '#' },
         { subMenu: 'Documentation', subMenu_key: 'documentation', link: '#' },
         { subMenu: 'Contact', subMenu_key: 'contact', link: '#' },
     ];
@@ -79,7 +79,7 @@ function Signature() {
                                         >
                                             <LinearReveal
                                                 as={'h1'}
-                                                text="Signature"
+                                                Text="Signature"
                                                 className={`${MainHeading.className} text-[#ffffff] text-[18px] font-semibold`}
                                             />
                                         </motion.div>
@@ -327,7 +327,7 @@ function Signature() {
             <div className="absolute bottom-[-15px] md:bottom-[-40px] xl:bottom-[-60px] left-0 w-full text-center z-10">
                 <LinearReveal
                     as={'h1'}
-                    text="React Vibe"
+                    Text="React Vibe"
                     className={`
             ${FooterHeading.className}
             text-[90px] md:text-[140px] lg:text-[200px] xl:text-[250px]

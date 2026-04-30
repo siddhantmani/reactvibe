@@ -27,7 +27,7 @@ function DarkFusionBestSettingOneCopyCode() {
         <div className="my-6 select-text">
             <LinearReveal
                 as={"h1"}
-                text='Copy Props'
+                Text='Copy Props'
                 className={`text-2xl pb-3 ${LinearRevealFont.className}`}
             />
             <table className="border-collapse w-full text-sm">

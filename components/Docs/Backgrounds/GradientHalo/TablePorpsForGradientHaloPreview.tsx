@@ -35,7 +35,7 @@ function TablePorpsForGradientHaloPreview() {
 
             <LinearReveal
                 as={'h2'}
-                text='Props'
+                Text='Props'
                 className={`${LinearRevealFont.className} text-3xl pt-10 pb-3`}
             />
 

@@ -31,7 +31,20 @@ function TogglePricing({ yearly, setYearly }: { yearly: boolean; setYearly: (val
 
     return (
         <div className="flex justify-center mb-8">
-            <div className="flex items-center gap-2 py-4 text-black">
+            <motion.div
+                initial={{ opacity: 0, filter: "blur(8px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                viewport={{
+                    once: true,
+                    amount: 0.2, // Trigger when 20% visible
+                    margin: "50px"
+                }}
+                transition={{
+                    duration: 1.2,
+                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                    delay: 0.2
+                }}
+                className="flex items-center gap-2 py-4 text-black">
                 <label>Monthly</label>
                 <label className='flex cursor-pointer select-none items-center'>
                     <div className='relative'>
@@ -52,7 +65,7 @@ function TogglePricing({ yearly, setYearly }: { yearly: boolean; setYearly: (val
                     </div>
                 </label>
                 <label>Yearly</label>
-            </div>
+            </motion.div>
         </div>
     )
 }

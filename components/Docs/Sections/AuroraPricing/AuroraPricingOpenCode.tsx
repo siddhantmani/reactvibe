@@ -51,8 +51,8 @@ function AuroraPricingOpenCode() {
         <div>
             <LinearReveal
                 as={"h2"}
-                className={`${LinearRevealFont.className} text-4xl`}
-                text='Steps'
+                className={`${LinearRevealFont.className} text-4xl pb-2`}
+                Text='Step 1'
             />
 
             <motion.div

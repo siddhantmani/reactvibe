@@ -1,0 +1,28 @@
+import { motion } from "framer-motion"
+
+import React from 'react'
+import OriginCode from "./OriginCode"
+
+function OriginPreview() {
+    return (
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{
+                once: true,       // Run only once
+                amount: 0.2,      // 20% of the component in view triggers it
+                margin: "-50px",  // Negative to trigger slightly earlier
+            }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.3,       // Optional slight delay
+            }}
+            className="max-w-md mx-auto py-20 px-1 scale-[100%] md:scale-[120%]"
+        >
+            <OriginCode />
+        </motion.div>
+    )
+}
+
+export default OriginPreview

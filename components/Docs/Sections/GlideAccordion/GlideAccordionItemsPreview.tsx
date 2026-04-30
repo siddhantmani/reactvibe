@@ -74,7 +74,7 @@ function GlideAccordionItemsPreview() {
                             className="w-full rounded-2xl py-10"
                         >
                             <div className="text-white z-40 w-full rounded-2xl h-full scale-[90%]">
-                                <GlideAccordioPreview align='right'/>
+                                <GlideAccordioPreview align='left'/>
                             </div>
                         </div>
                     </TabPanel>

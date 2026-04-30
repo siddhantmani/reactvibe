@@ -32,7 +32,7 @@ function RadiantFrameOpenCode() {
             .then((res) => res.text())
             .then(setCode);
     }, [activeFile]);
-
+    
     const handleCopy = async () => {
         if (!activeFile) {
             toast.error("No file selected!");
@@ -54,7 +54,7 @@ function RadiantFrameOpenCode() {
             <LinearReveal
                 as={"h2"}
                 className={`${LinearRevealFont.className} text-4xl`}
-                text='Steps 1'
+                Text='Step 1'
             />
 
             <motion.div

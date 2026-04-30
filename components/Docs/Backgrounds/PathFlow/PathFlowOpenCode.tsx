@@ -52,7 +52,7 @@ function PathFlowOpenCode() {
             <LinearReveal
                 as={"h2"}
                 className={`${LinearRevealFont.className} text-4xl`}
-                text='Steps'
+                Text='Steps'
             />
 
             <motion.div

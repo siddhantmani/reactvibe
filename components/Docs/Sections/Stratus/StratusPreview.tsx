@@ -47,7 +47,7 @@ export default function StratusPreview() {
     }
 
     return (
-        <div className="space-y-20">
+        <div className="space-y-20 py-10">
             <div className='flex flex-col justify-center items-center space-y-3'>
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}

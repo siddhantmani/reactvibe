@@ -17,6 +17,8 @@ function Page() {
             CameraPositionY={0}
             CameraPositionZ={10}
 
+            quality="low"
+
             // Renderer
             RendererAntialias={true}
             RendererSetPixelRatio={2}

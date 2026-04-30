@@ -73,7 +73,7 @@ function AuraBase() {
                                         >
                                             <LinearReveal
                                                 as={'h1'}
-                                                text="Aura Base"
+                                                Text="Aura Base"
                                                 className={`${MainHeading.className} text-black text-2xl font-semibold`}
                                             />
                                         </motion.div>
@@ -305,7 +305,7 @@ function AuraBase() {
                             <div className="flex flex-col space-y-5 md:flex-row md:justify-between ">
                                 <div className="flex items-center gap-1">
                                     <FaRegCopyright className="text-xs" />
-                                    <p>2025 React Vibe, Inc. All rights reserved.</p>
+                                    <p>{new Date().getFullYear()}  React Vibe, Inc. All rights reserved.</p>
                                 </div>
                                 <div>
                                     <ul

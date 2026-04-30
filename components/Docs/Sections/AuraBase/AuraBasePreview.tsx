@@ -3,7 +3,7 @@ import AuraBase from './AuraBase'
 
 function AuraBasePreview() {
     return (
-        <div className='bg-[#FAFAFA] mt-[0px] pt-10'>
+        <div className='bg-[#FAFAFA] mt-[0px] pt-10 scale-[90%]'>
             <AuraBase />
         </div>
     )

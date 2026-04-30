@@ -37,6 +37,8 @@ function AuroraPricingCode() {
 
                 >
                     <OrbitBorderGlobalPreview
+                        rounded={50}
+                        padding={1}
                         RingColors={["#0a52f0", "#ffffff", "#f5e2ae", "#dcd7fc"]}
                         className='bg-[#ffffff] rounded-full p-2 text-black px-5'
                         style={{
@@ -63,11 +65,7 @@ function AuroraPricingCode() {
                         delay: 0.2
                     }}
                 >
-                    <LinearReveal
-                        as={'h1'}
-                        text="Simple plans, no surprises."
-                        className={`${MainHeading.className}  text-black text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}
-                    />
+                    <h1 className={`${MainHeading.className}  text-black text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}>Simple plans, no surprises.</h1>
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}

@@ -11,6 +11,7 @@ import {
 } from "framer-motion"
 import { Manrope } from "next/font/google"
 import { HiCheckBadge } from "react-icons/hi2"
+import LinearReveal from "@/components/LinearReveal"
 
 const CTAButton = Manrope({
     weight: "500",
@@ -28,10 +29,25 @@ const miniPara = Manrope({
 })
 
 
-function AuroraPricingSection({ yearly, setYearly }: { yearly: boolean; setYearly: (value: boolean) => void }) {
+function ZeinthCodeSection({ yearly, setYearly }: { yearly: boolean; setYearly: (value: boolean) => void }) {
     return (
         <div className="flex justify-center mb-8">
-            <div className="flex items-center gap-3 py-4 dark:text-white text-black">
+            <motion.div
+                initial={{ opacity: 0, filter: "blur(8px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                whileInView={{ opacity: 1 }}
+                viewport={{
+                    once: true,
+                    amount: 0.2, // Trigger when 20% visible
+                    margin: "50px"
+                }}
+                transition={{
+                    duration: 1.2,
+                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                    delay: 0.4
+                }}
+                exit={{ opacity: 0, y: -10 }}
+                className="flex items-center gap-3 py-4 dark:text-white text-black">
                 <label className="text-white">Monthly</label>
                 <label className='flex cursor-pointer select-none items-center'>
                     <div className='relative'>
@@ -52,12 +68,12 @@ function AuroraPricingSection({ yearly, setYearly }: { yearly: boolean; setYearl
                     </div>
                 </label>
                 <label className="text-white">Yearly</label>
-            </div>
+            </motion.div>
         </div>
     )
 }
 
-function ZenithCode() {
+function ZeinthCode() {
     const [yearly, setYearly] = React.useState(false)
 
     const angle = useMotionValue(0)
@@ -143,7 +159,7 @@ function ZenithCode() {
         {
             name: "Pro",
             price: yearly ? "$450/yr" : "$45/mo",
-            subtitle: "For growing teams that need automation and insights.",
+            subtitle: "For growing teams that need automation.",
             features: [
                 "Unlimited invoices & clients",
                 "Automated recurring billing",
@@ -158,7 +174,7 @@ function ZenithCode() {
         {
             name: "Enterprise",
             price: "Custom",
-            subtitle: "For large teams and enterprises with advanced needs.",
+            subtitle: "For large teams with advanced needs.",
             features: [
                 "Fully customized invoicing workflows",
                 "Unlimited users and bank integrations",
@@ -172,10 +188,10 @@ function ZenithCode() {
     ]
 
     return (
-        <div className="w-full flex flex-col items-center justify-center py-5 px-4">
-            <AuroraPricingSection yearly={yearly} setYearly={setYearly} />
+        <div className="w-full flex flex-col items-center justify-center py-5 md:px-3">
+            <ZeinthCodeSection yearly={yearly} setYearly={setYearly} />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl w-full">
+            <div className="grid grid-cols-1 md:grid-cols-3 md:gap-2 xl:max-w-5xl lg:max-w-4xl w-full min-[425px]:px-3 min-[425px]:gap-3 min-[375px]:p-2 min-[375px]:gap-2 min-[320px]:p-2 min-[320px]:gap-2">
                 {plans.map((plan, index) => {
                     const isPro = plan.name === "Pro"
 
@@ -193,69 +209,116 @@ function ZenithCode() {
               `
                                 }}
                                 key={plan.name}
-                                className="relative rounded-3xl"
+                                className="relative rounded-2xl"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 viewport={{ once: true }}
                             >
                                 {/* Inner white card */}
-                                <div className="h-full w-full rounded-2xl p-8 flex flex-col justify-between text-gray-900 shadow-lg">
-                                    {/* Tag */}
-                                    <motion.div
+                                <div className="h-full w-full rounded-4xl md:p-3 lg:p-5 min-[425px]:p-5 min-[375px]:p-5 min-[320px]:p-4 flex flex-col text-gray-900 shadow-lg">
 
-                                        style={{
-                                            background
-                                        }}
-                                        className={`${CTAButton.className} md:text-[12px]  absolute top-5 right-5 text-white text-sm px-3 py-1 rounded-full border border-[#323232]`}>
-                                        {plan.tag}
-                                    </motion.div>
 
                                     {/* Title + Price */}
-                                    <div>
-                                        <h3 className={`${MainHeading.className} text-2xl text-white`}>
-                                            {plan.name}
-                                        </h3>
-                                        <p className={`${miniPara.className} mt-2 text-sm text-[#B1B1B1]`}>
-                                            {plan.subtitle}
-                                        </p>
-                                        <AnimatePresence mode="wait">
-                                            <motion.p
-                                                key={plan.price}
-                                                initial={{ opacity: 0, y: 10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, y: -10 }}
-                                                transition={{ duration: 0.3 }}
-                                                className={`${MainHeading.className} text-4xl  mt-3 text-white`}
-                                            >
-                                                {plan.price}
-                                            </motion.p>
-                                        </AnimatePresence>
-                                    </div>
+                                    <div className="md:space-y-4">
+                                        <div className="flex justify-between items-center">
+                                            <LinearReveal
+                                                as={'h2'} //You can select heading from h1-h6
+                                                Text={plan.name}
+                                                delay={0.2}
+                                                className={`${MainHeading.className} text-2xl text-white`}
+                                            />
 
-                                    {/* Button with animated rotating border */}
-                                    <motion.div
-                                        style={{ background }}
-                                        className="mt-4 rounded-xl"
-                                    >
-                                        <motion.div
-                                            className="relative rounded-xl p-[1px]"
-                                        >
-                                            <button
+                                            {/* Tag */}
+                                            <motion.div
+                                                initial={{ opacity: 0, filter: "blur(8px)" }}
+                                                animate={{ opacity: 1, filter: "blur(0px)" }}
+                                                whileInView={{ opacity: 1 }}
+                                                viewport={{
+                                                    once: true,
+                                                    amount: 0.2, // Trigger when 20% visible
+                                                    margin: "50px"
+                                                }}
+                                                transition={{
+                                                    duration: 1.2,
+                                                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                                                    delay: 0.2
+                                                }}
                                                 style={{
-                                                    background: `
+                                                    background
+                                                }}
+                                                className={`${CTAButton.className} md:text-[12px] text-white text-sm px-3 py-1 rounded-full border border-[#323232]`}>
+                                                {plan.tag}
+                                            </motion.div>
+
+                                        </div>
+                                        <motion.p
+                                            initial={{ opacity: 0, filter: "blur(8px)" }}
+                                            animate={{ opacity: 1, filter: "blur(0px)" }}
+                                            whileInView={{ opacity: 1 }}
+                                            viewport={{
+                                                once: true,
+                                                amount: 0.2, // Trigger when 20% visible
+                                                margin: "50px"
+                                            }}
+                                            transition={{
+                                                duration: 1.2,
+                                                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                                                delay: 0.2
+                                            }}
+                                            className={`${miniPara.className} mt-2 text-sm text-[#B1B1B1]`}>
+                                            {plan.subtitle}
+                                        </motion.p>
+                                        <AnimatePresence mode="wait">
+                                            <LinearReveal
+                                                key={plan.price}
+                                                as={'p'} //You can select heading from h1-h6z
+                                                Text={plan.price}
+                                                delay={0.2}
+                                                className={`${MainHeading.className} text-4xl  mt-3 text-white`}
+                                            />
+                                        </AnimatePresence>
+                                        {/* Button with animated rotating border */}
+                                        <motion.div
+                                            initial={{ opacity: 0, filter: "blur(8px)" }}
+                                            animate={{ opacity: 1, filter: "blur(0px)" }}
+                                            whileInView={{ opacity: 1 }}
+                                            viewport={{
+                                                once: true,
+                                                amount: 0.2, // Trigger when 20% visible
+                                                margin: "50px"
+                                            }}
+                                            transition={{
+                                                duration: 1.2,
+                                                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                                                delay: 1.2
+                                            }}
+                                            exit={{ opacity: 0, y: -10 }}
+                                            style={{ background }}
+                                            className="md:mt-5 rounded-xl"
+                                        >
+                                            <motion.div
+                                                className="relative rounded-xl p-[1px]"
+                                            >
+                                                <button
+                                                    style={{
+                                                        background: `
                 radial-gradient(
                   circle at 10% 10%,
                   rgba(255,255,255,0.08),
                   rgba(0,0,0,0.95) 70%
                 )
               `
-                                                }}
-                                                className={`${CTAButton.className} w-full py-3 text-xl rounded-xl text-[#ffffff] hover:bg-gray-50 transition-all`}>
-                                                {plan.button} →
-                                            </button>
+                                                    }}
+                                                    className={`${CTAButton.className} w-full py-3 text-xl rounded-xl text-[#ffffff] hover:bg-gray-50 transition-all`}>
+                                                    {plan.button} →
+                                                </button>
+
+
+                                            </motion.div>
                                         </motion.div>
-                                    </motion.div>
+                                    </div>
+
 
                                     {/* Footer */}
                                     {/* <p className={` ${MainHeading.className} text-xs mt-4 text-gray-500 text-center`}>{plan.footer}</p> */}
@@ -263,13 +326,28 @@ function ZenithCode() {
                                     {/* Features */}
                                     <ul className="mt-6 space-y-2 text-sm text-white">
                                         {plan.features.map((f, i) => (
-                                            <li key={i} className={`${miniPara.className} flex items-center text-[#B1B1B1]`}>
+                                            <motion.li
+                                                initial={{ opacity: 0, filter: "blur(8px)" }}
+                                                animate={{ opacity: 1, filter: "blur(0px)" }}
+                                                whileInView={{ opacity: 1 }}
+                                                viewport={{
+                                                    once: true,
+                                                    amount: 0.2, // Trigger when 20% visible
+                                                    margin: "50px"
+                                                }}
+                                                transition={{
+                                                    duration: 1.2,
+                                                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                                                    delay: 0.2 * i
+                                                }}
+                                                exit={{ opacity: 0, y: -10 }}
+                                                key={i} className={`${miniPara.className} flex items-center text-[#B1B1B1]`}>
                                                 <span className="mr-2 text-lg">
                                                     <HiCheckBadge className="h-4 w-4 fill-[#B1B1B1]" />
 
                                                 </span>
                                                 {f}
-                                            </li>
+                                            </motion.li>
                                         ))}
                                     </ul>
 
@@ -296,29 +374,74 @@ function ZenithCode() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="relative rounded-3xl border border-[#222020] text-gray-900 p-8 flex flex-col justify-between shadow-sm"
+                            className="relative rounded-2xl border border-[#222020] text-gray-900 md:p-3 md:p-5 min-[425px]:p-5 min-[375px]:p-5 min-[320px]:p-4 flex flex-col shadow-sm"
                         >
-                            <h3 className={`${MainHeading.className} text-2xl text-white`}>
-                                {plan.name}
-                            </h3>
-                            <p className={`${miniPara.className} mt-2 text-sm text-[#B1B1B1]`}>{plan.subtitle}</p>
-                            <AnimatePresence mode="wait">
-                                <motion.p
-                                    key={plan.price}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    transition={{ duration: 0.3 }}
-                                    className={` ${MainHeading.className} text-3xl mt-3 text-white`}
-                                >
-                                    {plan.price}
-                                </motion.p>
-                            </AnimatePresence>
+                            <div className="md:space-y-4">
+                                <LinearReveal
+                                    as={'h2'} //You can select heading from h1-h6
+                                    Text={plan.name}
+                                    delay={0.2}
+                                    className={`${MainHeading.className} text-2xl text-white`}
+                                />
 
-                            <div className="mt-4">
-                                <button
-                                    style={{
-                                        background: `
+                                <motion.p
+                                    initial={{ opacity: 0, filter: "blur(8px)" }}
+                                    animate={{ opacity: 1, filter: "blur(0px)" }}
+                                    whileInView={{ opacity: 1 }}
+                                    viewport={{
+                                        once: true,
+                                        amount: 0.2, // Trigger when 20% visible
+                                        margin: "50px"
+                                    }}
+                                    transition={{
+                                        duration: 1.2,
+                                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                                        delay: 0.2
+                                    }}
+                                    className={`${miniPara.className} mt-2 text-sm text-[#B1B1B1]`}>{plan.subtitle}
+                                </motion.p>
+                                <AnimatePresence mode="wait">
+                                    <motion.p
+                                        initial={{ opacity: 0, filter: "blur(8px)" }}
+                                        animate={{ opacity: 1, filter: "blur(0px)" }}
+                                        whileInView={{ opacity: 1 }}
+                                        viewport={{
+                                            once: true,
+                                            amount: 0.2, // Trigger when 20% visible
+                                            margin: "50px"
+                                        }}
+                                        transition={{
+                                            duration: 1.2,
+                                            ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                                            delay: 0.2
+                                        }}
+                                        key={plan.price}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        className={` ${MainHeading.className} text-3xl mt-3 text-white`}
+                                    >
+                                        {plan.price}
+                                    </motion.p>
+                                </AnimatePresence>
+
+                                <motion.div
+                                    initial={{ opacity: 0, filter: "blur(8px)" }}
+                                    animate={{ opacity: 1, filter: "blur(0px)" }}
+                                    whileInView={{ opacity: 1 }}
+                                    viewport={{
+                                        once: true,
+                                        amount: 0.2, // Trigger when 20% visible
+                                        margin: "50px"
+                                    }}
+                                    transition={{
+                                        duration: 1.2,
+                                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                                        delay: 1.1
+                                    }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    className="md:mt-6">
+                                    <button
+                                        style={{
+                                            background: `
       linear-gradient(
         180deg,
         #121110 0%,
@@ -326,29 +449,46 @@ function ZenithCode() {
         #313332 100%
         )
     `,
-                                        boxShadow: `
+                                            boxShadow: `
         10px 24px 8px rgba(13, 12, 12 0.45),
         inset 7px 7px 31px rgba(18, 17, 17, 0.35),
         inset 2px 2px 20px rgba(13, 12, 12, 0.25)
       `,
-                                        borderImage: "linear-gradient(180deg, #423f3f, #0f0f0f) 10",
-                                        borderRadius: "10px"
-                                    }}
-                                    className={`${CTAButton.className} w-full py-3 rounded-md  text-white transition-all`}>
-                                    {plan.button} →
-                                </button>
+                                            borderImage: "linear-gradient(180deg, #423f3f, #0f0f0f) 10",
+                                            borderRadius: "10px"
+                                        }}
+                                        className={`${CTAButton.className} w-full py-3 rounded-md  text-white transition-all`}>
+                                        {plan.button} →
+                                    </button>
+                                </motion.div>
                             </div>
+
 
                             {/* <p className={`${MainHeading.className} text-xs mt-4 text-gray-500`}>{plan.footer}</p> */}
 
                             <ul className="mt-6 space-y-2 text-sm text-gray-700">
                                 {plan.features.map((f, i) => (
-                                    <li key={i} className={`${miniPara.className} flex items-center text-[#B1B1B1]`}>
+                                    <motion.li
+                                        initial={{ opacity: 0, filter: "blur(8px)" }}
+                                        animate={{ opacity: 1, filter: "blur(0px)" }}
+                                        whileInView={{ opacity: 1 }}
+                                        viewport={{
+                                            once: true,
+                                            amount: 0.2, // Trigger when 20% visible
+                                            margin: "50px"
+                                        }}
+                                        transition={{
+                                            duration: 1.2,
+                                            ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                                            delay: 0.2 * i
+                                        }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        key={i} className={`${miniPara.className} flex items-center text-[#B1B1B1]`}>
                                         <span className="mr-2 text-lg">
                                             <HiCheckBadge className="h-4 w-4 fill-[#B1B1B1]" />
                                         </span>
                                         {f}
-                                    </li>
+                                    </motion.li>
                                 ))}
                             </ul>
 
@@ -361,4 +501,4 @@ function ZenithCode() {
     )
 }
 
-export default ZenithCode
+export default ZeinthCode

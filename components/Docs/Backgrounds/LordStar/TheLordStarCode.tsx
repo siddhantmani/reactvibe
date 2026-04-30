@@ -54,7 +54,7 @@ function TheLordStarCode() {
         <div>
             <LinearReveal
                 as={"h2"}
-                text="Steps"
+                Text="Steps"
                 className={`${LinearRevealFont.className} text-4xl mb-4`}
             />
 

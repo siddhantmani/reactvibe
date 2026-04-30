@@ -17,7 +17,7 @@ const subHeading = Manrope({
 
 function NovaPricingPreview() {
     return (
-        <div className='py-2'>
+        <div className='py-2 scale-[90%]'>
             <div className='space-y-5'>
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}

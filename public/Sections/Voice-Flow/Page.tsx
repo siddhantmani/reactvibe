@@ -85,7 +85,7 @@ function Page() {
                     <Heart className='text-[27px] text-[#454B57]' />
                     <LinearReveal
                         as={'h1'} //You can select heading from h1-h6
-                        text="From Our Community"
+                        Text="From Our Community"
                         className={`${logoFont.className} xl:text-[17px] text-[#454B57]`}
                     />
                 </div>
