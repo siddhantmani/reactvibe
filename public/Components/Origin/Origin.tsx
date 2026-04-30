@@ -1,15 +1,15 @@
 "use client";
-import Image from "next/image";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-import TopIconIMG from "@/Images/services/firstcard/topIcons.svg";
-import paypalIMG from "@/Images/services/firstcard/paypal.svg";
-import CardIMG from "@/Images/services/firstcard/card.svg";
-import BankBitcoin from "@/Images/services/firstcard/bank.svg";
-import Bitcoin from "@/Images/services/firstcard/bitcoin.svg";
+// import TopIconIMG from "@/images/services/firstcard/topIcons.svg";
+// import paypalIMG from "@/images/services/firstcard/paypal.svg";
+// import CardIMG from "@/images/services/firstcard/card.svg";
+// import BankBitcoin from "@/images/services/firstcard/bank.svg";
+// import Bitcoin from "@/images/services/firstcard/bitcoin.svg";
 
 import { Manrope } from "next/font/google";
+// import Image from "next/image";
 
 const MainHeading = Manrope({
     weight: "600",
@@ -46,13 +46,13 @@ function Origin() {
                             delay: 1.3
                         }}
                     >
-                        <Image
+                        {/* <Image
                             src={TopIconIMG}
                             width={1000}
                             height={1000}
                             alt="top image"
                             className="h-12 w-12 p-2 scale-[125%] bg-white rounded-md shadow-md"
-                        />
+                        /> */}
                     </motion.div>
                 </div>
 
@@ -175,34 +175,34 @@ function Origin() {
 
 
                 <div className="flex ">
-                    <Image
+                    {/* <Image
                         src={paypalIMG}
                         width={1000}
                         height={1000}
                         alt="top image"
                         className="h-12 w-12 p-2 scale-[125%] bg-white rounded-md shadow-md absolute left-[8%] top-[52%]"
-                    />
-                    <Image
+                    /> */}
+                    {/* <Image
                         src={CardIMG}
                         width={1000}
                         height={1000}
                         alt="top image"
                         className="h-12 w-12 p-2 scale-[125%] bg-white rounded-md shadow-md absolute left-[29%] top-[52%]"
-                    />
-                    <Image
-                        src={BankBitcoin}
+                    /> */}
+                    {/* <Image
+                        // src={BankBitcoin}
                         width={1000}
                         height={1000}
                         alt="top image"
                         className="h-12 w-12 p-2 scale-[125%] bg-white rounded-md shadow-md absolute right-[10%] top-[52%]"
-                    />
-                    <Image
-                        src={Bitcoin}
+                    /> */}
+                    {/* <Image
+                        // src={Bitcoin}
                         width={1000}
                         height={1000}
                         alt="top image"
                         className="h-12 w-12 p-2 scale-[125%] bg-white rounded-md shadow-md absolute right-[33%] top-[52%]"
-                    />
+                    /> */}
                 </div>
             </div>
 
