@@ -1,13 +1,13 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-import TopIconIMG from "@/Images/services/firstcard/topIcons.svg";
-import paypalIMG from "@/Images/services/firstcard/paypal.svg";
-import CardIMG from "@/Images/services/firstcard/card.svg";
-import BankBitcoin from "@/Images/services/firstcard/bank.svg";
-import Bitcoin from "@/Images/services/firstcard/bitcoin.svg";
+// import TopIconIMG from "@/Images/services/firstcard/topIcons.svg";
+// import paypalIMG from "@/Images/services/firstcard/paypal.svg";
+// import CardIMG from "@/Images/services/firstcard/card.svg";
+// import BankBitcoin from "@/Images/services/firstcard/bank.svg";
+// import Bitcoin from "@/Images/services/firstcard/bitcoin.svg";
 
 import { Manrope } from "next/font/google";
 
@@ -31,7 +31,7 @@ function OriginCode() {
 
             <div className="">
                 {/* Central Icon */}
-                <div className="absolute top-[15%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                {/* <div className="absolute top-[15%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                     <motion.div
                         initial={{ opacity: 0, filter: "blur(8px)" }}
                         whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -54,7 +54,7 @@ function OriginCode() {
                             className="h-12 w-12 p-2 scale-[125%] bg-white rounded-md shadow-md"
                         />
                     </motion.div>
-                </div>
+                </div> */}
 
                 {/* Animated Curved Lines */}
                 <motion.svg
@@ -174,7 +174,7 @@ function OriginCode() {
 
 
 
-                <div className="flex ">
+                {/* <div className="flex ">
                     <Image
                         src={paypalIMG}
                         width={1000}
@@ -203,7 +203,7 @@ function OriginCode() {
                         alt="top image"
                         className="h-12 w-12 p-2 scale-[125%] bg-white rounded-md shadow-md absolute right-[33%] top-[52%]"
                     />
-                </div>
+                </div> */}
             </div>
 
             <div className="flex flex-col justify-center items-center px-5 absolute bottom-1">

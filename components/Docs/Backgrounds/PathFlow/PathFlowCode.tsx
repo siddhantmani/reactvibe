@@ -2,16 +2,16 @@
 import { motion } from "framer-motion"
 
 // left
-import apple from "@/images/brand/apple.svg"
-import x from "@/images/brand/x.svg"
-import discard from "@/images/brand/dicard.svg"
-import spotify from "@/images/brand/spotify.svg"
+import apple from "@/Images/brand/apple.svg"
+import x from "@/Images/brand/x.svg"
+import discard from "@/Images/brand/dicard.svg"
+import spotify from "@/Images/brand/spotify.svg"
 
 // right
-import youtube from "@/images/brand/youtube.svg"
-import notion from "@/images/brand/notion.svg"
-import figma from "@/images/brand/figma.svg"
-import xbox from "@/images/brand/xbox.svg"
+import youtube from "@/Images/brand/youtube.svg"
+import notion from "@/Images/brand/notion.svg"
+import figma from "@/Images/brand/figma.svg"
+import xbox from "@/Images/brand/xbox.svg"
 
 function PathFlowCode() {
     const CENTER_X = 400
@@ -19,10 +19,10 @@ function PathFlowCode() {
     const leftCurves = [-740, -620, -500, -400, -320, -250, -180, -120]
     const rightCurves = [120, 180, 250, 320, 400, 500, 620, 740]
 
-    // Brand images for left curves
+    // Brand Images for left curves
     const leftBrands = [apple, x, discard, spotify, apple, x, discard, spotify]
 
-    // Brand images for right curves
+    // Brand Images for right curves
     const rightBrands = [youtube, notion, figma, xbox, youtube, notion, figma, xbox]
 
     return (
@@ -55,7 +55,7 @@ function PathFlowCode() {
                             </filter>
                         </defs>
 
-                        {/* LEFT CURVES WITH ANIMATED IMAGES */}
+                        {/* LEFT CURVES WITH ANIMATED Images */}
                         {leftCurves.map((offset, i) => {
                             const pathD = `
                                 M ${CENTER_X + offset} 20
@@ -121,7 +121,7 @@ function PathFlowCode() {
                             </image>
                         </g>
 
-                        {/* RIGHT CURVES WITH ANIMATED IMAGES */}
+                        {/* RIGHT CURVES WITH ANIMATED Images */}
                         {rightCurves.map((offset, i) => {
                             const pathD = `
                                 M ${CENTER_X + offset} 20
