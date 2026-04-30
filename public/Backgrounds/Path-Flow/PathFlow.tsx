@@ -3,16 +3,16 @@ import { motion } from "framer-motion"
 
 // Import Images for left and right
 // left
-import apple from "@/Images/brand/apple.svg"
-import x from "@/Images/brand/x.svg"
-import discard from "@/Images/brand/dicard.svg"
-import spotify from "@/Images/brand/spotify.svg"
+import apple from "@/images/brand/apple.svg"
+import x from "@/images/brand/x.svg"
+import discard from "@/images/brand/dicard.svg"
+import spotify from "@/images/brand/spotify.svg"
 
 // right
-import youtube from "@/Images/brand/youtube.svg"
-import notion from "@/Images/brand/notion.svg"
-import figma from "@/Images/brand/figma.svg"
-import xbox from "@/Images/brand/xbox.svg"
+import youtube from "@/images/brand/youtube.svg"
+import notion from "@/images/brand/notion.svg"
+import figma from "@/images/brand/figma.svg"
+import xbox from "@/images/brand/xbox.svg"
 
 function PathFlow() {
     const CENTER_X = 400

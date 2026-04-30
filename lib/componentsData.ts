@@ -1,28 +1,28 @@
 // components-data.ts
 import LaunchPreview from "@/components/Docs/HeroSection/Launch/LaunchPreview"
-import pathflowImg from "@/Images/previews/pathflow.png"
-import launchImage from "@/Images/previews/launch.png"
+import pathflowImg from "@/images/previews/pathflow.png"
+import launchImage from "@/images/previews/launch.png"
 
 // Background Images
-import DarkFusionImg from "@/Images/previews/Backgrounds/DarkFusion.png"
+import DarkFusionImg from "@/images/previews/Backgrounds/DarkFusion.png"
 
 // Sections
-import zenithImg from "@/Images/previews/Sections/Zenith.png"
-import spotlightImg from "@/Images/previews/Sections/Spotlight.png"
-import auroraPricingImg from "@/Images/previews/Sections/AuroraPricing.png"
-import testimonialsFlowImg from "@/Images/previews/Sections/TestimonialsFlow.png"
-import glideAccordionImg from "@/Images/previews/Sections/GlideAccordion.png"
-import voiceFlowImg from "@/Images/previews/Sections/VoiceFlow.png"
-import novaPricingImg from "@/Images/previews/Sections/NovaPricing.png"
-import stratusImg from "@/Images/previews/Sections/Stratus.png"
-import auraBaseImg from "@/Images/previews/Sections/AuraBaseImg.png"
+import zenithImg from "@/images/previews/Sections/Zenith.png"
+import spotlightImg from "@/images/previews/Sections/Spotlight.png"
+import auroraPricingImg from "@/images/previews/Sections/AuroraPricing.png"
+import testimonialsFlowImg from "@/images/previews/Sections/TestimonialsFlow.png"
+import glideAccordionImg from "@/images/previews/Sections/GlideAccordion.png"
+import voiceFlowImg from "@/images/previews/Sections/VoiceFlow.png"
+import novaPricingImg from "@/images/previews/Sections/NovaPricing.png"
+import stratusImg from "@/images/previews/Sections/Stratus.png"
+import auraBaseImg from "@/images/previews/Sections/AuraBaseImg.png"
 
 // Components
-import brandsImg from "@/Images/previews/Components/Brands.png"
-import BrandsLoopImg from "@/Images/previews/Components/BrandsLoop.png"
+import brandsImg from "@/images/previews/Components/Brands.png"
+import BrandsLoopImg from "@/images/previews/Components/BrandsLoop.png"
 
 // Text Motion
-import linearRevealImg from "@/Images/previews/Text Motion/Linear Reveal.png"
+import linearRevealImg from "@/images/previews/Text Motion/Linear Reveal.png"
 
 // Backgrounds
 import PathFlowPreview from "@/components/Docs/Backgrounds/PathFlow/PathFlowPreview"
@@ -50,7 +50,7 @@ import DarkFusion from "@/public/Backgrounds/Dark-Fusion/DarkFusion"
 
 type ComponentEntry = {
     id: string
-    component: ComponentType<Record<string, unknown>>  // ← add this type
+    component: ComponentType<Record<string, unknown>>  
     image: StaticImageData
     path: string
     title: string
