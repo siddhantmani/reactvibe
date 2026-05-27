@@ -1,5 +1,40 @@
 export const sidebarConfig = [
     {
+        title: "Dashboard Systems",
+        base: "/docs/dashboard-systems/",
+        items: [
+            { name: "Finance Overview", slug: "finance-overview", createdAt: "2026-5-19" },
+            { name: "Accounts", slug: "accounts", createdAt: "2026-5-19" },
+            { name: "Transactions", slug: "transactions", createdAt: "2026-5-19" },
+            { name: "Budgets", slug: "budgets", createdAt: "2026-5-19" },
+            { name: "Investments", slug: "investments", createdAt: "2026-5-19" },
+            { name: "Integrations", slug: "integrations", createdAt: "2026-5-19" },
+            { name: "Reports", slug: "reports", createdAt: "2026-5-19" },
+        ]
+    },
+    {
+        title: "UI Blocks",
+        base: "/docs/ui-blocks/",
+        items: [
+            { name: "Progress Overview List", slug: "progress-overview-list", createdAt: "2026-5-19" },
+            { name: "Comparative Bar Chart", slug: "comparative-bar-chart", createdAt: "2026-5-19" },
+            { name: "Distribution Breakdown Chart", slug: "distribution-breakdown-chart", createdAt: "2026-5-19" },
+            { name: "Scheduled Payments List", slug: "scheduled-payments-list", createdAt: "2026-5-19" },
+            { name: "Transaction Table", slug: "transaction-table", createdAt: "2026-5-19" },
+            { name: "Progress Tracking List", slug: "progress-tracking-list", createdAt: "2026-5-19" },
+            { name: "Entity Management Table", slug: "entity-management-table", createdAt: "2026-5-19" },
+            { name: "Activity Timeline List", slug: "activity-timeline-list", createdAt: "2026-5-19" },
+            { name: "Advanced Transaction Log", slug: "advanced-transaction-log", createdAt: "2026-5-19" },
+            { name: "Compact Activity Feed", slug: "compact-activity-feed", createdAt: "2026-5-19" },
+            { name: "Comparative Metrics Chart", slug: "comparative-metrics-chart", createdAt: "2026-5-19" },
+            { name: "Structured Data Table", slug: "structured-data-table", createdAt: "2026-5-19" },
+            { name: "Alert Notification List", slug: "alert-notification-list", createdAt: "2026-5-19" },
+            { name: "Insight Recommendation Card", slug: "insight-recommendation-card", createdAt: "2026-5-19" },
+            { name: "Performance Trend Chart", slug: "performance-trend-chart", createdAt: "2026-5-19" },
+            { name: "Asset Performance Table", slug: "asset-performance-table", createdAt: "2026-5-19" },
+        ]
+    },
+    {
         title: "Backgrounds",
         base: "/docs/backgrounds/",
         items: [

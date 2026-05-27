@@ -11,20 +11,20 @@ function MotionDropdownPreview() {
     return (
         <div className="flex justify-start p-2">
             <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
-                whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                viewport={{
-                    once: true,
-                    amount: 0.2,
-                    margin: "50px"
-                }}
-                transition={{
-                    duration: 1,
-                    ease: [0.25, 0.46, 0.45, 0.94],
-                    delay: 0.2
-                }}
+                initial={{ opacity: 0, y: -6 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
+                className="flex justify-start p-2"
             >
-                <Dropdown triggerLabel="Menu">
+                <Dropdown
+
+                    trigger={
+                        <div className="flex items-center gap-4 cursor-pointer z-50 border px-2 py-1 rounded-md">
+                            <h1>Menu</h1>
+                        </div>
+                    }
+                >
                     <DropdownItem>
                         <motion.div
                             initial={{ opacity: 0, filter: "blur(8px)" }}

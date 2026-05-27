@@ -162,7 +162,7 @@ function SignaturePreview() {
                                         >
 
                                             <p
-                                                className={`${miniPara.className} text-[12px] text-white/50 max-w-sm`}
+                                                className={`${miniPara.className} text-[10px] text-white/50 max-w-sm`}
                                             >
                                                 Best AI Powered Trading Platform
                                             </p>
@@ -225,7 +225,7 @@ function SignaturePreview() {
                                         {quickLinks.map((item) => (
                                             <li
                                                 key={item.subMenu_key}
-                                                className="hover:underline cursor-pointer text-[#EBEBEB99] text-[12px]"
+                                                className="hover:underline cursor-pointer text-[#EBEBEB99] text-[10px]"
                                             >
                                                 {item.subMenu}
                                             </li>
@@ -260,7 +260,7 @@ function SignaturePreview() {
                                         {companyLinks.map((item) => (
                                             <li
                                                 key={item.subMenu_key}
-                                                className="hover:underline cursor-pointer text-[#EBEBEB99] text-[12px]"
+                                                className="hover:underline cursor-pointer text-[#EBEBEB99] text-[10px]"
                                             >
                                                 {item.subMenu}
                                             </li>
@@ -295,7 +295,7 @@ function SignaturePreview() {
                                         {ResourcesLinks.map((item) => (
                                             <li
                                                 key={item.subMenu_key}
-                                                className="hover:underline cursor-pointer text-[#EBEBEB99] text-[12px]"
+                                                className="hover:underline cursor-pointer text-[#EBEBEB99] text-[10px]"
                                             >
                                                 {item.subMenu}
                                             </li>
@@ -330,7 +330,7 @@ function SignaturePreview() {
                                         {policyLinks.map((item) => (
                                             <li
                                                 key={item.subMenu_key}
-                                                className="hover:underline cursor-pointer text-[#EBEBEB99] text-[12px]"
+                                                className="hover:underline cursor-pointer text-[#EBEBEB99] text-[10px]"
                                             >
                                                 {item.subMenu}
                                             </li>
@@ -369,7 +369,7 @@ function SignaturePreview() {
                                             (item) => (
                                                 <li
                                                     key={item.subMenu_key}
-                                                    className="hover:text-white cursor-pointer underline-offset-2 text-[#EBEBEB99] hover:underline text-[12px] transform-gpu"
+                                                    className="hover:text-white cursor-pointer underline-offset-2 text-[#EBEBEB99] hover:underline text-[10px] transform-gpu"
                                                 >
                                                     {item.subMenu}
                                                 </li>
@@ -393,7 +393,7 @@ function SignaturePreview() {
                     Text="React Vibe"
                     className={`
             ${FooterHeading.className}
-            text-[70px] md:text-[130px] lg:text-[130px] xl:text-[200px]
+            text-[55px] md:text-[130px] lg:text-[120px] xl:text-[200px]
             leading-none
             bg-gradient-to-b from-[#dbdada] to-[#F4F4F6]
             bg-clip-text text-[#EBEBEB99]

@@ -12,7 +12,7 @@ const LinearRevealFont = Bricolage_Grotesque({
 
 function DarkFusionItems() {
     return (
-        <div className='mx-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-6xl lg:max-w-3xl'>
+        <div className='md:px-5 lg:px-8 xl:px-10 px-2 xl:max-w-5xl lg:max-w-2xl 2xl:max-w-7xl mx-auto'>
             <LinearReveal
                 as={'h1'}
                 Text='Dark Fusion'

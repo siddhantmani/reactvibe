@@ -20,7 +20,7 @@ function OverlayNavItems() {
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}
-                    className={`${LinearRevealFont.className} text-5xl`}
+                    className={`${LinearRevealFont.className} text-4xl md:text-5xl`}
                     Text='Overlay Nav'
                 />
 

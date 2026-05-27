@@ -69,11 +69,11 @@ function WaveformItemsPreview() {
                     <TabPanel
                         static
                         hidden={selectedIndex !== 0}
-                        className="border border-gray-700 rounded-2xl py-5"
+                        className="border border-gray-700 rounded-2xl"
                     >
                         <div
                             ref={mountRef}
-                            className="w-full rounded-2xl bg-white"
+                            className="w-full rounded-2xl"
                         >
                             <div className="text-black z-40 w-full rounded-2xl h-full scale-[100%]">
                                 <WaveformPreview />

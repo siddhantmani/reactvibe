@@ -333,7 +333,7 @@ function AuraBase() {
                 <h1
                     className={`
             ${MainHeading.className}
-            text-[90px] md:text-[110px] lg:text-[120px] xl:text-[200px]
+            text-[90px] md:text-[110px] lg:text-[120px] xl:text-[180px]
             leading-none
             bg-gradient-to-b from-[#dbdada] to-[#F4F4F6]
             bg-clip-text text-transparent
