@@ -14,7 +14,7 @@ import { motion } from 'framer-motion'
 
 function PrimeItems() {
     return (
-        <div className='mx-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-6xl lg:max-w-3xl pb-10 space-y-7'>
+        <div className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-6xl lg:max-w-2xl mx-auto pb-10 space-y-7'>
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}

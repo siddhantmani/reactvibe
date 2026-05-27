@@ -112,8 +112,8 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                                                         delay: 0.3
                                                     }}
                                                 >
-                                                    <div className="flex items-center space-x-2 p-[8px] hover:bg-muted rounded-md w-56">
-                                                        <p className={`${LinearRevealFont.className} text-[15px]`}>
+                                                    <div className="flex items-center space-x-2 p-[8px] hover:bg-muted rounded-md w-full">
+                                                        <p className={`${LinearRevealFont.className} whitespace-nowrap text-[14px] 2xl:text-[15px]`}>
                                                             {item.name}
                                                         </p>
                                                         {isNew(item.createdAt) && <PingtoNew size={7} />}

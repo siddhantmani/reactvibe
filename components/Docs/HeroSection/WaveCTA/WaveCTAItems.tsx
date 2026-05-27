@@ -15,7 +15,7 @@ const LinearRevealFont = Bricolage_Grotesque({
 function WaveCTAItems() {
  
     return (
-        <div className="w-full max-w-5xl px-4 py-3 space-y-7">
+        <div className="w-full max-w-5xl lg:max-w-2xl xl:max-w-5xl 2xl:max-w-7xl mx-auto px-4 py-3 space-y-7">
 
 
             <div className="space-y-3">

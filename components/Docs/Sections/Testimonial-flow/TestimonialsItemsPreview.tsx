@@ -72,10 +72,10 @@ function TestimonialsItemsPreview() {
                     >
                         <div
                             ref={mountRef}
-                            className="w-full xl:h-[650px] lg:h-[550px] md:h-[550px] h-[550px] rounded-2xl"
+                            className="w-full rounded-2xl"
                         >
                             <div
-                                className="absolute text-white z-40 w-full xl:px-[80px] rounded-2xl"
+                                className=" text-white z-40 w-full xl:px-[80px] rounded-2xl"
                             >
                                 <TestimonialsMainSection />
                             </div>

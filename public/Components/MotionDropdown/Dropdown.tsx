@@ -30,11 +30,11 @@ const useDropdown = () => {
 }
 
 interface DropdownProps {
-    triggerLabel: string
+    trigger: ReactNode
     children: ReactNode
 }
 
-export function Dropdown({ triggerLabel, children }: DropdownProps) {
+export function Dropdown({ trigger, children }: DropdownProps) {
     const [open, setOpen] = useState(false)
     const [activeIndex, setActiveIndex] = useState(-1)
     const [interaction, setInteraction] =
@@ -148,9 +148,10 @@ export function Dropdown({ triggerLabel, children }: DropdownProps) {
                 <button
                     ref={buttonRef}
                     onClick={() => setOpen(o => !o)}
-                    className="rounded-md cursor-pointer border px-3 py-2 text-left text-sm"
+                    className="rounded-md cursor-pointer px-3 text-left text-sm"
                 >
-                    {triggerLabel}
+                    {/* {triggerLabel} */}
+                    {trigger}
                 </button>
 
                 {open && (
@@ -160,7 +161,7 @@ export function Dropdown({ triggerLabel, children }: DropdownProps) {
                         onKeyDown={handleKeyDown}
                         onMouseEnter={handleMenuMouseEnter}
                         className={`
-              absolute w-full rounded-md border bg-white dark:bg-[#040404] shadow-lg p-[3px] z-50
+              absolute w-full rounded-md bg-white text-black shadow-lg p-[3px] z-50
               ${openUp ? "bottom-full mb-2" : "top-full mt-2"}
             `}
                     >
@@ -231,12 +232,12 @@ export function DropdownItem({
                 setActiveIndex(-1)
             }}
             className={`
-        cursor-pointer px-2 py-[5px] rounded text-[13px] outline-none
+        cursor-pointer px-2 py-[5px] rounded text-[13px] outline-none 
         ${interaction === "keyboard" && activeIndex === __index
-                    ? "bg-[#f4f4f4] dark:bg-[#1c1b1b]"
+                    ? "bg-[#f4f4f4] "
                     : ""
                 }
-        hover:bg-[#f4f4f4] dark:hover:bg-[#1c1b1b] transition-colors
+        hover:bg-[#f4f4f4] transition-colors
       `}
         >
             {children}
@@ -336,10 +337,10 @@ export function DropdownNestedContainer({
             className={`
         relative outline-none
         ${interaction === "keyboard" && activeIndex === __index
-                    ? "bg-[#f4f4f4] dark:bg-[#1c1b1b] rounded"
+                    ? "bg-[#f4f4f4] rounded"
                     : ""
                 }
-        hover:bg-[#f4f4f4] dark:hover:bg-[#1c1b1b] rounded transition-colors
+        hover:bg-[#f4f4f4] rounded transition-colors
       `}
         >
             {heading}
@@ -347,7 +348,7 @@ export function DropdownNestedContainer({
             {open && (
                 <ul
                     className={`
-            absolute top-0 w-40 rounded-md border bg-white dark:bg-[#040404] shadow-lg p-[3px] z-50
+            absolute top-0 w-40 rounded-md bg-white shadow-lg p-[3px] z-50
             ${openLeft ? "right-full mr-0" : "left-full ml-0"}
           `}
                 >
@@ -368,7 +369,7 @@ export function DropdownNestedContainer({
 
 export function DropdownNestedHeading({ children }: { children: ReactNode }) {
     return (
-        <div className="px-2 py-[5px] text-[13px] dark:hover:bg-[#1c1b1b] rounded flex items-center justify-between">
+        <div className="px-2 py-[5px] text-[13px] rounded flex items-center justify-between z-50">
             {children}
             <span>›</span>
         </div>
@@ -400,7 +401,7 @@ export function DropdownNestedItem({
             ref={ref}
             role="menuitem"
             tabIndex={-1}
-            className="cursor-pointer px-2 py-[5px] rounded text-[13px] outline-none hover:bg-[#f4f4f4] focus:bg-[#f4f4f4] dark:bg-[#040404] dark:hover:bg-[#1c1b1b] transition-colors"
+            className="cursor-pointer px-2 py-[5px] rounded text-[13px] z-50 outline-none hover:bg-[#f4f4f4] focus:bg-[#f4f4f4] transition-colors"
             onClick={() => {
                 onClick?.()
                 setOpen(false)

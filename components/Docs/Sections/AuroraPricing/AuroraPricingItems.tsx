@@ -19,7 +19,7 @@ const CreditFont = JetBrains_Mono({
 
 function AuroraPricingItems() {
     return (
-        <div className='mx-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-6xl lg:max-w-3xl space-y-7'>
+        <div className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-6xl lg:max-w-3xl mx-auto 2xl:max-w-7xl space-y-7'>
 
             <div className='space-y-3'>
                 <LinearReveal

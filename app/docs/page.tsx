@@ -11,7 +11,7 @@ import React from 'react'
 
 function DocsPage() {
   return (
-    <div className='px-2 max-w-3xl xl:max-w-6xl space-y-5 pt-3'>
+    <div className='px-2 max-w-3xl xl:max-w-6xl mx-auto space-y-5 pt-3'>
       <DocsBTNTag />
       <DocsTagLine />
       <USPSteps />

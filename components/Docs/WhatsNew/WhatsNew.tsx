@@ -44,7 +44,7 @@ const LiquidGlassMicro: React.FC = () => {
 
 function WhatsNew() {
     return (
-        <Link href="/docs/explore-components">
+        <Link href="/docs/dashboard-systems/finance-overview">
             <div
                 className="
                     relative flex items-center space-x-5
@@ -86,7 +86,7 @@ function WhatsNew() {
                 <LinearReveal
                     className={`${NewComponent.className} text-[16px] cursor-pointer`}
                     as="label"
-                    Text="Explore Components →"
+                    Text="Finance Overview →"
                 />
             </div>
         </Link>

@@ -12,7 +12,7 @@ function LinearRevealPreview() {
         <div className='flex justify-center items-center h-screen '>
             <LinearReveal
                 as='h1'
-                className={`${LinearRevealFont.className} text-7xl`}
+                className={`${LinearRevealFont.className} text-3xl md:text-7xl lg:text-6xl xl:text-7xl`}
                 Text='The Linear Reveal'
                 delay={0.4}
             />
