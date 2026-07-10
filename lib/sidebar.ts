@@ -1,15 +1,22 @@
 export const sidebarConfig = [
     {
+        title: "Templates",
+        base: "/docs/templates/",
+        items: [
+            { name: "Taskforge", slug: "taskforge", createdAt: "2026-7-4" },
+        ]
+    },
+    {
         title: "Dashboard Systems",
         base: "/docs/dashboard-systems/",
         items: [
             { name: "Finance Overview", slug: "finance-overview", createdAt: "2026-5-19" },
-            { name: "Accounts", slug: "accounts", createdAt: "2026-5-19" },
-            { name: "Transactions", slug: "transactions", createdAt: "2026-5-19" },
-            { name: "Budgets", slug: "budgets", createdAt: "2026-5-19" },
-            { name: "Investments", slug: "investments", createdAt: "2026-5-19" },
-            { name: "Integrations", slug: "integrations", createdAt: "2026-5-19" },
-            { name: "Reports", slug: "reports", createdAt: "2026-5-19" },
+            { name: "Accounts", slug: "accounts", createdAt: "2026-5-19", badge: "PRO" },
+            { name: "Transactions", slug: "transactions", createdAt: "2026-5-19", badge: "PRO" },
+            { name: "Budgets", slug: "budgets", createdAt: "2026-5-19", badge: "PRO" },
+            { name: "Investments", slug: "investments", createdAt: "2026-5-19", badge: "PRO" },
+            { name: "Integrations", slug: "integrations", createdAt: "2026-5-19", badge: "PRO" },
+            { name: "Reports", slug: "reports", createdAt: "2026-5-19", badge: "PRO" },
         ]
     },
     {

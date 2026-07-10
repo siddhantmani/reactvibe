@@ -3,7 +3,6 @@ import { motion } from "framer-motion"
 
 import React from 'react'
 
-
 import { Bell, ChevronDown, Mail, Search } from 'lucide-react'
 import { Manrope } from 'next/font/google';
 import Image from 'next/image'
@@ -12,12 +11,12 @@ import Separator from "@/components/Docs/Separator";
 import { Dropdown, DropdownItem, DropdownNestedContainer, DropdownNestedHeading, DropdownNestedItem } from "@/components/Docs/Components/MotionDropdown/Dropdown";
 
 const menuName = Manrope({
-    weight: '400', // Specify the font weight if needed  
+    weight: '400', 
     subsets: ['latin']
 });
 
 const fontBold = Manrope({
-    weight: '600', // Specify the font weight if needed  
+    weight: '600', 
     subsets: ['latin']
 });
 
@@ -25,7 +24,7 @@ const fontBold = Manrope({
 function FinanceOverviewHeader() {
     return (
         <div className='flex justify-between'>
-            {/* Left Content */}
+    
             <div>
                 <LinearReveal
                     as='h1'
@@ -38,10 +37,10 @@ function FinanceOverviewHeader() {
                 </p>
             </div>
 
-            {/* Right Content */}
+         
             <div className="flex items-center gap-5">
 
-                {/* Search */}
+               
                 <div className="rounded-[5px] border border-black/10 bg-white px-5 flex items-center justify-between w-[100%]">
                     <input
                         type="text"
@@ -56,8 +55,6 @@ function FinanceOverviewHeader() {
                     />
                 </div>
                 <div className='flex items-center gap-3'>
-
-                    {/* Notification */}
                     <button className="relative p-2 rounded-full bg-white flex items-center justify-center shadow-sm border border-black/5">
                         <Bell
                             size={18}
@@ -68,7 +65,6 @@ function FinanceOverviewHeader() {
                         <span className="absolute top-[10px] right-[10px] w-[9px] h-[9px] bg-red-500 rounded-full border-2 border-white" />
                     </button>
 
-                    {/* Mail */}
                     <button className="p-2 rounded-full bg-white flex items-center justify-center shadow-sm border border-black/5">
                         <Mail
                             size={18}
@@ -84,8 +80,6 @@ function FinanceOverviewHeader() {
                         className='bg-black/20'
                     />
                 </div>
-                {/* Profile */}
-
 
                 <div className="flex justify-start p-2">
                     <motion.div
@@ -137,7 +131,6 @@ function FinanceOverviewHeader() {
                                 className='dark:bg-white/15 bg-black/15 w-full my-1'
                             />
 
-                            {/* SECURITY */}
                             <DropdownNestedContainer>
                                 <DropdownNestedHeading>
                                     Security
