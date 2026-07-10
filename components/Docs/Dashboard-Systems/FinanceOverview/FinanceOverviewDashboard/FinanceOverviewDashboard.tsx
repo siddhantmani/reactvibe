@@ -23,6 +23,7 @@ import FinancialMetricsGrid from "./FinancialMetricsGrid";
 import FinancialInsightsGrid from "./FinancialInsightsGrid";
 import FinancialActivityGrid from "./FinancialActivityGrid";
 import FinanceOverviewFooter from "./FinanceOverviewFooter";
+import Link from "next/link";
 
 const fontBold = Manrope({
     weight: '600',
@@ -30,14 +31,15 @@ const fontBold = Manrope({
 });
 
 function Sidebar() {
+    
     const items = [
-        { name: "Finance Overview", icon: <LayoutDashboard size={15} /> },
-        { name: "Accounts", icon: <Wallet size={15} /> },
-        { name: "Transactions", icon: <ArrowLeftRight size={15} /> },
-        { name: "Budgets", icon: <PiggyBank size={15} /> },
-        { name: "Investments", icon: <TrendingUp size={15} /> },
-        { name: "Integrations", icon: <SquaresIntersect size={15} /> },
-        { name: "Reports", icon: <BarChart2 size={15} /> },
+        { name: "Finance Overview", icon: <LayoutDashboard size={15} />, link: "/docs/dashboard-systems/finance-overview" },
+        { name: "Accounts", icon: <Wallet size={15} />, link: "/docs/dashboard-systems/accounts" },
+        { name: "Transactions", icon: <ArrowLeftRight size={15} />, link: "/docs/dashboard-systems/transactions" },
+        { name: "Budgets", icon: <PiggyBank size={15} />, link: "/docs/dashboard-systems/budgets" },
+        { name: "Investments", icon: <TrendingUp size={15} />, link: "/docs/dashboard-systems/investments" },
+        { name: "Integrations", icon: <SquaresIntersect size={15} />, link: "/docs/dashboard-systems/integrations" },
+        { name: "Reports", icon: <BarChart2 size={15} />, link: "/docs/dashboard-systems/reports" },
     ];
 
     return (
@@ -52,15 +54,17 @@ function Sidebar() {
 
             <nav className="space-y-2 pt-2">
                 {items.map((item, i) => (
-                    <div key={i}
-                        className={`px-3 py-2 rounded-lg flex items-center gap-2 text-sm cursor-pointer ${item.name === "Finance Overview"
-                            ? "hover:bg-[#CEF5B1] text-black/90"
-                            : "hover:bg-[#CEF5B1] text-black/50 hover:text-black/90"
+                    <Link
+                        key={i}
+                        href={item.link || "#"} 
+                        className={`px-3 py-2 rounded-lg flex items-center gap-2 text-sm cursor-pointer transition-colors ${item.name === "Finance Overview"
+                                ? "bg-[#CEF5B1] text-black/90" 
+                                : "hover:bg-[#CEF5B1] text-black/50 hover:text-black/90"
                             }`}
                     >
                         {item.icon}
-                        {item.name}
-                    </div>
+                        <span>{item.name}</span>
+                    </Link>
                 ))}
             </nav>
 

@@ -14,7 +14,7 @@ function RefrashContent() {
         >
             <Tooltip>
                 <TooltipTrigger>
-                    <RotateCw className='h-5 w-5' />
+                    <RotateCw size={18} />
                 </TooltipTrigger>
                 <TooltipContent>
                     <p>Refresh</p>

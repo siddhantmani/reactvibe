@@ -22,6 +22,7 @@ const LinearRevealFont = JetBrains_Mono({
 })
 
 import { motion } from "framer-motion"
+import Badge from "../Badge";
 
 export default function Sidebar({ onItemClick }: SidebarProps) {
     const isNew = (createdAt: string) => {
@@ -116,6 +117,11 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                                                         <p className={`${LinearRevealFont.className} whitespace-nowrap text-[14px] 2xl:text-[15px]`}>
                                                             {item.name}
                                                         </p>
+                                                        {item.badge && (
+                                                            <Badge>
+                                                                {item.badge}
+                                                            </Badge>
+                                                        )}
                                                         {isNew(item.createdAt) && <PingtoNew size={7} />}
                                                     </div>
                                                 </motion.div>

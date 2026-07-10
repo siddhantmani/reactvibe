@@ -37,7 +37,7 @@ function FinanceOverviewItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern finance overview dashboard UI built for fintech and SaaS applications. Includes expense tracking, cashflow analytics, transaction history, budgeting sections, and financial goal management with a clean responsive layout.
+                    A modern finance analytics dashboard built for fintech and SaaS applications, featuring budget management, financial goals tracking, transaction history, and interactive data visualizations.
                 </motion.p>
 
             </div>
