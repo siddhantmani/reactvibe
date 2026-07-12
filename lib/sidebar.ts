@@ -11,7 +11,7 @@ export const sidebarConfig = [
         base: "/docs/dashboard-systems/",
         items: [
             { name: "Finance Overview", slug: "finance-overview", createdAt: "2026-5-19" },
-            { name: "Accounts", slug: "accounts", createdAt: "2026-5-19", badge: "PRO" },
+            { name: "Accounts", slug: "accounts", createdAt: "2026-5-19", badge: "PRO"  },
             { name: "Transactions", slug: "transactions", createdAt: "2026-5-19", badge: "PRO" },
             { name: "Budgets", slug: "budgets", createdAt: "2026-5-19", badge: "PRO" },
             { name: "Investments", slug: "investments", createdAt: "2026-5-19", badge: "PRO" },
@@ -96,7 +96,7 @@ export const sidebarConfig = [
             { name: "Brand Loop", slug: "brand-loop", createdAt: "2026-1-1" },
             { name: "Pulse Ping", slug: "pulse-ping", createdAt: "2026-4-30" },
             { name: "Motion Switch", slug: "motion-switch", createdAt: "2026-1-1" },
-            { name: "Motion Dropdown", slug: "motion-dropdown", createdAt: "2026-1-1" },
+            { name: "Motion Dropdown", slug: "motion-dropdown", createdAt: "2026-1-1", badge: "UPDATED" },
             { name: "Shadow Button", slug: "shadow-button", createdAt: "2026-1-1" }
         ]
     },

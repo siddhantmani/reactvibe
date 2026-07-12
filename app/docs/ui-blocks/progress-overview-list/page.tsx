@@ -5,9 +5,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Progress Overview List UI for React & Next.js | React Vibe",
+    title: "React Progress Bar & Progress List Component | React Vibe",
     description:
-        "Responsive progress overview list UI for React with progress bars, tracking sections, and clean dashboard layouts for SaaS apps.",
+        "Build responsive React Progress Bar and Progress List Component for dashboards. Perfect for project progress tracking, status lists, and Tailwind apps.",
 }
 
 function ProgressOverviewList() {

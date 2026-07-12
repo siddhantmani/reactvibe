@@ -80,7 +80,7 @@ function MotionDropdownItemsPreview() {
                             className="w-full xl:h-[500px] lg:h-[550px] md:h-[550px] h-[550px] rounded-2xl"
                         >
                             <div
-                                className="flex justify-center py-10 z-40 w-full rounded-2xl h-full"
+                                className="flex justify-center items-start py-10 w-full rounded-2xl"
                             >
                                 <MotionDropdownPreview />
                             </div>
