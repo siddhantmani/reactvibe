@@ -5,6 +5,7 @@ import { Bricolage_Grotesque } from 'next/font/google';
 import React from 'react'
 import MotionDropdownItemsPreview from './MotionDropdownItemsPreview';
 import { motion } from 'framer-motion'
+import TablePorpsForMotionDropdownItems from './TablePorpsForMotionDropdownItems';
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
@@ -17,7 +18,7 @@ function MotionDropdownItems() {
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}
-                    className={`${OrbitFontFont.className} text-5xl`}
+                    className={`${OrbitFontFont.className} text-3xl md:text-5xl`}
                     Text='Motion Dropdown'
                 />
 
@@ -41,6 +42,9 @@ function MotionDropdownItems() {
             </div>
             <div className='border-black rounded-2xl'>
                 <MotionDropdownItemsPreview />
+            </div>
+            <div>
+                <TablePorpsForMotionDropdownItems />
             </div>
         </div>
     )

@@ -8,7 +8,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { toast } from 'sonner';
 
 const LinearRevealFont = Bricolage_Grotesque({
-    weight: '700', // Specify the font weight if needed  
+    weight: '700', 
     subsets: ['vietnamese']
 });
 
@@ -37,16 +37,16 @@ function FramerMotionGlobalInstalation() {
             />
 
             <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
+                initial={{ opacity: 0, filter: "blur(2px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{
                     once: true,
-                    amount: 0.2, // Trigger when 20% visible
+                    amount: 0.2,
                     margin: "50px"
                 }}
                 transition={{
                     duration: 1.2,
-                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                    ease: [0.25, 0.46, 0.45, 0.94], 
                     delay: 0.2
                 }}
             >

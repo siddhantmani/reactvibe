@@ -19,6 +19,8 @@ interface DropdownContextType {
     registerItem: (index: number, el: HTMLLIElement | null) => void
     interaction: InteractionMode
     setInteraction: (v: InteractionMode) => void
+    itemClassName?: string
+    menuClassName?: string
 }
 
 const DropdownContext = createContext<DropdownContextType | null>(null)
@@ -32,9 +34,11 @@ const useDropdown = () => {
 interface DropdownProps {
     trigger: ReactNode
     children: ReactNode
+    menuClassName?: string
+    itemClassName?: string
 }
 
-export function Dropdown({ trigger, children }: DropdownProps) {
+export function Dropdown({ trigger, children, menuClassName, itemClassName }: DropdownProps) {
     const [open, setOpen] = useState(false)
     const [activeIndex, setActiveIndex] = useState(-1)
     const [interaction, setInteraction] =
@@ -142,6 +146,8 @@ export function Dropdown({ trigger, children }: DropdownProps) {
                 registerItem,
                 interaction,
                 setInteraction,
+                menuClassName,
+                itemClassName,
             }}
         >
             <div ref={containerRef} className="relative w-48">
@@ -161,9 +167,10 @@ export function Dropdown({ trigger, children }: DropdownProps) {
                         onKeyDown={handleKeyDown}
                         onMouseEnter={handleMenuMouseEnter}
                         className={`
-              absolute w-full rounded-md bg-white text-black shadow-lg p-[3px] z-50
-              ${openUp ? "bottom-full mb-2" : "top-full mt-2"}
-            `}
+        absolute top-0 w-full rounded-md border shadow-lg p-[3px] z-50
+        ${openUp ? "bottom-full mb-2" : "top-full mt-2"}
+        ${menuClassName ?? ""}        
+    `}
                     >
                         {React.Children.map(children, (child, index) =>
                             React.isValidElement(child)
@@ -198,6 +205,7 @@ export function DropdownItem({
         registerItem,
         interaction,
         setInteraction,
+        itemClassName,
     } = useDropdown()
 
     const ref = useRef<HTMLLIElement>(null)
@@ -234,10 +242,11 @@ export function DropdownItem({
             className={`
         cursor-pointer px-2 py-[5px] rounded text-[13px] outline-none 
         ${interaction === "keyboard" && activeIndex === __index
-                    ? "bg-[#f4f4f4] "
+                    ? ""
                     : ""
                 }
-        hover:bg-[#f4f4f4] transition-colors
+         transition-colors
+          ${itemClassName ?? ""}
       `}
         >
             {children}
@@ -260,6 +269,7 @@ export function DropdownNestedContainer({
         registerItem,
         interaction,
         setInteraction,
+        menuClassName,
     } = useDropdown()
 
     const [open, setOpen] = useState(false)
@@ -337,10 +347,11 @@ export function DropdownNestedContainer({
             className={`
         relative outline-none
         ${interaction === "keyboard" && activeIndex === __index
-                    ? "bg-[#f4f4f4] rounded"
+                    ? " rounded"
                     : ""
                 }
-        hover:bg-[#f4f4f4] rounded transition-colors
+         rounded transition-colors
+         
       `}
         >
             {heading}
@@ -348,8 +359,9 @@ export function DropdownNestedContainer({
             {open && (
                 <ul
                     className={`
-            absolute top-0 w-40 rounded-md bg-white shadow-lg p-[3px] z-50
+            absolute top-0 w-40 rounded-md border shadow-lg p-[3px] z-50
             ${openLeft ? "right-full mr-0" : "left-full ml-0"}
+             ${menuClassName ?? ""}
           `}
                 >
                     {items.map((item, i) =>
@@ -368,8 +380,15 @@ export function DropdownNestedContainer({
 
 
 export function DropdownNestedHeading({ children }: { children: ReactNode }) {
+    const { itemClassName } = useDropdown()
     return (
-        <div className="px-2 py-[5px] text-[13px] rounded flex items-center justify-between z-50">
+        <div
+            className={`
+                px-2 py-[5px] text-[13px]
+                rounded flex items-center justify-between
+                ${itemClassName ?? ""}
+            `}
+        >
             {children}
             <span>›</span>
         </div>
@@ -387,7 +406,7 @@ export function DropdownNestedItem({
     onClick,
     __autoFocus,
 }: DropdownNestedItemProps) {
-    const { setOpen } = useDropdown()
+    const { setOpen, itemClassName } = useDropdown()
     const ref = useRef<HTMLLIElement>(null)
 
     useEffect(() => {
@@ -401,7 +420,15 @@ export function DropdownNestedItem({
             ref={ref}
             role="menuitem"
             tabIndex={-1}
-            className="cursor-pointer px-2 py-[5px] rounded text-[13px] z-50 outline-none hover:bg-[#f4f4f4] focus:bg-[#f4f4f4] transition-colors"
+            className={`
+                cursor-pointer
+                px-2 py-[5px]
+                rounded
+                text-[13px]
+                outline-none
+                transition-colors
+                ${itemClassName ?? ""}
+            `}
             onClick={() => {
                 onClick?.()
                 setOpen(false)

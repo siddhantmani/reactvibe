@@ -3,13 +3,15 @@ import { motion } from "framer-motion"
 
 import React from "react";
 
-import { Manrope } from "next/font/google";
-import LinearReveal from "@/components/LinearReveal";
 
-const boldFont = Manrope({
-    weight: "600",
+import LinearReveal from "@/components/LinearReveal";
+import { Manrope } from "next/font/google";
+
+export const manrope = Manrope({
     subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
 });
+
 
 const list = [
     {
@@ -80,7 +82,7 @@ function ProgressOverviewListItem({ title, spent, total, progress }: ProgressOve
             <div className="flex items-start justify-between">
 
                 <div>
-                    <h3 className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                    <h3 className={`${manrope.className} font-[500] text-[11px] text-[#111827]`}>
                         {title}
                     </h3>
 
@@ -88,7 +90,7 @@ function ProgressOverviewListItem({ title, spent, total, progress }: ProgressOve
                         delay={0.4}
                         as='p'
                         Text={`${spent} of ${total}`}
-                        className={`${boldFont.className} text-[11px] text-[#4b5563] mt-3`}
+                        className={`${manrope.className} text-[11px] font-[600] text-[#4b5563] mt-3`}
                     />
 
                 </div>
@@ -97,7 +99,7 @@ function ProgressOverviewListItem({ title, spent, total, progress }: ProgressOve
                     as='p'
                     delay={0.4}
                     Text={`${progress}%`}
-                    className={`${boldFont.className} text-[12px] text-[#111827] mt-3`}
+                    className={`${manrope.className} text-[12px] text-[#111827] mt-3`}
                 />
 
             </div>
@@ -111,16 +113,16 @@ function ProgressOverviewListItem({ title, spent, total, progress }: ProgressOve
 function ProgressOverviewListPreview() {
     return (
         <motion.div
-            initial={{ opacity: 0, filter: "blur(6px)" }}
+            initial={{ opacity: 0, filter: "blur(2px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
+                amount: 0.2, 
                 margin: "50px"
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                ease: [0.25, 0.46, 0.45, 0.94], 
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
@@ -129,11 +131,11 @@ function ProgressOverviewListPreview() {
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
 
-                <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                <h1 className={`${manrope.className} font-[500] text-[12px] text-[#111827]`}>
                     Progress Overview List
                 </h1>
 
-                <button className={`${boldFont.className} text-[12px] text-[#15803d] hover:opacity-80 transition-opacity`}>
+                <button className={`${manrope.className} font-[500] text-[12px] text-[#15803d] hover:opacity-80 transition-opacity`}>
                     View All
                 </button>
             </div>
