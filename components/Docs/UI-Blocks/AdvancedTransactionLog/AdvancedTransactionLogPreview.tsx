@@ -134,7 +134,7 @@ function AdvancedTransactionLogPreview() {
     ]
 
     return (
-        <div className='bg-white border border-black/5 rounded-[15px] p-3 px-3 aspect-video'>
+        <div className='bg-white border border-black/5 dark:border-white/10 dark:bg-[#0c0c0c] rounded-[15px] p-3 px-3 aspect-video'>
 
             {/* top actions */}
             <div className='flex items-center justify-between gap-4'>
@@ -145,15 +145,15 @@ function AdvancedTransactionLogPreview() {
                         All Transactions
                     </button>
 
-                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 text-black/70 dark:border-white/10 dark:text-white/70 dark:hover:text-white text-[12px]`}>
                         Income
                     </button>
 
-                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 text-black/70 dark:border-white/10 dark:text-white/70 dark:hover:text-white text-[12px]`}>
                         Expenses
                     </button>
 
-                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 text-black/70 dark:border-white/10 dark:text-white/70 dark:hover:text-white text-[12px]`}>
                         Transfers
                     </button>
                 </div>
@@ -161,12 +161,12 @@ function AdvancedTransactionLogPreview() {
                 {/* right controls */}
                 <div className='flex items-center gap-3'>
 
-                    <button className={`${boldFont.className} flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 text-black/70 dark:hover:text-white dark:border-white/10 dark:text-white/70 text-[12px]`}>
                         <span>May 1 — May 31, 2024</span>
                         <Calendar size={16} />
                     </button>
 
-                    <button className={`${boldFont.className} relative flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} relative flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 text-black/70 dark:hover:text-white dark:border-white/10 dark:text-white/70 text-[12px]`}>
                         <Filter size={16} />
                         Filters
 
@@ -175,7 +175,7 @@ function AdvancedTransactionLogPreview() {
                         </div>
                     </button>
 
-                    <button className={`${boldFont.className} flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 text-black/70 dark:hover:text-white dark:border-white/10 dark:text-white/70 text-[12px]`}>
                         <Download size={16} />
                         Export
                     </button>
@@ -190,7 +190,7 @@ function AdvancedTransactionLogPreview() {
                 <table className='w-full'>
 
                     <thead>
-                        <tr className='border-b border-black/5 text-left text-black/40 text-sm'>
+                        <tr className='border-b border-black/5 text-left text-black/40 dark:border-white/5 dark:text-white/80 text-sm'>
                             <th className='pb-5 font-medium w-[150px]'>Date</th>
                             <th className='pb-5 font-medium'>Description</th>
                             <th className='pb-5 font-medium'>Category</th>
@@ -206,7 +206,7 @@ function AdvancedTransactionLogPreview() {
                         <tr>
                             <td
                                 colSpan={7}
-                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black`}
+                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black dark:text-white/90`}
                             >
                                 Today — May 31, 2024
                             </td>
@@ -215,7 +215,7 @@ function AdvancedTransactionLogPreview() {
                         {transactions.slice(0, 3).map((item, index) => (
                             <tr
                                 key={index}
-                                className='border-b border-black/5'
+                                className='border-b border-black/5 dark:border-white/5'
                             >
 
                                 {/* date */}
@@ -227,11 +227,11 @@ function AdvancedTransactionLogPreview() {
                                         </div>
 
                                         <div>
-                                            <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                            <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                                                 {item.date}
                                             </h1>
 
-                                            <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                            <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                                 {item.time}
                                             </p>
                                         </div>
@@ -241,11 +241,11 @@ function AdvancedTransactionLogPreview() {
 
                                 {/* desc */}
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                                         {item.name}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                         {item.desc}
                                     </p>
                                 </td>
@@ -259,11 +259,11 @@ function AdvancedTransactionLogPreview() {
 
                                 {/* account */}
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                                         {item.account}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                         {item.accountNo}
                                     </p>
                                 </td>
@@ -286,7 +286,7 @@ function AdvancedTransactionLogPreview() {
                                 </td>
 
                                 <td>
-                                    <button className='text-black/60'>
+                                    <button className='text-black/60 dark:text-white/60 dark:hover:text-white cursor-pointer'>
                                         <Ellipsis size={12} />
                                     </button>
                                 </td>
@@ -298,7 +298,7 @@ function AdvancedTransactionLogPreview() {
                         <tr>
                             <td
                                 colSpan={7}
-                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black`}
+                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black dark:text-white/90`}
                             >
                                 Yesterday — May 30, 2024
                             </td>
@@ -307,7 +307,7 @@ function AdvancedTransactionLogPreview() {
                         {transactions.slice(3, 6).map((item, index) => (
                             <tr
                                 key={index}
-                                className='border-b border-black/5'
+                                className='border-b border-black/5 dark:border-white/5 '
                             >
 
                                 <td className='py-2'>
@@ -318,11 +318,11 @@ function AdvancedTransactionLogPreview() {
                                         </div>
 
                                         <div>
-                                            <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                            <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                                                 {item.date}
                                             </h1>
 
-                                            <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                            <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                                 {item.time}
                                             </p>
                                         </div>
@@ -331,11 +331,11 @@ function AdvancedTransactionLogPreview() {
                                 </td>
 
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                                         {item.name}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                         {item.desc}
                                     </p>
                                 </td>
@@ -347,11 +347,11 @@ function AdvancedTransactionLogPreview() {
                                 </td>
 
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                                         {item.account}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                         {item.accountNo}
                                     </p>
                                 </td>
@@ -376,7 +376,7 @@ function AdvancedTransactionLogPreview() {
                                 </td>
 
                                 <td>
-                                    <button className='text-black/60'>
+                                    <button className='text-black/60 dark:text-white/60 dark:hover:text-white cursor-pointer'>
                                         <Ellipsis size={12} />
                                     </button>
                                 </td>
@@ -388,7 +388,7 @@ function AdvancedTransactionLogPreview() {
                         <tr>
                             <td
                                 colSpan={7}
-                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black`}
+                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black dark:text-white`}
                             >
                                 May 29, 2024
                             </td>
@@ -397,7 +397,7 @@ function AdvancedTransactionLogPreview() {
                         {transactions.slice(6, 8).map((item, index) => (
                             <tr
                                 key={index}
-                                className='border-b border-black/5'
+                                className='border-b border-black/5 dark:border-white/5'
                             >
 
                                 <td className='py-2'>
@@ -408,11 +408,11 @@ function AdvancedTransactionLogPreview() {
                                         </div>
 
                                         <div>
-                                            <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                            <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                                                 {item.date}
                                             </h1>
 
-                                            <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                            <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                                 {item.time}
                                             </p>
                                         </div>
@@ -421,27 +421,27 @@ function AdvancedTransactionLogPreview() {
                                 </td>
 
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                                         {item.name}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                         {item.desc}
                                     </p>
                                 </td>
 
                                 <td>
-                                    <div className={`inline-flex px-2 py-1 ${boldFont.className} text-[10px] text-[#111827] rounded-[5px] items-center ${item.categoryColor}`}>
+                                    <div className={`inline-flex px-2 py-1 ${boldFont.className} text-[10px] text-[#111827]  rounded-[5px] items-center ${item.categoryColor}`}>
                                         {item.category}
                                     </div>
                                 </td>
 
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                                         {item.account}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                         {item.accountNo}
                                     </p>
                                 </td>
@@ -464,7 +464,7 @@ function AdvancedTransactionLogPreview() {
                                 </td>
 
                                 <td>
-                                    <button className='text-black/60'>
+                                    <button className='text-black/60 dark:text-white/50 dark:hover:text-white cursor-pointer'>
                                         <Ellipsis size={12} />
                                     </button>
                                 </td>
@@ -480,7 +480,7 @@ function AdvancedTransactionLogPreview() {
 
             {/* load more */}
             <div className='flex items-center justify-center pt-5'>
-                <button className={`${boldFont.className} text-[12px] flex items-center gap-2 text-black/60`}>
+                <button className={`${boldFont.className} text-[12px] flex items-center gap-2 text-black/60 dark:text-white/60 dark:hover:text-white cursor-pointer`}>
                     Load more transactions
                     <ChevronDown size={12} />
                 </button>

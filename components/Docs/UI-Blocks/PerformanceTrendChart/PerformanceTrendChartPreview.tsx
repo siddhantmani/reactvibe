@@ -149,7 +149,7 @@ function PerformanceTrendChartPreview() {
     return (
 
         <motion.div
-            initial={{ opacity: 0, filter: "blur(6px)" }}
+            initial={{ opacity: 0, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
@@ -162,7 +162,7 @@ function PerformanceTrendChartPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]`}
+            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:border-white/10 dark:bg-[#0c0c0c] dark:shadow-none p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]`}
         >
 
             {/* Background Glow */}
@@ -180,13 +180,13 @@ function PerformanceTrendChartPreview() {
                     <div className="flex items-center gap-4">
 
                         <h2
-                            className={`${boldFont.className} whitespace-nowrap text-[14px] tracking-[-0.03em] text-[#111111]`}
+                            className={`${boldFont.className} whitespace-nowrap text-[14px] tracking-[-0.03em] text-[#111111] dark:text-white`}
                         >
                             Performance Trend Chart
                         </h2>
 
                         <button
-                            className={`${boldFont.className} flex items-center gap-2 rounded-[6px] border border-black/[0.06] bg-black/[0.02] px-2 py-1 text-[12px] whitespace-nowrap font-medium text-black/60 backdrop-blur-md transition-all duration-300 hover:bg-black/[0.04] hover:text-black`}
+                            className={`${boldFont.className} flex items-center gap-2 rounded-[6px] border border-black/[0.06] bg-black/[0.02] px-2 py-1 text-[12px] whitespace-nowrap font-medium text-black/60 backdrop-blur-md transition-all duration-300 hover:bg-black/[0.04] hover:text-black dark:text-white/80 dark:border-white/10 dark:hover:text-white cursor-pointer`}
                         >
 
                             This Month
@@ -210,7 +210,7 @@ function PerformanceTrendChartPreview() {
                                     key={index}
                                     className={`flex items-center justify-center rounded-[5px] px-2 py-1 text-[10px] font-semibold transition-all duration-300 ${filter === "1M"
                                         ? "bg-black text-white shadow-[0_8px_20px_rgba(0,0,0,0.08)]"
-                                        : "bg-black/[0.03] text-black/45 hover:bg-black/[0.05] hover:text-black"
+                                        : "bg-black/[0.03] text-black/45 hover:bg-black/[0.05] hover:text-black dark:text-white"
                                         }`}
                                 >
                                     {filter}
@@ -227,7 +227,7 @@ function PerformanceTrendChartPreview() {
                 <div className="mt-5">
 
                     <h1
-                        className={`${boldFont.className} text-[22px] tracking-[-0.06em] text-[#111111]`}
+                        className={`${boldFont.className} text-[22px] tracking-[-0.06em] text-[#111111] dark:text-white`}
                     >
                         ${currentValue}
                     </h1>
@@ -268,7 +268,7 @@ function PerformanceTrendChartPreview() {
                             (line) => (
                                 <div
                                     key={line}
-                                    className="border-t border-black/[0.06]"
+                                    className="border-t border-black/[0.06] dark:text-white/5 dark:border-white/5"
                                 />
                             )
                         )}
@@ -288,7 +288,7 @@ function PerformanceTrendChartPreview() {
 
                             <p
                                 key={label}
-                                className={`${boldFont.className} text-[10px] text-black/70`}
+                                className={`${boldFont.className} text-[10px] text-black/70 dark:text-white/70`}
                             >
                                 {label}
                             </p>
@@ -459,10 +459,10 @@ function PerformanceTrendChartPreview() {
                                 }}
                             >
 
-                                <div className="rounded-[12px] border border-black/[0.06] bg-white/95 px-3 py-2 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+                                <div className="rounded-[12px] border border-black/[0.06] bg-white/95 dark:bg-black/90 px-3 py-2 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
 
                                     <p
-                                        className={`${boldFont.className} text-[12px] text-black/45`}
+                                        className={`${boldFont.className} text-[12px] text-black/45 dark:text-white/60`}
                                     >
                                         {
                                             activeData.item
@@ -471,7 +471,7 @@ function PerformanceTrendChartPreview() {
                                     </p>
 
                                     <h3
-                                        className={`${boldFont.className} mt-1 text-[16px] text-[#111111]`}
+                                        className={`${boldFont.className} mt-1 text-[16px] text-[#111111] dark:text-white`}
                                     >
                                         $
                                         {activeData.item.value.toLocaleString()}
@@ -541,7 +541,7 @@ function PerformanceTrendChartPreview() {
 
                             <p
                                 key={item.day}
-                                className={`${boldFont.className} text-[10px] whitespace-nowrap text-black/70`}
+                                className={`${boldFont.className} text-[10px] whitespace-nowrap text-black/70 dark:text-white/70`}
                             >
                                 {item.day}
                             </p>

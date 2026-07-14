@@ -54,25 +54,25 @@ function ActivityTimelineListPreview() {
     return (
         <motion.div
 
-            initial={{ opacity: 0, filter: "blur(6px)" }}
+            initial={{ opacity: 0, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
+                amount: 0.2,
                 margin: "50px"
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="rounded-[15px] aspect-video border border-black/10 bg-white p-3 px-3">
+            className="rounded-[15px] aspect-video border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3">
 
             {/* Heading */}
             <div>
 
-                <h2 className={`${boldFont.className} text-[14px] text-[#111827]`}>
+                <h2 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white`}>
                     Activity Timeline List
                 </h2>
 
@@ -85,7 +85,7 @@ function ActivityTimelineListPreview() {
 
                     <div
                         key={index}
-                        className="flex items-center justify-between rounded-2xl p-3 transition-all duration-300 hover:bg-black/[0.02]"
+                        className="flex items-center justify-between rounded-2xl p-3 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.03]"
                     >
 
                         {/* Left */}
@@ -101,21 +101,21 @@ function ActivityTimelineListPreview() {
                             {/* Arrow */}
                             <div
                                 className={`flex h-6 w-6 items-center justify-center rounded-full ${item.positive
-                                    ? "bg-[#DCFCE7]"
-                                    : "bg-[#FEE2E2]"
+                                    ? "bg-[#DCFCE7] dark:bg-green-500/15"
+                                    : "bg-[#FEE2E2] dark:bg-red-500/15"
                                     }`}
                             >
 
                                 {item.positive ? (
                                     <ArrowUp
                                         size={13}
-                                        className="text-[#16A34A]"
+                                        className="text-[#16A34A] dark:text-green-400"
                                         strokeWidth={2.8}
                                     />
                                 ) : (
                                     <ArrowDown
                                         size={13}
-                                        className="text-[#DC2626]"
+                                        className="text-[#DC2626] dark:text-red-400"
                                         strokeWidth={2.8}
                                     />
                                 )}
@@ -125,11 +125,11 @@ function ActivityTimelineListPreview() {
                             {/* Content */}
                             <div>
 
-                                <h3 className={`${boldFont.className} text-[13px] text-[#111827]`}>
+                                <h3 className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
                                     {item.bank}
                                 </h3>
 
-                                <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-gray-400`}>
                                     {item.description}
                                 </p>
 
@@ -138,7 +138,7 @@ function ActivityTimelineListPreview() {
                         </div>
 
                         {/* Time */}
-                        <p className={`${boldFont.className} text-[12px] text-[#6B7280]`}>
+                        <p className={`${boldFont.className} text-[12px] text-[#6B7280] dark:text-gray-400`}>
                             {item.time}
                         </p>
 

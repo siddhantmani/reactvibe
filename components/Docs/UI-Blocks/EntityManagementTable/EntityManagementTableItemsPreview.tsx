@@ -70,11 +70,11 @@ function EntityManagementTableItemsPreview() {
                     <TabPanel
                         static
                         hidden={selectedIndex !== 0}
-                        className="border border-gray-700 rounded-2xl"
+                        className="border border-gray-700 dark:border-black rounded-2xl"
                     >
                         <div
                             ref={mountRef}
-                            className="w-full rounded-2xl bg-white"
+                            className="w-full rounded-2xl bg-white dark:bg-black"
                         >
                             <div className="text-black z-40 h-full scale-[99%]">
                                 <DashboardFrame>

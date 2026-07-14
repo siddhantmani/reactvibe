@@ -11,10 +11,9 @@ import {
 import { Manrope } from "next/font/google";
 
 const fontBold = Manrope({
-    weight: '600', // Specify the font weight if needed  
+    weight: '600',
     subsets: ['latin']
 });
-
 
 const alerts = [
     {
@@ -23,8 +22,8 @@ const alerts = [
         percentage: "107%",
         danger: true,
         icon: AlertTriangle,
-        iconBg: "bg-[#FEF2F2]",
-        iconColor: "text-[#F97316]",
+        iconBg: "bg-[#FEF2F2] dark:bg-red-500/15",
+        iconColor: "text-[#F97316] dark:text-orange-400",
     },
     {
         title: "Shopping",
@@ -32,8 +31,8 @@ const alerts = [
         percentage: "78%",
         danger: false,
         icon: CircleAlert,
-        iconBg: "bg-[#EFF6FF]",
-        iconColor: "text-[#3B82F6]",
+        iconBg: "bg-[#EFF6FF] dark:bg-blue-500/15",
+        iconColor: "text-[#3B82F6] dark:text-blue-400",
     },
     {
         title: "Great job!",
@@ -41,8 +40,8 @@ const alerts = [
         percentage: "",
         danger: false,
         icon: Check,
-        iconBg: "bg-[#F0FDF4]",
-        iconColor: "text-[#16A34A]",
+        iconBg: "bg-[#F0FDF4] dark:bg-green-500/15",
+        iconColor: "text-[#16A34A] dark:text-green-400",
     },
 ]
 
@@ -50,29 +49,29 @@ function AlertNotificationListPreview() {
 
     return (
         <motion.div
-            initial={{ opacity: 0, filter: "blur(6px)" }}
+            initial={{ opacity: 0, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
+                amount: 0.2,
                 margin: "50px"
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="rounded-[15px] border border-black/10 bg-white p-3 px-3 aspect-auto">
+            className="rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3 aspect-auto">
 
             {/* Top */}
             <div className="flex items-center justify-between">
 
-                <h2 className={`${fontBold.className} text-[13px] text-[#111827]`}>
+                <h2 className={`${fontBold.className} text-[13px] text-[#111827] dark:text-white`}>
                     Alert Notification List
                 </h2>
 
-                <button className={`${fontBold.className} text-[13px] text-[#16A34A] transition-all duration-300 hover:text-[#15803D]`}>
+                <button className={`${fontBold.className} text-[13px] text-[#16A34A] dark:text-green-400 transition-all duration-300 hover:text-[#15803D] dark:hover:text-green-300`}>
                     View all
                 </button>
 
@@ -88,8 +87,8 @@ function AlertNotificationListPreview() {
                     return (
                         <div
                             key={index}
-                            className={`group flex items-center justify-between px-5 py-5 transition-all duration-300 hover:bg-black/[0.015] ${index !== alerts.length - 1
-                                ? "border-b border-black/5"
+                            className={`group flex items-center justify-between px-5 py-5 transition-all duration-300 hover:bg-black/[0.015] dark:hover:bg-white/[0.03] ${index !== alerts.length - 1
+                                ? "border-b border-black/5 dark:border-white/10"
                                 : ""
                                 }`}
                         >
@@ -113,11 +112,11 @@ function AlertNotificationListPreview() {
                                 {/* Content */}
                                 <div>
 
-                                    <h3 className={`${fontBold.className} text-[13px] text-[#111827]`}>
+                                    <h3 className={`${fontBold.className} text-[13px] text-[#111827] dark:text-white`}>
                                         {item.title}
                                     </h3>
 
-                                    <p className={`${fontBold.className} text-[12px] text-[#6B7280]`}>
+                                    <p className={`${fontBold.className} text-[12px] text-[#6B7280] dark:text-gray-400`}>
                                         {item.description}
                                     </p>
 
@@ -131,15 +130,15 @@ function AlertNotificationListPreview() {
                                 {item.percentage && (
                                     <span
                                         className={`${fontBold.className} text-[14px] ${item.danger
-                                            ? "text-[#EF4444]"
-                                            : "text-[#374151]"
+                                            ? "text-[#EF4444] dark:text-red-400"
+                                            : "text-[#374151] dark:text-gray-300"
                                             }`}
                                     >
                                         {item.percentage}
                                     </span>
                                 )}
 
-                                <button className="flex h-8 w-8 items-center justify-center rounded-xl text-[#9CA3AF] transition-all duration-300 hover:bg-black/[0.04] hover:text-[#111827]">
+                                <button className="flex h-8 w-8 items-center justify-center rounded-xl text-[#9CA3AF] dark:text-gray-500 transition-all duration-300 hover:bg-black/[0.04] dark:hover:bg-white/[0.04] hover:text-[#111827] dark:hover:text-white">
 
                                     <ChevronRight
                                         size={14}

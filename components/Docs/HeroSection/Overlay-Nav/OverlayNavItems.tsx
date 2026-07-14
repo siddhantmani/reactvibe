@@ -15,7 +15,7 @@ import { motion } from 'framer-motion'
 
 function OverlayNavItems() {
     return (
-        <div className='mx-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-6xl lg:max-w-3xl space-y-7'>
+        <div className='mx-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-6xl lg:max-w-3xl space-y-7 mx-auto'>
 
             <div className='space-y-3'>
                 <LinearReveal

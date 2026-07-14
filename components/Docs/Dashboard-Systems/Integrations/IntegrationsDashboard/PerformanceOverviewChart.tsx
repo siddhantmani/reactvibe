@@ -305,13 +305,13 @@ function PerformanceOverviewChart() {
 
                                 <stop
                                     offset="0%"
-                                    stopColor="#8B5CF6"
+                                    stopColor="#119F25"
                                     stopOpacity="0.18"
                                 />
 
                                 <stop
                                     offset="100%"
-                                    stopColor="#8B5CF6"
+                                    stopColor="#119F25"
                                     stopOpacity="0"
                                 />
 

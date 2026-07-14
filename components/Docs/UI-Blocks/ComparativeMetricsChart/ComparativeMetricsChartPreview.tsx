@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react"
 import { Manrope } from "next/font/google"
 
 const boldFont = Manrope({
-    weight: "600",
+    weight: "500",
     subsets: ["latin"],
 })
 
@@ -72,19 +72,19 @@ function ComparativeMetricsChartPreview() {
     }
 
     return (
-        <div className="rounded-[15px] border border-black/10 bg-white aspect-auto">
+        <div className="rounded-[15px] border border-black/10 bg-white dark:border-white/10 dark:bg-[#0c0c0c] aspect-auto ">
 
             {/* Top */}
             <div className="flex items-center justify-between px-3 p-3">
 
                 <h2
-                    className={`${boldFont.className} text-[14px] tracking-[-0.04em] text-[#111827]`}
+                    className={`${boldFont.className} text-[14px] tracking-[-0.02em] text-[#111827] dark:text-white`}
                 >
                     Budget vs Actual
                 </h2>
 
                 <button
-                    className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 bg-white px-2 py-1 text-[12px] font-medium text-[#374151] transition-all duration-300 hover:bg-black/[0.02]`}
+                    className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 bg-white dark:border-white/10 dark:bg-[#0c0c0c] px-2 py-1 text-[11px] font-medium text-[#374151] dark:text-white transition-all duration-300 hover:bg-black/[0.02]`}
                 >
 
                     This Month
@@ -99,14 +99,14 @@ function ComparativeMetricsChartPreview() {
             </div>
 
             {/* Legend */}
-            <div className="mt-4 relative flex items-center justify-center gap-8 z-30">
+            <div className="mt-4 -top-5 relative flex items-center justify-center gap-8 z-30 ">
 
                 <div className="flex items-center gap-2">
 
                     <div className="h-2 w-2 rounded-full bg-[#9BE68B]" />
 
                     <span
-                        className={`${boldFont.className} text-[12px] text-[#374151]`}
+                        className={`${boldFont.className} text-[11px] text-[#374151] dark:text-white`}
                     >
                         Budgeted
                     </span>
@@ -118,7 +118,7 @@ function ComparativeMetricsChartPreview() {
                     <div className="h-2 w-2 rounded-full bg-[#0F7B42]" />
 
                     <span
-                        className={`${boldFont.className} text-[12px] text-[#374151]`}
+                        className={`${boldFont.className} text-[11px] text-[#374151] dark:text-white`}
                     >
                         Spent
                     </span>
@@ -130,7 +130,7 @@ function ComparativeMetricsChartPreview() {
                     <div className="h-2 w-2 rounded-full bg-[#FF4D4F]" />
 
                     <span
-                        className={`${boldFont.className} text-[12px] text-[#374151]`}
+                        className={`${boldFont.className} text-[11px] text-[#374151] dark:text-white`}
                     >
                         Over Budget
                     </span>
@@ -169,7 +169,7 @@ function ComparativeMetricsChartPreview() {
                                 >
 
                                     <span
-                                        className={`${boldFont.className} text-[12px] font-normal text-[#9CA3AF]`}
+                                        className={`${boldFont.className} text-[10px] font-normal text-[#9CA3AF] dark:text-white/80`}
                                     >
                                         {formatYAxis(tick)}
                                     </span>
@@ -192,7 +192,7 @@ function ComparativeMetricsChartPreview() {
                             return (
                                 <div
                                     key={tick}
-                                    className="absolute left-0 right-0 border-t border-[#F3F4F6]"
+                                    className="absolute left-0 right-0 border-t border-[#F3F4F6] dark:border-[#1b1b1b]"
                                     style={{
                                         bottom,
                                     }}
@@ -227,7 +227,7 @@ function ComparativeMetricsChartPreview() {
                                         {hoveredIndex === index && (
 
                                             <div
-                                                className="absolute z-50 rounded-[10px] border border-black/10 bg-white px-2 py-2 shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
+                                                className="absolute z-50 rounded-[10px] border border-black/10 bg-white dark:bg-[#0c0c0c] dark:border-white/10 px-2 py-2 shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
                                                 style={{
                                                     bottom:
                                                         Math.max(
@@ -238,7 +238,7 @@ function ComparativeMetricsChartPreview() {
                                             >
 
                                                 <p
-                                                    className={`${boldFont.className} text-[10px] text-[#6B7280]`}
+                                                    className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white`}
                                                 >
                                                     {item.category}
                                                 </p>
@@ -248,13 +248,13 @@ function ComparativeMetricsChartPreview() {
                                                     <div className="flex items-center justify-between gap-6">
 
                                                         <span
-                                                            className={`${boldFont.className} text-[11px] text-[#6B7280]`}
+                                                            className={`${boldFont.className} text-[11px] text-[#6B7280] dark:text-white`}
                                                         >
                                                             Budgeted
                                                         </span>
 
                                                         <span
-                                                            className={`${boldFont.className} text-[11px] text-[#16A34A]`}
+                                                            className={`${boldFont.className} text-[11px] text-[#16A34A] `}
                                                         >
                                                             ${item.budgeted}
                                                         </span>
@@ -264,7 +264,7 @@ function ComparativeMetricsChartPreview() {
                                                     <div className="flex items-center justify-between gap-6">
 
                                                         <span
-                                                            className={`${boldFont.className} text-[11px] text-[#6B7280]`}
+                                                            className={`${boldFont.className} text-[11px] text-[#6B7280] dark:text-white`}
                                                         >
                                                             Spent
                                                         </span>
@@ -314,9 +314,9 @@ function ComparativeMetricsChartPreview() {
                                             </div>
 
                                             {/* Label */}
-                                            <div className="mt-2  text-center">
+                                            <div className="mt-2 text-center">
 
-                                                <span className={`${boldFont.className} text-[11px] whitespace-nowrap font-normal text-[#6B7280] `}>
+                                                <span className={`${boldFont.className} text-[10px] whitespace-nowrap font-normal text-[#6B7280] dark:text-white/80`}>
                                                     {item.category}
                                                 </span>
 

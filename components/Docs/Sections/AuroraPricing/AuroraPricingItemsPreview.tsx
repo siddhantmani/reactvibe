@@ -71,7 +71,7 @@ function AuroraPricingItemsPreview() {
                     >
                         <div
                             ref={mountRef}
-                            className="w-full rounded-2xl py-10 bg-white"
+                            className="w-full rounded-2xl py-10 bg-white dark:bg-black"
                         >
                             <div className="text-black z-40 w-full rounded-2xl h-full scale-[100%]">
                                 <AuroraPricingPreview />

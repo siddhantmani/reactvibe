@@ -3,7 +3,7 @@ export const sidebarConfig = [
         title: "Templates",
         base: "/docs/templates/",
         items: [
-            { name: "Taskforge", slug: "taskforge", createdAt: "2026-7-4" },
+            { name: "Taskforge", slug: "taskforge", createdAt: "2026-7-14" },
         ]
     },
     {
@@ -11,7 +11,7 @@ export const sidebarConfig = [
         base: "/docs/dashboard-systems/",
         items: [
             { name: "Finance Overview", slug: "finance-overview", createdAt: "2026-5-19" },
-            { name: "Accounts", slug: "accounts", createdAt: "2026-5-19", badge: "PRO"  },
+            { name: "Accounts", slug: "accounts", createdAt: "2026-7-14", badge: "PRO" },
             { name: "Transactions", slug: "transactions", createdAt: "2026-5-19", badge: "PRO" },
             { name: "Budgets", slug: "budgets", createdAt: "2026-5-19", badge: "PRO" },
             { name: "Investments", slug: "investments", createdAt: "2026-5-19", badge: "PRO" },
@@ -23,22 +23,22 @@ export const sidebarConfig = [
         title: "UI Blocks",
         base: "/docs/ui-blocks/",
         items: [
-            { name: "Progress Overview List", slug: "progress-overview-list", createdAt: "2026-5-19" },
-            { name: "Comparative Bar Chart", slug: "comparative-bar-chart", createdAt: "2026-5-19" },
-            { name: "Distribution Breakdown Chart", slug: "distribution-breakdown-chart", createdAt: "2026-5-19" },
-            { name: "Scheduled Payments List", slug: "scheduled-payments-list", createdAt: "2026-5-19" },
-            { name: "Transaction Table", slug: "transaction-table", createdAt: "2026-5-19" },
-            { name: "Progress Tracking List", slug: "progress-tracking-list", createdAt: "2026-5-19" },
-            { name: "Entity Management Table", slug: "entity-management-table", createdAt: "2026-5-19" },
-            { name: "Activity Timeline List", slug: "activity-timeline-list", createdAt: "2026-5-19" },
-            { name: "Advanced Transaction Log", slug: "advanced-transaction-log", createdAt: "2026-5-19" },
-            { name: "Compact Activity Feed", slug: "compact-activity-feed", createdAt: "2026-5-19" },
-            { name: "Comparative Metrics Chart", slug: "comparative-metrics-chart", createdAt: "2026-5-19" },
-            { name: "Structured Data Table", slug: "structured-data-table", createdAt: "2026-5-19" },
-            { name: "Alert Notification List", slug: "alert-notification-list", createdAt: "2026-5-19" },
-            { name: "Insight Recommendation Card", slug: "insight-recommendation-card", createdAt: "2026-5-19" },
-            { name: "Performance Trend Chart", slug: "performance-trend-chart", createdAt: "2026-5-19" },
-            { name: "Asset Performance Table", slug: "asset-performance-table", createdAt: "2026-5-19" },
+            { name: "Progress Overview List", slug: "progress-overview-list", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Comparative Bar Chart", slug: "comparative-bar-chart", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Distribution Breakdown Chart", slug: "distribution-breakdown-chart", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Scheduled Payments List", slug: "scheduled-payments-list", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Transaction Table", slug: "transaction-table", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Progress Tracking List", slug: "progress-tracking-list", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Entity Management Table", slug: "entity-management-table", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Activity Timeline List", slug: "activity-timeline-list", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Advanced Transaction Log", slug: "advanced-transaction-log", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Compact Activity Feed", slug: "compact-activity-feed", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Comparative Metrics Chart", slug: "comparative-metrics-chart", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Structured Data Table", slug: "structured-data-table", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Alert Notification List", slug: "alert-notification-list", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Insight Recommendation Card", slug: "insight-recommendation-card", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Performance Trend Chart", slug: "performance-trend-chart", createdAt: "2026-7-14", badge: "updated" },
+            { name: "Asset Performance Table", slug: "asset-performance-table", createdAt: "2026-7-14", badge: "updated" },
         ]
     },
     {
@@ -58,8 +58,8 @@ export const sidebarConfig = [
         items: [
             { name: "Launch", slug: "launch", createdAt: "2026-4-30" },
             { name: "Wave CTA", slug: "wave-cta", createdAt: "2026-1-1" },
-            { name: "Overlay Nav", slug: "overlay-nav", createdAt: "2026-1-1" },
-            { name: "Overlay Menu", slug: "overlay-menu", createdAt: "2026-1-1" },
+            { name: "Overlay Nav", slug: "overlay-nav", createdAt: "2026-7-14", badge: "UPDATED" },
+            { name: "Overlay Menu", slug: "overlay-menu", createdAt: "2026-7-14", badge: "UPDATED" },
         ]
     },
     {
@@ -71,7 +71,7 @@ export const sidebarConfig = [
             { name: "Resolve", slug: "resolve", createdAt: "2026-4-30" },
             { name: "Zenith", slug: "zenith", createdAt: "2026-4-30" },
             { name: "Spotlight", slug: "spotlight", createdAt: "2026-4-30" },
-            { name: "Aurora Pricing", slug: "aurora-pricing", createdAt: "2026-1-1" },
+            { name: "Aurora Pricing", slug: "aurora-pricing", createdAt: "2026-7-14", badge: "UPDATED" },
             { name: "Testimonial Flow", slug: "testimonial-flow", createdAt: "2026-1-1" },
             { name: "Flux CTA", slug: "flux-cta", createdAt: "2026-1-1" },
             { name: "Radiant Frame", slug: "radiant-frame", createdAt: "2026-1-1" },
@@ -96,7 +96,7 @@ export const sidebarConfig = [
             { name: "Brand Loop", slug: "brand-loop", createdAt: "2026-1-1" },
             { name: "Pulse Ping", slug: "pulse-ping", createdAt: "2026-4-30" },
             { name: "Motion Switch", slug: "motion-switch", createdAt: "2026-1-1" },
-            { name: "Motion Dropdown", slug: "motion-dropdown", createdAt: "2026-1-1", badge: "UPDATED" },
+            { name: "Motion Dropdown", slug: "motion-dropdown", createdAt: "2026-7-14", badge: "UPDATED" },
             { name: "Shadow Button", slug: "shadow-button", createdAt: "2026-1-1" }
         ]
     },

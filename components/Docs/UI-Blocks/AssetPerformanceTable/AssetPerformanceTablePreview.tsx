@@ -94,27 +94,27 @@ function AssetPerformanceTablePreview() {
     return (
 
         <motion.div
-            initial={{ opacity: 0, filter: "blur(6px)" }}
+            initial={{ opacity: 0, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
+                amount: 0.2, 
                 margin: "50px"
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                ease: [0.25, 0.46, 0.45, 0.94], 
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white p-2 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]`}
+            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:border-white/10 dark:bg-[#0c0c0c] dark:shadow-none p-2 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]`}
         >
 
             {/* Background Glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.04),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.05),_transparent_45%)]" />
 
             {/* Soft Glow */}
-            <div className="absolute bottom-0 right-0 h-[350px] w-[350px] rounded-full bg-[#22C55E]/[0.04] blur-3xl" />
+            <div className="absolute bottom-0 right-0 h-[350px] w-[350px] rounded-full bg-[#22C55E]/[0.04]  blur-3xl" />
 
             <div className="relative z-10">
 
@@ -124,13 +124,13 @@ function AssetPerformanceTablePreview() {
                     <div>
 
                         <h2
-                            className={`${boldFont.className} text-[17px] tracking-[-0.03em] text-[#111111]`}
+                            className={`${boldFont.className} text-[17px] tracking-[-0.03em] text-[#111111] dark:text-white`}
                         >
                             Asset Performance Table
                         </h2>
 
                         <p
-                            className={`${boldFont.className} mt-1 text-[12px] text-black/70`}
+                            className={`${boldFont.className} mt-1 text-[12px] text-black/70 dark:text-white/60`}
                         >
                             Your Asset Performance Table overview
                         </p>
@@ -140,10 +140,10 @@ function AssetPerformanceTablePreview() {
                 </div>
 
                 {/* Table */}
-                <div className="mt-6 overflow-hidden rounded-[16px] border border-black/[0.06] bg-black/[0.015]">
+                <div className="mt-6 overflow-hidden rounded-[16px] border border-black/[0.06] bg-black/[0.015] dark:text-white/[0.06] dark:bg-black/[0.015] dark:border-white/10">
 
                     {/* Header */}
-                    <div className="grid grid-cols-[2.2fr_1fr_1fr_1.2fr_1.2fr_1.2fr_1.4fr] items-center border-b border-black/[0.06] bg-black/[0.02] px-6 py-4">
+                    <div className="grid grid-cols-[2.2fr_1fr_1fr_1.2fr_1.2fr_1.2fr_1.4fr] items-center border-b border-black/[0.06] bg-black/[0.02] px-6 py-4 dark:border-white/10 dark:bg-[#000000]">
 
                         {[
                             "Asset",
@@ -157,7 +157,7 @@ function AssetPerformanceTablePreview() {
 
                             <p
                                 key={item}
-                                className={`${boldFont.className} text-[12px] whitespace-nowrap uppercase tracking-[0.04em] text-black/70`}
+                                className={`${boldFont.className} text-[12px] whitespace-nowrap uppercase tracking-[0.04em] text-black/70 dark:text-white/80`}
                             >
                                 {item}
                             </p>
@@ -188,13 +188,13 @@ function AssetPerformanceTablePreview() {
                                 <div>
 
                                     <h3
-                                        className={`${boldFont.className} text-[12px] text-[#111111] transition-colors duration-300 group-hover:text-black`}
+                                        className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white transition-colors duration-300 group-hover:text-black dark:group-hover:text-white`}
                                     >
                                         {item.asset}
                                     </h3>
 
                                     <p
-                                        className={`${boldFont.className} mt-1 text-[10px] text-black/40`}
+                                        className={`${boldFont.className} mt-1 text-[10px] text-black/40 dark:text-white/40`}
                                     >
                                         {item.symbol}
                                     </p>
@@ -205,35 +205,35 @@ function AssetPerformanceTablePreview() {
 
                             {/* Type */}
                             <p
-                                className={`${boldFont.className} text-[12px] text-black/65`}
+                                className={`${boldFont.className} text-[12px] text-black/65 dark:text-white/65`}
                             >
                                 {item.type}
                             </p>
 
                             {/* Quantity */}
                             <p
-                                className={`${boldFont.className} text-[12px] text-[#111111]`}
+                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
                             >
                                 {item.quantity}
                             </p>
 
                             {/* Avg */}
                             <p
-                                className={`${boldFont.className} text-[12px] text-[#111111]`}
+                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
                             >
                                 {item.avgPrice}
                             </p>
 
                             {/* Current */}
                             <p
-                                className={`${boldFont.className} text-[12px] text-[#111111]`}
+                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
                             >
                                 {item.currentPrice}
                             </p>
 
                             {/* Value */}
                             <p
-                                className={`${boldFont.className} text-[12px] text-[#111111]`}
+                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
                             >
                                 {item.value}
                             </p>
@@ -269,7 +269,7 @@ function AssetPerformanceTablePreview() {
                     <div className="p-4">
 
                         <button
-                            className={`${boldFont.className} flex h-11 w-full items-center justify-center gap-2 rounded-[10px] border border-black/[0.06] bg-white text-[12px] font-semibold text-[#111111] shadow-[0_2px_10px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-black hover:text-white hover:shadow-[0_10px_30px_rgba(0,0,0,0.10)]`}
+                            className={`${boldFont.className} flex h-11 w-full items-center justify-center gap-2 rounded-[10px] border border-black/[0.06] bg-white dark:bg-black/[0.20] dark:hover:bg-[#000000] dark:text-white text-[12px] font-semibold text-[#111111] shadow-[0_2px_10px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-black hover:text-white hover:shadow-[0_10px_30px_rgba(0,0,0,0.10)]`}
                         >
 
                             View all holdings

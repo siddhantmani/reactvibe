@@ -21,7 +21,7 @@ function OverlayNavCode() {
 
     return (
         <nav>
-            <div className='flex items-center justify-between p-3 max-w-5xl mx-auto text-black'>
+            <div className='flex items-center justify-between p-3 max-w-5xl mx-auto text-black dark:text-white'>
                 {/* Logo */}
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
