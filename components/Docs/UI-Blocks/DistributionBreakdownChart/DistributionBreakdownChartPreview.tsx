@@ -90,7 +90,7 @@ function DonutChart() {
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                <p className={`${boldFont.className} text-[10px] text-[#4b5563]`}>
+                <p className={`${boldFont.className} text-[10px] text-[#4b5563] dark:text-gray-400`}>
                     Total Expense
                 </p>
 
@@ -98,7 +98,7 @@ function DonutChart() {
                     as='h2'
                     delay={0.4}
                     Text="$4,680"
-                    className={`${boldFont.className} text-[26px] font-bold tracking-[-1px] text-[#111827] mt-2`}
+                    className={`${boldFont.className} text-[26px] font-bold tracking-[-1px] text-[#111827] dark:text-white mt-2`}
                 />
 
             </div>
@@ -127,18 +127,18 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
                     }}
                 />
 
-                <p className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                     {title}
                 </p>
             </div>
 
             {/* Percentage */}
-            <p className={`${boldFont.className} text-[11px] text-[#374151] text-right`}>
+            <p className={`${boldFont.className} text-[11px] text-[#374151] dark:text-gray-400 text-right`}>
                 {percentage}%
             </p>
 
             {/* Amount */}
-            <p className={`${boldFont.className} text-[11px] text-[#111827] text-right`}>
+            <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white text-right`}>
                 {amount}
             </p>
         </div>
@@ -152,18 +152,18 @@ function DistributionBreakdownChartPreview() {
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
+                amount: 0.2,
                 margin: "50px"
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
-            className="w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+            className="w-full rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none">
 
             {/* Header */}
-            <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+            <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                 Distribution Breakdown Chart
             </h1>
 
@@ -176,7 +176,7 @@ function DistributionBreakdownChartPreview() {
                 </div>
 
                 {/* Expense List */}
-                <div className="">
+                <div>
 
                     <div className="space-y-5">
                         {expenses.map((item, index) => (
@@ -193,7 +193,7 @@ function DistributionBreakdownChartPreview() {
             </div>
 
             {/* Footer */}
-            <button className={`${boldFont.className} cursor-pointer mt-5 md:mt-0 flex items-center gap-3 text-[10px] text-[#006b46] hover:opacity-80 transition-opacity`}>
+            <button className={`${boldFont.className} cursor-pointer mt-5 md:mt-0 flex items-center gap-3 text-[10px] text-[#006b46] dark:text-green-400 hover:opacity-80 transition-opacity`}>
                 View full report
 
                 <ArrowRight

@@ -39,27 +39,27 @@ function ComparativeBarChartPreview() {
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
+                amount: 0.2,
                 margin: "50px"
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+            className="w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:border-white/10 dark:bg-[#0c0c0c] dark:shadow-none">
 
             {/* Header */}
             <div className="flex items-start justify-between gap-5">
 
                 {/* Left */}
                 <div>
-                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] whitespace-nowrap`}>
+                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white whitespace-nowrap`}>
                         Comparative Bar Chart
                     </h1>
 
-                    <p className={`${boldFont.className} text-[11px] text-[#4b5563] mt-2`}>
+                    <p className={`${boldFont.className} text-[11px] text-[#4b5563] dark:text-gray-400 mt-2`}>
                         Net Cashflow
                     </p>
 
@@ -78,7 +78,7 @@ function ComparativeBarChartPreview() {
                 <div className="flex flex-col items-end gap-10">
 
                     {/* Dropdown */}
-                    <button className={`${boldFont.className} px-2 py-1 rounded-[4px] border border-black/10 flex items-center gap-3 text-[10px] text-[#111827]`}>
+                    <button className={`${boldFont.className} px-2 py-1 rounded-[4px] border border-black/10 dark:border-white/10 flex items-center gap-3 text-[10px] text-[#111827] dark:text-white bg-white dark:bg-[#15181d]`}>
                         This Month
 
                         <ChevronDown
@@ -93,7 +93,7 @@ function ComparativeBarChartPreview() {
                         <div className="flex items-center gap-3">
                             <div className="w-2 h-2 rounded-[2px] bg-[#006b46]" />
 
-                            <p className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                            <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                                 Income
                             </p>
                         </div>
@@ -101,7 +101,7 @@ function ComparativeBarChartPreview() {
                         <div className="flex items-center gap-3">
                             <div className="w-2 h-2 rounded-[2px] bg-[#86db68]" />
 
-                            <p className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                            <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                                 Expenses
                             </p>
                         </div>
@@ -121,7 +121,7 @@ function ComparativeBarChartPreview() {
                     {[0, 1, 2, 3, 4].map((line) => (
                         <div
                             key={line}
-                            className="absolute left-0 w-full border-t border-black/6"
+                            className="absolute left-0 w-full border-t border-black/6 dark:border-white/10"
                             style={{
                                 top: `${line * 25}%`,
                             }}
@@ -133,7 +133,7 @@ function ComparativeBarChartPreview() {
                         {["$6K", "$3K", "$0", "-$3K", "-$6K"].map((label) => (
                             <p
                                 key={label}
-                                className={`${boldFont.className} text-[9px] text-[#4b5563]`}
+                                className={`${boldFont.className} text-[9px] text-[#4b5563] dark:text-gray-500`}
                             >
                                 {label}
                             </p>
@@ -178,10 +178,10 @@ function ComparativeBarChartPreview() {
                                                 transition={{
                                                     duration: 0.2,
                                                 }}
-                                                className="absolute -top-20 z-30  rounded-[10px] border border-black/10 bg-white p-2 px-2 shadow-[0_15px_40px_rgba(0,0,0,0.08)]"
+                                                className="absolute -top-20 z-30 rounded-[10px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-2 px-2 shadow-[0_15px_40px_rgba(0,0,0,0.08)] dark:shadow-none"
                                             >
 
-                                                <p className={`${boldFont.className} text-[11px] text-[#6b7280]`}>
+                                                <p className={`${boldFont.className} text-[11px] text-[#6b7280] dark:text-gray-400`}>
                                                     {item.month} 2024
                                                 </p>
 
@@ -193,7 +193,7 @@ function ComparativeBarChartPreview() {
                                                             Income
                                                         </span>
 
-                                                        <span className={`${boldFont.className} text-[13px] text-[#006b46]`}>
+                                                        <span className={`${boldFont.className} text-[13px] text-[#6b7280] dark:text-gray-400`}>
                                                             ${(item.income * 100).toLocaleString()}
                                                         </span>
 
@@ -201,7 +201,7 @@ function ComparativeBarChartPreview() {
 
                                                     <div className="flex items-center justify-between gap-4">
 
-                                                        <span className={`${boldFont.className}  text-[13px] text-[#6b7280]`}>
+                                                        <span className={`${boldFont.className} text-[13px] text-[#6b7280] dark:text-gray-400`}>
                                                             Expense
                                                         </span>
 
@@ -249,7 +249,7 @@ function ComparativeBarChartPreview() {
                                     </motion.div>
 
                                     {/* Month */}
-                                    <p className={`${boldFont.className} text-[9px] text-[#4b5563] mt-5`}>
+                                    <p className={`${boldFont.className} text-[9px] text-[#4b5563] dark:text-gray-500 mt-5`}>
                                         {item.month}
                                     </p>
                                 </div>

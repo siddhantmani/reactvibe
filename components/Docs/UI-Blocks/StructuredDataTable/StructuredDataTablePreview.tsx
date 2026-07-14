@@ -175,35 +175,35 @@ function StructuredDataTablePreview() {
 
     return (
         <motion.div
-            initial={{ opacity: 0, filter: "blur(6px)" }}
+            initial={{ opacity: 0, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
+                amount: 0.2, 
                 margin: "50px"
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                ease: [0.25, 0.46, 0.45, 0.94], 
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="rounded-[15px] border border-black/10 bg-white p-3 px-3 aspect-video">
+            className="rounded-[15px] border border-black/10 bg-white dark:border-white/10 dark:bg-[#0c0c0c] p-3 px-3 aspect-video">
 
             {/* Heading */}
             <div>
 
-                <h2 className={`${fontBold.className} text-[14px] text-[#111827]`}>
+                <h2 className={`${fontBold.className} text-[14px] text-[#111827] dark:text-white`}>
                     Structured Data Table
                 </h2>
 
             </div>
 
             {/* Table */}
-            <div className="mt-4 overflow-hidden rounded-2xl border border-black/5">
+            <div className="mt-4 overflow-hidden rounded-2xl border border-black/5 dark:border-white/10">
 
                 {/* Header */}
-                <div className="grid grid-cols-[2fr_1.2fr_1.2fr_1.2fr_1.4fr_1.2fr_50px] items-center border-b border-black/5 bg-[#FAFAFA] px-6 py-4">
+                <div className="grid grid-cols-[2fr_1.2fr_1.2fr_1.2fr_1.4fr_1.2fr_50px] items-center border-b border-black/5 bg-[#FAFAFA] dark:bg-[#161616] dark: px-6 py-6">
 
                     {[
                         "Category",
@@ -215,7 +215,7 @@ function StructuredDataTablePreview() {
                     ].map((item) => (
                         <p
                             key={item}
-                            className={`${fontBold.className} text-[13px] text-[#6B7280]`}
+                            className={`${fontBold.className} text-[14px] text-[#191a1b] dark:text-white/90`}
                         >
                             {item}
                         </p>
@@ -231,7 +231,7 @@ function StructuredDataTablePreview() {
                     return (
                         <div
                             key={index}
-                            className="grid grid-cols-[2fr_1.2fr_1.2fr_1.2fr_1.4fr_1.2fr_50px] items-center border-b border-black/5 px-6 py-2 transition-all duration-300 hover:bg-black/[0.015]"
+                            className="grid grid-cols-[2fr_1.2fr_1.2fr_1.2fr_1.4fr_1.2fr_50px] items-center border-b border-black/5 dark:border-white/10 px-6 py-2 transition-all duration-300 hover:bg-black/[0.015] space-y-5"
                         >
 
                             {/* Category */}
@@ -249,19 +249,19 @@ function StructuredDataTablePreview() {
 
                                 </div>
 
-                                <h3 className={`${fontBold.className} text-[12px] text-[#111827]`}>
+                                <h3 className={`${fontBold.className} text-[12px] text-[#111827] dark:text-white`}>
                                     {item.name}
                                 </h3>
 
                             </div>
 
                             {/* Budgeted */}
-                            <p className={`${fontBold.className} text-[12px] text-[#111827]`}>
+                            <p className={`${fontBold.className} text-[12px] text-[#111827] dark:text-white`}>
                                 {item.budgeted}
                             </p>
 
                             {/* Spent */}
-                            <p className={`${fontBold.className} text-[12px] text-[#111827]`}>
+                            <p className={`${fontBold.className} text-[12px] text-[#111827] dark:text-white`}>
                                 {item.spent}
                             </p>
 
@@ -269,13 +269,12 @@ function StructuredDataTablePreview() {
                             <p
                                 className={`${fontBold.className} text-[12px] text-[#111827] ${item.danger
                                     ? "text-[#EF4444]"
-                                    : "text-[#111827]"
+                                    : "text-[#111827] dark:text-white"
                                     }`}
                             >
                                 {item.remaining}
                             </p>
 
-                            {/* Progress */}
                             {/* Progress */}
                             <div className="flex items-center gap-3 w-full">
 
@@ -303,7 +302,7 @@ function StructuredDataTablePreview() {
                             </div>
 
                             {/* Menu */}
-                            <button className="flex h-10 w-10 items-center justify-center rounded-xl text-[#9CA3AF] transition-all duration-300 hover:bg-black/[0.04] hover:text-[#111827]">
+                            <button className="flex h-9 w-9 items-center justify-center rounded-md text-[#9CA3AF] transition-all duration-300 hover:bg-black/[0.04] hover:text-[#111827] dark:bg-white/5 dark:hover:text-white cursor-pointer">
 
                                 <Ellipsis
                                     size={18}

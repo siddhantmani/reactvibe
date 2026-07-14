@@ -274,7 +274,7 @@ function PrimePreview() {
                         </motion.div>
                         <div className='flex items-center gap-2'>
                             <Image
-                                src="https://pbs.twimg.com/profile_images/1995720538011189248/ZwLlyovt_400x400.jpg"
+                                src="https://pbs.twimg.com/profile_images/2047317187132850176/YWpzGVYM_400x400.jpg"
                                 height={1000}
                                 width={1000}
                                 alt='alt image'

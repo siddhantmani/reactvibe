@@ -20,26 +20,25 @@ const miniPara = Manrope({
 function AuroraPricingCode() {
     return (
         <div>
-            <div className='flex flex-col justify-center items-center space-y-3'>
-                <motion.div
-                    initial={{ opacity: 0, filter: "blur(8px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2,
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94],
-                        delay: 0.5
-                    }}
-
-                >
+            <motion.div
+                initial={{ opacity: 0, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                viewport={{
+                    once: true,
+                    amount: 0.2,
+                    margin: "50px"
+                }}
+                transition={{
+                    duration: 1.2,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    delay: 0.7
+                }}
+                className='flex flex-col justify-center items-center space-y-3'>
+                <div>
                     <OrbitBorderGlobalPreview
                         rounded={50}
                         padding={1}
-                        RingColors={["#0a52f0", "#ffffff", "#f5e2ae", "#dcd7fc"]}
+                        RingColors={["#0a52f0", "#ffffff", "#ffffff", "#0a52f0"]}
                         className='bg-[#ffffff] rounded-full p-2 text-black px-5'
                         style={{
                             boxShadow: `
@@ -50,42 +49,15 @@ function AuroraPricingCode() {
 
                         Pricing
                     </OrbitBorderGlobalPreview>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, filter: "blur(8px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2, // Trigger when 20% visible
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                        delay: 0.2
-                    }}
-                >
-                    <h1 className={`${MainHeading.className}  text-black text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}>Simple plans, no surprises.</h1>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, filter: "blur(8px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2,
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94],
-                        delay: 0.7
-                    }}
+                </div>
+                <div>
+                    <h1 className={`${MainHeading.className}  text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}>Simple plans, no surprises.</h1>
+                </div>
+                <div>
+                    <p className={`${miniPara.className}  text-black dark:text-white text-sm  max-w-sm xl:text-lg xl:max-w-sm md:max-w-sm text-center`}>From Idea to Build-Ready in 3 Steps.</p>
+                </div>
 
-                >
-                    <p className={`${miniPara.className}  text-black text-sm  max-w-sm xl:text-lg xl:max-w-sm md:max-w-sm text-center`}>From Idea to Build-Ready in 3 Steps.</p>
-                </motion.div>
-
-            </div>
+            </motion.div>
             <div className="w-full">
                 <TogglePricing />
             </div>

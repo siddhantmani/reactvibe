@@ -44,7 +44,7 @@ function TogglePricing({ yearly, setYearly }: { yearly: boolean; setYearly: (val
                     ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
                     delay: 0.2
                 }}
-                className="flex items-center gap-2 py-4 text-black">
+                className="flex items-center gap-2 py-4 text-black dark:text-white">
                 <label>Monthly</label>
                 <label className='flex cursor-pointer select-none items-center'>
                     <div className='relative'>
@@ -55,7 +55,7 @@ function TogglePricing({ yearly, setYearly }: { yearly: boolean; setYearly: (val
                             className='sr-only'
                         />
                         <div className="scale-[75%]">
-                            <div className='block h-8 w-14 rounded-full bg-[#E5E7EB]'></div>
+                            <div className='block h-8 w-14 rounded-full bg-[#E5E7EB] dark:bg-white/30'></div>
                             <motion.div
                                 className="dot absolute top-1 h-6 w-6 rounded-full bg-white"
                                 animate={{ left: yearly ? '1.75rem' : '0.25rem' }} // left-7 ≈ 1.75rem, left-1 ≈ 0.25rem
@@ -237,9 +237,9 @@ function PricingSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="relative rounded-2xl border border-gray-200 bg-white text-gray-900 p-8 flex flex-col justify-between shadow-sm"
+                            className="relative rounded-2xl border border-gray-200 bg-white dark:border-white/25 text-gray-900 dark:bg-black dark:text-white/90 p-8 flex flex-col justify-between shadow-sm"
                         >
-                            <h3 className={`${MainHeading.className} text-xl text-gray-900`}>
+                            <h3 className={`${MainHeading.className} text-xl text-gray-900 dark:text-white/90`}>
                                 {plan.name}
                             </h3>
                             <AnimatePresence mode="wait">
@@ -249,14 +249,14 @@ function PricingSection() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                     transition={{ duration: 0.3 }}
-                                    className={` ${MainHeading.className} text-3xl mt-3 text-gray-900`}
+                                    className={` ${MainHeading.className} text-3xl mt-3 text-gray-900 dark:text-white`}
                                 >
                                     {plan.price}
                                 </motion.p>
                             </AnimatePresence>
-                            <p className={`${miniPara.className} mt-2 text-sm text-gray-500`}>{plan.subtitle}</p>
+                            <p className={`${miniPara.className} mt-2 text-sm text-gray-500 dark:text-white/80`}>{plan.subtitle}</p>
 
-                            <ul className="mt-6 space-y-2 text-sm text-gray-700">
+                            <ul className="mt-6 space-y-2 text-sm text-gray-700 dark:text-white">
                                 {plan.features.map((f, i) => (
                                     <li key={i} className={`${miniPara.className} flex items-start`}>
                                         <span className="mr-2 text-lg">
@@ -268,12 +268,12 @@ function PricingSection() {
                             </ul>
 
                             <div className="mt-8">
-                                <button className={`${CTAButton.className} w-full py-3 rounded-xl bg-[#2D6DFF] text-white hover:bg-[#2459D6] transition-all`}>
+                                <button className={`${CTAButton.className} w-full py-3 rounded-xl bg-[#2D6DFF] dark:bg-white/10 text-white hover:bg-[#2459D6] transition-all`}>
                                     {plan.button} →
                                 </button>
                             </div>
 
-                            <p className={`${MainHeading.className} text-xs mt-4 text-gray-500`}>{plan.footer}</p>
+                            <p className={`${MainHeading.className} text-xs mt-4 text-gray-500 dark:text-white/50`}>{plan.footer}</p>
                         </motion.div>
                     )
                 })}

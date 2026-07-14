@@ -15,15 +15,14 @@ const boldFont = Manrope({
     subsets: ["latin"],
 });
 
-
 const activities = [
     {
         name: "Amazon.com",
         amount: "-$89.99",
         time: "Today, 10:42 AM",
         logo: "a",
-        logoBg: "bg-[#F3F4F6]",
-        logoColor: "text-[#111827]",
+        logoBg: "bg-[#F3F4F6] dark:bg-[#1a1d22]",
+        logoColor: "text-[#111827] dark:text-white",
         positive: false,
     },
     {
@@ -31,8 +30,8 @@ const activities = [
         amount: "+$4,250.00",
         time: "Today, 8:00 AM",
         logo: "↓",
-        logoBg: "bg-[#DCFCE7]",
-        logoColor: "text-[#16A34A]",
+        logoBg: "bg-[#DCFCE7] dark:bg-green-500/15",
+        logoColor: "text-[#16A34A] dark:text-green-400",
         positive: true,
     },
     {
@@ -59,29 +58,29 @@ function CompactActivityFeedPreview() {
 
     return (
         <motion.div
-            initial={{ opacity: 0, filter: "blur(6px)" }}
+            initial={{ opacity: 0, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
+                amount: 0.2,
                 margin: "50px"
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="rounded-[15px] border border-black/10 bg-white p-3 px-3 aspect-video">
+            className="rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3 aspect-video">
 
             {/* Top */}
             <div className="flex items-center justify-between">
 
-                <h2 className={`${boldFont.className} text-[13px] text-[#111827]`}>
-                    Compact Activity Feed
+                <h2 className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
+                    Compact Activity Fedd
                 </h2>
 
-                <button className={`${boldFont.className} text-[12px] text-[#16A34A] transition-all duration-300 hover:text-[#15803D]`}>
+                <button className={`${boldFont.className} text-[12px] text-[#16A34A] dark:text-green-400 transition-all duration-300 hover:text-[#15803D] dark:hover:text-green-300`}>
                     View all
                 </button>
 
@@ -94,7 +93,7 @@ function CompactActivityFeedPreview() {
 
                     <div
                         key={index}
-                        className="group flex items-center justify-between rounded-2xl py-2 transition-all duration-300 hover:bg-black/[0.02]"
+                        className="group flex items-center justify-between rounded-2xl py-2 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.03]"
                     >
 
                         {/* Left */}
@@ -116,7 +115,7 @@ function CompactActivityFeedPreview() {
                             {/* Name */}
                             <div>
 
-                                <h3 className={`${boldFont.className} whitespace-nowrap text-[12px] text-[#111827]`}>
+                                <h3 className={`${boldFont.className} whitespace-nowrap text-[12px] text-[#111827] dark:text-white`}>
                                     {item.name}
                                 </h3>
 
@@ -128,38 +127,34 @@ function CompactActivityFeedPreview() {
                         <div className="flex items-center gap-4">
 
                             {/* Amount */}
-
-
                             <LinearReveal
                                 as='p'
                                 delay={0.2}
                                 Text={item.amount}
                                 className={`text-[11px] ${item.positive
-                                    ? "text-[#16A34A]"
-                                    : "text-[#FF3B30]"
+                                    ? "text-[#16A34A] dark:text-green-400"
+                                    : "text-[#FF3B30] dark:text-red-400"
                                     }`}
                             />
 
                             {/* Time */}
-                            <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                            <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-gray-400`}>
                                 {item.time}
                             </p>
 
                             {/* Arrow */}
-                            <div
-                                className={`flex items-center justify-center rounded-full`}
-                            >
+                            <div className="flex items-center justify-center">
 
                                 {item.positive ? (
                                     <ArrowUp
                                         size={12}
-                                        className="text-[#16A34A]"
+                                        className="text-[#16A34A] dark:text-green-400"
                                         strokeWidth={2.8}
                                     />
                                 ) : (
                                     <ArrowDown
                                         size={12}
-                                        className="text-[#FF3B30]"
+                                        className="text-[#FF3B30] dark:text-red-400"
                                         strokeWidth={2.8}
                                     />
                                 )}

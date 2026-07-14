@@ -16,7 +16,7 @@ const accounts = [
         bank: "Chase Checking",
         subtitle: "Checking Account •••• 4521",
         type: "Cash",
-        typeColor: "bg-[#EAF8EC] text-[#1F9D47]",
+        typeColor: "bg-[#EAF8EC] text-[#1F9D47] dark:bg-green-500/15 dark:text-green-400",
         balance: "$4,250.00",
         logo: "C",
         logoBg: "bg-[#0057B8]",
@@ -25,7 +25,7 @@ const accounts = [
         bank: "Bank of America Savings",
         subtitle: "Savings Account •••• 7890",
         type: "Cash",
-        typeColor: "bg-[#EAF8EC] text-[#1F9D47]",
+        typeColor: "bg-[#EAF8EC] text-[#1F9D47] dark:bg-green-500/15 dark:text-green-400",
         balance: "$8,200.00",
         logo: "B",
         logoBg: "bg-[#E11D48]",
@@ -34,7 +34,7 @@ const accounts = [
         bank: "Wells Fargo Credit Card",
         subtitle: "Credit Card •••• 1234",
         type: "Credit Card",
-        typeColor: "bg-[#F2E9FF] text-[#8B5CF6]",
+        typeColor: "bg-[#F2E9FF] text-[#8B5CF6] dark:bg-violet-500/15 dark:text-violet-400",
         balance: "-$2,450.00",
         logo: "W",
         logoBg: "bg-[#B91C1C]",
@@ -43,7 +43,7 @@ const accounts = [
         bank: "AMEX Platinum",
         subtitle: "Credit Card •••• 5678",
         type: "Credit Card",
-        typeColor: "bg-[#F2E9FF] text-[#8B5CF6]",
+        typeColor: "bg-[#F2E9FF] text-[#8B5CF6] dark:bg-violet-500/15 dark:text-violet-400",
         balance: "-$1,930.00",
         logo: "A",
         logoBg: "bg-[#2563EB]",
@@ -52,7 +52,7 @@ const accounts = [
         bank: "Robinhood Brokerage",
         subtitle: "Investment •••• 2468",
         type: "Investment",
-        typeColor: "bg-[#E8F0FF] text-[#2563EB]",
+        typeColor: "bg-[#E8F0FF] text-[#2563EB] dark:bg-blue-500/15 dark:text-blue-400",
         balance: "$5,240.00",
         logo: "R",
         logoBg: "bg-[#16A34A]",
@@ -61,7 +61,7 @@ const accounts = [
         bank: "Vanguard IRA",
         subtitle: "Retirement •••• 1357",
         type: "Investment",
-        typeColor: "bg-[#E8F0FF] text-[#2563EB]",
+        typeColor: "bg-[#E8F0FF] text-[#2563EB] dark:bg-blue-500/15 dark:text-blue-400",
         balance: "$2,180.00",
         logo: "V",
         logoBg: "bg-[#DC2626]",
@@ -70,7 +70,7 @@ const accounts = [
         bank: "PayPal Wallet",
         subtitle: "Digital Wallet •••• 8642",
         type: "Cash",
-        typeColor: "bg-[#EAF8EC] text-[#1F9D47]",
+        typeColor: "bg-[#EAF8EC] text-[#1F9D47] dark:bg-green-500/15 dark:text-green-400",
         balance: "$320.00",
         logo: "P",
         logoBg: "bg-[#1D4ED8]",
@@ -87,32 +87,32 @@ function EntityManagementTablePreview() {
     return (
         <motion.div
 
-            initial={{ opacity: 0, filter: "blur(6px)" }}
+            initial={{ opacity: 0, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
+                amount: 0.2,
                 margin: "50px"
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="rounded-[15px] border border-black/10 bg-white p-2 px-2 aspect-video">
+            className="rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-2 px-2 aspect-video">
 
             {/* Top */}
             <div className="flex items-center justify-between">
 
-                <h2 className={`${boldFont.className} text-[14px] text-[#111827] px-2`}>
+                <h2 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white px-2`}>
                     Entity Management Table
                 </h2>
 
                 <div className="flex items-center gap-3">
 
                     {/* Filter */}
-                    <button className={`${boldFont.className} flex items-center gap-2 rounded-[8px] border border-black/10 bg-white px-2 py-2 text-[11px] font-medium text-[#374151] transition-all duration-300 hover:bg-black/[0.02]`}>
+                    <button className={`${boldFont.className} flex items-center gap-2 rounded-[8px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] px-2 py-2 text-[11px] font-medium text-[#374151] dark:text-gray-300 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.03]`}>
 
                         All Accounts
 
@@ -124,7 +124,7 @@ function EntityManagementTablePreview() {
                     </button>
 
                     {/* Sort */}
-                    <button className={`${boldFont.className} flex items-center gap-2 rounded-[8px] border border-black/10 bg-white px-2 py-2 text-[11px] font-medium text-[#374151] transition-all duration-300 hover:bg-black/[0.02]`}>
+                    <button className={`${boldFont.className} flex items-center gap-2 rounded-[8px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] px-2 py-2 text-[11px] font-medium text-[#374151] dark:text-gray-300 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.03]`}>
 
                         Sort by: Balance
 
@@ -140,24 +140,24 @@ function EntityManagementTablePreview() {
             </div>
 
             {/* Table */}
-            <div className="mt-8 overflow-hidden rounded-2xl border border-black/5">
+            <div className="mt-8 overflow-hidden rounded-2xl border border-black/5 dark:border-white/10">
 
                 {/* Header */}
-                <div className="grid grid-cols-[2.3fr_1fr_1fr_1fr_50px] items-center border-b border-black/5 bg-[#FAFAFA] px-6 py-4">
+                <div className="grid grid-cols-[2.3fr_1fr_1fr_1fr_50px] items-center border-b border-black/5 dark:border-white/10 bg-[#FAFAFA] dark:bg-[#080808] px-6 py-4">
 
-                    <p className={`${boldFont.className} text-[13px] text-[#6B7280]`}>
+                    <p className={`${boldFont.className} text-[13px] text-[#6B7280] dark:text-gray-400`}>
                         Account
                     </p>
 
-                    <p className={`${boldFont.className} text-[13px] text-[#6B7280]`}>
+                    <p className={`${boldFont.className} text-[13px] text-[#6B7280] dark:text-gray-400`}>
                         Type
                     </p>
 
-                    <p className={`${boldFont.className} text-[13px] text-[#6B7280]`}>
+                    <p className={`${boldFont.className} text-[13px] text-[#6B7280] dark:text-gray-400`}>
                         Balance
                     </p>
 
-                    <p className={`${boldFont.className} text-[13px] text-[#6B7280]`}>
+                    <p className={`${boldFont.className} text-[13px] text-[#6B7280] dark:text-gray-400`}>
                         Status
                     </p>
 
@@ -168,7 +168,7 @@ function EntityManagementTablePreview() {
 
                     <div
                         key={index}
-                        className="grid grid-cols-[2.3fr_1fr_1fr_1fr_50px] items-center border-b border-black/5 px-6 py-5 transition-all duration-300 hover:bg-black/[0.015]"
+                        className="grid grid-cols-[2.3fr_1fr_1fr_1fr_50px] items-center border-b border-black/5 dark:border-white/10 px-6 py-5 transition-all duration-300 hover:bg-black/[0.015] dark:hover:bg-white/[0.02]"
                     >
 
                         {/* Account */}
@@ -182,11 +182,11 @@ function EntityManagementTablePreview() {
 
                             <div>
 
-                                <h3 className={`${boldFont.className} text-[13px] text-[#111827]`}>
+                                <h3 className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
                                     {account.bank}
                                 </h3>
 
-                                <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-gray-400`}>
                                     {account.subtitle}
                                 </p>
 
@@ -213,23 +213,21 @@ function EntityManagementTablePreview() {
                                 delay={0.2}
                                 Text={account.balance}
                                 className={`${boldFont.className} text-[14px] ${account.balance.includes("-")
-                                    ? "text-[#DC2626]"
-                                    : "text-[#111827]"
+                                    ? "text-[#DC2626] dark:text-red-400"
+                                    : "text-[#111827] dark:text-white"
                                     }`}
                             />
-
-
 
                         </div>
 
                         {/* Status */}
                         <div>
 
-                            <div className="inline-flex items-center gap-2 rounded-[5px] bg-[#EAF8EC] px-2 py-1">
+                            <div className="inline-flex items-center gap-2 rounded-[5px] bg-[#EAF8EC] dark:bg-green-500/15 px-2 py-1">
 
                                 <div className="h-2 w-2 rounded-[5px] bg-[#22C55E]" />
 
-                                <span className={`${boldFont.className} text-[11px] text-[#1F9D47]`}>
+                                <span className={`${boldFont.className} text-[11px] text-[#1F9D47] dark:text-green-400`}>
                                     Synced
                                 </span>
 
@@ -238,7 +236,7 @@ function EntityManagementTablePreview() {
                         </div>
 
                         {/* Menu */}
-                        <button className="flex h-10 w-10 items-center justify-center rounded-xl text-[#9CA3AF] transition-all duration-300 hover:bg-black/[0.04] hover:text-[#111827]">
+                        <button className="flex h-10 w-10 items-center justify-center rounded-xl text-[#9CA3AF] dark:text-gray-500 transition-all duration-300 hover:bg-black/[0.04] dark:hover:bg-white/[0.04] hover:text-[#111827] dark:hover:text-white">
 
                             <EllipsisVertical
                                 size={18}
@@ -254,7 +252,7 @@ function EntityManagementTablePreview() {
                 {/* Footer */}
                 <div className="p-4">
 
-                    <button className={`${boldFont.className} flex h-[56px] w-full items-center justify-center gap-2 rounded-[10px] border border-dashed border-[#22C55E]/30 bg-[#22C55E]/[0.03] text-[14px] font-semibold text-[#16A34A] transition-all duration-300 hover:bg-[#22C55E]/[0.06]`}>
+                    <button className={`${boldFont.className} flex h-[56px] w-full items-center justify-center gap-2 rounded-[10px] border border-dashed border-[#22C55E]/30 dark:border-green-500/30 bg-[#22C55E]/[0.03] dark:bg-green-500/10 text-[14px] font-semibold text-[#16A34A] dark:text-green-400 transition-all duration-300 hover:bg-[#22C55E]/[0.06] dark:hover:bg-green-500/15`}>
 
                         <Plus
                             size={18}

@@ -1,17 +1,14 @@
 "use client"
+
 import { motion } from "framer-motion"
-
-import React from "react";
-
-
-import LinearReveal from "@/components/LinearReveal";
-import { Manrope } from "next/font/google";
+import React from "react"
+import LinearReveal from "@/components/LinearReveal"
+import { Manrope } from "next/font/google"
 
 export const manrope = Manrope({
     subsets: ["latin"],
     weight: ["400", "500", "600", "700"],
-});
-
+})
 
 const list = [
     {
@@ -38,76 +35,79 @@ const list = [
         total: 200,
         progress: 40,
     },
-];
+]
 
 interface ProgressProps {
     progress: number
 }
 
 function Progress({ progress }: ProgressProps) {
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState(0)
 
     React.useEffect(() => {
         const timer = setTimeout(() => {
-            setValue(progress);
-        }, 250);
+            setValue(progress)
+        }, 250)
 
-        return () => clearTimeout(timer);
-    }, [progress]);
+        return () => clearTimeout(timer)
+    }, [progress])
 
     return (
-        <div className="relative w-full h-[4px] bg-[#ececec] rounded-full overflow-hidden">
+        <div className="relative h-[4px] w-full overflow-hidden rounded-full bg-gray-200 dark:bg-white/10">
             <div
-                className="h-full rounded-full bg-[#16a34a] transition-all duration-[1200ms] ease-out"
+                className="h-full rounded-full bg-green-600 transition-all duration-[1200ms] ease-out dark:bg-green-500"
                 style={{
                     width: `${value}%`,
                 }}
             />
         </div>
-    );
+    )
 }
 
 interface ProgressOverviewListItemProps {
-    title: string;
-    spent: number;
-    total: number;
+    title: string
+    spent: number
+    total: number
     progress: number
 }
 
-function ProgressOverviewListItem({ title, spent, total, progress }: ProgressOverviewListItemProps) {
+function ProgressOverviewListItem({
+    title,
+    spent,
+    total,
+    progress,
+}: ProgressOverviewListItemProps) {
     return (
         <div className="space-y-[1px]">
-
             {/* Top */}
             <div className="flex items-start justify-between">
-
                 <div>
-                    <h3 className={`${manrope.className} font-[500] text-[11px] text-[#111827]`}>
+                    <h3
+                        className={`${manrope.className} text-[11px] font-[500] text-gray-900 dark:text-white`}
+                    >
                         {title}
                     </h3>
 
                     <LinearReveal
                         delay={0.4}
-                        as='p'
+                        as="p"
                         Text={`${spent} of ${total}`}
-                        className={`${manrope.className} text-[11px] font-[600] text-[#4b5563] mt-3`}
+                        className={`${manrope.className} mt-3 text-[11px] font-[600] text-gray-600 dark:text-gray-400`}
                     />
-
                 </div>
 
                 <LinearReveal
-                    as='p'
+                    as="p"
                     delay={0.4}
                     Text={`${progress}%`}
-                    className={`${manrope.className} text-[12px] text-[#111827] mt-3`}
+                    className={`${manrope.className} mt-3 text-[12px] text-gray-900 dark:text-white`}
                 />
-
             </div>
 
             {/* Progress */}
             <Progress progress={progress} />
         </div>
-    );
+    )
 }
 
 function ProgressOverviewListPreview() {
@@ -117,30 +117,33 @@ function ProgressOverviewListPreview() {
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, 
-                margin: "50px"
+                amount: 0.2,
+                margin: "50px",
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], 
-                delay: 0.2
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2,
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
-
+            className="rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:border-white/10 dark:bg-[#0c0c0c] dark:shadow-none"
+        >
             {/* Header */}
-            <div className="flex items-center justify-between mb-4">
-
-                <h1 className={`${manrope.className} font-[500] text-[12px] text-[#111827]`}>
+            <div className="mb-4 flex items-center justify-between">
+                <h1
+                    className={`${manrope.className} text-[12px] font-[500] text-gray-900 dark:text-white`}
+                >
                     Progress Overview List
                 </h1>
 
-                <button className={`${manrope.className} font-[500] text-[12px] text-[#15803d] hover:opacity-80 transition-opacity`}>
+                <button
+                    className={`${manrope.className} text-[12px] font-[500] text-green-700 transition-opacity hover:opacity-80 dark:text-green-400`}
+                >
                     View All
                 </button>
             </div>
 
-            {/* Budget Items */}
+            {/* List */}
             <div className="space-y-4">
                 {list.map((item, index) => (
                     <ProgressOverviewListItem
@@ -153,7 +156,7 @@ function ProgressOverviewListPreview() {
                 ))}
             </div>
         </motion.div>
-    );
+    )
 }
 
-export default ProgressOverviewListPreview;
+export default ProgressOverviewListPreview
