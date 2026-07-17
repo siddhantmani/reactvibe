@@ -38,7 +38,7 @@ function ProgressTrackingListItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A clean progress tracking list UI built for SaaS and finance dashboards. Includes milestone progress bars, savings goals, and responsive tracking layouts for modern applications.
+                    A reusable React Goal Progress Tracker component for Progress Tracking Dashboards and Goal Dashboards. Ideal for savings tracking, milestone tracking, progress lists, and dashboard widgets.
                 </motion.p>
 
             </div>

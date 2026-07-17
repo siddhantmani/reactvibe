@@ -27,17 +27,17 @@ function ComparativeBarChartItems() {
                     whileInView={{ opacity: 1, filter: "blur(0px)" }}
                     viewport={{
                         once: true,
-                        amount: 0.2, // Trigger when 20% visible
+                        amount: 0.2, 
                         margin: "50px"
                     }}
                     transition={{
                         duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                        ease: [0.25, 0.46, 0.45, 0.94], 
                         delay: 0.2
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A responsive comparative bar chart UI built for finance and analytics dashboards. Designed for visualizing income, expenses, cashflow trends, and comparative business metrics in modern SaaS applications.
+                    A responsive React Chart component for creating Comparison Charts, Grouped Bar Charts, and Vertical Bar Charts to visualize cash flow, profit and loss, and business analytics in modern data visualization dashboards.
                 </motion.p>
 
             </div>

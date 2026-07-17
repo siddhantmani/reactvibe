@@ -10,13 +10,13 @@ export const sidebarConfig = [
         title: "Dashboard Systems",
         base: "/docs/dashboard-systems/",
         items: [
-            { name: "Finance Overview", slug: "finance-overview", createdAt: "2026-5-19" },
+            { name: "Finance Overview", slug: "finance-overview", createdAt: "2026-7-14" },
             { name: "Accounts", slug: "accounts", createdAt: "2026-7-14", badge: "PRO" },
-            { name: "Transactions", slug: "transactions", createdAt: "2026-5-19", badge: "PRO" },
-            { name: "Budgets", slug: "budgets", createdAt: "2026-5-19", badge: "PRO" },
-            { name: "Investments", slug: "investments", createdAt: "2026-5-19", badge: "PRO" },
-            { name: "Integrations", slug: "integrations", createdAt: "2026-5-19", badge: "PRO" },
-            { name: "Reports", slug: "reports", createdAt: "2026-5-19", badge: "PRO" },
+            { name: "Transactions", slug: "transactions", createdAt: "2026-7-14", badge: "PRO" },
+            { name: "Budgets", slug: "budgets", createdAt: "2026-7-14", badge: "PRO" },
+            { name: "Investments", slug: "investments", createdAt: "2026-7-14", badge: "PRO" },
+            { name: "Integrations", slug: "integrations", createdAt: "2026-7-14", badge: "PRO" },
+            { name: "Reports", slug: "reports", createdAt: "2026-7-14", badge: "PRO" },
         ]
     },
     {

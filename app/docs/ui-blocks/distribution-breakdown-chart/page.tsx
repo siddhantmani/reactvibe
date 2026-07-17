@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Expense Breakdown Chart UI for React & Next.js | React Vibe",
+    title: "React Pie Chart & Distribution Chart | React Vibe",
     description:
-        "Responsive expense breakdown chart UI for React with category analytics, finance insights, and modern dashboard data visualization.",
+        "Build responsive React Pie Charts and Distribution Charts for analytics dashboards. Ideal for data visualization, expense tracking, business insights, and KPI dashboards.",
 }
 
 

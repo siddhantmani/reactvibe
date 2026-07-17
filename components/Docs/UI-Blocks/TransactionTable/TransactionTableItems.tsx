@@ -37,7 +37,7 @@ function TransactionTableItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern transaction table UI built for fintech and SaaS dashboards. Includes categorized transactions, payment status indicators, and responsive data table layouts for financial applications.
+                    A reusable React Data Table component for Transaction Tables, Transaction History, and Finance Dashboards. Ideal for payment history, transaction management, data grids, and modern financial applications.
                 </motion.p>
 
             </div>
