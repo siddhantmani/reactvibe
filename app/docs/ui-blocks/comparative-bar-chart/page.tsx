@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Comparative Bar Chart UI for React & Next.js | React Vibe",
+    title: "Comparison Chart & React Chart Component | React Vibe",
     description:
-        "Modern comparative bar chart UI for React with income vs expense analytics, responsive data visualization, and SaaS dashboard layouts.",
+        "Build responsive Comparison Charts and React Chart components for dashboards. Perfect for data visualization, grouped bar charts, cash flow, and profit loss analysis.",
 }
 
 function ComparativeBarChart() {

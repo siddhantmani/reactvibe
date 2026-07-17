@@ -6,9 +6,9 @@ import React from 'react'
 
 
 export const metadata: Metadata = {
-    title: "Scheduled Payments List UI for React & Next.js | React Vibe",
+    title: "React Payment List & Billing Dashboard | React Vibe",
     description:
-        "Responsive scheduled payments list UI for React with billing tracking, payment reminders, and clean finance dashboard layouts.",
+        "Build responsive React Payment Lists and Billing Dashboards for finance apps. Perfect for payment history, bill management, payment tables, and subscription management.",
 }
 
 

@@ -17,7 +17,7 @@ function DistributionBreakdownChartItems() {
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}
-                    className={`${LinearRevealFont.className} text-xl md:text-4xl lg:text-5xl`}
+                    className={`${LinearRevealFont.className} text-xl md:text-4xl lg:text-4xl xl:text-5xl`}
                     Text='Distribution Breakdown Chart'
                 />
 
@@ -36,7 +36,7 @@ function DistributionBreakdownChartItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern expense breakdown chart UI built for finance and analytics dashboards. Includes category distribution visualization, spending insights, and responsive data layouts for SaaS applications.
+                    A reusable React Pie Chart component for Distribution Charts, Business Visualization, and Analytics Dashboards. Perfect for expense tracking, category visualization, and modern data visualization dashboards.
                 </motion.p>
 
             </div>

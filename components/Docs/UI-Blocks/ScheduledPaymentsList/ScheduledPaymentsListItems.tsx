@@ -27,17 +27,17 @@ function ScheduledPaymentsListItems() {
                     whileInView={{ opacity: 1, filter: "blur(0px)" }}
                     viewport={{
                         once: true,
-                        amount: 0.2, // Trigger when 20% visible
+                        amount: 0.2, 
                         margin: "50px"
                     }}
                     transition={{
                         duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                        ease: [0.25, 0.46, 0.45, 0.94], 
                         delay: 0.2
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A clean scheduled payments list UI built for finance and subscription-based applications. Includes billing reminders, upcoming payment tracking, and responsive list layouts for SaaS dashboards.
+                    A reusable React Payment List component for Billing Dashboards, Payment Management, and Financial Dashboards. Ideal for payment history, billing lists, subscription management, and expense tracking.
                 </motion.p>
 
             </div>
