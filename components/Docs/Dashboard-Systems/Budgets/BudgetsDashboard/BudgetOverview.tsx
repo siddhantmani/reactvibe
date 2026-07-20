@@ -8,7 +8,7 @@ import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
 
 const boldFont = Manrope({
-    weight: "600",
+    weight: "500",
     subsets: ["latin"],
 });
 
@@ -71,7 +71,7 @@ function DonutChart() {
 
             <svg
                 viewBox="0 0 280 280"
-                className="-rotate-90 w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-20 lg:h-20 xl:h-28 xl:w-28 2xl:w-56 2xl:h-56"
+                className="-rotate-90 w-full max-w-[200px] aspect-square"
             >
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
@@ -92,7 +92,7 @@ function DonutChart() {
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                <p className={`${boldFont.className} md:text-[8px] lg:text-[4px] xl:text-[6px] 2xl:text-[12px] text-[#4b5563]`}>
+                <p className={`${boldFont.className} text-[10px]  text-[#4b5563] dark:text-white/60`}>
                     Total Expense
                 </p>
 
@@ -100,7 +100,7 @@ function DonutChart() {
                     as='h2'
                     delay={0.4}
                     Text="$4,680"
-                    className={`${boldFont.className} md:text-[20px] lg:text-[10px] xl:text-[16px] 2xl:text-[28px] font-bold tracking-[-1px] text-[#111827] mt-2`}
+                    className={`${boldFont.className} text-[24px] font-bold tracking-[-1px] text-[#111827] dark:text-white mt-2`}
                 />
 
             </div>
@@ -129,18 +129,18 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
                     }}
                 />
 
-                <p className={`${boldFont.className} text-[13px] text-[#111827]`}>
+                <p className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
                     {title}
                 </p>
             </div>
 
             {/* Percentage */}
-            <p className={`${boldFont.className} text-[13px] text-[#374151] text-left`}>
+            <p className={`${boldFont.className} text-[13px] text-[#374151] dark:text-white text-left`}>
                 {percentage}%
             </p>
 
             {/* Amount */}
-            <p className={`${boldFont.className} text-[13px] text-[#111827] text-left`}>
+            <p className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white text-left`}>
                 {amount}
             </p>
         </div>
@@ -154,33 +154,32 @@ function BudgetsOverview() {
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
+                amount: 0.2,
                 margin: "50px"
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
-            className="w-full rounded-[15px] aspect-auto border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+            className="w-full rounded-[15px] aspect-auto border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none"
+        >
 
             {/* Header */}
 
             <div className="flex items-center gap-4">
 
-                <h1 className={`${boldFont.className} text-[14px] text-[#111827]`}>
+                <h1 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white`}>
                     Budget Overview
                 </h1>
 
-                <button className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 bg-white px-2 py-1 text-[12px] font-medium text-[#374151] transition-all duration-300 hover:bg-black/[0.02]`}>
-
+                <button className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-1 text-[12px] font-medium text-[#374151] dark:text-white/70 transition-all duration-300 hover:bg-black/[0.02] dark:hover:text-white`}>
                     This Month
 
                     <ChevronDown
                         size={14}
                         strokeWidth={2.2}
                     />
-
                 </button>
             </div>
 
@@ -210,7 +209,7 @@ function BudgetsOverview() {
             </div>
 
             {/* Footer */}
-            <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[12px] text-[#006b46] hover:opacity-80 transition-opacity`}>
+            <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[12px] text-[#0c9162] dark:hover:text-[#0dd667] hover:opacity-80 transition-opacity`}>
                 View full report
 
                 <ArrowRight

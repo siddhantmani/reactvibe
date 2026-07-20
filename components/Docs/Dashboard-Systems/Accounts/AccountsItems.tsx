@@ -38,7 +38,7 @@ function AccountsItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern accounts dashboard UI built for fintech and financial SaaS applications. Includes account management tables, synced account tracking, financial health widgets, and real-time activity sections with a clean responsive layout.
+                    A production-ready React Account Dashboard designed for Banking Dashboard Templates, Account Management Dashboards, Linked Accounts Dashboards, Account Tracking Dashboards, and modern personal finance applications.
                 </motion.p>
 
             </div>

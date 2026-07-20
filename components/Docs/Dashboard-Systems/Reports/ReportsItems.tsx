@@ -36,7 +36,7 @@ function ReportsItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A responsive reports dashboard UI built for fintech and SaaS applications. Includes financial summaries, cashflow analytics, spending insights, and downloadable report management.
+                    A production-ready React Reports Dashboard for building Financial Reporting Dashboards, Executive Reports Dashboards, Business Reports Dashboards, Financial Analytics Dashboards, and modern reporting applications.
                 </motion.p>
 
             </div>

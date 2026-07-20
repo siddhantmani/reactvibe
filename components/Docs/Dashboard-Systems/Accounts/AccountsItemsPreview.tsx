@@ -56,7 +56,7 @@ function AccountsItemsPreview() {
                 <Banner />
             </div>
             <div
-                className="w-full bg-white border rounded-3xl"
+                className="w-full bg-white border rounded-3xl dark:bg-black dark:border-white/10"
             >
                 <div className="text-black z-40 w-full h-full scale-[99%]">
                     <AccountsPreview />

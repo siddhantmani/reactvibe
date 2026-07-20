@@ -7,7 +7,7 @@ import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
 
 const boldFont = Manrope({
-    weight: "600",
+    weight: "500",
     subsets: ["latin"],
 });
 
@@ -80,7 +80,7 @@ function BudgetItem({ title, spent, total, progress }: BudgetItemProps) {
             <div className="flex items-start justify-between">
 
                 <div>
-                    <h3 className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                    <h3 className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white/90`}>
                         {title}
                     </h3>
 
@@ -88,7 +88,7 @@ function BudgetItem({ title, spent, total, progress }: BudgetItemProps) {
                         delay={0.4}
                         as='p'
                         Text={`${spent} of ${total}`}
-                        className={`${boldFont.className} text-[11px] text-[#4b5563] mt-3`}
+                        className={`${boldFont.className} text-[11px] text-[#4b5563] dark:text-white/60 mt-3`}
                     />
 
                 </div>
@@ -97,7 +97,7 @@ function BudgetItem({ title, spent, total, progress }: BudgetItemProps) {
                     as='p'
                     delay={0.4}
                     Text={`${progress}%`}
-                    className={`${boldFont.className} text-[12px] text-[#111827] mt-3`}
+                    className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white mt-3`}
                 />
 
             </div>
@@ -110,16 +110,16 @@ function BudgetItem({ title, spent, total, progress }: BudgetItemProps) {
 
 function BudgetProgressList() {
     return (
-        <div className="w-[45%] rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-[45%] rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
 
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
 
-                <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                     Budgets
                 </h1>
 
-                <button className={`${boldFont.className} text-[12px] text-[#15803d] hover:opacity-80 transition-opacity`}>
+                <button className={`${boldFont.className} text-[12px] text-[#14af4d] dark:hover:text-[#01ff5e] hover:opacity-80 transition-opacity cursor-pointer`}>
                     View All
                 </button>
             </div>

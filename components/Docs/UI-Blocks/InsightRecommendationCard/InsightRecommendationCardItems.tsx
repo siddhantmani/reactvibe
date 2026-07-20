@@ -39,7 +39,7 @@ function InsightRecommendationCardItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern insight recommendation card UI built for finance and SaaS dashboards. Includes smart suggestions, analytics insights, and responsive callout layouts for improving user engagement.
+                    A reusable React Recommendation & Insight Card for dashboards, designed to build Dashboard Recommendation Cards, Analytics Recommendation Cards, Business Insight Cards, Financial Recommendation Cards, and intelligent recommendation widgets.
                 </motion.p>
 
             </div>

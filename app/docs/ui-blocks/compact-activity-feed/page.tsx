@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Compact Activity Feed UI for React & Next.js | React Vibe",
+    title: "Dashboard Activity Feed Component | React Vibe",
     description:
-        "Responsive compact activity feed UI for React with transaction updates, realtime activity tracking, and modern dashboard layouts.",
+        "Build a responsive Dashboard Activity Feed component for React. Perfect for recent activity feeds, payment history, account activity, and live dashboard updates.",
 }
 
 

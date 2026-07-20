@@ -100,7 +100,7 @@ function DocsBTNTag() {
             className={`${CTAButton.className} w-fit md:text-[12px] text-white text-sm px-3 py-1 rounded-full border border-[#323232] flex items-center text-[11px]`}
         >
 
-            React Animation Library <span><Dot size={15} /></span> Copy-Paste Components <span><Dot size={15} /></span> Open Source
+            Production-Ready React Components <span><Dot size={15} /></span> Dashboard Systems <span><Dot size={15} /></span> 50+ UI Blocks & Components
         </motion.div>
     )
 }

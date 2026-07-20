@@ -8,7 +8,7 @@ import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
 
 const boldFont = Manrope({
-    weight: "600",
+    weight: "500",
     subsets: ["latin"],
 });
 
@@ -34,18 +34,18 @@ function CashflowOverviewChart() {
         (activeIndex !== null ? chartData[activeIndex].expense : 90);
 
     return (
-        <div className="w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
 
             {/* Header */}
             <div className="flex items-start justify-between gap-5">
 
                 {/* Left */}
                 <div>
-                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] whitespace-nowrap`}>
+                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white whitespace-nowrap`}>
                         Cashflow Overview
                     </h1>
 
-                    <p className={`${boldFont.className} text-[11px] text-[#4b5563] mt-2`}>
+                    <p className={`${boldFont.className} text-[11px] text-[#4b5563] dark:text-white/40 mt-2`}>
                         Net Cashflow
                     </p>
 
@@ -64,7 +64,7 @@ function CashflowOverviewChart() {
                 <div className="flex flex-col items-end gap-10">
 
                     {/* Dropdown */}
-                    <button className={`${boldFont.className} px-2 py-1 rounded-[4px] border border-black/10 flex items-center gap-3 text-[10px] text-[#111827]`}>
+                    <button className={`${boldFont.className} px-2 py-1 rounded-[4px] border border-black/10 flex items-center gap-3 text-[10px] text-[#111827] dark:text-white/70 dark:hover:text-white dark:border-white/15`}>
                         This Month
 
                         <ChevronDown
@@ -79,7 +79,7 @@ function CashflowOverviewChart() {
                         <div className="flex items-center gap-3">
                             <div className="w-2 h-2 rounded-[2px] bg-[#006b46]" />
 
-                            <p className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                            <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white/90`}>
                                 Income
                             </p>
                         </div>
@@ -87,7 +87,7 @@ function CashflowOverviewChart() {
                         <div className="flex items-center gap-3">
                             <div className="w-2 h-2 rounded-[2px] bg-[#86db68]" />
 
-                            <p className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                            <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white/90`}>
                                 Expenses
                             </p>
                         </div>
@@ -107,7 +107,7 @@ function CashflowOverviewChart() {
                     {[0, 1, 2, 3, 4].map((line) => (
                         <div
                             key={line}
-                            className="absolute left-0 w-full border-t border-black/6"
+                            className="absolute left-0 w-full border-t border-black/6 dark:border-white/10"
                             style={{
                                 top: `${line * 25}%`,
                             }}
@@ -119,7 +119,7 @@ function CashflowOverviewChart() {
                         {["$6K", "$3K", "$0", "-$3K", "-$6K"].map((label) => (
                             <p
                                 key={label}
-                                className={`${boldFont.className} text-[9px] text-[#4b5563]`}
+                                className={`${boldFont.className} text-[9px] text-[#4b5563] dark:text-white/80`}
                             >
                                 {label}
                             </p>
@@ -164,10 +164,10 @@ function CashflowOverviewChart() {
                                                 transition={{
                                                     duration: 0.2,
                                                 }}
-                                                className="absolute -top-20 z-30  rounded-[10px] border border-black/10 bg-white p-2 px-2 shadow-[0_15px_40px_rgba(0,0,0,0.08)]"
+                                                className="absolute -top-20 z-30  rounded-[10px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-2 px-2 shadow-[0_15px_40px_rgba(0,0,0,0.08)]"
                                             >
 
-                                                <p className={`${boldFont.className} text-[11px] text-[#6b7280]`}>
+                                                <p className={`${boldFont.className} text-[11px] text-[#6b7280] dark:text-white`}>
                                                     {item.month} 2024
                                                 </p>
 
@@ -175,7 +175,7 @@ function CashflowOverviewChart() {
 
                                                     <div className="flex items-center justify-between gap-4">
 
-                                                        <span className={`${boldFont.className} text-[13px] text-[#6b7280]`}>
+                                                        <span className={`${boldFont.className} text-[11px] text-[#6b7280] dark:text-white/70`}>
                                                             Income
                                                         </span>
 
@@ -187,7 +187,7 @@ function CashflowOverviewChart() {
 
                                                     <div className="flex items-center justify-between gap-4">
 
-                                                        <span className={`${boldFont.className}  text-[13px] text-[#6b7280]`}>
+                                                        <span className={`${boldFont.className}  text-[11px] text-[#6b7280] dark:text-white/70`}>
                                                             Expense
                                                         </span>
 
@@ -235,7 +235,7 @@ function CashflowOverviewChart() {
                                     </motion.div>
 
                                     {/* Month */}
-                                    <p className={`${boldFont.className} text-[9px] text-[#4b5563] mt-5`}>
+                                    <p className={`${boldFont.className} text-[9px] text-[#4b5563] dark:text-white/80 mt-5`}>
                                         {item.month}
                                     </p>
                                 </div>

@@ -38,7 +38,7 @@ function AssetPerformanceTableItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern asset performance table UI built for investment and fintech dashboards. Includes portfolio tracking, asset analytics, holdings management, and responsive financial data tables.
+                    A reusable React Portfolio Table for investment dashboards, designed to build Portfolio Holdings Tables, Asset Performance Tables, Investment Portfolio Tables, Portfolio Analytics Tables, and responsive portfolio dashboards.
                 </motion.p>
 
             </div>

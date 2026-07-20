@@ -8,7 +8,7 @@ import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
 
 const boldFont = Manrope({
-    weight: "600",
+    weight: "500",
     subsets: ["latin"],
 });
 
@@ -70,7 +70,7 @@ function DonutChart() {
     return (
         <div className="relative">
 
-            <svg width="220" height="220" viewBox="0 0 280 280" className="-rotate-90">
+            <svg viewBox="0 0 280 280" className="-rotate-90 w-full max-w-[230px] aspect-square">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -91,15 +91,15 @@ function DonutChart() {
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                <p className={`${boldFont.className} text-[10px] text-[#4b5563]`}>
+                <p className={`${boldFont.className} text-[10px] text-[#4b5563] dark:text-white/60`}>
                     Total Expense
                 </p>
 
                 <LinearReveal
-                    as='h2'
+                    as="h2"
                     delay={0.4}
                     Text="$4,680"
-                    className={`${boldFont.className} text-[22px] font-bold tracking-[-1px] text-[#111827] mt-2`}
+                    className={`${boldFont.className} text-[25px] font-bold tracking-[-1px] text-[#111827] dark:text-white mt-2`}
                 />
 
             </div>
@@ -128,18 +128,18 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
                     }}
                 />
 
-                <p className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                     {title}
                 </p>
             </div>
 
             {/* Percentage */}
-            <p className={`${boldFont.className} text-[11px] text-[#374151] text-start`}>
+            <p className={`${boldFont.className} text-[11px] text-[#374151] dark:text-white text-start`}>
                 {percentage}%
             </p>
 
             {/* Amount */}
-            <p className={`${boldFont.className} text-[11px] text-[#111827] text-right`}>
+            <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white text-right`}>
                 {amount}
             </p>
         </div>
@@ -161,10 +161,10 @@ function ReportsSpendingBreakdown() {
                 ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
                 delay: 0.2
             }}
-            className="w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+            className="w-full rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
 
             {/* Header */}
-            <h2 className={`${boldFont.className} text-[14px] text-black`}>
+            <h2 className={`${boldFont.className} text-[14px] text-black dark:text-white`}>
                 Executive Summary
             </h2>
 
@@ -194,7 +194,7 @@ function ReportsSpendingBreakdown() {
             </div>
 
             {/* Footer */}
-            <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[10px] text-[#006b46] hover:opacity-80 transition-opacity`}>
+            <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[10px] text-[#006b46] dark:text-[#5ED19B] hover:opacity-80 transition-opacity`}>
                 View full breakdown
 
                 <ArrowRight

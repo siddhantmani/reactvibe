@@ -53,7 +53,7 @@ function BudgetsItemsPreview() {
             <div>
                 <Banner />
             </div>
-            <div className="border rounded-3xl">
+            <div className="border rounded-3xl dark:bg-black">
                 <div className="text-black z-40 w-full h-full scale-[99%]">
                     <BudgetsPreview />
                 </div>

@@ -37,7 +37,7 @@ function FinanceOverviewItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern finance analytics dashboard built for fintech and SaaS applications, featuring budget management, financial goals tracking, transaction history, and interactive data visualizations.
+                    A production-ready React Finance Dashboard Template featuring Budget Dashboard Templates, Expense Dashboard Templates, Cash Flow Dashboards, Financial Analytics Dashboards, and modern financial management workflows.
                 </motion.p>
 
             </div>

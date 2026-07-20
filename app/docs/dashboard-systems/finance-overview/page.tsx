@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Financial Dashboard React | Finance Analytics Dashboard",
+    title: "React Finance Dashboard Template | React Vibe",
     description:
-        "Build a modern Financial Dashboard React with finance analytics, budget management, financial goals tracking, goal progress cards, charts, and a complete financial dashboard UI.",
+        "Build a responsive React Finance Dashboard Template featuring Budget Dashboard Templates, Expense Tracking Dashboards, Cash Flow Dashboards, and financial analytics.",
 }
 
 function FinanceOverview() {

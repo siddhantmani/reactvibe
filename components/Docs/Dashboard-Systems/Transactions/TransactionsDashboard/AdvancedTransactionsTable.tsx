@@ -135,26 +135,26 @@ function AdvancedTransactionsTable() {
     ]
 
     return (
-        <div className='bg-white border border-black/5 rounded-[15px] p-3 px-3 aspect-video'>
+        <div className='bg-white border border-black/5 dark:bg-[#070606] dark:border-white/10 rounded-[15px] p-3 px-3 aspect-video'>
 
             {/* top actions */}
             <div className='flex items-center justify-between gap-4'>
 
                 {/* filters */}
                 <div className='flex items-center gap-3'>
-                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] bg-[#DDF8D3] text-[#2C9B4B] text-[12px]`}>
+                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] bg-[#DDF8D3] dark:bg-[#12331D] text-[#2C9B4B] dark:text-[#63D98D] text-[12px]`}>
                         All Transactions
                     </button>
 
-                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 dark:border-white/5 text-black/70 dark:text-white/70 text-[12px] dark:bg-white/[0.03] dark:hover:text-white`}>
                         Income
                     </button>
 
-                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 dark:border-white/5 text-black/70 dark:text-white/70 text-[12px] dark:bg-white/[0.03] dark:hover:text-white`}>
                         Expenses
                     </button>
 
-                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} px-2 py-2 rounded-[6px] border border-black/10 dark:border-white/5 text-black/70 dark:text-white/70 text-[12px] dark:bg-white/[0.03] dark:hover:text-white`}>
                         Transfers
                     </button>
                 </div>
@@ -162,12 +162,12 @@ function AdvancedTransactionsTable() {
                 {/* right controls */}
                 <div className='flex items-center gap-3'>
 
-                    <button className={`${boldFont.className} flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 dark:border-white/10 text-black/70 dark:text-white/70 text-[12px] dark:bg-white/[0.03] dark:hover:text-white`}>
                         <span>May 1 — May 31, 2024</span>
                         <Calendar size={16} />
                     </button>
 
-                    <button className={`${boldFont.className} relative flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} relative flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 dark:border-white/10 text-black/70 dark:text-white/70 text-[12px] dark:bg-white/[0.03] dark:hover:text-white`}>
                         <Filter size={16} />
                         Filters
 
@@ -176,7 +176,7 @@ function AdvancedTransactionsTable() {
                         </div>
                     </button>
 
-                    <button className={`${boldFont.className} flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 text-black/70 text-[12px]`}>
+                    <button className={`${boldFont.className} flex items-center gap-2 px-2 py-2 rounded-[5px] border border-black/10 dark:border-white/10 text-black/70 dark:text-white/70 text-[12px] dark:bg-white/[0.03] dark:hover:text-white`}>
                         <Download size={16} />
                         Export
                     </button>
@@ -191,13 +191,13 @@ function AdvancedTransactionsTable() {
                 <table className='w-full'>
 
                     <thead>
-                        <tr className='border-b border-black/5 text-left text-black/40 text-sm'>
-                            <th className='pb-5 font-medium w-[150px]'>Date</th>
-                            <th className='pb-5 font-medium'>Description</th>
-                            <th className='pb-5 font-medium'>Category</th>
-                            <th className='pb-5 font-medium'>Account</th>
-                            <th className='pb-5 font-medium'>Amount</th>
-                            <th className='pb-5 font-medium'>Status</th>
+                        <tr className="border-b border-black/5 dark:border-white/10 text-left text-black/40 dark:text-white/50 text-sm">
+                            <th className="pb-5 font-medium w-[150px]">Date</th>
+                            <th className="pb-5 font-medium">Description</th>
+                            <th className="pb-5 font-medium">Category</th>
+                            <th className="pb-5 font-medium">Account</th>
+                            <th className="pb-5 font-medium">Amount</th>
+                            <th className="pb-5 font-medium">Status</th>
                         </tr>
                     </thead>
 
@@ -207,7 +207,7 @@ function AdvancedTransactionsTable() {
                         <tr>
                             <td
                                 colSpan={7}
-                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black`}
+                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black dark:text-white`}
                             >
                                 Today — May 31, 2024
                             </td>
@@ -216,23 +216,29 @@ function AdvancedTransactionsTable() {
                         {transactions.slice(0, 3).map((item, index) => (
                             <tr
                                 key={index}
-                                className='border-b border-black/5'
+                                className="border-b border-black/5 dark:border-white/10"
                             >
 
                                 {/* date */}
-                                <td className='py-2'>
-                                    <div className='flex items-center gap-4'>
+                                <td className="py-2">
+                                    <div className="flex items-center gap-4">
 
-                                        <div className={`flex h-8 w-8 items-center justify-center rounded-[8px] text-[18px] font-bold ${item.imageBg}`}>
+                                        <div
+                                            className={`flex h-8 w-8 items-center justify-center rounded-[8px] text-[18px] font-bold ${item.imageBg}`}
+                                        >
                                             {item.image}
                                         </div>
 
                                         <div>
-                                            <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                            <h1
+                                                className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}
+                                            >
                                                 {item.date}
                                             </h1>
 
-                                            <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                            <p
+                                                className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/60`}
+                                            >
                                                 {item.time}
                                             </p>
                                         </div>
@@ -242,29 +248,39 @@ function AdvancedTransactionsTable() {
 
                                 {/* desc */}
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1
+                                        className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}
+                                    >
                                         {item.name}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p
+                                        className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/60`}
+                                    >
                                         {item.desc}
                                     </p>
                                 </td>
 
                                 {/* category */}
                                 <td>
-                                    <div className={`inline-flex px-2 py-1 ${boldFont.className} text-[10px] text-[#111827] rounded-[5px] items-center ${item.categoryColor}`}>
+                                    <div
+                                        className={`inline-flex items-center rounded-[5px] px-2 py-1 ${boldFont.className} text-[10px] ${item.categoryColor}`}
+                                    >
                                         {item.category}
                                     </div>
                                 </td>
 
                                 {/* account */}
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1
+                                        className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}
+                                    >
                                         {item.account}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p
+                                        className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/60`}
+                                    >
                                         {item.accountNo}
                                     </p>
                                 </td>
@@ -272,22 +288,25 @@ function AdvancedTransactionsTable() {
                                 {/* amount */}
                                 <td>
                                     <LinearReveal
-                                        as='h1'
+                                        as="h1"
                                         delay={0.2}
                                         Text={item.amount}
-                                        className={`${boldFont.className} text-[13px] text-[#111827] ${item.amountColor}`}
+                                        className={`${boldFont.className} text-[13px] ${item.amountColor}`}
                                     />
                                 </td>
 
                                 {/* status */}
                                 <td>
-                                    <div className='inline-flex px-2 py-1 ${boldFont.className} text-[10px] rounded-[5px] items-center bg-[#E8F9EA] text-[#2C9B4B]'>
+                                    <div
+                                        className={`inline-flex items-center rounded-[5px] bg-[#E8F9EA] dark:bg-[#12331D] px-2 py-1 ${boldFont.className} text-[10px] text-[#2C9B4B] dark:text-[#63D98D]`}
+                                    >
                                         Completed
                                     </div>
                                 </td>
 
+                                {/* menu */}
                                 <td>
-                                    <button className='text-black/60'>
+                                    <button className="text-black/60 dark:text-white/60">
                                         <Ellipsis size={12} />
                                     </button>
                                 </td>
@@ -299,7 +318,7 @@ function AdvancedTransactionsTable() {
                         <tr>
                             <td
                                 colSpan={7}
-                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black`}
+                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black dark:text-white`}
                             >
                                 Yesterday — May 30, 2024
                             </td>
@@ -308,22 +327,29 @@ function AdvancedTransactionsTable() {
                         {transactions.slice(3, 6).map((item, index) => (
                             <tr
                                 key={index}
-                                className='border-b border-black/5'
+                                className="border-b border-black/5 dark:border-white/10"
                             >
 
-                                <td className='py-2'>
-                                    <div className='flex items-center gap-4'>
+                                {/* Date */}
+                                <td className="py-2">
+                                    <div className="flex items-center gap-4">
 
-                                        <div className={`flex h-8 w-8 items-center justify-center rounded-[8px] text-[18px] font-bold ${item.imageBg}`}>
+                                        <div
+                                            className={`flex h-8 w-8 items-center justify-center rounded-[8px] text-[18px] font-bold ${item.imageBg}`}
+                                        >
                                             {item.image}
                                         </div>
 
                                         <div>
-                                            <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                            <h1
+                                                className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}
+                                            >
                                                 {item.date}
                                             </h1>
 
-                                            <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                            <p
+                                                className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/60`}
+                                            >
                                                 {item.time}
                                             </p>
                                         </div>
@@ -331,53 +357,67 @@ function AdvancedTransactionsTable() {
                                     </div>
                                 </td>
 
+                                {/* Description */}
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1
+                                        className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}
+                                    >
                                         {item.name}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p
+                                        className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/60`}
+                                    >
                                         {item.desc}
                                     </p>
                                 </td>
 
+                                {/* Category */}
                                 <td>
-                                    <div className={`inline-flex px-2 py-1 ${boldFont.className} text-[10px] text-[#111827] rounded-[5px] items-center ${item.categoryColor}`}>
+                                    <div
+                                        className={`inline-flex items-center rounded-[5px] px-2 py-1 ${boldFont.className} text-[10px] ${item.categoryColor}`}
+                                    >
                                         {item.category}
                                     </div>
                                 </td>
 
+                                {/* Account */}
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1
+                                        className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}
+                                    >
                                         {item.account}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p
+                                        className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/60`}
+                                    >
                                         {item.accountNo}
                                     </p>
                                 </td>
 
+                                {/* Amount */}
                                 <td>
-                                    <h1 >
-
-                                    </h1>
-
                                     <LinearReveal
-                                        as='h1'
+                                        as="h1"
                                         delay={0.2}
                                         Text={item.amount}
-                                        className={`${boldFont.className} text-[13px] text-[#111827] ${item.amountColor}`}
+                                        className={`${boldFont.className} text-[13px] ${item.amountColor}`}
                                     />
                                 </td>
 
+                                {/* Status */}
                                 <td>
-                                    <div className='inline-flex px-2 py-1 ${boldFont.className} text-[10px] rounded-[5px] items-center bg-[#E8F9EA] text-[#2C9B4B]'>
+                                    <div
+                                        className={`inline-flex items-center rounded-[5px] bg-[#E8F9EA] dark:bg-[#12331D] px-2 py-1 ${boldFont.className} text-[10px] text-[#2C9B4B] dark:text-[#63D98D]`}
+                                    >
                                         Completed
                                     </div>
                                 </td>
 
+                                {/* Menu */}
                                 <td>
-                                    <button className='text-black/60'>
+                                    <button className="text-black/60 dark:text-white/60">
                                         <Ellipsis size={12} />
                                     </button>
                                 </td>
@@ -389,7 +429,7 @@ function AdvancedTransactionsTable() {
                         <tr>
                             <td
                                 colSpan={7}
-                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black`}
+                                className={`${boldFont.className} pt-2 pb-2 text-[13px] text-black dark:text-white`}
                             >
                                 May 29, 2024
                             </td>
@@ -398,22 +438,29 @@ function AdvancedTransactionsTable() {
                         {transactions.slice(6, 8).map((item, index) => (
                             <tr
                                 key={index}
-                                className='border-b border-black/5'
+                                className="border-b border-black/5 dark:border-white/10"
                             >
 
-                                <td className='py-2'>
-                                    <div className='flex items-center gap-4'>
+                                {/* Date */}
+                                <td className="py-2">
+                                    <div className="flex items-center gap-4">
 
-                                        <div className={`flex h-8 w-8 items-center justify-center rounded-[8px] text-[18px] font-bold ${item.imageBg}`}>
+                                        <div
+                                            className={`flex h-8 w-8 items-center justify-center rounded-[8px] text-[18px] font-bold ${item.imageBg}`}
+                                        >
                                             {item.image}
                                         </div>
 
                                         <div>
-                                            <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                            <h1
+                                                className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}
+                                            >
                                                 {item.date}
                                             </h1>
 
-                                            <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                            <p
+                                                className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/60`}
+                                            >
                                                 {item.time}
                                             </p>
                                         </div>
@@ -421,51 +468,67 @@ function AdvancedTransactionsTable() {
                                     </div>
                                 </td>
 
+                                {/* Description */}
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1
+                                        className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}
+                                    >
                                         {item.name}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p
+                                        className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/60`}
+                                    >
                                         {item.desc}
                                     </p>
                                 </td>
 
+                                {/* Category */}
                                 <td>
-                                    <div className={`inline-flex px-2 py-1 ${boldFont.className} text-[10px] text-[#111827] rounded-[5px] items-center ${item.categoryColor}`}>
+                                    <div
+                                        className={`inline-flex items-center rounded-[5px] px-2 py-1 ${boldFont.className} text-[10px] ${item.categoryColor}`}
+                                    >
                                         {item.category}
                                     </div>
                                 </td>
 
+                                {/* Account */}
                                 <td>
-                                    <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+                                    <h1
+                                        className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}
+                                    >
                                         {item.account}
                                     </h1>
 
-                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                    <p
+                                        className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/60`}
+                                    >
                                         {item.accountNo}
                                     </p>
                                 </td>
 
-                                {/* amount */}
+                                {/* Amount */}
                                 <td>
                                     <LinearReveal
-                                        as='h1'
+                                        as="h1"
                                         delay={0.2}
                                         Text={item.amount}
-                                        className={`${boldFont.className} text-[13px] text-[#111827] ${item.amountColor}`}
+                                        className={`${boldFont.className} text-[13px] ${item.amountColor}`}
                                     />
                                 </td>
 
-                                {/* status */}
+                                {/* Status */}
                                 <td>
-                                    <div className='inline-flex px-2 py-1 ${boldFont.className} text-[10px] rounded-[5px] items-center bg-[#E8F9EA] text-[#2C9B4B]'>
+                                    <div
+                                        className={`inline-flex items-center rounded-[5px] bg-[#E8F9EA] dark:bg-[#12331D] px-2 py-1 ${boldFont.className} text-[10px] text-[#2C9B4B] dark:text-[#63D98D]`}
+                                    >
                                         Completed
                                     </div>
                                 </td>
 
+                                {/* Menu */}
                                 <td>
-                                    <button className='text-black/60'>
+                                    <button className="text-black/60 dark:text-white/60">
                                         <Ellipsis size={12} />
                                     </button>
                                 </td>
@@ -481,7 +544,7 @@ function AdvancedTransactionsTable() {
 
             {/* load more */}
             <div className='flex items-center justify-center pt-5'>
-                <button className={`${boldFont.className} text-[12px] flex items-center gap-2 text-black/60`}>
+                <button className={`${boldFont.className} text-[12px] flex items-center gap-2 text-black/60 dark:text-white/60 dark:hover:text-white`}>
                     Load more transactions
                     <ChevronDown size={12} />
                 </button>

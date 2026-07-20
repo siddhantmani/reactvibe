@@ -90,7 +90,7 @@ function DonutChart() {
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                <p className={`${boldFont.className} text-[10px] text-[#4b5563]`}>
+                <p className={`${boldFont.className} text-[10px] text-[#4b5563] dark:text-white/60`}>
                     Total Expense
                 </p>
 
@@ -98,7 +98,7 @@ function DonutChart() {
                     as='h2'
                     delay={0.4}
                     Text="$4,680"
-                    className={`${boldFont.className} text-[22px] font-bold tracking-[-1px] text-[#111827] mt-2`}
+                    className={`${boldFont.className} text-[22px] font-bold tracking-[-1px] text-[#111827] dark:text-white mt-2`}
                 />
 
             </div>
@@ -127,18 +127,17 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
                     }}
                 />
 
-                <p className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                     {title}
                 </p>
             </div>
 
             {/* Percentage */}
-            <p className={`${boldFont.className} text-[11px] text-[#374151] text-right`}>
+            <p className={`${boldFont.className} text-[11px] text-[#374151] dark:text-white text-right`}>
                 {percentage}%
             </p>
 
-            {/* Amount */}
-            <p className={`${boldFont.className} text-[11px] text-[#111827] text-right`}>
+            <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white text-right`}>
                 {amount}
             </p>
         </div>
@@ -147,10 +146,10 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
 
 function ExpenseBreakdownChart() {
     return (
-        <div className="w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
 
             {/* Header */}
-            <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
+            <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
                 Expense Breakdown
             </h1>
 
@@ -180,7 +179,7 @@ function ExpenseBreakdownChart() {
             </div>
 
             {/* Footer */}
-            <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[10px] text-[#006b46] hover:opacity-80 transition-opacity`}>
+            <button className={`${boldFont.className} mt-7 cursor-pointer flex items-center gap-3 text-[10px] text-[#06aa06] dark:hover:text-[#15ff00] hover:opacity-80 transition-opacity`}>
                 View full report
 
                 <ArrowRight

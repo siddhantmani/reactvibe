@@ -26,66 +26,41 @@ function DocsTagLine({
     }, []);
 
     return (
-        <div className={cn(" space-y-4 mt-6", className)}>
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            whileInView={{ opacity: 1 }}
+            viewport={{
+                once: true,
+                amount: 0.2, // Trigger when 20% visible
+                margin: "50px"
+            }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                delay: 0.3
+            }}
+            className={cn(" space-y-4 mt-6", className)}>
 
             {/* Heading */}
-            <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                whileInView={{ opacity: 1 }}
-                viewport={{
-                    once: true,
-                    amount: 0.2, // Trigger when 20% visible
-                    margin: "50px"
-                }}
-                transition={{
-                    duration: 1.2,
-                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                    delay: 0.3
-                }}
+            <div
                 className={cn(HeadingFont.className, "text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-3xl")}>
-                <h1 className="text-foreground">Motion-first React</h1>
+                <h1 className="text-foreground">Production-Ready</h1>
                 <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-purple-500">
-                    ui components you copy-paste.
+                    React Components & UI Blocks
                 </h1>
-            </motion.div>
+            </div>
 
             {/* Description */}
-            <motion.p
-                initial={{ opacity: 0, filter: "blur(8px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                whileInView={{ opacity: 1 }}
-                viewport={{
-                    once: true,
-                    amount: 0.2, // Trigger when 20% visible
-                    margin: "50px"
-                }}
-                transition={{
-                    duration: 1.2,
-                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                    delay: 0.4
-                }}
+            <p
                 className="text-muted-foreground text-sm sm:text-base max-w-4xl">
-                React Vibe is a motion-first React animation library built for modern UI development. It provides production-ready React components you can copy and paste directly into your project — no React Vibe install, no library overhead.
+                React Vibe is a collection of production-ready React components, dashboard systems, UI blocks, hero sections, and animations built for modern web applications. Install Framer Motion once, then copy, customize, and ship production-ready components directly into your project—no React Vibe package required.
                 <br />
-                Built using tools like Framer Motion and Three.js when needed, it gives you fully customizable, animated React components with real code ownership — not black-box abstractions.
-            </motion.p>
+                Built with React, Tailwind CSS, Framer Motion, and Three.js where needed, every component gives you full code ownership, clean architecture, and effortless customization.
+            </p>
 
             {/* Actions */}
-            <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                whileInView={{ opacity: 1 }}
-                viewport={{
-                    once: true,
-                    amount: 0.2, // Trigger when 20% visible
-                    margin: "50px"
-                }}
-                transition={{
-                    duration: 1.2,
-                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                    delay: 0.5
-                }}
+            <div
                 className="flex flex-wrap gap-3 mt-6"
             >
                 {/* Primary */}
@@ -137,8 +112,8 @@ function DocsTagLine({
                         How it Works
                     </div>
                 </Link>
-            </motion.div>
-        </div>
+            </div>
+        </motion.div>
     )
 }
 

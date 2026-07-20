@@ -50,12 +50,12 @@ const activities = [
 function RecentAccountActivity() {
 
     return (
-        <div className="rounded-[15px] aspect-video border border-black/10 bg-white p-3 px-3">
+        <div className="rounded-[15px] aspect-video border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3">
 
             {/* Heading */}
             <div>
 
-                <h2 className={`${boldFont.className} text-[14px] text-[#111827]`}>
+                <h2 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white`}>
                     Recent Activity
                 </h2>
 
@@ -68,7 +68,7 @@ function RecentAccountActivity() {
 
                     <div
                         key={index}
-                        className="flex items-center justify-between rounded-2xl p-3 transition-all duration-300 hover:bg-black/[0.02]"
+                        className="flex items-center justify-between rounded-2xl p-3 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.03]"
                     >
 
                         {/* Left */}
@@ -84,8 +84,8 @@ function RecentAccountActivity() {
                             {/* Arrow */}
                             <div
                                 className={`flex h-6 w-6 items-center justify-center rounded-full ${item.positive
-                                    ? "bg-[#DCFCE7]"
-                                    : "bg-[#FEE2E2]"
+                                    ? "bg-[#DCFCE7] dark:bg-[#12331D]"
+                                    : "bg-[#FEE2E2] dark:bg-[#3A1616]"
                                     }`}
                             >
 
@@ -108,20 +108,19 @@ function RecentAccountActivity() {
                             {/* Content */}
                             <div>
 
-                                <h3 className={`${boldFont.className} text-[13px] text-[#111827]`}>
+                                <h3 className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
                                     {item.bank}
                                 </h3>
 
-                                <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                     {item.description}
                                 </p>
-
                             </div>
 
                         </div>
 
                         {/* Time */}
-                        <p className={`${boldFont.className} text-[12px] text-[#6B7280]`}>
+                        <p className={`${boldFont.className} text-[12px] text-[#6B7280] dark:text-white/50`}>
                             {item.time}
                         </p>
 

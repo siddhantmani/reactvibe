@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Asset Performance Table UI for React & Next.js | React Vibe",
+    title: "React Portfolio & Asset Table | React Vibe",
     description:
-        "Responsive asset performance table UI for React with portfolio tracking, investment analytics, and modern finance dashboard layouts.",
+        "Build responsive React Portfolio Tables and React Asset Tables for investment dashboards. Perfect for Portfolio Holdings Tables, Asset Performance Tables, and portfolio tracking.",
 }
 
 

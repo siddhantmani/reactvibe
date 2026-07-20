@@ -89,11 +89,10 @@ function TransactionRow({
                 as='p'
                 delay={0.3}
                 Text={`${date}`}
-                className={`${boldFont.className} whitespace-nowrap text-[9px] text-[#4b5563]`}
+                className={`${boldFont.className} whitespace-nowrap text-[9px] text-[#4b5563] dark:text-white/60`}
             />
-
             {/* Description */}
-            <p className={`${boldFont.className} text-[10px] text-[#111827]`}>
+            <p className={`${boldFont.className} text-[10px] text-[#111827] dark:text-white`}>
                 {description}
             </p>
 
@@ -119,10 +118,9 @@ function TransactionRow({
             />
 
 
-
             {/* Status */}
             <div>
-                <span className={`${boldFont.className} inline-flex items-center rounded-[5px] bg-[#dff7e3] px-[5px] py-[3px] text-[9px] text-[#15803d]`}>
+                <span className={`${boldFont.className} inline-flex items-center rounded-[5px] bg-[#dff7e3] dark:bg-[#0d3b23] px-[5px] py-[3px] text-[9px] text-[#15803d] dark:text-[#6EE7A3]`}>
                     {status}
                 </span>
             </div>
@@ -132,27 +130,27 @@ function TransactionRow({
 
 function RecentTransactionsTable() {
     return (
-        <div className="w-full rounded-[15px] border border-black/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] overflow-x-auto">
+        <div className="w-full rounded-[15px] border border-black/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] bg-white dark:bg-[#070606] dark:border-white/10 overflow-x-auto">
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
 
-                <h1 className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                <h1 className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                     Recent Transactions
                 </h1>
 
-                <button className={`${boldFont.className} text-[11px] text-[#006b46] hover:opacity-80 transition-opacity`}>
+                <button className={`${boldFont.className} text-[11px] text-[#006b46] dark:text-[#16a34a] hover:opacity-80 transition-opacity`}>
                     View All
                 </button>
             </div>
 
             {/* Table Header */}
-            <div className="grid grid-cols-[1.2fr_1.7fr_1.4fr_1.2fr_1fr] gap-6 border-b border-black/8 pb-5">
+            <div className="grid grid-cols-[1.2fr_1.7fr_1.4fr_1.2fr_1fr] gap-6 border-b border-black/8 dark:border-white/10 pb-5">
 
                 {["Date", "Description", "Category", "Amount", "Status"].map(
                     (item) => (
                         <p
                             key={item}
-                            className={`${boldFont.className} text-[10px] text-[#4b5563]`}
+                            className={`${boldFont.className} text-[10px] text-[#4b5563] dark:text-white/60`}
                         >
                             {item}
                         </p>
@@ -161,7 +159,7 @@ function RecentTransactionsTable() {
             </div>
 
             {/* Rows */}
-            <div className="divide-y divide-black/5">
+            <div className="divide-y divide-black/5 dark:divide-white/10">
                 {transactions.map((transaction, index) => (
                     <TransactionRow
                         key={index}

@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Transactions Dashboard UI for React & Next.js | React Vibe",
+    title: "React Transaction & Payment Dashboard | React Vibe",
     description:
-        "Modern transactions dashboard UI for React with payment tracking, transaction history, expense analytics, and responsive fintech layouts.",
+        "Build responsive React Transaction Dashboards and React Payment Dashboards with Transaction Dashboard Templates, Expense Tracking Dashboards, and financial analytics.",
 }
 
 function Transactions() {

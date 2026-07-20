@@ -23,9 +23,9 @@ function WhatsInside({ className }: { className?: string }) {
                     <rect x="14" y="14" width="7" height="7" rx="1" />
                 </svg>
             ),
-            stat: '12+',
-            label: 'Animated React Components',
-            description: 'Production-ready React UI components with smooth animations and interactions',
+            stat: '30+',
+            label: 'Production UI Blocks',
+            description: 'Landing sections, pricing, testimonials, FAQs, tables, charts, activity feeds, and SaaS-ready interface blocks.',
         },
         {
             icon: (
@@ -34,9 +34,9 @@ function WhatsInside({ className }: { className?: string }) {
                     <circle cx="12" cy="11" r="2.5" />
                 </svg>
             ),
-            stat: '14+',
-            label: 'React UI Blocks & Sections',
-            description: 'Pre-built React UI blocks including pricing, testimonials, FAQ, and more',
+            stat: '7',
+            label: 'Dashboard Systems',
+            description: 'Complete finance, reporting, budgeting, investments, transactions, accounts, and integrations dashboards.',
         },
         {
             icon: (
@@ -45,9 +45,9 @@ function WhatsInside({ className }: { className?: string }) {
                     <path d="M8 7h8M8 11h8M8 15h5" />
                 </svg>
             ),
-            stat: '4+',
-            label: 'Hero Sections & Landing UI',
-            description: '4 hero sections and complete landing page sections built for modern React apps',
+            stat: '12+',
+            label: 'Animated React Components',
+            description: 'Reusable React components with smooth interactions, motion effects, and production-ready code.',
         },
         {
             icon: (
@@ -57,8 +57,8 @@ function WhatsInside({ className }: { className?: string }) {
                 </svg>
             ),
             stat: '100%',
-            label: 'Open Source React Components',
-            description: 'MIT licensed React components you can copy, customize, and ship freely',
+            label: 'Source Code Ownership',
+            description: 'MIT licensed. Copy, customize, and own every component without vendor lock-in.',
         },
     ]
 
@@ -128,7 +128,7 @@ function WhatsInside({ className }: { className?: string }) {
             )}>
 
                 {/* Stats grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 border-border dark:divide-[#1e1a30]">
+                <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-4 divide-x divide-y sm:divide-y-0 border-border dark:divide-[#1e1a30]">
 
                     {stats.map((item, index) => (
                         <motion.div
@@ -213,8 +213,8 @@ function WhatsInside({ className }: { className?: string }) {
                         "dark:border-[#1e1a30] dark:bg-gradient-to-r dark:from-[#0b0b0b] dark:to-[#131212]"
                     )}>
                     <span className="text-[12px] text-muted-foreground text-center">
-                        New animated React components, UI blocks, and background effects added regularly. <br />
-                        Background animations, hero sections, UI blocks, and components built for modern React apps.
+                        React Vibe is continuously expanding with new dashboard systems, UI blocks,
+                        React components, hero sections, and production-ready templates for modern web applications.
                     </span>
                 </motion.div>
             </div>

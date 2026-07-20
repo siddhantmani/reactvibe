@@ -48,16 +48,16 @@ const alerts = [
 function UpcomingBudgetAlerts() {
 
     return (
-        <div className="rounded-[15px] border border-black/10 bg-white p-3 px-3 aspect-auto">
+        <div className="rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] p-3 px-3 aspect-auto">
 
             {/* Top */}
             <div className="flex items-center justify-between">
 
-                <h2 className={`${fontBold.className} text-[13px] text-[#111827]`}>
+                <h2 className={`${fontBold.className} text-[13px] text-[#111827] dark:text-white`}>
                     Upcoming Budget Alerts
                 </h2>
 
-                <button className={`${fontBold.className} text-[13px] text-[#16A34A] transition-all duration-300 hover:text-[#15803D]`}>
+                <button className={`${fontBold.className} text-[13px] text-[#16A34A] dark:text-[#126b31] transition-all duration-300 hover:text-[#15803D] dark:hover:text-[#07ac46]`}>
                     View all
                 </button>
 
@@ -73,12 +73,11 @@ function UpcomingBudgetAlerts() {
                     return (
                         <div
                             key={index}
-                            className={`group flex items-center justify-between px-5 py-5 transition-all duration-300 hover:bg-black/[0.015] ${index !== alerts.length - 1
-                                ? "border-b border-black/5"
+                            className={`group flex items-center justify-between px-5 py-5 transition-all duration-300 hover:bg-black/[0.015] dark:hover:bg-white/[0.03] ${index !== alerts.length - 1
+                                ? "border-b border-black/5 dark:border-white/10"
                                 : ""
                                 }`}
                         >
-
                             {/* Left */}
                             <div className="flex items-center gap-4">
 
@@ -98,14 +97,13 @@ function UpcomingBudgetAlerts() {
                                 {/* Content */}
                                 <div>
 
-                                    <h3 className={`${fontBold.className} text-[13px] text-[#111827]`}>
+                                    <h3 className={`${fontBold.className} text-[13px] text-[#111827] dark:text-white`}>
                                         {item.title}
                                     </h3>
 
-                                    <p className={`${fontBold.className} text-[12px] text-[#6B7280]`}>
+                                    <p className={`${fontBold.className} text-[12px] text-[#6B7280] dark:text-white/60`}>
                                         {item.description}
                                     </p>
-
                                 </div>
 
                             </div>
@@ -117,14 +115,14 @@ function UpcomingBudgetAlerts() {
                                     <span
                                         className={`${fontBold.className} text-[14px] ${item.danger
                                             ? "text-[#EF4444]"
-                                            : "text-[#374151]"
+                                            : "text-[#374151] dark:text-white/70"
                                             }`}
                                     >
                                         {item.percentage}
                                     </span>
                                 )}
 
-                                <button className="flex h-8 w-8 items-center justify-center rounded-xl text-[#9CA3AF] transition-all duration-300 hover:bg-black/[0.04] hover:text-[#111827]">
+                                <button className="flex h-8 w-8 items-center justify-center rounded-xl text-[#9CA3AF] dark:text-white/50 transition-all duration-300 hover:bg-black/[0.04] dark:hover:bg-white/[0.05] hover:text-[#111827] dark:hover:text-white">
 
                                     <ChevronRight
                                         size={14}

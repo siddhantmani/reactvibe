@@ -56,16 +56,16 @@ const activities = [
 function RecentTransactionActivity() {
 
     return (
-        <div className="rounded-[15px] border border-black/10 bg-white p-3 px-3 aspect-video">
+        <div className="rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] p-3 px-3 aspect-video">
 
             {/* Top */}
             <div className="flex items-center justify-between">
 
-                <h2 className={`${boldFont.className} text-[13px] text-[#111827]`}>
+                <h2 className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
                     Recent Activity
                 </h2>
 
-                <button className={`${boldFont.className} text-[12px] text-[#16A34A] transition-all duration-300 hover:text-[#15803D]`}>
+                <button className={`${boldFont.className} text-[12px] text-[#16A34A] dark:text-[#63D98D] transition-all duration-300 hover:text-[#15803D] dark:hover:text-[#7BE5A6]`}>
                     View all
                 </button>
 
@@ -78,7 +78,7 @@ function RecentTransactionActivity() {
 
                     <div
                         key={index}
-                        className="group flex items-center justify-between rounded-2xl py-2 transition-all duration-300 hover:bg-black/[0.02]"
+                        className="group flex items-center justify-between rounded-2xl py-2 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.03]"
                     >
 
                         {/* Left */}
@@ -100,7 +100,7 @@ function RecentTransactionActivity() {
                             {/* Name */}
                             <div>
 
-                                <h3 className={`${boldFont.className} whitespace-nowrap text-[12px] text-[#111827]`}>
+                                <h3 className={`${boldFont.className} whitespace-nowrap text-[12px] text-[#111827] dark:text-white`}>
                                     {item.name}
                                 </h3>
 
@@ -112,20 +112,20 @@ function RecentTransactionActivity() {
                         <div className="flex items-center gap-4">
 
                             {/* Amount */}
-                        
+
 
                             <LinearReveal
                                 as='p'
                                 delay={0.2}
                                 Text={item.amount}
                                 className={`text-[11px] ${item.positive
-                                    ? "text-[#16A34A]"
-                                    : "text-[#FF3B30]"
+                                        ? "text-[#16A34A]"
+                                        : "text-[#FF3B30]"
                                     }`}
                             />
 
                             {/* Time */}
-                            <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                            <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                 {item.time}
                             </p>
 

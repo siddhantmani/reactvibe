@@ -53,7 +53,7 @@ function IntegrationActivityFeed() {
     return (
 
         <div
-            className="relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white p-2 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]"
+            className="relative overflow-hidden rounded-[18px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] p-2 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)] dark:shadow-none"
         >
 
             {/* Background Glow */}
@@ -70,13 +70,13 @@ function IntegrationActivityFeed() {
                     <div>
 
                         <h2
-                            className={`${fontBold.className} text-[13px] tracking-[-0.03em] text-[#111111]`}
+                            className={`${fontBold.className} text-[13px] tracking-[-0.03em] text-[#111111] dark:text-white`}
                         >
                             Recent Activity
                         </h2>
 
                         <p
-                            className={`${fontBold.className} mt-1 text-[10px] text-black/45`}
+                            className={`${fontBold.className} mt-1 text-[10px] text-black/45 dark:text-white/60`}
                         >
                             Latest integration updates
                         </p>
@@ -84,7 +84,7 @@ function IntegrationActivityFeed() {
                     </div>
 
                     <button
-                        className={`${fontBold.className} group flex items-center gap-2 text-[11px] font-semibold text-[#16A34A] transition-all duration-300 hover:gap-3`}
+                        className={`${fontBold.className} group flex items-center gap-2 text-[11px] font-semibold text-[#16A34A] dark:text-[#63D98D] transition-all duration-300 hover:gap-3`}
                     >
 
                         View All Activity
@@ -121,12 +121,12 @@ function IntegrationActivityFeed() {
                                 duration: 0.4,
                                 delay: index * 0.06,
                             }}
-                            className="group flex items-start gap-4 rounded-[14px] border border-black/[0.06] bg-black/[0.015] p-4 transition-all duration-300 hover:bg-black/[0.025] hover:shadow-[0_8px_24px_rgba(0,0,0,0.04)]"
+                            className="group flex items-start gap-4 rounded-[14px] border border-black/[0.06] dark:border-white/10 bg-black/[0.015] dark:bg-white/[0.03] p-4 transition-all duration-300 hover:bg-black/[0.025] dark:hover:bg-white/[0.05] hover:shadow-[0_8px_24px_rgba(0,0,0,0.04)] dark:hover:shadow-none"
                         >
 
                             {/* Logo */}
                             <div
-                                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-black/[0.05] ${item.logoBg} shadow-[0_4px_14px_rgba(0,0,0,0.03)]`}
+                                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-black/[0.05] dark:border-white/10 ${item.logoBg} shadow-[0_4px_14px_rgba(0,0,0,0.03)] dark:shadow-none`}
                             >
 
                                 <span
@@ -144,7 +144,7 @@ function IntegrationActivityFeed() {
                                 <div className="flex items-center gap-2">
 
                                     <h3
-                                        className={`${fontBold.className} text-[12px] text-[#111111]`}
+                                        className={`${fontBold.className} text-[12px] text-[#111111] dark:text-white`}
                                     >
                                         {item.name}
                                     </h3>
@@ -159,7 +159,7 @@ function IntegrationActivityFeed() {
 
                                 {/* Description */}
                                 <p
-                                    className={`${fontBold.className} mt-2 text-[10px] leading-[1.6] text-black/50`}
+                                    className={`${fontBold.className} mt-2 text-[10px] leading-[1.6] text-black/50 dark:text-white/65`}
                                 >
                                     {item.description}
                                 </p>
@@ -170,7 +170,7 @@ function IntegrationActivityFeed() {
                                     <div className="h-[5px] w-[5px] rounded-full bg-[#16A34A]" />
 
                                     <p
-                                        className={`${fontBold.className} text-[10px] text-black/35`}
+                                        className={`${fontBold.className} text-[10px] text-black/35 dark:text-white/45`}
                                     >
                                         {item.time}
                                     </p>

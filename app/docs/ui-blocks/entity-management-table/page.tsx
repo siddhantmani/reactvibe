@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Entity Management Table UI for React & Next.js | React Vibe",
+    title: "React Entity Management Table | React Vibe",
     description:
-        "Responsive entity management table UI for React with account management, status tracking, and modern SaaS dashboard layouts.",
+        "Build a responsive React Entity Management Table for admin dashboards. Perfect for account management, user management, filtering, sorting, and responsive data tables.",
 }
 
 

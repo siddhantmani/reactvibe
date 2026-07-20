@@ -67,18 +67,16 @@ function AccountHealthOverview() {
         []
     );
     return (
-        <div className="rounded-[15px] border border-black/10 bg-white p-3 px-3 aspect-auto">
-
-
+        <div className="rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3 aspect-auto">
 
             {/* Top */}
             <div className="flex items-center justify-between">
 
-                <h2 className={`${boldFont.className} text-[14px] font-semibold tracking-[-0.04em] text-[#111827]`}>
+                <h2 className={`${boldFont.className} text-[14px] font-semibold tracking-[-0.04em] text-[#111827] dark:text-white`}>
                     Account Health
                 </h2>
 
-                <button className={`${boldFont.className} flex items-center gap-2 text-[12px] font-semibold text-[#191a1a] transition-all duration-300 hover:gap-3`}>
+                <button className={`${boldFont.className} flex items-center gap-2 text-[12px] font-semibold text-[#191a1a] dark:text-white/70 dark:hover:text-white transition-all duration-300 hover:gap-3`}>
 
                     View Report
 
@@ -122,13 +120,13 @@ function AccountHealthOverview() {
                             as='h3'
                             Text="92%"
                             delay={0.2}
-                            className={`${boldFont.className} text-[30px]  tracking-[-0.04em] text-[#191a1a]`}
+                            className={`${boldFont.className} text-[30px] tracking-[-0.04em] text-[#191a1a] dark:text-white`}
                         />
 
-                        <p className={`${boldFont.className} text-[12px] text-[#191a1a]`}>
+                        <p className={`${boldFont.className} text-[12px] text-[#191a1a] dark:text-white/70`}>
                             Excellent
                         </p>
-
+                        
                     </div>
 
                 </div>
@@ -181,7 +179,7 @@ function AccountHealthOverview() {
                     </div>
 
                     {/* Description */}
-                    <p className={`${boldFont.className} mt-8 max-w-[340px] text-[14px] leading-[1.7] text-[#6B7280]`}>
+                    <p className={`${boldFont.className} mt-8 max-w-[340px] text-[14px] leading-[1.7] text-[#6B7280] dark:text-white/60`}>
                         Keep it up! Your financial
                         health looks great.
                     </p>

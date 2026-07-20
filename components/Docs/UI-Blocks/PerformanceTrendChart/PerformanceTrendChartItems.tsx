@@ -39,7 +39,7 @@ function PerformanceTrendChartItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern React footer component designed for product and SaaS websites with app-focused layouts. This responsive multi-column footer includes navigation links, legal sections, and app download CTAs, making it ideal for building structured and scalable website footer designs. Perfect for developers looking to create a clean and functional React footer with real-world usability.
+                    A reusable React Performance Chart designed to build Performance Trend Charts, KPI Trend Charts, Revenue Trend Charts, Dashboard Performance Charts, and interactive analytics dashboards.
                 </motion.p>
             </div>
 

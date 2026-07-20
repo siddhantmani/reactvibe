@@ -38,7 +38,7 @@ function TransactionsItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A responsive transactions dashboard UI built for fintech and SaaS applications. Includes transaction history tables, payment tracking, expense analytics, activity feeds, and smart financial insights.
+                    A production-ready React Transaction Dashboard for building Transaction Management Dashboards, Payment Dashboard Templates, Expense Tracking Dashboards, Transaction Analytics Dashboards, and modern fintech applications.
                 </motion.p>
 
             </div>

@@ -4,31 +4,32 @@ import { GitPullRequest, Link, Mail, Settings, Sparkles } from 'lucide-react'
 import React from 'react'
 
 import { motion } from "framer-motion"
+
 const steps = [
     {
         icon: <Link size={15} />,
-        title: 'Copy Paste React Components',
-        subtitle: 'No React Vibe install',
+        title: "Copy & Paste Components",
+        subtitle: "No React Vibe package",
     },
     {
         icon: <Sparkles size={15} />,
-        title: 'React Animation Library',
-        subtitle: 'Built with motion',
+        title: "Dashboard Systems",
+        subtitle: "Production-ready layouts",
     },
     {
         icon: <Settings size={15} />,
-        title: 'Customizable React Components',
-        subtitle: 'Full code control',
+        title: "50+ UI Blocks & Components",
+        subtitle: "Built for modern SaaS",
     },
     {
         icon: <Mail size={15} />,
-        title: 'Production Ready React UI',
-        subtitle: 'Built for real apps',
+        title: "Full Code Ownership",
+        subtitle: "Customize everything",
     },
     {
         icon: <GitPullRequest size={15} />,
-        title: 'Open Source React Library',
-        subtitle: 'Free & extensible',
+        title: "MIT Licensed",
+        subtitle: "Free for commercial use",
     },
 ]
 
@@ -39,7 +40,7 @@ function USPSteps() {
                 {steps.map((step, index) => (
                     <React.Fragment key={step.title}>
                         <motion.div
-                            initial={{ opacity: 0, filter: "blur(8px)" }}
+                            initial={{ opacity: 0, filter: "blur(4px)" }}
                             animate={{ opacity: 1, filter: "blur(0px)" }}
                             whileInView={{ opacity: 1 }}
                             viewport={{

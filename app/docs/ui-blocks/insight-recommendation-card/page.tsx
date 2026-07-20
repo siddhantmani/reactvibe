@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Insight Recommendation Card UI for React & Next.js | React Vibe",
+    title: "React Recommendation & Insight Card | React Vibe",
     description:
-        "Responsive insight recommendation card UI for React with smart suggestions, finance insights, and modern dashboard layouts.",
+        "Build responsive React Recommendation & Insight Cards for dashboards. Perfect for Dashboard Recommendation Cards, Analytics Recommendation Cards, Budget Recommendation Cards, and smart insights.",
 }
 
 

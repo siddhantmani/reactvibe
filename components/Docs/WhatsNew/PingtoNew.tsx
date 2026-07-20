@@ -43,9 +43,15 @@ function PingtoNew({ size = 10 }: PingtoNewProps) {
     // Background and Button color interpolation
     const background = useTransform([smoothAngle, smoothIndex], (values: number[]) => {
         const [a, i] = values
-        const index = Math.floor(i) % gradients.length
-        const nextIndex = (index + 1) % gradients.length
-        const t = i - Math.floor(i)
+        const len = gradients.length
+
+        const rawIndex = Math.floor(i)
+        // safe modulo — always positive, even if i overshoots below 0
+        const index = ((rawIndex % len) + len) % len
+        const nextIndex = (index + 1) % len
+
+        // clamp t so we never get a weird blend if i overshoots
+        const t = Math.min(Math.max(i - rawIndex, 0), 1)
 
         const [c1a, c2a, c3a] = gradients[index]
         const [c1b, c2b, c3b] = gradients[nextIndex]
