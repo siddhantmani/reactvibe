@@ -51,6 +51,9 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                         <Link href="/docs">
                             <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md flex-1 w-[230px] hover:text-black'>
                                 <p className={`${LinearRevealFont.className} text-[17px]`}>Introduction</p>
+                                <Badge>
+                                   Updated
+                                </Badge>
                             </div>
                         </Link>
                     </button>
@@ -58,7 +61,10 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                     <button onClick={onItemClick} className='pb-4' >
                         <Link href="/docs/explore-components">
                             <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md flex-1 w-[230px] hover:text-black'>
-                                <p className={`${LinearRevealFont.className} text-[17px]`}>Explore Components</p>
+                                <p className={`${LinearRevealFont.className} text-[17px] whitespace-nowrap`}>Explore Components</p>
+                                <Badge>
+                                   Updated
+                                </Badge>
                             </div>
                         </Link>
                     </button>

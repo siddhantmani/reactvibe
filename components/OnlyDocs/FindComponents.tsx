@@ -11,15 +11,42 @@ import { CommandDialog, CommandEmpty, CommandInput, CommandItem, CommandList } f
 import { searchableComponents } from "@/lib/searchable-components";
 
 const suggestions = [
-    { title: 'react animation library', subMenu_key: 'react_animation_library', link: '/docs/introduction' },
-    { title: 'framer motion components', subMenu_key: 'framer_motion_components', link: '/docs/explore-components' },
-    { title: 'copy paste react components', subMenu_key: 'copy_paste_react_components', link: '#howitworks' },
-    { title: 'react ui components', subMenu_key: 'react_ui_components', link: '/docs/explore-components' },
-    { title: 'tailwind react components', subMenu_key: 'tailwind_react_components', link: '/docs/explore-components' },
-    { title: 'animated react components', subMenu_key: 'animated_react_components', link: '/docs/explore-components' },
-    { title: 'react ui blocks', subMenu_key: 'react_ui_blocks', link: '/docs/explore-components' },
+    {
+        title: "react dashboard components",
+        subMenu_key: "react_dashboard_components",
+        link: "docs/dashboard-systems/finance-overview",
+    },
+    {
+        title: "react ui blocks",
+        subMenu_key: "react_ui_blocks",
+        link: "/docs/ui-blocks/progress-overview-list",
+    },
+    {
+        title: "react data tables",
+        subMenu_key: "react_data_tables",
+        link: "/docs/ui-blocks/advanced-transaction-log",
+    },
+    {
+        title: "react charts",
+        subMenu_key: "react_charts",
+        link: "/docs/ui-blocks/performance-trend-chart",
+    },
+    {
+        title: "react hero sections",
+        subMenu_key: "react_hero_sections",
+        link: "/docs/hero-section/launch",
+    },
+    {
+        title: "react pricing sections",
+        subMenu_key: "react_pricing_sections",
+        link: "/docs/sections/prime",
+    },
+    {
+        title: "animated react components",
+        subMenu_key: "animated_react_components",
+        link: "/docs/explore-components",
+    },
 ];
-
 function FindComponents({ className }: { className?: string }) {
     const [query, setQuery] = React.useState("");
     const [open, setOpen] = React.useState(false)
@@ -44,7 +71,7 @@ function FindComponents({ className }: { className?: string }) {
     return (
         <div className={cn("w-full py-4", className)}>
             <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
+                initial={{ opacity: 0, filter: "blur(4px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 whileInView={{ opacity: 1 }}
                 viewport={{

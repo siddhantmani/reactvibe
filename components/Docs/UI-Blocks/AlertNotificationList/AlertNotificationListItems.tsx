@@ -39,7 +39,7 @@ function AlertNotificationListItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern alert notification list UI built for finance and SaaS dashboards. Includes budget alerts, warning states, progress notifications, and responsive activity layouts.
+                    A reusable Dashboard Alert List for React applications, designed to build Dashboard Notification Lists, Budget Notification Lists, Budget Warning Lists, Financial Alert Lists, and responsive React Dashboard Alerts.
                 </motion.p>
 
             </div>

@@ -54,7 +54,7 @@ function ReportsItemsPreview() {
             </div>
 
             <div className="border rounded-3xl">
-                <div className="text-black z-40 w-full h-full scale-[99%]">
+                <div className="text-black z-40 w-full h-full scale-[99%] dark:bg-black">
                     <ReportsPreview />
                 </div>
             </div>

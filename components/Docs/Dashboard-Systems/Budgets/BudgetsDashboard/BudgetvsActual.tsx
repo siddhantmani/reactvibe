@@ -72,28 +72,25 @@ function BudgetvsActual() {
     }
 
     return (
-        <div className="rounded-[15px] border border-black/10 bg-white aspect-auto">
+        <div className="rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 aspect-auto">
 
             {/* Top */}
             <div className="flex items-center justify-between px-3 p-3">
 
                 <h2
-                    className={`${boldFont.className} text-[14px] tracking-[-0.04em] text-[#111827]`}
+                    className={`${boldFont.className} text-[14px] tracking-[-0.04em] text-[#111827] dark:text-white`}
                 >
                     Budget vs Actual
                 </h2>
-
                 <button
-                    className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 bg-white px-2 py-1 text-[12px] font-medium text-[#374151] transition-all duration-300 hover:bg-black/[0.02]`}
+                    className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-1 text-[12px] font-medium text-[#374151] dark:text-white/70 transition-all duration-300 hover:bg-black/[0.02] dark:hover:text-white`}
                 >
-
                     This Month
 
                     <ChevronDown
                         size={12}
                         strokeWidth={2.2}
                     />
-
                 </button>
 
             </div>
@@ -106,7 +103,7 @@ function BudgetvsActual() {
                     <div className="h-2 w-2 rounded-full bg-[#9BE68B]" />
 
                     <span
-                        className={`${boldFont.className} text-[12px] text-[#374151]`}
+                        className={`${boldFont.className} text-[12px] text-[#374151] dark:text-white/70`}
                     >
                         Budgeted
                     </span>
@@ -118,7 +115,7 @@ function BudgetvsActual() {
                     <div className="h-2 w-2 rounded-full bg-[#0F7B42]" />
 
                     <span
-                        className={`${boldFont.className} text-[12px] text-[#374151]`}
+                        className={`${boldFont.className} text-[12px] text-[#374151] dark:text-white/70`}
                     >
                         Spent
                     </span>
@@ -130,7 +127,7 @@ function BudgetvsActual() {
                     <div className="h-2 w-2 rounded-full bg-[#FF4D4F]" />
 
                     <span
-                        className={`${boldFont.className} text-[12px] text-[#374151]`}
+                        className={`${boldFont.className} text-[12px] text-[#374151] dark:text-white/70`}
                     >
                         Over Budget
                     </span>
@@ -169,7 +166,7 @@ function BudgetvsActual() {
                                 >
 
                                     <span
-                                        className={`${boldFont.className} text-[12px] font-normal text-[#9CA3AF]`}
+                                        className={`${boldFont.className} text-[12px] font-normal text-[#9CA3AF] dark:text-white/40`}
                                     >
                                         {formatYAxis(tick)}
                                     </span>
@@ -192,7 +189,7 @@ function BudgetvsActual() {
                             return (
                                 <div
                                     key={tick}
-                                    className="absolute left-0 right-0 border-t border-[#F3F4F6]"
+                                    className="absolute left-0 right-0 border-t border-[#F3F4F6] dark:border-white/10"
                                     style={{
                                         bottom,
                                     }}
@@ -218,8 +215,8 @@ function BudgetvsActual() {
                                         {/* Hover Background */}
                                         <div
                                             className={`absolute inset-y-0 w-full rounded-[8px] transition-all duration-200 ${hoveredIndex === index
-                                                ? "bg-black/[0.02]"
-                                                : "bg-transparent"
+                                                    ? "bg-black/[0.02] dark:bg-white/[0.04]"
+                                                    : "bg-transparent"
                                                 }`}
                                         />
 
@@ -227,18 +224,14 @@ function BudgetvsActual() {
                                         {hoveredIndex === index && (
 
                                             <div
-                                                className="absolute z-20 rounded-[10px] border border-black/10 bg-white px-2 py-2 shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
+                                                className="absolute z-20 rounded-[10px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-2 shadow-[0_10px_40px_rgba(0,0,0,0.08)] dark:shadow-none z-50"
                                                 style={{
-                                                    bottom:
-                                                        Math.max(
-                                                            budgetHeight,
-                                                            spentHeight
-                                                        ) + 48,
+                                                    bottom: Math.max(budgetHeight, spentHeight) + 48,
                                                 }}
                                             >
 
                                                 <p
-                                                    className={`${boldFont.className} text-[10px] text-[#6B7280]`}
+                                                    className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}
                                                 >
                                                     {item.category}
                                                 </p>
@@ -248,7 +241,7 @@ function BudgetvsActual() {
                                                     <div className="flex items-center justify-between gap-6">
 
                                                         <span
-                                                            className={`${boldFont.className} text-[11px] text-[#6B7280]`}
+                                                            className={`${boldFont.className} text-[11px] text-[#6B7280] dark:text-white/60`}
                                                         >
                                                             Budgeted
                                                         </span>
@@ -264,7 +257,7 @@ function BudgetvsActual() {
                                                     <div className="flex items-center justify-between gap-6">
 
                                                         <span
-                                                            className={`${boldFont.className} text-[11px] text-[#6B7280]`}
+                                                            className={`${boldFont.className} text-[11px] text-[#6B7280] dark:text-white/60`}
                                                         >
                                                             Spent
                                                         </span>
@@ -316,7 +309,9 @@ function BudgetvsActual() {
                                             {/* Label */}
                                             <div className="mt-2  text-center">
 
-                                                <span className={`${boldFont.className} text-[11px] whitespace-nowrap font-normal text-[#6B7280] `}>
+                                                <span
+                                                    className={`${boldFont.className} text-[11px] whitespace-nowrap font-normal text-[#6B7280] dark:text-white/50`}
+                                                >
                                                     {item.category}
                                                 </span>
 

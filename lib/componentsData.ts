@@ -1,3 +1,17 @@
+// DashboardSystems-IMG
+import financeOverviewImg from "@/images/previews/Dashboard Systems/Finance overview.png"
+import transactionsImg from "@/images/previews/Dashboard Systems/Transactions.png"
+import reportsImg from "@/images/previews/Dashboard Systems/reports.png"
+
+// UIBlocks-IMG
+import transactionTableImg from "@/images/previews/UI Blocks/Transaction Table.png"
+import assetPerformanceTableImg from "@/images/previews/UI Blocks/Asset Performance Table.png"
+import performanceTrendChartImg from "@/images/previews/UI Blocks/Performance Trend Chart.png"
+import comparativeMetricsChartImg from "@/images/previews/UI Blocks/Comparative Metrics Chart.png"
+import distributionBreakdownChartImg from "@/images/previews/UI Blocks/Distribution Breakdown Chart.png"
+import structuredDataTableImg from "@/images/previews/UI Blocks/Structured Data Table.png"
+import activityTimelineListImg from "@/images/previews/UI Blocks/Activity Timeline List.png"
+
 // components-data.ts
 import LaunchPreview from "@/components/Docs/HeroSection/Launch/LaunchPreview"
 import pathflowImg from "@/images/previews/pathflow.png"
@@ -47,6 +61,16 @@ import LinearRevealPreview from "@/components/Docs/Text-Motion/Linear-Reveal/Lin
 import { ComponentType } from "react"
 import { StaticImageData } from "next/image"
 import DarkFusion from "@/public/Backgrounds/Dark-Fusion/DarkFusion"
+import ActivityTimelineListPreview from "@/components/Docs/UI-Blocks/ActivityTimelineList/ActivityTimelineListPreview"
+import StructuredDataTablePreview from "@/components/Docs/UI-Blocks/StructuredDataTable/StructuredDataTablePreview"
+import DistributionBreakdownChartPreview from "@/components/Docs/UI-Blocks/DistributionBreakdownChart/DistributionBreakdownChartPreview"
+import ComparativeMetricsChartPreview from "@/components/Docs/UI-Blocks/ComparativeMetricsChart/ComparativeMetricsChartPreview"
+import PerformanceTrendChartPreview from "@/components/Docs/UI-Blocks/PerformanceTrendChart/PerformanceTrendChartPreview"
+import AssetPerformanceTablePreview from "@/components/Docs/UI-Blocks/AssetPerformanceTable/AssetPerformanceTablePreview"
+import TransactionTablePreview from "@/components/Docs/UI-Blocks/TransactionTable/TransactionTablePreview"
+import ReportsPreview from "@/components/Docs/Dashboard-Systems/Reports/ReportsPreview"
+import TransactionsPreview from "@/components/Docs/Dashboard-Systems/Transactions/TransactionsPreview"
+import FinanceOverviewPreview from "@/components/Docs/Dashboard-Systems/FinanceOverview/FinanceOverviewPreview"
 
 type ComponentEntry = {
     id: string
@@ -58,25 +82,91 @@ type ComponentEntry = {
 }
 
 export const componentsData: ComponentEntry[] = [
-    // Backgrounds
+    // Dashboard Systems (Highest Priority)
     {
-        id: "backgrounds-dark-fusion",
-        component: DarkFusion,
-        image: DarkFusionImg,
-        path: "/docs/backgrounds/dark-fusion",
-        title: "Dark Fusion",
-        category: "Backgrounds",
+        id: "dashboard-finance-overview",
+        component: FinanceOverviewPreview,
+        image: financeOverviewImg,
+        path: "/docs/dashboard-systems/finance-overview",
+        title: "Finance Overview",
+        category: "Dashboard System",
     },
     {
-        id: "backgrounds-path-flow",
-        component: PathFlowPreview,
-        image: pathflowImg,
-        path: "/docs/backgrounds/path-flow",
-        title: "Path Flow",
-        category: "Backgrounds",
+        id: "dashboard-transactions",
+        component: TransactionsPreview,
+        image: transactionsImg,
+        path: "/docs/dashboard-systems/transactions",
+        title: "Transactions",
+        category: "Dashboard System",
+    },
+    {
+        id: "dashboard-reports",
+        component: ReportsPreview,
+        image: reportsImg,
+        path: "/docs/dashboard-systems/reports",
+        title: "Reports",
+        category: "Dashboard System",
     },
 
-    // Hero Section
+    // UI Blocks
+    {
+        id: "ui-transaction-table",
+        component: TransactionTablePreview,
+        image: transactionTableImg,
+        path: "/docs/ui-blocks/transaction-table",
+        title: "Transaction Table",
+        category: "UI Blocks",
+    },
+    {
+        id: "ui-asset-performance-table",
+        component: AssetPerformanceTablePreview,
+        image: assetPerformanceTableImg,
+        path: "/docs/ui-blocks/asset-performance-table",
+        title: "Asset Performance Table",
+        category: "UI Blocks",
+    },
+    {
+        id: "ui-performance-trend-chart",
+        component: PerformanceTrendChartPreview,
+        image: performanceTrendChartImg,
+        path: "/docs/ui-blocks/performance-trend-chart",
+        title: "Performance Trend Chart",
+        category: "UI Blocks",
+    },
+    {
+        id: "ui-comparative-metrics-chart",
+        component: ComparativeMetricsChartPreview,
+        image: comparativeMetricsChartImg,
+        path: "/docs/ui-blocks/comparative-metrics-chart",
+        title: "Comparative Metrics Chart",
+        category: "UI Blocks",
+    },
+    {
+        id: "ui-distribution-breakdown-chart",
+        component: DistributionBreakdownChartPreview,
+        image: distributionBreakdownChartImg,
+        path: "/docs/ui-blocks/distribution-breakdown-chart",
+        title: "Distribution Breakdown Chart",
+        category: "UI Blocks",
+    },
+    {
+        id: "ui-structured-data-table",
+        component: StructuredDataTablePreview,
+        image: structuredDataTableImg,
+        path: "/docs/ui-blocks/structured-data-table",
+        title: "Structured Data Table",
+        category: "UI Blocks",
+    },
+    {
+        id: "ui-activity-timeline-list",
+        component: ActivityTimelineListPreview,
+        image: activityTimelineListImg,
+        path: "/docs/ui-blocks/activity-timeline-list",
+        title: "Activity Timeline List",
+        category: "UI Blocks",
+    },
+
+    // Hero
     {
         id: "hero-launch",
         component: LaunchPreview,
@@ -111,57 +201,8 @@ export const componentsData: ComponentEntry[] = [
         title: "Aurora Pricing",
         category: "Sections",
     },
-    {
-        id: "section-testimonial-flow",
-        component: TestimonialsMainSection,
-        image: testimonialsFlowImg,
-        path: "/docs/sections/testimonial-flow",
-        title: "Testimonial Flow",
-        category: "Sections",
-    },
-    {
-        id: "section-glide-accordion",
-        component: GlideAccordioPreview,
-        image: glideAccordionImg,
-        path: "/docs/sections/glide-accordion",
-        title: "Glide Accordion",
-        category: "Sections",
-    },
-    {
-        id: "section-voice-flow",
-        component: VoiceFlowPreview,
-        image: voiceFlowImg,
-        path: "/docs/sections/voice-flow",
-        title: "Voice Flow",
-        category: "Sections",
-    },
-    {
-        id: "section-nova-pricing",
-        component: NovaPricingPreview,
-        image: novaPricingImg,
-        path: "/docs/sections/nova-pricing",
-        title: "Nova Pricing",
-        category: "Sections",
-    },
-    {
-        id: "section-stratus",
-        component: StratusPreview,
-        image: stratusImg,
-        path: "/docs/sections/stratus",
-        title: "Stratus",
-        category: "Sections",
-    },
-    {
-        id: "section-aura-base",
-        component: AuraBasePreview,
-        image: auraBaseImg,
-        path: "/docs/sections/aura-base",
-        title: "Aura Base",
-        category: "Sections",
-    },
 
-    //Components
-   
+    // Components
     {
         id: "component-origin",
         component: OriginPreview,
@@ -179,13 +220,21 @@ export const componentsData: ComponentEntry[] = [
         category: "Components",
     },
 
-    // Text Motion
+    // Backgrounds
     {
-        id: "text-linear-reveal",
-        component: LinearRevealPreview,
-        image: linearRevealImg,
-        path: "/docs/text-motion/linear-reveal",
-        title: "Linear Reveal",
-        category: "Text Motion",
+        id: "backgrounds-dark-fusion",
+        component: DarkFusion,
+        image: DarkFusionImg,
+        path: "/docs/backgrounds/dark-fusion",
+        title: "Dark Fusion",
+        category: "Backgrounds",
     },
-]
+    {
+        id: "backgrounds-path-flow",
+        component: PathFlowPreview,
+        image: pathflowImg,
+        path: "/docs/backgrounds/path-flow",
+        title: "Path Flow",
+        category: "Backgrounds",
+    },
+];

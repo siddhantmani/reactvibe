@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Activity Timeline List UI for React & Next.js | React Vibe",
+    title: "React Activity Timeline Component | React Vibe",
     description:
-        "Responsive activity timeline list UI for React with event tracking, payment activity, and modern SaaS dashboard layouts.",
+        "Build a responsive React Activity Timeline component for dashboards. Perfect for activity feeds, recent activity, event history, audit logs, and notification timelines.",
 }
 
 

@@ -173,22 +173,22 @@ function PercentageProgress({
 function BudgetCategoriesTable() {
 
     return (
-        <div className="rounded-[15px] border border-black/10 bg-white p-3 px-3 aspect-video">
+        <div className="rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] p-3 px-3 aspect-video">
 
             {/* Heading */}
             <div>
 
-                <h2 className={`${fontBold.className} text-[14px] text-[#111827]`}>
+                <h2 className={`${fontBold.className} text-[14px] text-[#111827] dark:text-white`}>
                     Budget Categories
                 </h2>
 
             </div>
 
             {/* Table */}
-            <div className="mt-4 overflow-hidden rounded-2xl border border-black/5">
+            <div className="mt-4 overflow-hidden rounded-2xl border border-black/5 dark:border-white/10">
 
                 {/* Header */}
-                <div className="grid grid-cols-[2fr_1.2fr_1.2fr_1.2fr_1.4fr_1.2fr_50px] items-center border-b border-black/5 bg-[#FAFAFA] px-6 py-4">
+                <div className="grid grid-cols-[2fr_1.2fr_1.2fr_1.2fr_1.4fr_1.2fr_50px] items-center border-b border-black/5 dark:border-white/10 bg-[#FAFAFA] dark:bg-white/[0.03] px-6 py-4">
 
                     {[
                         "Category",
@@ -200,7 +200,7 @@ function BudgetCategoriesTable() {
                     ].map((item) => (
                         <p
                             key={item}
-                            className={`${fontBold.className} text-[13px] text-[#6B7280]`}
+                            className={`${fontBold.className} text-[13px] text-[#6B7280] dark:text-white/50`}
                         >
                             {item}
                         </p>
@@ -216,7 +216,7 @@ function BudgetCategoriesTable() {
                     return (
                         <div
                             key={index}
-                            className="grid grid-cols-[2fr_1.2fr_1.2fr_1.2fr_1.4fr_1.2fr_50px] items-center border-b border-black/5 px-6 py-2 transition-all duration-300 hover:bg-black/[0.015]"
+                            className="grid grid-cols-[2fr_1.2fr_1.2fr_1.2fr_1.4fr_1.2fr_50px] items-center border-b border-black/5 dark:border-white/10 px-6 py-2 transition-all duration-300 hover:bg-black/[0.015] dark:hover:bg-white/[0.03]"
                         >
 
                             {/* Category */}
@@ -234,27 +234,27 @@ function BudgetCategoriesTable() {
 
                                 </div>
 
-                                <h3 className={`${fontBold.className} text-[12px] text-[#111827]`}>
+                                <h3 className={`${fontBold.className} text-[12px] text-[#111827] dark:text-white`}>
                                     {item.name}
                                 </h3>
 
                             </div>
 
                             {/* Budgeted */}
-                            <p className={`${fontBold.className} text-[12px] text-[#111827]`}>
+                            <p className={`${fontBold.className} text-[12px] text-[#111827] dark:text-white`}>
                                 {item.budgeted}
                             </p>
 
                             {/* Spent */}
-                            <p className={`${fontBold.className} text-[12px] text-[#111827]`}>
+                            <p className={`${fontBold.className} text-[12px] text-[#111827] dark:text-white`}>
                                 {item.spent}
                             </p>
 
                             {/* Remaining */}
                             <p
-                                className={`${fontBold.className} text-[12px] text-[#111827] ${item.danger
+                                className={`${fontBold.className} text-[12px] ${item.danger
                                     ? "text-[#EF4444]"
-                                    : "text-[#111827]"
+                                    : "text-[#111827] dark:text-white"
                                     }`}
                             >
                                 {item.remaining}
@@ -278,8 +278,8 @@ function BudgetCategoriesTable() {
 
                                 <span
                                     className={`${fontBold.className} rounded-[4px] px-1 py-1 text-[12px] whitespace-nowrap ${item.danger
-                                        ? "bg-[#FEE2E2] text-[#EF4444]"
-                                        : "bg-[#EAF8EC] text-[#16A34A]"
+                                        ? "bg-[#FEE2E2] dark:bg-[#3A1616] text-[#EF4444]"
+                                        : "bg-[#EAF8EC] dark:bg-[#12331D] text-[#16A34A] dark:text-[#63D98D]"
                                         }`}
                                 >
                                     {item.status}
@@ -288,7 +288,7 @@ function BudgetCategoriesTable() {
                             </div>
 
                             {/* Menu */}
-                            <button className="flex h-10 w-10 items-center justify-center rounded-xl text-[#9CA3AF] transition-all duration-300 hover:bg-black/[0.04] hover:text-[#111827]">
+                            <button className="flex h-10 w-10 items-center justify-center rounded-xl text-[#9CA3AF] dark:text-white/50 transition-all duration-300 hover:bg-black/[0.04] dark:hover:bg-white/[0.05] hover:text-[#111827] dark:hover:text-white">
 
                                 <Ellipsis
                                     size={18}
@@ -304,7 +304,7 @@ function BudgetCategoriesTable() {
                 {/* Footer */}
                 <div className="p-4">
 
-                    <button className={`${fontBold.className} flex h-10 w-full items-center justify-center gap-2 rounded-[8px] border border-dashed border-[#22C55E]/30 bg-[#22C55E]/[0.03] text-[13px] font-semibold text-[#16A34A] transition-all duration-300 hover:bg-[#22C55E]/[0.06]`}>
+                    <button className={`${fontBold.className} flex h-10 w-full items-center justify-center gap-2 rounded-[8px] border border-dashed border-[#22C55E]/30 dark:border-[#22C55E]/20 bg-[#22C55E]/[0.03] dark:bg-[#22C55E]/[0.06] text-[13px] font-semibold text-[#16A34A] dark:text-[#63D98D] transition-all duration-300 hover:bg-[#22C55E]/[0.06] dark:hover:bg-[#22C55E]/[0.10]`}>
 
                         <Plus
                             size={14}

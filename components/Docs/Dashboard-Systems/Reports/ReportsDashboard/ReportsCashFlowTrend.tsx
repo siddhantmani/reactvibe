@@ -53,7 +53,7 @@ function ReportsCashFlowTrend() {
                 ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2,
             }}
-            className="w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]"
+            className="w-full rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]"
         >
 
             {/* Header */}
@@ -65,13 +65,13 @@ function ReportsCashFlowTrend() {
                     <div className="space-y-1">
 
                         <h1
-                            className={`${boldFont.className} text-[15px] text-[#111827]`}
+                            className={`${boldFont.className} text-[15px] text-[#111827] dark:text-white`}
                         >
                             Cash Flow Trend
                         </h1>
 
                         <p
-                            className={`${boldFont.className} text-[11px] text-[#111827]`}
+                            className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white/70`}
                         >
                             Income vs expenses{" "}
 
@@ -87,7 +87,7 @@ function ReportsCashFlowTrend() {
                         as="h2"
                         delay={0.4}
                         Text="$3,740.00"
-                        className={`${boldFont.className} mt-3 text-[18px] text-[#1a1b1c]`}
+                        className={`${boldFont.className} mt-3 text-[18px] text-[#1a1b1c] dark:text-white`}
                     />
 
                 </div>
@@ -97,7 +97,7 @@ function ReportsCashFlowTrend() {
 
                     {/* Dropdown */}
                     <button
-                        className={`${boldFont.className} flex items-center gap-3 rounded-[4px] border border-black/10 px-2 py-1 text-[10px] text-[#111827]`}
+                        className={`${boldFont.className} flex items-center gap-3 rounded-[4px] border border-black/10 dark:border-white/10 px-2 py-1 text-[10px] text-[#111827] dark:text-white/70 dark:bg-white/[0.03] dark:hover:text-white`}
                     >
 
                         This Month
@@ -117,7 +117,7 @@ function ReportsCashFlowTrend() {
                             <div className="h-2 w-2 rounded-[2px] bg-[#86db68]" />
 
                             <p
-                                className={`${boldFont.className} text-[11px] text-[#111827]`}
+                                className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white/70`}
                             >
                                 Income
                             </p>
@@ -129,7 +129,7 @@ function ReportsCashFlowTrend() {
                             <div className="h-2 w-2 rounded-[2px] bg-[#E73C3C]" />
 
                             <p
-                                className={`${boldFont.className} text-[11px] text-[#111827]`}
+                                className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white/70`}
                             >
                                 Expenses
                             </p>
@@ -153,7 +153,7 @@ function ReportsCashFlowTrend() {
 
                         <div
                             key={line}
-                            className="absolute left-0 w-full border-t border-black/6"
+                            className="absolute left-0 w-full border-t border-black/10 dark:border-white/10"
                             style={{
                                 top: `${line * 25}%`,
                             }}
@@ -174,7 +174,7 @@ function ReportsCashFlowTrend() {
 
                             <p
                                 key={label}
-                                className={`${boldFont.className} text-[9px] text-[#4b5563]`}
+                                className={`${boldFont.className} text-[9px] text-[#4b5563] dark:text-white/70`}
                             >
                                 {label}
                             </p>
@@ -227,10 +227,10 @@ function ReportsCashFlowTrend() {
                                         className="pointer-events-none absolute -top-16 z-30"
                                     >
 
-                                        <div className="min-w-[110px] rounded-[10px] border border-black/10 bg-white/95 px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
+                                        <div className="min-w-[110px] rounded-[10px] border border-black/10 bg-white/95 dark:bg-[#070606] dark:border-white/10 px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
 
                                             <p
-                                                className={`${boldFont.className} text-[9px] text-black/45`}
+                                                className={`${boldFont.className} text-[9px] text-black/45 dark:text-white/65`}
                                             >
                                                 {item.month}
                                             </p>
@@ -240,7 +240,7 @@ function ReportsCashFlowTrend() {
                                                 <div className="flex items-center justify-between gap-4">
 
                                                     <span
-                                                        className={`${boldFont.className} text-[9px] text-black/45`}
+                                                        className={`${boldFont.className} text-[9px] text-black/45 dark:text-white/90`}
                                                     >
                                                         Income
                                                     </span>
@@ -256,7 +256,7 @@ function ReportsCashFlowTrend() {
                                                 <div className="flex items-center justify-between gap-4">
 
                                                     <span
-                                                        className={`${boldFont.className} text-[9px] text-black/45`}
+                                                        className={`${boldFont.className} text-[9px] text-black/45 dark:text-white/90`}
                                                     >
                                                         Expense
                                                     </span>
@@ -349,7 +349,7 @@ function ReportsCashFlowTrend() {
                                         transition={{
                                             duration: 0.15,
                                         }}
-                                        className={`${boldFont.className} mt-5 text-[9px] text-[#4b5563]`}
+                                        className={`${boldFont.className} mt-5 text-[9px] text-[#4b5563] dark:text-white/90`}
                                     >
                                         {item.month}
                                     </motion.p>

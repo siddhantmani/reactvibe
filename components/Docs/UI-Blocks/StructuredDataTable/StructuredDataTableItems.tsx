@@ -38,7 +38,7 @@ function StructuredDataTableItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern budget data table UI built for finance and SaaS dashboards. Includes expense tracking, progress indicators, category management, and responsive table layouts for financial applications.
+                    A reusable Budget Tracking Table for React dashboards, designed to build Expense Tracking Tables, Budget Overview Tables, Budget Allocation Tables, Budget Status Tables, and responsive Finance Dashboard Tables.
                 </motion.p>
 
             </div>

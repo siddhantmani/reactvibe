@@ -38,7 +38,7 @@ function InvestmentsItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A responsive investment dashboard UI built for fintech and portfolio management applications. Includes portfolio analytics, holdings tables, market updates, investment insights, and transaction tracking.
+                    A production-ready React Investment Dashboard for building Investment Portfolio Dashboards, Portfolio Management Dashboards, Portfolio Performance Dashboards, Asset Allocation Dashboards, and modern wealth management applications.
                 </motion.p>
 
             </div>

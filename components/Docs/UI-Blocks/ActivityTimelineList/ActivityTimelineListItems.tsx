@@ -38,7 +38,7 @@ function ActivityTimelineListItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A clean activity timeline list UI built for fintech and SaaS applications. Includes event tracking, payment activity updates, synced account events, and responsive timeline layouts.
+                    A reusable React Activity Timeline component for dashboard activity feeds, recent activity, event history, audit logs, and user event timelines in modern React applications.
                 </motion.p>
 
             </div>

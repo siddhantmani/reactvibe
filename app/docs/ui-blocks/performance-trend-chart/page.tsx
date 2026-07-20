@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Performance Trend Chart UI for React & Next.js | React Vibe",
+    title: "React Performance & Trend Chart | React Vibe",
     description:
-        "Responsive performance trend chart UI for React with analytics visualization, growth tracking, and modern dashboard layouts.",
+        "Build responsive React Performance Charts and React Trend Charts for dashboards. Perfect for KPI Trend Charts, Revenue Trend Charts, and performance analytics.",
 }
 
 

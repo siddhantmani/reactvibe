@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Alert Notification List UI for React & Next.js | React Vibe",
+    title: "Dashboard Alert List for React | React Vibe",
     description:
-        "Responsive alert notification list UI for React with budget alerts, status updates, and modern SaaS dashboard layouts.",
+        "Build responsive Dashboard Alert Lists for React. Perfect for Dashboard Notification Lists, Budget Alert Lists, Expense Alert Lists, and Finance Alert Dashboards.",
 }
 
 

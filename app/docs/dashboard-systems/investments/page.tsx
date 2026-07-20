@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Investment Dashboard UI for React & Next.js | React Vibe",
+    title: "React Investment & Portfolio Dashboard | React Vibe",
     description:
-        "Modern investment dashboard UI for React with portfolio tracking, holdings tables, market insights, and responsive fintech layouts.",
+        "Build responsive React Investment Dashboards with Investment Dashboard Templates, Portfolio Tracking Dashboards, Portfolio Analytics Dashboards, and holdings management.",
 }
 
 function Investments() {

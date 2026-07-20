@@ -40,7 +40,7 @@ interface BillItemProps {
 function BillItem({ title, amount, date, last }: BillItemProps) {
     return (
         <div
-            className={`pb-2 ${!last ? "border-b border-black/8 mb-4" : ""
+            className={`pb-2 ${!last ? "border-b border-black/8 dark:border-white/10 mb-4" : ""
                 }`}
         >
 
@@ -48,16 +48,16 @@ function BillItem({ title, amount, date, last }: BillItemProps) {
 
                 {/* Left */}
                 <div>
-                    <h3 className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                    <h3 className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                         {title}
                     </h3>
 
 
                     <LinearReveal
-                        as='p'
+                        as="p"
                         delay={0.3}
                         Text={`${date}`}
-                        className={`${boldFont.className} text-[8px] text-[#4b5563] `}
+                        className={`${boldFont.className} text-[8px] text-[#4b5563] dark:text-white/60`}
                     />
                 </div>
 
@@ -65,10 +65,10 @@ function BillItem({ title, amount, date, last }: BillItemProps) {
 
 
                 <LinearReveal
-                    as='p'
+                    as="p"
                     delay={0.4}
                     Text={`${amount}`}
-                    className={`${boldFont.className} text-[11px] text-[#111827]`}
+                    className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}
                 />
             </div>
         </div>
@@ -77,16 +77,16 @@ function BillItem({ title, amount, date, last }: BillItemProps) {
 
 function UpcomingBillsList() {
     return (
-        <div className="w-full max-w-[200px] rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full max-w-[200px] rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
 
             {/* Header */}
             <div className="flex items-center justify-between mb-10">
 
-                <h1 className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                <h1 className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                     Upcoming Bills
                 </h1>
 
-                <button className={`${boldFont.className} text-[11px] text-[#006b46] hover:opacity-80 transition-opacity`}>
+                <button className={`${boldFont.className} text-[11px] text-[#006b46] dark:text-[#5ED19B] hover:opacity-80 transition-opacity`}>
                     View All
                 </button>
             </div>

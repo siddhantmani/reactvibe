@@ -8,7 +8,7 @@ import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
 
 const boldFont = Manrope({
-    weight: "600",
+    weight: "500",
     subsets: ["latin"],
 });
 
@@ -71,7 +71,7 @@ function DonutChart() {
 
             <svg
                 viewBox="0 0 280 280"
-                className="-rotate-90 w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-20 lg:h-20 xl:h-56 xl:w-56 2xl:w-54 2xl:h-54"
+                className="-rotate-90 w-full max-w-[230px] aspect-square"
             >
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
@@ -92,7 +92,7 @@ function DonutChart() {
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                <p className={`${boldFont.className} md:text-[8px] lg:text-[4px] xl:text-[15px] 2xl:text-[12px] text-[#4b5563]`}>
+                <p className={`${boldFont.className} text-[10px] text-[#4b5563] dark:text-white/60`}>
                     Total Expense
                 </p>
 
@@ -100,7 +100,7 @@ function DonutChart() {
                     as='h2'
                     delay={0.4}
                     Text="$4,680"
-                    className={`${boldFont.className} md:text-[20px] lg:text-[10px] xl:text-[30px] 2xl:text-[26px] font-bold tracking-[-1px] text-[#111827] mt-2`}
+                    className={`${boldFont.className} text-[25px] font-bold tracking-[-1px] text-[#111827] dark:text-white mt-2`}
                 />
 
             </div>
@@ -129,18 +129,18 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
                     }}
                 />
 
-                <p className={`${boldFont.className} text-[13px] text-[#111827]`}>
+                <p className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
                     {title}
                 </p>
             </div>
 
             {/* Percentage */}
-            <p className={`${boldFont.className} text-[13px] text-[#374151] text-right`}>
+            <p className={`${boldFont.className} text-[13px] text-[#374151] dark:text-white text-right`}>
                 {percentage}%
             </p>
 
             {/* Amount */}
-            <p className={`${boldFont.className} text-[13px] text-[#111827] text-right`}>
+            <p className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white text-right`}>
                 {amount}
             </p>
         </div>
@@ -149,10 +149,10 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
 
 function InvestmentsExpenseBreakdown() {
     return (
-        <div className="w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none">
 
             {/* Header */}
-            <h1 className={`${boldFont.className} text-[14px] text-[#111827]`}>
+            <h1 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white`}>
                 Expense Breakdown
             </h1>
 
@@ -182,7 +182,7 @@ function InvestmentsExpenseBreakdown() {
             </div>
 
             {/* Footer */}
-            <button className={`${boldFont.className} mt-12 flex items-center gap-3 text-[13px] text-[#006b46] hover:opacity-80 transition-opacity`}>
+            <button className={`${boldFont.className} mt-12 flex items-center gap-3 text-[13px] text-[#006b46] dark:text-[#5ED19B] hover:opacity-80 transition-opacity`}>
                 View full report
 
                 <ArrowRight

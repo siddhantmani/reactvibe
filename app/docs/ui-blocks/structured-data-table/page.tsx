@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Budget Data Table UI for React & Next.js| React Vibe",
+    title: "Budget Tracking Table for React | React Vibe",
     description:
-        "Responsive budget data table UI for React with expense tracking, progress indicators, and modern finance dashboard layouts.",
+        "Build responsive Budget Tracking Tables for React dashboards. Perfect for Expense Tracking Tables, Finance Dashboard Tables, Budget Management Tables, and financial planning.",
 }
 
 

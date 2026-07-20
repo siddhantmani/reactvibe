@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Advanced Transaction Log UI for React & Next.js | React Vibe",
+    title: "React Transaction Log Component | React Vibe",
     description:
-        "Responsive transaction log UI for React with filters, payment tracking, categorized activity, and modern fintech layouts.",
+        "Build a responsive React Transaction Log component for fintech dashboards. Perfect for transaction history, payment tracking, transaction management, and responsive data tables.",
 }
 
 

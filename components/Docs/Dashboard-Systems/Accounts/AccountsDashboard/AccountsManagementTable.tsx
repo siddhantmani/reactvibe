@@ -83,19 +83,19 @@ const boldFont = Manrope({
 function AccountsManagementTable() {
 
     return (
-        <div className="rounded-[15px] border border-black/10 bg-white p-2 px-2 aspect-video">
+        <div className="rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-2 px-2 aspect-video">
 
             {/* Top */}
             <div className="flex items-center justify-between">
 
-                <h2 className={`${boldFont.className} text-[14px] text-[#111827] px-2`}>
+                <h2 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white px-2`}>
                     Your Accounts
                 </h2>
 
                 <div className="flex items-center gap-3">
 
                     {/* Filter */}
-                    <button className={`${boldFont.className} flex items-center gap-2 rounded-[8px] border border-black/10 bg-white px-2 py-2 text-[11px] font-medium text-[#374151] transition-all duration-300 hover:bg-black/[0.02]`}>
+                    <button className={`${boldFont.className} flex items-center gap-2 rounded-[8px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-2 text-[11px] font-medium text-[#374151] dark:text-white/70 transition-all duration-300 hover:bg-black/[0.02] dark:hover:text-white`}>
 
                         All Accounts
 
@@ -107,7 +107,7 @@ function AccountsManagementTable() {
                     </button>
 
                     {/* Sort */}
-                    <button className={`${boldFont.className} flex items-center gap-2 rounded-[8px] border border-black/10 bg-white px-2 py-2 text-[11px] font-medium text-[#374151] transition-all duration-300 hover:bg-black/[0.02]`}>
+                    <button className={`${boldFont.className} flex items-center gap-2 rounded-[8px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-2 text-[11px] font-medium text-[#374151] dark:text-white/70 transition-all duration-300 hover:bg-black/[0.02] dark:hover:text-white`}>
 
                         Sort by: Balance
 
@@ -123,24 +123,24 @@ function AccountsManagementTable() {
             </div>
 
             {/* Table */}
-            <div className="mt-8 overflow-hidden rounded-2xl border border-black/5">
+            <div className="mt-8 overflow-hidden rounded-2xl border border-black/5 dark:border-white/10">
 
                 {/* Header */}
-                <div className="grid grid-cols-[2.3fr_1fr_1fr_1fr_50px] items-center border-b border-black/5 bg-[#FAFAFA] px-6 py-4">
+                <div className="grid grid-cols-[2.3fr_1fr_1fr_1fr_50px] items-center border-b border-black/5 dark:border-white/10 bg-[#FAFAFA] dark:bg-white/[0.03] px-6 py-4">
 
-                    <p className={`${boldFont.className} text-[13px] text-[#6B7280]`}>
+                    <p className={`${boldFont.className} text-[13px] text-[#6B7280] dark:text-white/50`}>
                         Account
                     </p>
 
-                    <p className={`${boldFont.className} text-[13px] text-[#6B7280]`}>
+                    <p className={`${boldFont.className} text-[13px] text-[#6B7280] dark:text-white/50`}>
                         Type
                     </p>
 
-                    <p className={`${boldFont.className} text-[13px] text-[#6B7280]`}>
+                    <p className={`${boldFont.className} text-[13px] text-[#6B7280] dark:text-white/50`}>
                         Balance
                     </p>
 
-                    <p className={`${boldFont.className} text-[13px] text-[#6B7280]`}>
+                    <p className={`${boldFont.className} text-[13px] text-[#6B7280] dark:text-white/50`}>
                         Status
                     </p>
 
@@ -151,7 +151,7 @@ function AccountsManagementTable() {
 
                     <div
                         key={index}
-                        className="grid grid-cols-[2.3fr_1fr_1fr_1fr_50px] items-center border-b border-black/5 px-6 py-5 transition-all duration-300 hover:bg-black/[0.015]"
+                        className="grid grid-cols-[2.3fr_1fr_1fr_1fr_50px] items-center border-b border-black/5 dark:border-white/10 px-6 py-5 transition-all duration-300 hover:bg-black/[0.015] dark:hover:bg-white/[0.03]"
                     >
 
                         {/* Account */}
@@ -165,11 +165,11 @@ function AccountsManagementTable() {
 
                             <div>
 
-                                <h3 className={`${boldFont.className} text-[13px] text-[#111827]`}>
+                                <h3 className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
                                     {account.bank}
                                 </h3>
 
-                                <p className={`${boldFont.className} text-[10px] text-[#6B7280]`}>
+                                <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
                                     {account.subtitle}
                                 </p>
 
@@ -189,30 +189,24 @@ function AccountsManagementTable() {
                         </div>
 
                         {/* Balance */}
-                        <div>
-
-                            <LinearReveal
-                                as='p'
-                                delay={0.2}
-                                Text={account.balance}
-                                className={`${boldFont.className} text-[14px] ${account.balance.includes("-")
-                                    ? "text-[#DC2626]"
-                                    : "text-[#111827]"
-                                    }`}
-                            />
-
-
-
-                        </div>
+                        <LinearReveal
+                            as='p'
+                            delay={0.2}
+                            Text={account.balance}
+                            className={`${boldFont.className} text-[14px] ${account.balance.includes("-")
+                                ? "text-[#DC2626]"
+                                : "text-[#111827] dark:text-white"
+                                }`}
+                        />
 
                         {/* Status */}
                         <div>
 
-                            <div className="inline-flex items-center gap-2 rounded-[5px] bg-[#EAF8EC] px-2 py-1">
+                            <div className="inline-flex items-center gap-2 rounded-[5px] bg-[#EAF8EC] dark:bg-[#12331D] px-2 py-1">
 
                                 <div className="h-2 w-2 rounded-[5px] bg-[#22C55E]" />
 
-                                <span className={`${boldFont.className} text-[11px] text-[#1F9D47]`}>
+                                <span className={`${boldFont.className} text-[11px] text-[#1F9D47] dark:text-[#63D98D]`}>
                                     Synced
                                 </span>
 
@@ -221,7 +215,7 @@ function AccountsManagementTable() {
                         </div>
 
                         {/* Menu */}
-                        <button className="flex h-10 w-10 items-center justify-center rounded-xl text-[#9CA3AF] transition-all duration-300 hover:bg-black/[0.04] hover:text-[#111827]">
+                        <button className="flex h-10 w-10 items-center justify-center rounded-xl text-[#9CA3AF] dark:text-white/50 transition-all duration-300 hover:bg-black/[0.04] dark:hover:bg-white/[0.05] hover:text-[#111827] dark:hover:text-white">
 
                             <EllipsisVertical
                                 size={18}
@@ -237,7 +231,7 @@ function AccountsManagementTable() {
                 {/* Footer */}
                 <div className="p-4">
 
-                    <button className={`${boldFont.className} flex h-[56px] w-full items-center justify-center gap-2 rounded-[10px] border border-dashed border-[#22C55E]/30 bg-[#22C55E]/[0.03] text-[14px] font-semibold text-[#16A34A] transition-all duration-300 hover:bg-[#22C55E]/[0.06]`}>
+                    <button className={`${boldFont.className} flex h-[56px] w-full items-center justify-center gap-2 rounded-[10px] border border-dashed border-[#22C55E]/30 dark:border-[#22C55E]/20 bg-[#22C55E]/[0.03] dark:bg-[#22C55E]/[0.06] text-[14px] font-semibold text-[#16A34A] dark:text-[#63D98D] transition-all duration-300 hover:bg-[#22C55E]/[0.06] dark:hover:bg-[#22C55E]/[0.10]`}>
 
                         <Plus
                             size={18}

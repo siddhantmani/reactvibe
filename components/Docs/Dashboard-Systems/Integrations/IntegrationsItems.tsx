@@ -38,7 +38,7 @@ function IntegrationsItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A responsive integrations dashboard UI built for SaaS and fintech applications. Includes connected app management, sync analytics, integration activity feeds, and real-time connection monitoring.
+                    A production-ready React Connected Apps Dashboard for building Integration Management Dashboards, API Integrations Dashboards, Connected Services Dashboards, Integration Analytics Dashboards, and modern SaaS platforms.
                 </motion.p>
 
             </div>

@@ -37,7 +37,7 @@ function ExecutiveSummaryCards() {
     return (
 
         <div
-            className="relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]"
+            className="relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:bg-[#070606] dark:border-white/10 p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]"
         >
 
             {/* Background Glow */}
@@ -52,13 +52,13 @@ function ExecutiveSummaryCards() {
                 <div>
 
                     <h2
-                        className={`${fontBold.className} text-[15px] tracking-[-0.04em] text-[#111111]`}
+                        className={`${fontBold.className} text-[15px] tracking-[-0.04em] text-[#111111] dark:text-white`}
                     >
                         Executive Summary
                     </h2>
 
                     <p
-                        className={`${fontBold.className} mt-1 text-[11px] text-black/45`}
+                        className={`${fontBold.className} mt-1 text-[11px] text-black/45 dark:text-white/60`}
                     >
                         Generated reports and financial insights.
                     </p>
@@ -87,7 +87,7 @@ function ExecutiveSummaryCards() {
                                 duration: 0.35,
                                 delay: index * 0.06,
                             }}
-                            className="group relative overflow-hidden rounded-[16px] border border-black/[0.06] bg-black/[0.015] p-4 transition-all duration-300 hover:bg-black/[0.025] hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)]"
+                            className="group relative overflow-hidden rounded-[16px] border border-black/[0.06] dark:border-white/10 bg-black/[0.015] dark:bg-[#070606] p-4 transition-all duration-300 hover:bg-black/[0.025] dark:hover:bg-[#0a0909] hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-none"
                         >
 
                             {/* Card Glow */}
@@ -100,7 +100,7 @@ function ExecutiveSummaryCards() {
 
                                     {/* Icon */}
                                     <div
-                                        className="flex h-11 w-11 items-center justify-center rounded-[12px] border border-black/[0.05] bg-white shadow-[0_6px_18px_rgba(0,0,0,0.03)]"
+                                        className="flex h-11 w-11 items-center justify-center rounded-[12px] border border-black/[0.05] dark:border-white/10 bg-white dark:bg-[#070606] shadow-[0_6px_18px_rgba(0,0,0,0.03)] dark:shadow-none"
                                     >
 
                                         <FileText
@@ -115,13 +115,13 @@ function ExecutiveSummaryCards() {
                                     <div>
 
                                         <h3
-                                            className={`${fontBold.className} text-[12px] text-[#111111]`}
+                                            className={`${fontBold.className} text-[12px] text-[#111111] dark:text-white`}
                                         >
                                             {report.title}
                                         </h3>
 
                                         <p
-                                            className={`${fontBold.className} mt-2 text-[10px] text-black/40`}
+                                            className={`${fontBold.className} mt-2 text-[10px] text-black/40 dark:text-white/60`}
                                         >
                                             {report.subtitle}
                                         </p>
@@ -135,7 +135,7 @@ function ExecutiveSummaryCards() {
 
                                     {/* View Button */}
                                     <button
-                                        className={`${fontBold.className} flex h-10 items-center gap-2 rounded-[10px] border border-black/[0.06] bg-white px-3 text-[10px] font-medium text-black/65 shadow-[0_2px_10px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-black hover:text-white`}
+                                        className={`${fontBold.className} flex h-10 items-center gap-2 rounded-[10px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] px-3 text-[10px] font-medium text-black/65 dark:text-white/70 shadow-[0_2px_10px_rgba(0,0,0,0.03)] dark:shadow-none transition-all duration-300 hover:bg-black dark:hover:bg-[#21192F] hover:text-white`}
                                     >
 
                                         <Eye
@@ -149,7 +149,7 @@ function ExecutiveSummaryCards() {
 
                                     {/* Menu */}
                                     <button
-                                        className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-black/[0.06] bg-white text-black/45 shadow-[0_2px_10px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-black hover:text-white"
+                                        className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] text-black/45 dark:text-white/60 shadow-[0_2px_10px_rgba(0,0,0,0.03)] dark:shadow-none transition-all duration-300 hover:bg-black dark:hover:bg-[#21192F] hover:text-white"
                                     >
 
                                         <EllipsisVertical

@@ -31,7 +31,7 @@ const cards = [
         subtitle: "Across institutions",
         icon: Building2,
         iconBg: "bg-black/[0.04]",
-        iconColor: "text-black/55",
+        iconColor: "text-black/80 dark:text-white/80",
         valueColor: "text-[#111111]",
         glow: "bg-[#3B82F6]/[0.04]",
     },
@@ -41,7 +41,7 @@ const cards = [
         subtitle: "Synced in real-time",
         icon: Database,
         iconBg: "bg-black/[0.04]",
-        iconColor: "text-black/55",
+        iconColor: "text-black/80 dark:text-white/80",
         valueColor: "text-[#111111]",
         glow: "bg-[#A855F7]/[0.04]",
     },
@@ -86,7 +86,7 @@ function IntegrationsMetricsGrid() {
                             duration: 0.5,
                             delay: index * 0.08,
                         }}
-                        className="group relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
+                        className="group relative overflow-hidden rounded-[18px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] dark:bg-gradient-to-br p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)] dark:shadow-none transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] dark:hover:shadow-none"
                     >
 
                         {/* Glow */}
@@ -105,14 +105,14 @@ function IntegrationsMetricsGrid() {
 
                                 {/* Title */}
                                 <p
-                                    className={`${fontBold.className} text-[11px] tracking-[-0.02em] text-black/45`}
+                                    className={`${fontBold.className} text-[11px] tracking-[-0.02em] text-black/45 dark:text-white/60`}
                                 >
                                     {card.title}
                                 </p>
 
                                 {/* Value */}
                                 <h2
-                                    className={`${fontBold.className} text-[30px] tracking-[-0.06em] ${card.valueColor}`}
+                                    className={`${fontBold.className} text-[30px] tracking-[-0.06em] ${card.valueColor} ${card.valueColor === "text-[#111111]" ? "dark:text-white" : ""}`}
                                 >
                                     {card.value}
                                 </h2>
@@ -128,12 +128,12 @@ function IntegrationsMetricsGrid() {
 
                             {/* Right */}
                             <div
-                                className={`flex h-10 w-10 items-center justify-center rounded-[12px] border border-black/[0.06] ${card.iconBg} shadow-[0_6px_20px_rgba(0,0,0,0.04)] transition-all duration-300 group-hover:scale-105`}
+                                className={`flex h-10 w-10 items-center justify-center rounded-[12px] border border-black/[0.06] dark:border-white/10 ${card.iconBg} shadow-[0_6px_20px_rgba(0,0,0,0.04)] dark:shadow-none transition-all duration-300 group-hover:scale-105`}
                             >
 
                                 <Icon
                                     size={18}
-                                    className={card.iconColor}
+                                    className="dark:text-white/80"
                                     strokeWidth={2}
                                 />
 

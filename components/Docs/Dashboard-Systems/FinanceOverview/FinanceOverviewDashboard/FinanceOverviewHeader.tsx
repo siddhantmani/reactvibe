@@ -11,12 +11,12 @@ import Separator from "@/components/Docs/Separator";
 import { Dropdown, DropdownItem, DropdownNestedContainer, DropdownNestedHeading, DropdownNestedItem } from "@/components/Docs/Components/MotionDropdown/Dropdown";
 
 const menuName = Manrope({
-    weight: '400', 
+    weight: '400',
     subsets: ['latin']
 });
 
 const fontBold = Manrope({
-    weight: '600', 
+    weight: '600',
     subsets: ['latin']
 });
 
@@ -24,12 +24,12 @@ const fontBold = Manrope({
 function FinanceOverviewHeader() {
     return (
         <div className='flex justify-between'>
-    
+
             <div>
                 <LinearReveal
                     as='h1'
-                    Text="Dashboard"
-                    className={`${fontBold.className} text-[19px] text-[#111827] `}
+                    Text="Finance Overview"
+                    className={`${fontBold.className} text-[19px] text-[#111827] dark:text-white `}
                 />
 
                 <p className={`${fontBold.className} text-[11px] text-[#6b7280] `}>
@@ -37,38 +37,38 @@ function FinanceOverviewHeader() {
                 </p>
             </div>
 
-         
+
             <div className="flex items-center gap-5">
 
-               
-                <div className="rounded-[5px] border border-black/10 bg-white px-5 flex items-center justify-between w-[100%]">
+
+                <div className="rounded-[5px] border border-black/10 bg-white dark:bg-[#1a1818] px-2 flex items-center justify-between w-[100%]">
                     <input
                         type="text"
-                        placeholder="Search transactions, accounts..."
-                        className={`${menuName.className} placeholder:text-black text-[12px] rounded-[2px] px-6 py-2 text-black focus:outline-none w-full max-w-lg`}
+                        placeholder="Search here..."
+                        className={`${menuName.className} placeholder:text-black dark:placeholder:text-white/70 dark:text-white text-[12px] rounded-[2px] px-2 py-2 text-black focus:outline-none w-full max-w-lg`}
                     />
 
                     <Search
-                        className="text-[#111827]"
+                        className="text-[#111827] dark:text-white"
                         size={14}
                         strokeWidth={2.2}
                     />
                 </div>
                 <div className='flex items-center gap-3'>
-                    <button className="relative p-2 rounded-full bg-white flex items-center justify-center shadow-sm border border-black/5">
+                    <button className="relative p-2 rounded-full bg-white dark:bg-[#242424] flex items-center justify-center shadow-sm border border-black/5">
                         <Bell
                             size={18}
-                            className="text-[#111827]"
+                            className="text-[#111827] dark:text-white"
                             strokeWidth={2.2}
                         />
 
                         <span className="absolute top-[10px] right-[10px] w-[9px] h-[9px] bg-red-500 rounded-full border-2 border-white" />
                     </button>
 
-                    <button className="p-2 rounded-full bg-white flex items-center justify-center shadow-sm border border-black/5">
+                    <button className="p-2 rounded-full bg-white dark:bg-[#242424]  flex items-center justify-center shadow-sm border border-black/5">
                         <Mail
                             size={18}
-                            className="text-[#111827]"
+                            className="text-[#111827] dark:text-white"
                             strokeWidth={2.2}
                         />
                     </button>
@@ -77,7 +77,7 @@ function FinanceOverviewHeader() {
                 <div>
                     <Separator
                         direction='vertical'
-                        className='bg-black/20'
+                        className='bg-black/20 dark:bg-white/20'
                     />
                 </div>
 
@@ -90,6 +90,8 @@ function FinanceOverviewHeader() {
                         className="flex justify-start p-2"
                     >
                         <Dropdown
+                            menuClassName="bg-white text-black dark:bg-[#0c0c0c] border-white/10"
+                            itemClassName="text-black dark:text-white"
                             trigger={
                                 <div className="flex items-center gap-4 cursor-pointer z-50">
 
@@ -102,7 +104,7 @@ function FinanceOverviewHeader() {
                                     />
 
                                     <div>
-                                        <h3 className={`${fontBold.className} text-[11px] text-[#111827] whitespace-nowrap flex items-center gap-1 `}>
+                                        <h3 className={`${fontBold.className} text-[11px] text-[#111827] dark:text-white whitespace-nowrap flex items-center gap-1 `}>
                                             Alex Johnson <span><ChevronDown size={13} /></span>
                                         </h3>
 

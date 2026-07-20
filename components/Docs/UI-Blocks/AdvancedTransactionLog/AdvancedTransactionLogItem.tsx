@@ -38,7 +38,7 @@ function AdvancedTransactionLogItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern transaction log UI built for fintech and SaaS dashboards. Includes categorized transactions, filtering controls, payment tracking, and responsive activity table layouts.
+                    A reusable React Transaction Log component for fintech dashboards, featuring transaction history, payment records, activity tracking, advanced filtering, and responsive data tables.
                 </motion.p>
 
             </div>

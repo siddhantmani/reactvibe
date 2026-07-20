@@ -165,7 +165,7 @@ function PerformanceOverviewChart() {
     return (
 
         <div
-            className="relative aspect-video overflow-hidden rounded-[18px] border border-black/[0.06] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]"
+            className="relative aspect-video overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:bg-[#070606] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]"
         >
 
             {/* Background Glow */}
@@ -182,19 +182,19 @@ function PerformanceOverviewChart() {
                     <div>
 
                         <h2
-                            className={`${fontBold.className} text-[14px] tracking-[-0.03em] text-[#111111]`}
+                            className={`${fontBold.className} text-[14px] tracking-[-0.03em] text-[#111111] dark:text-white`}
                         >
                             Performance Overview
                         </h2>
 
                         <p
-                            className={`${fontBold.className} mt-2 text-[12px] text-black/45`}
+                            className={`${fontBold.className} mt-2 text-[12px] text-black/45 dark:text-white/45`}
                         >
                             Total syncs this month
                         </p>
 
                         <h1
-                            className={`${fontBold.className} mt-2 text-[30px] tracking-[-0.06em] text-[#111111]`}
+                            className={`${fontBold.className} mt-2 text-[30px] tracking-[-0.06em] text-[#111111] dark:text-white`}
                         >
                             {totalText}
                         </h1>
@@ -202,7 +202,7 @@ function PerformanceOverviewChart() {
                     </div>
 
                     <button
-                        className={`${fontBold.className} rounded-[8px] border border-black/[0.06] bg-black/[0.02] px-3 py-1.5 text-[11px] font-medium text-black/60 backdrop-blur-md transition-all duration-300 hover:bg-black/[0.04] hover:text-black`}
+                        className={`${fontBold.className} rounded-[8px] border border-black/[0.06] bg-black/[0.02] px-3 py-1.5 text-[11px] font-medium text-black/60 backdrop-blur-md transition-all duration-300 hover:bg-black/[0.04] hover:text-black dark:text-white/60 dark:hover:text-white dark:border-white/10`}
                     >
                         This Month
                     </button>
@@ -261,7 +261,7 @@ function PerformanceOverviewChart() {
                                         key={index}
                                         x={-37}
                                         y={y - 5}
-                                        fill="rgba(0,0,0,0.4)"
+                                        className="fill-black/40 dark:fill-white/60"
                                         fontSize="12"
                                     >
                                         {value}K
@@ -283,7 +283,7 @@ function PerformanceOverviewChart() {
                                     x={point.x}
                                     y={height - 10}
                                     textAnchor="middle"
-                                    fill="rgba(0,0,0,0.4)"
+                                    className="fill-black/40 dark:fill-white/60"
                                     fontSize="12"
                                 >
                                     {point.day}
@@ -443,10 +443,10 @@ function PerformanceOverviewChart() {
                             }}
                         >
 
-                            <div className="rounded-[10px] border border-black/[0.06] bg-white/95 px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
+                            <div className="rounded-[10px] border border-black/[0.06] bg-white/95 dark:bg-[#070606] dark:border-white/10 px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
 
                                 <p
-                                    className={`${fontBold.className} text-[8px] text-black/70`}
+                                    className={`${fontBold.className} text-[8px] text-black/70 dark:text-white/70`}
                                 >
                                     {
                                         activeData.day
@@ -454,12 +454,12 @@ function PerformanceOverviewChart() {
                                 </p>
 
                                 <h3
-                                    className={`${fontBold.className} mt-1 text-[12px] text-[#111111]`}
+                                    className={`${fontBold.className} mt-1 text-[12px] text-[#111111] dark:text-white`}
                                 >
                                     {activeData.value.toLocaleString()}
 
                                     <span
-                                        className={`${fontBold.className} ml-1 text-[8px] text-black/70`}
+                                        className={`${fontBold.className} ml-1 text-[8px] text-black/70 dark:text-white/70`}
                                     >
                                         syncs
                                     </span>

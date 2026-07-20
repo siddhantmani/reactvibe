@@ -37,7 +37,7 @@ function EntityManagementTableItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern entity management table UI built for fintech and SaaS applications. Includes account management, synced status indicators, filtering controls, and responsive data table layouts.
+                    A reusable React Entity Management Table component for admin dashboards, featuring account management, user management, responsive data tables, and advanced filtering with sorting controls.
                 </motion.p>
 
             </div>

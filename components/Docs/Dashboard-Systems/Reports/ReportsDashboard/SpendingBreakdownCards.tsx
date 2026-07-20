@@ -67,7 +67,7 @@ function SpendingBreakdownCards() {
     return (
 
         <div
-            className="relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]"
+            className="relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:bg-[#070606] dark:border-white/10 p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]"
         >
 
             {/* Background Glow */}
@@ -82,13 +82,13 @@ function SpendingBreakdownCards() {
                 <div className="space-y-1">
 
                     <h1
-                        className={`${boldFont.className} text-[15px] tracking-[-0.04em] text-[#111111]`}
+                        className={`${boldFont.className} text-[15px] tracking-[-0.04em] text-[#111111] dark:text-white`}
                     >
                         Spending Breakdown
                     </h1>
 
                     <p
-                        className={`${boldFont.className} text-[11px] text-black/45`}
+                        className={`${boldFont.className} text-[11px] text-black/45 dark:text-white/60`}
                     >
                         Where your money went this month.
                     </p>
@@ -121,7 +121,7 @@ function SpendingBreakdownCards() {
                                     duration: 0.35,
                                     delay: index * 0.06,
                                 }}
-                                className="group relative overflow-hidden rounded-[16px] border border-black/[0.06] bg-black/[0.015] p-4 transition-all duration-300 hover:bg-black/[0.025] hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)]"
+                                className="group relative overflow-hidden rounded-[16px] border border-black/[0.06] dark:border-white/10 bg-black/[0.015] dark:bg-white/[0.03] p-4 transition-all duration-300 hover:bg-black/[0.025] dark:hover:bg-white/[0.05] hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-none"
                             >
 
                                 {/* Card Glow */}
@@ -136,7 +136,7 @@ function SpendingBreakdownCards() {
 
                                         {/* Icon */}
                                         <div
-                                            className={`flex h-11 w-11 items-center justify-center rounded-[12px] border border-black/[0.05] shadow-[0_6px_18px_rgba(0,0,0,0.03)] ${item.iconBg}`}
+                                            className={`flex h-11 w-11 items-center justify-center rounded-[12px] border border-black/[0.05] dark:border-white/10 shadow-[0_6px_18px_rgba(0,0,0,0.03)] dark:shadow-none ${item.iconBg}`}
                                         >
 
                                             <Icon
@@ -151,13 +151,13 @@ function SpendingBreakdownCards() {
                                         <div>
 
                                             <h3
-                                                className={`${boldFont.className} text-[12px] text-[#111111]`}
+                                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
                                             >
                                                 {item.title}
                                             </h3>
 
                                             <p
-                                                className={`${boldFont.className} mt-1 text-[10px] text-black/40`}
+                                                className={`${boldFont.className} mt-1 text-[10px] text-black/40 dark:text-white/60`}
                                             >
                                                 Monthly category spending
                                             </p>

@@ -108,19 +108,19 @@ function StatCard({
                 ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
                 delay: 0.2
             }}
-            className="flex-1 aspect-video bg-white rounded-[15px] border border-black/10 p-3 px-3 shadow-[0_10px_30px_rgba(0,0,0,0.03)]">
+            className="flex-1 aspect-video bg-white dark:bg-[#070606] dark:border-white/10 rounded-[15px] border border-black/10 p-3 px-3 shadow-[0_10px_30px_rgba(0,0,0,0.03)]">
 
             {/* Top */}
             <div className="flex items-start justify-between">
                 <div>
-                    <p className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                    <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                         {title}
                     </p>
 
                     <LinearReveal
                         as='h2'
                         Text={amount}
-                        className={`${boldFont.className} text-[18px] font-bold text-[#0f172a] mt-3 tracking-[-1px]`}
+                        className={`${boldFont.className} text-[18px] font-bold text-[#0f172a] dark:text-white mt-3 tracking-[-1px]`}
                     />
                 </div>
 
@@ -151,7 +151,7 @@ function FinancialMetricsGrid() {
         <div className="grid grid-cols-4 gap-2">
 
             {/* Main Balance Card */}
-            <div className="relative aspect-video flex-1 rounded-[15px] bg-gradient-to-br from-[#006b46] via-[#00754d] to-[#00573a] p-3 px-3 shadow-[0_20px_60px_rgba(0,100,60,0.25)]">
+            <div className="relative aspect-video flex-1 rounded-[15px] bg-gradient-to-br from-[#006b46] via-[#00754d] to-[#00573a] dark:from-[#031A08] dark:via-[#021406] dark:to-[#010B03] p-3 px-3 shadow-[0_20px_60px_rgba(0,100,60,0.25)] dark:shadow-none dark:border dark:border-white/10">
 
                 {/* Glow */}
                 <div className="absolute top-[-60px] right-[-40px] w-[180px] h-[150px] bg-white/5 rounded-[18px] blur-3xl" />
@@ -264,26 +264,26 @@ function FinancialMetricsGrid() {
             />
 
             {/* Savings */}
-            <div className="flex-1 bg-white rounded-[15px] border border-black/10 p-3 px-3 shadow-[0_10px_30px_rgba(0,0,0,0.03)] aspect-video">
+            <div className="flex-1 bg-white dark:bg-[#070606] dark:border-white/10 rounded-[15px] border border-black/10 p-3 px-3 shadow-[0_10px_30px_rgba(0,0,0,0.03)] aspect-video">
 
                 <div className="flex items-start justify-between">
 
                     <div>
-                        <p className={`${boldFont.className} text-[11px] font-medium text-[#111827]`}>
+                        <p className={`${boldFont.className} text-[11px] font-medium text-[#111827] dark:text-white`}>
                             Savings
                         </p>
 
                         <LinearReveal
                             as='h2'
                             Text="$3,740.00"
-                            className={`${boldFont.className} text-[18px] text-[#0f172a] mt-3 tracking-[-1px]`}
+                            className={`${boldFont.className} text-[18px] text-[#0f172a] dark:text-white mt-3 tracking-[-1px]`}
                         />
                     </div>
 
                     <div className="flex flex-col items-end gap-6">
 
                         {/* Dropdown */}
-                        <button className={`${boldFont.className} px-2 py-1 rounded-[4px] border border-black/10 text-[10px] text-[#111827]`}>
+                        <button className={`${boldFont.className} px-2 py-1 rounded-[4px] border border-black/10 text-[10px] text-[#111827] dark:text-white/60 dark:hover:text-white dark:border-white/10`}>
                             This Month
                         </button>
 

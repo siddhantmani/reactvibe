@@ -37,7 +37,7 @@ function BudgetsItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A responsive budget dashboard UI built for fintech and finance SaaS applications. Includes expense tracking, budget analytics, category management tables, alerts, and financial insights.
+                    A production-ready React Budget Dashboard for building Budget Management Dashboards, Budget Tracker Dashboards, Budget vs Actual Dashboards, Budget Monitoring Dashboards, and modern personal finance applications.
                 </motion.p>
 
             </div>

@@ -37,7 +37,7 @@ function ComparativeMetricsChartItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern budget comparison chart UI built for finance and analytics dashboards. Designed for visualizing budgeted vs actual spending with responsive data visualization layouts.
+                    A reusable Budget vs Actual Chart for React dashboards, designed to compare planned and actual spending with grouped bar charts, budget analysis, and financial performance insights.
                 </motion.p>
 
             </div>

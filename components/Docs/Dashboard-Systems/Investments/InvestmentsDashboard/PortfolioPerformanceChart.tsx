@@ -17,9 +17,9 @@ const boldFont = Manrope({
 })
 
 const data = [
-    { day: "May 1", value: 65000 },
-    { day: "May 3", value: 69000 },
-    { day: "May 5", value: 67000 },
+    { day: "May 1", value: 50000 },
+    { day: "May 3", value: 55000 },
+    { day: "May 5", value: 60000 },
     { day: "May 7", value: 70000 },
     { day: "May 9", value: 71000 },
     { day: "May 11", value: 68500 },
@@ -27,11 +27,6 @@ const data = [
     { day: "May 16", value: 75000 },
     { day: "May 18", value: 74000 },
     { day: "May 21", value: 80500 },
-    { day: "May 24", value: 82000 },
-    { day: "May 26", value: 77000 },
-    { day: "May 28", value: 84500 },
-    { day: "May 30", value: 83000 },
-    { day: "May 31", value: 90000 },
 ]
 
 const filters = ["1D", "1W", "1M", "3M", "1Y", "All"]
@@ -41,7 +36,7 @@ const CHART_HEIGHT = 200
 
 function PortfolioPerformanceChart() {
 
-    const initialValue = 78245.5
+    const initialValue = 65000.5
 
     const [hoverX, setHoverX] =
         useState(CHART_WIDTH)
@@ -149,7 +144,7 @@ function PortfolioPerformanceChart() {
     return (
 
         <div
-            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]`}
+            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]`}
         >
 
             {/* Background Glow */}
@@ -167,13 +162,13 @@ function PortfolioPerformanceChart() {
                     <div className="flex items-center gap-4">
 
                         <h2
-                            className={`${boldFont.className} whitespace-nowrap text-[14px] tracking-[-0.03em] text-[#111111]`}
+                            className={`${boldFont.className} whitespace-nowrap text-[14px] tracking-[-0.03em] text-[#111111] dark:text-white`}
                         >
                             Portfolio Performance
                         </h2>
 
                         <button
-                            className={`${boldFont.className} flex items-center gap-2 rounded-[6px] border border-black/[0.06] bg-black/[0.02] px-2 py-1 text-[12px] whitespace-nowrap font-medium text-black/60 backdrop-blur-md transition-all duration-300 hover:bg-black/[0.04] hover:text-black`}
+                            className={`${boldFont.className} flex items-center gap-2 rounded-[6px] border border-black/[0.06] bg-black/[0.02] px-2 py-1 text-[12px] whitespace-nowrap font-medium text-black/60 backdrop-blur-md transition-all duration-300 hover:bg-black/[0.04] hover:text-black dark:text-white/60 dark:hover:text-white dark:border-white/10`}
                         >
 
                             This Month
@@ -190,21 +185,19 @@ function PortfolioPerformanceChart() {
                     {/* Filters */}
                     <div className="flex items-center gap-2">
 
-                        {filters.map(
-                            (filter, index) => (
+                        {filters.map((filter, index) => (
 
-                                <button
-                                    key={index}
-                                    className={`flex items-center justify-center rounded-[5px] px-2 py-1 text-[10px] font-semibold transition-all duration-300 ${filter === "1M"
-                                        ? "bg-black text-white shadow-[0_8px_20px_rgba(0,0,0,0.08)]"
-                                        : "bg-black/[0.03] text-black/45 hover:bg-black/[0.05] hover:text-black"
-                                        }`}
-                                >
-                                    {filter}
-                                </button>
+                            <button
+                                key={index}
+                                className={`flex items-center justify-center rounded-[5px] px-2 py-1 text-[10px] font-semibold transition-all duration-300 ${filter === "1M"
+                                    ? "bg-black dark:bg-white text-white dark:text-black shadow-[0_8px_20px_rgba(0,0,0,0.08)] dark:shadow-none"
+                                    : "bg-black/[0.03] dark:bg-white/[0.05] text-black/45 dark:text-white/50 hover:bg-black/[0.05] dark:hover:bg-white/[0.08] hover:text-black dark:hover:text-white"
+                                    }`}
+                            >
+                                {filter}
+                            </button>
 
-                            )
-                        )}
+                        ))}
 
                     </div>
 
@@ -214,7 +207,7 @@ function PortfolioPerformanceChart() {
                 <div className="mt-5">
 
                     <h1
-                        className={`${boldFont.className} text-[22px] tracking-[-0.06em] text-[#111111]`}
+                        className={`${boldFont.className} text-[22px] tracking-[-0.06em] text-[#111111] dark:text-white`}
                     >
                         ${currentValue}
                     </h1>
@@ -255,7 +248,7 @@ function PortfolioPerformanceChart() {
                             (line) => (
                                 <div
                                     key={line}
-                                    className="border-t border-black/[0.06]"
+                                    className="border-t border-black/[0.06] dark:border-white/10"
                                 />
                             )
                         )}
@@ -275,7 +268,7 @@ function PortfolioPerformanceChart() {
 
                             <p
                                 key={label}
-                                className={`${boldFont.className} text-[10px] text-black/70`}
+                                className={`${boldFont.className} text-[10px] text-black/70 dark:text-white/70`}
                             >
                                 {label}
                             </p>
@@ -446,10 +439,10 @@ function PortfolioPerformanceChart() {
                                 }}
                             >
 
-                                <div className="rounded-[12px] border border-black/[0.06] bg-white/95 px-3 py-2 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+                                <div className="rounded-[12px] border border-black/[0.06] bg-white/95 dark:bg-[#070606] dark:border-white/10 px-3 py-2 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
 
                                     <p
-                                        className={`${boldFont.className} text-[12px] text-black/45`}
+                                        className={`${boldFont.className} text-[12px] text-black/45 dark:text-white/45`}
                                     >
                                         {
                                             activeData.item
@@ -458,7 +451,7 @@ function PortfolioPerformanceChart() {
                                     </p>
 
                                     <h3
-                                        className={`${boldFont.className} mt-1 text-[16px] text-[#111111]`}
+                                        className={`${boldFont.className} mt-1 text-[16px] text-[#111111] dark:text-white`}
                                     >
                                         $
                                         {activeData.item.value.toLocaleString()}
@@ -528,7 +521,7 @@ function PortfolioPerformanceChart() {
 
                             <p
                                 key={item.day}
-                                className={`${boldFont.className} text-[10px] whitespace-nowrap text-black/70`}
+                                className={`${boldFont.className} text-[10px] whitespace-nowrap text-black/70 dark:text-white/70`}
                             >
                                 {item.day}
                             </p>

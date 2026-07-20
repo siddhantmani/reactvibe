@@ -8,24 +8,24 @@ import PathFlowPreview from "../Docs/Backgrounds/PathFlow/PathFlowPreview"
 const steps = [
     {
         number: 1,
-        title: "Copy",
-        description: "Browse animated React components and copy the code you need",
+        title: "Browse",
+        description: "Explore dashboards, UI blocks, and production-ready React components.",
     },
     {
         number: 2,
-        title: "Paste",
-        description: "Paste the component directly into your React project — no wrapper library needed",
+        title: "Copy",
+        description: "Copy the source code and install only the required dependencies.",
     },
     {
         number: 3,
         title: "Customize",
         description:
-            "Customize the React component — styles, animations, and logic — full control",
+            "Edit layouts, styles, animations, and logic with complete code ownership.",
     },
     {
         number: 4,
         title: "Ship",
-        description: "Ship production-ready React UI faster with reusable components",
+        description: "Deploy production-ready React interfaces without vendor lock-in.",
     },
 ]
 
@@ -96,7 +96,7 @@ function HowItWorks({ className }: { className?: string }) {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col lg:flex-row gap-8">
+            <div className="flex flex-col xl:flex-row gap-8">
                 {/* Steps */}
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -107,7 +107,7 @@ function HowItWorks({ className }: { className?: string }) {
                         ease: [0.25, 0.46, 0.45, 0.94],
                         delay: 0.6,
                     }}
-                    className="flex flex-col gap-1 lg:w-56 flex-shrink-0"
+                    className="flex flex-col gap-1 xl:w-56 flex-shrink-0"
                 >
                     {steps.map((step) => {
                         const isActive = activeStep === step.number
@@ -126,7 +126,7 @@ function HowItWorks({ className }: { className?: string }) {
                             >
                                 <span
                                     className={cn(
-                                        "xl:w-13 lg:w-14 md:w-6 w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-bold mt-0.5 transition-all",
+                                        "xl:w-13 lg:w-6 md:w-6 w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-bold mt-0.5 transition-all",
                                         isActive
                                             ? "bg-primary text-primary-foreground"
                                             : "bg-muted text-muted-foreground group-hover:bg-accent"

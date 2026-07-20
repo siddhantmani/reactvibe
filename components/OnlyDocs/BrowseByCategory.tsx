@@ -18,10 +18,10 @@ const categories = [
                 <path d="M17 7a4 4 0 0 0-5-2 4 4 0 0 0 0 8 4 4 0 0 1 0 8 4 4 0 0 1-5-2" />
             </svg>
         ),
-        title: "Pricing Sections",
+        title: "Dashboard Systems",
         description:
-            "React pricing components with toggles, plans, and SaaS UI layouts",
-        link: "/docs/sections/zenith"
+            "Production-ready finance, reporting, budgeting, investment, and analytics dashboards.",
+        link: "/docs/dashboard-systems/finance-overview",
     },
 
     {
@@ -31,10 +31,10 @@ const categories = [
                 <path d="M9 10l3 3 3-3" />
             </svg>
         ),
-        title: "FAQ & Accordions",
+        title: "UI Blocks",
         description:
-            "React FAQ accordion components with animation and expandable UI",
-        link: "/docs/sections/glide-accordion"
+            "Data tables, charts, metrics, activity feeds, timelines, and SaaS interface blocks.",
+        link: "/docs/ui-blocks/transaction-table",
     },
 
     {
@@ -43,10 +43,10 @@ const categories = [
                 <path d="M21 15a4 4 0 0 1-4 4H7l-4 2V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
             </svg>
         ),
-        title: "Testimonials",
+        title: "Hero Sections",
         description:
-            "React testimonial components with sliders, carousels, and animations",
-        link: "/docs/sections/spotlight"
+            "Landing page heroes with animations, CTAs, navigation, and modern SaaS layouts.",
+        link: "/docs/hero-section/launch",
     },
 
     {
@@ -55,10 +55,10 @@ const categories = [
                 <path d="M9 9l10-4-4 10-2-3-4 4z" />
             </svg>
         ),
-        title: "CTAs & Footers",
+        title: "Testimonials",
         description:
-            "React CTA sections and footer components for landing pages",
-        link: "/docs/sections/signature"
+            "Customer testimonials, reviews, social proof, and carousel layouts.",
+        link: "/docs/sections/spotlight",
     },
 
     {
@@ -67,10 +67,10 @@ const categories = [
                 <rect x="3" y="8" width="18" height="8" rx="4" />
             </svg>
         ),
-        title: "Buttons",
+        title: "Interactive Components",
         description:
-            "Animated React button components with motion and hover effects",
-        link: "/docs/hero-section/wave-cta"
+            "Dropdowns, buttons, brand marquees, switches, and reusable UI components.",
+        link: "/docs/components/motion-dropdown",
     },
 
     {
@@ -81,8 +81,8 @@ const categories = [
         ),
         title: "Background Effects",
         description:
-            "Animated React backgrounds, gradients, and interactive effects",
-        link: "/docs/backgrounds/dark-fusion"
+            "Animated backgrounds, gradients, particles, and interactive visual effects.",
+        link: "/docs/backgrounds/dark-fusion",
     },
 
     {
@@ -94,8 +94,8 @@ const categories = [
         ),
         title: "Text Animations",
         description:
-            "React text animation components with reveal and motion effects",
-        link: "/docs/text-motion/linear-reveal"
+            "Animated headings, reveal effects, and motion typography for React.",
+        link: "/docs/text-motion/linear-reveal",
     },
 
     {
@@ -155,7 +155,7 @@ function BrowseByCategory({ className, onCategoryClick }: Props) {
             </motion.div>
 
             {/* Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
                 {categories.map((cat, index) => (
                     <motion.button
                         initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -173,7 +173,7 @@ function BrowseByCategory({ className, onCategoryClick }: Props) {
                         key={cat.title}
                         onClick={() => onCategoryClick?.(cat.title)}
                         className={cn(
-                            "group flex flex-col gap-3 rounded-2xl border p-5 text-left transition-all",
+                            "group flex flex-col gap-3 rounded-2xl border p-3 text-left transition-all",
                             "bg-card border-border hover:bg-accent",
                             "dark:bg-gradient-to-r dark:from-[#0b0b0b] dark:to-[#131212]",
                             "dark:border-[#1e1a30] dark:hover:border-[#3b2d6b] dark:hover:bg-[#16122a]"
@@ -181,10 +181,10 @@ function BrowseByCategory({ className, onCategoryClick }: Props) {
                     >
                         <Link href={cat.link}>
                             {/* Top */}
-                            <div className="flex items-start justify-between">
+                            <div className="flex items-start justify-between pb-5">
                                 <div
                                     className={cn(
-                                        "w-10 h-10 flex items-center justify-center rounded-lg border transition-all",
+                                        "p-1 flex items-center justify-center rounded-md border transition-all",
                                         "bg-muted text-foreground border-border",
                                         "dark:bg-[#1e1533] dark:border-[#2e2050] dark:text-[#a855f7]",
                                         "dark:group-hover:bg-[#2a1d4a] dark:group-hover:text-[#c084fc]",

@@ -92,7 +92,7 @@ function InvestmentHoldingsTable() {
     return (
 
         <div
-            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white p-2 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]`}
+            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:bg-[#070606] dark:border-white/10 p-2 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]`}
         >
 
             {/* Background Glow */}
@@ -109,13 +109,12 @@ function InvestmentHoldingsTable() {
                     <div>
 
                         <h2
-                            className={`${boldFont.className} text-[15px] tracking-[-0.03em] text-[#111111]`}
+                            className={`${boldFont.className} text-[15px] tracking-[-0.03em] text-[#111111] dark:text-white`}
                         >
                             Your Holdings
                         </h2>
-
                         <p
-                            className={`${boldFont.className} mt-1 text-[12px] text-black/70`}
+                            className={`${boldFont.className} mt-1 text-[12px] text-black/70 dark:text-white/60`}
                         >
                             Portfolio allocation overview
                         </p>
@@ -125,10 +124,10 @@ function InvestmentHoldingsTable() {
                 </div>
 
                 {/* Table */}
-                <div className="mt-6 overflow-hidden rounded-[16px] border border-black/[0.06] bg-black/[0.015]">
+                <div className="mt-6 overflow-hidden rounded-[16px] border border-black/[0.06] dark:border-white/10 bg-black/[0.015] dark:bg-white/[0.03]">
 
                     {/* Header */}
-                    <div className="grid grid-cols-[2.2fr_1fr_1fr_1.2fr_1.2fr_1.2fr_1.4fr] items-center border-b border-black/[0.06] bg-black/[0.02] px-6 py-4">
+                    <div className="grid grid-cols-[2.2fr_1fr_1fr_1.2fr_1.2fr_1.2fr_1.4fr] items-center border-b border-black/[0.06] dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.04] px-6 py-4">
 
                         {[
                             "Asset",
@@ -142,7 +141,7 @@ function InvestmentHoldingsTable() {
 
                             <p
                                 key={item}
-                                className={`${boldFont.className} text-[12px] whitespace-nowrap uppercase tracking-[0.04em] text-black/70`}
+                                className={`${boldFont.className} text-[12px] whitespace-nowrap uppercase tracking-[0.04em] text-black/70 dark:text-white/50`}
                             >
                                 {item}
                             </p>
@@ -156,7 +155,7 @@ function InvestmentHoldingsTable() {
 
                         <div
                             key={index}
-                            className="group grid grid-cols-[2.2fr_1fr_1fr_1.2fr_1.2fr_1.2fr_1.4fr] items-center border-b border-black/[0.05] px-6 py-5 transition-all duration-300 hover:bg-black/[0.02]"
+                            className="group grid grid-cols-[2.2fr_1fr_1fr_1.2fr_1.2fr_1.2fr_1.4fr] items-center border-b border-black/[0.05] dark:border-white/10 px-6 py-5 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
                         >
 
                             {/* Asset */}
@@ -173,13 +172,13 @@ function InvestmentHoldingsTable() {
                                 <div>
 
                                     <h3
-                                        className={`${boldFont.className} text-[12px] text-[#111111] transition-colors duration-300 group-hover:text-black`}
+                                        className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white transition-colors duration-300 group-hover:text-black dark:group-hover:text-white`}
                                     >
                                         {item.asset}
                                     </h3>
 
                                     <p
-                                        className={`${boldFont.className} mt-1 text-[10px] text-black/40`}
+                                        className={`${boldFont.className} mt-1 text-[10px] text-black/40 dark:text-white/45`}
                                     >
                                         {item.symbol}
                                     </p>
@@ -190,35 +189,35 @@ function InvestmentHoldingsTable() {
 
                             {/* Type */}
                             <p
-                                className={`${boldFont.className} text-[12px] text-black/65`}
+                                className={`${boldFont.className} text-[12px] text-black/65 dark:text-white/70`}
                             >
                                 {item.type}
                             </p>
 
                             {/* Quantity */}
                             <p
-                                className={`${boldFont.className} text-[12px] text-[#111111]`}
+                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
                             >
                                 {item.quantity}
                             </p>
 
                             {/* Avg */}
                             <p
-                                className={`${boldFont.className} text-[12px] text-[#111111]`}
+                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
                             >
                                 {item.avgPrice}
                             </p>
 
                             {/* Current */}
                             <p
-                                className={`${boldFont.className} text-[12px] text-[#111111]`}
+                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
                             >
                                 {item.currentPrice}
                             </p>
 
                             {/* Value */}
                             <p
-                                className={`${boldFont.className} text-[12px] text-[#111111]`}
+                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
                             >
                                 {item.value}
                             </p>
@@ -254,9 +253,8 @@ function InvestmentHoldingsTable() {
                     <div className="p-4">
 
                         <button
-                            className={`${boldFont.className} flex h-11 w-full items-center justify-center gap-2 rounded-[10px] border border-black/[0.06] bg-white text-[12px] font-semibold text-[#111111] shadow-[0_2px_10px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-black hover:text-white hover:shadow-[0_10px_30px_rgba(0,0,0,0.10)]`}
+                            className={`${boldFont.className} flex h-11 w-full items-center justify-center gap-2 rounded-[10px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] text-[12px] font-semibold text-[#111111] dark:text-white/60 dark:hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.03)] dark:shadow-none hover:bg-black dark:hover:bg-[#0a0909] hover:text-white hover:shadow-[0_10px_30px_rgba(0,0,0,0.10)] dark:hover:shadow-none`}
                         >
-
                             View all holdings
 
                             <ArrowRight

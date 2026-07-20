@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Budget Comparison Chart UI for React & Next.js | React Vibe",
+    title: "Budget vs Actual Chart for React | React Vibe",
     description:
-        "Responsive budget comparison chart UI for React with spending analytics, expense tracking, and modern dashboard visualization.",
+        "Build a responsive Budget vs Actual Chart for React dashboards. Perfect for budget comparison, expense tracking, spending analysis, and financial dashboards.",
 }
 
 

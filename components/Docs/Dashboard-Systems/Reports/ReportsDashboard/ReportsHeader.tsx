@@ -26,12 +26,12 @@ const fontBold = Manrope({
 function ReportsHeader() {
     return (
         <div className='flex justify-between'>
-            {/* Left Content */}
+
             <div>
                 <LinearReveal
                     as='h1'
-                    Text="Dashboard"
-                    className={`${fontBold.className} text-[19px] text-[#111827] `}
+                    Text="Reports"
+                    className={`${fontBold.className} text-[19px] text-[#111827] dark:text-white `}
                 />
 
                 <p className={`${fontBold.className} text-[11px] text-[#6b7280] `}>
@@ -39,62 +39,49 @@ function ReportsHeader() {
                 </p>
             </div>
 
-            {/* Right Content */}
-            <div className="flex items-center gap-2">
 
-                {/* Search */}
-                <div className="rounded-[5px] border border-black/10 bg-white px-5 flex items-center justify-between w-[20%]">
+            <div className="flex items-center gap-5">
+
+
+                <div className="rounded-[5px] border border-black/10 bg-white dark:bg-[#1a1818] px-2 flex items-center justify-between w-[100%]">
                     <input
                         type="text"
-                        placeholder="Search transactions, accounts..."
-                        className={`${menuName.className} placeholder:text-black text-[12px] rounded-[2px] mr-2 py-2 text-black focus:outline-none w-[100%] max-w-lg`}
+                        placeholder="Search here..."
+                        className={`${menuName.className} placeholder:text-black dark:placeholder:text-white/70 dark:text-white text-[12px] rounded-[2px] px-2 py-2 text-black focus:outline-none w-full max-w-lg`}
                     />
 
-
                     <Search
-                        className="text-[#111827]"
+                        className="text-[#111827] dark:text-white"
                         size={14}
                         strokeWidth={2.2}
                     />
                 </div>
                 <div className='flex items-center gap-3'>
-
-                    {/* Notification */}
-                    <button className="relative p-2 rounded-full bg-white flex items-center justify-center shadow-sm border border-black/5">
+                    <button className="relative p-2 rounded-full bg-white dark:bg-[#242424] flex items-center justify-center shadow-sm border border-black/5">
                         <Bell
                             size={18}
-                            className="text-[#111827]"
+                            className="text-[#111827] dark:text-white"
                             strokeWidth={2.2}
                         />
 
                         <span className="absolute top-[10px] right-[10px] w-[9px] h-[9px] bg-red-500 rounded-full border-2 border-white" />
                     </button>
 
-                    {/* Mail */}
-                    <button className="p-2 rounded-full bg-white flex items-center justify-center shadow-sm border border-black/5">
+                    <button className="p-2 rounded-full bg-white dark:bg-[#242424]  flex items-center justify-center shadow-sm border border-black/5">
                         <Mail
                             size={18}
-                            className="text-[#111827]"
+                            className="text-[#111827] dark:text-white"
                             strokeWidth={2.2}
                         />
                     </button>
                 </div>
-
                 <div>
-                    <Separator
-                        direction='vertical'
-                        className='bg-black/20'
-                    />
+                    <ReportsExportHeader />
                 </div>
-                {/* Profile */}
-
-
-                <ReportsExportHeader />
-
                 <div>
                     <Separator
                         direction='vertical'
-                        className='bg-black/20'
+                        className='bg-black/20 dark:bg-white/20'
                     />
                 </div>
 
@@ -107,6 +94,8 @@ function ReportsHeader() {
                         className="flex justify-start p-2"
                     >
                         <Dropdown
+                            menuClassName="bg-white text-black dark:bg-[#0c0c0c] border-white/10"
+                            itemClassName="text-black dark:text-white"
                             trigger={
                                 <div className="flex items-center gap-4 cursor-pointer z-50">
 
@@ -119,7 +108,7 @@ function ReportsHeader() {
                                     />
 
                                     <div>
-                                        <h3 className={`${fontBold.className} text-[11px] text-[#111827] whitespace-nowrap flex items-center gap-1 `}>
+                                        <h3 className={`${fontBold.className} text-[11px] text-[#111827] dark:text-white whitespace-nowrap flex items-center gap-1 `}>
                                             Alex Johnson <span><ChevronDown size={13} /></span>
                                         </h3>
 
@@ -148,7 +137,6 @@ function ReportsHeader() {
                                 className='dark:bg-white/15 bg-black/15 w-full my-1'
                             />
 
-                            {/* SECURITY */}
                             <DropdownNestedContainer>
                                 <DropdownNestedHeading>
                                     Security

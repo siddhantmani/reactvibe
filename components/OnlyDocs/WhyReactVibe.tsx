@@ -19,9 +19,9 @@ const features = [
                 <circle cx="12" cy="12" r="3" />
             </svg>
         ),
-        title: "No React Library Overhead",
+        title: "✓ Copy. Customize. Ship.",
         description:
-            "No React Vibe install, no wrapper library, and no bundle bloat. Just copy paste React components and use only the dependencies you need.",
+            "No React Vibe package to install. Install only the dependencies you need, copy the source code, and ship production-ready React components.",
     },
     {
         icon: (
@@ -30,9 +30,9 @@ const features = [
                 <path d="M10.81 15.312a4.5 4.5 0 01-1.242-7.244l4.5-4.5a4.5 4.5 0 016.364 6.364l-1.757 1.757" />
             </svg>
         ),
-        title: "Full Code Ownership",
+        title: "✓ Production-Ready UI Library",
         description:
-            "Get real, customizable React components — not black-box abstractions. Edit everything, extend freely, and integrate into your own system.",
+            "Build faster with dashboard systems, UI blocks, hero sections, pricing sections, charts, data tables, and animated components for modern SaaS applications.",
     },
     {
         icon: (
@@ -41,9 +41,9 @@ const features = [
                 <circle cx="12" cy="7" r="4" />
             </svg>
         ),
-        title: "Built for Modern React Development",
+        title: "✓ Full Code Ownership",
         description:
-            "Production-ready React UI components designed with animation, performance, and scalability in mind — built using tools like Framer Motion.",
+            "Own every line of code. Customize, extend, and integrate components into your own design system without vendor lock-in.",
     },
 ]
 
@@ -51,7 +51,7 @@ function WhyReactVibe({ className }: { className?: string }) {
     return (
         <div className={cn("w-full px-2 py-10", className)}>
             <motion.h2
-                initial={{ opacity: 0, filter: "blur(8px)" }}
+                initial={{ opacity: 0, filter: "blur(4px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{
                     once: true,
@@ -68,14 +68,14 @@ function WhyReactVibe({ className }: { className?: string }) {
                     "text-2xl font-bold mb-6 tracking-tight text-foreground"
                 )}
             >
-                Why Choose React Vibe for React UI Components?
+                Why Developers Choose React Vibe?
             </motion.h2>
 
             {/* Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {features.map((feature, index) => (
                     <motion.div
-                        initial={{ opacity: 0, filter: "blur(8px)" }}
+                        initial={{ opacity: 0, filter: "blur(4px)" }}
                         whileInView={{ opacity: 1, filter: "blur(0px)" }}
                         viewport={{
                             once: true,

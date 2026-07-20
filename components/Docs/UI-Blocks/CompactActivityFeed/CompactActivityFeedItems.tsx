@@ -38,7 +38,7 @@ function CompactActivityFeedItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A compact activity feed UI built for fintech and SaaS dashboards. Includes realtime transaction updates, payment activity tracking, and responsive feed layouts for modern applications.
+                    A reusable Dashboard Activity Feed component for React applications, featuring recent activity, account activity, payment history, transaction updates, and live dashboard feeds.
                 </motion.p>
 
             </div>
