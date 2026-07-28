@@ -18,9 +18,8 @@ import WhatsNew from "@/components/Docs/WhatsNew/WhatsNew";
 
 function VibeHero() {
     return (
-
-        <div className="flex flex-col justify-center items-center xl:space-y-12 overflow-hidden">
-            <div className="relative xl:top-8 top-0">
+        <div className="flex flex-col justify-center items-center 2xl:space-y-12 xl:space-y-14 lg:space-y-5 overflow-hidden">
+            <div className="relative xl:top-8 top-0 2xl:top-6">
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
                     whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -54,21 +53,21 @@ function VibeHero() {
                     delay: 0.3
                 }}
             >
-                <div className="text-center xl:text-base/18 text-base/12">
+                <div className="text-center xl:text-base/18 text-base/12 md:pt-5 lg:pt-0 pt-2">
                     <LinearReveal
                         as={"h1"}
                         Text="Motion-first"
-                        className={` ${AnimatedFont.className} xl:text-[90px] text-[40px]`}
+                        className={` ${AnimatedFont.className} 2xl:text-[90px] xl:text-[80px] lg:text-[50px] md:text-5xl text-[40px]`}
                     />
                     <LinearReveal
                         as={"h1"}
                         Text="React Components"
-                        className={` ${AnimatedFont.className} xl:text-[90px] text-[40px]`}
+                        className={` ${AnimatedFont.className} 2xl:text-[90px] xl:text-[80px] lg:text-[50px] md:text-5xl text-[40px]`}
                     />
                 </div>
             </motion.div>
             {/* <h1 className="xl:text-6xl">Motion-first React components</h1> */}
-            <div className="flex flex-col justify-center items-center xl:space-y-5 xl:text-2xl">
+            <div className="flex flex-col justify-center items-center xl:space-y-5 md:pt-10 lg:pt-0 2xl:pt-3 pt-10">
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
                     animate={{ opacity: 1, filter: "blur(0px)" }}
@@ -85,7 +84,7 @@ function VibeHero() {
                     }}
 
                 >
-                    <h2 className={`${HeroSubHeading.className} text-center capitalize px-20`}>
+                    <h2 className={`${HeroSubHeading.className} text-center capitalize px-20 lg:pt-5 xl:pt-0 text-lg 2xl:text-2xl`}>
                         Production-Ready Motion Components. <br /> Copy, Paste, Ship.
                     </h2>
                 </motion.div>
@@ -105,7 +104,7 @@ function VibeHero() {
                     }}
                 >
 
-                    <div className='relative xl:-top-[100px] -top-[60px]'>
+                    <div className='relative 2xl:-top-[80px] xl:-top-[100px] lg:-top-[53px] md:-top-[43px] -top-[63px]'>
                         <HeroSectionBTN />
                     </div>
                 </motion.div>

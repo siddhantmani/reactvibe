@@ -11,7 +11,6 @@ const BTNFont = Figtree({
 })
 
 function HeroSectionBTN() {
-    // 🔥 Rotating border setup (same as Footer / NavbarCTA)
     const angle = useMotionValue(0);
     const animatedBorder = useTransform(
         angle,
@@ -172,7 +171,7 @@ function HeroSectionBTN() {
                     {/* --- BUTTON WITH ROTATING BORDER --- */}
                     <div className="relative z-10 flex items-center justify-center">
                         {/* Rotating border wrapper */}
-                        <Link href="/docs">
+                        <Link href="/docs/explore-components">
                             <motion.div
                                 className="rounded-full p-[1px] scale-105"
                                 style={{ background: animatedBorder }}
@@ -181,7 +180,7 @@ function HeroSectionBTN() {
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className={` ${BTNFont.className} px-6 cursor-pointer py-3 text-base font-semibold rounded-full bg-gradient-to-b from-[#151515] via-[#0a0a0a] to-[#0e0e0e] text-[#ffffff] transition-all xl:text-sm`}
+                                    className={` ${BTNFont.className} px-6 cursor-pointer p-4 text-xs md:text-sm font-semibold rounded-full bg-gradient-to-b from-[#151515] via-[#0a0a0a] to-[#0e0e0e] text-[#ffffff] transition-all xl:text-sm`}
                                     style={{
                                         boxShadow: `
                                     0px 12px 40px rgba(60,80,180,0.08),

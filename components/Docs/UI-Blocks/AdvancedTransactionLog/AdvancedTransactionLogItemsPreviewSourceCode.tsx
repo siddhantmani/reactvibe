@@ -53,7 +53,8 @@ function AdvancedTransactionLogItemsPreviewSourceCode() {
                     Text='Step 2'
                 />
                 <p className={`${LinearRevealFont.className} dark:text-white text-black text-sm`}>Use <Link href="/docs/text-motion/linear-reveal">
-                    <span className='underline underline-offset-2'>Linear Reveal</span></Link> </p>
+                    <span className='underline underline-offset-2'>Linear Reveal</span></Link>
+                </p>
             </div>
 
         </div>
