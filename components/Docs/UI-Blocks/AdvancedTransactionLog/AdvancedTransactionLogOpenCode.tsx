@@ -19,6 +19,7 @@ function AdvancedTransactionLogOpenCode() {
         Components: [
             { name: "page.tsx", path: "/UI-Blocks/AdvancedTransactionLog/page.tsx" },
             { name: "DashboardFrame.tsx", path: "/DashboardFrame.tsx" },
+            { name: "AdvancedTransactionLog.tsx", path: "/UI-Blocks/AdvancedTransactionLog/AdvancedTransactionLog.tsx" },
         ],
     };
 

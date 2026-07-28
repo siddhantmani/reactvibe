@@ -9,6 +9,9 @@ import { motion } from "framer-motion"
 import { DM_Serif_Display, Figtree } from "next/font/google";
 import Link from "next/link";
 import RenderOnRoute from "@/components/RenderOnRoute";
+import MultiColor from "@/components/Landing-Page/VibeHero/MultiColor";
+import { componentsData } from "@/lib/componentsData";
+import ComponentPreviewCard from "@/components/Docs/ExploreComponents/ComponentPreviewCard";
 
 
 const footerFont = Figtree({
@@ -24,19 +27,24 @@ const AnimatedFont = DM_Serif_Display({
 
 export default function Home() {
   return (
-    <div className="overflow-hidden dark:text-white text-white">
-      <div>
+    <div className=" text-white overflow-hidden">
+      <div className="relative">
         <RenderOnRoute path="/" withTransition>
-          <VibeHeroAnimation />
+          <div className="relative">
+            <MultiColor />
+          </div>
+          <div className="absolute -top-10 w-full">
+            <VibeHeroAnimation />
+          </div>
         </RenderOnRoute>
       </div>
       <div className="w-full absolute top-0 ">
         <DeskHeader />
-        <div className="xl:py-0 py-20">
+        <div className="2xl:pt-35 xl:pt-16 lg:pt-15 md:pt-15 pt-6">
           <VibeHero />
         </div>
       </div>
-      <div className="bg-linear-to-t from-[#000000] to-transparent absolute bottom-0 w-full py-20">
+      <div className="bg-linear-to-t from-[#070606] to-transparent py-20 absolute w-full bottom-0">
         <motion.div
           initial={{ opacity: 0, filter: "blur(8px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
