@@ -29,6 +29,7 @@ export const pricingBlocks: PricingBlock[] = [
         slug: "aurora-pricing",
         description: "A clean SaaS pricing section with three pricing tiers, monthly/yearly billing, a featured plan, and built-in dark mode support.",
         preview: Page,
+        badge: "UPDATED",
         tags: ["Monthly/Yearly Toggle", "Gradient Highlight", "Popular Badge"],
         createdAt: "2026-7-29",
     },
@@ -37,6 +38,7 @@ export const pricingBlocks: PricingBlock[] = [
         slug: "nova-pricing",
         description: "A three-tier subscription pricing component with monthly/yearly billing, a highlighted popular plan, and dark mode support.",
         preview: page,
+        badge: "UPDATED",
         tags: ["Monthly/Yearly Toggle", "Multi-Tier Grid", "Dark Center Card"],
         createdAt: "2026-7-29",
     },
@@ -45,6 +47,7 @@ export const pricingBlocks: PricingBlock[] = [
         slug: "zenith",
         description: "A reusable React SaaS pricing section with monthly/yearly billing, subscription plans, responsive cards, and dark mode support.",
         preview: zenithPage,
+        badge: "UPDATED",
         tags: ["Monthly/Yearly Toggle", "Minimalist Card", "Popular Badge"],
         createdAt: "2026-7-29",
     }

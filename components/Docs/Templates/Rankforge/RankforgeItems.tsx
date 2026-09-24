@@ -6,7 +6,7 @@ import { Bricolage_Grotesque } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 
-import RankforgeGif from "@/images/gif.gif";
+import RankforgeGif from "@/images/rankforge.gif";
 
 import OrbitBorder from "../../Components/Orbit-Border/OrbitBorder";
 import AnimatedGradientBadge from "@/components/AnimatedGradientBadge";
@@ -34,7 +34,6 @@ import {
 import Link from "next/link";
 import Separator from "../../Separator";
 import { useTheme } from "@/components/ThemeProvider";
-import Coupon from "../Taskforge/Coupon";
 import RankforgeCoupon from "./RankforgeCoupon";
 
 const lightRingColors = ["#141414,#ffffff, #ffffff, #141414"];
