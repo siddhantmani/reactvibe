@@ -1,16 +1,11 @@
-"use clinet"
-import { motion } from "framer-motion"
+"use client"
 
-import React from "react";
 import { ArrowRight } from "lucide-react";
-
-import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
+import { manrope } from "@/lib/fonts";
+import { useTheme } from "@/components/ThemeProvider";
+import Glow from "@/components/Docs/Components/Glow/Glow";
 
-const boldFont = Manrope({
-    weight: "500",
-    subsets: ["latin"],
-});
 
 const expenses = [
     {
@@ -56,7 +51,6 @@ function DonutChart() {
     const stroke = 42;
     const circumference = 2 * Math.PI * radius;
 
-    // ✅ Calculate all offsets before render, no mutation
     const segments = expenses.reduce<{ item: typeof expenses[0]; dash: number; offset: number }[]>(
         (acc, item) => {
             const dash = (item.percentage / 100) * circumference;
@@ -70,7 +64,7 @@ function DonutChart() {
     return (
         <div className="relative">
 
-            <svg viewBox="0 0 280 280" className="-rotate-90 w-full max-w-[230px] aspect-square">
+            <svg viewBox="0 0 280 280" className="-rotate-90 w-40 h-40">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -91,15 +85,15 @@ function DonutChart() {
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                <p className={`${boldFont.className} text-[10px] text-[#4b5563] dark:text-white/60`}>
+                <p className={`${manrope.className} text-[10px] text-gray-500 dark:text-[#ffffff] transition-colors duration-300`}>
                     Total Expense
                 </p>
 
                 <LinearReveal
-                    as="h2"
+                    as='h2'
                     delay={0.4}
                     Text="$4,680"
-                    className={`${boldFont.className} text-[25px] font-bold tracking-[-1px] text-[#111827] dark:text-white mt-2`}
+                    className={`${manrope.className} text-[20px] font-bold tracking-[-1px] text-gray-900 dark:text-[#ffffff] mt-2 transition-colors duration-300`}
                 />
 
             </div>
@@ -116,30 +110,30 @@ interface ExpenseItemProps {
 
 function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
     return (
-        <div className="flex items-center justify-between gap-12">
+        <div className="flex items-center justify-between @md:gap-10 @lg:gap-20 @xl:gap-15 @2xl:gap-10">
 
             {/* Left */}
             <div className="flex items-center gap-4">
 
                 <div
-                    className="w-3 h-3 rounded-full"
+                    className="w-2 h-2 rounded-full"
                     style={{
                         background: color,
                     }}
                 />
 
-                <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
+                <p className={`${manrope.className} text-[11px] text-gray-700 dark:text-[#ffffff] transition-colors duration-300`}>
                     {title}
                 </p>
             </div>
 
             {/* Percentage */}
-            <p className={`${boldFont.className} text-[11px] text-[#374151] dark:text-white text-start`}>
+            <p className={`${manrope.className} text-[9px] text-gray-700 dark:text-[#ffffff] text-right transition-colors duration-300`}>
                 {percentage}%
             </p>
 
             {/* Amount */}
-            <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white text-right`}>
+            <p className={`${manrope.className} text-[11px] text-gray-900 dark:text-[#ffffff] text-right transition-colors duration-300`}>
                 {amount}
             </p>
         </div>
@@ -147,38 +141,36 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
 }
 
 function ReportsSpendingBreakdown() {
+    const { theme } = useTheme()
     return (
-        <motion.div
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{
-                once: true,
-                amount: 0.2, // Trigger when 20% visible
-                margin: "50px"
-            }}
-            transition={{
-                duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                delay: 0.2
-            }}
-            className="w-full rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full rounded-[15px] transition-colors duration-300  rounded-2xl border dark:border-[#222121] border-black/10">
+            <Glow
+                backgroundColor={`${theme === "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full transition-colors duration-300"
+            >
 
-            {/* Header */}
-            <h2 className={`${boldFont.className} text-[14px] text-black dark:text-white`}>
-                Executive Summary
-            </h2>
+                {/* Header */}
+                <h2 className={`${manrope.className} text-[12px] text-gray-900 dark:text-white transition-colors duration-300`}>
+                    Executive Summary
+                </h2>
 
-            {/* Content */}
-            <div className="flex items-center gap-10">
+                {/* Content */}
+                <div className="flex flex-col @xl:flex-row @xl:items-center justify-between">
 
-                {/* Donut Chart */}
-                <div className="flex items-center justify-center">
-                    <DonutChart />
-                </div>
+                    {/* Donut Chart */}
+                    <div className="flex items-center justify-center">
+                        <DonutChart />
+                    </div>
 
-                {/* Expense List */}
-                <div className="">
-
+                    {/* Expense List */}
                     <div className="space-y-5">
                         {expenses.map((item, index) => (
                             <ExpenseItem
@@ -191,18 +183,18 @@ function ReportsSpendingBreakdown() {
                         ))}
                     </div>
                 </div>
-            </div>
 
-            {/* Footer */}
-            <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[10px] text-[#006b46] dark:text-[#5ED19B] hover:opacity-80 transition-opacity`}>
-                View full breakdown
+                {/* Footer */}
+                <button className={`${manrope.className} mt-5 flex items-center gap-3 text-[10px] text-gray-900 dark:text-[#ffffff] hover:opacity-80 transition-opacity transition-colors duration-300`}>
+                    View full breakdown
 
-                <ArrowRight
-                    size={14}
-                    strokeWidth={2.4}
-                />
-            </button>
-        </motion.div>
+                    <ArrowRight
+                        size={14}
+                        strokeWidth={2.4}
+                    />
+                </button>
+            </Glow>
+        </div>
     );
 }
 

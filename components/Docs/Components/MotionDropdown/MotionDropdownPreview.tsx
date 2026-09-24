@@ -24,7 +24,7 @@ function MotionDropdownPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="flex justify-start p-2"
+            className="flex justify-center p-2"
         >
             <Dropdown
                 menuClassName="bg-white text-black dark:bg-black dark:text-white border-white/10"

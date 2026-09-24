@@ -1,16 +1,10 @@
 "use client"
 
 import * as React from "react"
-import { useTheme } from "next-themes"
 import { BsHighlights } from "react-icons/bs";
+import { useTheme } from "./ThemeProvider";
 export default function ToggleDarkMode() {
-    const { theme, setTheme } = useTheme()
-
-    // Toggle between light and dark
-    const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark")
-    }
-
+    const { toggleTheme } = useTheme();
     return (
         <button
             onClick={toggleTheme}

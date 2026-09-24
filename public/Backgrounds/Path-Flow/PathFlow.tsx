@@ -1,7 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
 
-// Import Images for left and right
 // left
 import apple from "@/images/brand/apple.svg"
 import x from "@/images/brand/x.svg"
@@ -27,7 +26,7 @@ function PathFlow() {
     const rightBrands = [youtube, notion, figma, xbox, youtube, notion, figma, xbox]
 
     return (
-        <div className=''>
+        <div className="w-full overflow-hidden bg-white dark:bg-[#0c0c0c] transition-colors duration-300">
             <motion.div
                 initial={{ opacity: 0, filter: "blur(8px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
@@ -37,12 +36,13 @@ function PathFlow() {
                     delay: 0.5,
                 }}
             >
-                {/* FIXED container */}
-                <div className="relative flex items-center justify-center w-[500px] h-[500px] scale-[250%]">
+                {/* Increased min-height to give the taller SVG room to breathe */}
+                <div className="relative flex items-center justify-center w-full min-h-[550px]">
 
                     {/* SVG ANIMATIONS */}
+                    {/* Increased viewBox height from 300 to 700 to fit the new taller paths */}
                     <svg
-                        viewBox="0 0 800 400"
+                        viewBox="-350 0 1500 700"
                         className="absolute inset-0 w-full h-full"
                         preserveAspectRatio="xMidYMid meet"
                     >
@@ -58,27 +58,29 @@ function PathFlow() {
 
                         {/* LEFT CURVES WITH ANIMATED Images */}
                         {leftCurves.map((offset, i) => {
+                            // Stretched Y coordinates: 20 -> 250 -> 450 -> 680
+                            // Increased X curve intensity: 40 -> 80 so it stays curvy
                             const pathD = `
                                 M ${CENTER_X + offset} 20
-                                C ${CENTER_X + offset + 40} 120,
-                                  ${CENTER_X + offset + 40} 180,
-                                  ${CENTER_X + offset} 280
+                                C ${CENTER_X + offset + 80} 250,
+                                  ${CENTER_X + offset + 80} 450,
+                                  ${CENTER_X + offset} 680
                             `
 
                             return (
                                 <g key={`left-${i}`}>
                                     <motion.path
                                         d={pathD}
-                                        stroke="#000000"
-                                        strokeWidth="0.1"
+                                        className="stroke-black dark:stroke-white transition-colors duration-300"
+                                        strokeWidth="1"
                                         fill="none"
-                                        opacity="0.35"
+                                        opacity="0.15"
                                     />
                                     <image
                                         href={leftBrands[i].src}
-                                        width="30"
-                                        height="30"
-                                        x="-10"
+                                        width="70"
+                                        height="70"
+                                        x="-30"
                                         y="-10"
                                         opacity="0.7"
                                         filter="url(#glow)"
@@ -95,21 +97,21 @@ function PathFlow() {
 
                         {/* CENTER LINE WITH ANIMATED IMAGE */}
                         <g>
+                            {/* Stretched bottom Y coordinate to 680 */}
                             <motion.path
-                                d={`M ${CENTER_X} 20 L ${CENTER_X} 280`}
-                                stroke="#000000"
-                                strokeWidth="0.1"
+                                d={`M ${CENTER_X} 20 L ${CENTER_X} 680`}
+                                className="stroke-black dark:stroke-white transition-colors duration-300"
+                                strokeWidth="1"
                                 fill="none"
-                                opacity="0.35"
                                 initial={{ opacity: 0 }}
-                                animate={{ opacity: 0.35 }}
+                                animate={{ opacity: 0.15 }}
                                 transition={{ duration: 0.8, delay: 0.4 }}
                             />
                             <image
                                 href={apple.src}
-                                width="30"
-                                height="30"
-                                x="-10"
+                                width="70"
+                                height="70"
+                                x="-30"
                                 y="-10"
                                 opacity="0.7"
                                 filter="url(#glow)"
@@ -117,34 +119,36 @@ function PathFlow() {
                                 <animateMotion
                                     dur="4.5s"
                                     repeatCount="indefinite"
-                                    path={`M ${CENTER_X} 20 L ${CENTER_X} 280`}
+                                    path={`M ${CENTER_X} 20 L ${CENTER_X} 680`}
                                 />
                             </image>
                         </g>
 
                         {/* RIGHT CURVES WITH ANIMATED Images */}
                         {rightCurves.map((offset, i) => {
+                            // Stretched Y coordinates: 20 -> 250 -> 450 -> 680
+                            // Increased X curve intensity: -40 -> -80 so it stays curvy
                             const pathD = `
                                 M ${CENTER_X + offset} 20
-                                C ${CENTER_X + offset - 40} 120,
-                                  ${CENTER_X + offset - 40} 180,
-                                  ${CENTER_X + offset} 280
+                                C ${CENTER_X + offset - 80} 250,
+                                  ${CENTER_X + offset - 80} 450,
+                                  ${CENTER_X + offset} 680
                             `
 
                             return (
                                 <g key={`right-${i}`}>
                                     <motion.path
                                         d={pathD}
-                                        stroke="#000000"
-                                        strokeWidth="0.1"
+                                        className="stroke-black dark:stroke-white transition-colors duration-300"
+                                        strokeWidth="1"
                                         fill="none"
-                                        opacity="0.35"
+                                        opacity="0.15"
                                     />
                                     <image
                                         href={rightBrands[i].src}
-                                        width="30"
-                                        height="30"
-                                        x="-10"
+                                        width="70"
+                                        height="70"
+                                        x="-35"
                                         y="-10"
                                         opacity="0.7"
                                         filter="url(#glow)"
@@ -158,7 +162,6 @@ function PathFlow() {
                                 </g>
                             )
                         })}
-
                     </svg>
                 </div>
             </motion.div>

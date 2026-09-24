@@ -10,10 +10,25 @@ const OrbitFontFont = Bricolage_Grotesque({
     subsets: ['vietnamese']
 });
 import { motion } from 'framer-motion'
+import TablePorpsForOriginItems from './TablePorpsForOriginItems';
 
 function OriginItems() {
     return (
-        <div className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-3xl space-y-7'>
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(3px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{
+                once: true,
+                amount: 0.2,
+                margin: "50px"
+            }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2
+            }}
+            exit={{ opacity: 0, y: -10 }}
+            className='px-2 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-2xl space-y-7'>
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}
@@ -21,28 +36,15 @@ function OriginItems() {
                     Text='Origin'
                 />
 
-                <motion.p
-                    initial={{ opacity: 0, filter: "blur(8px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2, // Trigger when 20% visible
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                        delay: 0.2
-                    }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-black/70 dark:text-white/70 text-[13px]">
-                    A flexible React logo grid component designed for modern landing pages, combining brand visibility with motion-driven UI. This component supports animated brand logo sections in React, making it ideal for building logo showcase React components, SaaS “trusted by” sections, and company logos sections in React. Beyond simple grids, it can also be adapted into integration logo UIs or even a React network diagram UI component, helping visualize connections between platforms, partners, or services with smooth animations.
-                </motion.p>
+                <p className="text-black/70 dark:text-white/70 text-[13px]">
+                    An animated network component for visually connecting apps, services, brands, or other entities around a central origin. Use it for SaaS integrations, partner ecosystems, connected services, relationship diagrams, or product networks.
+                </p>
             </div>
             <div className='border-black rounded-2xl'>
                 <OriginItemsPreview />
+                <TablePorpsForOriginItems />
             </div>
-        </div>
+        </motion.div>
     )
 }
 

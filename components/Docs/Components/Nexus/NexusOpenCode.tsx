@@ -16,8 +16,8 @@ function NexusOpenCode() {
     // Folder & File Tree
     const fileTree = {
         Components: [
-            { name: "Page.tsx", path: "/Components/Nexus/Page.tsx" },
-            { name: "Nexus.tsx", path: "/Components/Nexus/Nexus.tsx" },
+            { name: "Page.tsx", path: "/Motion/Nexus/Page.tsx" },
+            { name: "Nexus.tsx", path: "/Motion/Nexus/Nexus.tsx" },
         ],
     };
 
@@ -137,7 +137,7 @@ function NexusOpenCode() {
 
                                 {/* Monaco Editor */}
                                 <Editor
-                                    height="500px"
+                                    height="700px"
                                     defaultLanguage="typescript"
                                     value={code}
                                     theme="vs-dark"

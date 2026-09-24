@@ -1,15 +1,12 @@
 "use client"
 
-import React from "react"
+import Glow from "@/components/Docs/Components/Glow/Glow"
+import { useTheme } from "@/components/ThemeProvider"
+import { manrope } from "@/lib/fonts"
 import {
     ArrowRight,
 } from "lucide-react"
-import { Manrope } from "next/font/google"
 
-const boldFont = Manrope({
-    weight: "600",
-    subsets: ["latin"],
-})
 
 const transactions = [
     {
@@ -19,7 +16,6 @@ const transactions = [
         amount: "-$1,892.00",
         logo: "",
         logoBg: "bg-black",
-        logoText: "text-white",
     },
     {
         asset: "Vanguard S&P 500 ETF (VOO)",
@@ -27,8 +23,7 @@ const transactions = [
         action: "Buy 5 shares",
         amount: "-$3,164.00",
         logo: "V",
-        logoBg: "bg-[#991B1B]",
-        logoText: "text-white",
+        logoBg: "bg-[#B91C1C]",
     },
     {
         asset: "Microsoft Corp. (MSFT)",
@@ -37,140 +32,110 @@ const transactions = [
         amount: "-$3,322.40",
         logo: "◼",
         logoBg: "bg-[#2563EB]",
-        logoText: "text-white",
     },
 ]
 
 function InvestmentTransactionsList() {
-
+    const { theme } = useTheme()
     return (
+        <div>
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full rounded-2xl border dark:border-[#222121] border-black/10"
+            >
+                <div className="relative z-10">
 
-        <div
-            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] p-2 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)] dark:shadow-none w-[450px]`}
-        >
+                    {/* Top */}
+                    <div className="flex items-center justify-between">
 
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.04),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.05),_transparent_45%)]" />
-
-            {/* Soft Glow */}
-            <div className="absolute bottom-0 right-0 h-[280px] w-[280px] rounded-full bg-[#22C55E]/[0.04] dark:bg-[#22C55E]/[0.08] blur-3xl" />
-
-            <div className="relative z-10">
-
-                {/* Top */}
-                <div className="flex items-center justify-between">
-
-                    <div>
-
-                        <h2
-                            className={`${boldFont.className} text-[13px] tracking-[-0.03em] text-[#111111] dark:text-white`}
-                        >
+                        <h2 className={`${manrope.className} text-[12px] text-black dark:text-white`}>
                             Recent Transactions
                         </h2>
 
-                        <p
-                            className={`${boldFont.className} mt-1 text-[10px] text-black/45 dark:text-white/60`}
-                        >
-                            Latest portfolio activity
-                        </p>
+                        <button className={`${manrope.className} flex items-center gap-2 text-[12px] font-semibold text-[#22C55E] transition-all duration-300 hover:gap-3`}>
+
+                            View all
+
+                            <ArrowRight
+                                size={16}
+                                strokeWidth={2.5}
+                            />
+
+                        </button>
 
                     </div>
 
-                    <button
-                        className={`${boldFont.className} group flex items-center gap-2 text-[11px] font-semibold text-[#16A34A] dark:text-[#16A34A] transition-all duration-300 hover:gap-3`}
-                    >
+                    {/* Transactions */}
+                    <div className="mt-4 space-y-3">
 
-                        View all
+                        {transactions.map((item) => (
 
-                        <ArrowRight
-                            size={14}
-                            strokeWidth={2.5}
-                            className="transition-transform duration-300 group-hover:translate-x-[2px]"
-                        />
+                            <div
+                                key={item.asset}
+                                className="group flex items-center justify-between rounded-[8px] border dark:border-white/5 dark:bg-white/[0.02] px-2 py-2 transition-all duration-300 dark:hover:border-white/10 dark:hover:bg-white/[0.04] border-black/2 bg-black/[0.02] hover:border-black/10"
+                            >
 
-                    </button>
+                                {/* Left */}
+                                <div className="flex items-center gap-4">
 
-                </div>
+                                    {/* Logo */}
+                                    <div
+                                        className={`flex h-6 w-6 items-center justify-center rounded-[4px] text-[12px] font-bold text-black dark:text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] ${item.logoBg}`}
+                                    >
+                                        {item.logo}
+                                    </div>
 
-                {/* Transactions */}
-                <div className="mt-3 space-y-1">
+                                    {/* Info */}
+                                    <div>
 
-                    {transactions.map((item, index) => (
+                                        <h3 className={`${manrope.className} text-[11px] text-black dark:text-white`}>
+                                            {item.asset}
+                                        </h3>
 
-                        <div
-                            key={index}
-                            className="group flex items-center justify-between rounded-[8px] border border-black/[0.06] dark:border-white/10 bg-black/[0.015] dark:bg-[#070606] px-2 py-2 transition-all duration-300 hover:bg-black/[0.025] dark:hover:bg-white/[0.05] hover:shadow-[0_8px_24px_rgba(0,0,0,0.04)] dark:hover:shadow-none"
-                        >
+                                        <p className={`${manrope.className} mt-1 text-[10px] text-black/35 dark:text-white/35`}>
+                                            {item.date}
+                                        </p>
 
-                            {/* Left */}
-                            <div className="flex items-center gap-4">
+                                    </div>
 
-                                {/* Logo */}
-                                <div
-                                    className={`flex h-10 w-10 items-center justify-center rounded-[10px] text-[15px] shadow-[0_6px_20px_rgba(0,0,0,0.06)] ${item.logoBg} ${item.logoText}`}
-                                >
-                                    {item.logo}
                                 </div>
 
-                                {/* Info */}
+                                {/* Middle */}
                                 <div>
 
-                                    <h3
-                                        className={`${boldFont.className} text-[11px] leading-none text-[#111111] dark:text-white`}
-                                    >
-                                        {item.asset}
-                                    </h3>
+                                    <p className={`${manrope.className} text-[11px] text-black/75 dark:text-white/75`}>
+                                        {item.action}
+                                    </p>
 
-                                    <p
-                                        className={`${boldFont.className} mt-2 text-[10px] text-black/40 dark:text-white/50`}
-                                    >
-                                        {item.date}
+                                </div>
+
+                                {/* Right */}
+                                <div>
+
+                                    <p className={`${manrope.className} text-[11px] text-[#FF5A5A]`}>
+                                        {item.amount}
                                     </p>
 
                                 </div>
 
                             </div>
 
-                            {/* Middle */}
-                            <div
-                                className="rounded-[8px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] px-3 py-1.5 shadow-[0_2px_10px_rgba(0,0,0,0.03)] dark:shadow-none"
-                            >
+                        ))}
 
-                                <p
-                                    className={`${boldFont.className} text-[10px] text-black/65 dark:text-white/70`}
-                                >
-                                    {item.action}
-                                </p>
-
-                            </div>
-
-                            {/* Right */}
-                            <div className="text-right">
-
-                                <p
-                                    className={`${boldFont.className} text-[11px] text-[#DC2626]`}
-                                >
-                                    {item.amount}
-                                </p>
-
-                                <p
-                                    className={`${boldFont.className} mt-1 text-[9px] text-black/35 dark:text-white/40`}
-                                >
-                                    Executed
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    ))}
+                    </div>
 
                 </div>
-
-            </div>
+            </Glow>
 
         </div>
-
     )
 }
 

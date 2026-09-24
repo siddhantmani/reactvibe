@@ -74,8 +74,8 @@ function Page() {
         <div className="xl:mt-[100px] mt-[50px] flex flex-col gap-5 md:flex-row md:px-[20px] lg:px-[0px] md:items-center max-w-4xl mx-auto">
             <div className='flex flex-col justify-center items-center md:justify-start md:items-start gap-2'>
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, filter: "blur(2px)" }}
+                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
                     viewport={{
                         once: true,
                         amount: 0.2, // Trigger when 20% visible
@@ -106,8 +106,8 @@ function Page() {
                 </motion.div>
                 <div className='flex flex-col items-center justify-center md:items-start md:justify-start px-0 gap-2 '>
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
+                        initial={{ opacity: 0, filter: "blur(2px)" }}
+                        whileInView={{ opacity: 1, filter: "blur(0px)" }}
                         viewport={{
                             once: true,
                             amount: 0.2, // Trigger when 20% visible
@@ -124,8 +124,8 @@ function Page() {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
+                        initial={{ opacity: 0, filter: "blur(2px)" }}
+                        whileInView={{ opacity: 1, filter: "blur(0px)" }}
                         viewport={{
                             once: true,
                             amount: 0.2, // Trigger when 20% visible
@@ -150,6 +150,7 @@ function Page() {
                     onItemSelect={(item, index) => console.log(item, index)}
                     showGradients={true}
                     enableArrowNavigation={true}
+                    listClassName="max-h-[450px]"
                 />
             </div>
         </div>

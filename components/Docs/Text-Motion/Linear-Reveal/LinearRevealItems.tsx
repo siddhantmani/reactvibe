@@ -14,7 +14,7 @@ const LinearRevealFont = Bricolage_Grotesque({
 
 function LinearRevealItems() {
     return (
-        <div className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-2xl space-y-7'>
+        <div className='px-2 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-2xl space-y-7'>
 
             <div className='space-y-3'>
                 <LinearReveal
@@ -38,7 +38,7 @@ function LinearRevealItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A smooth React text animation component designed to reveal content character by character with precise control and motion. This animated text React solution is perfect for building engaging headings, supporting React text reveal animations and advanced character animation in React. Powered by motion, it works seamlessly as a Framer Motion text animation or text reveal effect, making it ideal for hero sections and text animation for landing pages in React. It also integrates cleanly with Tailwind text animation setups, allowing you to create modern, high-impact UI experiences.
+                    A character-by-character React text animation for creating engaging hero headlines, headings, and UI reveals.
                 </motion.p>
 
             </div>

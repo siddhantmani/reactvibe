@@ -6,7 +6,7 @@ import WaveformCode from "./WaveformCode"
 function WaveformPreview() {
     return (
         <motion.div
-            initial={{ opacity: 0, filter: "blur(8px)" }}
+            initial={{ opacity: 0, filter: "blur(3px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,       // Run only once

@@ -1,17 +1,12 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import React from "react"
 import {
     ArrowRight,
     BadgeCheck,
 } from "lucide-react"
-import { Manrope } from "next/font/google"
-
-const fontBold = Manrope({
-    weight: "600",
-    subsets: ["latin"],
-})
+import { manrope } from "@/lib/fonts";
+import { useTheme } from "@/components/ThemeProvider";
+import Glow from "@/components/Docs/Components/Glow/Glow";
 
 const activities = [
     {
@@ -19,118 +14,82 @@ const activities = [
         description: "Payment data synced",
         time: "2 min ago",
         logo: "S",
-        logoBg: "bg-[#635BFF]/10",
-        logoColor: "text-[#635BFF]",
+        logoBg: "bg-[#635BFF]/15",
+        logoColor: "text-[#7A73FF]",
     },
     {
         name: "Xero",
         description: "Bank transactions updated",
         time: "5 min ago",
         logo: "X",
-        logoBg: "bg-[#13B5EA]/10",
-        logoColor: "text-[#0EA5E9]",
+        logoBg: "bg-[#13B5EA]/15",
+        logoColor: "text-[#35C8FF]",
     },
     {
         name: "Slack",
         description: "Expense alerts enabled",
         time: "15 min ago",
         logo: "#",
-        logoBg: "bg-[#E879F9]/10",
-        logoColor: "text-[#D946EF]",
+        logoBg: "bg-[#E879F9]/15",
+        logoColor: "text-[#F0A5FF]",
     },
     {
         name: "Google Analytics",
         description: "Data import completed",
         time: "30 min ago",
         logo: "G",
-        logoBg: "bg-[#F59E0B]/10",
-        logoColor: "text-[#F59E0B]",
+        logoBg: "bg-[#F59E0B]/15",
+        logoColor: "text-[#FFB547]",
     },
 ]
 
 function IntegrationActivityFeed() {
-
+    const { theme } = useTheme()
     return (
-
-        <div
-            className="relative overflow-hidden rounded-[18px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] p-2 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)] dark:shadow-none"
-        >
-
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.04),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.05),_transparent_40%)]" />
-
-            {/* Glow Blob */}
-            <div className="absolute right-[-80px] top-[-80px] h-[220px] w-[220px] rounded-full bg-[#22C55E]/[0.04] blur-3xl" />
-
-            <div className="relative z-10">
+        <div className=" z-10 border dark:border-[#222121] border-black/10 rounded-2xl">
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0b631f"
+                glowSize="220px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4"
+            >
 
                 {/* Top */}
                 <div className="flex items-center justify-between">
 
-                    <div>
+                    <h2 className={`${manrope.className} text-[12px] text-black dark:text-white`}>
+                        Recent Activity
+                    </h2>
 
-                        <h2
-                            className={`${fontBold.className} text-[13px] tracking-[-0.03em] text-[#111111] dark:text-white`}
-                        >
-                            Recent Activity
-                        </h2>
-
-                        <p
-                            className={`${fontBold.className} mt-1 text-[10px] text-black/45 dark:text-white/60`}
-                        >
-                            Latest integration updates
-                        </p>
-
-                    </div>
-
-                    <button
-                        className={`${fontBold.className} group flex items-center gap-2 text-[11px] font-semibold text-[#16A34A] dark:text-[#63D98D] transition-all duration-300 hover:gap-3`}
-                    >
-
+                    <button className={`${manrope.className} flex items-center gap-2 text-[12px] text-[#8FE26A] transition-all duration-300 hover:gap-3`}>
                         View All Activity
 
-                        <ArrowRight
-                            size={13}
-                            strokeWidth={2.3}
-                            className="transition-transform duration-300 group-hover:translate-x-[2px]"
-                        />
-
+                        <ArrowRight size={13} />
                     </button>
-
                 </div>
 
                 {/* Activities */}
-                <div className="mt-5 grid grid-cols-4 gap-4">
+                <div className="mt-4 grid gap-2 grid-cols-2 @xl:grid-cols-4">
 
-                    {activities.map((item, index) => (
-
-                        <motion.div
-                            key={index}
-                            initial={{
-                                opacity: 0,
-                                y: 12,
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            viewport={{
-                                once: true,
-                            }}
-                            transition={{
-                                duration: 0.4,
-                                delay: index * 0.06,
-                            }}
-                            className="group flex items-start gap-4 rounded-[14px] border border-black/[0.06] dark:border-white/10 bg-black/[0.015] dark:bg-white/[0.03] p-4 transition-all duration-300 hover:bg-black/[0.025] dark:hover:bg-white/[0.05] hover:shadow-[0_8px_24px_rgba(0,0,0,0.04)] dark:hover:shadow-none"
+                    {activities.map((item) => (
+                        <div
+                            key={item.name}
+                            className="group py-10 flex items-start gap-4 rounded-[10px] border border-black/5 bg-black/[0.02] dark:border-white/5 dark:bg-white/[0.02] pl-5 transition-all duration-300 hover:border-black/10 hover:bg-black/[0.04] dark:hover:border-white/10 dark:hover:bg-white/[0.04]"
                         >
 
                             {/* Logo */}
                             <div
-                                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-black/[0.05] dark:border-white/10 ${item.logoBg} shadow-[0_4px_14px_rgba(0,0,0,0.03)] dark:shadow-none`}
+                                className={`flex h-5 w-5 2@xl:w-7 2@xl:h-7 shrink-0 items-center justify-center rounded-[5px] border border-black/10 dark:border-white/10 ${item.logoBg}`}
                             >
 
                                 <span
-                                    className={`${fontBold.className} text-[13px] ${item.logoColor}`}
+                                    className={`text-[15px]  font-bold ${item.logoColor}`}
                                 >
                                     {item.logo}
                                 </span>
@@ -140,53 +99,36 @@ function IntegrationActivityFeed() {
                             {/* Content */}
                             <div className="flex-1">
 
-                                {/* Top Row */}
                                 <div className="flex items-center gap-2">
 
-                                    <h3
-                                        className={`${fontBold.className} text-[12px] text-[#111111] dark:text-white`}
-                                    >
+                                    <h3 className={`${manrope.className} text-[12px] 2@xl:text-[16px] text-black dark:text-white`}>
                                         {item.name}
                                     </h3>
 
                                     <BadgeCheck
-                                        size={13}
-                                        className="text-[#16A34A]"
+                                        size={12}
+                                        className="text-[#8FE26A]"
                                         strokeWidth={2.3}
                                     />
 
                                 </div>
 
-                                {/* Description */}
-                                <p
-                                    className={`${fontBold.className} mt-2 text-[10px] leading-[1.6] text-black/50 dark:text-white/65`}
-                                >
+                                <p className={`${manrope.className} mt-1 text-[10px] 2@xl:text-[12px] text-black/45 dark:text-white/45`}>
                                     {item.description}
                                 </p>
 
-                                {/* Time */}
-                                <div className="mt-4 flex items-center gap-2">
-
-                                    <div className="h-[5px] w-[5px] rounded-full bg-[#16A34A]" />
-
-                                    <p
-                                        className={`${fontBold.className} text-[10px] text-black/35 dark:text-white/45`}
-                                    >
-                                        {item.time}
-                                    </p>
-
-                                </div>
+                                <p className={`${manrope.className} mt-3 text-[10px] 2@xl:text-[11px] text-black/30 dark:text-white/30`}>
+                                    {item.time}
+                                </p>
 
                             </div>
 
-                        </motion.div>
-
+                        </div>
                     ))}
 
                 </div>
 
-            </div>
-
+            </Glow>
         </div>
 
     )

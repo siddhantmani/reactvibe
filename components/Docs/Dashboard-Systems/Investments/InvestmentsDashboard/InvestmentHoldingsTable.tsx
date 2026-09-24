@@ -1,8 +1,12 @@
 "use client"
 
+import { motion } from "framer-motion"
+
 import React from "react"
 import { ArrowRight } from "lucide-react"
 import { Manrope } from "next/font/google"
+import { useTheme } from "@/components/ThemeProvider"
+import Glow from "@/components/Docs/Components/Glow/Glow"
 
 const boldFont = Manrope({
     weight: "500",
@@ -88,187 +92,170 @@ const holdings = [
 ]
 
 function InvestmentHoldingsTable() {
-
+    const { theme } = useTheme()
     return (
 
-        <div
-            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:bg-[#070606] dark:border-white/10 p-2 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]`}
-        >
+        <div className="rounded-2xl border dark:border-[#222121] border-black/10">
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="230px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full"
+            >
+                <div className="relative z-10">
 
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.04),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.05),_transparent_45%)]" />
-
-            {/* Soft Glow */}
-            <div className="absolute bottom-0 right-0 h-[350px] w-[350px] rounded-full bg-[#22C55E]/[0.04] blur-3xl" />
-
-            <div className="relative z-10">
-
-                {/* Heading */}
-                <div className="flex items-center justify-between px-2">
-
-                    <div>
-
-                        <h2
-                            className={`${boldFont.className} text-[15px] tracking-[-0.03em] text-[#111111] dark:text-white`}
-                        >
-                            Your Holdings
-                        </h2>
-                        <p
-                            className={`${boldFont.className} mt-1 text-[12px] text-black/70 dark:text-white/60`}
-                        >
-                            Portfolio allocation overview
-                        </p>
-
-                    </div>
-
-                </div>
-
-                {/* Table */}
-                <div className="mt-6 overflow-hidden rounded-[16px] border border-black/[0.06] dark:border-white/10 bg-black/[0.015] dark:bg-white/[0.03]">
-
-                    {/* Header */}
-                    <div className="grid grid-cols-[2.2fr_1fr_1fr_1.2fr_1.2fr_1.2fr_1.4fr] items-center border-b border-black/[0.06] dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.04] px-6 py-4">
-
-                        {[
-                            "Asset",
-                            "Type",
-                            "Quantity",
-                            "Avg. Price",
-                            "Current Price",
-                            "Value",
-                            "Gain / Loss",
-                        ].map((item) => (
-
-                            <p
-                                key={item}
-                                className={`${boldFont.className} text-[12px] whitespace-nowrap uppercase tracking-[0.04em] text-black/70 dark:text-white/50`}
+                    {/* Heading */}
+                    <div className="flex items-center justify-between px-2">
+                        <div>
+                            <h2
+                                className={`${boldFont.className} text-[17px] tracking-[-0.03em] text-[#111111] dark:text-white`}
                             >
-                                {item}
+                                Asset Performance Table
+                            </h2>
+                            <p
+                                className={`${boldFont.className} mt-1 text-[12px] text-black/70 dark:text-white/60`}
+                            >
+                                Your Asset Performance Table overview
                             </p>
-
-                        ))}
-
+                        </div>
                     </div>
 
-                    {/* Rows */}
-                    {holdings.map((item, index) => (
+                    {/* Table */}
+                    <div className="mt-6 overflow-x-auto rounded-[16px] border border-black/[0.06] bg-black/[0.015] dark:text-white/[0.06] dark:bg-black/[0.015] dark:border-white/10">
 
-                        <div
-                            key={index}
-                            className="group grid grid-cols-[2.2fr_1fr_1fr_1.2fr_1.2fr_1.2fr_1.4fr] items-center border-b border-black/[0.05] dark:border-white/10 px-6 py-5 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
-                        >
+                        <div className="min-w-[900px]">
 
-                            {/* Asset */}
-                            <div className="flex items-center gap-4">
-
-                                {/* Logo */}
-                                <div
-                                    className={`flex h-6 w-6 items-center justify-center rounded-[4px] text-[14px] shadow-[0_6px_20px_rgba(0,0,0,0.06)] ${item.logoBg} ${item.logoText}`}
-                                >
-                                    {item.logo}
-                                </div>
-
-                                {/* Name */}
-                                <div>
-
-                                    <h3
-                                        className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white transition-colors duration-300 group-hover:text-black dark:group-hover:text-white`}
-                                    >
-                                        {item.asset}
-                                    </h3>
-
+                            {/* Header */}
+                            <div className="grid grid-cols-[2.2fr_1fr_1fr_1.2fr_1.2fr_1.2fr_1.4fr] items-center border-b border-black/[0.06] bg-black/[0.02] px-6 py-4 dark:border-white/10 dark:bg-[#000000]">
+                                {[
+                                    "Asset",
+                                    "Type",
+                                    "Quantity",
+                                    "Avg. Price",
+                                    "Current Price",
+                                    "Value",
+                                    "Gain / Loss",
+                                ].map((item) => (
                                     <p
-                                        className={`${boldFont.className} mt-1 text-[10px] text-black/40 dark:text-white/45`}
+                                        key={item}
+                                        className={`${boldFont.className} text-[12px] whitespace-nowrap uppercase tracking-[0.04em] text-black/70 dark:text-white/80`}
                                     >
-                                        {item.symbol}
+                                        {item}
                                     </p>
-
-                                </div>
-
+                                ))}
                             </div>
 
-                            {/* Type */}
-                            <p
-                                className={`${boldFont.className} text-[12px] text-black/65 dark:text-white/70`}
-                            >
-                                {item.type}
-                            </p>
-
-                            {/* Quantity */}
-                            <p
-                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
-                            >
-                                {item.quantity}
-                            </p>
-
-                            {/* Avg */}
-                            <p
-                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
-                            >
-                                {item.avgPrice}
-                            </p>
-
-                            {/* Current */}
-                            <p
-                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
-                            >
-                                {item.currentPrice}
-                            </p>
-
-                            {/* Value */}
-                            <p
-                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
-                            >
-                                {item.value}
-                            </p>
-
-                            {/* Gain */}
-                            <div>
-
-                                <p
-                                    className={`${boldFont.className} text-[12px] ${item.positive
-                                        ? "text-[#16A34A]"
-                                        : "text-[#DC2626]"
-                                        }`}
+                            {/* Rows */}
+                            {holdings.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="group grid grid-cols-[2.2fr_1fr_1fr_1.2fr_1.2fr_1.2fr_1.4fr] items-center border-b border-black/[0.05] px-6 py-5 transition-all duration-300 hover:bg-black/[0.02]"
                                 >
-                                    {item.gain}
-                                </p>
+                                    {/* Asset */}
+                                    <div className="flex items-center gap-4">
+                                        {/* Logo */}
+                                        <div
+                                            className={`flex h-6 w-6 items-center justify-center rounded-[4px] text-[14px] shadow-[0_6px_20px_rgba(0,0,0,0.06)] ${item.logoBg} ${item.logoText}`}
+                                        >
+                                            {item.logo}
+                                        </div>
+                                        {/* Name */}
+                                        <div>
+                                            <h3
+                                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white transition-colors duration-300 group-hover:text-black dark:group-hover:text-white`}
+                                            >
+                                                {item.asset}
+                                            </h3>
+                                            <p
+                                                className={`${boldFont.className} mt-1 text-[10px] text-black/40 dark:text-white/40`}
+                                            >
+                                                {item.symbol}
+                                            </p>
+                                        </div>
+                                    </div>
 
-                                <p
-                                    className={`${boldFont.className} mt-[2px] text-[9px] ${item.positive
-                                        ? "text-[#16A34A]"
-                                        : "text-[#DC2626]"
-                                        }`}
+                                    {/* Type */}
+                                    <p
+                                        className={`${boldFont.className} text-[12px] text-black/65 dark:text-white/65`}
+                                    >
+                                        {item.type}
+                                    </p>
+
+                                    {/* Quantity */}
+                                    <p
+                                        className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
+                                    >
+                                        {item.quantity}
+                                    </p>
+
+                                    {/* Avg */}
+                                    <p
+                                        className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
+                                    >
+                                        {item.avgPrice}
+                                    </p>
+
+                                    {/* Current */}
+                                    <p
+                                        className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
+                                    >
+                                        {item.currentPrice}
+                                    </p>
+
+                                    {/* Value */}
+                                    <p
+                                        className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
+                                    >
+                                        {item.value}
+                                    </p>
+
+                                    {/* Gain */}
+                                    <div>
+                                        <p
+                                            className={`${boldFont.className} text-[12px] ${item.positive
+                                                ? "text-[#16A34A]"
+                                                : "text-[#DC2626]"
+                                                }`}
+                                        >
+                                            {item.gain}
+                                        </p>
+                                        <p
+                                            className={`${boldFont.className} mt-[2px] text-[9px] ${item.positive
+                                                ? "text-[#16A34A]"
+                                                : "text-[#DC2626]"
+                                                }`}
+                                        >
+                                            {item.percent}
+                                        </p>
+                                    </div>
+
+                                </div>
+                            ))}
+
+                            {/* Footer CTA */}
+                            <div className="p-4">
+                                <button
+                                    className={`${boldFont.className} flex h-11 w-full items-center justify-center gap-2 rounded-[10px] border border-black/[0.06] bg-white dark:bg-black/[0.20] dark:hover:bg-[#000000] dark:text-white text-[12px] font-semibold text-[#111111] shadow-[0_2px_10px_rgba(0,0,0,0.03)] transition-all duration-300 hover:bg-black hover:text-white hover:shadow-[0_10px_30px_rgba(0,0,0,0.10)]`}
                                 >
-                                    {item.percent}
-                                </p>
-
+                                    View all holdings
+                                    <ArrowRight
+                                        size={13}
+                                        strokeWidth={2.5}
+                                    />
+                                </button>
                             </div>
 
                         </div>
-
-                    ))}
-
-                    {/* Footer CTA */}
-                    <div className="p-4">
-
-                        <button
-                            className={`${boldFont.className} flex h-11 w-full items-center justify-center gap-2 rounded-[10px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] text-[12px] font-semibold text-[#111111] dark:text-white/60 dark:hover:text-white shadow-[0_2px_10px_rgba(0,0,0,0.03)] dark:shadow-none hover:bg-black dark:hover:bg-[#0a0909] hover:text-white hover:shadow-[0_10px_30px_rgba(0,0,0,0.10)] dark:hover:shadow-none`}
-                        >
-                            View all holdings
-
-                            <ArrowRight
-                                size={13}
-                                strokeWidth={2.5}
-                            />
-
-                        </button>
-
                     </div>
 
                 </div>
-
-            </div>
+            </Glow>
 
         </div>
 

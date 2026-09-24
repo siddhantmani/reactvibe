@@ -1,16 +1,14 @@
 "use client"
-import { motion } from "framer-motion"
-
-import React from "react";
 
 import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
+import Glow from "@/components/Docs/Components/Glow/Glow";
+import { useTheme } from "@/components/ThemeProvider";
 
 const boldFont = Manrope({
     weight: "600",
     subsets: ["latin"],
 });
-
 
 const bills = [
     {
@@ -40,7 +38,7 @@ interface BillItemProps {
 function BillItem({ title, amount, date, last }: BillItemProps) {
     return (
         <div
-            className={`pb-2 ${!last ? "border-b border-black/8 mb-4" : ""
+            className={`pb-2 ${!last ? "border-b border-black/8 dark:border-white/10 mb-4" : ""
                 }`}
         >
 
@@ -48,27 +46,25 @@ function BillItem({ title, amount, date, last }: BillItemProps) {
 
                 {/* Left */}
                 <div>
-                    <h3 className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                    <h3 className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                         {title}
                     </h3>
 
 
                     <LinearReveal
-                        as='p'
+                        as="p"
                         delay={0.3}
                         Text={`${date}`}
-                        className={`${boldFont.className} text-[8px] text-[#4b5563] `}
+                        className={`${boldFont.className} text-[8px] text-[#4b5563] dark:text-white/60`}
                     />
                 </div>
 
                 {/* Amount */}
-
-
                 <LinearReveal
-                    as='p'
+                    as="p"
                     delay={0.4}
                     Text={`${amount}`}
-                    className={`${boldFont.className} text-[11px] text-[#111827]`}
+                    className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}
                 />
             </div>
         </div>
@@ -76,47 +72,51 @@ function BillItem({ title, amount, date, last }: BillItemProps) {
 }
 
 function UpcomingBillsList() {
+    const { theme } = useTheme();
+
     return (
-        <motion.div
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{
-                once: true,
-                amount: 0.2, // Trigger when 20% visible
-                margin: "50px"
-            }}
-            transition={{
-                duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                delay: 0.2
-            }}
-            className="w-full max-w-[200px] rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full xl:max-w-[200px] rounded-2xl border dark:border-[#222121] border-black/10">
 
-            {/* Header */}
-            <div className="flex items-center justify-between mb-10">
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full "
+            >
 
-                <h1 className={`${boldFont.className} text-[11px] text-[#111827]`}>
-                    Upcoming Bills
-                </h1>
+                {/* Header */}
+                <div className="flex items-center justify-between mb-10">
 
-                <button className={`${boldFont.className} text-[11px] text-[#006b46] hover:opacity-80 transition-opacity`}>
-                    View All
-                </button>
-            </div>
+                    <h1 className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
+                        Upcoming Bills
+                    </h1>
 
-            {/* Bills */}
-            <div>
-                {bills.map((bill, index) => (
-                    <BillItem
-                        key={index}
-                        title={bill.title}
-                        amount={bill.amount}
-                        date={bill.date}
-                        last={index === bills.length - 1}
-                    />
-                ))}
-            </div>
-        </motion.div>
+                    <button className={`${boldFont.className} text-[11px] text-[#006b46] dark:text-[#5ED19B] hover:opacity-80 transition-opacity`}>
+                        View All
+                    </button>
+                </div>
+
+                {/* Bills */}
+                <div>
+                    {bills.map((bill, index) => (
+                        <BillItem
+                            key={index}
+                            title={bill.title}
+                            amount={bill.amount}
+                            date={bill.date}
+                            last={index === bills.length - 1}
+                        />
+                    ))}
+                </div>
+            </Glow>
+
+        </div>
     );
 }
 

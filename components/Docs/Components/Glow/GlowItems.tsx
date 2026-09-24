@@ -6,6 +6,8 @@ import React from 'react'
 import GlowItemsPreview from './GlowItemsPreview';
 import TablePorpsForGlowItems from './TablePorpsForGlowItems';
 import { motion } from 'framer-motion'
+import BuiltWithGlow from './BuiltWithGlow';
+import Separator from '../../Separator';
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
@@ -14,7 +16,7 @@ const OrbitFontFont = Bricolage_Grotesque({
 
 function GlowItems() {
     return (
-        <div className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-2xl space-y-7'>
+        <div className='px-2 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-2xl space-y-7'>
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}
@@ -36,7 +38,7 @@ function GlowItems() {
                     }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-black/70 dark:text-white/70 text-[13px]">
-                    A dynamic React cursor follow effect that creates a glowing spotlight interaction based on mouse movement. This component combines a spotlight effect in React with gradient background animation and smooth mouse tracking to deliver an interactive background experience. Ideal for modern UI design, it brings a glowing light effect and mouse move gradient effect using CSS and React for immersive user interactions.
+                    An interactive React background that follows the cursor with a soft radial glow, adding depth and movement to otherwise static sections. Perfect for hero sections, landing pages, portfolios, and other modern interfaces.
                 </motion.p>
             </div>
             <div className='border-black rounded-2xl'>
@@ -45,6 +47,15 @@ function GlowItems() {
 
             <div>
                 <TablePorpsForGlowItems />
+            </div>
+            <div>
+                <Separator
+                    direction='horizontal'
+                    className='bg-black/15 dark:bg-white/15'
+                />
+            </div>
+            <div>
+                <BuiltWithGlow />
             </div>
         </div>
     )

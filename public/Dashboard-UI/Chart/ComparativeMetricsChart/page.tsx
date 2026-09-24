@@ -1,0 +1,308 @@
+"use client"
+
+import { motion } from "framer-motion"
+import React, { useMemo, useState } from "react"
+import { ChevronDown } from "lucide-react"
+import { Manrope } from "next/font/google"
+
+const boldFont = Manrope({
+    weight: "500",
+    subsets: ["latin"],
+})
+
+const data = [
+    {
+        category: "Housing",
+        budgeted: 2500,
+        spent: 2000,
+    },
+    {
+        category: "Food & Dining",
+        budgeted: 1500,
+        spent: 1250,
+    },
+    {
+        category: "Transport",
+        budgeted: 1000,
+        spent: 800,
+    },
+    {
+        category: "Entertaining",
+        budgeted: 750,
+        spent: 500,
+    },
+    {
+        category: "Health & Fitness",
+        budgeted: 350,
+        spent: 520,
+    },
+    {
+        category: "Others",
+        budgeted: 2250,
+        spent: 2000,
+    },
+]
+
+function formatYAxis(value: number) {
+    if (value >= 1000) {
+        return `$${value / 1000} K`
+    }
+    return `$${value}`
+}
+
+function Page() {
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+    const maxValue = useMemo(() => {
+        return Math.max(
+            ...data.flatMap((item) => [item.budgeted, item.spent])
+        )
+    }, [])
+
+    const chartHeight = 160
+    const yAxisWidth = 42
+    const bottomPadding = 34
+    const topPadding = 8
+    const usableHeight = chartHeight - bottomPadding - topPadding
+
+    const yTicks = [0, 1000, 2000, 3000]
+
+    const getBarHeight = (value: number) => {
+        return (value / maxValue) * usableHeight
+    }
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(3px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{
+                once: true,
+                amount: 0.2,
+                margin: "50px"
+            }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.3
+            }}
+            className="rounded-[15px] border border-black/10 bg-white dark:border-white/10 dark:bg-[#0c0c0c] max-w-lg w-[calc(100%-32px)] sm:w-full mx-auto mt-20"
+        >
+            {/* Top */}
+            <div className="flex items-center justify-between px-3 p-3">
+                <h2
+                    className={`${boldFont.className} text-[14px] tracking-[-0.02em] text-[#111827] dark:text-white`}
+                >
+                    Budget vs Actual
+                </h2>
+
+                <button
+                    className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 bg-white dark:border-white/10 dark:bg-[#0c0c0c] px-2 py-1 text-[11px] font-medium text-[#374151] dark:text-white transition-all duration-300 hover:bg-black/[0.02]`}
+                >
+                    This Month
+                    <ChevronDown
+                        size={12}
+                        strokeWidth={2.2}
+                    />
+                </button>
+            </div>
+
+            {/* Legend */}
+            <div className="mt-4 -top-5 relative flex flex-wrap items-center justify-center gap-3 sm:gap-8 z-30 px-2">
+                <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-[#9BE68B]" />
+                    <span
+                        className={`${boldFont.className} text-[11px] text-[#374151] dark:text-white`}
+                    >
+                        Budgeted
+                    </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-[#0F7B42]" />
+                    <span
+                        className={`${boldFont.className} text-[11px] text-[#374151] dark:text-white`}
+                    >
+                        Spent
+                    </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-[#FF4D4F]" />
+                    <span
+                        className={`${boldFont.className} text-[11px] text-[#374151] dark:text-white`}
+                    >
+                        Over Budget
+                    </span>
+                </div>
+            </div>
+
+            {/* Chart */}
+            <div className="mt-4 h-[160px] w-full px-3 pb-2">
+                <div className="relative flex h-full">
+                    {/* Y Axis */}
+                    <div
+                        className="relative shrink-0"
+                        style={{
+                            width: yAxisWidth,
+                            height: chartHeight,
+                        }}
+                    >
+                        {yTicks.map((tick) => {
+                            const bottom =
+                                bottomPadding +
+                                (tick / maxValue) * usableHeight
+
+                            return (
+                                <div
+                                    key={tick}
+                                    className="absolute left-0 flex w-full items-center justify-end pr-2"
+                                    style={{
+                                        bottom,
+                                        transform: "translateY(50%)",
+                                    }}
+                                >
+                                    <span
+                                        className={`${boldFont.className} text-[10px] font-normal text-[#9CA3AF] dark:text-white/80`}
+                                    >
+                                        {formatYAxis(tick)}
+                                    </span>
+                                </div>
+                            )
+                        })}
+                    </div>
+
+                    {/* Bars Area */}
+                    <div className="relative flex-1 min-w-0">
+                        {/* Horizontal Grid */}
+                        {yTicks.map((tick) => {
+                            const bottom =
+                                bottomPadding +
+                                (tick / maxValue) * usableHeight
+
+                            return (
+                                <div
+                                    key={tick}
+                                    className="absolute left-0 right-0 border-t border-[#F3F4F6] dark:border-[#1b1b1b]"
+                                    style={{
+                                        bottom,
+                                    }}
+                                />
+                            )
+                        })}
+
+                        {/* Bars */}
+                        <div className="absolute inset-0 flex items-end justify-between px-1 sm:px-2 gap-1">
+                            {data.map((item, index) => {
+                                const budgetHeight = getBarHeight(item.budgeted)
+                                const spentHeight = getBarHeight(item.spent)
+
+                                return (
+                                    <div
+                                        key={index}
+                                        // FIXED: Added min-w-0 to force the flex child to shrink below its text content width
+                                        className="relative flex h-full flex-1 flex-col items-center justify-end min-w-0"
+                                        onMouseEnter={() => setHoveredIndex(index)}
+                                        onMouseLeave={() => setHoveredIndex(null)}
+                                    >
+                                        {/* Hover Background */}
+                                        <div
+                                            className={`absolute inset-y-0 w-full rounded-[8px] transition-all duration-200 ${hoveredIndex === index
+                                                ? "bg-black/[0.02] dark:bg-white/[0.05]"
+                                                : "bg-transparent"
+                                                }`}
+                                        />
+
+                                        {/* Tooltip */}
+                                        {hoveredIndex === index && (
+                                            <div
+                                                className="absolute z-50 w-max min-w-[120px] left-1/2 -translate-x-1/2 rounded-[10px] border border-black/10 bg-white dark:bg-[#0c0c0c] dark:border-white/10 px-2 py-2 shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
+                                                style={{
+                                                    bottom:
+                                                        Math.max(
+                                                            budgetHeight,
+                                                            spentHeight
+                                                        ) + 48,
+                                                }}
+                                            >
+                                                <p
+                                                    className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white`}
+                                                >
+                                                    {item.category}
+                                                </p>
+
+                                                <div className="mt-3 space-y-2">
+                                                    <div className="flex items-center justify-between gap-6">
+                                                        <span
+                                                            className={`${boldFont.className} text-[11px] text-[#6B7280] dark:text-white`}
+                                                        >
+                                                            Budgeted
+                                                        </span>
+                                                        <span
+                                                            className={`${boldFont.className} text-[11px] text-[#16A34A] `}
+                                                        >
+                                                            ${item.budgeted}
+                                                        </span>
+                                                    </div>
+
+                                                    <div className="flex items-center justify-between gap-6">
+                                                        <span
+                                                            className={`${boldFont.className} text-[11px] text-[#6B7280] dark:text-white`}
+                                                        >
+                                                            Spent
+                                                        </span>
+                                                        <span
+                                                            className={`${boldFont.className} text-[11px] ${item.spent > item.budgeted
+                                                                ? "text-[#f0334c]"
+                                                                : "text-[#0F7B42]"
+                                                                }`}
+                                                        >
+                                                            ${item.spent}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Content */}
+                                        <div className="relative z-10 flex h-full w-full flex-col justify-end items-center">
+                                            {/* Bars */}
+                                            <div className="flex items-end gap-[4px] sm:gap-[6px]">
+                                                {/* Budgeted */}
+                                                <div
+                                                    className="w-[8px] sm:w-[10px] rounded-[4px] bg-[#9BE68B] transition-all duration-300"
+                                                    style={{
+                                                        height: budgetHeight,
+                                                    }}
+                                                />
+
+                                                {/* Spent */}
+                                                <div
+                                                    className={`w-[8px] sm:w-[10px] rounded-[4px] transition-all duration-300 ${item.spent > item.budgeted
+                                                        ? "bg-[#FF4D4F]"
+                                                        : "bg-[#0F7B42]"
+                                                        }`}
+                                                    style={{
+                                                        height: spentHeight,
+                                                    }}
+                                                />
+                                            </div>
+
+                                            {/* Label */}
+                                            <div className="mt-2 w-full text-center px-[2px]">
+                                                <span className={`${boldFont.className} block w-full truncate text-[9px] sm:text-[10px] font-normal text-[#6B7280] dark:text-white/80`}>
+                                                    {item.category}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+    )
+}
+
+export default Page

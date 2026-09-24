@@ -1,145 +1,87 @@
 "use client"
 import { motion } from "framer-motion"
 
-import React from 'react'
-
-
 import { Bell, ChevronDown, Mail, Search } from 'lucide-react'
 import { Manrope } from 'next/font/google';
 import Image from 'next/image'
-import Separator from "@/public/Components/Separator/Separator";
-import { Dropdown, DropdownItem, DropdownNestedContainer, DropdownNestedHeading, DropdownNestedItem } from "@/public/Components/MotionDropdown/Dropdown";
-import LinearReveal from "@/public/Text-Motion/LinearReveal/LinearReveal";
-
-
+import LinearReveal from "@/components/LinearReveal";
+import Separator from "@/components/Docs/Separator";
+import { Dropdown, DropdownItem, DropdownNestedContainer, DropdownNestedHeading, DropdownNestedItem } from "@/components/Docs/Components/MotionDropdown/Dropdown";
 
 const menuName = Manrope({
-    weight: '400', // Specify the font weight if needed  
+    weight: '400',
     subsets: ['latin']
 });
 
 const fontBold = Manrope({
-    weight: '600', // Specify the font weight if needed  
+    weight: '600',
     subsets: ['latin']
 });
 
 
 function FinanceOverviewHeader() {
     return (
-        <div className='flex justify-between'>
-            {/* Left Content */}
-            <motion.div
-                initial={{ opacity: 0, filter: "blur(4px)" }}
-                whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                viewport={{
-                    once: true,
-                    amount: 0.2, // Trigger when 20% visible
-                    margin: "50px"
-                }}
-                transition={{
-                    duration: 1.2,
-                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                    delay: 0.2
-                }}
-            >
+        <div className='flex items-center justify-end md:justify-between relative'>
+
+            <div className="hidden md:inline-block">
                 <LinearReveal
                     as='h1'
-                    Text="Dashboard"
-                    className={`${fontBold.className} text-[19px] text-[#111827] `}
+                    Text="Finance Overview"
+                    className={`${fontBold.className} text-[15px] lg:text-[18px] text-[#111827] dark:text-white `}
                 />
 
-                <p className={`${fontBold.className} text-[11px] text-[#6b7280] `}>
+                <p className={`${fontBold.className} text-[10px] lg:text-[12px] text-[#6b7280] `}>
                     Welcome back, Alex! Here&#39;s your financial overview.
                 </p>
-            </motion.div>
+            </div>
 
-            {/* Right Content */}
-            <div className="flex items-center gap-5">
 
-                {/* Search */}
-                <motion.div
-                    initial={{ opacity: 0, filter: "blur(4px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2, // Trigger when 20% visible
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                        delay: 0.2
-                    }}
-                    className="rounded-[5px] border border-black/10 bg-white px-5 flex items-center justify-between w-[100%]">
-                    <input
-                        type="text"
-                        placeholder="Search transactions, accounts..."
-                        className={`${menuName.className} placeholder:text-black text-[12px] rounded-[2px] px-6 py-2 text-black focus:outline-none w-full max-w-lg`}
-                    />
+            <div className="flex items-center gap-2 lg:gap-4">
 
-                    <Search
-                        className="text-[#111827]"
-                        size={14}
-                        strokeWidth={2.2}
-                    />
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, filter: "blur(4px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2, // Trigger when 20% visible
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                        delay: 0.2
-                    }}
-                    className='flex items-center gap-3'>
+                <div className="flex items-center gap-2 lg:gap-4 relative -right-15">
 
-                    {/* Notification */}
-                    <button className="relative p-2 rounded-full bg-white flex items-center justify-center shadow-sm border border-black/5">
-                        <Bell
-                            size={18}
-                            className="text-[#111827]"
-                            strokeWidth={2.2}
+                    <div className="rounded-[10px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0a0a0a] px-2 py-2 lg:py-0 flex items-center justify-between w-[100%]">
+
+                        <input
+                            type="text"
+                            placeholder="Search here..."
+                            className={`${menuName.className} hidden lg:inline-block placeholder:text-black dark:placeholder:text-white/70 dark:text-white text-[12px] rounded-[2px] px-2 py-2 text-black focus:outline-none w-full max-w-lg`}
                         />
 
-                        <span className="absolute top-[10px] right-[10px] w-[9px] h-[9px] bg-red-500 rounded-full border-2 border-white" />
-                    </button>
-
-                    {/* Mail */}
-                    <button className="p-2 rounded-full bg-white flex items-center justify-center shadow-sm border border-black/5">
-                        <Mail
-                            size={18}
-                            className="text-[#111827]"
+                        <Search
+                            className="text-[#111827] dark:text-white"
+                            size={12}
                             strokeWidth={2.2}
                         />
-                    </button>
-                </motion.div>
+                    </div>
+                    <div className='flex items-center gap-3'>
 
-                <motion.div
-                    initial={{ opacity: 0, filter: "blur(4px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2, // Trigger when 20% visible
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                        delay: 0.2
-                    }}
-                >
-                    <Separator
-                        direction='vertical'
-                        className='bg-black/20'
-                    />
-                </motion.div>
-                {/* Profile */}
+                        <button className="relative p-2 rounded-full bg-white dark:bg-[#0a0a0a] flex items-center justify-center border border-black/12 dark:border-white/8">
+                            <Bell
+                                size={15}
+                                className="text-[#111827] dark:text-white"
+                                strokeWidth={2.2}
+                            />
 
+                            <span className="absolute top-[10px] right-[10px] w-[9px] h-[9px] bg-red-500 rounded-full border-2 border-white" />
+                        </button>
+
+                        <button className="p-2 rounded-full bg-white dark:bg-[#0a0a0a] dark:border-white/8  flex items-center justify-center border border-black/12">
+                            <Mail
+                                size={15}
+                                className="text-[#111827] dark:text-white"
+                                strokeWidth={2.2}
+                            />
+                        </button>
+                    </div>
+
+                    <div>
+                        <Separator
+                            direction='vertical'
+                            className='bg-black/20 dark:bg-white/20'
+                        />
+                    </div>
+                </div>
 
                 <div className="flex justify-start p-2">
                     <motion.div
@@ -150,8 +92,10 @@ function FinanceOverviewHeader() {
                         className="flex justify-start p-2"
                     >
                         <Dropdown
+                            menuClassName="bg-white text-black dark:bg-[#0c0c0c] border-white/10"
+                            itemClassName="text-black dark:text-white"
                             trigger={
-                                <div className="flex items-center gap-4 cursor-pointer z-50">
+                                <div className="flex items-center gap-2 cursor-pointer z-50 relative -right-8">
 
                                     <Image
                                         src="https://i.pravatar.cc/100?img=12"
@@ -162,7 +106,7 @@ function FinanceOverviewHeader() {
                                     />
 
                                     <div>
-                                        <h3 className={`${fontBold.className} text-[11px] text-[#111827] whitespace-nowrap flex items-center gap-1 `}>
+                                        <h3 className={`${fontBold.className} text-[11px] text-[#111827] dark:text-white whitespace-nowrap flex items-center gap-1 `}>
                                             Alex Johnson <span><ChevronDown size={13} /></span>
                                         </h3>
 
@@ -191,7 +135,6 @@ function FinanceOverviewHeader() {
                                 className='dark:bg-white/15 bg-black/15 w-full my-1'
                             />
 
-                            {/* SECURITY */}
                             <DropdownNestedContainer>
                                 <DropdownNestedHeading>
                                     Security

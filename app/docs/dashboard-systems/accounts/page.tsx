@@ -1,12 +1,11 @@
 import AccountsItems from '@/components/Docs/Dashboard-Systems/Accounts/AccountsItems'
 import RenderOnRoute from '@/components/RenderOnRoute'
 import { Metadata } from 'next'
-import React from 'react'
 
 export const metadata: Metadata = {
     title: "React Account & Banking Dashboard | React Vibe",
     description:
-        "Build responsive React Account Dashboards and React Banking Dashboards with Account Dashboard Templates, Linked Accounts Dashboards, and Account Health Dashboards.",
+        "Build React account and banking dashboards with account overview, linked accounts, balances, transactions, and financial health UI. Free and customizable."
 }
 
 function Accounts() {

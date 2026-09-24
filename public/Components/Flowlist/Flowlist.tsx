@@ -22,6 +22,7 @@ interface FlowlistProps {
     showGradients?: boolean;
     enableArrowNavigation?: boolean;
     className?: string;
+    listClassName?: string;
     itemClassName?: string;
     initialSelectedIndex?: number;
 }
@@ -56,27 +57,26 @@ const FlowlistItem: React.FC<FlowlistItemProps> = ({ item, index, isSelected, on
             style={{ marginBottom: 10, cursor: 'pointer', transformOrigin: 'center' }}
         >
             <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, filter: "blur(3px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{
                     once: true,
-                    amount: 0.2, // Trigger when 20% visible
+                    amount: 0.2,
                     margin: "50px"
                 }}
                 transition={{
                     duration: 1,
-                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                    ease: [0.25, 0.46, 0.45, 0.94],
                     delay: 0.3
                 }}
                 className={`
-                    flex items-center gap-3 rounded-xl px-3 py-2
-                    border transition-colors duration-150
-                    ${isSelected
-                        ? 'bg-[#f4f4f4] border-gray-300'
-                        : 'bg-[#f4f4f4] border-gray-100'
+                               flex items-center gap-3 rounded-xl px-3 py-3
+                               border transition-colors duration-150
+                               ${isSelected
+                        ? 'bg-[#f4f4f4] border-gray-300 dark:bg-[#080808] dark:border-white/5'
+                        : 'bg-[#f4f4f4] border-gray-100 dark:bg-[#080808] dark:border-white/5'
                     }
-                `}
+                           `}
             >
                 <div className="flex-1 min-w-0">
                     <div className="flex justify-between items-baseline gap-1">
@@ -84,7 +84,7 @@ const FlowlistItem: React.FC<FlowlistItemProps> = ({ item, index, isSelected, on
                             {item.title}
                         </span>
                     </div>
-                    <p className="text-[11px] text-gray-900 font-medium m-0">
+                    <p className="text-[11px] text-gray-900 dark:text-white font-medium m-0">
                         {item.description}
                     </p>
                 </div>
@@ -99,6 +99,7 @@ const Flowlist: React.FC<FlowlistProps> = ({
     showGradients = true,
     enableArrowNavigation = true,
     className = '',
+    listClassName = 'max-h-[350px]',
     initialSelectedIndex = -1,
 }) => {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -170,7 +171,7 @@ const Flowlist: React.FC<FlowlistProps> = ({
             <div
                 ref={scrollRef}
                 onScroll={handleScroll}
-                className="max-h-[300px] overflow-y-auto"
+                className={`overflow-y-auto ${listClassName}`}
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
                 <style>{`div::-webkit-scrollbar { display: none; }`}</style>
@@ -189,11 +190,11 @@ const Flowlist: React.FC<FlowlistProps> = ({
             {showGradients && (
                 <>
                     <div
-                        className="absolute top-0 left-0 right-0 h-[50px] bg-gradient-to-b from-[#fbfbfb] to-transparent pointer-events-none transition-opacity duration-300"
+                        className="absolute top-0 left-0 right-0 h-[50px] bg-gradient-to-b from-[#fbfbfb] to-transparent dark:bg-gradient-to-b dark:from-[#0c0c0c] to-transparent pointer-events-none transition-opacity duration-300"
                         style={{ opacity: topFade }}
                     />
                     <div
-                        className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-t from-[#fbfbfb] to-transparent pointer-events-none transition-opacity duration-300"
+                        className="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-t from-[#fbfbfb] to-transparent dark:bg-gradient-to-t dark:from-[#0c0c0c] to-transparent pointer-events-none transition-opacity duration-300"
                         style={{ opacity: bottomFade }}
                     />
                 </>

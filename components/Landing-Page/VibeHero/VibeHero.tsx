@@ -1,9 +1,9 @@
 "use client"
 import React from "react";
-import { Bricolage_Grotesque, Figtree } from "next/font/google";
+import { Bricolage_Grotesque, Comfortaa, Figtree, Manrope, Montserrat, Montserrat_Alternates, Press_Start_2P, Zeyada } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
 
-const AnimatedFont = Figtree({
+const AnimatedFont = Manrope({
     weight: "600",
     subsets: ["latin"],
 })
@@ -53,21 +53,21 @@ function VibeHero() {
                     delay: 0.3
                 }}
             >
-                <div className="text-center xl:text-base/18 text-base/12 md:pt-5 lg:pt-0 pt-2">
+                <div className="text-center xl:text-base/18 text-base/12 md:pt-9 lg:pt-5 pt-10">
                     <LinearReveal
                         as={"h1"}
-                        Text="Motion-first"
-                        className={` ${AnimatedFont.className} 2xl:text-[90px] xl:text-[80px] lg:text-[50px] md:text-5xl text-[40px]`}
+                        Text="Motion-first React Components"
+                        className={` ${AnimatedFont.className} 2xl:text-7xl xl:text-6xl lg:text-4xl md:text-4xl text-2xl`}
                     />
                     <LinearReveal
                         as={"h1"}
-                        Text="React Components"
-                        className={` ${AnimatedFont.className} 2xl:text-[90px] xl:text-[80px] lg:text-[50px] md:text-5xl text-[40px]`}
+                        Text="for Creative Interfaces"
+                        className={` ${AnimatedFont.className} 2xl:text-7xl xl:text-6xl lg:text-4xl md:text-4xl text-2xl`}
                     />
                 </div>
             </motion.div>
             {/* <h1 className="xl:text-6xl">Motion-first React components</h1> */}
-            <div className="flex flex-col justify-center items-center xl:space-y-5 md:pt-10 lg:pt-0 2xl:pt-3 pt-10">
+            <div className="flex flex-col justify-center items-center xl:space-y-5 md:pt-10 lg:pt-0 2xl:pt-5 pt-10 xl:pt-3">
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}
                     animate={{ opacity: 1, filter: "blur(0px)" }}
@@ -84,7 +84,7 @@ function VibeHero() {
                     }}
 
                 >
-                    <h2 className={`${HeroSubHeading.className} text-center capitalize px-20 lg:pt-5 xl:pt-0 text-lg 2xl:text-2xl`}>
+                    <h2 className={`${HeroSubHeading.className} text-center capitalize px-20 lg:pt-5 xl:pt-0 text-lg xl:text-2xl 2xl:text-3xl`}>
                         Production-Ready Motion Components. <br /> Copy, Paste, Ship.
                     </h2>
                 </motion.div>

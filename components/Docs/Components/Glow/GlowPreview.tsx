@@ -1,11 +1,11 @@
 import React from 'react'
-import UsingGlow from './UsingGlow'
+import Glow from './Glow'
 import LinearReveal from '@/components/LinearReveal'
 
 function GlowPreview() {
     return (
         <div className='w-full'>
-            <UsingGlow
+            <Glow
                 backgroundColor="#0d0d0d"
                 glowColor="#7d6e45"
                 glowSize="280px"
@@ -17,7 +17,6 @@ function GlowPreview() {
                 borderGlowTransparency="80%"
                 className="h-[500px] text-center max-w-7xl mx-auto flex items-center justify-center"
             >
-
                 <LinearReveal
                     as={'h1'}
                     delay={0.3}
@@ -25,7 +24,7 @@ function GlowPreview() {
                     Text='Move the cursor...'
                 />
 
-            </UsingGlow>
+            </Glow>
         </div>
     )
 }

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "ReactVibe",
     images: [
       {
-        url: "/og.png",
+        url: "/opengraph.png",
         width: 1200,
         height: 630,
         alt: "React Vibe – Animated, Motion-First React UI Components",
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
     title: "React Vibe – Animated, Motion-First UI Components for React",
     description:
       "Motion-first, fully animated React components. Open source, production-ready, and easy to drop into any project. Copy, paste, and ship smooth interactions.",
-    images: ["/og.png"],
+    images: ["/opengraph.png"],
     creator: "@_siddhantmani",
   },
 
@@ -85,8 +84,8 @@ export default function RootLayout({
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
-    
-    <html lang="en" >
+
+    <html lang="en" suppressHydrationWarning>
       <head>
         {GA_ID && (
           <>
@@ -106,20 +105,15 @@ export default function RootLayout({
             </Script>
           </>
         )}
+
       </head>
+
+
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider >
-
+        {children}
       </body>
     </html>
   );

@@ -6,58 +6,48 @@ import { motion } from "framer-motion"
 import { Code, Eye } from 'lucide-react';
 import GlowPreview from './GlowPreview';
 import GlowPreviewSourceCode from './GlowPreviewSourceCode';
+import DeviceToggleGroup from '@/components/DeviceToggleGroup';
+import RefrashContent from '../../RefrashContent';
+import SpotlightBackground from '@/components/SpotlightBackground';
+import ResizablePreview from '@/components/ResizablePreview';
 
 function GlowItemsPreview() {
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const mountRef = useRef<HTMLDivElement>(null)
+    const [previewWidth, setPreviewWidth] = useState(1190);
+
     return (
         <div className='relative'>
             <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
                 <div className="z-0 inset-0 flex justify-between">
-                    <TabList className="h-10 inline-flex p-1 w-full max-w-[130px] gap-1">
-                        <motion.div
-                            initial={{ opacity: 0, filter: "blur(8px)" }}
-                            animate={{ opacity: 1, filter: "blur(0px)" }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{
-                                once: true,
-                                amount: 0.2, // Trigger when 20% visible
-                                margin: "50px"
-                            }}
-                            transition={{
-                                duration: 1.2,
-                                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                                delay: 0.5
-                            }}
+                    <TabList className="h-10 flex justify-between p-1 w-full gap-1">
+                        <div className='flex items-center gap-2 max-w-[130px] hidden md:block md:flex-row md:flex'>
 
-                        >
-                            <Tab className="h-full gap-2 flex items-center px-2 py-0 cursor-pointer w-full text-sm border border-dashed border-gray-400 bg-[#eeeeee] dark:bg-[#171616] rounded-md outline-none">
+                            <Tab className="h-full gap-2 flex items-center px-2 py-[5px] cursor-pointer w-full text-sm border rounded-md outline-none">
+                                <Eye className="h-4 w-4" /> Showcase
+                            </Tab>
+                            <Tab className="h-full gap-2 flex items-center px-2 py-[5px] cursor-pointer w-full text-sm border rounded-md outline-none">
+                                <Code className="h-4 w-4" /> Source
+                            </Tab>
+                        </div>
+                        <div className='md:hidden flex items-center gap-2 max-w-[130px]'>
+
+                            <Tab className="h-full gap-2 flex items-center px-2 py-[5px] cursor-pointer w-full text-sm border rounded-md outline-none">
                                 <Eye className="h-4 w-4" />
-                                Showcase
                             </Tab>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, filter: "blur(8px)" }}
-                            animate={{ opacity: 1, filter: "blur(0px)" }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{
-                                once: true,
-                                amount: 0.2, // Trigger when 20% visible
-                                margin: "50px"
-                            }}
-                            transition={{
-                                duration: 1.2,
-                                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                                delay: 0.6
-                            }}
-
-                        >
-                            <Tab className="h-full gap-2 flex items-center px-2 py-0 cursor-pointer w-full text-sm border border-dashed border-gray-400 bg-[#eeeeee] dark:bg-[#171616] rounded-md outline-none">
+                            <Tab className="h-full gap-2 flex items-center px-2 py-[5px] cursor-pointer w-full text-sm border rounded-md outline-none">
                                 <Code className="h-4 w-4" />
-                                Source
                             </Tab>
-                        </motion.div>
+                        </div>
 
+                        <div className='flex items-center gap-2'>
+
+                            <DeviceToggleGroup
+                                activeWidth={previewWidth}
+                                onWidthChange={setPreviewWidth}
+                            />
+
+                            <RefrashContent />
+                        </div>
                     </TabList>
                 </div>
 
@@ -65,19 +55,21 @@ function GlowItemsPreview() {
                     <TabPanel
                         static
                         hidden={selectedIndex !== 0}
-                        className="border border-gray-700 rounded-2xl"
+                        className="border border-gray-700 rounded-2xl relative h-[518px] bg-white dark:bg-[#0b0b0b]"
                     >
-                        <div
-                            ref={mountRef}
-                            className="w-full rounded-2xl"
+
+                        <SpotlightBackground className="rounded-2xl z-0" spotlightSize={180} />
+
+
+                        <ResizablePreview
+                            width={previewWidth}
+                            onWidthChange={setPreviewWidth}
+                            className="absolute inset-0 z-10 py-2"
                         >
-                            <div
-                                className="flex justify-center items-center bg-white z-40 w-full rounded-2xl h-full"
-                            >
-                                <GlowPreview />
-                            </div>
-                        </div>
+                            <GlowPreview />
+                        </ResizablePreview>
                     </TabPanel>
+
                     <TabPanel static hidden={selectedIndex !== 1}>
                         <GlowPreviewSourceCode />
                     </TabPanel>

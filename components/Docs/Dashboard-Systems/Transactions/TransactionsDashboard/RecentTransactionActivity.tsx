@@ -7,6 +7,8 @@ import {
 } from "lucide-react"
 import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
+import Glow from "@/components/Docs/Components/Glow/Glow";
+import { useTheme } from "@/components/ThemeProvider";
 
 const boldFont = Manrope({
     weight: "500",
@@ -54,109 +56,124 @@ const activities = [
 ]
 
 function RecentTransactionActivity() {
+    const { theme } = useTheme();
 
     return (
-        <div className="rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] p-3 px-3 aspect-video">
+        <div className="rounded-2xl border border-black/10 dark:border-white/10">
 
-            {/* Top */}
-            <div className="flex items-center justify-between">
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full "
+            >
 
-                <h2 className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
-                    Recent Activity
-                </h2>
+                {/* Top */}
+                <div className="flex items-center justify-between">
 
-                <button className={`${boldFont.className} text-[12px] text-[#16A34A] dark:text-[#63D98D] transition-all duration-300 hover:text-[#15803D] dark:hover:text-[#7BE5A6]`}>
-                    View all
-                </button>
+                    <h2 className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
+                        Recent Activity
+                    </h2>
 
-            </div>
+                    <button className={`${boldFont.className} text-[12px] text-[#16A34A] dark:text-[#63D98D] transition-all duration-300 hover:text-[#15803D] dark:hover:text-[#7BE5A6]`}>
+                        View all
+                    </button>
 
-            {/* Activity List */}
-            <div className="mt-2 space-y-2">
+                </div>
 
-                {activities.map((item, index) => (
+                {/* Activity List */}
+                <div className="mt-2 space-y-2">
 
-                    <div
-                        key={index}
-                        className="group flex items-center justify-between rounded-2xl py-2 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.03]"
-                    >
+                    {activities.map((item, index) => (
 
-                        {/* Left */}
-                        <div className="flex items-center gap-4">
+                        <div
+                            key={index}
+                            className="group flex items-center justify-between rounded-2xl py-2 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.03]"
+                        >
 
-                            {/* Logo */}
-                            <div
-                                className={`flex h-5 w-5 items-center justify-center rounded-[4px] text-[14px] font-bold ${item.logoBg}`}
-                            >
+                            {/* Left */}
+                            <div className="flex items-center gap-4">
 
-                                <span
-                                    className={`text-[12px] font-bold ${item.logoColor}`}
+                                {/* Logo */}
+                                <div
+                                    className={`flex h-5 w-5 items-center justify-center rounded-[4px] text-[14px] font-bold ${item.logoBg}`}
                                 >
-                                    {item.logo}
-                                </span>
+
+                                    <span
+                                        className={`text-[12px] font-bold ${item.logoColor}`}
+                                    >
+                                        {item.logo}
+                                    </span>
+
+                                </div>
+
+                                {/* Name */}
+                                <div>
+
+                                    <h3 className={`${boldFont.className} whitespace-nowrap text-[12px] text-[#111827] dark:text-white`}>
+                                        {item.name}
+                                    </h3>
+
+                                </div>
 
                             </div>
 
-                            {/* Name */}
-                            <div>
+                            {/* Right */}
+                            <div className="flex items-center gap-4">
 
-                                <h3 className={`${boldFont.className} whitespace-nowrap text-[12px] text-[#111827] dark:text-white`}>
-                                    {item.name}
-                                </h3>
-
-                            </div>
-
-                        </div>
-
-                        {/* Right */}
-                        <div className="flex items-center gap-4">
-
-                            {/* Amount */}
+                                {/* Amount */}
 
 
-                            <LinearReveal
-                                as='p'
-                                delay={0.2}
-                                Text={item.amount}
-                                className={`text-[11px] ${item.positive
+                                <LinearReveal
+                                    as='p'
+                                    delay={0.2}
+                                    Text={item.amount}
+                                    className={`text-[11px] ${item.positive
                                         ? "text-[#16A34A]"
                                         : "text-[#FF3B30]"
-                                    }`}
-                            />
+                                        }`}
+                                />
 
-                            {/* Time */}
-                            <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
-                                {item.time}
-                            </p>
+                                {/* Time */}
+                                <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
+                                    {item.time}
+                                </p>
 
-                            {/* Arrow */}
-                            <div
-                                className={`flex items-center justify-center rounded-full`}
-                            >
+                                {/* Arrow */}
+                                <div
+                                    className={`flex items-center justify-center rounded-full`}
+                                >
 
-                                {item.positive ? (
-                                    <ArrowUp
-                                        size={12}
-                                        className="text-[#16A34A]"
-                                        strokeWidth={2.8}
-                                    />
-                                ) : (
-                                    <ArrowDown
-                                        size={12}
-                                        className="text-[#FF3B30]"
-                                        strokeWidth={2.8}
-                                    />
-                                )}
+                                    {item.positive ? (
+                                        <ArrowUp
+                                            size={12}
+                                            className="text-[#16A34A]"
+                                            strokeWidth={2.8}
+                                        />
+                                    ) : (
+                                        <ArrowDown
+                                            size={12}
+                                            className="text-[#FF3B30]"
+                                            strokeWidth={2.8}
+                                        />
+                                    )}
+
+                                </div>
 
                             </div>
 
                         </div>
 
-                    </div>
+                    ))}
 
-                ))}
-
-            </div>
+                </div>
+            </Glow>
 
         </div>
     )

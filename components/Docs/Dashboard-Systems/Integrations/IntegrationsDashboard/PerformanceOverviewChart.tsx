@@ -8,12 +8,9 @@ import React, {
 } from "react"
 
 import { motion } from "framer-motion"
-import { Manrope } from "next/font/google"
-
-const fontBold = Manrope({
-    weight: ["500"],
-    subsets: ["latin"],
-})
+import { manrope } from "@/lib/fonts"
+import { useTheme } from "@/components/ThemeProvider"
+import Glow from "@/components/Docs/Components/Glow/Glow"
 
 const data = [
     { day: "May 1", value: 1600 },
@@ -27,8 +24,8 @@ const data = [
     { day: "May 29", value: 2000 },
 ]
 
-const width = 700
-const height = 280
+const width = 1050
+const height = 380
 
 const paddingTop = 25
 const paddingBottom = 40
@@ -162,372 +159,381 @@ function PerformanceOverviewChart() {
 
     }, [activeData.value])
 
+    const { theme } = useTheme()
+
     return (
 
-        <div
-            className="relative aspect-video overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:bg-[#070606] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]"
-        >
+        <div className=" border dark:border-[#222121] border-black/10 rounded-2xl">
 
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(139,92,246,0.05),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.04),_transparent_40%)]" />
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.4}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 "
+            >
 
-            {/* Purple Glow */}
-            <div className="absolute right-[-60px] top-[-60px] h-[220px] w-[220px] rounded-full bg-[#8B5CF6]/[0.05] blur-3xl" />
 
-            <div className="relative z-10">
+                <div className=" z-10">
 
-                {/* Top */}
-                <div className="flex items-start justify-between">
+                    {/* Top */}
+                    <div className="flex items-start justify-between">
 
-                    <div>
+                        <div>
 
-                        <h2
-                            className={`${fontBold.className} text-[14px] tracking-[-0.03em] text-[#111111] dark:text-white`}
+                            <h2
+                                className={`${manrope.className} text-[14px] tracking-[-0.03em] dark:text-[#ffffff] text-black`}
+                            >
+                                Performance Overview
+                            </h2>
+
+                            <p
+                                className={`${manrope.className} mt-2 text-[12px] text-black/45 dark:text-white/45`}
+                            >
+                                Total syncs this month
+                            </p>
+
+                            <h1
+                                className={`${manrope.className} mt-2 text-[30px] tracking-[-0.06em] dark:text-[#ffffff] text-black`}
+                            >
+                                {totalText}
+                            </h1>
+
+                        </div>
+
+                        <button
+                            className={`${manrope.className} rounded-[8px] border border-black/[0.06] bg-black/[0.02] dark:border-white/[0.06] dark:bg-white/[0.02] px-3 py-1.5 text-[11px] font-medium text-black/60 dark:text-white/60 backdrop-blur-md transition-all duration-300 hover:bg-black/[0.04] hover:text-black dark:hover:bg-white/[0.04] dark:hover:text-white`}
                         >
-                            Performance Overview
-                        </h2>
-
-                        <p
-                            className={`${fontBold.className} mt-2 text-[12px] text-black/45 dark:text-white/45`}
-                        >
-                            Total syncs this month
-                        </p>
-
-                        <h1
-                            className={`${fontBold.className} mt-2 text-[30px] tracking-[-0.06em] text-[#111111] dark:text-white`}
-                        >
-                            {totalText}
-                        </h1>
+                            This Month
+                        </button>
 
                     </div>
 
-                    <button
-                        className={`${fontBold.className} rounded-[8px] border border-black/[0.06] bg-black/[0.02] px-3 py-1.5 text-[11px] font-medium text-black/60 backdrop-blur-md transition-all duration-300 hover:bg-black/[0.04] hover:text-black dark:text-white/60 dark:hover:text-white dark:border-white/10`}
-                    >
-                        This Month
-                    </button>
+                    {/* Chart */}
+                    <div className="mt-2 @lg:h-70 @xl:h-95 w-full p-6">
 
-                </div>
+                        <svg
+                            viewBox={`0 0 ${width} ${height}`}
+                            className="h-full w-full overflow-visible"
+                        >
 
-                {/* Chart */}
-                <div className="mt-0 h-[330px] w-full">
+                            {/* Grid */}
+                            {[0, 1, 2, 3, 4].map(
+                                (line) => {
 
-                    <svg
-                        viewBox={`0 0 ${width} ${height}`}
-                        className="h-full w-full overflow-visible"
-                    >
+                                    const y =
+                                        paddingTop +
+                                        ((height -
+                                            paddingTop -
+                                            paddingBottom) /
+                                            4) *
+                                        line
 
-                        {/* Grid */}
-                        {[0, 1, 2, 3, 4].map(
-                            (line) => {
+                                    return (
+                                        <line
+                                            key={line}
+                                            x1="0"
+                                            y1={y}
+                                            x2={width}
+                                            y2={y}
+                                            stroke={`${theme == "dark" ? "#141414" : "#e6e6e6"}`}
+                                            strokeWidth="1"
+                                        />
+                                    )
 
-                                const y =
-                                    paddingTop +
-                                    ((height -
-                                        paddingTop -
-                                        paddingBottom) /
-                                        4) *
-                                    line
+                                }
+                            )}
 
-                                return (
-                                    <line
-                                        key={line}
-                                        x1="0"
-                                        y1={y}
-                                        x2={width}
-                                        y2={y}
-                                        stroke="rgba(0,0,0,0.06)"
-                                        strokeWidth="1"
-                                    />
-                                )
+                            {/* Y Axis */}
+                            {[1, 1.5, 2, 2.5, 3].map(
+                                (value, index) => {
 
-                            }
-                        )}
+                                    const y =
+                                        paddingTop +
+                                        ((height -
+                                            paddingTop -
+                                            paddingBottom) /
+                                            4) *
+                                        (4 - index)
 
-                        {/* Y Axis */}
-                        {[1, 1.5, 2, 2.5, 3].map(
-                            (value, index) => {
+                                    return (
+                                        <text
+                                            key={index}
+                                            x={-45}
+                                            y={y - 5}
+                                            fill={`${theme == "dark" ? "#969393" : "#696464"}`}
+                                            fontSize="15"
+                                        >
+                                            {value}K
+                                        </text>
+                                    )
 
-                                const y =
-                                    paddingTop +
-                                    ((height -
-                                        paddingTop -
-                                        paddingBottom) /
-                                        4) *
-                                    (4 - index)
+                                }
+                            )}
 
-                                return (
+                            {/* X Axis */}
+                            {points.map(
+                                (
+                                    point,
+                                    index
+                                ) => (
+
                                     <text
                                         key={index}
-                                        x={-37}
-                                        y={y - 5}
-                                        className="fill-black/40 dark:fill-white/60"
-                                        fontSize="12"
+                                        x={point.x}
+                                        y={height - 10}
+                                        textAnchor="middle"
+                                        fill={`${theme == "dark" ? "#969393" : "#696464"}`}
+                                        fontSize="15"
                                     >
-                                        {value}K
+                                        {point.day}
                                     </text>
+
                                 )
+                            )}
 
-                            }
-                        )}
+                            {/* Gradient */}
+                            <defs>
 
-                        {/* X Axis */}
-                        {points.map(
-                            (
-                                point,
-                                index
-                            ) => (
-
-                                <text
-                                    key={index}
-                                    x={point.x}
-                                    y={height - 10}
-                                    textAnchor="middle"
-                                    className="fill-black/40 dark:fill-white/60"
-                                    fontSize="12"
+                                <linearGradient
+                                    id="purpleFill"
+                                    x1="0"
+                                    y1="0"
+                                    x2="0"
+                                    y2="1"
                                 >
-                                    {point.day}
-                                </text>
 
-                            )
-                        )}
+                                    <stop
+                                        offset="0%"
+                                        stopColor="#0d7525"
+                                        stopOpacity="0.18"
+                                    />
 
-                        {/* Gradient */}
-                        <defs>
+                                    <stop
+                                        offset="100%"
+                                        stopColor="#0d7525"
+                                        stopOpacity="0"
+                                    />
 
-                            <linearGradient
-                                id="purpleFill"
-                                x1="0"
-                                y1="0"
-                                x2="0"
-                                y2="1"
-                            >
+                                </linearGradient>
 
-                                <stop
-                                    offset="0%"
-                                    stopColor="#119F25"
-                                    stopOpacity="0.18"
-                                />
+                                <filter id="glow">
 
-                                <stop
-                                    offset="100%"
-                                    stopColor="#119F25"
-                                    stopOpacity="0"
-                                />
+                                    <feGaussianBlur
+                                        stdDeviation="3"
+                                        result="blur"
+                                    />
 
-                            </linearGradient>
+                                    <feMerge>
 
-                            <filter id="glow">
+                                        <feMergeNode in="blur" />
 
-                                <feGaussianBlur
-                                    stdDeviation="3"
-                                    result="blur"
-                                />
+                                        <feMergeNode in="SourceGraphic" />
 
-                                <feMerge>
+                                    </feMerge>
 
-                                    <feMergeNode in="blur" />
+                                </filter>
 
-                                    <feMergeNode in="SourceGraphic" />
+                            </defs>
 
-                                </feMerge>
-
-                            </filter>
-
-                        </defs>
-
-                        {/* Fill */}
-                        <path
-                            d={`
+                            {/* Fill */}
+                            <path
+                                d={`
                                 ${pathData}
                                 L ${width} ${height - paddingBottom}
                                 L 0 ${height - paddingBottom}
                                 Z
                             `}
-                            fill="url(#purpleFill)"
-                        />
+                                fill="url(#purpleFill)"
+                            />
 
-                        {/* Main Path */}
-                        <motion.path
-                            ref={pathRef}
-                            d={pathData}
-                            fill="none"
-                            stroke="#119F25"
-                            strokeWidth="2.5"
-                            strokeLinecap="round"
-                            filter="url(#glow)"
-                            initial={{
-                                pathLength: 0,
-                            }}
-                            animate={{
-                                pathLength: 1,
-                            }}
-                            transition={{
-                                duration: 1.8,
-                                ease: "easeInOut",
-                            }}
-                        />
+                            {/* Main Path */}
+                            <motion.path
+                                ref={pathRef}
+                                d={pathData}
+                                fill="none"
+                                stroke="#119F25"
+                                strokeWidth="2.5"
+                                strokeLinecap="round"
+                                filter="url(#glow)"
+                                initial={{
+                                    pathLength: 0,
+                                }}
+                                animate={{
+                                    pathLength: 1,
+                                }}
+                                transition={{
+                                    duration: 1.8,
+                                    ease: "easeInOut",
+                                }}
+                            />
 
-                        {/* Hover Line */}
-                        <motion.line
-                            x1={activePoint.x}
-                            y1={paddingTop}
-                            x2={activePoint.x}
-                            y2={
-                                height -
-                                paddingBottom
-                            }
-                            stroke="#119F25"
-                            strokeDasharray="5 5"
-                            strokeOpacity={0.25}
-                            initial={false}
-                            animate={{
-                                opacity:
-                                    isHovering
-                                        ? 1
-                                        : 0,
-                            }}
-                            transition={{
-                                duration: 0.08,
-                            }}
-                        />
+                            {/* Hover Line */}
+                            <motion.line
+                                x1={activePoint.x}
+                                y1={paddingTop}
+                                x2={activePoint.x}
+                                y2={
+                                    height -
+                                    paddingBottom
+                                }
+                                stroke="#119F25"
+                                strokeDasharray="5 5"
+                                strokeOpacity={0.25}
+                                initial={false}
+                                animate={{
+                                    opacity:
+                                        isHovering
+                                            ? 1
+                                            : 0,
+                                }}
+                                transition={{
+                                    duration: 0.08,
+                                }}
+                            />
 
-                        {/* Active Dot */}
-                        <motion.circle
-                            cx={activePoint.x}
-                            cy={activePoint.y}
-                            r={6}
-                            fill="#119F25"
-                            stroke="#F3E8FF"
-                            strokeWidth="3"
-                            initial={false}
-                            animate={{
-                                opacity:
-                                    isHovering
-                                        ? 1
-                                        : 0,
-                                scale:
-                                    isHovering
-                                        ? 1
-                                        : 0.7,
-                            }}
-                            transition={{
-                                duration: 0.08,
-                            }}
-                            style={{
-                                transformOrigin: `${activePoint.x}px ${activePoint.y}px`,
-                            }}
-                        />
+                            {/* Active Dot */}
+                            <motion.circle
+                                cx={activePoint.x}
+                                cy={activePoint.y}
+                                r={6}
+                                fill="#119F25"
+                                stroke="#F3E8FF"
+                                strokeWidth="3"
+                                initial={false}
+                                animate={{
+                                    opacity:
+                                        isHovering
+                                            ? 1
+                                            : 0,
+                                    scale:
+                                        isHovering
+                                            ? 1
+                                            : 0.7,
+                                }}
+                                transition={{
+                                    duration: 0.08,
+                                }}
+                                style={{
+                                    transformOrigin: `${activePoint.x}px ${activePoint.y}px`,
+                                }}
+                            />
 
-                        {/* Tooltip */}
-                        <foreignObject
-                            x={
-                                activePoint.x -
-                                45
-                            }
-                            y={
-                                activePoint.y -
-                                70
-                            }
-                            width="100"
-                            height="55"
-                            style={{
-                                pointerEvents:
-                                    "none",
-                                opacity:
-                                    isHovering
-                                        ? 1
-                                        : 0,
-                                transition:
-                                    "opacity 0.08s linear",
-                            }}
-                        >
+                            {/* Tooltip */}
+                            <foreignObject
+                                x={
+                                    activePoint.x -
+                                    45
+                                }
+                                y={
+                                    activePoint.y -
+                                    70
+                                }
+                                width="100"
+                                height="100"
+                                style={{
+                                    pointerEvents:
+                                        "none",
+                                    opacity:
+                                        isHovering
+                                            ? 1
+                                            : 0,
+                                    transition:
+                                        "opacity 0.08s linear",
+                                }}
+                            >
 
-                            <div className="rounded-[10px] border border-black/[0.06] bg-white/95 dark:bg-[#070606] dark:border-white/10 px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
+                                <div className="rounded-[10px] border border-black/[0.06] bg-black/95 px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
 
-                                <p
-                                    className={`${fontBold.className} text-[8px] text-black/70 dark:text-white/70`}
-                                >
-                                    {
-                                        activeData.day
-                                    }
-                                </p>
-
-                                <h3
-                                    className={`${fontBold.className} mt-1 text-[12px] text-[#111111] dark:text-white`}
-                                >
-                                    {activeData.value.toLocaleString()}
-
-                                    <span
-                                        className={`${fontBold.className} ml-1 text-[8px] text-black/70 dark:text-white/70`}
+                                    <p
+                                        className={`${manrope.className} text-[15px] text-white/70`}
                                     >
-                                        syncs
-                                    </span>
+                                        {
+                                            activeData.day
+                                        }
+                                    </p>
 
-                                </h3>
+                                    <h3
+                                        className={`${manrope.className} mt-1 text-[12px] text-[#ffffff]`}
+                                    >
+                                        {activeData.value.toLocaleString()}
 
-                            </div>
+                                        <span
+                                            className={`${manrope.className} ml-1 text-[12px] text-ffffff/70`}
+                                        >
+                                            syncs
+                                        </span>
 
-                        </foreignObject>
+                                    </h3>
 
-                        {/* Hover Overlay */}
-                        <rect
-                            x="0"
-                            y="0"
-                            width={width}
-                            height={height}
-                            fill="transparent"
-                            className="cursor-pointer"
+                                </div>
 
-                            onMouseEnter={() =>
-                                setIsHovering(
-                                    true
-                                )
-                            }
+                            </foreignObject>
 
-                            onMouseLeave={() =>
-                                setIsHovering(
-                                    false
-                                )
-                            }
+                            {/* Hover Overlay */}
+                            <rect
+                                x="0"
+                                y="0"
+                                width={width}
+                                height={height}
+                                fill="transparent"
+                                className="cursor-pointer"
 
-                            onMouseMove={(e) => {
+                                onMouseEnter={() =>
+                                    setIsHovering(
+                                        true
+                                    )
+                                }
 
-                                const svg =
-                                    e.currentTarget.ownerSVGElement
+                                onMouseLeave={() =>
+                                    setIsHovering(
+                                        false
+                                    )
+                                }
 
-                                if (!svg) return
+                                onMouseMove={(e) => {
 
-                                const rect =
-                                    svg.getBoundingClientRect()
+                                    const svg =
+                                        e.currentTarget.ownerSVGElement
 
-                                const mouseX =
-                                    e.clientX -
-                                    rect.left
+                                    if (!svg) return
 
-                                const normalizedX =
-                                    (mouseX /
-                                        rect.width) *
-                                    width
+                                    const rect =
+                                        svg.getBoundingClientRect()
 
-                                setHoverX(
-                                    Math.max(
-                                        0,
-                                        Math.min(
-                                            width,
-                                            normalizedX
+                                    const mouseX =
+                                        e.clientX -
+                                        rect.left
+
+                                    const normalizedX =
+                                        (mouseX /
+                                            rect.width) *
+                                        width
+
+                                    setHoverX(
+                                        Math.max(
+                                            0,
+                                            Math.min(
+                                                width,
+                                                normalizedX
+                                            )
                                         )
                                     )
-                                )
 
-                            }}
-                        />
+                                }}
+                            />
 
-                    </svg>
+                        </svg>
+
+                    </div>
 
                 </div>
-
-            </div>
+            </Glow>
 
         </div>
 

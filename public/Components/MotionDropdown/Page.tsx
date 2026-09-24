@@ -23,6 +23,7 @@ function Page() {
             className="flex justify-start p-2"
         >
             <Dropdown
+                forceDirection="down"
                 menuClassName="bg-white text-black border-white/10"
                 itemClassName="text-black"
                 trigger={

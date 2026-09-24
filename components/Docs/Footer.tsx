@@ -1,17 +1,11 @@
 "use client"
 
-import { DM_Serif_Display, JetBrains_Mono } from 'next/font/google'
+import { JetBrains_Mono } from 'next/font/google'
 import React from 'react'
 
 const footerFont = JetBrains_Mono({
     weight: "300",
     subsets: ["latin"],
-})
-
-const AnimatedFont = DM_Serif_Display({
-    weight: "400",
-    subsets: ["latin"],
-    style: "italic"
 })
 
 import { motion } from 'framer-motion'
@@ -43,7 +37,7 @@ function Footer() {
                         <div>
                             <Heart className="h-4 w-5 stroke-[#ffa600] fill-[#ffa600]" />
                         </div>
-                        <h1>by <span className={` ${AnimatedFont.className} px-1 text-[#ffa600] hover:underline hover:text-[#f9b840] dark:hover:text-[#f9b840]`}> <Link href="https://x.com/_siddhantmani" target="_blank"> Siddhant Mani</Link></span></h1>
+                        <h1>by <span className={` ${footerFont.className} px-1 text-[#ffa600] hover:underline hover:text-[#f9b840] dark:hover:text-[#f9b840]`}> <Link href="https://x.com/_siddhantmani" target="_blank"> Siddhant Mani</Link></span></h1>
                     </div>
                 </footer>
             </motion.div>

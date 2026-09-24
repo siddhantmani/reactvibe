@@ -1,11 +1,12 @@
 "use client"
-import { motion } from "framer-motion"
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
 import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
+import Glow from "@/components/Docs/Components/Glow/Glow";
+import { useTheme } from "@/components/ThemeProvider";
 
 const boldFont = Manrope({
     weight: "600",
@@ -68,8 +69,7 @@ function DonutChart() {
 
     return (
         <div className="relative">
-
-            <svg width="220" height="220" viewBox="0 0 280 280" className="-rotate-90">
+            <svg viewBox="0 0 280 280" className="-rotate-90 w-43 h-43">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -90,7 +90,7 @@ function DonutChart() {
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                <p className={`${boldFont.className} text-[10px] text-[#4b5563] dark:text-white/60`}>
+                <p className={`${boldFont.className} text-[9px] text-[#4b5563] dark:text-white/60`}>
                     Total Expense
                 </p>
 
@@ -115,7 +115,7 @@ interface ExpenseItemProps {
 
 function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
     return (
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-6">
 
             {/* Left */}
             <div className="flex items-center gap-4">
@@ -145,24 +145,37 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
 }
 
 function ExpenseBreakdownChart() {
+    const { theme } = useTheme()
     return (
-        <div className="w-full rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full rounded-2xl border dark:border-[#222121] border-black/10">
 
-            {/* Header */}
-            <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
-                Expense Breakdown
-            </h1>
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full "
+            >
 
-            {/* Content */}
-            <div className="flex items-center justify-between">
+                {/* Header */}
+                <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
+                    Expense Breakdown
+                </h1>
 
-                {/* Donut Chart */}
-                <div className="flex items-center justify-center">
-                    <DonutChart />
-                </div>
+                {/* Content */}
+                <div className="flex flex-col @lg:flex-row @lg:items-center gap-0">
 
-                {/* Expense List */}
-                <div className="">
+                    {/* Donut Chart */}
+                    <div className="flex items-center justify-center">
+                        <DonutChart />
+                    </div>
+
+                    {/* Expense List */}
 
                     <div className="space-y-5">
                         {expenses.map((item, index) => (
@@ -176,17 +189,17 @@ function ExpenseBreakdownChart() {
                         ))}
                     </div>
                 </div>
-            </div>
 
-            {/* Footer */}
-            <button className={`${boldFont.className} mt-7 cursor-pointer flex items-center gap-3 text-[10px] text-[#06aa06] dark:hover:text-[#15ff00] hover:opacity-80 transition-opacity`}>
-                View full report
+                {/* Footer */}
+                <button className={`${boldFont.className} mt-7 cursor-pointer flex items-center gap-3 text-[10px] text-[#06aa06] dark:hover:text-[#15ff00] hover:opacity-80 transition-opacity`}>
+                    View full report
 
-                <ArrowRight
-                    size={14}
-                    strokeWidth={2.4}
-                />
-            </button>
+                    <ArrowRight
+                        size={14}
+                        strokeWidth={2.4}
+                    />
+                </button>
+            </Glow>
         </div>
     );
 }

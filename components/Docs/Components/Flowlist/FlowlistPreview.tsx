@@ -1,5 +1,6 @@
 import React from 'react'
-import FlowlistCard from './FlowlistCard';
+import FlowlistCard from './Flowlist';
+import Flowlist from './Flowlist';
 
 function FlowlistPreview() {
     const faqItems = [
@@ -55,12 +56,13 @@ function FlowlistPreview() {
         }
     ];
     return (
-        <div className='border-[0px] border-[#131925] p-4 rounded-[10px] bg-[#fbfbfb] max-w-sm mx-auto'>
-            <FlowlistCard
+        <div className='border-[0px] border-[#131925] mt-20 p-4 rounded-[10px] bg-[#fbfbfb] dark:bg-[#0c0c0c] max-w-sm mx-auto'>
+            <Flowlist
                 items={faqItems}
                 onItemSelect={(item, index) => console.log(item, index)}
                 showGradients={true}
                 enableArrowNavigation={true}
+                listClassName="max-h-[350px]"
             />
         </div>
     )

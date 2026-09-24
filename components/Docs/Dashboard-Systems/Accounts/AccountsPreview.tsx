@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import DashboardFrame from '@/components/DashboardFrame'
 import React from 'react'
 import AccountsDashboard from './AccountsDashboard/AccountsDashboard'
+import FinanceOverviewNavMenu from "../NavMenu"
 
 function AccountsPreview() {
     return (
@@ -21,10 +22,12 @@ function AccountsPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
+            className="@xl:overflow-hidden"
         >
-            <DashboardFrame>
-                <AccountsDashboard />
-            </DashboardFrame>
+            <div className='@md:hidden sticky top-0 w-full z-50'>
+                <FinanceOverviewNavMenu />
+            </div>
+            <AccountsDashboard />
         </motion.div>
     )
 }

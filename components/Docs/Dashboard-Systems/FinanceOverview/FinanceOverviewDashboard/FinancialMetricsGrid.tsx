@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
+import Glow from "@/components/Docs/Components/Glow/Glow";
+import { useTheme } from "@/components/ThemeProvider";
 
 const boldFont = Manrope({
     weight: "500",
@@ -94,64 +96,67 @@ function StatCard({
     color,
     bg,
 }: StatCardProps) {
+    const { theme } = useTheme();
     return (
-        <motion.div
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{
-                once: true,
-                amount: 0.2, // Trigger when 20% visible
-                margin: "50px"
-            }}
-            transition={{
-                duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                delay: 0.2
-            }}
-            className="flex-1 aspect-video bg-white dark:bg-[#070606] dark:border-white/10 rounded-[15px] border border-black/10 p-3 px-3 shadow-[0_10px_30px_rgba(0,0,0,0.03)]">
+        <div className="flex-1 shadow-[0_10px_30px_rgba(0,0,0,0.03)]">
 
-            {/* Top */}
-            <div className="flex items-start justify-between">
-                <div>
-                    <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
-                        {title}
-                    </p>
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full rounded-2xl border dark:border-[#222121] border-black/10"
+            >
+                {/* Top */}
+                <div className="flex items-start justify-between">
+                    <div>
+                        <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
+                            {title}
+                        </p>
 
-                    <LinearReveal
-                        as='h2'
-                        Text={amount}
-                        className={`${boldFont.className} text-[18px] font-bold text-[#0f172a] dark:text-white mt-3 tracking-[-1px]`}
+                        <LinearReveal
+                            as='h2'
+                            Text={amount}
+                            className={`${boldFont.className} text-[18px] font-bold text-[#0f172a] dark:text-white mt-3 tracking-[-1px]`}
+                        />
+                    </div>
+
+                    <div
+                        className="h-8 w-8 rounded-full flex items-center justify-center"
+                        style={{ background: bg }}
+                    >
+                        {icon}
+                    </div>
+                </div>
+
+                {/* Progress */}
+                <div className="mt-10">
+                    <PercentageProgress
+                        value={percentage}
+                        color={color}
+                        bg={bg}
                     />
                 </div>
-
-                <div
-                    className="h-8 w-8 rounded-full flex items-center justify-center"
-                    style={{ background: bg }}
-                >
-                    {icon}
-                </div>
-            </div>
-
-            {/* Progress */}
-            <div className="mt-10">
-                <PercentageProgress
-                    value={percentage}
-                    color={color}
-                    bg={bg}
-                />
-            </div>
-        </motion.div>
+            </Glow>
+        </div>
     );
 }
 
 function FinancialMetricsGrid() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+    const { theme } = useTheme()
     return (
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-1 @md:grid-cols-2 @xl:grid-cols-4 gap-2">
 
             {/* Main Balance Card */}
-            <div className="relative aspect-video flex-1 rounded-[15px] bg-gradient-to-br from-[#006b46] via-[#00754d] to-[#00573a] dark:from-[#031A08] dark:via-[#021406] dark:to-[#010B03] p-3 px-3 shadow-[0_20px_60px_rgba(0,100,60,0.25)] dark:shadow-none dark:border dark:border-white/10">
+            <div className="relative flex-1 rounded-[15px] bg-gradient-to-br from-[#006b46] via-[#00754d] to-[#00573a] dark:from-[#031A08] dark:via-[#021406] dark:to-[#010B03] p-3 px-3 shadow-[0_20px_60px_rgba(0,100,60,0.25)] dark:shadow-none dark:border dark:border-white/10">
 
                 {/* Glow */}
                 <div className="absolute top-[-60px] right-[-40px] w-[180px] h-[150px] bg-white/5 rounded-[18px] blur-3xl" />
@@ -264,40 +269,54 @@ function FinancialMetricsGrid() {
             />
 
             {/* Savings */}
-            <div className="flex-1 bg-white dark:bg-[#070606] dark:border-white/10 rounded-[15px] border border-black/10 p-3 px-3 shadow-[0_10px_30px_rgba(0,0,0,0.03)] aspect-video">
+            <div className="flex-1 shadow-[0_10px_30px_rgba(0,0,0,0.03)] ">
 
-                <div className="flex items-start justify-between">
+                <Glow
+                    backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                    glowColor="#0d7525"
+                    glowSize="180px"
+                    glowOpacity={0.3}
+                    glowFadeAt="100%"
+                    borderGlow={false}
+                    borderGlowColor="rgba(130,100,255,0.4)"
+                    borderGlowSize="100px"
+                    borderGlowTransparency="80%"
+                    className="p-4 h-full rounded-2xl border dark:border-[#222121] border-black/10"
+                >
 
-                    <div>
-                        <p className={`${boldFont.className} text-[11px] font-medium text-[#111827] dark:text-white`}>
-                            Savings
-                        </p>
+                    <div className="flex items-start justify-between">
 
-                        <LinearReveal
-                            as='h2'
-                            Text="$3,740.00"
-                            className={`${boldFont.className} text-[18px] text-[#0f172a] dark:text-white mt-3 tracking-[-1px]`}
+                        <div>
+                            <p className={`${boldFont.className} text-[11px] font-medium text-[#111827] dark:text-white`}>
+                                Savings
+                            </p>
+
+                            <LinearReveal
+                                as='h2'
+                                Text="$3,740.00"
+                                className={`${boldFont.className} text-[18px] text-[#0f172a] dark:text-white mt-3 tracking-[-1px]`}
+                            />
+                        </div>
+
+                        <div className="flex flex-col items-end gap-6">
+
+                            {/* Dropdown */}
+                            <button className={`${boldFont.className} px-2 py-1 rounded-[4px] border border-black/10 text-[10px] text-[#111827] dark:text-white/60 dark:hover:text-white dark:border-white/10`}>
+                                This Month
+                            </button>
+
+
+                        </div>
+                    </div>
+
+                    <div className="mt-10">
+                        <PercentageProgress
+                            value={75}
+                            color="#16a34a"
+                            bg="#dcfce7"
                         />
                     </div>
-
-                    <div className="flex flex-col items-end gap-6">
-
-                        {/* Dropdown */}
-                        <button className={`${boldFont.className} px-2 py-1 rounded-[4px] border border-black/10 text-[10px] text-[#111827] dark:text-white/60 dark:hover:text-white dark:border-white/10`}>
-                            This Month
-                        </button>
-
-
-                    </div>
-                </div>
-
-                <div className="mt-10">
-                    <PercentageProgress
-                        value={75}
-                        color="#16a34a"
-                        bg="#dcfce7"
-                    />
-                </div>
+                </Glow>
             </div>
         </div>
     );

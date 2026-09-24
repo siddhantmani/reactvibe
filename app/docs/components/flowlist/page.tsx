@@ -4,11 +4,10 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "React Animated List Component with Framer Motion",
+    title: "React Animated List Component | React Vibe",
     description:
-        "Build a React animated list component with Framer Motion. Includes stagger animations, FAQ lists, and smooth UI transitions.",
+        "A animated list component for smooth, staggered content reveals. Use Flowlist for feature lists, activity feeds, notifications, timelines, and interactive UI.",
 }
-
 
 function FlowList() {
     return (

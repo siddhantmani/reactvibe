@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "React Button with Shadow & Hover Animation",
+    title: "React Custom Button | React Vibe",
     description:
-        "A modern React button component with shadow depth and smooth hover animation. Perfect for clean, high-quality UI interactions.",
+        "A polished React custom button with a bold shadow and modern styling.Use it for primary CTAs, landing pages, SaaS apps, and modern web interfaces.",
 }
 
 

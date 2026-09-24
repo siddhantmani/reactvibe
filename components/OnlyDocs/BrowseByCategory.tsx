@@ -1,117 +1,72 @@
 "use client"
 
 import React from "react"
-import { cn } from "@/lib/utils"
-import Link from "next/link"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
+import { ArrowUpRight } from "lucide-react"
 
-const iconClass =
-    "w-5 h-5 stroke-[1.8] stroke-current fill-none stroke-linecap-round stroke-linejoin-round transition-transform group-hover:scale-110"
+import { cn } from "@/lib/utils"
+import { PreviewCanvas } from "@/components/PreviewCanvas"
+
+import FinanceOverview from "@/public/Dashboard-Systems/FinanceOverview/FinanceOverview"
+import PerformanceTrendCharPreview from "@/public/Dashboard-UI/Chart/PerformanceTrendChart/Preview"
+import ZenithPreview from "@/public/Blocks/Pricing/Zenith/Page"
+import BranchFlowPreview from "@/public/Motion/BranchFlow/Preview"
+import RisingLinesPreview from "@/public/Backgrounds/RisingLines/Preview"
+import FlowListPreview from "@/public/Components/Flowlist/Page"
+import LinerPreview from "@/public/Text-Motion/LinearReveal/Page"
 
 const categories = [
-
     {
-        icon: (
-            <svg viewBox="0 0 24 24" className={iconClass}>
-                <path d="M12 3v18" />
-                <path d="M17 7a4 4 0 0 0-5-2 4 4 0 0 0 0 8 4 4 0 0 1 0 8 4 4 0 0 1-5-2" />
-            </svg>
-        ),
-        title: "Dashboard Systems",
+        title: "Motion",
         description:
-            "Production-ready finance, reporting, budgeting, investment, and analytics dashboards.",
-        link: "/docs/dashboard-systems/finance-overview",
+            "Interactive animations and motion patterns for expressive React interfaces.",
+        link: "/docs/motion/branch-flow",
+        preview: <BranchFlowPreview />,
     },
-
     {
-        icon: (
-            <svg viewBox="0 0 24 24" className={iconClass}>
-                <path d="M4 6h16M4 12h16M4 18h16" />
-                <path d="M9 10l3 3 3-3" />
-            </svg>
-        ),
-        title: "UI Blocks",
-        description:
-            "Data tables, charts, metrics, activity feeds, timelines, and SaaS interface blocks.",
-        link: "/docs/ui-blocks/transaction-table",
-    },
-
-    {
-        icon: (
-            <svg viewBox="0 0 24 24" className={iconClass}>
-                <path d="M21 15a4 4 0 0 1-4 4H7l-4 2V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
-            </svg>
-        ),
-        title: "Hero Sections",
-        description:
-            "Landing page heroes with animations, CTAs, navigation, and modern SaaS layouts.",
-        link: "/docs/hero-section/launch",
-    },
-
-    {
-        icon: (
-            <svg viewBox="0 0 24 24" className={iconClass}>
-                <path d="M9 9l10-4-4 10-2-3-4 4z" />
-            </svg>
-        ),
-        title: "Testimonials",
-        description:
-            "Customer testimonials, reviews, social proof, and carousel layouts.",
-        link: "/docs/sections/spotlight",
-    },
-
-    {
-        icon: (
-            <svg viewBox="0 0 24 24" className={iconClass}>
-                <rect x="3" y="8" width="18" height="8" rx="4" />
-            </svg>
-        ),
-        title: "Interactive Components",
-        description:
-            "Dropdowns, buttons, brand marquees, switches, and reusable UI components.",
-        link: "/docs/components/motion-dropdown",
-    },
-
-    {
-        icon: (
-            <svg viewBox="0 0 24 24" className={iconClass}>
-                <path d="M2 12c2-4 6-4 8 0s6 4 8 0 4-4 4-4" />
-            </svg>
-        ),
-        title: "Background Effects",
+        title: "Backgrounds",
         description:
             "Animated backgrounds, gradients, particles, and interactive visual effects.",
-        link: "/docs/backgrounds/dark-fusion",
+        link: "/docs/backgrounds/rising-lines",
+        preview: <RisingLinesPreview />,
     },
-
     {
-        icon: (
-            <svg viewBox="0 0 24 24" className={iconClass}>
-                <path d="M4 7h10M4 12h6M4 17h4" />
-                <path d="M16 10l3 2-3 2" />
-            </svg>
-        ),
-        title: "Text Animations",
+        title: "Dashboard Systems",
         description:
-            "Animated headings, reveal effects, and motion typography for React.",
-        link: "/docs/text-motion/linear-reveal",
+            "Complete finance, reporting, budgeting, investment, and analytics dashboards.",
+        link: "/docs/dashboard-systems/finance-overview",
+        preview: <FinanceOverview />,
     },
-
     {
-        icon: (
-            <svg viewBox="0 0 24 24" className={iconClass}>
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <path d="M3 10h18" />
-            </svg>
-        ),
-        title: "Navigation",
+        title: "Dashboard UI",
         description:
-            "React navigation components including menus, dropdowns, and accordions",
-        link: "/docs/hero-section/overlay-nav"
+            "Tables, charts, metrics, activity feeds, timelines, and reusable dashboard UI.",
+        link: "/docs/dashboard-ui/chart/performance-trend-chart",
+        preview: <PerformanceTrendCharPreview />,
     },
-
-
+    {
+        title: "Blocks",
+        description:
+            "Pricing, testimonials, CTAs, FAQs, sections, and reusable SaaS interface blocks.",
+        link: "/docs/blocks/pricing/zenith",
+        preview: <ZenithPreview />,
+    },
+    {
+        title: "Components",
+        description:
+            "Reusable React UI components built for modern websites and applications.",
+        link: "/docs/components/flowlist",
+        preview: <FlowListPreview />,
+    },
+    {
+        title: "Text",
+        description:
+            "Animated text, reveals, typography effects, and motion-driven type.",
+        link: "/docs/text/linear-reveal",
+        preview: <LinerPreview />,
+    },
 ]
 
 type Props = {
@@ -119,98 +74,184 @@ type Props = {
     onCategoryClick?: (title: string) => void
 }
 
-function BrowseByCategory({ className, onCategoryClick }: Props) {
+function BrowseByCategory({
+    className,
+    onCategoryClick,
+}: Props) {
     return (
         <div className={cn("w-full px-2 py-10", className)}>
             {/* Header */}
             <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
-                whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                initial={{
+                    opacity: 0,
+                    y: 8,
+                    filter: "blur(6px)",
+                }}
+                whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                }}
                 viewport={{
                     once: true,
-                    amount: 0.2, // Trigger when 20% visible
-                    margin: "50px"
+                    amount: 0.2,
+                    margin: "50px",
                 }}
                 transition={{
-                    duration: 1.2,
-                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                    delay: 0.5
+                    duration: 0.8,
+                    ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold tracking-tight text-foreground">
-                    Explore React UI Components & Animations
-                </h2>
+                className="mb-6 flex items-center justify-between gap-4"
+            >
+                <div>
+                    <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                        Explore
+                    </p>
 
-                <Link href="/docs/explore-components">
-                    <button
-                        className={cn(
-                            "flex items-center gap-1.5 px-4 py-2 rounded-lg border text-[13px] transition-all",
-                            "border-border text-foreground hover:bg-accent",
-                            "dark:border-[#2a2040] dark:hover:border-[#7c3aed]/60 dark:hover:bg-[#1a1528]"
-                        )}
-                    >
-                        View all components
-                    </button>
-                </Link>
+                    <h2 className="text-2xl font-bold tracking-tight text-foreground">
+                        React Components, UI Blocks & Dashboard Systems
+                    </h2>
+                </div>
             </motion.div>
 
-            {/* Grid */}
-            <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
-                {categories.map((cat, index) => (
-                    <motion.button
-                        initial={{ opacity: 0, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            {/* Category Grid */}
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                {categories.map((category, index) => (
+                    <motion.div
+                        key={category.title}
+                        initial={{
+                            opacity: 0,
+                            y: 12,
+                            filter: "blur(5px)",
+                        }}
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            filter: "blur(0px)",
+                        }}
                         viewport={{
                             once: true,
-                            amount: 0.2, // Trigger when 20% visible
-                            margin: "50px"
+                            amount: 0.15,
+                            margin: "50px",
                         }}
                         transition={{
-                            duration: 1.2,
-                            ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                            delay: 0.1 * index
+                            duration: 0.7,
+                            ease: [0.25, 0.46, 0.45, 0.94],
+                            delay: 0.08 * index,
                         }}
-                        key={cat.title}
-                        onClick={() => onCategoryClick?.(cat.title)}
-                        className={cn(
-                            "group flex flex-col gap-3 rounded-2xl border p-3 text-left transition-all",
-                            "bg-card border-border hover:bg-accent",
-                            "dark:bg-gradient-to-r dark:from-[#0b0b0b] dark:to-[#131212]",
-                            "dark:border-[#1e1a30] dark:hover:border-[#3b2d6b] dark:hover:bg-[#16122a]"
-                        )}
                     >
-                        <Link href={cat.link}>
-                            {/* Top */}
-                            <div className="flex items-start justify-between pb-5">
+                        <Link
+                            href={category.link}
+                            onClick={() =>
+                                onCategoryClick?.(category.title)
+                            }
+                            className="
+                                group block overflow-hidden
+                                rounded-2xl border border-border
+                                bg-background
+                                text-left
+                                transition-all duration-300
+                                hover:-translate-y-0.5
+                                hover:border-primary/20
+                                hover:shadow-md
+                                dark:bg-card/20
+                                dark:hover:border-[#7c3aed]/30
+                            "
+                        >
+                            {/* 16:9 Preview */}
+                            {/* 16:9 Preview */}
+                            <div
+                                className="
+        relative aspect-video
+        w-full overflow-hidden
+        border-b border-border
+        bg-muted/30
+    "
+                            >
                                 <div
-                                    className={cn(
-                                        "p-1 flex items-center justify-center rounded-md border transition-all",
-                                        "bg-muted text-foreground border-border",
-                                        "dark:bg-[#1e1533] dark:border-[#2e2050] dark:text-[#a855f7]",
-                                        "dark:group-hover:bg-[#2a1d4a] dark:group-hover:text-[#c084fc]",
-                                        "dark:group-hover:shadow-[0_0_12px_rgba(168,85,247,0.35)]"
-                                    )}
+                                    className="
+            absolute inset-0
+            overflow-hidden
+            transition-transform duration-500
+            group-hover:scale-[1.02]
+        "
                                 >
-                                    {cat.icon}
+                                    <PreviewCanvas>
+                                        <div
+                                            className={cn(
+                                                "relative h-full w-full",
+                                                category.title === "Backgrounds"
+                                                    ? "overflow-hidden"
+                                                    : "flex items-center justify-center"
+                                            )}
+                                        >
+                                            {category.preview}
+                                        </div>
+                                    </PreviewCanvas>
                                 </div>
 
-                                <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                                    →
-                                </span>
+                                {/* Preview hover arrow */}
+                                <div
+                                    className="
+            absolute right-3 top-3
+            flex h-7 w-7
+            items-center justify-center
+            rounded-full
+            bg-black/40
+            text-white
+            opacity-0
+            backdrop-blur-sm
+            transition-all duration-300
+            group-hover:opacity-100
+        "
+                                >
+                                    <ArrowUpRight size={14} />
+                                </div>
                             </div>
 
-                            {/* Title */}
-                            <p className="text-[14px] font-semibold text-foreground">
-                                {cat.title}
-                            </p>
 
-                            {/* Description */}
-                            <p className="text-[12px] leading-relaxed text-muted-foreground">
-                                {cat.description}
-                            </p>
+                            {/* Card Content */}
+                            <div className="p-4">
+                                <div className="flex items-start justify-between gap-3">
+                                    <h3
+                                        className="
+                                            text-[14px]
+                                            font-semibold
+                                            tracking-tight
+                                            text-foreground
+                                        "
+                                    >
+                                        {category.title}
+                                    </h3>
+
+                                    <ArrowUpRight
+                                        size={15}
+                                        strokeWidth={1.7}
+                                        className="
+                                            mt-0.5
+                                            shrink-0
+                                            text-muted-foreground
+                                            transition-all duration-300
+                                            group-hover:-translate-y-0.5
+                                            group-hover:translate-x-0.5
+                                            group-hover:text-foreground
+                                        "
+                                    />
+                                </div>
+
+                                <p
+                                    className="
+                                        mt-1.5
+                                        text-[12px]
+                                        leading-[1.55]
+                                        text-muted-foreground
+                                    "
+                                >
+                                    {category.description}
+                                </p>
+                            </div>
                         </Link>
-
-                    </motion.button>
+                    </motion.div>
                 ))}
             </div>
         </div>

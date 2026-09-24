@@ -7,9 +7,13 @@ import AccountsPreview from './AccountsPreview';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import Link from 'next/link';
 import Banner from '@/components/Banner';
+import { useState } from "react";
+import DeviceToggleGroup from "@/components/DeviceToggleGroup";
+import SpotlightBackground from "@/components/SpotlightBackground";
+import ResizablePreview from "@/components/ResizablePreview";
 
 function AccountsItemsPreview() {
-
+    const [previewWidth, setPreviewWidth] = useState(1440);
     return (
         <div className='space-y-1'>
 
@@ -25,10 +29,10 @@ function AccountsItemsPreview() {
                     }}
                     transition={{
                         duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], 
+                        ease: [0.25, 0.46, 0.45, 0.94],
                         delay: 0.3
                     }}
-                    className="h-10 flex items-center justify-end p-1 w-full gap-1">
+                    className="h-10 flex items-center justify-between p-1 w-full gap-1">
                     <div className='flex items-center gap-2 max-w-[130px] '>
                         <Link href="/docs/templates/taskforge">
                             <div>
@@ -47,7 +51,13 @@ function AccountsItemsPreview() {
                             </div>
                         </Link>
                     </div>
-                    <div>
+                    <div className='flex items-center gap-2'>
+
+                        <DeviceToggleGroup
+                            activeWidth={previewWidth}
+                            onWidthChange={setPreviewWidth}
+                        />
+
                         <RefrashContent />
                     </div>
                 </motion.div>
@@ -56,10 +66,18 @@ function AccountsItemsPreview() {
                 <Banner />
             </div>
             <div
-                className="w-full bg-white border rounded-3xl dark:bg-black dark:border-white/10"
+                className="w-full bg-white border rounded-3xl dark:bg-black dark:border-white/10 relative"
             >
-                <div className="text-black z-40 w-full h-full scale-[99%]">
-                    <AccountsPreview />
+                <div className="text-black z-40 w-full h-[1007px]">
+                    <SpotlightBackground className="rounded-2xl z-0" spotlightSize={180} />
+
+                    <ResizablePreview
+                        width={previewWidth}
+                        onWidthChange={setPreviewWidth}
+                        className="absolute inset-0 z-10 py-2"
+                    >
+                        <AccountsPreview />
+                    </ResizablePreview>
                 </div>
             </div>
 

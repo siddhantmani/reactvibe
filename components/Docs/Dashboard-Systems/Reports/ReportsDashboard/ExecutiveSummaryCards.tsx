@@ -1,16 +1,13 @@
-"use client";
-
-import { motion } from "framer-motion";
-
-import React from "react";
+"use client"
 
 import {
     EllipsisVertical,
     Eye,
     FileText,
-} from "lucide-react";
-
-import { Manrope } from "next/font/google";
+} from "lucide-react"
+import { manrope } from "@/lib/fonts";
+import { useTheme } from "@/components/ThemeProvider";
+import Glow from "@/components/Docs/Components/Glow/Glow";
 
 const reports = [
     {
@@ -25,88 +22,56 @@ const reports = [
         title: "Spending Analysis - Q2",
         subtitle: "PDF • Generated Apr 30, 2024",
     },
-];
-
-const fontBold = Manrope({
-    weight: "500",
-    subsets: ["latin"],
-});
+]
 
 function ExecutiveSummaryCards() {
-
+    const { theme } = useTheme()
     return (
+        <div className="relative overflow-hidden transition-colors duration-300  rounded-2xl border dark:border-[#222121] border-black/10">
+            <Glow
+                backgroundColor={`${theme === "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 transition-colors duration-300"
+            >
 
-        <div
-            className="relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:bg-[#070606] dark:border-white/10 p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]"
-        >
+                <div className="relative z-10">
 
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.04),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(139,92,246,0.05),_transparent_40%)]" />
+                    {/* Heading */}
+                    <div>
 
-            {/* Purple Glow */}
-            <div className="absolute right-[-80px] top-[-80px] h-[220px] w-[220px] rounded-full bg-[#8B5CF6]/[0.04] blur-3xl" />
+                        <h2 className={`${manrope.className} text-[12px] text-gray-900 dark:text-white transition-colors duration-300`}>
+                            Executive Summary
+                        </h2>
 
-            <div className="relative z-10">
+                    </div>
 
-                {/* Heading */}
-                <div>
+                    {/* Reports */}
+                    <div className="mt-6 space-y-2">
 
-                    <h2
-                        className={`${fontBold.className} text-[15px] tracking-[-0.04em] text-[#111111] dark:text-white`}
-                    >
-                        Executive Summary
-                    </h2>
+                        {reports.map((report) => (
 
-                    <p
-                        className={`${fontBold.className} mt-1 text-[11px] text-black/45 dark:text-white/60`}
-                    >
-                        Generated reports and financial insights.
-                    </p>
-
-                </div>
-
-                {/* Reports */}
-                <div className="mt-7 space-y-4">
-
-                    {reports.map((report, index) => (
-
-                        <motion.div
-                            key={index}
-                            initial={{
-                                opacity: 0,
-                                y: 10,
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            viewport={{
-                                once: true,
-                            }}
-                            transition={{
-                                duration: 0.35,
-                                delay: index * 0.06,
-                            }}
-                            className="group relative overflow-hidden rounded-[16px] border border-black/[0.06] dark:border-white/10 bg-black/[0.015] dark:bg-[#070606] p-4 transition-all duration-300 hover:bg-black/[0.025] dark:hover:bg-[#0a0909] hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-none"
-                        >
-
-                            {/* Card Glow */}
-                            <div className="absolute -right-10 -top-10 h-[120px] w-[120px] rounded-full bg-[#8B5CF6]/[0.03] blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                            <div className="relative z-10 flex items-center justify-between">
+                            <div
+                                key={report.title}
+                                className="group flex items-center justify-between rounded-[8px] border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-2 transition-all duration-300 hover:border-black/10 dark:hover:border-white/10 hover:bg-black/[0.04] dark:hover:bg-white/[0.04]"
+                            >
 
                                 {/* Left Side */}
-                                <div className="flex items-center gap-4">
+                                <div className="flex items-center gap-4 py-3">
 
                                     {/* Icon */}
-                                    <div
-                                        className="flex h-11 w-11 items-center justify-center rounded-[12px] border border-black/[0.05] dark:border-white/10 bg-white dark:bg-[#070606] shadow-[0_6px_18px_rgba(0,0,0,0.03)] dark:shadow-none"
-                                    >
+                                    <div className="flex p-2 items-center justify-center rounded-[8px] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] transition-colors duration-300">
 
                                         <FileText
-                                            size={18}
-                                            className="text-[#8B5CF6]"
-                                            strokeWidth={2.2}
+                                            size={10}
+                                            className="text-gray-700 dark:text-white/80 transition-colors duration-300"
+                                            strokeWidth={2}
                                         />
 
                                     </div>
@@ -114,15 +79,11 @@ function ExecutiveSummaryCards() {
                                     {/* Content */}
                                     <div>
 
-                                        <h3
-                                            className={`${fontBold.className} text-[12px] text-[#111111] dark:text-white`}
-                                        >
+                                        <h3 className={`${manrope.className} text-[10px] font-semibold text-gray-900 dark:text-white transition-colors duration-300`}>
                                             {report.title}
                                         </h3>
 
-                                        <p
-                                            className={`${fontBold.className} mt-2 text-[10px] text-black/40 dark:text-white/60`}
-                                        >
+                                        <p className={`${manrope.className} text-[9px] text-gray-500 dark:text-white/40 transition-colors duration-300`}>
                                             {report.subtitle}
                                         </p>
 
@@ -134,12 +95,10 @@ function ExecutiveSummaryCards() {
                                 <div className="flex items-center gap-3">
 
                                     {/* View Button */}
-                                    <button
-                                        className={`${fontBold.className} flex h-10 items-center gap-2 rounded-[10px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] px-3 text-[10px] font-medium text-black/65 dark:text-white/70 shadow-[0_2px_10px_rgba(0,0,0,0.03)] dark:shadow-none transition-all duration-300 hover:bg-black dark:hover:bg-[#21192F] hover:text-white`}
-                                    >
+                                    <button className={`${manrope.className} flex h-7 items-center gap-2 rounded-[7px] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] px-2 text-[10px] font-medium text-gray-700 dark:text-white/75 transition-all duration-300 hover:bg-black/[0.06] dark:hover:bg-white/[0.06] hover:text-black dark:hover:text-white`}>
 
                                         <Eye
-                                            size={13}
+                                            size={10}
                                             strokeWidth={2.3}
                                         />
 
@@ -148,12 +107,10 @@ function ExecutiveSummaryCards() {
                                     </button>
 
                                     {/* Menu */}
-                                    <button
-                                        className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] text-black/45 dark:text-white/60 shadow-[0_2px_10px_rgba(0,0,0,0.03)] dark:shadow-none transition-all duration-300 hover:bg-black dark:hover:bg-[#21192F] hover:text-white"
-                                    >
+                                    <button className="flex p-2 items-center justify-center rounded-[8px] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] text-gray-500 dark:text-white/55 transition-all duration-300 hover:bg-black/[0.06] dark:hover:bg-white/[0.06] hover:text-black dark:hover:text-white">
 
                                         <EllipsisVertical
-                                            size={13}
+                                            size={10}
                                             strokeWidth={2.3}
                                         />
 
@@ -163,16 +120,14 @@ function ExecutiveSummaryCards() {
 
                             </div>
 
-                        </motion.div>
+                        ))}
 
-                    ))}
+                    </div>
 
                 </div>
-
-            </div>
-
+            </Glow>
         </div>
-    );
+    )
 }
 
-export default ExecutiveSummaryCards;
+export default ExecutiveSummaryCards

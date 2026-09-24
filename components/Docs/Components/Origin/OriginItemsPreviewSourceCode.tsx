@@ -6,6 +6,7 @@ import Separator from '../../Separator'
 
 import { motion } from "framer-motion"
 import OriginOpenCode from './OriginOpenCode'
+import SupportingDarkmode from '@/components/SupportingDarkmode'
 
 function OriginItemsPreviewSourceCode() {
     return (
@@ -20,21 +21,24 @@ function OriginItemsPreviewSourceCode() {
             </div>
 
             <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
+                initial={{ opacity: 0, filter: "blur(3px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
                 viewport={{
                     once: true,
-                    amount: 0.2, // Trigger when 20% visible
+                    amount: 0.2, 
                     margin: "50px"
                 }}
                 transition={{
                     duration: 1.2,
-                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                    ease: [0.25, 0.46, 0.45, 0.94], 
                     delay: 0.3
                 }}
             >
                 <OriginOpenCode />
             </motion.div>
+
+            <SupportingDarkmode />
+
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import FramerMotionGlobalInstalation from '../../FramerMotionGlobalInstalation'
 import Separator from '../../Separator'
 import PathFlowOpenCode from './PathFlowOpenCode'
+import SupportingDarkmode from '@/components/SupportingDarkmode'
 
 function PathFlowPreviewSourceCode() {
     return (
@@ -16,6 +17,9 @@ function PathFlowPreviewSourceCode() {
             <div>
                 <PathFlowOpenCode />
             </div>
+
+            <SupportingDarkmode />
+
         </div>
     )
 }

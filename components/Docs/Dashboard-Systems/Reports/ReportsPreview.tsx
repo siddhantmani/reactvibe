@@ -2,6 +2,7 @@
 import { motion } from "framer-motion"
 import DashboardFrame from "@/components/DashboardFrame"
 import ReportsDashboard from "./ReportsDashboard/ReportsDashboard"
+import NavMenu from "../NavMenu"
 
 function ReportsPreview() {
     return (
@@ -19,10 +20,12 @@ function ReportsPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
+            className="@xl:overflow-hidden"
         >
-            <DashboardFrame>
-                <ReportsDashboard />
-            </DashboardFrame>
+            <div className='@md:hidden sticky top-0 w-full z-50'>
+                <NavMenu />
+            </div>
+            <ReportsDashboard />
         </motion.div>
     )
 }

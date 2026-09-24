@@ -7,6 +7,8 @@ import {
 } from "lucide-react"
 import { Manrope } from "next/font/google";
 import { BsBank } from "react-icons/bs";
+import Glow from "@/components/Docs/Components/Glow/Glow";
+import { useTheme } from "@/components/ThemeProvider";
 
 const boldFont = Manrope({
     weight: "500",
@@ -15,58 +17,72 @@ const boldFont = Manrope({
 
 
 function InstitutionConnectionCTA() {
+    const { theme } = useTheme();
 
     return (
-        <div className="rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] p-3 px-3 aspect-auto">
+        <div className="rounded-2xl border border-black/10 dark:border-white/10">
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full "
+            >
 
-            <div className="flex items-center justify-between gap-6">
+                <div className="flex items-center justify-between gap-6">
 
-                {/* Left Side */}
-                <div className="flex-1">
+                    {/* Left Side */}
+                    <div className="flex-1">
 
-                    <h2 className={`${boldFont.className} text-[15px] text-[#111827] dark:text-white`}>
-                        Need Help Connecting?
-                    </h2>
+                        <h2 className={`${boldFont.className} text-[15px] text-[#111827] dark:text-white`}>
+                            Need Help Connecting?
+                        </h2>
 
-                    <p className={`${boldFont.className} mt-2 text-[12px] text-[#6B7280] dark:text-white/60`}>
-                        We support 12,000+ financial institutions.
-                    </p>
+                        <p className={`${boldFont.className} mt-2 text-[12px] text-[#6B7280] dark:text-white/60`}>
+                            We support 12,000+ financial institutions.
+                        </p>
 
-                    {/* Button */}
-                    <button className={`${boldFont.className} mt-6 flex items-center gap-3 rounded-[7px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-3 py-2 text-[12px] text-[#111827] dark:text-white/60 transition-all duration-300 hover:bg-black/[0.03] dark:hover:text-white hover:gap-4`}>
+                        {/* Button */}
+                        <button className={`${boldFont.className} mt-6 flex items-center gap-3 rounded-[7px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-3 py-2 text-[12px] text-[#111827] dark:text-white/60 transition-all duration-300 hover:bg-black/[0.03] dark:hover:text-white hover:gap-4`}>
 
-                        <Building2
-                            size={18}
-                            strokeWidth={2.3}
-                        />
+                            <Building2
+                                size={18}
+                                strokeWidth={2.3}
+                            />
 
-                        Browse All Institutions
+                            Browse All Institutions
 
-                        <ArrowRight
-                            size={16}
-                            strokeWidth={2.5}
-                            className="text-[#6B7280] dark:text-white/50"
-                        />
+                            <ArrowRight
+                                size={16}
+                                strokeWidth={2.5}
+                                className="text-[#6B7280] dark:text-white/50"
+                            />
 
-                    </button>
+                        </button>
 
-                </div>
+                    </div>
 
-                {/* Right Side */}
-                <div className="flex h-[120px] w-[120px] shrink-0 items-center justify-center rounded-full bg-[#F3F8F2] dark:bg-white/[0.04]">
+                    {/* Right Side */}
+                    <div className="flex h-[120px] w-[120px] shrink-0 items-center justify-center rounded-full bg-[#F3F8F2] dark:bg-white/[0.04]">
 
-                    <div className="flex items-center justify-center rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-none">
+                        <div className="flex items-center justify-center rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-none">
 
-                        <BsBank
-                            size={50}
-                            className="text-[#9CA3AF] dark:text-white/40"
-                        />
+                            <BsBank
+                                size={50}
+                                className="text-[#9CA3AF] dark:text-white/40"
+                            />
+
+                        </div>
 
                     </div>
 
                 </div>
-
-            </div>
+            </Glow>
 
         </div>
     )

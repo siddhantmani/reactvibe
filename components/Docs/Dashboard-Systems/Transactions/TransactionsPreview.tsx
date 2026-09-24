@@ -5,6 +5,7 @@ import DashboardFrame from "@/components/DashboardFrame"
 
 import React from 'react'
 import TransactionsDashboard from "./TransactionsDashboard/TransactionsDashboard"
+import NavMenu from "../NavMenu"
 
 function TransactionsPreview() {
     return (
@@ -22,10 +23,12 @@ function TransactionsPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
+            className="@xl:overflow-hidden"
         >
-            <DashboardFrame>
-                <TransactionsDashboard />
-            </DashboardFrame>
+            <div className='@md:hidden sticky top-0 w-full z-50'>
+                <NavMenu />
+            </div>
+            <TransactionsDashboard />
         </motion.div>
     )
 }

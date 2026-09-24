@@ -6,6 +6,8 @@ import { ArrowRight } from "lucide-react";
 
 import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
+import { useTheme } from "@/components/ThemeProvider";
+import Glow from "@/components/Docs/Components/Glow/Glow";
 
 const boldFont = Manrope({
     weight: "600",
@@ -69,10 +71,7 @@ function DonutChart() {
     return (
         <div className="relative">
 
-            <svg
-                viewBox="0 0 280 280"
-                className="-rotate-90 w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-20 lg:h-20 xl:h-28 xl:w-28 2xl:w-40 2xl:h-40"
-            >
+            <svg viewBox="0 0 280 280" className="-rotate-90 w-42 h-42">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -91,7 +90,7 @@ function DonutChart() {
             </svg>
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <p className={`${boldFont.className} md:text-[8px] lg:text-[4px] xl:text-[6px] 2xl:text-[8px] text-[#4b5563] dark:text-white/60`}>
+                <p className={`${boldFont.className} text-[10px] text-[#4b5563] dark:text-white/60`}>
                     Total Expense
                 </p>
 
@@ -99,7 +98,7 @@ function DonutChart() {
                     as='h2'
                     delay={0.4}
                     Text="$4,680"
-                    className={`${boldFont.className} md:text-[20px] lg:text-[10px] xl:text-[16px] 2xl:text-[20px] font-bold tracking-[-1px] text-[#111827] dark:text-white mt-2`}
+                    className={`${boldFont.className} text-[20px] font-bold tracking-[-1px] text-[#111827] dark:text-white mt-2`}
                 />
 
             </div>
@@ -147,62 +146,65 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
 }
 
 function ExpenseBreakdownChart() {
+    const { theme } = useTheme()
+
     return (
-        <motion.div
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{
-                once: true,
-                amount: 0.2, // Trigger when 20% visible
-                margin: "50px"
-            }}
-            transition={{
-                duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                delay: 0.2
-            }}
-            className="w-full rounded-[15px] aspect-video border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full rounded-2xl border border-black/10 dark:border-white/10">
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full"
+            >
 
-            {/* Header */}
-            <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
-                Expense Breakdown
-            </h1>
+                {/* Header */}
+                <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
+                    Expense Breakdown
+                </h1>
 
-            {/* Content */}
-            <div className="flex items-center justify-between">
+                {/* Content */}
+                <div className="flex items-center justify-between">
 
-                {/* Donut Chart */}
-                <div className="flex items-center -ml-2">
-                    <DonutChart />
-                </div>
+                    {/* Donut Chart */}
+                    <div className="flex items-center -ml-2">
+                        <DonutChart />
+                    </div>
 
-                {/* Expense List */}
-                <div className="">
+                    {/* Expense List */}
+                    <div className="">
 
-                    <div className="space-y-5">
-                        {expenses.map((item, index) => (
-                            <ExpenseItem
-                                key={index}
-                                title={item.title}
-                                percentage={item.percentage}
-                                amount={item.amount}
-                                color={item.color}
-                            />
-                        ))}
+                        <div className="space-y-5">
+                            {expenses.map((item, index) => (
+                                <ExpenseItem
+                                    key={index}
+                                    title={item.title}
+                                    percentage={item.percentage}
+                                    amount={item.amount}
+                                    color={item.color}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Footer */}
-            <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[10px] text-[#11b827] dark:hover:text-[#0aff2a] hover:opacity-80 transition-opacity`}>
-                View full report
+                {/* Footer */}
+                <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[10px] text-[#11b827] dark:hover:text-[#0aff2a] hover:opacity-80 transition-opacity`}>
+                    View full report
 
-                <ArrowRight
-                    size={14}
-                    strokeWidth={2.4}
-                />
-            </button>
-        </motion.div>
+                    <ArrowRight
+                        size={14}
+                        strokeWidth={2.4}
+                    />
+                </button>
+            </Glow>
+
+        </div>
     );
 }
 

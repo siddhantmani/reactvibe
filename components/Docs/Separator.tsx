@@ -15,7 +15,7 @@ export default function Separator({
 
     return (
         <div
-            className={`${vertical ? "h-[23px] w-[1px]" : "w-[250px] h-[1px]"} ${className}`}
+            className={`${vertical ? "w-[1px] h-full" : "w-full h-[1px]"} ${className}`}
         />
     );
 }

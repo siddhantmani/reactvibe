@@ -17,8 +17,8 @@ function OriginOpenCode() {
     // Folder & File Tree
     const fileTree = {
         Components: [
-            { name: "Page.tsx", path: "/Components/Origin/Page.tsx" },
-            { name: "Origin.tsx", path: "/Components/Origin/Origin.tsx" },
+            { name: "Page.tsx", path: "/Motion/Origin/Page.tsx" },
+            { name: "Origin.tsx", path: "/Motion/Origin/Origin.tsx" },
         ],
     };
 
@@ -136,7 +136,7 @@ function OriginOpenCode() {
 
                                 {/* Monaco Editor */}
                                 <Editor
-                                    height="500px"
+                                    height="700px"
                                     defaultLanguage="typescript"
                                     value={code}
                                     theme="vs-dark"

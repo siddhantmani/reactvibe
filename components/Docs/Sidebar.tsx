@@ -31,51 +31,62 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
     };
 
     return (
-        <div>
-            <div>
-                <motion.div
-                    initial={{ opacity: 0, filter: "blur(8px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2, // Trigger when 20% visible
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                        delay: 0.2
-                    }}
-                >
-                    <button onClick={onItemClick} className='pb-4' >
-                        <Link href="/docs">
-                            <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md flex-1 hover:text-black px-3'>
-                                <p className={`${LinearRevealFont.className} text-[17px]`}>Introduction</p>
-                                <Badge>
-                                   Updated
-                                </Badge>
-                            </div>
-                        </Link>
-                    </button>
+        <div className="2xl:w-85 lg:w-90">
+            <motion.div
+                initial={{ opacity: 0, filter: "blur(8px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                viewport={{
+                    once: true,
+                    amount: 0.2, // Trigger when 20% visible
+                    margin: "50px"
+                }}
+                transition={{
+                    duration: 1.2,
+                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+                    delay: 0.2
+                }}
+                className="flex flex-col"
+            >
+                <button onClick={onItemClick} className='pb-4' >
+                    <Link href="/docs">
+                        <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md w-fit hover:text-black px-3'>
+                            <p className={`${LinearRevealFont.className} text-[17px]`}>Introduction</p>
+                            <Badge>
+                                Updated
+                            </Badge>
+                        </div>
+                    </Link>
+                </button>
 
-                    <button onClick={onItemClick} className='pb-4' >
-                        <Link href="/docs/explore-components">
-                            <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md flex-1 hover:text-black px-3'>
-                                <p className={`${LinearRevealFont.className} text-[17px] whitespace-nowrap`}>Explore Components</p>
-                                <Badge>
-                                   Updated
-                                </Badge>
-                            </div>
-                        </Link>
-                    </button>
-                </motion.div>
-            </div>
+                {/* <button onClick={onItemClick} className='pb-4' >
+                    <Link href="/docs/explore-components">
+                        <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md w-fit hover:text-black px-3'>
+                            <p className={`${LinearRevealFont.className} text-[17px] whitespace-nowrap`}>Explore Components</p>
+                            <Badge>
+                                Updated
+                            </Badge>
+                        </div>
+                    </Link>
+                </button> */}
+                <button onClick={onItemClick} className='pb-4' >
+                    <Link href="/docs/dark-mode">
+                        <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md w-fit hover:text-black px-3'>
+                            <p className={`${LinearRevealFont.className} text-[17px] whitespace-nowrap`}>Dark Mode</p>
+                            <Badge>
+                                NEW
+                            </Badge>
+                            { <PingtoNew size={7} />}
+
+                        </div>
+                    </Link>
+                </button>
+            </motion.div>
 
             <SidebarMenu className="pb-32">
                 {sidebarConfig.map((section, i) => (
                     <Collapsible key={i} asChild defaultOpen className="group/collapsible">
                         <SidebarMenuItem>
-                            <CollapsibleTrigger asChild className="w-64 dark:hover:bg-[#323232]">
+                            <CollapsibleTrigger asChild className="w-fit dark:hover:bg-[#323232]">
                                 <SidebarMenuButton className="flex justify-between">
                                     <motion.div
                                         initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -119,7 +130,7 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                                                         delay: 0.3
                                                     }}
                                                 >
-                                                    <div className="flex items-center space-x-2 p-[8px] hover:bg-muted rounded-md w-full">
+                                                    <div className="flex items-center space-x-2 p-[8px] hover:bg-muted rounded-md w-fit">
                                                         <p className={`${LinearRevealFont.className} whitespace-nowrap text-[14px] 2xl:text-[15px]`}>
                                                             {item.name}
                                                         </p>

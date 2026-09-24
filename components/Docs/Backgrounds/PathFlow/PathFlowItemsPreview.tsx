@@ -11,108 +11,80 @@ import PathFlowPreviewSourceCode from './PathFlowPreviewSourceCode';
 import Separator from '../../Separator';
 import { CgLivePhoto } from "react-icons/cg";
 import Link from 'next/link';
+import DeviceToggleGroup from '@/components/DeviceToggleGroup';
+import ResizablePreview from '@/components/ResizablePreview';
+import SpotlightBackground from '@/components/SpotlightBackground';
 
 function PathFlowItemsPreview() {
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const mountRef = useRef<HTMLDivElement>(null)
+    const [previewWidth, setPreviewWidth] = useState(1440);
+
     return (
-        <div className='relative'>
+        <div className='relative'>  
             <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
                 <div className="z-0 inset-0 flex justify-between">
                     <TabList className="h-10 flex justify-between p-1 w-full gap-1">
-                        <div className='flex items-center gap-2 max-w-[130px] '>
-                            <motion.div
-                                initial={{ opacity: 0, filter: "blur(8px)" }}
-                                whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                                exit={{ opacity: 0 }}
-                                viewport={{
-                                    once: true,
-                                    amount: 0.2, // Trigger when 20% visible
-                                    margin: "50px"
-                                }}
-                                transition={{
-                                    duration: 1.2,
-                                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                                    delay: 0.2
-                                }}
-                            >
-                                <Tab className="h-full gap-2 flex items-center px-2 py-1 cursor-pointer w-full text-sm border border-dashed border-gray-400 bg-[#eeeeee] dark:bg-[#171616] rounded-md outline-none">
-                                    <Eye className="h-4 w-4" />
-                                    Showcase
-                                </Tab>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, filter: "blur(8px)" }}
-                                whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                                exit={{ opacity: 0 }}
-                                viewport={{
-                                    once: true,
-                                    amount: 0.2, // Trigger when 20% visible
-                                    margin: "50px"
-                                }}
-                                transition={{
-                                    duration: 1.2,
-                                    ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                                    delay: 0.3
-                                }}
-                            >
-                                <Tab className="h-full gap-2 flex items-center px-2 py-1 cursor-pointer w-full text-sm border border-dashed border-gray-400 bg-[#eeeeee] dark:bg-[#171616] rounded-md outline-none">
-                                    <Code className="h-4 w-4" />
-                                    Source
-                                </Tab>
-                            </motion.div>
-                            <Separator
-                                direction='vertical'
-                                className='bg-black/15 dark:bg-white/15 w-full'
-                            />
+                        <div className='flex items-center gap-2 max-w-[130px] hidden md:block md:flex-row md:flex'>
+
+                            <Tab className="h-full gap-2 flex items-center px-2 py-[5px] cursor-pointer w-full text-sm border rounded-md outline-none">
+                                <Eye className="h-4 w-4" /> Showcase
+                            </Tab>
+                            <Tab className="h-full gap-2 flex items-center px-2 py-[5px] cursor-pointer w-full text-sm border rounded-md outline-none">
+                                <Code className="h-4 w-4" /> Source
+                            </Tab>
+
                             <Link href="https://subsence.vercel.app/" target='_blank'>
-                                <motion.div
-                                    initial={{ opacity: 0, filter: "blur(8px)" }}
-                                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                                    exit={{ opacity: 0 }}
-                                    viewport={{
-                                        once: true,
-                                        amount: 0.2, // Trigger when 20% visible
-                                        margin: "50px"
-                                    }}
-                                    transition={{
-                                        duration: 1.2,
-                                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                                        delay: 0.3
-                                    }}
-                                >
 
-                                    <div className="h-full gap-2 flex items-center px-2 py-1 cursor-pointer w-full text-sm border border-dashed border-gray-400 bg-[#eeeeee] dark:bg-[#171616] rounded-md outline-none whitespace-nowrap">
-                                        <CgLivePhoto />
-                                        Live preview
-                                    </div>
-                                </motion.div>
+                                <div className="h-full gap-2 flex items-center px-2 py-[5px] cursor-pointer w-full text-sm border rounded-md outline-none whitespace-nowrap">
+                                    <CgLivePhoto />
+                                    Live preview
+                                </div>
                             </Link>
-
                         </div>
-                        <div>
-                            <RefrashContent />
-                        </div>
+                        <div className='md:hidden flex items-center gap-2 max-w-[130px]'>
 
+                            <Tab className="h-full gap-2 flex items-center px-2 py-[5px] cursor-pointer w-full text-sm border rounded-md outline-none">
+                                <Eye className="h-4 w-4" />
+                            </Tab>
+                            <Tab className="h-full gap-2 flex items-center px-2 py-[5px] cursor-pointer w-full text-sm border rounded-md outline-none">
+                                <Code className="h-4 w-4" />
+                            </Tab>
+
+                            <Link href="https://subsence.vercel.app/" target='_blank'>
+
+                                <div className="h-full gap-2 flex items-center px-2 py-[5px] cursor-pointer w-full text-sm border rounded-md outline-none whitespace-nowrap">
+                                    <CgLivePhoto />
+                                </div>
+                            </Link>
+                        </div>
                     </TabList>
+
+                    <div className='flex items-center gap-2'>
+
+                        <DeviceToggleGroup
+                            activeWidth={previewWidth}
+                            onWidthChange={setPreviewWidth}
+                        />
+
+                        <RefrashContent />
+                    </div>
                 </div>
 
                 <TabPanels className="mt-2">
                     <TabPanel
                         static
                         hidden={selectedIndex !== 0}
-                        className="border border-gray-700 rounded-2xl"
+                        className="border border-gray-700 rounded-2xl relative h-[700px] bg-white dark:bg-[#0b0b0b]"
                     >
-                        <div
-                            ref={mountRef}
-                            className="w-full rounded-2xl"
+                        <SpotlightBackground className="rounded-2xl z-0" spotlightSize={180} />
+
+                        <ResizablePreview
+                            width={previewWidth}
+                            onWidthChange={setPreviewWidth}
+                            className="absolute inset-0 z-10 py-2"
                         >
-                            <div
-                                className="z-40 w-full rounded-2xl h-full bg-white"
-                            >
-                                <PathFlowPreview />
-                            </div>
-                        </div>
+                            <PathFlowPreview />
+                        </ResizablePreview>
                     </TabPanel>
                     <TabPanel static hidden={selectedIndex !== 1}>
                         <PathFlowPreviewSourceCode />

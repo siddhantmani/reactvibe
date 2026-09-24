@@ -1,11 +1,12 @@
 "use client"
-import { motion } from "framer-motion"
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
 import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
+import { useTheme } from "@/components/ThemeProvider";
+import Glow from "@/public/Components/Glow/Glow";
 
 const boldFont = Manrope({
     weight: "600",
@@ -69,7 +70,7 @@ function DonutChart() {
     return (
         <div className="relative">
 
-            <svg width="220" height="220" viewBox="0 0 280 280" className="-rotate-90">
+            <svg viewBox="0 0 280 280" className="-rotate-90 w-47 h-47">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -90,7 +91,7 @@ function DonutChart() {
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                <p className={`${boldFont.className} text-[10px] text-[#4b5563]`}>
+                <p className={`${boldFont.className} text-[10px] text-[#4b5563] dark:text-white/60`}>
                     Total Expense
                 </p>
 
@@ -98,7 +99,7 @@ function DonutChart() {
                     as='h2'
                     delay={0.4}
                     Text="$4,680"
-                    className={`${boldFont.className} text-[22px] font-bold tracking-[-1px] text-[#111827] mt-2`}
+                    className={`${boldFont.className} text-[22px] font-bold tracking-[-1px] text-[#111827] dark:text-white mt-2`}
                 />
 
             </div>
@@ -115,7 +116,7 @@ interface ExpenseItemProps {
 
 function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
     return (
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-10 lg:gap-20 xl:gap-10">
 
             {/* Left */}
             <div className="flex items-center gap-4">
@@ -127,18 +128,17 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
                     }}
                 />
 
-                <p className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                     {title}
                 </p>
             </div>
 
             {/* Percentage */}
-            <p className={`${boldFont.className} text-[11px] text-[#374151] text-right`}>
+            <p className={`${boldFont.className} text-[11px] text-[#374151] dark:text-white text-right`}>
                 {percentage}%
             </p>
 
-            {/* Amount */}
-            <p className={`${boldFont.className} text-[11px] text-[#111827] text-right`}>
+            <p className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white text-right`}>
                 {amount}
             </p>
         </div>
@@ -146,37 +146,38 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
 }
 
 function ExpenseBreakdownChart() {
+    const { theme } = useTheme()
+
     return (
-        <motion.div
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{
-                once: true,
-                amount: 0.2, // Trigger when 20% visible
-                margin: "50px"
-            }}
-            transition={{
-                duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                delay: 0.2
-            }}
-            className="w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full rounded-2xl border dark:border-[#222121] border-black/10">
 
-            {/* Header */}
-            <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
-                Expense Breakdown
-            </h1>
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full "
+            >
 
-            {/* Content */}
-            <div className="flex items-center justify-between">
+                {/* Header */}
+                <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
+                    Expense Breakdown
+                </h1>
 
-                {/* Donut Chart */}
-                <div className="flex items-center justify-center">
-                    <DonutChart />
-                </div>
+                {/* Content */}
+                <div className="flex flex-col md:flex-row md:items-center gap-5">
 
-                {/* Expense List */}
-                <div className="">
+                    {/* Donut Chart */}
+                    <div className="flex items-center justify-center">
+                        <DonutChart />
+                    </div>
+
+                    {/* Expense List */}
 
                     <div className="space-y-5">
                         {expenses.map((item, index) => (
@@ -190,18 +191,19 @@ function ExpenseBreakdownChart() {
                         ))}
                     </div>
                 </div>
-            </div>
 
-            {/* Footer */}
-            <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[10px] text-[#006b46] hover:opacity-80 transition-opacity`}>
-                View full report
+                {/* Footer */}
+                <button className={`${boldFont.className} mt-7 cursor-pointer flex items-center gap-3 text-[10px] text-[#06aa06] dark:hover:text-[#15ff00] hover:opacity-80 transition-opacity`}>
+                    View full report
 
-                <ArrowRight
-                    size={14}
-                    strokeWidth={2.4}
-                />
-            </button>
-        </motion.div>
+                    <ArrowRight
+                        size={14}
+                        strokeWidth={2.4}
+                    />
+                </button>
+            </Glow>
+
+        </div>
     );
 }
 

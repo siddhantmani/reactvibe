@@ -3,6 +3,8 @@
 import React, { useMemo, useState } from "react"
 import { ChevronDown } from "lucide-react"
 import { Manrope } from "next/font/google"
+import Glow from "@/components/Docs/Components/Glow/Glow"
+import { useTheme } from "@/components/ThemeProvider"
 
 const boldFont = Manrope({
     weight: "600",
@@ -71,253 +73,119 @@ function BudgetvsActual() {
         return (value / maxValue) * usableHeight
     }
 
+    const { theme } = useTheme()
+
     return (
-        <div className="rounded-[15px] border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 aspect-auto">
+        <div className="w-full rounded-2xl border border-black/10 dark:border-white/10">
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full"
+            >
 
-            {/* Top */}
-            <div className="flex items-center justify-between px-3 p-3">
+                {/* Top */}
+                <div className="flex items-center justify-between px-3 p-3">
 
-                <h2
-                    className={`${boldFont.className} text-[14px] tracking-[-0.04em] text-[#111827] dark:text-white`}
-                >
-                    Budget vs Actual
-                </h2>
-                <button
-                    className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-1 text-[12px] font-medium text-[#374151] dark:text-white/70 transition-all duration-300 hover:bg-black/[0.02] dark:hover:text-white`}
-                >
-                    This Month
-
-                    <ChevronDown
-                        size={12}
-                        strokeWidth={2.2}
-                    />
-                </button>
-
-            </div>
-
-            {/* Legend */}
-            <div className="mt-4 relative flex items-center justify-center gap-8 z-50">
-
-                <div className="flex items-center gap-2">
-
-                    <div className="h-2 w-2 rounded-full bg-[#9BE68B]" />
-
-                    <span
-                        className={`${boldFont.className} text-[12px] text-[#374151] dark:text-white/70`}
+                    <h2
+                        className={`${boldFont.className} text-[14px] tracking-[-0.04em] text-[#111827] dark:text-white`}
                     >
-                        Budgeted
-                    </span>
+                        Budget vs Actual
+                    </h2>
+                    <button
+                        className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-1 text-[12px] font-medium text-[#374151] dark:text-white/70 transition-all duration-300 hover:bg-black/[0.02] dark:hover:text-white`}
+                    >
+                        This Month
+
+                        <ChevronDown
+                            size={12}
+                            strokeWidth={2.2}
+                        />
+                    </button>
 
                 </div>
 
-                <div className="flex items-center gap-2">
+                {/* Legend */}
+                <div className="mt-4 relative flex items-center justify-center gap-8 z-50">
 
-                    <div className="h-2 w-2 rounded-full bg-[#0F7B42]" />
+                    <div className="flex items-center gap-2">
 
-                    <span
-                        className={`${boldFont.className} text-[12px] text-[#374151] dark:text-white/70`}
-                    >
-                        Spent
-                    </span>
+                        <div className="h-2 w-2 rounded-full bg-[#9BE68B]" />
 
-                </div>
-
-                <div className="flex items-center gap-2">
-
-                    <div className="h-2 w-2 rounded-full bg-[#FF4D4F]" />
-
-                    <span
-                        className={`${boldFont.className} text-[12px] text-[#374151] dark:text-white/70`}
-                    >
-                        Over Budget
-                    </span>
-
-                </div>
-
-            </div>
-
-            {/* Chart */}
-            <div className="mt-4 h-[160px] w-full px-3 pb-2">
-
-                <div className="relative flex h-full">
-
-                    {/* Y Axis */}
-                    <div
-                        className="relative"
-                        style={{
-                            width: yAxisWidth,
-                            height: chartHeight,
-                        }}
-                    >
-
-                        {yTicks.map((tick) => {
-                            const bottom =
-                                bottomPadding +
-                                (tick / maxValue) * usableHeight
-
-                            return (
-                                <div
-                                    key={tick}
-                                    className="absolute left-0 flex w-full items-center justify-end pr-2"
-                                    style={{
-                                        bottom,
-                                        transform: "translateY(50%)",
-                                    }}
-                                >
-
-                                    <span
-                                        className={`${boldFont.className} text-[12px] font-normal text-[#9CA3AF] dark:text-white/40`}
-                                    >
-                                        {formatYAxis(tick)}
-                                    </span>
-
-                                </div>
-                            )
-                        })}
+                        <span
+                            className={`${boldFont.className} text-[12px] text-[#374151] dark:text-white/70`}
+                        >
+                            Budgeted
+                        </span>
 
                     </div>
 
-                    {/* Bars Area */}
-                    <div className="relative flex-1">
+                    <div className="flex items-center gap-2">
 
-                        {/* Horizontal Grid */}
-                        {yTicks.map((tick) => {
-                            const bottom =
-                                bottomPadding +
-                                (tick / maxValue) * usableHeight
+                        <div className="h-2 w-2 rounded-full bg-[#0F7B42]" />
 
-                            return (
-                                <div
-                                    key={tick}
-                                    className="absolute left-0 right-0 border-t border-[#F3F4F6] dark:border-white/10"
-                                    style={{
-                                        bottom,
-                                    }}
-                                />
-                            )
-                        })}
+                        <span
+                            className={`${boldFont.className} text-[12px] text-[#374151] dark:text-white/70`}
+                        >
+                            Spent
+                        </span>
 
-                        {/* Bars */}
-                        <div className="absolute inset-0 flex items-end justify-between px-2">
+                    </div>
 
-                            {data.map((item, index) => {
-                                const budgetHeight = getBarHeight(item.budgeted)
-                                const spentHeight = getBarHeight(item.spent)
+                    <div className="flex items-center gap-2">
+
+                        <div className="h-2 w-2 rounded-full bg-[#FF4D4F]" />
+
+                        <span
+                            className={`${boldFont.className} text-[12px] text-[#374151] dark:text-white/70`}
+                        >
+                            Over Budget
+                        </span>
+
+                    </div>
+
+                </div>
+
+                {/* Chart */}
+                <div className="mt-4 h-[160px] w-full px-3 pb-2">
+
+                    <div className="relative flex h-full">
+
+                        {/* Y Axis */}
+                        <div
+                            className="relative"
+                            style={{
+                                width: yAxisWidth,
+                                height: chartHeight,
+                            }}
+                        >
+
+                            {yTicks.map((tick) => {
+                                const bottom =
+                                    bottomPadding +
+                                    (tick / maxValue) * usableHeight
 
                                 return (
                                     <div
-                                        key={index}
-                                        className="relative flex h-full flex-1 items-end justify-center"
-                                        onMouseEnter={() => setHoveredIndex(index)}
-                                        onMouseLeave={() => setHoveredIndex(null)}
+                                        key={tick}
+                                        className="absolute left-0 flex w-full items-center justify-end pr-2"
+                                        style={{
+                                            bottom,
+                                            transform: "translateY(50%)",
+                                        }}
                                     >
 
-                                        {/* Hover Background */}
-                                        <div
-                                            className={`absolute inset-y-0 w-full rounded-[8px] transition-all duration-200 ${hoveredIndex === index
-                                                    ? "bg-black/[0.02] dark:bg-white/[0.04]"
-                                                    : "bg-transparent"
-                                                }`}
-                                        />
-
-                                        {/* Tooltip */}
-                                        {hoveredIndex === index && (
-
-                                            <div
-                                                className="absolute z-20 rounded-[10px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-2 shadow-[0_10px_40px_rgba(0,0,0,0.08)] dark:shadow-none z-50"
-                                                style={{
-                                                    bottom: Math.max(budgetHeight, spentHeight) + 48,
-                                                }}
-                                            >
-
-                                                <p
-                                                    className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}
-                                                >
-                                                    {item.category}
-                                                </p>
-
-                                                <div className="mt-3 space-y-2">
-
-                                                    <div className="flex items-center justify-between gap-6">
-
-                                                        <span
-                                                            className={`${boldFont.className} text-[11px] text-[#6B7280] dark:text-white/60`}
-                                                        >
-                                                            Budgeted
-                                                        </span>
-
-                                                        <span
-                                                            className={`${boldFont.className} text-[11px] text-[#16A34A]`}
-                                                        >
-                                                            ${item.budgeted}
-                                                        </span>
-
-                                                    </div>
-
-                                                    <div className="flex items-center justify-between gap-6">
-
-                                                        <span
-                                                            className={`${boldFont.className} text-[11px] text-[#6B7280] dark:text-white/60`}
-                                                        >
-                                                            Spent
-                                                        </span>
-
-                                                        <span
-                                                            className={`${boldFont.className} text-[11px] ${item.spent > item.budgeted
-                                                                ? "text-[#f0334c]"
-                                                                : "text-[#0F7B42]"
-                                                                }`}
-                                                        >
-                                                            ${item.spent}
-                                                        </span>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        )}
-
-                                        {/* Content */}
-                                        <div className="relative z-10 flex h-full flex-col justify-end">
-
-                                            {/* Bars */}
-                                            <div className="flex items-end gap-[6px]">
-
-                                                {/* Budgeted */}
-                                                <div
-                                                    className="w-[10px] rounded-[4px] bg-[#9BE68B] transition-all duration-300"
-                                                    style={{
-                                                        height: budgetHeight,
-                                                    }}
-                                                />
-
-                                                {/* Spent */}
-                                                <div
-                                                    className={`w-[10px] rounded-[4px] transition-all duration-300 ${item.spent > item.budgeted
-                                                        ? "bg-[#FF4D4F]"
-                                                        : "bg-[#0F7B42]"
-                                                        }`}
-                                                    style={{
-                                                        height: spentHeight,
-                                                    }}
-                                                />
-
-                                            </div>
-
-                                            {/* Label */}
-                                            <div className="mt-2  text-center">
-
-                                                <span
-                                                    className={`${boldFont.className} text-[11px] whitespace-nowrap font-normal text-[#6B7280] dark:text-white/50`}
-                                                >
-                                                    {item.category}
-                                                </span>
-
-                                            </div>
-
-                                        </div>
+                                        <span
+                                            className={`${boldFont.className} text-[12px] font-normal text-[#9CA3AF] dark:text-white/40`}
+                                        >
+                                            {formatYAxis(tick)}
+                                        </span>
 
                                     </div>
                                 )
@@ -325,11 +193,160 @@ function BudgetvsActual() {
 
                         </div>
 
+                        {/* Bars Area */}
+                        <div className="relative flex-1">
+
+                            {/* Horizontal Grid */}
+                            {yTicks.map((tick) => {
+                                const bottom =
+                                    bottomPadding +
+                                    (tick / maxValue) * usableHeight
+
+                                return (
+                                    <div
+                                        key={tick}
+                                        className="absolute left-0 right-0 border-t border-[#F3F4F6] dark:border-white/10"
+                                        style={{
+                                            bottom,
+                                        }}
+                                    />
+                                )
+                            })}
+
+                            {/* Bars */}
+                            <div className="absolute inset-0 flex items-end justify-between px-2">
+
+                                {data.map((item, index) => {
+                                    const budgetHeight = getBarHeight(item.budgeted)
+                                    const spentHeight = getBarHeight(item.spent)
+
+                                    return (
+                                        <div
+                                            key={index}
+                                            className="relative flex h-full flex-1 items-end justify-center"
+                                            onMouseEnter={() => setHoveredIndex(index)}
+                                            onMouseLeave={() => setHoveredIndex(null)}
+                                        >
+
+                                            {/* Hover Background */}
+                                            <div
+                                                className={`absolute inset-y-0 w-full rounded-[8px] transition-all duration-200 ${hoveredIndex === index
+                                                    ? "bg-black/[0.02] dark:bg-white/[0.04]"
+                                                    : "bg-transparent"
+                                                    }`}
+                                            />
+
+                                            {/* Tooltip */}
+                                            {hoveredIndex === index && (
+
+                                                <div
+                                                    className="absolute z-20 rounded-[10px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-2 shadow-[0_10px_40px_rgba(0,0,0,0.08)] dark:shadow-none z-50"
+                                                    style={{
+                                                        bottom: Math.max(budgetHeight, spentHeight) + 48,
+                                                    }}
+                                                >
+
+                                                    <p
+                                                        className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}
+                                                    >
+                                                        {item.category}
+                                                    </p>
+
+                                                    <div className="mt-3 space-y-2">
+
+                                                        <div className="flex items-center justify-between gap-6">
+
+                                                            <span
+                                                                className={`${boldFont.className} text-[11px] text-[#6B7280] dark:text-white/60`}
+                                                            >
+                                                                Budgeted
+                                                            </span>
+
+                                                            <span
+                                                                className={`${boldFont.className} text-[11px] text-[#16A34A]`}
+                                                            >
+                                                                ${item.budgeted}
+                                                            </span>
+
+                                                        </div>
+
+                                                        <div className="flex items-center justify-between gap-6">
+
+                                                            <span
+                                                                className={`${boldFont.className} text-[11px] text-[#6B7280] dark:text-white/60`}
+                                                            >
+                                                                Spent
+                                                            </span>
+
+                                                            <span
+                                                                className={`${boldFont.className} text-[11px] ${item.spent > item.budgeted
+                                                                    ? "text-[#f0334c]"
+                                                                    : "text-[#0F7B42]"
+                                                                    }`}
+                                                            >
+                                                                ${item.spent}
+                                                            </span>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            )}
+
+                                            {/* Content */}
+                                            <div className="relative z-10 flex h-full flex-col justify-end">
+
+                                                {/* Bars */}
+                                                <div className="flex items-end gap-[6px]">
+
+                                                    {/* Budgeted */}
+                                                    <div
+                                                        className="w-[10px] rounded-[4px] bg-[#9BE68B] transition-all duration-300"
+                                                        style={{
+                                                            height: budgetHeight,
+                                                        }}
+                                                    />
+
+                                                    {/* Spent */}
+                                                    <div
+                                                        className={`w-[10px] rounded-[4px] transition-all duration-300 ${item.spent > item.budgeted
+                                                            ? "bg-[#FF4D4F]"
+                                                            : "bg-[#0F7B42]"
+                                                            }`}
+                                                        style={{
+                                                            height: spentHeight,
+                                                        }}
+                                                    />
+
+                                                </div>
+
+                                                {/* Label */}
+                                                <div className="mt-2  text-center">
+
+                                                    <span
+                                                        className={`${boldFont.className} text-[11px] whitespace-nowrap font-normal text-[#6B7280] dark:text-white/50`}
+                                                    >
+                                                        {item.category}
+                                                    </span>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    )
+                                })}
+
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
-
-            </div>
+            </Glow>
 
         </div>
     )

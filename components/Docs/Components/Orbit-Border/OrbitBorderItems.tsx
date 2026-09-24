@@ -6,6 +6,8 @@ import OrbitBorderItemsPreview from './OrbitBorderItemsPreview';
 import LinearReveal from '@/components/LinearReveal';
 import TablePorpsForOrbitBorderItems from './TablePorpsForOrbitBorderItems';
 import { motion } from 'framer-motion'
+import Separator from '../../Separator';
+import BuiltWithOrbitBorder from './BuiltWithOrbitBorder';
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
@@ -14,7 +16,9 @@ const OrbitFontFont = Bricolage_Grotesque({
 
 function OrbitBorderItems() {
     return (
-        <div className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-2xl space-y-7'>
+        <motion.div
+
+            className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-2xl space-y-7'>
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}
@@ -22,23 +26,9 @@ function OrbitBorderItems() {
                     Text='Orbit Border'
                 />
 
-                <motion.p
-                    initial={{ opacity: 0, filter: "blur(8px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2, // Trigger when 20% visible
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                        delay: 0.2
-                    }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-black/70 dark:text-white/70 text-[13px]">
-                    A modern React animated button component designed to enhance user interaction with smooth motion and visual depth. Built using framer motion and animation techniques. This component can be used as a glowing border button in React or an animated outline button, helping you build a more engaging and modern button UI in React applications.
-                </motion.p>
+                <p className="text-black/70 dark:text-white/70 text-[13px]">
+                    Orbit Border is a React animated button with a customizable, continuously rotating gradient border that adds motion to CTAs and other highlighted UI.
+                </p>
             </div>
             <div className='border-black rounded-2xl'>
                 <OrbitBorderItemsPreview />
@@ -46,7 +36,14 @@ function OrbitBorderItems() {
             <div>
                 <TablePorpsForOrbitBorderItems />
             </div>
-        </div>
+            <Separator
+                direction='horizontal'
+                className='bg-black/15 dark:bg-white/15'
+            />
+            <div>
+                <BuiltWithOrbitBorder />
+            </div>
+        </motion.div>
     )
 }
 

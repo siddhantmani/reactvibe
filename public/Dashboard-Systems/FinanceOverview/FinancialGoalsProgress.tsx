@@ -1,5 +1,4 @@
 "use client"
-import { motion } from "framer-motion"
 
 import React from "react";
 import {
@@ -10,6 +9,8 @@ import {
 
 import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
+import Glow from "@/components/Docs/Components/Glow/Glow";
+import { useTheme } from "@/components/ThemeProvider";
 
 const boldFont = Manrope({
     weight: "600",
@@ -27,7 +28,7 @@ const goals = [
             <Shield
                 size={26}
                 strokeWidth={2.2}
-                className="text-[#111827]"
+                className="text-[#111827] dark:text-white"
             />
         ),
     },
@@ -40,7 +41,7 @@ const goals = [
             <Gift
                 size={26}
                 strokeWidth={2.2}
-                className="text-[#111827]"
+                className="text-[#111827] dark:text-white"
             />
         ),
     },
@@ -53,7 +54,7 @@ const goals = [
             <Laptop
                 size={26}
                 strokeWidth={2.2}
-                className="text-[#111827]"
+                className="text-[#111827] dark:text-white"
             />
         ),
     },
@@ -75,7 +76,7 @@ function GoalProgress({ progress }: GoalProgressProps) {
     }, [progress]);
 
     return (
-        <div className="relative w-full h-[5px] bg-[#ececec] rounded-full overflow-hidden">
+        <div className="relative w-full h-[5px] bg-[#ececec] dark:bg-white/10 rounded-full overflow-hidden">
             <div
                 className="h-full rounded-full bg-[#16a34a] transition-all duration-[1200ms] ease-out"
                 style={{
@@ -104,14 +105,14 @@ function GoalItem({
 }: GoalItemProps) {
     return (
         <div
-            className={`pb-3 ${!last ? "border-b border-black/8 mb-4" : ""
+            className={`pb-3 ${!last ? "border-b border-black/8 dark:border-white/10 mb-4" : ""
                 }`}
         >
 
             <div className="flex items-start gap-2">
 
                 {/* Icon */}
-                <div className="w-8 h-8 rounded-[10px] p-2 border border-black/8 bg-[#f8f8f8] flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-[10px] p-2 border border-black/8 dark:border-white/10 bg-[#f8f8f8] dark:bg-white/5 flex items-center justify-center shrink-0">
                     {icon}
                 </div>
 
@@ -123,7 +124,7 @@ function GoalItem({
 
                         <div className="flex items-center gap-4 flex-wrap">
 
-                            <h3 className={`${boldFont.className} text-[11px] text-[#111827]`}>
+                            <h3 className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
                                 {title}
                             </h3>
 
@@ -132,7 +133,7 @@ function GoalItem({
                                 as='p'
                                 delay={0.3}
                                 Text={`${current} of ${total}`}
-                                className={`${boldFont.className} text-[12px] text-[#4b5563]`}
+                                className={`${boldFont.className} text-[12px] text-[#4b5563] dark:text-white/60`}
                             />
 
 
@@ -143,7 +144,7 @@ function GoalItem({
                             as='p'
                             delay={0.4}
                             Text={`${progress}%`}
-                            className={` ${boldFont.className} text-[13px] text-[#111827]`}
+                            className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}
                         />
 
                     </div>
@@ -159,45 +160,49 @@ function GoalItem({
 }
 
 function FinancialGoalsProgress() {
+    const { theme } = useTheme();
+
     return (
-        <motion.div
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{
-                once: true,
-                amount: 0.2, // Trigger when 20% visible
-                margin: "50px"
-            }}
-            transition={{
-                duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                delay: 0.2
-            }}
-            className="w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+        <div className="w-full rounded-2xl border dark:border-[#222121] border-black/10">
 
-            {/* Header */}
-            <div className="flex items-center justify-between mb-10">
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full "
+            >
 
-                <h1 className={`${boldFont.className} text-[12px] text-[#111827]`}>
-                    Financial Goals
-                </h1>
+                {/* Header */}
+                <div className="flex items-center justify-between mb-10">
 
-                <button className={`${boldFont.className} text-[12px] text-[#006b46] hover:opacity-80 transition-opacity`}>
-                    View All
-                </button>
-            </div>
+                    <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>
+                        Financial Goals
+                    </h1>
 
-            {/* Goals */}
-            <div>
-                {goals.map((goal, index) => (
-                    <GoalItem
-                        key={index}
-                        {...goal}
-                        last={index === goals.length - 1}
-                    />
-                ))}
-            </div>
-        </motion.div>
+                    <button className={`${boldFont.className} text-[12px] text-[#006b46] dark:text-[#16a34a] hover:opacity-80 transition-opacity`}>
+                        View All
+                    </button>
+                </div>
+
+                {/* Goals */}
+                <div>
+                    {goals.map((goal, index) => (
+                        <GoalItem
+                            key={index}
+                            {...goal}
+                            last={index === goals.length - 1}
+                        />
+                    ))}
+                </div>
+            </Glow>
+
+        </div>
     );
 }
 

@@ -1,7 +1,7 @@
 import Footer from "@/components/Docs/Footer";
 import ForSiedebarProvider from "@/components/Docs/ForSiedebarProvider";
 import NavbarDashboard from "@/components/Docs/NavbarDashboard";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { Metadata } from "next";
 
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         siteName: "ReactVibe Docs",
         images: [
             {
-                url: "/og-docs.png",
+                url: "/opengraph.png",
                 width: 1200,
                 height: 630,
                 alt: "React Vibe Documentation – Motion-First Animated React UI Components",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         title: "React Vibe Docs – Motion-First UI Components for React",
         description:
             "Step-by-step documentation for React Vibe's motion-first, animated React UI components. Copy, paste, and ship.",
-        images: ["/og-docs.png"],
+        images: ["/opengraph.png"],
         creator: "@_siddhantmani",
     },
 
@@ -53,12 +53,7 @@ export const metadata: Metadata = {
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
     return (
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-        >
+        <ThemeProvider>
             {/* NAV */}
             <div className="sticky top-0 z-50 px-4 py-2">
                 <NavbarDashboard />
@@ -73,6 +68,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 <div className="w-full pb-44">
                     {children}
                     <Toaster position="top-center" />
+
                     <Footer />
                 </div>
             </div>

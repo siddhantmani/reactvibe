@@ -1,0 +1,56 @@
+
+import SignatureOpenCode from './SignatureOpenCode'
+import LinearReveal from '@/components/LinearReveal'
+import Link from 'next/link'
+import { Bricolage_Grotesque, JetBrains_Mono } from 'next/font/google'
+import SupportingDarkmode from '@/components/SupportingDarkmode'
+import FramerMotionGlobalInstalation from '@/components/Docs/FramerMotionGlobalInstalation'
+
+const LinearRevealFont = JetBrains_Mono({
+    weight: "400",
+    subsets: ["latin"],
+})
+
+const LinearRevealStep2Font = Bricolage_Grotesque({
+    weight: "700",
+    subsets: ["latin"],
+})
+
+
+function SignatureItemsPreviewSourceCode() {
+    return (
+        <div className='space-y-4'>
+            <FramerMotionGlobalInstalation />
+            <div>
+                <SignatureOpenCode />
+            </div>
+
+            <SupportingDarkmode />
+
+
+            <div className='pt-4 space-y-4'>
+                <LinearReveal
+                    as={"h2"}
+                    className={`${LinearRevealStep2Font.className} text-4xl`}
+                    Text='Step 2'
+                />
+                <p className={`${LinearRevealFont.className} dark:text-white text-black text-sm`}>Use <Link href="/docs/text/linear-reveal">
+                    <span className='underline underline-offset-2'>Linear Reveal</span></Link> </p>
+            </div>
+
+            <div className='pt-4 space-y-4'>
+                <LinearReveal
+                    as={"h2"}
+                    className={`${LinearRevealStep2Font.className} text-4xl`}
+                    Text='Step 3'
+                />
+                <p className={`${LinearRevealFont.className} dark:text-white text-black text-sm`}>Use <Link href="/docs/components/separator">
+                    <span className='underline underline-offset-2'>Separator</span></Link> </p>
+            </div>
+
+
+        </div>
+    )
+}
+
+export default SignatureItemsPreviewSourceCode

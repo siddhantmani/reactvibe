@@ -10,8 +10,6 @@ import { DM_Serif_Display, Figtree } from "next/font/google";
 import Link from "next/link";
 import RenderOnRoute from "@/components/RenderOnRoute";
 import MultiColor from "@/components/Landing-Page/VibeHero/MultiColor";
-import { componentsData } from "@/lib/componentsData";
-import ComponentPreviewCard from "@/components/Docs/ExploreComponents/ComponentPreviewCard";
 
 
 const footerFont = Figtree({

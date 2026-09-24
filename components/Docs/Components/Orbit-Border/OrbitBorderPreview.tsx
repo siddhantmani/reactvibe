@@ -1,5 +1,5 @@
 "use client"
-import OrbitBorderGlobalPreview from './OrbitBorderGlobalPreview'
+import OrbitBorderGlobalPreview from './OrbitBorder'
 import { motion } from "framer-motion"
 
 function OrbitBorderPreview() {
@@ -26,7 +26,7 @@ function OrbitBorderPreview() {
                     rotate={0}
                     padding={1}
                     rounded={50}
-                    className='bg-[#ffffff] rounded-full p-3 text-black px-5'
+                    className='bg-[#ffffff] dark:bg-black dark:text-white rounded-full p-3 text-black px-5'
                     RingColors={["#0a52f0", "#ffffff", "#f5e2ae", "#dcd7fc"]}
                     style={{
                         boxShadow: `

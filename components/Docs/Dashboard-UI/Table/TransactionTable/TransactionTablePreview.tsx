@@ -1,0 +1,191 @@
+"use client"
+import LinearReveal from "@/components/LinearReveal";
+import { motion } from "framer-motion"
+
+import { Manrope } from "next/font/google";
+
+const boldFont = Manrope({
+    weight: "600",
+    subsets: ["latin"],
+});
+
+const transactions = [
+    {
+        date: "May 20, 2024",
+        description: "Salary - May",
+        category: "Income",
+        amount: "+$5,200.00",
+        status: "Completed",
+        positive: true,
+        categoryColor: "bg-[#dff7e3] text-[#15803d] dark:bg-green-500/15 dark:text-green-400",
+    },
+    {
+        date: "May 19, 2024",
+        description: "Grocery Store",
+        category: "Food",
+        amount: "-$87.64",
+        status: "Completed",
+        positive: false,
+        categoryColor: "bg-[#fff1cf] text-[#b7791f] dark:bg-yellow-500/15 dark:text-yellow-400",
+    },
+    {
+        date: "May 18, 2024",
+        description: "Netflix Subscription",
+        category: "Entertainment",
+        amount: "-$15.99",
+        status: "Completed",
+        positive: false,
+        categoryColor: "bg-[#efe4ff] text-[#7c3aed] dark:bg-violet-500/15 dark:text-violet-400",
+    },
+    {
+        date: "May 17, 2024",
+        description: "Uber Ride",
+        category: "Transport",
+        amount: "-$24.50",
+        status: "Completed",
+        positive: false,
+        categoryColor: "bg-[#e3f1ff] text-[#2563eb] dark:bg-blue-500/15 dark:text-blue-400",
+    },
+    {
+        date: "May 16, 2024",
+        description: "Freelance Project",
+        category: "Income",
+        amount: "+$320.00",
+        status: "Completed",
+        positive: true,
+        categoryColor: "bg-[#dff7e3] text-[#15803d] dark:bg-green-500/15 dark:text-green-400",
+    },
+];
+
+interface TransactionRowProps {
+    date: string;
+    description: string;
+    category: string;
+    amount: string;
+    status: string;
+    positive: boolean;
+    categoryColor: string;
+}
+
+function TransactionRow({
+    date,
+    description,
+    category,
+    amount,
+    status,
+    positive,
+    categoryColor,
+}: TransactionRowProps) {
+    return (
+        <div className="grid grid-cols-[1.2fr_1.7fr_1.4fr_1.2fr_1fr] items-center gap-2 py-3 ">
+
+            {/* Date */}
+            <LinearReveal
+                as='p'
+                delay={0.3}
+                Text={`${date}`}
+                className={`${boldFont.className} whitespace-nowrap text-[9px] text-[#4b5563] dark:text-gray-400`}
+            />
+
+            {/* Description */}
+            <p className={`${boldFont.className} text-[10px] text-[#111827] dark:text-white`}>
+                {description}
+            </p>
+
+            {/* Category */}
+            <div>
+                <span
+                    className={`${boldFont.className} inline-flex items-center rounded-[5px] px-[5px] py-[3px] text-[9px] ${categoryColor}`}
+                >
+                    {category}
+                </span>
+            </div>
+
+            {/* Amount */}
+            <LinearReveal
+                as='p'
+                delay={0.5}
+                Text={`${amount}`}
+                className={`${boldFont.className} text-[10px] whitespace-nowrap ${positive
+                    ? "text-[#16a34a] dark:text-green-400"
+                    : "text-[#ef4444] dark:text-red-400"
+                    }`}
+            />
+
+            {/* Status */}
+            <div>
+                <span className={`${boldFont.className} inline-flex items-center rounded-[5px] bg-[#dff7e3] dark:bg-green-500/15 px-[5px] py-[3px] text-[9px] text-[#15803d] dark:text-green-400`}>
+                    {status}
+                </span>
+            </div>
+        </div>
+    );
+}
+
+function TransactionTablePreview() {
+    return (
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{
+                once: true,
+                amount: 0.2,
+                margin: "50px"
+            }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2
+            }}
+            className="w-full rounded-[15px] border border-black/10 dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none  bg-white dark:bg-[#0c0c0c] max-w-2xl mx-auto mt-20"
+        >
+
+            {/* Static Header */}
+            <div className="flex items-center justify-between mb-4">
+                <h1 className={`${boldFont.className} text-[11px] text-[#111827] dark:text-white`}>
+                    Transaction Table
+                </h1>
+
+                <button className={`${boldFont.className} text-[11px] text-[#006b46] dark:text-green-400 hover:opacity-80 transition-opacity`}>
+                    View All
+                </button>
+            </div>
+
+            {/* Horizontally Scrollable Container */}
+            <div className="w-full overflow-x-auto scrollbar-hide">
+
+                {/* Inner wrapper forcing a minimum width so content scrolls instead of squishing */}
+                <div className="min-w-[600px]">
+
+                    {/* Table Header (Changed gap-6 to gap-2 to align perfectly with rows) */}
+                    <div className="grid grid-cols-[1.2fr_1.7fr_1.4fr_1.2fr_1fr] gap-2 border-b border-black/8 dark:border-white/10 pb-5">
+                        {["Date", "Description", "Category", "Amount", "Status"].map(
+                            (item) => (
+                                <p
+                                    key={item}
+                                    className={`${boldFont.className} text-[10px] text-[#4b5563] dark:text-gray-400`}
+                                >
+                                    {item}
+                                </p>
+                            )
+                        )}
+                    </div>
+
+                    {/* Rows */}
+                    <div className="divide-y divide-black/5 dark:divide-white/10">
+                        {transactions.map((transaction, index) => (
+                            <TransactionRow
+                                key={index}
+                                {...transaction}
+                            />
+                        ))}
+                    </div>
+
+                </div>
+            </div>
+
+        </motion.div>
+    );
+}
+
+export default TransactionTablePreview;

@@ -8,8 +8,8 @@ function WaveformCode() {
     const bars = Array.from({ length: BAR_COUNT });
 
     return (
-        <div className="aspect-video flex justify-center rounded-2xl overflow-hidden">
-            <div className="flex pt-14  justify-center h-[100%] w-[80%] space-x-2 relative">
+        <div className="flex justify-center rounded-2xl h-[100%] w-[100%]">
+            <div className="flex mt-30 justify-center space-x-2 relative">
                 {bars.map((_, i) => {
                     const delay = i * 0.15;
                     const baseScale = barScales[i];
@@ -36,7 +36,7 @@ function WaveformCode() {
                     {Array.from({ length: 4 }).map((_, i) => (
                         <div
                             key={i}
-                            className="w-[1px] bg-gray-100 h-full"
+                            className="w-[1px] bg-black dark:bg-white  h-full"
                             style={{ marginLeft: "auto", marginRight: "auto" }}
                         />
                     ))}

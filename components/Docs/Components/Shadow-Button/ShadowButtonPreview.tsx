@@ -8,8 +8,7 @@ function ShadowButtonPreview() {
     return (
         <motion.div
             initial={{ opacity: 0, filter: "blur(8px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
                 amount: 0.2, // Trigger when 20% visible
@@ -20,6 +19,8 @@ function ShadowButtonPreview() {
                 ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
                 delay: 0.6
             }}
+
+            className='mt-20'
         >
             <button
                 style={{

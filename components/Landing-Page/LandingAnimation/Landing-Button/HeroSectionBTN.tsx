@@ -171,7 +171,7 @@ function HeroSectionBTN() {
                     {/* --- BUTTON WITH ROTATING BORDER --- */}
                     <div className="relative z-10 flex items-center justify-center">
                         {/* Rotating border wrapper */}
-                        <Link href="/docs/explore-components">
+                        <Link href="/docs">
                             <motion.div
                                 className="rounded-full p-[1px] scale-105"
                                 style={{ background: animatedBorder }}
@@ -188,7 +188,7 @@ function HeroSectionBTN() {
                                     `,
                                     }}
                                 >
-                                    View Components
+                                    Documentation
                                 </motion.button>
                             </motion.div>
                         </Link>

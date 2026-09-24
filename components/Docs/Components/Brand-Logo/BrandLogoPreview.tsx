@@ -32,7 +32,7 @@ const brands = [
 
 function BrandLogoPreview() {
     return (
-        <div className="space-y-12 overflow-hidden py-28 md:scale-[100%] lg:scale-[100%] xl:scale-[110%]">
+        <div className="space-y-12 overflow-hidden py-28 @md:scale-[100%] @lg:scale-[100%] @xl:scale-[110%]">
             <motion.div
                 initial={{ opacity: 0, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -54,9 +54,9 @@ function BrandLogoPreview() {
 
             <div className="relative flex overflow-hidden max-w-3xl mx-auto">
                 {/* Fade effect on edges */}
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-linear-to-r from-[#ffffff]  to-transparent z-10" />
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-linear-to-l from-[#ffffff]  to-transparent z-10" />
-
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-linear-to-r from-white dark:from-[#09090b] to-transparent z-10" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-linear-to-l from-white dark:from-[#09090b] to-transparent z-10" />
+                
                 {/* Scrolling animation */}
                 <motion.div
                     className="flex gap-12 min-w-max"
@@ -76,7 +76,7 @@ function BrandLogoPreview() {
                     {[...brands, ...brands].map((LogoComponent, index) => (
                         <LogoComponent
                             key={index}
-                            className="h-12 w-auto text-gray-600"
+                            className="h-12 w-auto text-gray-600 dark:text-white"
                         />
                     ))}
                 </motion.div>

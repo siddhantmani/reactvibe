@@ -23,10 +23,8 @@ type Props = {
 
 function CTADocs({
     title = "Build Faster with Production-Ready React Components",
-    description = "Browse 50+ production-ready React components including 30 UI blocks, 7 dashboard systems, hero sections, interactive components, and animated backgrounds. Copy the source code, customize everything, and ship modern React applications with complete code ownership.",
-    primaryText = "Browse Components",
+    description = "React Vibe gives 74 production-ready React components across motion, UI blocks, dashboard systems, backgrounds, and more. Copy the source code, customize everything, and ship.",
     secondaryText = "Star on GitHub",
-    onPrimaryClick,
     onSecondaryClick,
     className,
 }: Props) {
@@ -48,13 +46,20 @@ function CTADocs({
                 className={cn(
                     "relative w-full overflow-hidden rounded-2xl border px-8 py-7",
                     "flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center",
-                    "bg-card border-border",
+
+                    // Light mode
+                    "border-border bg-muted/30",
+
+                    // Dark mode
                     "dark:border-[#2a1f5e]",
                     "dark:bg-[radial-gradient(ellipse_at_60%_50%,#1e1050_0%,#0f0a24_55%,#0a0812_100%)]"
                 )}
             >
                 {/* Decorative stars */}
-                <div className="absolute inset-0 pointer-events-none" aria-hidden>
+                <div
+                    className="pointer-events-none absolute inset-0"
+                    aria-hidden
+                >
                     {[
                         [12, 20],
                         [28, 65],
@@ -79,11 +84,11 @@ function CTADocs({
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 max-w-xl">
+                <div className="relative z-10 max-w-2xl">
                     <h3
                         className={cn(
                             manrope.className,
-                            "text-xl font-extrabold tracking-[-0.04em] leading-tight text-foreground"
+                            "text-xl font-extrabold leading-tight tracking-[-0.04em] text-foreground"
                         )}
                     >
                         {title}
@@ -95,34 +100,21 @@ function CTADocs({
                 </div>
 
                 {/* Actions */}
-                <div className="relative z-10 flex flex-shrink-0 items-center gap-3">
-                    <Link href="/docs/explore-components">
-                        <button
-                            onClick={onPrimaryClick}
-                            className={cn(
-                                "cursor-pointer rounded-xl px-6 py-3 text-[14px] font-semibold transition-all shadow-lg",
-                                "bg-primary text-primary-foreground hover:opacity-90",
-                                "dark:shadow-[#7c3aed]/30"
-                            )}
-                        >
-                            {primaryText}
-                        </button>
-                    </Link>
+                <div className="relative z-10 flex shrink-0 flex-wrap items-center gap-3">
 
                     <Link
                         href="https://github.com/siddhantmani/reactvibe"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={onSecondaryClick}
+                        className={cn(
+                            "flex cursor-pointer items-center gap-2 rounded-xl border px-5 py-3 text-[14px] font-medium transition-all",
+                            "border-border bg-muted text-foreground hover:bg-accent",
+                            "dark:border-[#2a2040] dark:bg-[#13101f]/80",
+                            "dark:hover:border-[#7c3aed]/60 dark:hover:bg-[#1a1528]"
+                        )}
                     >
-                        <button
-                            onClick={onSecondaryClick}
-                            className={cn(
-                                "flex cursor-pointer items-center gap-2 rounded-xl border px-5 py-3 text-[14px] font-medium transition-all",
-                                "border-border bg-muted text-foreground hover:bg-accent",
-                                "dark:border-[#2a2040] dark:bg-[#13101f]/80 dark:hover:border-[#7c3aed]/60 dark:hover:bg-[#1a1528]"
-                            )}
-                        >
-                            ⭐ {secondaryText}
-                        </button>
+                        ⭐ {secondaryText}
                     </Link>
                 </div>
             </motion.div>

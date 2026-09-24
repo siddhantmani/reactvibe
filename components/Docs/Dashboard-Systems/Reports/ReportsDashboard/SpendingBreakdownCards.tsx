@@ -1,8 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
-import React from "react";
 import {
     ArrowDown,
     ArrowUp,
@@ -10,14 +7,10 @@ import {
     UtensilsCrossed,
     Car,
     Clapperboard,
-} from "lucide-react";
-
-import { Manrope } from "next/font/google";
-
-const boldFont = Manrope({
-    weight: "500",
-    subsets: ["latin"],
-});
+} from "lucide-react"
+import { manrope } from "@/lib/fonts";
+import Glow from "@/components/Docs/Components/Glow/Glow";
+import { useTheme } from "@/components/ThemeProvider";
 
 const categories = [
     {
@@ -26,9 +19,8 @@ const categories = [
         amount: "-$120.50",
         positive: false,
         icon: UtensilsCrossed,
-        iconBg: "bg-[#F97316]/10",
-        iconColor: "text-[#EA580C]",
-        glow: "bg-[#F97316]/[0.05]",
+        iconBg: "bg-[#FF6B3D]/10",
+        iconColor: "text-[#FF6B3D]",
     },
     {
         title: "Transport",
@@ -36,9 +28,8 @@ const categories = [
         amount: "-$45.20",
         positive: true,
         icon: Car,
-        iconBg: "bg-[#6366F1]/10",
-        iconColor: "text-[#4F46E5]",
-        glow: "bg-[#6366F1]/[0.05]",
+        iconBg: "bg-[#6C63FF]/10",
+        iconColor: "text-[#7C73FF]",
     },
     {
         title: "Shopping",
@@ -46,9 +37,8 @@ const categories = [
         amount: "-$75.30",
         positive: false,
         icon: ShoppingBag,
-        iconBg: "bg-[#EC4899]/10",
-        iconColor: "text-[#DB2777]",
-        glow: "bg-[#EC4899]/[0.05]",
+        iconBg: "bg-[#FF6B3D]/10",
+        iconColor: "text-[#FF6B3D]",
     },
     {
         title: "Entertainment",
@@ -56,93 +46,65 @@ const categories = [
         amount: "-$22.10",
         positive: true,
         icon: Clapperboard,
-        iconBg: "bg-[#84CC16]/10",
-        iconColor: "text-[#65A30D]",
-        glow: "bg-[#84CC16]/[0.05]",
+        iconBg: "bg-[#D9F99D]/10",
+        iconColor: "text-[#D9F99D]",
     },
-];
+]
 
 function SpendingBreakdownCards() {
-
+    const { theme } = useTheme()
     return (
+        <div className="relative overflow-hidden transition-colors duration-300 rounded-2xl border dark:border-[#222121] border-black/10">
+            <Glow
+                backgroundColor={`${theme === "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full transition-colors duration-300"
+            >
+                <div className="relative z-10">
 
-        <div
-            className="relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:bg-[#070606] dark:border-white/10 p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)]"
-        >
+                    {/* Heading */}
+                    <div className="space-y-1">
+                        <h1 className={`${manrope.className} text-[12px] text-gray-900 dark:text-[#ffffff] transition-colors duration-300`}>
+                            Spending Breakdown
+                        </h1>
+                        <p className={`${manrope.className} text-[9px] text-gray-500 dark:text-[#ffffff]/60 transition-colors duration-300`}>
+                            Where your money went this month.
+                        </p>
+                    </div>
 
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.04),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(139,92,246,0.05),_transparent_40%)]" />
 
-            {/* Glow */}
-            <div className="absolute right-[-80px] top-[-80px] h-[220px] w-[220px] rounded-full bg-[#8B5CF6]/[0.04] blur-3xl" />
+                    {/* Categories */}
+                    <div className="mt-6 grid grid-cols-1 gap-2 @md:grid-cols-2">
 
-            <div className="relative z-10">
+                        {categories.map((item) => {
 
-                {/* Heading */}
-                <div className="space-y-1">
+                            const Icon = item.icon
 
-                    <h1
-                        className={`${boldFont.className} text-[15px] tracking-[-0.04em] text-[#111111] dark:text-white`}
-                    >
-                        Spending Breakdown
-                    </h1>
-
-                    <p
-                        className={`${boldFont.className} text-[11px] text-black/45 dark:text-white/60`}
-                    >
-                        Where your money went this month.
-                    </p>
-
-                </div>
-
-                {/* Categories */}
-                <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-
-                    {categories.map((item, index) => {
-
-                        const Icon = item.icon;
-
-                        return (
-
-                            <motion.div
-                                key={index}
-                                initial={{
-                                    opacity: 0,
-                                    y: 10,
-                                }}
-                                whileInView={{
-                                    opacity: 1,
-                                    y: 0,
-                                }}
-                                viewport={{
-                                    once: true,
-                                }}
-                                transition={{
-                                    duration: 0.35,
-                                    delay: index * 0.06,
-                                }}
-                                className="group relative overflow-hidden rounded-[16px] border border-black/[0.06] dark:border-white/10 bg-black/[0.015] dark:bg-white/[0.03] p-4 transition-all duration-300 hover:bg-black/[0.025] dark:hover:bg-white/[0.05] hover:shadow-[0_10px_30px_rgba(0,0,0,0.04)] dark:hover:shadow-none"
-                            >
-
-                                {/* Card Glow */}
+                            return (
                                 <div
-                                    className={`absolute -right-10 -top-10 h-[120px] w-[120px] rounded-full blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-70 ${item.glow}`}
-                                />
-
-                                <div className="relative z-10 flex items-center justify-between">
+                                    key={item.title}
+                                    className="group flex items-center justify-between rounded-[10px] border border-gray-100 bg-gray-50 dark:border-white/5 dark:bg-white/[0.02] p-2 transition-all duration-300 hover:border-gray-200 hover:bg-gray-100 dark:hover:border-white/10 dark:hover:bg-white/[0.04]"
+                                >
 
                                     {/* Left */}
-                                    <div className="flex items-center gap-4">
+                                    <div className="flex items-center gap-3 py-2">
 
                                         {/* Icon */}
                                         <div
-                                            className={`flex h-11 w-11 items-center justify-center rounded-[12px] border border-black/[0.05] dark:border-white/10 shadow-[0_6px_18px_rgba(0,0,0,0.03)] dark:shadow-none ${item.iconBg}`}
+                                            className={`flex h-8 w-8 items-center justify-center rounded-[8px] border border-gray-200 dark:border-white/10 transition-colors duration-300 ${item.iconBg}`}
                                         >
 
                                             <Icon
-                                                size={18}
+                                                size={15}
                                                 className={item.iconColor}
-                                                strokeWidth={2.2}
+                                                strokeWidth={2}
                                             />
 
                                         </div>
@@ -150,17 +112,9 @@ function SpendingBreakdownCards() {
                                         {/* Text */}
                                         <div>
 
-                                            <h3
-                                                className={`${boldFont.className} text-[12px] text-[#111111] dark:text-white`}
-                                            >
+                                            <h3 className={`${manrope.className} text-[12px] text-gray-800 dark:text-white transition-colors duration-300`}>
                                                 {item.title}
                                             </h3>
-
-                                            <p
-                                                className={`${boldFont.className} mt-1 text-[10px] text-black/40 dark:text-white/60`}
-                                            >
-                                                Monthly category spending
-                                            </p>
 
                                         </div>
 
@@ -169,48 +123,33 @@ function SpendingBreakdownCards() {
                                     {/* Right */}
                                     <div className="text-right">
 
-                                        {/* Percentage */}
                                         <div
-                                            className={`flex items-center justify-end gap-1 text-[10px] font-semibold ${item.positive
-                                                ? "text-[#16A34A]"
-                                                : "text-[#DC2626]"
+                                            className={`flex items-center justify-end gap-1 text-[10px] font-semibold transition-colors duration-300 ${item.positive
+                                                ? "text-green-600 dark:text-[#4ADE80]"
+                                                : "text-red-600 dark:text-[#FF5A5A]"
                                                 }`}
                                         >
 
-                                            <div
-                                                className={`flex h-5 w-5 items-center justify-center rounded-full ${item.positive
-                                                    ? "bg-[#22C55E]/10"
-                                                    : "bg-[#EF4444]/10"
-                                                    }`}
-                                            >
-
-                                                {item.positive ? (
-
-                                                    <ArrowDown
-                                                        size={11}
-                                                        strokeWidth={2.8}
-                                                    />
-
-                                                ) : (
-
-                                                    <ArrowUp
-                                                        size={11}
-                                                        strokeWidth={2.8}
-                                                    />
-
-                                                )}
-
-                                            </div>
+                                            {item.positive ? (
+                                                <ArrowDown
+                                                    size={12}
+                                                    strokeWidth={2.8}
+                                                />
+                                            ) : (
+                                                <ArrowUp
+                                                    size={12}
+                                                    strokeWidth={2.8}
+                                                />
+                                            )}
 
                                             {item.percentage}
 
                                         </div>
 
-                                        {/* Amount */}
                                         <p
-                                            className={`${boldFont.className} mt-3 text-[12px] ${item.positive
-                                                ? "text-[#16A34A]"
-                                                : "text-[#DC2626]"
+                                            className={`${manrope.className} mt-2 text-[10px] transition-colors duration-300 ${item.positive
+                                                ? "text-green-600 dark:text-[#4ADE80]"
+                                                : "text-red-600 dark:text-[#FF5A5A]"
                                                 }`}
                                         >
                                             {item.amount}
@@ -219,18 +158,15 @@ function SpendingBreakdownCards() {
                                     </div>
 
                                 </div>
+                            )
+                        })}
 
-                            </motion.div>
-
-                        );
-                    })}
+                    </div>
 
                 </div>
-
-            </div>
-
+            </Glow>
         </div>
-    );
+    )
 }
 
-export default SpendingBreakdownCards;
+export default SpendingBreakdownCards

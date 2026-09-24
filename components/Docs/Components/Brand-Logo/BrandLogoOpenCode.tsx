@@ -137,7 +137,7 @@ function BrandLogoOpenCode() {
 
                                 {/* Monaco Editor */}
                                 <Editor
-                                    height="500px"
+                                    height="700px"
                                     defaultLanguage="typescript"
                                     value={code}
                                     theme="vs-dark"

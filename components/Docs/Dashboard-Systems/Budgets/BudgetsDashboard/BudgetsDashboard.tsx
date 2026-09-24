@@ -28,6 +28,9 @@ import UpcomingBudgetAlerts from "./UpcomingBudgetAlerts";
 import BudgetRecommendationCard from "./BudgetRecommendationCard";
 import Link from "next/link";
 import Separator from "@/components/Docs/Separator";
+import ManageAccount from "../../ManageAccount";
+import MetricsGrid from "../../MetricsGrid";
+import DashboardHeader from "../../DashboardHeader";
 
 const fontBold = Manrope({
     weight: '600',
@@ -46,7 +49,7 @@ function Sidebar() {
     ];
 
     return (
-        <div className="w-64 h-full bg-[#F9FAF6] dark:bg-[#070606] backdrop-blur-4xl relative p-3 px-3 rounded-tl-[15px] rounded-bl-4xl overflow-hidden">
+        <div className="h-full w-full flex flex-col bg-[#F9FAF6] dark:bg-[#070606] backdrop-blur-4xl relative p-3 px-3 rounded-tl-[15px] rounded-bl-4xl">
             <motion.div
                 initial={{ opacity: 0, filter: "blur(4px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -86,57 +89,8 @@ function Sidebar() {
                 ))}
             </nav>
 
-            <div className="rounded-[15px] absolute bottom-0 right-0 scale-[90%] overflow-hidden bg-gradient-to-br from-[#015c46] via-[#01684e] to-[#014536] dark:from-[#031A08] dark:via-[#021406] dark:to-[#010B03] p-4 w-full">
-
-                {/* Background glow circles */}
-                <div className="absolute top-0 right-0 w-[140px] h-[140px] bg-white/5 dark:bg-white/10 rounded-full blur-2xl" />
-                <div className="absolute bottom-0 left-0 w-[120px] h-[120px] bg-black/10 dark:bg-black/20 rounded-full blur-2xl" />
-
-                {/* Cards */}
-                <div className="relative flex justify-center items-center mt-1 mb-3 h-[100px]">
-
-                    {/* Back card */}
-                    <div className="absolute left-[58px] top-[4px] w-[82px] h-[58px] rounded-[12px] bg-[#f5f5f5] dark:bg-neutral-700 shadow-xl rotate-[-12deg] p-3">
-                        <div className="w-[10px] h-[10px] rounded-[3px] bg-[#b98a3f]" />
-                        <div className="mt-4 space-y-1">
-                            <div className="w-[35px] h-[3px] bg-[#d9d9d9] dark:bg-neutral-500 rounded-full" />
-                            <div className="w-[25px] h-[3px] bg-[#e8e8e8] dark:bg-neutral-600 rounded-full" />
-                        </div>
-                    </div>
-
-                    {/* Front card */}
-                    <div className="absolute right-[50px] top-[18px] w-[92px] h-[62px] rounded-[12px] bg-gradient-to-br from-[#8cff8d] to-[#5fb96d] shadow-2xl rotate-[10deg] p-3">
-                        <div className="w-[10px] h-[10px] rounded-[3px] bg-[#b98a3f]" />
-
-                        <div className="mt-4 flex items-center justify-between">
-                            <div className="space-y-1">
-                                <div className="w-[40px] h-[3px] bg-white/80 rounded-full" />
-                                <div className="w-[28px] h-[3px] bg-white/60 rounded-full" />
-                            </div>
-
-                            <div className="flex gap-1">
-                                <div className="w-[7px] h-[7px] rounded-full bg-white/70" />
-                                <div className="w-[7px] h-[7px] rounded-full bg-white/40" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Text */}
-
-                <div className="relative text-center text-white space-y-1 w-full">
-                    <h1 className="text-[18px] leading-tight">
-                        Upgrade to Premium
-                    </h1>
-
-                    <p className="text-[12px] text-white/90 leading-[2] mt-1 px-3">
-                        Unlock advanced insights and custom reports.
-                    </p>
-
-                    <div className="w-full mt-6 px-14 rounded-[10px] bg-[#f0fff3] dark:bg-[#000000] dark:text-white p-0 py-4 text-[16px] font-semibold text-black cursor-pointer hover:scale-105 transition-transform duration-150 ease-in-out">
-                        Upgrade Now
-                    </div>
-                </div>
+            <div className="w-full mt-auto pt-2">
+                <ManageAccount />
             </div>
         </div>
     )
@@ -144,26 +98,26 @@ function Sidebar() {
 
 function BudgetsDashboard() {
     return (
-        <div className='flex justify-center'>
-            <div className="flex">
+        <div className='flex h-[990px]'>
+            <div className="flex z-50 @md:max-w-[33%] @xl:max-w-[17%] w-full hidden @md:flex sticky top-0 h-full h-screen">
                 <Sidebar />
                 <Separator
                     direction="vertical"
-                    className="bg-black/30 dark:bg-white/20 h-full"
+                    className="bg-black/12 dark:bg-white/12 shrink-0"
                 />
             </div>
-            <div className=" bg-[#f8f8f8] dark:bg-[#070606] border border-black/5 px-2 py-2 rounded-br-2xl rounded-tr-2xl space-y-2 max-w-7xl">
-                <BudgetsHeader />
-                <BudgetsMetricsGrid />
-                <div className="grid grid-cols-2 gap-2">
+            <div className="@md:mt-0 bg-[#f8f8f8] dark:bg-[#070606] border border-black/5 px-2 py-2 rounded-br-2xl rounded-tr-2xl space-y-3 w-full mx-auto overflow-y-auto h-full hide-scrollbar ">
+                <DashboardHeader />
+                <MetricsGrid />
+                <div className="grid grid-cols-1 @xl:grid-cols-2 gap-2">
                     <BudgetOverview />
                     <BudgetvsActual />
                 </div>
-                <div className="flex gap-2">
-                    <div className="grid grid-cols-1 gap-2">
+                <div className="flex flex-col @xl:flex-row gap-2">
+                    <div className="grid grid-cols-1 xl:max-w-5xl 2xl:max-w-6xl w-full">
                         <BudgetCategoriesTable />
                     </div>
-                    <div className="grid grid-cols-1 gap-2">
+                    <div className="grid grid-cols-1 gap-2 xl:max-w-md w-full">
                         <UpcomingBudgetAlerts />
                         <BudgetRecommendationCard />
                     </div>

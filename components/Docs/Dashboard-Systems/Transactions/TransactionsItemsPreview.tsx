@@ -7,8 +7,13 @@ import TransactionsPreview from './TransactionsPreview';
 import Link from 'next/link';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import Banner from '@/components/Banner';
+import DeviceToggleGroup from "@/components/DeviceToggleGroup";
+import { useState } from "react";
+import SpotlightBackground from "@/components/SpotlightBackground";
+import ResizablePreview from "@/components/ResizablePreview";
 
 function TransactionsItemsPreview() {
+    const [previewWidth, setPreviewWidth] = useState(1440);
 
     return (
         <div className='space-y-1'>
@@ -28,7 +33,7 @@ function TransactionsItemsPreview() {
                     delay: 0.3
                 }}
                 className="z-0 inset-0 flex justify-between">
-                <div className="h-10 flex justify-end items-center p-1 w-full gap-1">
+                <div className="h-10 flex justify-between items-center p-1 w-full gap-1">
                     <div className='flex items-center gap-2 max-w-[130px] '>
                         <Link href="/docs/templates/taskforge">
                             <div>
@@ -47,7 +52,13 @@ function TransactionsItemsPreview() {
                             </div>
                         </Link>
                     </div>
-                    <div>
+                    <div className='flex items-center gap-2'>
+
+                        <DeviceToggleGroup
+                            activeWidth={previewWidth}
+                            onWidthChange={setPreviewWidth}
+                        />
+
                         <RefrashContent />
                     </div>
                 </div>
@@ -55,9 +66,17 @@ function TransactionsItemsPreview() {
             <div>
                 <Banner />
             </div>
-            <div className="border rounded-3xl">
-                <div className="text-black z-40 w-full h-full scale-[99%]">
-                    <TransactionsPreview />
+            <div className="border rounded-3xl relative">
+                <div className="text-black z-40 w-full h-full">
+                    <SpotlightBackground className="rounded-2xl z-0" spotlightSize={180} />
+
+                    <ResizablePreview
+                        width={previewWidth}
+                        onWidthChange={setPreviewWidth}
+                        className="absolute inset-0 z-10 py-2"
+                    >
+                        <TransactionsPreview />
+                    </ResizablePreview>
                 </div>
             </div>
         </div>

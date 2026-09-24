@@ -41,6 +41,13 @@ function TablePorpsForMotionDropdownItems() {
                 <TableBody>
 
                     <TableRow>
+                        <TableCell className={PropertyPoint.className}>forceDirection</TableCell>
+                        <TableCell className={PropertyPoint.className}>"down | up"</TableCell>
+                        <TableCell className={PropertyPoint.className}>
+                            Set the direction of the dropdown.
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
                         <TableCell className={PropertyPoint.className}>menuClassName</TableCell>
                         <TableCell className={PropertyPoint.className}>"bg-white text-black border-white/10"</TableCell>
                         <TableCell className={PropertyPoint.className}>

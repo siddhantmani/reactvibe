@@ -1,110 +1,100 @@
 export const sidebarConfig = [
     {
-        title: "Templates",
+        title: "Store",
         base: "/docs/templates/",
         items: [
-            { name: "Taskforge", slug: "taskforge", createdAt: "2026-7-20" },
+            { name: "Taskforge", slug: "taskforge", createdAt: "2026-9-24", badge: "updated" },
+            { name: "Rankforge", slug: "rankforge", createdAt: "2026-9-24", badge: "new" },
+        ]
+    },
+    {
+        title: "Motion",
+        base: "/docs/motion/",
+        items: [
+            { name: "Overview", slug: "overview", createdAt: "2026-9-24", badge: "new" },
+            { name: "Branch Flow", slug: "branch-flow", createdAt: "2026-9-24", badge: "new" },
+            { name: "Hub Flow", slug: "hub-flow", createdAt: "2026-9-24", badge: "new" },
+            { name: "Converge", slug: "converge", createdAt: "2026-9-24", badge: "new" },
+            { name: "Network Pulse", slug: "network-pulse", createdAt: "2026-9-24", badge: "new" },
+            { name: "Pipeline", slug: "pipeline", createdAt: "2026-9-24", badge: "new" },
+            { name: "Signal", slug: "signal", createdAt: "2026-9-24", badge: "new" },
+            { name: "Data Flow", slug: "data-flow", createdAt: "2026-9-24", badge: "new" },
+            { name: "Connection Flow", slug: "connection-flow", createdAt: "2026-9-24", badge: "new" },
+            { name: "Node Flow", slug: "node-flow", createdAt: "2026-9-24", badge: "new" },
+            { name: "Wave CTA", slug: "wave-cta", createdAt: "2026-9-24", badge: "updated" },
+            { name: "Waveform", slug: "waveform", createdAt: "2026-9-24", badge: "updated" },
+            { name: "Origin", slug: "origin", createdAt: "2026-9-24", badge: "updated" },
+            { name: "Nexus", slug: "nexus", createdAt: "2026-9-24", badge: "updated" },
         ]
     },
     {
         title: "Dashboard Systems",
         base: "/docs/dashboard-systems/",
         items: [
-            { name: "Finance Overview", slug: "finance-overview", createdAt: "2026-7-20" },
-            { name: "Accounts", slug: "accounts", createdAt: "2026-7-20", badge: "PRO" },
-            { name: "Transactions", slug: "transactions", createdAt: "2026-7-20", badge: "PRO" },
-            { name: "Budgets", slug: "budgets", createdAt: "2026-7-20", badge: "PRO" },
-            { name: "Investments", slug: "investments", createdAt: "2026-7-20", badge: "PRO" },
-            { name: "Integrations", slug: "integrations", createdAt: "2026-7-20", badge: "PRO" },
-            { name: "Reports", slug: "reports", createdAt: "2026-7-20", badge: "PRO" },
+            { name: "Finance Overview", slug: "finance-overview", createdAt: "2026-9-24" },
+            { name: "Accounts", slug: "accounts", createdAt: "2026-9-24", badge: "PRO" },
+            { name: "Transactions", slug: "transactions", createdAt: "2026-9-24", badge: "PRO" },
+            { name: "Budgets", slug: "budgets", createdAt: "2026-9-24", badge: "PRO" },
+            { name: "Investments", slug: "investments", createdAt: "2026-9-24", badge: "PRO" },
+            { name: "Integrations", slug: "integrations", createdAt: "2026-9-24", badge: "PRO" },
+            { name: "Reports", slug: "reports", createdAt: "2026-9-24", badge: "PRO" },
         ]
     },
     {
-        title: "UI Blocks",
-        base: "/docs/ui-blocks/",
+        title: "Dashboard UI",
+        base: "/docs/dashboard-ui/",
         items: [
-            { name: "Progress Overview List", slug: "progress-overview-list", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Comparative Bar Chart", slug: "comparative-bar-chart", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Distribution Breakdown Chart", slug: "distribution-breakdown-chart", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Scheduled Payments List", slug: "scheduled-payments-list", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Transaction Table", slug: "transaction-table", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Progress Tracking List", slug: "progress-tracking-list", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Entity Management Table", slug: "entity-management-table", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Activity Timeline List", slug: "activity-timeline-list", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Advanced Transaction Log", slug: "advanced-transaction-log", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Compact Activity Feed", slug: "compact-activity-feed", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Comparative Metrics Chart", slug: "comparative-metrics-chart", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Structured Data Table", slug: "structured-data-table", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Alert Notification List", slug: "alert-notification-list", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Insight Recommendation Card", slug: "insight-recommendation-card", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Performance Trend Chart", slug: "performance-trend-chart", createdAt: "2026-7-20", badge: "updated" },
-            { name: "Asset Performance Table", slug: "asset-performance-table", createdAt: "2026-7-20", badge: "updated" },
+            { name: "List", slug: "list", createdAt: "2026-9-24", badge: "updated" },
+            { name: "Chart", slug: "chart", createdAt: "2026-9-24", badge: "updated" },
+            { name: "Table", slug: "table", createdAt: "2026-9-24", badge: "updated" },
+            { name: "Widget", slug: "widget", createdAt: "2026-9-24", badge: "updated" },
         ]
     },
     {
         title: "Backgrounds",
         base: "/docs/backgrounds/",
         items: [
-            { name: "Dark Fusion", slug: "dark-fusion", createdAt: "2026-4-15" },
-            { name: "Gradient Halo", slug: "gradient-halo", createdAt: "2026-1-1" },
-            { name: "Shining Star", slug: "shining-star", createdAt: "2026-1-1" },
-            { name: "Lord Star", slug: "lord-star", createdAt: "2026-1-1" },
-            { name: "Path Flow", slug: "path-flow", createdAt: "2026-1-1" },
+            { name: "Rising Lines", slug: "rising-lines", createdAt: "2026-9-24", badge: "new" },
+            { name: "Stream", slug: "stream", createdAt: "2026-9-24", badge: "new" },
+            { name: "Spotlight Grid", slug: "spotlight-grid", createdAt: "2026-9-24", badge: "new" },
+            { name: "Path Flow", slug: "path-flow", createdAt: "2026-9-24", badge: "updated" },
         ]
     },
     {
-        title: "Hero Section",
-        base: "/docs/hero-section/",
+        title: "Blocks",
+        base: "/docs/blocks/",
         items: [
-            { name: "Launch", slug: "launch", createdAt: "2026-4-30" },
-            { name: "Wave CTA", slug: "wave-cta", createdAt: "2026-1-1" },
-            { name: "Overlay Nav", slug: "overlay-nav", createdAt: "2026-7-20", badge: "UPDATED" },
-            { name: "Overlay Menu", slug: "overlay-menu", createdAt: "2026-7-20", badge: "UPDATED" },
-        ]
-    },
-    {
-        title: "Sections",
-        base: "/docs/sections/",
-        items: [
-            { name: "Prime", slug: "prime", createdAt: "2026-4-30" },
-            { name: "Signature", slug: "signature", createdAt: "2026-4-30" },
-            { name: "Resolve", slug: "resolve", createdAt: "2026-4-30" },
-            { name: "Zenith", slug: "zenith", createdAt: "2026-4-30" },
-            { name: "Spotlight", slug: "spotlight", createdAt: "2026-4-30" },
-            { name: "Aurora Pricing", slug: "aurora-pricing", createdAt: "2026-7-20", badge: "UPDATED" },
-            { name: "Testimonial Flow", slug: "testimonial-flow", createdAt: "2026-1-1" },
-            { name: "Flux CTA", slug: "flux-cta", createdAt: "2026-1-1" },
-            { name: "Radiant Frame", slug: "radiant-frame", createdAt: "2026-1-1" },
-            { name: "Glide Accordion", slug: "glide-accordion", createdAt: "2026-1-1" },
-            { name: "Voice Flow", slug: "voice-flow", createdAt: "2026-1-1" },
-            { name: "Nova Pricing", slug: "nova-pricing", createdAt: "2026-1-1" },
-            { name: "Stratus", slug: "stratus", createdAt: "2026-1-1" },
-            { name: "Aura Base", slug: "aura-base", createdAt: "2026-1-1" },
+            { name: "Pricing", slug: "pricing", createdAt: "2026-9-24" },
+            { name: "Footer", slug: "footer", createdAt: "2026-9-24" },
+            { name: "FAQ", slug: "faq", createdAt: "2026-9-24" },
+            { name: "Testimonials", slug: "testimonials", createdAt: "2026-9-24" },
+            { name: "Call To Action", slug: "cta", createdAt: "2026-9-24" },
+            { name: "Hero", slug: "hero", createdAt: "2026-9-24" },
+            { name: "Navigation", slug: "navigation", createdAt: "2026-9-24" },
         ]
     },
     {
         title: "Components",
         base: "/docs/components/",
         items: [
-            { name: "Glow", slug: "glow", createdAt: "2026-4-30" },
-            { name: "Flowlist", slug: "flowlist", createdAt: "2026-4-30" },
-            { name: "Waveform", slug: "waveform", createdAt: "2026-4-30" },
-            { name: "Origin", slug: "origin", createdAt: "2026-4-30" },
-            { name: "Nexus", slug: "nexus", createdAt: "2026-4-30" },
-            { name: "Orbit Border", slug: "orbit-border", createdAt: "2026-4-11" },
-            { name: "Separator", slug: "separator", createdAt: "2026-1-1" },
-            { name: "Brand Loop", slug: "brand-loop", createdAt: "2026-1-1" },
-            { name: "Pulse Ping", slug: "pulse-ping", createdAt: "2026-4-30" },
-            { name: "Motion Switch", slug: "motion-switch", createdAt: "2026-1-1" },
-            { name: "Motion Dropdown", slug: "motion-dropdown", createdAt: "2026-7-20", badge: "UPDATED" },
-            { name: "Shadow Button", slug: "shadow-button", createdAt: "2026-1-1" }
+            { name: "Notification Screen", slug: "notification-screen", createdAt: "2026-9-24", badge: "new" },
+            { name: "Animated Gradient Badge", slug: "animated-gradient-badge", createdAt: "2026-9-24", badge: "new" },
+            { name: "Glow", slug: "glow", createdAt: "2026-9-24" },
+            { name: "Flowlist", slug: "flowlist", createdAt: "2026-9-24" },
+            { name: "Orbit Border", slug: "orbit-border", createdAt: "2026-9-24" },
+            { name: "Separator", slug: "separator", createdAt: "2026-9-24", badge: "UPDATED" },
+            { name: "Brand Loop", slug: "brand-loop", createdAt: "2026-9-24" },
+            { name: "Pulse Ping", slug: "pulse-ping", createdAt: "2026-9-24" },
+            { name: "Motion Switch", slug: "motion-switch", createdAt: "2026-9-24" },
+            { name: "Motion Dropdown", slug: "motion-dropdown", createdAt: "2026-9-24", badge: "UPDATED" },
+            { name: "Shadow Button", slug: "shadow-button", createdAt: "2026-9-24" }
         ]
     },
     {
-        title: "Text Motion",
-        base: "/docs/text-motion/",
+        title: "Text",
+        base: "/docs/text/",
         items: [
-            { name: "Linear Reveal", slug: "linear-reveal", createdAt: "2026-4-15" }
+            { name: "Linear Reveal", slug: "linear-reveal", createdAt: "2026-9-24" }
         ]
     },
 ];

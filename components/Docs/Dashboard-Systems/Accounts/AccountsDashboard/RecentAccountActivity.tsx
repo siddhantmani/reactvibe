@@ -6,6 +6,8 @@ import {
     ArrowUp,
 } from "lucide-react"
 import { Manrope } from "next/font/google";
+import Glow from "@/components/Docs/Components/Glow/Glow";
+import { useTheme } from "@/components/ThemeProvider";
 
 const boldFont = Manrope({
     weight: "500",
@@ -48,87 +50,102 @@ const activities = [
 ]
 
 function RecentAccountActivity() {
+    const { theme } = useTheme();
 
     return (
-        <div className="rounded-[15px] aspect-video border border-black/10 bg-white dark:bg-[#070606] dark:border-white/10 p-3 px-3">
+        <div className="rounded-2xl border border-black/10 dark:border-white/10">
 
-            {/* Heading */}
-            <div>
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full "
+            >
 
-                <h2 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white`}>
-                    Recent Activity
-                </h2>
+                {/* Heading */}
+                <div>
 
-            </div>
+                    <h2 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white`}>
+                        Recent Activity
+                    </h2>
 
-            {/* Activities */}
-            <div className="mt-7 space-y-0">
+                </div>
 
-                {activities.map((item, index) => (
+                {/* Activities */}
+                <div className="mt-7 space-y-0">
 
-                    <div
-                        key={index}
-                        className="flex items-center justify-between rounded-2xl p-3 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.03]"
-                    >
+                    {activities.map((item, index) => (
 
-                        {/* Left */}
-                        <div className="flex items-center gap-4">
+                        <div
+                            key={index}
+                            className="flex items-center justify-between rounded-2xl p-3 transition-all duration-300 hover:bg-black/[0.02] dark:hover:bg-white/[0.03]"
+                        >
 
-                            {/* Logo */}
-                            <div
-                                className={`flex h-8 w-8 items-center justify-center rounded-[8px] text-[14px] font-bold text-white ${item.logoBg}`}
-                            >
-                                {item.logo}
+                            {/* Left */}
+                            <div className="flex items-center gap-4">
+
+                                {/* Logo */}
+                                <div
+                                    className={`flex h-8 w-8 items-center justify-center rounded-[8px] text-[14px] font-bold text-white ${item.logoBg}`}
+                                >
+                                    {item.logo}
+                                </div>
+
+                                {/* Arrow */}
+                                <div
+                                    className={`flex h-6 w-6 items-center justify-center rounded-full ${item.positive
+                                        ? "bg-[#DCFCE7] dark:bg-[#12331D]"
+                                        : "bg-[#FEE2E2] dark:bg-[#3A1616]"
+                                        }`}
+                                >
+
+                                    {item.positive ? (
+                                        <ArrowUp
+                                            size={13}
+                                            className="text-[#16A34A]"
+                                            strokeWidth={2.8}
+                                        />
+                                    ) : (
+                                        <ArrowDown
+                                            size={13}
+                                            className="text-[#DC2626]"
+                                            strokeWidth={2.8}
+                                        />
+                                    )}
+
+                                </div>
+
+                                {/* Content */}
+                                <div>
+
+                                    <h3 className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
+                                        {item.bank}
+                                    </h3>
+
+                                    <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
+                                        {item.description}
+                                    </p>
+                                </div>
+
                             </div>
 
-                            {/* Arrow */}
-                            <div
-                                className={`flex h-6 w-6 items-center justify-center rounded-full ${item.positive
-                                    ? "bg-[#DCFCE7] dark:bg-[#12331D]"
-                                    : "bg-[#FEE2E2] dark:bg-[#3A1616]"
-                                    }`}
-                            >
-
-                                {item.positive ? (
-                                    <ArrowUp
-                                        size={13}
-                                        className="text-[#16A34A]"
-                                        strokeWidth={2.8}
-                                    />
-                                ) : (
-                                    <ArrowDown
-                                        size={13}
-                                        className="text-[#DC2626]"
-                                        strokeWidth={2.8}
-                                    />
-                                )}
-
-                            </div>
-
-                            {/* Content */}
-                            <div>
-
-                                <h3 className={`${boldFont.className} text-[13px] text-[#111827] dark:text-white`}>
-                                    {item.bank}
-                                </h3>
-
-                                <p className={`${boldFont.className} text-[10px] text-[#6B7280] dark:text-white/50`}>
-                                    {item.description}
-                                </p>
-                            </div>
+                            {/* Time */}
+                            <p className={`${boldFont.className} text-[12px] text-[#6B7280] dark:text-white/50`}>
+                                {item.time}
+                            </p>
 
                         </div>
 
-                        {/* Time */}
-                        <p className={`${boldFont.className} text-[12px] text-[#6B7280] dark:text-white/50`}>
-                            {item.time}
-                        </p>
+                    ))}
 
-                    </div>
-
-                ))}
-
-            </div>
+                </div>
+            </Glow>
 
         </div>
     )

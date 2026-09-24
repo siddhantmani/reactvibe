@@ -6,6 +6,8 @@ import React from 'react'
 import MotionDropdownItemsPreview from './MotionDropdownItemsPreview';
 import { motion } from 'framer-motion'
 import TablePorpsForMotionDropdownItems from './TablePorpsForMotionDropdownItems';
+import Separator from '../../Separator';
+import BuiltWithMotionDropdown from './BuiltWithMotionDropdown';
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
@@ -14,7 +16,21 @@ const OrbitFontFont = Bricolage_Grotesque({
 
 function MotionDropdownItems() {
     return (
-        <div className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl 2xl:max-w-7xl lg:max-w-2xl mx-auto space-y-7'>
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(3px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{
+                once: true,
+                amount: 0.2,
+                margin: "50px"
+            }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2
+            }}
+            exit={{ opacity: 0, y: -10 }}
+            className='px-2 xl:max-w-5xl 2xl:max-w-7xl lg:max-w-2xl mx-auto space-y-7'>
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}
@@ -22,23 +38,9 @@ function MotionDropdownItems() {
                     Text='Motion Dropdown'
                 />
 
-                <motion.p
-                    initial={{ opacity: 0, filter: "blur(8px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2, // Trigger when 20% visible
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                        delay: 0.2
-                    }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-black/70 dark:text-white/70 text-[13px]">
-                    A flexible React dropdown menu component built for modern applications, supporting structured navigation and smooth interactions. This React dropdown component can be used as a user menu dropdown in React, profile menu, or settings dropdown, making it ideal for dashboards and SaaS interfaces. It also supports React dropdown submenus and dropdown menus with sub items in React, allowing you to build multi-level navigation with ease. Enhanced with motion, it works seamlessly as a Framer Motion dropdown menu and integrates cleanly with Tailwind dropdown components for scalable UI systems.
-                </motion.p>
+                <p className="text-black/70 dark:text-white/70 text-[13px]">
+                    A smooth, animated React dropdown for account menus, settings, navigation, and contextual actions.
+                </p>
             </div>
             <div className='border-black rounded-2xl'>
                 <MotionDropdownItemsPreview />
@@ -46,7 +48,14 @@ function MotionDropdownItems() {
             <div>
                 <TablePorpsForMotionDropdownItems />
             </div>
-        </div>
+            <Separator
+                direction='horizontal'
+                className='bg-black/15 dark:bg-white/15'
+            />
+            <div>
+                <BuiltWithMotionDropdown />
+            </div>
+        </motion.div>
     )
 }
 

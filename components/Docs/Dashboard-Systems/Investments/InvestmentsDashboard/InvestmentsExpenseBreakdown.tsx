@@ -1,4 +1,5 @@
 "use client"
+
 import { motion } from "framer-motion"
 
 import React from "react";
@@ -6,6 +7,8 @@ import { ArrowRight } from "lucide-react";
 
 import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
+import Glow from "@/components/Docs/Components/Glow/Glow";
+import { useTheme } from "@/components/ThemeProvider";
 
 const boldFont = Manrope({
     weight: "500",
@@ -68,11 +71,7 @@ function DonutChart() {
 
     return (
         <div className="relative">
-
-            <svg
-                viewBox="0 0 280 280"
-                className="-rotate-90 w-full max-w-[230px] aspect-square"
-            >
+            <svg viewBox="0 0 280 280" className="-rotate-90 w-42 h-42">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -147,49 +146,66 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
     );
 }
 
+
 function InvestmentsExpenseBreakdown() {
+    const { theme } = useTheme();
     return (
-        <div className="w-full rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none">
+        <div className="flex-1 rounded-2xl border dark:border-[#222121] border-black/10">
 
-            {/* Header */}
-            <h1 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white`}>
-                Expense Breakdown
-            </h1>
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full "
+            >
 
-            {/* Content */}
-            <div className="flex items-center justify-between">
+                {/* Header */}
+                <h1 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white`}>
+                    Expense Breakdown
+                </h1>
 
-                {/* Donut Chart */}
-                <div className="flex items-center -ml-2">
-                    <DonutChart />
-                </div>
+                {/* Content */}
+                <div className="flex flex-col @xl:flex-row @xl:items-center justify-between">
 
-                {/* Expense List */}
-                <div className="">
+                    {/* Donut Chart */}
+                    <div className="flex items-center -ml-2">
+                        <DonutChart />
+                    </div>
 
-                    <div className="space-y-5">
-                        {expenses.map((item, index) => (
-                            <ExpenseItem
-                                key={index}
-                                title={item.title}
-                                percentage={item.percentage}
-                                amount={item.amount}
-                                color={item.color}
-                            />
-                        ))}
+                    {/* Expense List */}
+                    <div className="">
+
+                        <div className="space-y-5">
+                            {expenses.map((item, index) => (
+                                <ExpenseItem
+                                    key={index}
+                                    title={item.title}
+                                    percentage={item.percentage}
+                                    amount={item.amount}
+                                    color={item.color}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Footer */}
-            <button className={`${boldFont.className} mt-12 flex items-center gap-3 text-[13px] text-[#006b46] dark:text-[#5ED19B] hover:opacity-80 transition-opacity`}>
-                View full report
+                {/* Footer */}
+                <button className={`${boldFont.className} mt-12 flex items-center gap-3 text-[13px] text-[#006b46] dark:text-[#5ED19B] hover:opacity-80 transition-opacity`}>
+                    View full report
 
-                <ArrowRight
-                    size={14}
-                    strokeWidth={2.4}
-                />
-            </button>
+                    <ArrowRight
+                        size={14}
+                        strokeWidth={2.4}
+                    />
+                </button>
+            </Glow>
+
         </div>
     );
 }

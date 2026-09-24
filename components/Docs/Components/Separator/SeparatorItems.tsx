@@ -14,7 +14,21 @@ const LinearRevealFont = Bricolage_Grotesque({
 
 function SeparatorItems() {
     return (
-        <div className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-3xl space-y-7'>
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(3px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{
+                once: true,
+                amount: 0.2,
+                margin: "50px"
+            }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2
+            }}
+            exit={{ opacity: 0, y: -10 }}
+            className='px-2 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-2xl space-y-7'>
             <div className='space-y-3'>
 
                 <LinearReveal
@@ -23,23 +37,9 @@ function SeparatorItems() {
                     Text='Separator'
                 />
 
-                <motion.p
-                    initial={{ opacity: 0, filter: "blur(8px)" }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)" }}
-                    viewport={{
-                        once: true,
-                        amount: 0.2, // Trigger when 20% visible
-                        margin: "50px"
-                    }}
-                    transition={{
-                        duration: 1.2,
-                        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                        delay: 0.2
-                    }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-black/70 dark:text-white/70 text-[13px]">
-                    A flexible React divider component designed to structure layouts with clean visual separation. This reusable separator component supports both horizontal and vertical divider React use cases, making it ideal for organizing sections, content blocks, and UI elements. It works seamlessly with Tailwind divider utilities and can be used as a react layout divider or to create clear dividers between components in React, helping maintain a clean and consistent interface.
-                </motion.p>
+                <p className="text-black/70 dark:text-white/70 text-[13px]">
+                    A lightweight React separator component for creating clean visual divisions between sections, lists, menus, and UI elements with horizontal and vertical orientations.
+                </p>
             </div>
             <div className='border-black rounded-2xl'>
                 <SeparatorItemsPreview />
@@ -48,7 +48,7 @@ function SeparatorItems() {
             <div>
                 <TablePorpsForSeparatorItems />
             </div>
-        </div>
+        </motion.div>
     )
 }
 

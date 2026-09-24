@@ -5,7 +5,7 @@ import FinancialGoalsProgress from './FinancialGoalsProgress'
 
 function FinancialActivityGrid() {
     return (
-        <div className='flex gap-3'>
+        <div className='xl:flex xl:flex-row grid grid-cols-1 gap-3'>
             <UpcomingBillsList />
             <RecentTransactionsTable />
             <FinancialGoalsProgress />

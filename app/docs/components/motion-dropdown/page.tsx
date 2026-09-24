@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "React Dropdown Menu with Submenu & Animation",
+    title: "React Custom Dropdown | React Vibe",
     description:
-        "A React dropdown menu component with submenus, animation, and Tailwind support. Perfect for profile, settings, and user menus.",
+        "A customizable React dropdown with smooth animations for menus, actions, settings, and navigation. Build polished dropdown interactions with Motion Dropdown.",
 }
 
 

@@ -5,7 +5,7 @@ import { RiDashboardHorizontalFill } from 'react-icons/ri';
 import { SiReact } from 'react-icons/si';
 import { BsInputCursorText } from 'react-icons/bs';
 import { TbBackground, TbTableHeart } from "react-icons/tb";
-import { PiChartDonutFill } from "react-icons/pi";
+import { MdOutlineAnimation } from "react-icons/md";
 
 function VibeHeroAnimation() {
     return (
@@ -23,7 +23,7 @@ function VibeHeroAnimation() {
                             {/* Static curved lines */}
                             <motion.path
                                 d={"\n    M 40 120\n    Q 120 200 250 200\n    L 550 200\n    Q 680 200 760 120\n  "}
-                                stroke="rgba(20, 20, 20.1)"
+                                stroke="#292727"
                                 strokeWidth="1"
                                 fill="none"
                             />
@@ -85,7 +85,7 @@ function VibeHeroAnimation() {
                             {/* Static curved lines */}
                             <motion.path
                                 d={"\n    M 40 120\n    Q 120 200 250 200\n    L 550 200\n    Q 680 200 760 120\n  "}
-                                stroke="rgba(20, 20, 20.1)"
+                                stroke="#292727"
                                 strokeWidth="1"
                                 fill="none"
                             />
@@ -147,7 +147,7 @@ function VibeHeroAnimation() {
                      
                             <motion.path
                                 d={"\n    M 40 120\n    Q 120 200 250 200\n    L 550 200\n    Q 680 200 760 120\n  "}
-                                stroke="rgba(20, 20, 20.1)"
+                                stroke="#292727"
                                 strokeWidth="1"
                                 fill="none"
                             />
@@ -209,7 +209,7 @@ function VibeHeroAnimation() {
                             <motion.path
                                 // d={"\n    M 40 120\n    Q 120 200 250 200\n    L 550 200\n    Q 680 200 760 120\n  "}
                                 d="M 760 200 Q 680 120 550 120 L 250 120 Q 120 120 40 200"
-                                stroke="rgba(20, 20, 20.1)"
+                                stroke="#292727"
                                 strokeWidth="1"
                                 fill="none"
                             />
@@ -226,7 +226,7 @@ function VibeHeroAnimation() {
 
                                     {/* 1. The White Pill Background */}
                                     <rect
-                                        width="93"
+                                        width="63"
                                         height="28"
                                         rx="14"
                                         fill="white"
@@ -242,7 +242,7 @@ function VibeHeroAnimation() {
 
                                         {/* Icon centered inside the circle */}
                                         <g transform="translate(-1.5, -1.5)">
-                                            <PiChartDonutFill size={15} className="text-white" />
+                                            <MdOutlineAnimation size={15} className="text-white" />
                                         </g>
                                     </g>
 
@@ -253,7 +253,7 @@ function VibeHeroAnimation() {
                                         fill="#374151"
                                         className="text-[8px] "
                                     >
-                                        Analytics Charts
+                                        Motion
                                     </text>
                                 </g>
                             </g>
@@ -270,7 +270,7 @@ function VibeHeroAnimation() {
                             {/* Static curved lines */}
                             <motion.path
                                 d="M 760 200 Q 680 120 550 120 L 250 120 Q 120 120 40 200"
-                                stroke="rgba(20, 20, 20.1)"
+                                stroke="#292727"
                                 strokeWidth="1"
                                 fill="none"
                             />
@@ -331,7 +331,7 @@ function VibeHeroAnimation() {
                             {/* Static curved lines */}
                             <motion.path
                                 d="M 760 200 Q 680 120 550 120 L 250 120 Q 120 120 40 200"
-                                stroke="rgba(20, 20, 20.1)"
+                                stroke="#292727"
                                 strokeWidth="1"
                                 fill="none"
                             />

@@ -6,6 +6,8 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 import { Manrope } from "next/font/google";
 import LinearReveal from "@/components/LinearReveal";
+import Glow from "@/components/Docs/Components/Glow/Glow";
+import { useTheme } from "@/components/ThemeProvider";
 
 const boldFont = Manrope({
     weight: "500",
@@ -69,10 +71,7 @@ function DonutChart() {
     return (
         <div className="relative">
 
-            <svg
-                viewBox="0 0 280 280"
-                className="-rotate-90 w-full max-w-[200px] aspect-square"
-            >
+            <svg viewBox="0 0 280 280" className="-rotate-90 w-50 h-50">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -117,7 +116,7 @@ interface ExpenseItemProps {
 
 function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
     return (
-        <div className="flex items-center justify-between gap-2 space-x-10">
+        <div className="flex items-center justify-between gap-2 space-x-10 xl:space-x-3">
 
             {/* Left */}
             <div className="flex items-center gap-2">
@@ -148,76 +147,78 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
 }
 
 function BudgetsOverview() {
+    const { theme } = useTheme()
+
     return (
-        <motion.div
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{
-                once: true,
-                amount: 0.2,
-                margin: "50px"
-            }}
-            transition={{
-                duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94],
-                delay: 0.2
-            }}
-            className="w-full rounded-[15px] aspect-auto border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none"
-        >
+        <div className="w-full rounded-2xl border border-black/10 dark:border-white/10">
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full"
+            >
 
-            {/* Header */}
+                {/* Header */}
 
-            <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4">
 
-                <h1 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white`}>
-                    Budget Overview
-                </h1>
+                    <h1 className={`${boldFont.className} text-[14px] text-[#111827] dark:text-white`}>
+                        Budget Overview
+                    </h1>
 
-                <button className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-1 text-[12px] font-medium text-[#374151] dark:text-white/70 transition-all duration-300 hover:bg-black/[0.02] dark:hover:text-white`}>
-                    This Month
+                    <button className={`${boldFont.className} flex items-center gap-1 rounded-[6px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#070606] px-2 py-1 text-[12px] font-medium text-[#374151] dark:text-white/70 transition-all duration-300 hover:bg-black/[0.02] dark:hover:text-white`}>
+                        This Month
 
-                    <ChevronDown
-                        size={14}
-                        strokeWidth={2.2}
-                    />
-                </button>
-            </div>
-
-            {/* Content */}
-            <div className="flex items-center justify-between">
-
-                {/* Donut Chart */}
-                <div className="flex items-center -ml-2">
-                    <DonutChart />
+                        <ChevronDown
+                            size={14}
+                            strokeWidth={2.2}
+                        />
+                    </button>
                 </div>
 
-                {/* Expense List */}
-                <div className="">
+                {/* Content */}
+                <div className="flex flex-col @xl:flex-row items-center justify-between">
 
-                    <div className="space-y-5">
-                        {expenses.map((item, index) => (
-                            <ExpenseItem
-                                key={index}
-                                title={item.title}
-                                percentage={item.percentage}
-                                amount={item.amount}
-                                color={item.color}
-                            />
-                        ))}
+                    {/* Donut Chart */}
+                    <div className="flex items-center -ml-2">
+                        <DonutChart />
+                    </div>
+
+                    {/* Expense List */}
+                    <div className="">
+
+                        <div className="space-y-5">
+                            {expenses.map((item, index) => (
+                                <ExpenseItem
+                                    key={index}
+                                    title={item.title}
+                                    percentage={item.percentage}
+                                    amount={item.amount}
+                                    color={item.color}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Footer */}
-            <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[12px] text-[#0c9162] dark:hover:text-[#0dd667] hover:opacity-80 transition-opacity`}>
-                View full report
+                {/* Footer */}
+                <button className={`${boldFont.className} mt-0 flex items-center gap-3 text-[12px] text-[#0c9162] dark:hover:text-[#0dd667] hover:opacity-80 transition-opacity`}>
+                    View full report
 
-                <ArrowRight
-                    size={14}
-                    strokeWidth={2.4}
-                />
-            </button>
-        </motion.div>
+                    <ArrowRight
+                        size={14}
+                        strokeWidth={2.4}
+                    />
+                </button>
+            </Glow>
+
+        </div>
     );
 }
 

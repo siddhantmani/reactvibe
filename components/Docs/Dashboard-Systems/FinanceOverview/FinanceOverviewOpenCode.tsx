@@ -17,9 +17,10 @@ function FinanceOverviewOpenCode() {
     // Folder & File Tree
     const fileTree = {
         Components: [
-            { name: "DashboardFrame.tsx", path: "/DashboardFrame.tsx" },
             { name: "page.tsx", path: "/Dashboard-Systems/FinanceOverview/page.tsx" },
+            { name: "OverlayFinanceMenu.tsx", path: "/Dashboard-Systems/FinanceOverview/OverlayFinanceMenu.tsx" },
             { name: "FinanceOverview.tsx", path: "/Dashboard-Systems/FinanceOverview/FinanceOverview.tsx" },
+            { name: "ManageAccount.tsx", path: "/Dashboard-Systems/FinanceOverview/ManageAccount.tsx" },
             { name: "FinanceOverviewHeader.tsx", path: "/Dashboard-Systems/FinanceOverview/FinanceOverviewHeader.tsx" },
             { name: "FinancialMetricsGrid.tsx", path: "/Dashboard-Systems/FinanceOverview/FinancialMetricsGrid.tsx" },
 
@@ -164,7 +165,7 @@ function FinanceOverviewOpenCode() {
                                 />
                             </>
                         ) : (
-                            <div className="h-[900px] flex items-center justify-center text-gray-500 text-sm">
+                            <div className="h-[500px] flex items-center justify-center text-gray-500 text-sm">
                                 Select a file to view its code
                             </div>
                         )}

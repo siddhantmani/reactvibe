@@ -36,9 +36,10 @@ interface DropdownProps {
     children: ReactNode
     menuClassName?: string
     itemClassName?: string
+    forceDirection?: "up" | "down"
 }
 
-export function Dropdown({ trigger, children, menuClassName, itemClassName }: DropdownProps) {
+export function Dropdown({ trigger, children, menuClassName, itemClassName, forceDirection }: DropdownProps) {
     const [open, setOpen] = useState(false)
     const [activeIndex, setActiveIndex] = useState(-1)
     const [interaction, setInteraction] =
@@ -70,6 +71,11 @@ export function Dropdown({ trigger, children, menuClassName, itemClassName }: Dr
     useEffect(() => {
         if (!open || !containerRef.current) return
 
+        if (forceDirection) {
+            setOpenUp(forceDirection === "up")
+            return
+        }
+
         const rect = containerRef.current.getBoundingClientRect()
         const spaceBelow = window.innerHeight - rect.bottom
         const spaceAbove = rect.top
@@ -80,7 +86,7 @@ export function Dropdown({ trigger, children, menuClassName, itemClassName }: Dr
             setOpenUp(shouldOpenUp)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [open])
+    }, [open, forceDirection])
 
     /* Focus first item when opened */
     useEffect(() => {
@@ -88,7 +94,8 @@ export function Dropdown({ trigger, children, menuClassName, itemClassName }: Dr
         setActiveIndex(0)
         setInteraction("keyboard")
         requestAnimationFrame(() => {
-            itemsRef.current[0]?.focus()
+            // itemsRef.current[0]?.focus()
+            itemsRef.current[0]?.focus({ preventScroll: true })
         })
     }, [open])
 
@@ -150,7 +157,7 @@ export function Dropdown({ trigger, children, menuClassName, itemClassName }: Dr
                 itemClassName,
             }}
         >
-            <div ref={containerRef} className="relative w-48">
+            <div ref={containerRef} className=" relative inline-block w-fit">
                 <button
                     ref={buttonRef}
                     onClick={() => setOpen(o => !o)}
@@ -167,7 +174,7 @@ export function Dropdown({ trigger, children, menuClassName, itemClassName }: Dr
                         onKeyDown={handleKeyDown}
                         onMouseEnter={handleMenuMouseEnter}
                         className={`
-        absolute top-0 w-full rounded-md border shadow-lg p-[3px] z-50
+        absolute left-0 min-w-max rounded-md border shadow-lg p-[3px] z-50
         ${openUp ? "bottom-full mb-2" : "top-full mt-2"}
         ${menuClassName ?? ""}        
     `}
@@ -240,7 +247,7 @@ export function DropdownItem({
                 setActiveIndex(-1)
             }}
             className={`
-        cursor-pointer px-2 py-[5px] rounded text-[13px] outline-none 
+        cursor-pointer px-2 py-[5px] rounded text-[13px] outline-none w-50 
         ${interaction === "keyboard" && activeIndex === __index
                     ? ""
                     : ""
@@ -358,11 +365,16 @@ export function DropdownNestedContainer({
 
             {open && (
                 <ul
+                    //             className={`
+                    //     absolute top-0 w-40 rounded-md border shadow-lg p-[3px] z-50
+                    //     ${openLeft ? "right-full mr-0" : "left-full ml-0"}
+                    //      ${menuClassName ?? ""}
+                    //   `}
                     className={`
-            absolute top-0 w-40 rounded-md border shadow-lg p-[3px] z-50
-            ${openLeft ? "right-full mr-0" : "left-full ml-0"}
-             ${menuClassName ?? ""}
-          `}
+            absolute top-0 w-[140px] rounded-md border shadow-lg p-[3px] z-50
+            bg-white dark:bg-[#0c0c0c] border-black/10 dark:border-white/10
+            ${openLeft ? "right-full -mr-1" : "left-full -ml-1"}
+        `}
                 >
                     {items.map((item, i) =>
                         React.isValidElement(item)

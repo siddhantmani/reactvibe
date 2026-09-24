@@ -5,14 +5,17 @@ import {
     ArrowDown,
     ArrowUp,
     Sparkles,
-} from "lucide-react"
 
-import { Manrope } from "next/font/google"
+} from "lucide-react"
+import { Manrope } from "next/font/google";
+import { useTheme } from "@/components/ThemeProvider";
+import Glow from "@/components/Docs/Components/Glow/Glow";
 
 const fontBold = Manrope({
-    weight: "500",
-    subsets: ["latin"],
-})
+    weight: '500',
+    subsets: ['latin']
+});
+
 
 const stats = [
     {
@@ -42,127 +45,107 @@ const stats = [
 ]
 
 function ExecutiveSummaryMetrics() {
-
+    const { theme } = useTheme()
     return (
+        <div className="relative overflow-hidden rounded-[15px] transition-colors duration-300  rounded-2xl border dark:border-[#222121] border-black/10">
 
-        <div
-            className="relative overflow-hidden rounded-[18px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] px-4 py-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)] dark:shadow-none"
-        >
+            <Glow
+                backgroundColor={`${theme === "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="250px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full  transition-colors duration-300"
+            >
 
-            {/* Purple Glow */}
-            <div className="absolute right-[-100px] top-[-100px] h-[260px] w-[260px] rounded-full bg-[#8B5CF6]/[0.05] blur-3xl" />
 
-            <div className="relative z-10 flex items-start justify-between gap-10">
+                <div className="relative z-10 flex items-start justify-between gap-10">
 
-                {/* Left Side */}
-                <div className="flex-1">
+                    {/* Left Side */}
+                    <div className="flex-1">
 
-                    {/* Heading */}
-                    <div className="flex items-center gap-4">
+                        {/* Heading */}
+                        <div className="flex items-center gap-3">
 
-                        {/* Icon */}
-                        <div
-                            className="flex h-11 w-11 items-center justify-center rounded-[12px] border border-[#8B5CF6]/10 dark:border-[#3A2A5A] bg-[#8B5CF6]/[0.06] dark:bg-[#181222] shadow-[0_8px_24px_rgba(139,92,246,0.08)] dark:shadow-none"
-                        >
+                            <div className="flex p-2 items-center justify-center rounded-[8px] border border-[#0d7525]/20 bg-[#0d7525]/10 transition-colors duration-300">
 
-                            <Sparkles
-                                size={17}
-                                className="text-[#8B5CF6]"
-                                strokeWidth={2.3}
-                            />
+                                <Sparkles
+                                    size={12}
+                                    className="text-[#0d7525]"
+                                    strokeWidth={2.2}
+                                />
 
-                        </div>
+                            </div>
 
-                        {/* Text */}
-                        <div>
+                            <div>
 
-                            <h2
-                                className={`${fontBold.className} text-[15px] tracking-[-0.04em] text-[#111111] dark:text-white`}
-                            >
-                                Executive Summary
-                            </h2>
+                                <h2 className={`${fontBold.className} text-[10px] @2xl:text-[12px] text-gray-900 dark:text-white transition-colors duration-300`}>
+                                    Executive Summary
+                                </h2>
 
-                            <p
-                                className={`${fontBold.className} mt-1 text-[11px] text-black/45 dark:text-white/60`}
-                            >
-                                Here’s how your finances performed this month.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    {/* Stats */}
-                    <div className="mt-8 grid grid-cols-4 gap-4">
-
-                        {stats.map((item, index) => (
-
-                            <div
-                                key={index}
-                                className="rounded-[14px] border border-black/[0.05] dark:border-white/10 bg-black/[0.015] dark:bg-[#070606] p-4 transition-all duration-300 hover:bg-black/[0.025] dark:hover:bg-white/[0.05] hover:shadow-[0_8px_24px_rgba(0,0,0,0.04)] dark:hover:shadow-none"
-                            >
-                                {/* Label */}
-                                <p
-                                    className={`${fontBold.className} text-[11px] text-black/45 dark:text-white/60`}
-                                >
-                                    {item.title}
+                                <p className={`${fontBold.className} mt-0 text-[8px] @2xl:text-[10px] text-gray-500 dark:text-white/45 transition-colors duration-300`}>
+                                    Here how your finances performed this month.
                                 </p>
 
-                                {/* Value */}
-                                <h3
-                                    className={`${fontBold.className} mt-3 text-[26px] tracking-[-0.06em] text-[#111111] dark:text-white`}
-                                >
-                                    {item.value}
-                                </h3>
+                            </div>
 
-                                {/* Change */}
-                                <div
-                                    className={`${fontBold.className} mt-3 flex items-center gap-2 text-[11px] ${item.positive
-                                        ? "text-[#16A34A]"
-                                        : "text-[#DC2626]"
-                                        }`}
-                                >
+                        </div>
+
+                        {/* Stats */}
+                        <div className="mt-4 grid grid-cols-2 gap-4 space-y-4 @md:grid-cols-4">
+
+                            {stats.map((item, index) => (
+
+                                <div key={index} className="space-y-2">
+
+                                    <p className={`${fontBold.className} text-[10px] @2xl:text-[11px] text-gray-600 dark:text-white/55 transition-colors duration-300`}>
+                                        {item.title}
+                                    </p>
+
+                                    <h3 className={`${fontBold.className} mt-1 text-[18px] @2xl:text-3xl text-gray-900 dark:text-white transition-colors duration-300`}>
+                                        {item.value}
+                                    </h3>
 
                                     <div
-                                        className={`flex h-5 w-5 items-center justify-center rounded-full ${item.positive
-                                            ? "bg-[#22C55E]/10"
-                                            : "bg-[#EF4444]/10"
+                                        className={`${fontBold.className} flex items-center gap-2 text-[9px] @2xl:text-xs transition-colors duration-300 ${item.positive
+                                            ? "text-green-600 dark:text-[#4ADE80]"
+                                            : "text-red-600 dark:text-[#FF5A5A]"
                                             }`}
                                     >
 
                                         {item.positive ? (
-
                                             <ArrowUp
-                                                size={11}
-                                                strokeWidth={2.8}
+                                                size={10}
+                                                strokeWidth={2.5}
                                             />
-
                                         ) : (
-
                                             <ArrowDown
-                                                size={11}
-                                                strokeWidth={2.8}
+                                                size={10}
+                                                strokeWidth={2.5}
                                             />
-
                                         )}
+
+                                        {item.change}
 
                                     </div>
 
-                                    {item.change}
-
                                 </div>
 
-                            </div>
+                            ))}
 
-                        ))}
+                        </div>
 
                     </div>
 
+
+
                 </div>
-
-            </div>
-
-        </div>
+            </Glow>
+        </div >
     )
 }
 

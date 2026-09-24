@@ -5,7 +5,7 @@ import ExpenseBreakdownChart from './ExpenseBreakdownChart'
 
 function FinancialInsightsGrid() {
     return (
-        <div className='flex gap-3'>
+        <div className='grid grid-cols-1 @xl:flex @xl:flex-row gap-3'>
             <BudgetProgressList />
             <CashflowOverviewChart />
             <ExpenseBreakdownChart />

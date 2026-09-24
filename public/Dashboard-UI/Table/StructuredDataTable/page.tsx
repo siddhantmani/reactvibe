@@ -1,0 +1,313 @@
+"use client";
+import { motion } from "framer-motion";
+
+import React from "react"
+import {
+    Ellipsis,
+    Plus,
+    Home,
+    UtensilsCrossed,
+    Car,
+    ShoppingBag,
+    Clapperboard,
+    Heart,
+    MoreHorizontal,
+} from "lucide-react"
+import { Manrope } from "next/font/google";
+
+const fontBold = Manrope({
+    weight: '500', // Specify the font weight if needed  
+    subsets: ['latin']
+});
+
+
+const categories = [
+    {
+        name: "Housing",
+        icon: Home,
+        iconBg: "bg-[#EAF8EC]",
+        iconColor: "text-[#16A34A]",
+        budgeted: "$2,000.00",
+        spent: "$1,872.00",
+        remaining: "$128.00",
+        progress: 94,
+        status: "On Track",
+        danger: false,
+    },
+    {
+        name: "Food & Dining",
+        icon: UtensilsCrossed,
+        iconBg: "bg-[#EAF8EC]",
+        iconColor: "text-[#16A34A]",
+        budgeted: "$1,200.00",
+        spent: "$936.00",
+        remaining: "$264.00",
+        progress: 78,
+        status: "On Track",
+        danger: false,
+    },
+    {
+        name: "Transport",
+        icon: Car,
+        iconBg: "bg-[#E8F0FF]",
+        iconColor: "text-[#2563EB]",
+        budgeted: "$800.00",
+        spent: "$702.00",
+        remaining: "$98.00",
+        progress: 88,
+        status: "On Track",
+        danger: false,
+    },
+    {
+        name: "Shopping",
+        icon: ShoppingBag,
+        iconBg: "bg-[#F2E9FF]",
+        iconColor: "text-[#8B5CF6]",
+        budgeted: "$600.00",
+        spent: "$468.00",
+        remaining: "$132.00",
+        progress: 78,
+        status: "On Track",
+        danger: false,
+    },
+    {
+        name: "Entertainment",
+        icon: Clapperboard,
+        iconBg: "bg-[#FEF3C7]",
+        iconColor: "text-[#F59E0B]",
+        budgeted: "$400.00",
+        spent: "$374.00",
+        remaining: "$26.00",
+        progress: 94,
+        status: "On Track",
+        danger: false,
+    },
+    {
+        name: "Health & Fitness",
+        icon: Heart,
+        iconBg: "bg-[#FEE2E2]",
+        iconColor: "text-[#EF4444]",
+        budgeted: "$300.00",
+        spent: "$320.50",
+        remaining: "-$20.50",
+        progress: 107,
+        status: "Over Budget",
+        danger: true,
+    },
+    {
+        name: "Others",
+        icon: MoreHorizontal,
+        iconBg: "bg-[#F3F4F6]",
+        iconColor: "text-[#6B7280]",
+        budgeted: "$3,150.00",
+        spent: "$1,888.50",
+        remaining: "$1,261.50",
+        progress: 60,
+        status: "On Track",
+        danger: false,
+    },
+]
+
+interface PercentageProgressProps {
+    value?: number;
+    color?: string;
+    bg?: string;
+}
+
+function PercentageProgress({
+    value = 6,
+    color = "#16a34a",
+    bg,
+}: PercentageProgressProps) {
+    const [progress, setProgress] = React.useState(0);
+    const [displayProgress, setDisplayProgress] = React.useState(0);
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => setProgress(value), 400);
+        return () => clearTimeout(timer);
+    }, [value]);
+
+    React.useEffect(() => {
+        if (progress === 0) return;
+
+        const duration = 1100;
+        const start = performance.now();
+
+        const tick = (now: number) => {
+            const elapsed = now - start;
+            const t = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - t, 3);
+
+            setDisplayProgress(Math.round(eased * progress));
+
+            if (t < 1) requestAnimationFrame(tick);
+        };
+
+        requestAnimationFrame(tick);
+    }, [progress]);
+
+    return (
+        <div className="space-y-2">
+            <p
+                className={`${fontBold.className} text-[12px]`}
+                style={{ color }}
+            >
+                {displayProgress}%
+            </p>
+
+            {/* <ProgressBar value={66} color="#000000" /> */}
+
+            <div className="relative w-full h-[6px] bg-black/5 rounded-full overflow-hidden">
+                <div
+                    className="h-full rounded-full transition-all duration-[1100ms]"
+                    style={{
+                        width: `${Math.min(progress, 100)}%`,
+                        background: color,
+                    }}
+                />
+            </div>
+        </div>
+    );
+}
+
+
+function Page() {
+    return (
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{
+                once: true,
+                amount: 0.2,
+                margin: "50px"
+            }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2
+            }}
+            className="rounded-[15px] border border-black/10 bg-white dark:border-white/10 dark:bg-[#0c0c0c] p-3 px-3 gap-10 w-full overflow-x-auto mt-20 max-w-7xl mx-auto"
+        >
+            <div>
+                <h2 className={`${fontBold.className} text-[14px] text-[#111827] dark:text-white`}>
+                    Structured Data Table
+                </h2>
+            </div>
+
+            {/* Table */}
+            <div className="mt-4 rounded-2xl border border-black/5 dark:border-white/10 overflow-x-auto">
+                <div className="min-w-[850px]">
+
+                    {/* Header */}
+                    <div className="grid grid-cols-[2fr_1.2fr_1.2fr_1.2fr_1.4fr_1.2fr_50px] items-center border-b border-black/5 bg-[#FAFAFA] dark:bg-[#161616] dark:px-6 py-6">
+                        {[
+                            "Category",
+                            "Budgeted",
+                            "Spent",
+                            "Remaining",
+                            "Progress",
+                            "Status",
+                        ].map((item) => (
+                            <p
+                                key={item}
+                                className={`${fontBold.className} text-[14px] text-[#191a1b] dark:text-white/90`}
+                            >
+                                {item}
+                            </p>
+                        ))}
+                    </div>
+
+                    {/* Rows */}
+                    {categories.map((item, index) => {
+                        const Icon = item.icon
+
+                        return (
+                            <div
+                                key={index}
+                                className="grid grid-cols-[2fr_1.2fr_1.2fr_1.2fr_1.4fr_1.2fr_50px] items-center border-b border-black/5 dark:border-white/10 px-6 py-2 transition-all duration-300 hover:bg-black/[0.015] space-y-5"
+                            >
+                                {/* Category */}
+                                <div className="flex items-center gap-4">
+                                    <div className={`flex h-6 w-6 items-center justify-center rounded-[4px] ${item.iconBg}`}>
+                                        <Icon
+                                            size={13}
+                                            className={item.iconColor}
+                                            strokeWidth={2.2}
+                                        />
+                                    </div>
+                                    <h3 className={`${fontBold.className} text-[12px] text-[#111827] dark:text-white`}>
+                                        {item.name}
+                                    </h3>
+                                </div>
+
+                                {/* Budgeted */}
+                                <p className={`${fontBold.className} text-[12px] text-[#111827] dark:text-white`}>
+                                    {item.budgeted}
+                                </p>
+
+                                {/* Spent */}
+                                <p className={`${fontBold.className} text-[12px] text-[#111827] dark:text-white`}>
+                                    {item.spent}
+                                </p>
+
+                                {/* Remaining */}
+                                <p
+                                    className={`${fontBold.className} text-[12px] text-[#111827] ${item.danger
+                                        ? "text-[#EF4444]"
+                                        : "text-[#111827] dark:text-white"
+                                        }`}
+                                >
+                                    {item.remaining}
+                                </p>
+
+                                {/* Progress */}
+                                <div className="flex items-center gap-3 w-full">
+                                    <span className="w-[70px]">
+                                        <PercentageProgress
+                                            value={item.progress}
+                                            color={item.danger ? "#EF4444" : "#16A34A"}
+                                        />
+                                    </span>
+                                </div>
+
+                                {/* Status */}
+                                <div>
+                                    <span
+                                        className={`${fontBold.className} rounded-[4px] px-1 py-1 text-[12px] whitespace-nowrap ${item.danger
+                                            ? "bg-[#FEE2E2] text-[#EF4444]"
+                                            : "bg-[#EAF8EC] text-[#16A34A]"
+                                            }`}
+                                    >
+                                        {item.status}
+                                    </span>
+                                </div>
+
+                                {/* Menu */}
+                                <button className="flex h-9 w-9 items-center justify-center rounded-md text-[#9CA3AF] transition-all duration-300 hover:bg-black/[0.04] hover:text-[#111827] dark:bg-white/5 dark:hover:text-white cursor-pointer">
+                                    <Ellipsis
+                                        size={18}
+                                        strokeWidth={2.4}
+                                    />
+                                </button>
+                            </div>
+                        )
+                    })}
+
+                    {/* Footer */}
+                    <div className="p-4">
+                        <button className={`${fontBold.className} flex h-10 w-full items-center justify-center gap-2 rounded-[8px] border border-dashed border-[#22C55E]/30 bg-[#22C55E]/[0.03] text-[13px] font-semibold text-[#16A34A] transition-all duration-300 hover:bg-[#22C55E]/[0.06]`}>
+                            <Plus
+                                size={14}
+                                strokeWidth={2.5}
+                            />
+                            Add Budget Category
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </motion.div>
+    )
+}
+
+export default Page

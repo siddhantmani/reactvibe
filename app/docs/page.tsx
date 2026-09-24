@@ -6,22 +6,20 @@ import FindComponents from '@/components/OnlyDocs/FindComponents'
 import HowItWorks from '@/components/OnlyDocs/HowItWorks'
 import USPSteps from '@/components/OnlyDocs/USPSteps'
 import WhatsInside from '@/components/OnlyDocs/WhatsInside'
-import WhyReactVibe from '@/components/OnlyDocs/WhyReactVibe'
 import React from 'react'
 
 function DocsPage() {
   return (
-    <div className='px-2 max-w-3xl lg:max-w-xl xl:max-w-4xl 2xl:max-w-6xl mx-auto space-y-5 pt-3'>
+    <div className='px-2 max-w-3xl lg:max-w-xl xl:max-w-4xl 2xl:max-w-7xl mx-auto space-y-5 pt-3'>
       <DocsBTNTag />
       <DocsTagLine />
       <USPSteps />
       <FindComponents />
-      <WhyReactVibe />
       <WhatsInside />
+      <BrowseByCategory />
       <div id='howitworks'>
         <HowItWorks />
       </div>
-      <BrowseByCategory />
       <CTADocs />
     </div>
   )

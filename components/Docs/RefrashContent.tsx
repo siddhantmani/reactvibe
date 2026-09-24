@@ -25,11 +25,11 @@ function RefrashContent() {
                 delay: 0.2
             }}
             onClick={handleRefresh}
-            className='flex items-center p-2 rounded-md bg-[#efeded] cursor-pointer dark:bg-gradient-to-r from-[#2c2b2b] from-[33%] to-[#222121] to-47%'
+            className='flex items-center p-2 rounded-md border cursor-pointer'
         >
             <Tooltip>
                 <TooltipTrigger>
-                    <RotateCw size={18} />
+                    <RotateCw size={15} />
                 </TooltipTrigger>
                 <TooltipContent>
                     <p>Refresh</p>

@@ -7,7 +7,13 @@ import InvestmentsPreview from './InvestmentsPreview';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import Link from 'next/link';
 import Banner from "@/components/Banner";
+import DeviceToggleGroup from "@/components/DeviceToggleGroup";
+import { useState } from "react";
+import SpotlightBackground from "@/components/SpotlightBackground";
+import ResizablePreview from "@/components/ResizablePreview";
 function InvestmentsItemsPreview() {
+    const [previewWidth, setPreviewWidth] = useState(1440);
+
     return (
         <div className='space-y-1'>
             <motion.div
@@ -25,7 +31,7 @@ function InvestmentsItemsPreview() {
                     delay: 0.3
                 }}
                 className="">
-                <div className="h-10 flex justify-end items-center p-1 w-full gap-1">
+                <div className="h-10 flex justify-between items-center p-1 w-full gap-1">
                     <div className='flex items-center gap-2 max-w-[130px] '>
                         <Link href="/docs/templates/taskforge">
                             <div>
@@ -44,7 +50,12 @@ function InvestmentsItemsPreview() {
                             </div>
                         </Link>
                     </div>
-                    <div>
+                    <div className='flex items-center gap-2'>
+                        <DeviceToggleGroup
+                            activeWidth={previewWidth}
+                            onWidthChange={setPreviewWidth}
+                        />
+
                         <RefrashContent />
                     </div>
                 </div>
@@ -52,9 +63,19 @@ function InvestmentsItemsPreview() {
             <div>
                 <Banner />
             </div>
-            <div className="border rounded-3xl dark:bg-black">
-                <div className="text-black z-40 w-full h-full scale-[99%]">
-                    <InvestmentsPreview />
+            <div
+                className="w-full bg-white border rounded-3xl dark:bg-black dark:border-white/10 relative"
+            >
+                <div className="text-black z-40 w-full h-[1007px]">
+                    <SpotlightBackground className="rounded-2xl z-0" spotlightSize={180} />
+
+                    <ResizablePreview
+                        width={previewWidth}
+                        onWidthChange={setPreviewWidth}
+                        className="absolute inset-0 z-10 py-2"
+                    >
+                        <InvestmentsPreview />
+                    </ResizablePreview>
                 </div>
             </div>
         </div>

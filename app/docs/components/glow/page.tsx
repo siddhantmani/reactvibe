@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "React Cursor Follow Glow Effect with Gradient Background",
+    title: "React Spotlight Effect & Interactive Background | React Vibe",
     description:
-        "Create a React cursor follow effect with glowing spotlight and gradient background animation. Build interactive UI with smooth mouse tracking.",
+        "A React spotlight effect with a smooth cursor-following glow. Use it to create interactive backgrounds for hero sections, and modern web interfaces.",
 }
 
 function Page() {

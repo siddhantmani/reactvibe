@@ -8,6 +8,8 @@ import {
     Database,
     BellRing,
 } from "lucide-react"
+import Glow from "@/components/Docs/Components/Glow/Glow"
+import { useTheme } from "@/components/ThemeProvider"
 
 const fontBold = Manrope({
     weight: ["500"],
@@ -58,10 +60,11 @@ const cards = [
 ]
 
 function IntegrationsMetricsGrid() {
+    const { theme } = useTheme();
 
     return (
 
-        <div className="grid grid-cols-4 gap-3 px-2">
+        <div className="grid grid-cols-2 @xl:grid-cols-4 gap-3 px-2">
 
             {cards.map((card, index) => {
 
@@ -86,60 +89,67 @@ function IntegrationsMetricsGrid() {
                             duration: 0.5,
                             delay: index * 0.08,
                         }}
-                        className="group relative overflow-hidden rounded-[18px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] dark:bg-gradient-to-br p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)] dark:shadow-none transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] dark:hover:shadow-none"
+                        className="group relative overflow-hidden rounded-2xl border dark:border-[#222121] border-black/10"
                     >
 
-                        {/* Glow */}
-                        <div
-                            className={`absolute -right-10 -top-10 h-[140px] w-[140px] rounded-full blur-3xl ${card.glow}`}
-                        />
+                        <Glow
+                            backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                            glowColor="#0d7525"
+                            glowSize="180px"
+                            glowOpacity={0.3}
+                            glowFadeAt="100%"
+                            borderGlow={false}
+                            borderGlowColor="rgba(130,100,255,0.4)"
+                            borderGlowSize="100px"
+                            borderGlowTransparency="80%"
+                            className="p-4 h-full "
+                        >
 
-                        {/* Background Overlay */}
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.03),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.03),_transparent_45%)]" />
 
-                        {/* Content */}
-                        <div className="relative z-10 aspect-video flex items-center justify-between">
+                            {/* Content */}
+                            <div className="relative z-10 aspect-video flex items-center justify-between">
 
-                            {/* Left */}
-                            <div className="space-y-3">
+                                {/* Left */}
+                                <div className="space-y-3">
 
-                                {/* Title */}
-                                <p
-                                    className={`${fontBold.className} text-[11px] tracking-[-0.02em] text-black/45 dark:text-white/60`}
+                                    {/* Title */}
+                                    <p
+                                        className={`${fontBold.className} text-[11px] tracking-[-0.02em] text-black/45 dark:text-white/60`}
+                                    >
+                                        {card.title}
+                                    </p>
+
+                                    {/* Value */}
+                                    <h2
+                                        className={`${fontBold.className} text-[30px] tracking-[-0.06em] ${card.valueColor} ${card.valueColor === "text-[#111111]" ? "dark:text-white" : ""}`}
+                                    >
+                                        {card.value}
+                                    </h2>
+
+                                    {/* Subtitle */}
+                                    <p
+                                        className={`${fontBold.className} text-[10px] ${card.iconColor}`}
+                                    >
+                                        {card.subtitle}
+                                    </p>
+
+                                </div>
+
+                                {/* Right */}
+                                <div
+                                    className={`flex h-10 w-10 items-center justify-center rounded-[12px] border border-black/[0.06] dark:border-white/10 ${card.iconBg} shadow-[0_6px_20px_rgba(0,0,0,0.04)] dark:shadow-none transition-all duration-300 group-hover:scale-105`}
                                 >
-                                    {card.title}
-                                </p>
 
-                                {/* Value */}
-                                <h2
-                                    className={`${fontBold.className} text-[30px] tracking-[-0.06em] ${card.valueColor} ${card.valueColor === "text-[#111111]" ? "dark:text-white" : ""}`}
-                                >
-                                    {card.value}
-                                </h2>
+                                    <Icon
+                                        size={18}
+                                        className="dark:text-white/80"
+                                        strokeWidth={2}
+                                    />
 
-                                {/* Subtitle */}
-                                <p
-                                    className={`${fontBold.className} text-[10px] ${card.iconColor}`}
-                                >
-                                    {card.subtitle}
-                                </p>
+                                </div>
 
                             </div>
-
-                            {/* Right */}
-                            <div
-                                className={`flex h-10 w-10 items-center justify-center rounded-[12px] border border-black/[0.06] dark:border-white/10 ${card.iconBg} shadow-[0_6px_20px_rgba(0,0,0,0.04)] dark:shadow-none transition-all duration-300 group-hover:scale-105`}
-                            >
-
-                                <Icon
-                                    size={18}
-                                    className="dark:text-white/80"
-                                    strokeWidth={2}
-                                />
-
-                            </div>
-
-                        </div>
+                        </Glow>
 
                     </motion.div>
 

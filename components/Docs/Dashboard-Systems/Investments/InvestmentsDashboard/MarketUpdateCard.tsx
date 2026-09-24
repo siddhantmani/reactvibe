@@ -1,142 +1,108 @@
 "use client"
 
-import React from "react"
+
+import Glow from "@/components/Docs/Components/Glow/Glow"
+import { useTheme } from "@/components/ThemeProvider"
+import { manrope } from "@/lib/fonts"
 import {
     ArrowRight,
     TrendingUp,
 } from "lucide-react"
-import { Manrope } from "next/font/google"
 
-const boldFont = Manrope({
-    weight: "600",
-    subsets: ["latin"],
-})
 
 function MarketUpdateCard() {
-
+    const { theme } = useTheme()
     return (
+        <div>
+            <Glow
+                backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
+                glowColor="#0d7525"
+                glowSize="180px"
+                glowOpacity={0.3}
+                glowFadeAt="100%"
+                borderGlow={false}
+                borderGlowColor="rgba(130,100,255,0.4)"
+                borderGlowSize="100px"
+                borderGlowTransparency="80%"
+                className="p-4 h-full rounded-2xl border dark:border-[#222121] border-black/10"
+            >
+                <div className="relative z-10">
 
-        <div
-            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] dark:border-white/10 bg-white dark:bg-[#070606] p-2 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)] dark:shadow-none w-[450px]`}
-        >#
+                    {/* Top */}
+                    <div className="flex items-center justify-between">
 
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,197,94,0.05),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.04),_transparent_45%)]" />
-
-            {/* Soft Green Glow */}
-            <div className="absolute left-[-40px] top-[-40px] h-[180px] w-[180px] rounded-full bg-[#22C55E]/[0.05] dark:bg-[#22C55E]/[0.08] blur-3xl" />
-
-            <div className="relative z-10">
-
-                {/* Top */}
-                <div className="flex items-center justify-between px-2">
-
-                    <div>
-
-                        <h2
-                            className={`${boldFont.className} text-[13px] tracking-[-0.03em] text-[#111111] dark:text-white`}
-                        >
+                        <h2 className={`${manrope.className} text-[12px] text-black dark:text-white`}>
                             Market Update
                         </h2>
 
-                        <p
-                            className={`${boldFont.className} mt-1 text-[10px] text-black/45 dark:text-white/60`}
-                        >
-                            Daily market performance snapshot
-                        </p>
+                        <button className={`${manrope.className} flex items-center gap-2 text-[12px] font-semibold text-[#22C55E] transition-all duration-300 hover:gap-3`}>
+
+                            View full update
+
+                            <ArrowRight
+                                size={16}
+                                strokeWidth={2.5}
+                            />
+
+                        </button>
 
                     </div>
 
-                    <button
-                        className={`${boldFont.className} group flex items-center gap-2 text-[11px] font-semibold text-[#16A34A] dark:text-[#16A34A] transition-all duration-300 hover:gap-3`}
-                    >
-                        View full update
+                    {/* Content */}
+                    <div className="mt-4 flex items-start gap-5 rounded-2xl border dark:border-white/5 dark:bg-white/[0.02] p-5 transition-all duration-300 dark:hover:border-white/10 dark:hover:bg-white/[0.04] border-black/5 bg-black/[0.02] border-black/1 hover:border-black/10">
 
-                        <ArrowRight
-                            size={14}
-                            strokeWidth={2.5}
-                            className="transition-transform duration-300 group-hover:translate-x-[2px]"
-                        />
+                        {/* Icon */}
+                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[24px] border border-[#22C55E]/10 bg-[#22C55E]/5 shadow-[0_0_40px_rgba(34,197,94,0.10)]">
 
-                    </button>
-
-                </div>
-
-                {/* Content */}
-                <div
-                    className="mt-3 flex items-start gap-5 rounded-[18px] border border-black/[0.06] dark:border-white/10 bg-black/[0.015] dark:bg-white/[0.03] p-3 transition-all duration-300 hover:bg-black/[0.025] dark:hover:bg-white/[0.05] hover:shadow-[0_8px_24px_rgba(0,0,0,0.04)] dark:hover:shadow-none"
-                >
-
-                    {/* Icon */}
-                    <div
-                        className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[20px] border border-[#22C55E]/10 dark:border-white/10 bg-[#22C55E]/[0.05] dark:bg-[#070606] shadow-[0_10px_30px_rgba(34,197,94,0.08)] dark:shadow-none"
-                    >
-
-                        <TrendingUp
-                            size={28}
-                            className="text-[#16A34A]"
-                            strokeWidth={2.2}
-                        />
-
-                    </div>
-
-                    {/* Text */}
-                    <div className="pt-1">
-
-                        {/* Badge */}
-                        <div
-                            className="inline-flex items-center rounded-full border border-[#22C55E]/10 dark:border-white/10 bg-[#22C55E]/[0.06] dark:bg-[#070606] px-2.5 py-1"
-                        >
-
-                            <span
-                                className={`${boldFont.className} text-[9px] uppercase tracking-[0.06em] text-[#16A34A]`}
-                            >
-                                Bullish Market
-                            </span>
+                            <TrendingUp
+                                size={30}
+                                className="text-[#39E75F]"
+                                strokeWidth={2}
+                            />
 
                         </div>
 
-                        {/* Main Text */}
-                        <p
-                            className={`${boldFont.className} mt-2 max-w-[85%] text-[12px] leading-[1.8] text-black/60 dark:text-white/70`}
-                        >
+                        {/* Text */}
+                        <div>
 
-                            Markets are trending upward today. The{" "}
+                            <p className={`${manrope.className} mt-3 text-[12px] text-black/70 dark:text-white/70`}>
 
-                            <span className="font-semibold text-[#111111] dark:text-white">
-                                S&P 500
-                            </span>{" "}
+                                Markets are up today! The{" "}
 
-                            gained{" "}
+                                <span className="font-[600] text-black dark:text-white">
+                                    S&P 500
+                                </span>{" "}
 
-                            <span className="font-semibold text-[#16A34A]">
-                                +0.56%
-                            </span>{" "}
+                                is{" "}
 
-                            while the{" "}
+                                <span className="font-[600] text-[#22C55E]">
+                                    +0.56%
+                                </span>{" "}
 
-                            <span className="font-semibold text-[#111111] dark:text-white">
-                                NASDAQ
-                            </span>{" "}
+                                and{" "}
 
-                            advanced{" "}
+                                <span className="font-[600] text-black dark:text-white">
+                                    NASDAQ
+                                </span>{" "}
 
-                            <span className="font-semibold text-[#16A34A]">
-                                +0.78%
-                            </span>
+                                is{" "}
 
-                            .
+                                <span className="font-[600] text-[#22C55E]">
+                                    +0.78%
+                                </span>
 
-                        </p>
+                                .
+
+                            </p>
+
+                        </div>
 
                     </div>
 
                 </div>
-
-            </div>
+            </Glow>
 
         </div>
-
     )
 }
 

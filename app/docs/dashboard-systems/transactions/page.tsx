@@ -6,7 +6,7 @@ import React from 'react'
 export const metadata: Metadata = {
     title: "React Transaction & Payment Dashboard | React Vibe",
     description:
-        "Build responsive React Transaction Dashboards and React Payment Dashboards with Transaction Dashboard Templates, Expense Tracking Dashboards, and financial analytics.",
+        "Build responsive React Transaction and Payment Dashboards with Transaction Dashboard Templates, Expense Tracking Dashboards, and financial analytics.",
 }
 
 function Transactions() {

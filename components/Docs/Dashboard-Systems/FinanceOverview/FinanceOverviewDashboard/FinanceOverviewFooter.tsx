@@ -1,8 +1,3 @@
-"use client"
-import { motion } from "framer-motion"
-
-import React from 'react'
-
 import { Manrope } from "next/font/google";
 
 const boldFont = Manrope({
@@ -12,6 +7,7 @@ const boldFont = Manrope({
 
 
 function FinanceOverviewFooter() {
+    const currentYear = new Date().getFullYear()
     return (
         <footer className="w-full  border-black/10 px-3 py-3">
             <div className="flex items-center justify-between flex-wrap gap-4">
@@ -19,7 +15,7 @@ function FinanceOverviewFooter() {
                 {/* Left Side */}
                 <div>
                     <p className={`${boldFont.className} text-[11px] text-[#6B7280]`}>
-                        © 2026 Taskforge. All rights reserved.
+                        © {currentYear} Taskforge. All rights reserved.
                     </p>
                 </div>
 

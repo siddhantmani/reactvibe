@@ -17,8 +17,7 @@ function WaveformOpenCode() {
     // Folder & File Tree
     const fileTree = {
         Components: [
-            { name: "Page.tsx", path: "/Components/Waveform/Page.tsx" },
-            { name: "Waveform.tsx", path: "/Components/Waveform/Waveform.tsx" },
+            { name: "Page.tsx", path: "/Motion/Waveform/Page.tsx" },
         ],
     };
 
@@ -136,7 +135,7 @@ function WaveformOpenCode() {
 
                                 {/* Monaco Editor */}
                                 <Editor
-                                    height="500px"
+                                    height="700px"
                                     defaultLanguage="typescript"
                                     value={code}
                                     theme="vs-dark"

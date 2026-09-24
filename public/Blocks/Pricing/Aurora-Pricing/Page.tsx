@@ -1,0 +1,67 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { Manrope } from "next/font/google";
+import OrbitBorder from "@/public/Components/TheOrbitBorderCode/OrbitBorder";
+import AuroraPricing from "./AuroraPricing";
+
+const MainHeading = Manrope({
+    weight: "600",
+    subsets: ["latin"],
+});
+
+const miniPara = Manrope({
+    weight: "400",
+    subsets: ["latin"],
+});
+
+
+function Page() {
+    return (
+        <div className="pt-10">
+            <motion.div
+                initial={{ opacity: 0, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                viewport={{
+                    once: true,
+                    amount: 0.2,
+                    margin: "50px"
+                }}
+                transition={{
+                    duration: 1.2,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    delay: 0.7
+                }}
+                className='flex flex-col justify-center items-center space-y-3'>
+                <div>
+                    <OrbitBorder
+                        rounded={50}
+                        padding={1}
+                        RingColors={["#0a52f0", "#ffffff", "#ffffff", "#0a52f0"]}
+                        className='bg-[#ffffff] rounded-full p-2 text-black px-5'
+                        style={{
+                            boxShadow: `
+                                                      0px 12px 40px rgba(60, 80, 180, 0.08),
+                                                      0px 20px 60px rgba(0, 0, 0, 0.05)
+                                                 `,
+                        }}>
+
+                        Pricing
+                    </OrbitBorder>
+                </div>
+                <div>
+                    <h1 className={`${MainHeading.className}  text-black dark:text-white text-3xl md:text-4xl lg:text-5xl xl:text-5xl text-center xl:max-w-3xl md:max-w-xl lg:max-w-3xl`}>Simple plans, no surprises.</h1>
+                </div>
+                <div>
+                    <p className={`${miniPara.className}  text-black dark:text-white text-sm  max-w-sm xl:text-lg xl:max-w-sm md:max-w-sm text-center`}>From Idea to Build-Ready in 3 Steps.</p>
+                </div>
+
+            </motion.div>
+            <div className="w-full">
+                <AuroraPricing />
+            </div>
+        </div>
+    )
+}
+
+export default Page

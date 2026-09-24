@@ -2,12 +2,13 @@
 import DashboardFrame from "@/components/DashboardFrame"
 import { motion } from "framer-motion"
 import BudgetsDashboard from "./BudgetsDashboard/BudgetsDashboard"
+import NavMenu from "../NavMenu"
 
 
 function BudgetsPreview() {
     return (
         <motion.div
-            initial={{ opacity: 0, filter: "blur(6px)" }}
+            initial={{ opacity: 0, filter: "blur(3px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
@@ -20,10 +21,12 @@ function BudgetsPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
+            className="@xl:overflow-hidden"
         >
-            <DashboardFrame>
-                <BudgetsDashboard />
-            </DashboardFrame>
+            <div className='@md:hidden sticky top-0 w-full z-50'>
+                <NavMenu />
+            </div>
+            <BudgetsDashboard />
         </motion.div>
     )
 }

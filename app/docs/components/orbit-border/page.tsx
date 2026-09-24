@@ -4,9 +4,9 @@ import React from 'react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: "React Animated Button with Border & Glow Effects",
+    title: "React Animated Border Button | React Vibe",
     description:
-        "A React animated button component with hover effects, glowing borders, and gradient animations for modern UI design.",
+        "A React animated border button with a customizable multi-color gradient that continuously rotates around the edge. Perfect for CTAs and standout UI.",
 }
 
 

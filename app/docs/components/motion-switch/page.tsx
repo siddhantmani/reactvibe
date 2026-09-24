@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "React Toggle Switch for Pricing & UI States",
+    title: "React Switch Component | React Vibe",
     description:
-        "A React toggle switch component with smooth animation. Perfect for pricing toggles, UI states, and Tailwind-based interfaces.",
+        "A smooth React switch component for toggling settings, features, dark mode, and preferences. Customizable, animated, and easy to integrate.",
 }
 
 

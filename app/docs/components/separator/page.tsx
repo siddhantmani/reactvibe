@@ -4,9 +4,9 @@ import React from 'react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: "React Divider & Separator Component (Horizontal/Vertical)",
+    title: "React Separator Component | React Vibe",
     description:
-        "A reusable React divider component for horizontal and vertical layouts. Perfect for clean UI separation with Tailwind support.",
+        "A simple React separator component for dividing content, sections, lists, and UI groups. Supports horizontal and vertical orientations with a clean, customizable design.",
 }
 
 

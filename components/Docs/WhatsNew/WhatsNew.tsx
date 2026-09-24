@@ -1,5 +1,5 @@
 import React from "react";
-import OrbitBorderGlobalPreview from "../Components/Orbit-Border/OrbitBorderGlobalPreview";
+import OrbitBorderGlobalPreview from "../Components/Orbit-Border/OrbitBorder";
 import LinearReveal from "@/components/LinearReveal";
 import { Manrope } from "next/font/google";
 import Link from "next/link";
@@ -44,7 +44,7 @@ const LiquidGlassMicro: React.FC = () => {
 
 function WhatsNew() {
     return (
-        <Link href="/docs/dashboard-systems/finance-overview">
+        <Link href="/docs/motion/overview">
             <div
                 className="
                     relative flex items-center space-x-5
@@ -86,7 +86,7 @@ function WhatsNew() {
                 <LinearReveal
                     className={`${NewComponent.className} text-[16px] cursor-pointer`}
                     as="label"
-                    Text="Finance Overview  →"
+                    Text="Motion  →"
                 />
             </div>
         </Link>

@@ -5,6 +5,7 @@ import OrbitBorderCode from './OrbitBorderCode';
 import FramerMotionGlobalInstalation from '../../FramerMotionGlobalInstalation';
 
 import { motion } from "framer-motion"
+import SupportingDarkmode from '@/components/SupportingDarkmode';
 function OrbitBorderItemsPreviewSourceCode() {
     return (
         <div>
@@ -14,7 +15,7 @@ function OrbitBorderItemsPreviewSourceCode() {
             </div>
 
             <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
+                initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 whileInView={{ opacity: 1 }}
                 viewport={{
@@ -33,6 +34,9 @@ function OrbitBorderItemsPreviewSourceCode() {
                     <OrbitBorderCode />
                 </div>
             </motion.div>
+
+            <SupportingDarkmode />
+
         </div>
     )
 }

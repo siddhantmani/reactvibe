@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "React Logo Carousel & Brand Showcase Component",
+    title: "React Logo Cloud & Brand Loop | React Vibe",
     description:
-        "A React logo showcase component with loop animation for brand sections, trusted-by logos, and SaaS landing pages.",
+        "A React logo cloud component for showcasing customer, client, partner, and technology logos with a smooth infinite scrolling animation.",
 }
 
 function BrandLogo() {
