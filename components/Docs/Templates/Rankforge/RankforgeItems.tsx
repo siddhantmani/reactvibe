@@ -275,31 +275,14 @@ function RankforgeItems() {
                 </Link>{" "}
                 is one of the most notable examples, generating over $200K in reported
                 bid revenue within its first week.{" "}
-                <Link
-                    href="https://x.com/marclou"
-                    target="_blank"
-                    className="hover:underline hover:text-white"
-                >
-                    Marc Lou ↗
-                </Link>{" "}
-                also recently generated $112K from{" "}
-                <Link
-                    href="https://hyrox.marclou.com/"
-                    target="_blank"
-                    className="hover:underline hover:text-white"
-                >
-                    hyrox.marclou.com ↗
-                </Link>
-                , a competitive sponsorship platform built around his HYROX race.
-                <br />
-                <br />
+                <br /> <br />
                 I built{" "}
                 <Link
-                    href="https://yourbrand.lol/"
+                    href="https://whois1.lol/"
                     target="_blank"
                     className="hover:underline hover:text-white"
                 >
-                    yourbrand.lol ↗
+                    whois1.lol ↗
                 </Link>{" "}
                 using this same foundation and was able to launch it in just a few hours.
                 <br />

@@ -3,8 +3,9 @@ export const sidebarConfig = [
         title: "Store",
         base: "/docs/templates/",
         items: [
-            { name: "Taskforge", slug: "taskforge", createdAt: "2026-9-24", badge: "updated" },
+            { name: "SpotForge", slug: "spotforge", createdAt: "2026-9-28", badge: "new" },
             { name: "Rankforge", slug: "rankforge", createdAt: "2026-9-24", badge: "new" },
+            { name: "Taskforge", slug: "taskforge", createdAt: "2026-9-24", badge: "updated" },
         ]
     },
     {
