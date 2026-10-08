@@ -69,7 +69,7 @@ function LinearRevealItemsPreview() {
                     <TabPanel
                         static
                         hidden={selectedIndex !== 0}
-                        className="border border-gray-700 rounded-2xl"
+                        className="border border-black/20 dark:border-white/20 rounded-2xl"
                     >
                         <div
                             ref={mountRef}

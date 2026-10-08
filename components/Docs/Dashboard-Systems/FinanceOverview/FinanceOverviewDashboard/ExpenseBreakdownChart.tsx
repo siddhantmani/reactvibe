@@ -69,7 +69,7 @@ function DonutChart() {
 
     return (
         <div className="relative">
-            <svg viewBox="0 0 280 280" className="-rotate-90 w-43 h-43">
+            <svg viewBox="0 0 280 280" className="-rotate-90 w-50 h-50">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -115,7 +115,7 @@ interface ExpenseItemProps {
 
 function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
     return (
-        <div className="flex items-center justify-between gap-6">
+        <div className="flex w-full justify-between">
 
             {/* Left */}
             <div className="flex items-center gap-4">
@@ -168,7 +168,7 @@ function ExpenseBreakdownChart() {
                 </h1>
 
                 {/* Content */}
-                <div className="flex flex-col @lg:flex-row @lg:items-center gap-0">
+                <div className="flex flex-col  @lg:flex-row @lg:items-center @lg:justify-between gap-0">
 
                     {/* Donut Chart */}
                     <div className="flex items-center justify-center">
@@ -177,7 +177,7 @@ function ExpenseBreakdownChart() {
 
                     {/* Expense List */}
 
-                    <div className="space-y-5">
+                    <div className="space-y-6 w-full">
                         {expenses.map((item, index) => (
                             <ExpenseItem
                                 key={index}

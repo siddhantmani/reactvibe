@@ -29,7 +29,7 @@ function WaveCTAItems() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="w-full max-w-5xl lg:max-w-2xl xl:max-w-5xl 2xl:max-w-7xl mx-auto px-4 py-3 space-y-7">
+            className="px-2 mx-auto space-y-7 lg:max-w-168 xl:max-w-5xl 2xl:max-w-fit">
             <div className="space-y-3">
                 <LinearReveal
                     as={'h1'}

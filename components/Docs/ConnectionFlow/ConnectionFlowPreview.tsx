@@ -16,7 +16,7 @@ function ConnectionFlowPreview() {
     const { theme } = useTheme()
     const ringColors = theme === 'dark' ? darkRingColors : lightRingColors
     return (
-        <div className='flex items-center border border-black/10 dark:border-[#0F172A] rounded-2xl max-w-xl mt-40 mx-auto'>
+        <div className='flex items-center border border-black/10 dark:border-[#0F172A] rounded-2xl max-w-sm mt-40 mx-auto'>
             <div className=''>
                 <div className='rotate-90'>
 
@@ -142,7 +142,7 @@ function ConnectionFlowPreview() {
                     }}
                     className=''
                 >
-                    <div className='ml-2'>
+                    <div className='ml-5'>
                         <OrbitBorder
                             padding={3}
                             rotate={0}

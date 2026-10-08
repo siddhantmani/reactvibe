@@ -2,6 +2,7 @@
 
 import React, {
     useEffect,
+    useId,
     useMemo,
     useRef,
     useState,
@@ -24,147 +25,108 @@ const data = [
     { day: "May 29", value: 2000 },
 ]
 
-const width = 1050
-const height = 380
-
-const paddingTop = 25
-const paddingBottom = 40
+// Real pixel padding around the plot area (room for axis labels)
+const PAD = { top: 16, right: 12, bottom: 30, left: 40 }
 
 const minValue = 1000
 const maxValue = 3000
+const yTicks = [3000, 2500, 2000, 1500, 1000]
+
+/** Finds the point on the curve at a given x (the curve always moves left to right). */
+function pointAtX(path: SVGPathElement, targetX: number) {
+    let lo = 0
+    let hi = path.getTotalLength()
+
+    for (let i = 0; i < 30; i++) {
+        const mid = (lo + hi) / 2
+        if (path.getPointAtLength(mid).x < targetX) lo = mid
+        else hi = mid
+    }
+
+    const p = path.getPointAtLength((lo + hi) / 2)
+    return { x: p.x, y: p.y }
+}
 
 function PerformanceOverviewChart() {
+    const { theme } = useTheme()
+    const gradientId = `perfFill-${useId().replace(/:/g, "")}`
 
-    const [hoverX, setHoverX] =
-        useState(width / 2)
-
-    const [isHovering, setIsHovering] =
-        useState(false)
-
-    const [activePoint, setActivePoint] =
-        useState({
-            x: width / 2,
-            y: height / 2,
-        })
-
-    const pathRef =
-        useRef<SVGPathElement>(null)
-
-    const points = useMemo(() => {
-
-        return data.map((item, index) => {
-
-            const x =
-                (index /
-                    (data.length - 1)) *
-                width
-
-            const normalized =
-                (item.value - minValue) /
-                (maxValue - minValue)
-
-            const y =
-                height -
-                paddingBottom -
-                normalized *
-                (height -
-                    paddingTop -
-                    paddingBottom)
-
-            return {
-                x,
-                y,
-                value: item.value,
-                day: item.day,
-            }
-
-        })
-
-    }, [])
-
-    const pathData = useMemo(() => {
-
-        return points.reduce(
-            (
-                acc,
-                point,
-                index
-            ) => {
-
-                if (index === 0) {
-                    return `M ${point.x} ${point.y}`
-                }
-
-                const prev =
-                    points[index - 1]
-
-                const cx =
-                    (prev.x + point.x) /
-                    2
-
-                return `
-                    ${acc}
-                    C
-                    ${cx} ${prev.y},
-                    ${cx} ${point.y},
-                    ${point.x} ${point.y}
-                `
-
-            },
-            ""
-        )
-
-    }, [points])
+    // Measure the chart box so the SVG draws at real pixel size
+    const chartRef = useRef<HTMLDivElement>(null)
+    const [size, setSize] = useState({ width: 0, height: 0 })
 
     useEffect(() => {
+        const el = chartRef.current
+        if (!el) return
 
-        if (!pathRef.current) return
-
-        const totalLength =
-            pathRef.current.getTotalLength()
-
-        const point =
-            pathRef.current.getPointAtLength(
-                (hoverX / width) *
-                totalLength
-            )
-
-        setActivePoint({
-            x: point.x,
-            y: point.y,
+        const ro = new ResizeObserver(([entry]) => {
+            const { width, height } = entry.contentRect
+            setSize({ width: Math.round(width), height: Math.round(height) })
         })
 
-    }, [hoverX])
+        ro.observe(el)
+        return () => ro.disconnect()
+    }, [])
+
+    const { width, height } = size
+    const plotW = Math.max(0, width - PAD.left - PAD.right)
+    const plotH = Math.max(0, height - PAD.top - PAD.bottom)
+    const baseline = PAD.top + plotH
+
+    // Hover position stored as 0..1 across the plot, so it survives resizes
+    const [hoverRatio, setHoverRatio] = useState(0.5)
+    const [isHovering, setIsHovering] = useState(false)
+    const [activePoint, setActivePoint] = useState({ x: 0, y: 0 })
+
+    const pathRef = useRef<SVGPathElement>(null)
+
+    const points = useMemo(() => {
+        return data.map((item, index) => {
+            const x = PAD.left + (index / (data.length - 1)) * plotW
+            const normalized = (item.value - minValue) / (maxValue - minValue)
+            const y = PAD.top + (1 - normalized) * plotH
+            return { x, y, value: item.value, day: item.day }
+        })
+    }, [plotW, plotH])
+
+    const pathData = useMemo(() => {
+        return points.reduce((acc, point, index) => {
+            if (index === 0) return `M ${point.x} ${point.y}`
+            const prev = points[index - 1]
+            const cx = (prev.x + point.x) / 2
+            return `${acc} C ${cx} ${prev.y}, ${cx} ${point.y}, ${point.x} ${point.y}`
+        }, "")
+    }, [points])
+
+    // Keep the dot exactly on the curve under the cursor
+    useEffect(() => {
+        if (!pathRef.current || plotW === 0) return
+        setActivePoint(pointAtX(pathRef.current, PAD.left + hoverRatio * plotW))
+    }, [hoverRatio, pathData, plotW])
 
     const activeData = useMemo(() => {
+        const index = Math.round(hoverRatio * (data.length - 1))
+        return data[Math.min(data.length - 1, Math.max(0, index))]
+    }, [hoverRatio])
 
-        const index = Math.min(
-            data.length - 1,
-            Math.max(
-                0,
-                Math.round(
-                    (hoverX / width) *
-                    (data.length - 1)
-                )
-            )
-        )
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (plotW === 0) return
+        const rect = e.currentTarget.getBoundingClientRect()
+        const ratio = (e.clientX - rect.left - PAD.left) / plotW
+        setHoverRatio(Math.max(0, Math.min(1, ratio)))
+    }
 
-        return data[index]
+    const gridColor = theme == "dark" ? "#1c1c1c" : "#e6e6e6"
+    const labelColor = theme == "dark" ? "#969393" : "#696464"
 
-    }, [hoverX])
+    // On narrow charts, show every other date so labels don't collide
+    const showEveryOtherLabel = plotW < 460
 
-    const totalText = useMemo(() => {
-
-        return activeData.value.toLocaleString()
-
-    }, [activeData.value])
-
-    const { theme } = useTheme()
+    // Keep the tooltip inside the card horizontally
+    const tooltipX = Math.min(Math.max(activePoint.x, 60), width - 60)
 
     return (
-
-        <div className=" border dark:border-[#222121] border-black/10 rounded-2xl">
-
+        <div className="flex h-full flex-col rounded-2xl border dark:border-[#222121] border-black/10">
             <Glow
                 backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
                 glowColor="#0d7525"
@@ -175,368 +137,184 @@ function PerformanceOverviewChart() {
                 borderGlowColor="rgba(130,100,255,0.4)"
                 borderGlowSize="100px"
                 borderGlowTransparency="80%"
-                className="p-4 "
+                /*
+                    flex-1 + flex-col: Glow fills the card.
+                    [&>*:last-child]: also stretches Glow's inner wrapper
+                    (or our content div, if Glow renders children directly),
+                    so the chart below can grow to the bottom of the card.
+                */
+                className="
+                    p-4
+                    flex-1
+                    flex
+                    flex-col
+                    [&>*:last-child]:flex
+                    [&>*:last-child]:flex-1
+                    [&>*:last-child]:flex-col
+                "
             >
-
-
-                <div className=" z-10">
+                <div className="relative z-10 flex flex-1 flex-col">
 
                     {/* Top */}
-                    <div className="flex items-start justify-between">
-
-                        <div>
-
-                            <h2
-                                className={`${manrope.className} text-[14px] tracking-[-0.03em] dark:text-[#ffffff] text-black`}
-                            >
+                    <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                            <h2 className={`${manrope.className} text-[14px] tracking-[-0.03em] text-black dark:text-white`}>
                                 Performance Overview
                             </h2>
 
-                            <p
-                                className={`${manrope.className} mt-2 text-[12px] text-black/45 dark:text-white/45`}
-                            >
+                            <p className={`${manrope.className} mt-1 text-[12px] text-black/45 dark:text-white/45`}>
                                 Total syncs this month
                             </p>
 
-                            <h1
-                                className={`${manrope.className} mt-2 text-[30px] tracking-[-0.06em] dark:text-[#ffffff] text-black`}
-                            >
-                                {totalText}
+                            <h1 className={`${manrope.className} mt-1 text-[28px] @sm:text-[30px] tracking-[-0.06em] text-black dark:text-white`}>
+                                {activeData.value.toLocaleString()}
                             </h1>
-
                         </div>
 
                         <button
-                            className={`${manrope.className} rounded-[8px] border border-black/[0.06] bg-black/[0.02] dark:border-white/[0.06] dark:bg-white/[0.02] px-3 py-1.5 text-[11px] font-medium text-black/60 dark:text-white/60 backdrop-blur-md transition-all duration-300 hover:bg-black/[0.04] hover:text-black dark:hover:bg-white/[0.04] dark:hover:text-white`}
+                            className={`${manrope.className} shrink-0 rounded-[8px] border border-black/[0.06] bg-black/[0.02] dark:border-white/[0.06] dark:bg-white/[0.02] px-3 py-1.5 text-[11px] font-medium text-black/60 dark:text-white/60 backdrop-blur-md transition-all duration-300 hover:bg-black/[0.04] hover:text-black dark:hover:bg-white/[0.04] dark:hover:text-white`}
                         >
                             This Month
                         </button>
-
                     </div>
 
-                    {/* Chart */}
-                    <div className="mt-2 @lg:h-70 @xl:h-95 w-full p-6">
+                    {/* Chart: grows to fill the card, never shorter than 220px */}
+                    <div
+                        ref={chartRef}
+                        onMouseEnter={() => setIsHovering(true)}
+                        onMouseLeave={() => setIsHovering(false)}
+                        onMouseMove={handleMouseMove}
+                        className="relative mt-4 w-full flex-1 min-h-[220px] cursor-crosshair"
+                    >
+                        {width > 0 && height > 0 && (
+                            <svg
+                                width={width}
+                                height={height}
+                                viewBox={`0 0 ${width} ${height}`}
+                                className={`${manrope.className} absolute inset-0`}
+                            >
+                                <defs>
+                                    <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stopColor="#0d7525" stopOpacity="0.18" />
+                                        <stop offset="100%" stopColor="#0d7525" stopOpacity="0" />
+                                    </linearGradient>
+                                </defs>
 
-                        <svg
-                            viewBox={`0 0 ${width} ${height}`}
-                            className="h-full w-full overflow-visible"
-                        >
-
-                            {/* Grid */}
-                            {[0, 1, 2, 3, 4].map(
-                                (line) => {
-
-                                    const y =
-                                        paddingTop +
-                                        ((height -
-                                            paddingTop -
-                                            paddingBottom) /
-                                            4) *
-                                        line
-
+                                {/* Grid + Y labels */}
+                                {yTicks.map((value, i) => {
+                                    const y = PAD.top + (plotH / (yTicks.length - 1)) * i
                                     return (
-                                        <line
-                                            key={line}
-                                            x1="0"
-                                            y1={y}
-                                            x2={width}
-                                            y2={y}
-                                            stroke={`${theme == "dark" ? "#141414" : "#e6e6e6"}`}
-                                            strokeWidth="1"
-                                        />
+                                        <g key={value}>
+                                            <line
+                                                x1={PAD.left}
+                                                y1={y}
+                                                x2={width - PAD.right}
+                                                y2={y}
+                                                stroke={gridColor}
+                                                strokeWidth="1"
+                                            />
+                                            <text
+                                                x={PAD.left - 8}
+                                                y={y}
+                                                textAnchor="end"
+                                                dominantBaseline="middle"
+                                                fill={labelColor}
+                                                fontSize="11"
+                                            >
+                                                {value / 1000}K
+                                            </text>
+                                        </g>
                                     )
+                                })}
 
-                                }
-                            )}
+                                {/* X labels */}
+                                {points.map((point, index) => {
+                                    if (showEveryOtherLabel && index % 2 !== 0) return null
 
-                            {/* Y Axis */}
-                            {[1, 1.5, 2, 2.5, 3].map(
-                                (value, index) => {
-
-                                    const y =
-                                        paddingTop +
-                                        ((height -
-                                            paddingTop -
-                                            paddingBottom) /
-                                            4) *
-                                        (4 - index)
+                                    const isFirst = index === 0
+                                    const isLast = index === points.length - 1
 
                                     return (
                                         <text
-                                            key={index}
-                                            x={-45}
-                                            y={y - 5}
-                                            fill={`${theme == "dark" ? "#969393" : "#696464"}`}
-                                            fontSize="15"
+                                            key={point.day}
+                                            x={point.x}
+                                            y={height - 8}
+                                            textAnchor={isFirst ? "start" : isLast ? "end" : "middle"}
+                                            fill={labelColor}
+                                            fontSize="11"
                                         >
-                                            {value}K
+                                            {point.day}
                                         </text>
                                     )
+                                })}
 
-                                }
-                            )}
+                                {/* Fill */}
+                                <path
+                                    d={`${pathData} L ${PAD.left + plotW} ${baseline} L ${PAD.left} ${baseline} Z`}
+                                    fill={`url(#${gradientId})`}
+                                />
 
-                            {/* X Axis */}
-                            {points.map(
-                                (
-                                    point,
-                                    index
-                                ) => (
+                                {/* Line */}
+                                <motion.path
+                                    ref={pathRef}
+                                    d={pathData}
+                                    fill="none"
+                                    stroke="#119F25"
+                                    strokeWidth="2.5"
+                                    strokeLinecap="round"
+                                    initial={{ pathLength: 0 }}
+                                    animate={{ pathLength: 1 }}
+                                    transition={{ duration: 1.8, ease: "easeInOut" }}
+                                    style={{ filter: "drop-shadow(0 0 4px rgba(17,159,37,0.45))" }}
+                                />
 
-                                    <text
-                                        key={index}
-                                        x={point.x}
-                                        y={height - 10}
-                                        textAnchor="middle"
-                                        fill={`${theme == "dark" ? "#969393" : "#696464"}`}
-                                        fontSize="15"
-                                    >
-                                        {point.day}
-                                    </text>
+                                {/* Hover line */}
+                                <line
+                                    x1={activePoint.x}
+                                    y1={PAD.top}
+                                    x2={activePoint.x}
+                                    y2={baseline}
+                                    stroke="#119F25"
+                                    strokeDasharray="4 4"
+                                    strokeOpacity={isHovering ? 0.35 : 0}
+                                    style={{ transition: "stroke-opacity 0.1s linear" }}
+                                />
 
-                                )
-                            )}
+                                {/* Active dot */}
+                                <circle
+                                    cx={activePoint.x}
+                                    cy={activePoint.y}
+                                    r={5}
+                                    fill="#119F25"
+                                    stroke={theme == "dark" ? "#000000" : "#ffffff"}
+                                    strokeWidth="2.5"
+                                    opacity={isHovering ? 1 : 0}
+                                    style={{ transition: "opacity 0.1s linear" }}
+                                />
+                            </svg>
+                        )}
 
-                            {/* Gradient */}
-                            <defs>
-
-                                <linearGradient
-                                    id="purpleFill"
-                                    x1="0"
-                                    y1="0"
-                                    x2="0"
-                                    y2="1"
-                                >
-
-                                    <stop
-                                        offset="0%"
-                                        stopColor="#0d7525"
-                                        stopOpacity="0.18"
-                                    />
-
-                                    <stop
-                                        offset="100%"
-                                        stopColor="#0d7525"
-                                        stopOpacity="0"
-                                    />
-
-                                </linearGradient>
-
-                                <filter id="glow">
-
-                                    <feGaussianBlur
-                                        stdDeviation="3"
-                                        result="blur"
-                                    />
-
-                                    <feMerge>
-
-                                        <feMergeNode in="blur" />
-
-                                        <feMergeNode in="SourceGraphic" />
-
-                                    </feMerge>
-
-                                </filter>
-
-                            </defs>
-
-                            {/* Fill */}
-                            <path
-                                d={`
-                                ${pathData}
-                                L ${width} ${height - paddingBottom}
-                                L 0 ${height - paddingBottom}
-                                Z
-                            `}
-                                fill="url(#purpleFill)"
-                            />
-
-                            {/* Main Path */}
-                            <motion.path
-                                ref={pathRef}
-                                d={pathData}
-                                fill="none"
-                                stroke="#119F25"
-                                strokeWidth="2.5"
-                                strokeLinecap="round"
-                                filter="url(#glow)"
-                                initial={{
-                                    pathLength: 0,
-                                }}
-                                animate={{
-                                    pathLength: 1,
-                                }}
-                                transition={{
-                                    duration: 1.8,
-                                    ease: "easeInOut",
-                                }}
-                            />
-
-                            {/* Hover Line */}
-                            <motion.line
-                                x1={activePoint.x}
-                                y1={paddingTop}
-                                x2={activePoint.x}
-                                y2={
-                                    height -
-                                    paddingBottom
-                                }
-                                stroke="#119F25"
-                                strokeDasharray="5 5"
-                                strokeOpacity={0.25}
-                                initial={false}
-                                animate={{
-                                    opacity:
-                                        isHovering
-                                            ? 1
-                                            : 0,
-                                }}
-                                transition={{
-                                    duration: 0.08,
-                                }}
-                            />
-
-                            {/* Active Dot */}
-                            <motion.circle
-                                cx={activePoint.x}
-                                cy={activePoint.y}
-                                r={6}
-                                fill="#119F25"
-                                stroke="#F3E8FF"
-                                strokeWidth="3"
-                                initial={false}
-                                animate={{
-                                    opacity:
-                                        isHovering
-                                            ? 1
-                                            : 0,
-                                    scale:
-                                        isHovering
-                                            ? 1
-                                            : 0.7,
-                                }}
-                                transition={{
-                                    duration: 0.08,
-                                }}
-                                style={{
-                                    transformOrigin: `${activePoint.x}px ${activePoint.y}px`,
-                                }}
-                            />
-
-                            {/* Tooltip */}
-                            <foreignObject
-                                x={
-                                    activePoint.x -
-                                    45
-                                }
-                                y={
-                                    activePoint.y -
-                                    70
-                                }
-                                width="100"
-                                height="100"
-                                style={{
-                                    pointerEvents:
-                                        "none",
-                                    opacity:
-                                        isHovering
-                                            ? 1
-                                            : 0,
-                                    transition:
-                                        "opacity 0.08s linear",
-                                }}
-                            >
-
-                                <div className="rounded-[10px] border border-black/[0.06] bg-black/95 px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
-
-                                    <p
-                                        className={`${manrope.className} text-[15px] text-white/70`}
-                                    >
-                                        {
-                                            activeData.day
-                                        }
-                                    </p>
-
-                                    <h3
-                                        className={`${manrope.className} mt-1 text-[12px] text-[#ffffff]`}
-                                    >
-                                        {activeData.value.toLocaleString()}
-
-                                        <span
-                                            className={`${manrope.className} ml-1 text-[12px] text-ffffff/70`}
-                                        >
-                                            syncs
-                                        </span>
-
-                                    </h3>
-
-                                </div>
-
-                            </foreignObject>
-
-                            {/* Hover Overlay */}
-                            <rect
-                                x="0"
-                                y="0"
-                                width={width}
-                                height={height}
-                                fill="transparent"
-                                className="cursor-pointer"
-
-                                onMouseEnter={() =>
-                                    setIsHovering(
-                                        true
-                                    )
-                                }
-
-                                onMouseLeave={() =>
-                                    setIsHovering(
-                                        false
-                                    )
-                                }
-
-                                onMouseMove={(e) => {
-
-                                    const svg =
-                                        e.currentTarget.ownerSVGElement
-
-                                    if (!svg) return
-
-                                    const rect =
-                                        svg.getBoundingClientRect()
-
-                                    const mouseX =
-                                        e.clientX -
-                                        rect.left
-
-                                    const normalizedX =
-                                        (mouseX /
-                                            rect.width) *
-                                        width
-
-                                    setHoverX(
-                                        Math.max(
-                                            0,
-                                            Math.min(
-                                                width,
-                                                normalizedX
-                                            )
-                                        )
-                                    )
-
-                                }}
-                            />
-
-                        </svg>
-
+                        {/* Tooltip (HTML, so it renders at real size) */}
+                        <div
+                            className="pointer-events-none absolute z-20 -translate-x-1/2 -translate-y-[calc(100%+12px)] rounded-[10px] border border-white/10 bg-black/90 px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.12)] backdrop-blur-xl transition-opacity duration-100"
+                            style={{
+                                left: tooltipX,
+                                top: activePoint.y,
+                                opacity: isHovering ? 1 : 0,
+                            }}
+                        >
+                            <p className={`${manrope.className} whitespace-nowrap text-[11px] text-white/60`}>
+                                {activeData.day}
+                            </p>
+                            <p className={`${manrope.className} mt-0.5 whitespace-nowrap text-[13px] text-white`}>
+                                {activeData.value.toLocaleString()}
+                                <span className="ml-1 text-[11px] text-white/60">syncs</span>
+                            </p>
+                        </div>
                     </div>
-
                 </div>
             </Glow>
-
         </div>
-
     )
 }
 

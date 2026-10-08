@@ -13,7 +13,7 @@ function DarkMode() {
     const { setTheme } = useTheme();
     return (
         <div
-            className={`${manrope.className} lg:max-w-2xl xl:max-w-5xl 2xl:max-w-7xl mx-auto px-3 md:px-4 pb-20 space-y-14`}
+            className={`${manrope.className} lg:max-w-2xl xl:max-w-5xl 2xl:max-w-[90%] mx-auto px-3 md:px-4 pb-20 space-y-14`}
         >
             <section className="space-y-4">
                 <div className="space-y-3">

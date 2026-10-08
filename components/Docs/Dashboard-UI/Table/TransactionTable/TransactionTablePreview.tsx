@@ -137,7 +137,7 @@ function TransactionTablePreview() {
                 ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
-            className="w-full rounded-[15px] border border-black/10 dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none  bg-white dark:bg-[#0c0c0c] max-w-2xl mx-auto mt-20"
+            className="w-full rounded-[15px] border border-black/10 dark:border-white/10 p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none  bg-white dark:bg-[#0c0c0c] max-w-sm mx-auto mt-20"
         >
 
             {/* Static Header */}

@@ -17,6 +17,23 @@
   /* Chrome, Safari */
 }
 
+@utility preview-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0 0 0 / 0.2) transparent;
+
+  .dark & {
+    scrollbar-color: rgb(255 255 255 / 0.15) transparent;
+  }
+}
+
+@theme {
+    --container-sm: 40rem;   /* 640px  */
+    --container-md: 48rem;   /* 768px  */
+    --container-lg: 64rem;   /* 1024px */
+    --container-xl: 80rem;   /* 1280px */
+    --container-2xl: 90rem;  /* 1440px */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

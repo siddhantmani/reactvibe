@@ -45,7 +45,7 @@ export default function StratusPreview() {
     }
 
     return (
-        <div className="space-y-20 py-10 transition-colors duration-300">
+        <div className="space-y-20 py-10 transition-colors duration-300 max-w-3xl mx-auto">
             <motion.div
                 initial={{ opacity: 0, filter: "blur(2px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}

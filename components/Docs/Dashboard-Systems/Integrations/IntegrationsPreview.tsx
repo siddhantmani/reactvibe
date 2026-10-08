@@ -20,9 +20,9 @@ function IntegrationsPreview() {
                 ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
                 delay: 0.2
             }}
-            className="@xl:overflow-hidden"
+            className="relative w-full min-w-0 pt-0"
         >
-            <div className='@md:hidden sticky top-0 w-full z-50'>
+            <div className='@md:hidden fixed top-0 w-full z-50'>
                 <NavMenu />
             </div>
             <IntegrationsDashboard />

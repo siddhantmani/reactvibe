@@ -23,7 +23,7 @@ function BranchFlowItems() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className='px-2 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-2xl space-y-7'>
+            className='px-2 mx-auto space-y-7 lg:max-w-168 xl:max-w-5xl 2xl:max-w-fit'>
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}

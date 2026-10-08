@@ -30,7 +30,7 @@ function InsightRecommendationCardPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="relative overflow-hidden rounded-[28px] border border-[#DDEEDD] dark:border-white/10 bg-[#ffffff] dark:bg-[#0c0c0c] p-3 px-3 aspect-auto">
+            className="relative overflow-hidden rounded-[28px] border border-[#DDEEDD] dark:border-white/10 bg-[#ffffff] dark:bg-[#0c0c0c] p-3 px-3 aspect-auto max-w-sm mx-auto">
 
             {/* Soft Glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,_rgba(34,197,94,0.08),_transparent_35%)] dark:bg-[radial-gradient(circle_at_left,_rgba(34,197,94,0.12),_transparent_35%)]" />

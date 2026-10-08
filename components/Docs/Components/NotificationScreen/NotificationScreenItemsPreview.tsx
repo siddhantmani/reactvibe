@@ -54,7 +54,7 @@ function NotificationScreenItemsPreview() {
                     <TabPanel
                         static
                         hidden={selectedIndex !== 0}
-                        className="border border-gray-700 rounded-2xl relative h-[700px] bg-white dark:bg-[#0b0b0b]"
+                        className="border border-black/20 dark:border-white/20 rounded-2xl relative h-[700px] bg-white dark:bg-[#0b0b0b]"
                     >
 
                         <SpotlightBackground className="rounded-2xl z-0" spotlightSize={180} />

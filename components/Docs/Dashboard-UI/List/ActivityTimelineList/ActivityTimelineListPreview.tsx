@@ -67,7 +67,7 @@ function ActivityTimelineListPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="rounded-[15px] max-w-xl mx-auto  border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3">
+            className="rounded-[15px] max-w-sm mt-20 mx-auto  border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3">
 
             {/* Heading */}
             <div>

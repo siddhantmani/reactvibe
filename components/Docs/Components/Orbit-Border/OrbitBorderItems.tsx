@@ -18,7 +18,7 @@ function OrbitBorderItems() {
     return (
         <motion.div
 
-            className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl 2xl:max-w-7xl mx-auto lg:max-w-2xl space-y-7'>
+            className='px-2 mx-auto space-y-7 lg:max-w-168 xl:max-w-5xl 2xl:max-w-fit'>
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}

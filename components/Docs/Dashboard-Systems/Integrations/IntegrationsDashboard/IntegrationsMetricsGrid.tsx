@@ -63,35 +63,21 @@ function IntegrationsMetricsGrid() {
     const { theme } = useTheme();
 
     return (
-
-        <div className="grid grid-cols-2 @xl:grid-cols-4 gap-3 px-2">
+        <div className="grid grid-cols-2 @lg:grid-cols-4 gap-2">
 
             {cards.map((card, index) => {
 
                 const Icon = card.icon
 
                 return (
-
                     <motion.div
                         key={index}
-                        initial={{
-                            opacity: 0,
-                            y: 20,
-                        }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                        }}
-                        viewport={{
-                            once: true,
-                        }}
-                        transition={{
-                            duration: 0.5,
-                            delay: index * 0.08,
-                        }}
-                        className="group relative overflow-hidden rounded-2xl border dark:border-[#222121] border-black/10"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.08 }}
+                        className="group relative min-w-0 overflow-hidden rounded-2xl border dark:border-[#222121] border-black/10"
                     >
-
                         <Glow
                             backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}
                             glowColor="#0d7525"
@@ -102,63 +88,43 @@ function IntegrationsMetricsGrid() {
                             borderGlowColor="rgba(130,100,255,0.4)"
                             borderGlowSize="100px"
                             borderGlowTransparency="80%"
-                            className="p-4 h-full "
+                            className="p-4 h-full"
                         >
-
-
-                            {/* Content */}
-                            <div className="relative z-10 aspect-video flex items-center justify-between">
+                            {/* Content: natural height, no aspect ratio */}
+                            <div className="relative z-10 flex items-start justify-between gap-3">
 
                                 {/* Left */}
-                                <div className="space-y-3">
+                                <div className="min-w-0 space-y-3">
 
-                                    {/* Title */}
-                                    <p
-                                        className={`${fontBold.className} text-[11px] tracking-[-0.02em] text-black/45 dark:text-white/60`}
-                                    >
+                                    <p className={`${fontBold.className} truncate text-[11px] tracking-[-0.02em] text-black/45 dark:text-white/60`}>
                                         {card.title}
                                     </p>
 
-                                    {/* Value */}
-                                    <h2
-                                        className={`${fontBold.className} text-[30px] tracking-[-0.06em] ${card.valueColor} ${card.valueColor === "text-[#111111]" ? "dark:text-white" : ""}`}
-                                    >
+                                    <h2 className={`${fontBold.className} text-[24px] @sm:text-[30px] tracking-[-0.06em] ${card.valueColor} ${card.valueColor === "text-[#111111]" ? "dark:text-white" : ""}`}>
                                         {card.value}
                                     </h2>
 
-                                    {/* Subtitle */}
-                                    <p
-                                        className={`${fontBold.className} text-[10px] ${card.iconColor}`}
-                                    >
+                                    <p className={`${fontBold.className} truncate text-[10px] ${card.iconColor}`}>
                                         {card.subtitle}
                                     </p>
-
                                 </div>
 
                                 {/* Right */}
                                 <div
-                                    className={`flex h-10 w-10 items-center justify-center rounded-[12px] border border-black/[0.06] dark:border-white/10 ${card.iconBg} shadow-[0_6px_20px_rgba(0,0,0,0.04)] dark:shadow-none transition-all duration-300 group-hover:scale-105`}
+                                    className={`flex h-9 w-9 @sm:h-10 @sm:w-10 shrink-0 items-center justify-center rounded-[12px] border border-black/[0.06] dark:border-white/10 ${card.iconBg} shadow-[0_6px_20px_rgba(0,0,0,0.04)] dark:shadow-none transition-all duration-300 group-hover:scale-105`}
                                 >
-
                                     <Icon
                                         size={18}
                                         className="dark:text-white/80"
                                         strokeWidth={2}
                                     />
-
                                 </div>
-
                             </div>
                         </Glow>
-
                     </motion.div>
-
                 )
-
             })}
-
         </div>
-
     )
 }
 

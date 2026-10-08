@@ -3,7 +3,7 @@ import Page from './page'
 
 function ComparativeBarChartPublicPreview() {
     return (
-        <div className='mt-50 scale-[150%]'>
+        <div className='mt-50 scale-[150%] max-w-[60%] mx-auto'>
             <Page />
         </div>
     )

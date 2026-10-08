@@ -95,30 +95,97 @@ function Sidebar() {
 
 function AccountsDashboard() {
     return (
-        <div className='flex h-[990px]'>
-            <div className="flex z-50 @md:max-w-[33%] @xl:max-w-[17%] w-full hidden @md:inline-block sticky top-0 h-full h-screen">
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{
+                once: true,
+                amount: 0.2,
+                margin: "50px",
+            }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2,
+            }}
+            className="flex w-full min-w-0 h-[990px]"
+        >
+            <div className="    hidden
+        @md:flex
+        shrink-0
+        w-[200px]
+        h-full
+        z-50">
                 <Sidebar />
                 <Separator
                     direction="vertical"
                     className="bg-black/30 dark:bg-white/20 h-full"
                 />
             </div>
-            <div className="@md:mt-0 bg-[#f8f8f8] dark:bg-[#070606] border border-black/5 px-2 py-2 rounded-br-2xl rounded-tr-2xl space-y-3 w-full mx-auto overflow-y-auto h-full hide-scrollbar ">
+            <div className="
+                 mt-0
+        @md:mt-0
+        flex-1
+        min-w-0
+        w-full
+        h-full
+        overflow-y-auto
+        overflow-x-hidden
+        bg-[#f8f8f8]
+        dark:bg-[#070606]
+        border
+        border-black/5
+        px-2
+        py-2
+        rounded-br-2xl
+        rounded-tr-2xl
+        space-y-3
+        hide-scrollbar
+            ">
                 <DashboardHeader />
                 <MetricsGrid />
-                <div className="flex flex-col @xl:flex-row gap-2">
-                    <div className="grid grid-cols-1 xl:max-w-3xl 2xl:max-w-6xl w-full">
+                {/* Side column */}
+                <div
+                    className="
+        grid
+        grid-cols-1
+        @xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]
+        @2xl:grid-cols-[minmax(0,5fr)_minmax(0,3fr)]
+        gap-2
+    "
+                >
+                    {/* Table */}
+                    <div className="min-w-0 *:h-full">
                         <AccountsManagementTable />
                     </div>
-                    <div className="grid grid-cols-1 gap-2 xl:max-w-lg w-full">
-                        <AccountHealthOverview />
-                        <RecentAccountActivity />
-                        <InstitutionConnectionCTA />
-                    </div>
 
+                    {/* Side column */}
+                    <div
+                        className="
+            grid
+            min-w-0
+            grid-cols-1
+            @lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]
+            @xl:grid-cols-1
+            content-start
+            gap-2
+        "
+                    >
+                        <div className="min-w-0 *:h-full">
+                            <AccountHealthOverview />
+                        </div>
+
+                        <div className="min-w-0 *:h-full">
+                            <RecentAccountActivity />
+                        </div>
+
+                        <div className="min-w-0 @lg:col-span-2 @xl:col-span-1">
+                            <InstitutionConnectionCTA />
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

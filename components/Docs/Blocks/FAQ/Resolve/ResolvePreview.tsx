@@ -117,7 +117,7 @@ function ResolvePreview() {
         setActive(active === index ? null : index)
     }
     return (
-        <div className='space-y-5 transition-colors duration-300'>
+        <div className='space-y-5 transition-colors duration-300 mt-20'>
             <div className='space-y-5'>
                 <div className=' max-w-36 mx-auto'>
                     <OrbitBorder

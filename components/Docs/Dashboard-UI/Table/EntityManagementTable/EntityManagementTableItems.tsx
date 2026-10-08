@@ -29,7 +29,7 @@ function EntityManagementTableItems() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className='px-2 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl lg:max-w-2xl 2xl:max-w-7xl mx-auto space-y-7'>
+            className='px-2 mx-auto space-y-7 lg:max-w-168 xl:max-w-5xl 2xl:max-w-fit'>
 
             <Link href="/docs/dashboard-ui/table">
                 <div className='flex items-center gap-1'>

@@ -68,13 +68,13 @@ function AccountsItemsPreview() {
             <div
                 className="w-full bg-white border rounded-3xl dark:bg-black dark:border-white/10 relative"
             >
-                <div className="text-black z-40 w-full h-[1007px]">
+                <div className="text-black z-40 w-full">
                     <SpotlightBackground className="rounded-2xl z-0" spotlightSize={180} />
 
                     <ResizablePreview
                         width={previewWidth}
                         onWidthChange={setPreviewWidth}
-                        className="absolute inset-0 z-10 py-2"
+                        className="absolute inset-0 z-10"
                     >
                         <AccountsPreview />
                     </ResizablePreview>

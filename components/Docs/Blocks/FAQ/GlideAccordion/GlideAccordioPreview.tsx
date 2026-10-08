@@ -65,7 +65,7 @@ export default function GlideAccordioPreview({ align = "left" }: AccordianProps)
     }
 
     return (
-        <div className="space-y-12 py-10 transition-colors duration-300">
+        <div className="space-y-12 py-10 max-w-4xl mx-auto transition-colors duration-300">
             <div className='flex flex-col justify-center items-center space-y-3'>
                 <motion.div
                     initial={{ opacity: 0, filter: "blur(8px)" }}

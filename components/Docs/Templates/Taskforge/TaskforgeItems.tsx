@@ -140,7 +140,7 @@ function TaskforgeItems() {
     ];
 
     return (
-        <div className='px-3 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl lg:max-w-2xl 2xl:max-w-7xl mx-auto space-y-7'>
+        <div className='px-3 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl lg:max-w-2xl 2xl:max-w-[90%] mx-auto space-y-7'>
             <div className="space-y-6">
                 {/* Left */}
                 <div className="space-y-8">

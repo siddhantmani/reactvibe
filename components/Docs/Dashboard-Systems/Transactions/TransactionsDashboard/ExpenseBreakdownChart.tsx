@@ -115,7 +115,7 @@ interface ExpenseItemProps {
 
 function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
     return (
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center justify-between gap-10">
 
             {/* Left */}
             <div className="flex items-center gap-2">

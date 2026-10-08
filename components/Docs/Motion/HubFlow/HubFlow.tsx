@@ -96,9 +96,9 @@ export default function HubFlow({
     return (
         <div className="bg-gray-50 dark:bg-[#050505] flex items-center justify-center p-4 font-sans overflow-hidden transition-colors duration-300">
 
-            <div className="w-full overflow-x-auto custom-scrollbar flex justify-start md:justify-center">
+            <div className="w-full overflow-x-auto ">
 
-                <div className="w-[1000px] h-[800px] relative shrink-0">
+                <div className="relative mx-auto h-[800px] w-[1000px] shrink-0">
 
                     {/* Ambient Glow */}
                     <div

@@ -160,7 +160,7 @@ function DistributionBreakdownChartPreview() {
                 ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
-            className="max-w-xl mx-auto rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none @xl:scale-[120%] mt-20">
+            className="max-w-sm mx-auto rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none @xl:scale-[120%] mt-20">
 
             {/* Header */}
             <h1 className={`${boldFont.className} text-[12px] text-[#111827] dark:text-white`}>

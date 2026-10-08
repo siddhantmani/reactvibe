@@ -71,7 +71,7 @@ function DonutChart() {
 
     return (
         <div className="relative">
-            <svg viewBox="0 0 280 280" className="-rotate-90 w-42 h-42">
+            <svg viewBox="0 0 280 280" className="-rotate-90 w-50 h-50">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -171,7 +171,7 @@ function InvestmentsExpenseBreakdown() {
                 </h1>
 
                 {/* Content */}
-                <div className="flex flex-col @xl:flex-row @xl:items-center justify-between">
+                <div className="flex flex-col @md:flex-row @xl:items-center justify-between">
 
                     {/* Donut Chart */}
                     <div className="flex items-center -ml-2">

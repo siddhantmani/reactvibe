@@ -47,7 +47,7 @@ function ComparativeBarChartPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="w-[calc(100%-32px)] @sm:w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 @sm:p-5 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:border-white/10 dark:bg-[#0c0c0c] dark:shadow-none max-w-xl mx-auto mt-20 @xl:scale-[110%]"
+            className="w-[calc(100%-32px)] @sm:w-full rounded-[15px] border border-black/10 bg-white p-3 px-3 @sm:p-5 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:border-white/10 dark:bg-[#0c0c0c] dark:shadow-none max-w-sm mx-auto mt-20 @xl:scale-[110%]"
         >
 
             {/* Header */}

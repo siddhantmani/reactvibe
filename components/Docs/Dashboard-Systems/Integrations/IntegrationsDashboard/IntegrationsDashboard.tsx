@@ -100,15 +100,63 @@ function Sidebar() {
 function IntegrationsDashboard() {
     const { theme } = useTheme();
     return (
-        <div className='flex h-[990px]'>
-            <div className="flex z-50 @md:max-w-[33%] @xl:max-w-[17%] w-full hidden @md:flex sticky top-0 h-full h-screen">
+        <motion.div
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{
+                once: true,
+                amount: 0.2,
+                margin: "50px",
+            }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2,
+            }}
+            className="flex w-full min-w-0 h-[990px]"
+        >
+            {/* Sidebar */}
+            <div
+                className="
+            hidden
+            @md:flex
+            shrink-0
+            w-[200px]
+            h-full
+            z-50
+        "
+            >
                 <Sidebar />
+
                 <Separator
                     direction="vertical"
-                    className="bg-black/12 dark:bg-white/12 shrink-0"
+                    className="bg-black/30 dark:bg-white/20 h-full"
                 />
             </div>
-            <div className="@md:mt-0 bg-[#f8f8f8] dark:bg-[#070606] border border-black/5 px-2 py-2 rounded-br-2xl rounded-tr-2xl space-y-3 w-full mx-auto overflow-y-auto h-full hide-scrollbar ">
+
+            {/* Main dashboard */}
+            <div
+                className="
+            flex-1
+            min-w-0
+            w-full
+            h-full
+            overflow-y-auto
+            overflow-x-hidden
+            bg-[#f8f8f8]
+            dark:bg-[#070606]
+            border
+            border-black/5
+            px-2
+            pb-2
+            pt-16
+            @md:pt-2
+            rounded-br-2xl
+            rounded-tr-2xl
+            space-y-3
+            hide-scrollbar
+        "
+            >
                 <DashboardHeader />
                 <Separator
                     direction="horizontal"
@@ -126,24 +174,37 @@ function IntegrationsDashboard() {
                     </div>
 
                     {/* Refresh Button */}
-                    <button className="flex p-1 items-center justify-center rounded-[6px] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] text-black/70 dark:text-white/70  transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] hover:text-white">
+                    <button className="flex p-1 items-center justify-center rounded-[6px] border border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.03] text-black/70 dark:text-white/70  transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06] dark:hover:text-white">
                         <RefreshCw size={13} strokeWidth={2} />
                     </button>
 
                 </div>
                 <IntegrationsMetricsGrid />
-                <div className="flex flex-col @xl:flex-row w-full gap-2 p-2">
-                    <div className="grid grid-cols-1 w-full @xl:max-w-3xl 2@xl:max-w-6xl">
+
+                <div
+                    className="
+        grid
+        grid-cols-1
+        @xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]
+        @2xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]
+        gap-2
+    "
+                >
+                    {/* Performance Overview */}
+                    <div className="min-w-0 *:h-full">
                         <PerformanceOverviewChart />
                     </div>
-                    <div className="grid grid-cols-1 w-full @xl:max-w-lg gap-1">
+
+                    {/* Side column */}
+                    <div className="grid min-w-0 grid-cols-1 @lg:grid-cols-2 @xl:grid-cols-1 content-start gap-2">
                         <SyncStatus />
                         <DataFlow />
                     </div>
                 </div>
+
                 <IntegrationActivityFeed />
             </div>
-        </div>
+        </motion.div>
     )
 }
 

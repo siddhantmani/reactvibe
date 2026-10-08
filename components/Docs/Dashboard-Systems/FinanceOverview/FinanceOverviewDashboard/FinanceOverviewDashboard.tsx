@@ -42,7 +42,19 @@ function Sidebar() {
     ];
 
     return (
-        <div className="h-full w-full flex flex-col bg-[#F9FAF6] dark:bg-[#070606] backdrop-blur-4xl relative p-3 px-3 rounded-tl-[15px] rounded-bl-4xl">
+        <div className="
+    h-full
+    w-full
+    flex
+    flex-col
+    bg-[#F9FAF6]
+    dark:bg-[#070606]
+    backdrop-blur-4xl
+    p-3
+    px-3
+    rounded-tl-[15px]
+    rounded-bl-4xl
+">
             <motion.div
                 initial={{ opacity: 0, filter: "blur(4px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}
@@ -90,40 +102,76 @@ function Sidebar() {
 }
 
 function FinanceOverviewDashboard() {
-
-
     return (
         <motion.div
             initial={{ opacity: 0, filter: "blur(4px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{
                 once: true,
-                amount: 0.2, // Trigger when 20% visible
-                margin: "50px"
+                amount: 0.2,
+                margin: "50px",
             }}
             transition={{
                 duration: 1.2,
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                delay: 0.2
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2,
             }}
-            className='flex h-[990px]'
+            className="flex w-full min-w-0 h-[990px]"
         >
-            <div className="flex z-50 @md:max-w-[33%] @xl:max-w-[17%] w-full hidden @md:inline-block sticky top-0 h-full h-screen">
+            {/* Sidebar */}
+            <div
+                className="
+        hidden
+        @md:flex
+        shrink-0
+        w-[200px]
+        h-full
+        z-50
+    "
+            >
                 <Sidebar />
+
                 <Separator
                     direction="vertical"
                     className="bg-black/30 dark:bg-white/20 h-full"
                 />
             </div>
-            <div className="mt-16 @md:mt-0 bg-[#f8f8f8] dark:bg-[#070606] border border-black/5 px-2 py-2 rounded-br-2xl rounded-tr-2xl space-y-3 w-full mx-auto overflow-y-auto h-full hide-scrollbar">
+
+            {/* Main dashboard */}
+            <div
+                className="
+        flex-1
+        min-w-0
+        w-full
+        h-full
+        overflow-y-auto
+        overflow-x-hidden
+        bg-[#f8f8f8]
+        dark:bg-[#070606]
+        border
+        border-black/5
+        px-2
+        pb-2
+        pt-16
+        @md:pt-2
+        rounded-br-2xl
+        rounded-tr-2xl
+        space-y-3
+        hide-scrollbar
+    "
+            >
                 <FinanceOverviewHeader />
+
                 <MetricsGrid />
+
                 <FinancialInsightsGrid />
+
                 <FinancialActivityGrid />
+
                 <FinanceOverviewFooter />
             </div>
         </motion.div>
-    )
+    );
 }
 
 export default FinanceOverviewDashboard

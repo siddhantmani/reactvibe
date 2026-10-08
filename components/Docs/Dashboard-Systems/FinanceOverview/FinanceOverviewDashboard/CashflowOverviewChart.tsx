@@ -50,7 +50,7 @@ function CashflowOverviewChart() {
                 borderGlowColor="rgba(130,100,255,0.4)"
                 borderGlowSize="100px"
                 borderGlowTransparency="80%"
-                className="p-4 h-full "
+                className="p-4 h-full w-full"
             >
 
                 {/* Header */}

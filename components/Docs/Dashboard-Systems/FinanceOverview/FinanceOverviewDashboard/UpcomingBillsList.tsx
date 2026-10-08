@@ -80,7 +80,7 @@ function BillItem({ title, amount, date, last }: BillItemProps) {
 function UpcomingBillsList() {
     const { theme } = useTheme();
     return (
-        <div className="w-full @xl:max-w-[200px] rounded-2xl border dark:border-[#222121] border-black/10">
+        <div className="w-full rounded-2xl border dark:border-[#222121] border-black/10">
 
             <Glow
                 backgroundColor={`${theme == "dark" ? "#000000" : "#ffffff"}`}

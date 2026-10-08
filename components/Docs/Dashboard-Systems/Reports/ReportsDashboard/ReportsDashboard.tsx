@@ -98,15 +98,63 @@ function Sidebar() {
 
 function ReportsDashboard() {
     return (
-        <div className='flex h-[990px]'>
-            <div className="flex z-50 @md:max-w-[33%] @xl:max-w-[17%] w-full hidden @md:flex sticky top-0 h-full h-screen">
-                <Sidebar />
-                <Separator
-                    direction="vertical"
-                    className="bg-black/12 dark:bg-white/12 shrink-0"
-                />
-            </div>
-            <div className="@md:mt-0 bg-[#f8f8f8] dark:bg-[#070606] border border-black/5 px-2 py-2 rounded-br-2xl rounded-tr-2xl space-y-3 w-full mx-auto overflow-y-auto h-full hide-scrollbar ">
+          <motion.div
+                  initial={{ opacity: 0, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                  viewport={{
+                      once: true,
+                      amount: 0.2,
+                      margin: "50px",
+                  }}
+                  transition={{
+                      duration: 1.2,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      delay: 0.2,
+                  }}
+                  className="flex w-full min-w-0 h-[990px]"
+              >
+                  {/* Sidebar */}
+                  <div
+                      className="
+              hidden
+              @md:flex
+              shrink-0
+              w-[200px]
+              h-full
+              z-50
+          "
+                  >
+                      <Sidebar />
+      
+                      <Separator
+                          direction="vertical"
+                          className="bg-black/90 dark:bg-white/20 h-full"
+                      />
+                  </div>
+      
+                  {/* Main dashboard */}
+                  <div
+                      className="
+              flex-1
+              min-w-0
+              w-full
+              h-full
+              overflow-y-auto
+              overflow-x-hidden
+              bg-[#f8f8f8]
+              dark:bg-[#070606]
+              border
+              border-black/5
+              px-2
+              pb-2
+              pt-16
+              @md:pt-2
+              rounded-br-2xl
+              rounded-tr-2xl
+              space-y-3
+              hide-scrollbar
+          "
+                  >
                 <DashboardHeader />
                 <Separator
                     direction="horizontal"
@@ -156,7 +204,7 @@ function ReportsDashboard() {
                 </div>
 
                 <ExecutiveSummaryMetrics />
-                <div className="grid grid-cols-1 @xl:grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 @lg:grid-cols-2 gap-2">
                     <ReportsSpendingBreakdown />
                     <ReportsCashFlowTrend />
                 </div>
@@ -165,7 +213,7 @@ function ReportsDashboard() {
                     <ExecutiveSummaryCards />
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

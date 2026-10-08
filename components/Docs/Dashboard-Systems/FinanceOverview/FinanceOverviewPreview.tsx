@@ -6,7 +6,7 @@ import FinanceOverviewNavMenu from "../NavMenu"
 
 function FinanceOverviewPreview() {
     return (
-        <motion.div className='@xl:overflow-hidden pt-10'
+        <motion.div className='relative w-full min-w-0 pt-0'
             initial={{ opacity: 0, filter: "blur(3px)" }}
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{

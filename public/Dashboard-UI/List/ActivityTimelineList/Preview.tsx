@@ -3,7 +3,7 @@ import Page from './page'
 
 function Preview() {
     return (
-        <div className='mt-43 scale-[150%]'>
+        <div className='mt-35 scale-[145%] max-w-[60%] mx-auto'>
             <Page />
         </div>
     )

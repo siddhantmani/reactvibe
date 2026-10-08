@@ -5,11 +5,11 @@ import MorphMenu from '../MorphMenu/MorphMenu'
 
 function MorphNavPreview() {
     return (
-        <div className=''>
-            <div className='hidden @lg:inline-block w-full fixed top-0 z-50'>
+        <div className='relative'>
+            <div className='hidden @lg:inline-block w-full sticky top-0 z-50'>
                 <MorphNav />
             </div>
-            <div className='@md:hidden w-full z-50'>
+            <div className='@lg:hidden w-full z-50'>
                 <MorphMenu />
             </div>
 

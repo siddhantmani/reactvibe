@@ -154,7 +154,6 @@ function MetricsGrid() {
     const { theme } = useTheme()
     return (
         <div className="grid grid-cols-1 @md:grid-cols-2 @xl:grid-cols-4 gap-2">
-
             {/* Main Balance Card */}
             <div className="relative flex-1 rounded-[15px] bg-gradient-to-br from-[#006b46] via-[#00754d] to-[#00573a] dark:from-[#031A08] dark:via-[#021406] dark:to-[#010B03] p-3 px-3 shadow-[0_20px_60px_rgba(0,100,60,0.25)] dark:shadow-none dark:border dark:border-white/10">
 

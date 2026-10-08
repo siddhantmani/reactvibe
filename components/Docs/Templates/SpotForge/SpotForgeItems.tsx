@@ -216,7 +216,7 @@ function SpotForgeItems() {
         theme === "dark" ? darkRingColors : lightRingColors;
 
     return (
-        <div className={`${manrope.className} px-3 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl lg:max-w-2xl 2xl:max-w-7xl mx-auto space-y-10`}
+        <div className={`${manrope.className} px-3 md:px-5 lg:px-8 xl:px-10 xl:max-w-5xl lg:max-w-2xl 2xl:max-w-[90%] mx-auto space-y-10`}
         >
             {/* Hero */}
             {/*HERO */}

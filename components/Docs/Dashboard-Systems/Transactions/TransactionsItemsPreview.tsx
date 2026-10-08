@@ -73,7 +73,7 @@ function TransactionsItemsPreview() {
                     <ResizablePreview
                         width={previewWidth}
                         onWidthChange={setPreviewWidth}
-                        className="absolute inset-0 z-10 py-2"
+                        className="absolute inset-0 z-10"
                     >
                         <TransactionsPreview />
                     </ResizablePreview>

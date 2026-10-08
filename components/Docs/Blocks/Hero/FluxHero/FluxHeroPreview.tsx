@@ -33,10 +33,10 @@ function FluxHeroPreview() {
                 <SpotlightGridPreview spotlightSize={230} />
             </div>
             <div className=''>
-                <div className='hidden @md:inline-block z-0 w-full'>
+                <div className='hidden @lg:inline-block z-0 w-full'>
                     <MorphNav />
                 </div>
-                <div className='@md:hidden z-50 absolute w-full top-0'>
+                <div className='@lg:hidden z-50 absolute w-full top-0'>
                     <MorphMenu />
                 </div>
 

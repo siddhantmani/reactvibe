@@ -10,7 +10,7 @@ import { chartBlocks } from "@/lib/dashboardUi/chart";
 
 function Chart() {
     return (
-        <div className="space-y-10 max-w-7xl mx-auto px-2">
+        <div className="space-y-10 max-w-7xl 2xl:max-w-[90%] mx-auto px-2">
             <motion.div
                 initial={{ opacity: 0, filter: "blur(2px)" }}
                 whileInView={{ opacity: 1, filter: "blur(0px)" }}

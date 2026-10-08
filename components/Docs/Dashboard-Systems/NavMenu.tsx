@@ -91,8 +91,8 @@ export default function NavMenu() {
         rounded-full
         transition-all duration-300
         ${scrolled
-                        ? "bg-[#0c0c0c]/60 backdrop-blur-lg border border-white/10 shadow-2xl"
-                        : "bg-transparent border border-transparent"
+                        ? "bg-white dark:bg-[#0c0c0c] backdrop-blur-lg border border-white/10 shadow-2xl"
+                    : "border border-transparent bg-[#f8f8f8] dark:bg-[#0c0c0c]"
                     }
     `}
             >

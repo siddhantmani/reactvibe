@@ -133,7 +133,7 @@ function PerformanceTrendChartPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:border-white/10 dark:bg-[#0c0c0c] dark:shadow-none p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)] max-w-xl w-[calc(100%-32px)] @sm:w-full mx-auto mt-20 @xl:scale-[110%]`}
+            className={`${boldFont.className} relative overflow-hidden rounded-[18px] border border-black/[0.06] bg-white dark:border-white/10 dark:bg-[#0c0c0c] dark:shadow-none p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_12px_40px_rgba(0,0,0,0.04)] max-w-sm w-[calc(100%-32px)] @sm:w-full mx-auto mt-20 @xl:scale-[110%]`}
         >
             {/* Background Glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.04),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(34,197,94,0.06),_transparent_45%)]" />

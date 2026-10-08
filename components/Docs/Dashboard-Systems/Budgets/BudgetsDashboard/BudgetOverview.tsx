@@ -71,7 +71,7 @@ function DonutChart() {
     return (
         <div className="relative">
 
-            <svg viewBox="0 0 280 280" className="-rotate-90 w-50 h-50">
+            <svg viewBox="0 0 280 280" className="-rotate-90 w-45 h-45">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -116,7 +116,7 @@ interface ExpenseItemProps {
 
 function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
     return (
-        <div className="flex items-center justify-between gap-2 space-x-10 xl:space-x-3">
+        <div className="flex items-center justify-between gap-5 lg:gap-10">
 
             {/* Left */}
             <div className="flex items-center gap-2">
@@ -183,7 +183,7 @@ function BudgetsOverview() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col @xl:flex-row items-center justify-between">
+                <div className="flex flex-col @md:flex-row items-center justify-between">
 
                     {/* Donut Chart */}
                     <div className="flex items-center -ml-2">

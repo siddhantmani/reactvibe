@@ -62,9 +62,10 @@ function DonutChart() {
     );
 
     return (
-        <div className="relative">
+        /* Size follows the CARD's width: 160px when narrow, 200px from 560px */
+        <div className="relative size-40 @min-[560px]:size-50">
 
-            <svg viewBox="0 0 280 280" className="-rotate-90 w-40 h-40">
+            <svg viewBox="0 0 280 280" className="-rotate-90 size-full">
                 {segments.map(({ item, dash, offset }, index) => (
                     <circle
                         key={index}
@@ -85,7 +86,7 @@ function DonutChart() {
             {/* Center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-                <p className={`${manrope.className} text-[10px] text-gray-500 dark:text-[#ffffff] transition-colors duration-300`}>
+                <p className={`${manrope.className} text-[10px] text-gray-500 dark:text-white/70 transition-colors duration-300`}>
                     Total Expense
                 </p>
 
@@ -93,7 +94,7 @@ function DonutChart() {
                     as='h2'
                     delay={0.4}
                     Text="$4,680"
-                    className={`${manrope.className} text-[20px] font-bold tracking-[-1px] text-gray-900 dark:text-[#ffffff] mt-2 transition-colors duration-300`}
+                    className={`${manrope.className} text-[18px] @min-[560px]:text-[20px] font-bold tracking-[-1px] text-gray-900 dark:text-white mt-1 @min-[560px]:mt-2 transition-colors duration-300`}
                 />
 
             </div>
@@ -110,30 +111,40 @@ interface ExpenseItemProps {
 
 function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
     return (
-        <div className="flex items-center justify-between @md:gap-10 @lg:gap-20 @xl:gap-15 @2xl:gap-10">
+        /*
+            3 fixed columns: name (stretches) | percentage | amount
+            Tighter number columns while the card is narrow, roomier from 560px.
+        */
+        <div
+            className="
+                grid
+                grid-cols-[minmax(0,1fr)_2.5rem_3.5rem]
+                items-center
+                gap-2
+                @min-[560px]:grid-cols-[minmax(0,1fr)_3rem_4.5rem]
+                @min-[560px]:gap-3
+            "
+        >
 
-            {/* Left */}
-            <div className="flex items-center gap-4">
-
-                <div
-                    className="w-2 h-2 rounded-full"
-                    style={{
-                        background: color,
-                    }}
+            {/* Name */}
+            <div className="flex min-w-0 items-center gap-3">
+                <span
+                    className="size-2 shrink-0 rounded-full"
+                    style={{ background: color }}
                 />
 
-                <p className={`${manrope.className} text-[11px] text-gray-700 dark:text-[#ffffff] transition-colors duration-300`}>
+                <p className={`${manrope.className} truncate text-[11px] text-gray-700 dark:text-white transition-colors duration-300`}>
                     {title}
                 </p>
             </div>
 
             {/* Percentage */}
-            <p className={`${manrope.className} text-[9px] text-gray-700 dark:text-[#ffffff] text-right transition-colors duration-300`}>
+            <p className={`${manrope.className} text-right text-[11px] text-gray-500 dark:text-white/60 tabular-nums transition-colors duration-300`}>
                 {percentage}%
             </p>
 
             {/* Amount */}
-            <p className={`${manrope.className} text-[11px] text-gray-900 dark:text-[#ffffff] text-right transition-colors duration-300`}>
+            <p className={`${manrope.className} text-right text-[11px] text-gray-900 dark:text-white tabular-nums transition-colors duration-300`}>
                 {amount}
             </p>
         </div>
@@ -143,7 +154,11 @@ function ExpenseItem({ title, percentage, amount, color }: ExpenseItemProps) {
 function ReportsSpendingBreakdown() {
     const { theme } = useTheme()
     return (
-        <div className="w-full rounded-[15px] transition-colors duration-300  rounded-2xl border dark:border-[#222121] border-black/10">
+        /*
+            @container: everything inside measures THIS CARD's width
+            (via @min-[...] variants), not the whole preview.
+        */
+        <div className="@container w-full h-full rounded-2xl border dark:border-[#222121] border-black/10 transition-colors duration-300">
             <Glow
                 backgroundColor={`${theme === "dark" ? "#000000" : "#ffffff"}`}
                 glowColor="#0d7525"
@@ -162,16 +177,32 @@ function ReportsSpendingBreakdown() {
                     Executive Summary
                 </h2>
 
-                {/* Content */}
-                <div className="flex flex-col @xl:flex-row @xl:items-center justify-between">
+                {/*
+                    Content, based on the card's width:
+                    < 420px   -> stacked (donut on top, legend below)
+                    420–559px -> donut at natural size + legend takes the rest
+                    ≥ 560px   -> equal 50/50 halves
+                */}
+                <div
+                    className="
+                        mt-4
+                        grid
+                        grid-cols-1
+                        items-center
+                        gap-6
+                        @min-[420px]:grid-cols-[auto_minmax(0,1fr)]
+                        @min-[560px]:grid-cols-2
+                        @min-[560px]:gap-8
+                    "
+                >
 
                     {/* Donut Chart */}
-                    <div className="flex items-center justify-center">
+                    <div className="flex min-w-0 justify-center">
                         <DonutChart />
                     </div>
 
                     {/* Expense List */}
-                    <div className="space-y-5">
+                    <div className="w-full min-w-0 space-y-4">
                         {expenses.map((item, index) => (
                             <ExpenseItem
                                 key={index}
@@ -185,7 +216,7 @@ function ReportsSpendingBreakdown() {
                 </div>
 
                 {/* Footer */}
-                <button className={`${manrope.className} mt-5 flex items-center gap-3 text-[10px] text-gray-900 dark:text-[#ffffff] hover:opacity-80 transition-opacity transition-colors duration-300`}>
+                <button className={`${manrope.className} mt-5 flex items-center gap-3 text-[10px] text-gray-900 dark:text-white hover:opacity-80 transition-opacity duration-300`}>
                     View full breakdown
 
                     <ArrowRight

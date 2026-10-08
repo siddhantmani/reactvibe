@@ -166,7 +166,7 @@ function ProgressTrackingListPreview() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className="w-full rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none max-w-xl mx-auto">
+            className="w-full rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none max-w-sm mt-20 mx-auto">
 
             {/* Header */}
             <div className="flex items-center justify-between mb-10">

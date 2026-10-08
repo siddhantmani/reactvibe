@@ -85,7 +85,7 @@ function ComparativeMetricsChartPreview() {
                 ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.3
             }}
-            className="rounded-[15px] border border-black/10 bg-white dark:border-white/10 dark:bg-[#0c0c0c] max-w-lg w-[calc(100%-32px)] @sm:w-full mx-auto mt-20 @xl:scale-[110%]"
+            className="rounded-[15px] border border-black/10 bg-white dark:border-white/10 dark:bg-[#0c0c0c] max-w-sm w-[calc(100%-32px)] @sm:w-full mx-auto mt-20 @xl:scale-[110%]"
         >
             {/* Top */}
             <div className="flex items-center justify-between px-3 p-3">
