@@ -30,7 +30,7 @@ function SplitFAQItems() {
                 delay: 0.2
             }}
             exit={{ opacity: 0, y: -10 }}
-            className='px-2 mx-auto space-y-7 lg:max-w-168 xl:max-w-5xl 2xl:max-w-fit'>
+            className='px-2 mx-auto space-y-7 lg:max-w-168 xl:max-w-5xl 2xl:max-w-[1480px]'>
 
             <Link href="/docs/blocks/faq">
                 <div className='flex items-center gap-1'>

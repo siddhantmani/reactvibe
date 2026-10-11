@@ -14,7 +14,7 @@ const LinearRevealFont = Bricolage_Grotesque({
 
 function LinearRevealItems() {
     return (
-        <div className='px-2 mx-auto space-y-7 lg:max-w-168 xl:max-w-5xl 2xl:max-w-fit'>
+        <div className='px-2 mx-auto space-y-7 lg:max-w-168 xl:max-w-5xl 2xl:max-w-[1480px]'>
 
             <div className='space-y-3'>
                 <LinearReveal

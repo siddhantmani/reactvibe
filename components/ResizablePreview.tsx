@@ -72,7 +72,6 @@ export default function ResizablePreview({
     const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
         if (!dragRef.current) return;
         // Preview is left-aligned, so the right edge moves 1:1 with the cursor.
-        // (Use * 2 only if the preview is centered with mx-auto.)
         const delta = e.clientX - dragRef.current.startX;
         const next = clamp(dragRef.current.startWidth + delta);
         liveWidthRef.current = next;
@@ -94,15 +93,15 @@ export default function ResizablePreview({
     return (
         /*
             OUTER WRAPPER (horizontal scroll only)
-            - overflow-x-auto: if the preview (e.g. 1440px) is wider than the
-              available space, scroll sideways to see all of it.
-            - overflow-y-hidden: vertical scrolling happens INSIDE the frame.
-            - No pointer-events-none: the wrapper must receive pointer events,
-              otherwise its scrollbar can't be dragged or swiped.
-            - preview-scrollbar: thin, theme-aware scrollbar (see globals.css).
+            - w-fit max-w-full: only as wide as the preview + handle, so the
+              empty area beside a narrow preview stays uncovered and the
+              background (dots) behind it still gets hover events.
+            - overflow-x-auto: when the preview is wider than the space,
+              the wrapper hits max-w-full and scrolls sideways.
+            - overflow-y-hidden: vertical scrolling happens inside the frame.
         */
         <div
-            className={`preview-scrollbar relative w-full h-full overflow-x-auto overflow-y-hidden ${className}`}
+            className={`preview-scrollbar relative w-fit max-w-full h-full overflow-x-auto overflow-y-hidden ${className}`}
         >
             <div className="flex h-full w-max">
                 {/* RESPONSIVE VIEWPORT */}
@@ -113,19 +112,17 @@ export default function ResizablePreview({
                     className="relative h-full shrink-0"
                 >
                     {/*
-                        CONTAINER QUERY ROOT (vertical scroll only)
+                        CONTAINER QUERY ROOT
                         - No border, so its width is exactly liveWidth.
-                        - overflow-y-auto: tall previews scroll like a browser viewport.
-                        - overflow-x-hidden: no nested horizontal scroller to
-                          swallow sideways swipes meant for the outer wrapper.
-                        - hide-scrollbar: a visible scrollbar would take ~15px
-                          of width on Windows and shift every breakpoint.
-                        - overscroll-contain: reaching the top/bottom of the
-                          preview doesn't start scrolling the docs page.
+                        - overflow-y-auto: tall previews scroll inside the frame.
+                          No overscroll containment: once the preview reaches its
+                          top/bottom (or isn't scrollable at all), the page scrolls.
+                        - overflow-x-hidden: no nested horizontal scroller.
+                        - hide-scrollbar: keeps the container exactly liveWidth wide.
                     */}
                     <div
                         style={{ containerType: "inline-size" }}
-                        className="hide-scrollbar relative w-full min-w-0 h-full overflow-x-hidden overflow-y-auto overscroll-y-contain bg-white dark:bg-[#0b0b0b] rounded-2xl"
+                        className="hide-scrollbar relative w-full min-w-0 h-full overflow-x-hidden overflow-y-auto bg-white dark:bg-[#0b0b0b] rounded-2xl"
                     >
                         {children}
                     </div>

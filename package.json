@@ -7,7 +7,8 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.8",

@@ -27,7 +27,7 @@ function PulsePingItems() {
                 ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
-            exit={{ opacity: 0, y: -10 }} className='px-2 mx-auto space-y-7 lg:max-w-168 xl:max-w-5xl 2xl:max-w-fit'>
+            exit={{ opacity: 0, y: -10 }} className='px-2 mx-auto space-y-7 lg:max-w-168 xl:max-w-5xl 2xl:max-w-[1480px]'>
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}
