@@ -37,7 +37,7 @@ function Footer() {
                         <div>
                             <Heart className="h-4 w-5 stroke-[#ffa600] fill-[#ffa600]" />
                         </div>
-                        <h1>by <span className={` ${footerFont.className} px-1 text-[#ffa600] hover:underline hover:text-[#f9b840] dark:hover:text-[#f9b840]`}> <Link href="https://x.com/_siddhantmani" target="_blank"> Siddhant Mani</Link></span></h1>
+                        <h1>by <span className={` ${footerFont.className} px-1 text-[#ffa600] hover:underline hover:text-[#f9b840] dark:hover:text-[#f9b840]`}> <Link href="https://www.linkedin.com/in/siddhantmani" target="_blank"> Siddhant Mani</Link></span></h1>
                     </div>
                 </footer>
             </motion.div>
