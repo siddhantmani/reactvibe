@@ -221,7 +221,7 @@ function PrimePreview() {
                     <MonthlyYearly yearly={yearly} setYearly={setYearly} />
                 </div>
 
-                <Link href="https://x.com/_siddhantmani" target='_blank' className='hidden @xl:inline-block @xl:scale-[93%]'>
+                <Link href="https://www.linkedin.com/in/siddhantmani/" target='_blank' className='hidden @xl:inline-block @xl:scale-[93%]'>
 
                     <motion.div
                         initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -258,7 +258,7 @@ function PrimePreview() {
                         </motion.div>
                         <div className='flex items-center gap-2'>
                             <Image
-                                src="https://pbs.twimg.com/profile_images/2047317187132850176/YWpzGVYM_400x400.jpg"
+                                src="https://media.licdn.com/dms/image/v2/D4D03AQHio9Lui0zWVw/profile-displayphoto-scale_200_200/B4DaEhtHp7IMAc-/0/1791566843909?e=1795046400&v=beta&t=ZthsVklbehW30ZS6UtYZydILjcdzGpHeZRB1t1HO7mE"
                                 height={1000}
                                 width={1000}
                                 alt='alt image'
