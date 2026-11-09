@@ -56,10 +56,7 @@ export default function ExploreComponents() {
                                 duration: 0.45,
                             }}
                         >
-                            <Link
-                                href={block.slug}
-                                className="group block"
-                            >
+                            <div className="group relative block">
                                 <div className="overflow-hidden rounded-2xl border border-border bg-background transition-all duration-300 hover:border-neutral-500 p-2">
 
                                     {/* Preview */}
@@ -90,7 +87,12 @@ export default function ExploreComponents() {
                                             <div className="flex items-center gap-2">
 
                                                 <h3 className="font-medium">
-                                                    {block.name}
+                                                    <Link
+                                                        href={block.slug}
+                                                        className="after:absolute after:inset-0 after:z-10 after:rounded-2xl"
+                                                    >
+                                                        {block.name}
+                                                    </Link>
                                                 </h3>
 
                                                 {block.badge && (
@@ -120,7 +122,7 @@ export default function ExploreComponents() {
                                     </div>
 
                                 </div>
-                            </Link>
+                            </div>
                         </motion.div>
                     );
                 })}

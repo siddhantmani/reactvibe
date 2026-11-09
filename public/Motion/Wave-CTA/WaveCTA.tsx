@@ -123,11 +123,8 @@ export default function WaveCTA({
     );
 
     useEffect(() => {
-        animate(angle, 360, {
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear",
-        });
+        const rotate = animate(angle, 360, { duration: 8, repeat: Infinity, ease: "linear" });
+        return () => rotate.stop();
     }, [angle]);
 
 

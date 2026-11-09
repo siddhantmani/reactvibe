@@ -1,37 +1,3 @@
-
-
-// import BranchFlowPreview from "@/public/Motion/BranchFlow/Preview";
-// import HubFlowPreview from "@/public/Motion/HubFlow/Preview";
-// import ConvergePreview from "@/public/Motion/Converge/Preview";
-// import NetworkPulsePreview from "@/public/Motion/NetworkPulse/Preview";
-// import PipelinePreview from "@/public/Motion/Pipeline/Preview";
-// import SignalPreview from "@/public/Motion/Signal/Preview";
-// import DataFlowPreview from "@/public/Motion/DataFlow/Preview";
-// import ConnectionFlowPreview from "@/public/Motion/ConnectionFlow/Preview";
-// import NodeFlowPreview from "@/public/Motion/NodeFlow/Preview";
-// import WaveCTAPreview from "@/public/Motion/Wave-CTA/Preview";
-// import WaveformPreview from "@/public/Motion/Waveform/Preview";
-// import OriginPreview from "@/public/Motion/Origin/Preview";
-// import NexusPreview from "@/public/Motion/Nexus/Preview";
-
-
-// import FinanceOverviewPreview from "@/public/Dashboard-Systems/FinanceOverview/FinanceOverview";
-// import RisingLinesPreview from "@/public/Backgrounds/RisingLines/Preview";
-// import PathFlowPreview from "@/public/Backgrounds/Path-Flow/Page";
-// import SpotlightGridPreview from "@/public/Backgrounds/SpotlightGrid/Page";
-// import FluxHeroPreview from "@/public/Blocks/Hero/FluxHero/Page";
-// import DistributionBreakdownChart from "@/public/Dashboard-UI/Chart/DistributionBreakdownChart/Preview";
-// import ComparativeMetricsChart from "@/public/Dashboard-UI/Chart/ComparativeMetricsChart/Preview";
-// import PerformanceTrendChart from "@/public/Dashboard-UI/Chart/PerformanceTrendChart/Preview";
-
-// import ProgressOverviewListPreview from "@/public/Dashboard-UI/List/ProgressOverviewList/Preview";
-// import ProgressTrackingListPreview from "@/public/Dashboard-UI/List/ProgressTrackingList/Preview";
-
-// import AdvancedTransactionLogPreview from "@/components/Docs/Dashboard-UI/Table/AdvancedTransactionLog/AdvancedTransactionLogPreview";
-
-// import StructuredDataTablePreview from "@/components/Docs/Dashboard-UI/Table/StructuredDataTable/StructuredDataTablePreview";
-// import NotificationPreview from "@/public/Components/NotificationScreen/Preview";
-
 import type { PreviewName } from "@/components/Preview/previewMap";
 
 export interface ComponentsBlock {
@@ -224,15 +190,6 @@ export const componentBlocks: ComponentsBlock[] = [
         slug: "/docs/blocks/hero/flux-hero",
         description: "A responsive React Chart component for creating Comparison Charts, Grouped Bar Charts, and Vertical Bar Charts to visualize cash flow, profit and loss, and business analytics in modern data visualization dashboards.",
         preview: "FluxHero",
-        badge: "UPDATED",
-        tags: ["Bar Chart", "Cash Flow", "Analytics", "Dark Mode"],
-        createdAt: "2026-7-29",
-    },
-    {
-        name: "Wave CTA",
-        slug: "/docs/motion/wave-cta",
-        description: "A responsive React Chart component for creating Comparison Charts, Grouped Bar Charts, and Vertical Bar Charts to visualize cash flow, profit and loss, and business analytics in modern data visualization dashboards.",
-        preview: "WaveCTA",
         badge: "UPDATED",
         tags: ["Bar Chart", "Cash Flow", "Analytics", "Dark Mode"],
         createdAt: "2026-7-29",

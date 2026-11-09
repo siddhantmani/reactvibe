@@ -1,8 +1,8 @@
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
 
-// Extracting magic numbers to constants improves maintainability
 const VIRTUAL_WIDTH = 1280;
 const VIRTUAL_HEIGHT = 720;
 
@@ -16,17 +16,20 @@ export function PreviewCanvas({
 
     useEffect(() => {
         const container = containerRef.current;
+
         if (!container) return;
 
-        let animationFrameId: number;
+        let animationFrameId = 0;
 
         const observer = new ResizeObserver((entries) => {
-            // Clear any pending animation frames to prevent state update pile-ups
-            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            const width = entries[0]?.contentRect.width;
 
-            // Throttle state updates to sync exactly with the browser's refresh rate
+            // Never allow a zero-width measurement to hide the preview.
+            if (!width || width <= 0) return;
+
+            cancelAnimationFrame(animationFrameId);
+
             animationFrameId = requestAnimationFrame(() => {
-                const { width } = entries[0].contentRect;
                 setScale(width / VIRTUAL_WIDTH);
             });
         });
@@ -35,12 +38,15 @@ export function PreviewCanvas({
 
         return () => {
             observer.disconnect();
-            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            cancelAnimationFrame(animationFrameId);
         };
     }, []);
 
     return (
-        <div ref={containerRef} className="absolute inset-0 h-full w-full overflow-auto hide-scrollbar rounded-xl">
+        <div
+            ref={containerRef}
+            className="absolute inset-0 h-full w-full overflow-auto hide-scrollbar rounded-xl"
+        >
             <div
                 className="absolute left-0 top-0 origin-top-left pointer-events-none"
                 style={{

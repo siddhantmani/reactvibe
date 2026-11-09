@@ -90,9 +90,18 @@ export default function Nexus({
         return `linear-gradient(${a}deg, ${mix(c1a, c1b, t)} 10%, ${mix(c2a, c2b, t)} 60%, ${mix(c3a, c3b, t)} 100%)`;
     });
 
+    // useEffect(() => {
+    //     animate(angle, 360, { duration: 12, ease: "linear", repeat: Infinity });
+    //     animate(colorIndex, gradients.length, { duration: gradients.length * 6, ease: "linear", repeat: Infinity });
+    // }, [angle, colorIndex, gradients.length]);
+
     useEffect(() => {
-        animate(angle, 360, { duration: 12, ease: "linear", repeat: Infinity });
-        animate(colorIndex, gradients.length, { duration: gradients.length * 6, ease: "linear", repeat: Infinity });
+        const rotate = animate(angle, 360, { duration: 12, ease: "linear", repeat: Infinity });
+        const colors = animate(colorIndex, gradients.length, { duration: gradients.length * 6, ease: "linear", repeat: Infinity });
+        return () => {
+            rotate.stop();
+            colors.stop();
+        };
     }, [angle, colorIndex, gradients.length]);
 
     // Added the `curve` prop to directly influence the X-axis sweep of the bezier control points

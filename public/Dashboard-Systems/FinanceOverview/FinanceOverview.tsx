@@ -28,7 +28,7 @@ const fontBold = Manrope({
     subsets: ['latin']
 });
 
-function Sidebar() {
+function Sidebar({ preview = false }: { preview?: boolean }) {
     const items = [
         { name: "Finance Overview", icon: <LayoutDashboard size={15} />, link: "#" },
         { name: "Accounts", icon: <Wallet size={15} />, link: "#" },
@@ -65,19 +65,24 @@ function Sidebar() {
             </motion.div>
 
             <nav className="space-y-2">
-                {items.map((item, i) => (
-                    <Link
-                        key={i}
-                        href={item.link || "#"}
-                        className={`px-3 py-2 rounded-lg flex items-center gap-2 text-sm cursor-pointer transition-colors ${item.name === "Finance Overview"
-                            ? "text-black dark:text-white"
-                            : "text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white"
-                            }`}
-                    >
-                        {item.icon}
-                        <span>{item.name}</span>
-                    </Link>
-                ))}
+                {items.map((item, i) => {
+                    const className = `px-3 py-2 rounded-lg flex items-center gap-2 text-sm cursor-pointer transition-colors ${item.name === "Finance Overview"
+                        ? "text-black dark:text-white"
+                        : "text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white"
+                        }`;
+
+                    return preview ? (
+                        <div key={i} className={className}>
+                            {item.icon}
+                            <span>{item.name}</span>
+                        </div>
+                    ) : (
+                        <Link key={i} href={item.link || "#"} className={className}>
+                            {item.icon}
+                            <span>{item.name}</span>
+                        </Link>
+                    );
+                })}
             </nav>
 
             <div className="absolute bottom-2 w-full">
@@ -87,7 +92,7 @@ function Sidebar() {
     )
 }
 
-function FinanceOverview() {
+function FinanceOverview({ preview = false }: { preview?: boolean }) {
     return (
         <motion.div
             initial={{ opacity: 0, filter: "blur(4px)" }}
@@ -105,7 +110,7 @@ function FinanceOverview() {
             className='flex h-screen overflow-hidden'
         >
             <div className="flex h-full md:w-50 lg:w-60 z-50">
-                <Sidebar />
+                <Sidebar preview={preview} />
                 <Separator
                     direction="vertical"
                     className="bg-black/30 dark:bg-white/20 h-full"

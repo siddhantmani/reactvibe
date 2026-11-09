@@ -1,5 +1,5 @@
 import React from 'react'
-import Page from "@/public/Components/NotificationScreen/Preview"
+import Page from "@/public/Components/NotificationScreen/Page"
 
 function Preview() {
     return (

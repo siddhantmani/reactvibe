@@ -37,7 +37,7 @@ const categories = [
         description:
             "Complete finance, reporting, budgeting, investment, and analytics dashboards.",
         link: "/docs/dashboard-systems/finance-overview",
-        preview: <FinanceOverview />,
+        preview: <FinanceOverview preview />,
     },
     {
         title: "Dashboard UI",

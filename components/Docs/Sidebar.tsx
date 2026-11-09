@@ -58,7 +58,7 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                     </Link>
                 </button>
 
-                {/* <button onClick={onItemClick} className='pb-4' >
+                <button onClick={onItemClick} className='pb-4' >
                     <Link href="/docs/explore-components">
                         <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md w-fit hover:text-black px-3'>
                             <p className={`${LinearRevealFont.className} text-[17px] whitespace-nowrap`}>Explore Components</p>
@@ -67,7 +67,7 @@ export default function Sidebar({ onItemClick }: SidebarProps) {
                             </Badge>
                         </div>
                     </Link>
-                </button> */}
+                </button>
                 <button onClick={onItemClick} className='pb-4' >
                     <Link href="/docs/dark-mode">
                         <div className='flex items-center space-x-2 p-[6px] dark:text-gray-200 hover:bg-[#f3f1f1] dark:hover:bg-[#323232] rounded-md w-fit hover:text-black px-3'>
