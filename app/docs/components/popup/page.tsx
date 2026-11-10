@@ -4,9 +4,9 @@ import { Metadata } from 'next'
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: "Animated Pulse Indicator & Pulse Ping | React Vibe",
+    title: "React Popup with Overlay | React Vibe",
     description:
-        "A customizable animated pulse indicator for React with continuously changing colors and smooth motion. Use it for status states, loading, or visual accents.",
+        "A customizable React popup with overlay, dismissible content, and a backdrop for displaying messages, alerts, and important information.",
 }
 
 function Popup() {

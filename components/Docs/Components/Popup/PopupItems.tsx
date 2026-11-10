@@ -29,7 +29,7 @@ function PopupItems() {
                 />
 
                 <p className="text-black/70 dark:text-white/70 text-[13px]">
-                    Pulse Ping is a lightweight React animation that continuously rotates and shifts color, making it useful for status indicators, activity states, loading cues, and decorative UI.
+                    A lightweight, dismissible React popup with a centered message panel, backdrop overlay, and close button for modern web interfaces.
                 </p>
             </div>
             <div className='border-black rounded-2xl'>
