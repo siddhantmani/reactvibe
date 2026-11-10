@@ -9,7 +9,6 @@ export const metadata: Metadata = {
         "A customizable animated pulse indicator for React with continuously changing colors and smooth motion. Use it for status states, loading, or visual accents.",
 }
 
-
 function PulsePing() {
     return (
         <div>

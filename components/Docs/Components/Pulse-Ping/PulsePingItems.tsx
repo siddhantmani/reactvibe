@@ -1,16 +1,10 @@
 "use client"
 
 import LinearReveal from '@/components/LinearReveal'
-import { Bricolage_Grotesque } from 'next/font/google';
-import React from 'react'
 import PulsePingItemsPreview from './PulsePingItemsPreview';
 import { motion } from 'framer-motion'
 import TablePorpsForPulsePingItems from './TablePorpsForPulsePingItems';
-
-const OrbitFontFont = Bricolage_Grotesque({
-    weight: '700',
-    subsets: ['vietnamese']
-});
+import { titleFont } from '@/lib/fonts';
 
 function PulsePingItems() {
     return (
@@ -31,7 +25,7 @@ function PulsePingItems() {
             <div className='space-y-3'>
                 <LinearReveal
                     as={'h1'}
-                    className={`${OrbitFontFont.className} text-5xl`}
+                    className={`${titleFont.className} font-[700] text-5xl`}
                     Text='Pulse Ping'
                 />
 

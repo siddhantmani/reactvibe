@@ -1,10 +1,10 @@
 "use client"
+import { motion } from "framer-motion"
 
 import React from 'react'
 import FramerMotionGlobalInstalation from '../../FramerMotionGlobalInstalation'
 import Separator from '../../Separator'
 
-import { motion } from "framer-motion"
 import PulsePingCode from './PulsePingCode'
 
 function PulsePingItemsPreviewSourceCode() {
@@ -16,7 +16,7 @@ function PulsePingItemsPreviewSourceCode() {
             </div>
 
             <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
+                initial={{ opacity: 0, filter: "blur(3px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 whileInView={{ opacity: 1 }}
                 viewport={{

@@ -3,6 +3,7 @@ export const sidebarConfig = [
         title: "Store",
         base: "/docs/templates/",
         items: [
+            { name: "Overview", slug: "overview", createdAt: "2026-11-10", badge: "new" },
             { name: "SpotForge", slug: "spotforge", createdAt: "2026-9-28", badge: "new" },
             { name: "Rankforge", slug: "rankforge", createdAt: "2026-9-24", badge: "new" },
             { name: "Taskforge", slug: "taskforge", createdAt: "2026-9-24", badge: "updated" },
@@ -78,6 +79,7 @@ export const sidebarConfig = [
         title: "Components",
         base: "/docs/components/",
         items: [
+            { name: "Popup", slug: "popup", createdAt: "2026-11-10", badge: "new" },
             { name: "Notification Screen", slug: "notification-screen", createdAt: "2026-9-24", badge: "new" },
             { name: "Animated Gradient Badge", slug: "animated-gradient-badge", createdAt: "2026-9-24", badge: "new" },
             { name: "Glow", slug: "glow", createdAt: "2026-9-24" },

@@ -3,8 +3,6 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 import { Code, Eye } from 'lucide-react';
 import React, { useRef, useState } from 'react'
-
-import { motion } from "framer-motion"
 import PulsePingPreview from './PulsePingPreview';
 import PulsePingItemsPreviewSourceCode from './PulsePingItemsPreviewSourceCode';
 import RefrashContent from '../../RefrashContent';

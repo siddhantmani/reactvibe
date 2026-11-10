@@ -1,6 +1,8 @@
+import PopupPreview from "@/components/Docs/Components/Popup/PopupPreview";
 import Footer from "@/components/Docs/Footer";
 import ForSiedebarProvider from "@/components/Docs/ForSiedebarProvider";
 import NavbarDashboard from "@/components/Docs/NavbarDashboard";
+import SupportPopupGate from "@/components/SupportPopupGate";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { Metadata } from "next";
@@ -54,25 +56,36 @@ export const metadata: Metadata = {
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
     return (
         <ThemeProvider>
-            {/* NAV */}
-            <div className="sticky top-0 z-50 px-4 py-2">
-                <NavbarDashboard />
-            </div>
-
-            {/* SIDEBAR + CONTENT */}
-            <div className="flex w-full z-40 dark:text-[#f2f2f2] dark:bg-gradient-to-r from-[#0b0b0b] from-[33%] to-[#131212]">
-                <div className="overflow-y-auto sticky top-16 h-[calc(100vh-4rem)] hide-scrollbar hidden lg:block">
-                    <ForSiedebarProvider />
+            <div className="flex min-h-dvh flex-col">
+                {/* NAVBAR */}
+                <div className="sticky top-0 z-50 px-4 py-2">
+                    <NavbarDashboard />
                 </div>
 
-                <div className="w-full pb-44">
-                    {children}
-                    <Toaster position="top-center" />
+                {/* SIDEBAR + CONTENT */}
+                <div className="flex flex-1 min-h-0 w-full z-40 dark:text-[#f2f2f2] dark:bg-gradient-to-r from-[#0b0b0b] from-[33%] to-[#131212]">
 
-                    <Footer />
+                    {/* SIDEBAR */}
+                    <div className="hidden lg:block sticky top-16 h-[calc(100dvh-4rem)] overflow-y-auto hide-scrollbar">
+                        <ForSiedebarProvider />
+                    </div>
+
+                    {/* MAIN CONTENT */}
+                    <div className="flex min-w-0 flex-1 flex-col">
+
+                        <main className="flex-1 w-full">
+                            {children}
+                        </main>
+
+                        <Toaster position="top-center" />
+
+                        <Footer />
+
+                        <SupportPopupGate />
+
+                    </div>
                 </div>
             </div>
-
         </ThemeProvider>
     );
 }
