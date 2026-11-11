@@ -77,14 +77,18 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                             {children}
                         </main>
 
-                        <Toaster position="top-center" />
-
                         <Footer />
 
                         <SupportPopupGate />
 
                     </div>
                 </div>
+                
+                <Toaster
+                    position="top-center"
+                    className="!z-[99999]"
+                />
+
             </div>
         </ThemeProvider>
     );
