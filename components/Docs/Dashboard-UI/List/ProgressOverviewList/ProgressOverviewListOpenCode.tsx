@@ -17,7 +17,7 @@ function ProgressOverviewListOpenCode() {
     // Folder & File Tree
     const fileTree = {
         Components: [
-            { name: "page.tsx", path: "/dashboard-ui/List/ProgressOverviewList/page.tsx" },
+            { name: "page.tsx", path: "/Dashboard-UI/List/ProgressOverviewList/page.tsx" },
       
         ],
     };
