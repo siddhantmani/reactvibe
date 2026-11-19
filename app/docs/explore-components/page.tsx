@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { manrope } from "@/lib/fonts";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import { PreviewCanvas } from "@/components/PreviewCanvas";
 import { ArrowUpRight } from "lucide-react";
 import { componentBlocks } from "@/lib/componentsData";

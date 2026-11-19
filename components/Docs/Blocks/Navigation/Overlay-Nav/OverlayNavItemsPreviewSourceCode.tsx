@@ -10,7 +10,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { Copy, CopyCheck } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import LinearReveal from "@/components/LinearReveal";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import OverlayNavOpenCode from "./OverlayNavOpenCode";
 import SupportingDarkmode from "@/components/SupportingDarkmode";
 const LinearRevealFont = JetBrains_Mono({

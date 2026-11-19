@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 
 import LinearReveal from "@/components/LinearReveal"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google"
 import InsightRecommendationCardOpenCode from "./InsightRecommendationCardOpenCode"
 import SupportingDarkmode from "@/components/SupportingDarkmode"

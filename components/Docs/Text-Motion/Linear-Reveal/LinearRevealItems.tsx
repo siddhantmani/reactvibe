@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function LinearRevealItems() {

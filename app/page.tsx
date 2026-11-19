@@ -7,7 +7,7 @@ import { Heart } from "lucide-react";
 
 import { motion } from "framer-motion"
 import { DM_Serif_Display, Figtree } from "next/font/google";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import RenderOnRoute from "@/components/RenderOnRoute";
 import MultiColor from "@/components/Landing-Page/VibeHero/MultiColor";
 

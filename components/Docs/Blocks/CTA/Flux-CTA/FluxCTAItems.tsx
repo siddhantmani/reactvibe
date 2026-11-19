@@ -7,7 +7,7 @@ import FluxCTAItemsPreview from './FluxCTAItemsPreview';
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 import { motion } from 'framer-motion'

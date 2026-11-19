@@ -22,7 +22,7 @@ import AdvancedTransactionsTable from "./AdvancedTransactionsTable";
 import ExpenseBreakdownChart from "./ExpenseBreakdownChart";
 import RecentTransactionActivity from "./RecentTransactionActivity";
 import TransactionSmartInsights from "./TransactionSmartInsights";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import ManageAccount from "../../ManageAccount";
 import DashboardHeader from "../../DashboardHeader";
 import MetricsGrid from "../../MetricsGrid";

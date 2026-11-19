@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 
 export default function CheckoutSuccessPage() {
     return (

@@ -11,7 +11,7 @@ import { MoveLeft } from 'lucide-react';
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function SplitFAQItems() {

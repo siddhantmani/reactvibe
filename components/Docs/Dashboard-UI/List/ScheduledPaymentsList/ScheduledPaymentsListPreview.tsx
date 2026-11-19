@@ -96,7 +96,7 @@ function ScheduledPaymentsListPreview() {
                 ease: [0.25, 0.46, 0.45, 0.94],
                 delay: 0.2
             }}
-            className="w-full rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none md:max-w-xl lg:max-w-2xl xl:max-w-3xl mx-auto">
+            className="mt-30 w-full rounded-[15px] border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c0c] p-3 px-3 shadow-[0_15px_40px_rgba(0,0,0,0.03)] dark:shadow-none md:max-w-xl lg:max-w-2xl xl:max-w-3xl mx-auto">
 
             {/* Header */}
             <div className="flex items-center justify-between mb-10">

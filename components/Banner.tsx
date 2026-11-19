@@ -4,7 +4,7 @@ const lightRingColors = ["#141414,#ffffff, #ffffff, #141414"];
 const darkRingColors = ["#141414, #000000, #ffffff, #141414, #141414"];
 
 import { useState } from "react"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import {

@@ -6,7 +6,7 @@ import React from 'react'
 import FramerMotionGlobalInstalation from "../../../FramerMotionGlobalInstalation"
 import Separator from "../../../Separator"
 import LinearReveal from "@/components/LinearReveal"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 import CompactActivityFeedOpenCode from "./CompactActivityFeedOpenCode"
 import SupportingDarkmode from "@/components/SupportingDarkmode"
 

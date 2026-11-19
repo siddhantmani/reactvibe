@@ -5,7 +5,7 @@ import { Manrope } from "next/font/google";
 
 const font = Manrope({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 interface DataFlowProps {

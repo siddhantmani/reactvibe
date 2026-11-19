@@ -9,7 +9,7 @@ import { Bricolage_Grotesque } from "next/font/google";
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function PrimeOpenCode() {

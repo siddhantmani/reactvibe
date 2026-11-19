@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import { PreviewCanvas } from "./PreviewCanvas";
 import BranchFlow from "@/public/Motion/BranchFlow/Preview";
 import Waveform from "@/public/Motion/Waveform/Preview";

@@ -7,7 +7,7 @@ import ShadowButtonItemsPreview from './ShadowButtonItemsPreview';
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700', // Specify the font weight if needed  
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 import { motion } from 'framer-motion'
 

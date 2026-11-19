@@ -7,7 +7,7 @@ import MotionSwitchItemsPreview from './MotionSwitchItemsPreview';
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 import { motion } from 'framer-motion'
 import BuiltWithMotionSwitch from './BuiltWithMotionSwitch';

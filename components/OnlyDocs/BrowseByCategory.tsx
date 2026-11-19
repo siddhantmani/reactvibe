@@ -3,7 +3,7 @@
 import React from "react"
 
 import { motion } from "framer-motion"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 import { ArrowUpRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"

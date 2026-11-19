@@ -32,7 +32,7 @@ import { useTheme } from '@/components/ThemeProvider';
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '600',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function TaskforgeItems() {

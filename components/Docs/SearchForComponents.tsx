@@ -14,7 +14,7 @@ import { searchableComponents } from "@/lib/searchable-components";
 
 
 import { ImWindows8 } from "react-icons/im";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import { SearchIcon } from "lucide-react";
 
 export default function SearchForComponents() {

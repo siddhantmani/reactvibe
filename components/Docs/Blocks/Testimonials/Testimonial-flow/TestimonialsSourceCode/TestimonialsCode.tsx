@@ -6,7 +6,7 @@ import { Folder, FileCode, ChevronDown } from "lucide-react";
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 import { motion } from "framer-motion";

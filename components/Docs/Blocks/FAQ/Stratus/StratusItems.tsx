@@ -10,11 +10,11 @@ import { MoveLeft } from 'lucide-react';
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 const CreditFont = JetBrains_Mono({
     weight: '300',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 function StratusItems() {
     return (

@@ -7,7 +7,7 @@ import FramerMotionGlobalInstalation from '../../../FramerMotionGlobalInstalatio
 import Separator from '../../../Separator'
 import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google"
 import ScheduledPaymentsListOpenCode from "./ScheduledPaymentsListOpenCode"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 import SupportingDarkmode from "@/components/SupportingDarkmode"
 
 

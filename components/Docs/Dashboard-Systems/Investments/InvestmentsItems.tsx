@@ -8,7 +8,7 @@ import InvestmentsItemsPreview from './InvestmentsItemsPreview';
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 

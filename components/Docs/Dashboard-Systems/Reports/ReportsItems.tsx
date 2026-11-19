@@ -7,7 +7,7 @@ import React from 'react'
 import ReportsItemsPreview from './ReportsItemsPreview';
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function ReportsItems() {

@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function WaveformItems() {

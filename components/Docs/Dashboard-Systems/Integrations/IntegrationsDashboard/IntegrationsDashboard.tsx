@@ -25,7 +25,7 @@ import IntegrationsMetricsGrid from "./IntegrationsMetricsGrid";
 import PerformanceOverviewChart from "./PerformanceOverviewChart";
 import IntegrationActivityFeed from "./IntegrationActivityFeed";
 import Separator from "@/components/Docs/Separator";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import ManageAccount from "../../ManageAccount";
 import DashboardHeader from "../../DashboardHeader";
 import { manrope } from "@/lib/fonts";

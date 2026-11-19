@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google"
 
 import LinearReveal from "@/components/LinearReveal"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 import TransactionTablePreviewOpenCode from "./TransactionTablePreviewOpenCode"
 import SupportingDarkmode from "@/components/SupportingDarkmode"
 import FramerMotionGlobalInstalation from "@/components/Docs/FramerMotionGlobalInstalation"

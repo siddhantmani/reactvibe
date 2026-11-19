@@ -8,7 +8,7 @@ import IntegrationsItemsPreview from './IntegrationsItemsPreview';
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 

@@ -2,7 +2,7 @@
 
 import React from "react"
 import { cn } from "@/lib/utils"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 import { motion } from "framer-motion"
 import { Manrope } from "next/font/google"
 

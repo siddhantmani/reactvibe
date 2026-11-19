@@ -4,7 +4,7 @@ import React from 'react'
 
 const LinearRevealFont = Manrope({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function LinearRevealPreview() {

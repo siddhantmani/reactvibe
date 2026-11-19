@@ -7,7 +7,7 @@ import VoiceFlowItemsPreview from './VoiceFlowItemsPreview';
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 import { motion } from 'framer-motion'

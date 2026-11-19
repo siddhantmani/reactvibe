@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Figtree } from "next/font/google";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import React, { useEffect } from "react";
 
 const BTNFont = Figtree({

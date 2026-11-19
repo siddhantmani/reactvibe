@@ -7,7 +7,7 @@ import ConnectionFlowOpenCode from "./ConnectionFlowOpenCode"
 import SupportingDarkmode from "@/components/SupportingDarkmode"
 import LinearReveal from "@/components/LinearReveal"
 import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 
 const LinearRevealFont = JetBrains_Mono({
     weight: "400",

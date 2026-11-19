@@ -4,7 +4,7 @@ import { Manrope } from "next/font/google"
 import React, { useEffect } from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 import LinearReveal from "../LinearReveal"
 
 const HeadingFont = Manrope({

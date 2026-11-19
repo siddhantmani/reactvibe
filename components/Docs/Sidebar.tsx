@@ -3,7 +3,7 @@
 import { sidebarConfig } from "@/lib/sidebar";
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub } from "../ui/sidebar";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import PingtoNew from "./WhatsNew/PingtoNew";
 import { JetBrains_Mono } from "next/font/google";
 import LinearReveal from "../LinearReveal";

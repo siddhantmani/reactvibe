@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaInstagram, FaLinkedinIn, FaThreads, FaXTwitter } from "react-icons/fa6";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import { manrope } from "@/lib/fonts";
 import LinearReveal from "@/components/LinearReveal";
 

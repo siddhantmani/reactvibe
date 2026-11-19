@@ -26,7 +26,7 @@ import BudgetvsActual from "./BudgetvsActual";
 import BudgetCategoriesTable from "./BudgetCategoriesTable";
 import UpcomingBudgetAlerts from "./UpcomingBudgetAlerts";
 import BudgetRecommendationCard from "./BudgetRecommendationCard";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import Separator from "@/components/Docs/Separator";
 import ManageAccount from "../../ManageAccount";
 import MetricsGrid from "../../MetricsGrid";

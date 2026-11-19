@@ -7,7 +7,7 @@ import BrandLogoItemsPreview from './BrandLogoItemsPreview';
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function BrandLogoItems() {

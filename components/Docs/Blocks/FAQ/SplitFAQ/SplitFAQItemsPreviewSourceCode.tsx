@@ -4,18 +4,18 @@ import { motion } from "framer-motion"
 import FlowlistFAQOpenCode from "./SplitFAQItemsOpenCode"
 import LinearReveal from "@/components/LinearReveal"
 import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import SupportingDarkmode from "@/components/SupportingDarkmode";
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 
 const CreditFont = JetBrains_Mono({
     weight: '300',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function SplitFAQItemsPreviewSourceCode() {

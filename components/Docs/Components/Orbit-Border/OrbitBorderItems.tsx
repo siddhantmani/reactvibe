@@ -11,7 +11,7 @@ import BuiltWithOrbitBorder from './BuiltWithOrbitBorder';
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function OrbitBorderItems() {

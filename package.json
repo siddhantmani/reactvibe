@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "postbuild": "next-sitemap",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "predev": "node scripts/build-search-index.mjs",
+    "prebuild": "node scripts/build-search-index.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.8",

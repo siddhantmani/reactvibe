@@ -8,12 +8,12 @@ import Link from 'next/link';
 
 const LinearRevealFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 const CreditFont = JetBrains_Mono({
     weight: '300',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 import { motion } from 'framer-motion'

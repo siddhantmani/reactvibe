@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { manrope } from '@/lib/fonts'
 import React from 'react'
 import { footerBlocks } from "@/lib/blocks/footer";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import { PreviewCanvas } from "@/components/PreviewCanvas";
 import { ArrowUpRight } from "lucide-react";
 

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 
 import LinearReveal from "@/components/LinearReveal"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 import ComparativeBarChartOpenCode from "./ComparativeBarChartOpenCode"
 import SupportingDarkmode from "@/components/SupportingDarkmode"
 import FramerMotionGlobalInstalation from "@/components/Docs/FramerMotionGlobalInstalation"

@@ -25,7 +25,7 @@ import InvestmentHoldingsTable from "./InvestmentHoldingsTable";
 import InvestmentInsightsCard from "./InvestmentInsightsCard";
 import InvestmentTransactionsList from "./InvestmentTransactionsList";
 import MarketUpdateCard from "./MarketUpdateCard";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import Separator from "@/components/Docs/Separator";
 import ManageAccount from "../../ManageAccount";
 import MetricsGrid from "../../MetricsGrid";

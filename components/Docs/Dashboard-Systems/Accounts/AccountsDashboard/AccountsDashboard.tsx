@@ -22,7 +22,7 @@ import AccountHealthOverview from "./AccountHealthOverview";
 import RecentAccountActivity from "./RecentAccountActivity";
 import InstitutionConnectionCTA from "./InstitutionConnectionCTA";
 import Separator from "@/components/Docs/Separator";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import ManageAccount from "../../ManageAccount";
 import DashboardHeader from "../../DashboardHeader";
 import MetricsGrid from "../../MetricsGrid";

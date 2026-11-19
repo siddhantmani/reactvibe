@@ -1,7 +1,7 @@
 "use client"
 import Image, { StaticImageData } from "next/image"
 import { useState, useRef, useEffect } from "react"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 
 import { motion } from "framer-motion"
 

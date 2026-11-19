@@ -31,7 +31,7 @@ import {
     Zap,
 } from "lucide-react";
 
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import Separator from "../../Separator";
 import { useTheme } from "@/components/ThemeProvider";
 import RankforgeCoupon from "./RankforgeCoupon";

@@ -7,7 +7,7 @@ import BuiltWithAnimatedGradientBadge from './BuiltWithAnimatedGradientBadge';
 
 const OrbitFontFont = Bricolage_Grotesque({
     weight: '700',
-    subsets: ['vietnamese']
+    subsets: ['latin']
 });
 
 function AnimatedGradientBadgeItems() {

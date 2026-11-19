@@ -5,7 +5,7 @@ import FramerMotionGlobalInstalation from "../../../FramerMotionGlobalInstalatio
 import Separator from "../../../Separator"
 import LinearReveal from "@/components/LinearReveal"
 import DistributionBreakdownChartOpenCode from "./DistributionBreakdownChartOpenCode"
-import Link from "next/link"
+import Link from "@/components/HoverPrefetchLink"
 import SupportingDarkmode from "@/components/SupportingDarkmode"
 
 const LinearRevealFont = JetBrains_Mono({

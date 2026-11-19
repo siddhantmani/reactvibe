@@ -28,7 +28,7 @@ import ReportsSpendingBreakdown from "./ReportsSpendingBreakdown";
 import ReportsCashFlowTrend from "./ReportsCashFlowTrend";
 import SpendingBreakdownCards from "./SpendingBreakdownCards";
 import ExecutiveSummaryCards from "./ExecutiveSummaryCards";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 import DashboardHeader from "../../DashboardHeader";
 import ManageAccount from "../../ManageAccount";
 

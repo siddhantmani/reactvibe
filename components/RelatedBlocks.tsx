@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 
 // Define the shape of your block object so TypeScript is happy
 export interface BlockItem {

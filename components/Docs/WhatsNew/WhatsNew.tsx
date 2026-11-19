@@ -2,7 +2,7 @@ import React from "react";
 import OrbitBorderGlobalPreview from "../Components/Orbit-Border/OrbitBorder";
 import LinearReveal from "@/components/LinearReveal";
 import { Manrope } from "next/font/google";
-import Link from "next/link";
+import Link from "@/components/HoverPrefetchLink"
 
 const LinearRevealFont = Manrope({
     weight: "400",
