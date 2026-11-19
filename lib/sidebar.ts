@@ -14,13 +14,18 @@ export const sidebarConfig = [
         base: "/docs/motion/",
         items: [
             { name: "Overview", slug: "overview", createdAt: "2026-9-24", badge: "new" },
-            { name: "Cipher", slug: "cipher", createdAt: "2026-11-11", badge: "new" },
-            { name: "Merge Graph", slug: "merge-graph", createdAt: "2026-11-11", badge: "new" },
-            { name: "Edge Routes", slug: "edge-routes", createdAt: "2026-11-11", badge: "new" },
-            { name: "Agent Loop", slug: "agent-loop", createdAt: "2026-11-11", badge: "new" },
-            { name: "Orbit", slug: "orbit", createdAt: "2026-11-11", badge: "new" },
-            { name: "Cascade", slug: "cascade", createdAt: "2026-11-11", badge: "new" },
-            { name: "Relay", slug: "relay", createdAt: "2026-11-11", badge: "new" },
+            // Upcoming components — visible only during local development
+            ...(process.env.NODE_ENV === "development"
+                ? [
+                    { name: "Cipher", slug: "cipher", createdAt: "2026-11-11", badge: "new" },
+                    { name: "Merge Graph", slug: "merge-graph", createdAt: "2026-11-11", badge: "new" },
+                    { name: "Edge Routes", slug: "edge-routes", createdAt: "2026-11-11", badge: "new" },
+                    { name: "Agent Loop", slug: "agent-loop", createdAt: "2026-11-11", badge: "new" },
+                    { name: "Orbit", slug: "orbit", createdAt: "2026-11-11", badge: "new" },
+                    { name: "Cascade", slug: "cascade", createdAt: "2026-11-11", badge: "new" },
+                    { name: "Relay", slug: "relay", createdAt: "2026-11-11", badge: "new" },
+                ]
+                : []),
             { name: "Branch Flow", slug: "branch-flow", createdAt: "2026-9-24" },
             { name: "Hub Flow", slug: "hub-flow", createdAt: "2026-9-24" },
             { name: "Converge", slug: "converge", createdAt: "2026-9-24" },
