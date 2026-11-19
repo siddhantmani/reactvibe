@@ -1,12 +1,13 @@
 "use client"
 
-import { Separator } from '@/components/ui/separator'
 import React from 'react'
 import { motion } from "framer-motion"
 import { Figtree, Manrope } from 'next/font/google'
 import GithubStars from '@/components/GithubStars'
 import ReactVibeLogoHero from '@/components/ReactVibeLogoHero'
 import Link from 'next/link'
+import { Heart } from 'lucide-react'
+import Separator from '@/components/Docs/Separator'
 
 const ReactVibeFontLogo = Manrope({
     weight: "800",
@@ -68,7 +69,7 @@ function DeskHeader() {
 
                     >
                         <div>
-                            <Separator orientation='vertical' className='bg-[#b4b3b3]' />
+                            <Separator direction='vertical' className='bg-[#5e5b5b]' />
                         </div>
                     </motion.div>
 
@@ -104,9 +105,19 @@ function DeskHeader() {
                         ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
                         delay: 0.6
                     }}
-
+                    className='flex items-center gap-4'
                 >
                     <GithubStars />
+                    <Separator direction='vertical' className='bg-[#5e5b5b]' />
+                    <a
+                        href="https://github.com/siddhantmani/reactvibe"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='flex items-center gap-1'
+                    >
+                        <Heart size={17} className='text-pink-500' /> <span>Sponsor</span>
+                    </a>
+
                 </motion.div>
             </div>
         </div>

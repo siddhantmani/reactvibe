@@ -32,7 +32,7 @@ export default function GithubStars() {
         <a
             href="https://github.com/siddhantmani/reactvibe"
             target="_blank"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-1 group"
         >
             <IoLogoGithub className="text-xl group-hover:scale-110 transition" />
 

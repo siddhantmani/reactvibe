@@ -11,6 +11,7 @@ import { motion } from "framer-motion"
 import { Manrope } from 'next/font/google'
 import Separator from './Separator'
 import GithubStars from '../GithubStars'
+import { Heart } from 'lucide-react'
 
 const ReactVibeFontLogo = Manrope({
     weight: "800",
@@ -56,13 +57,24 @@ function NavbarDashboard() {
                 <div className='hidden md:inline-block'>
                     <ToggleDarkMode />
                 </div>
-                {/* <div className='h-[20px] w-[1px] bg-[#ffffff] opacity-15' /> */}
                 <Separator
                     direction='vertical'
                     className='dark:bg-white/15 bg-black/15'
                 />
-                <div>
+                <div className='flex items-center gap-4'>
                     <GithubStars />
+                    <Separator
+                        direction="vertical"
+                        className="dark:bg-white/15 bg-black/15"
+                    />
+                    <a
+                        href="https://github.com/siddhantmani/reactvibe"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='flex items-center gap-1'
+                    >
+                        <Heart size={17} className='text-pink-500' /> <span className='text-[13px]'>Sponsor</span>
+                    </a>
                 </div>
                 <div className='lg:hidden'>
                     <MobileSidebar />
