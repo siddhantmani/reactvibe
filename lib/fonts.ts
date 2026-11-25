@@ -1,39 +1,54 @@
-import { Bricolage_Grotesque, Handlee, JetBrains_Mono, Manrope } from "next/font/google";
 
-export const manrope = Manrope({
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
+import localFont from "next/font/local";
+
+// Manrope
+export const manrope = localFont({
+    src: "./fonts/Manrope-Variable.ttf",
+    weight: "200 800",
+    display: "swap",
 });
 
-export const LinearRevealFont = Bricolage_Grotesque({
-    weight: ["400", "500", "600", "700"],
-    subsets: ['latin']
+// Bricolage Grotesque
+const bricolageGrotesque = localFont({
+    src: [
+        {
+            path: "./fonts/BricolageGrotesque_24pt-Regular.ttf",
+            weight: "400",
+        },
+        {
+            path: "./fonts/BricolageGrotesque_24pt-Medium.ttf",
+            weight: "500",
+        },
+        {
+            path: "./fonts/BricolageGrotesque_24pt-SemiBold.ttf",
+            weight: "600",
+        },
+        {
+            path: "./fonts/BricolageGrotesque_24pt-Bold.ttf",
+            weight: "700",
+        },
+    ],
+    display: "swap",
 });
-export const titleFont = Bricolage_Grotesque({
-    weight: ["400", "500", "600", "700"],
-    subsets: ['latin']
+
+export const LinearRevealFont = bricolageGrotesque;
+export const titleFont = bricolageGrotesque;
+
+// JetBrains Mono
+const jetbrainsMono = localFont({
+    src: "./fonts/JetBrainsMono-Variable.ttf",
+    weight: "100 800",
+    display: "swap",
 });
 
-export const creditFont = JetBrains_Mono({
-    weight: ["400", "500", "600", "700"],
-    subsets: ["latin"],
-})
-export const tablePropsHeading = JetBrains_Mono({
-    weight: ["400", "500", "600", "700"],
-    subsets: ["latin"],
-})
-export const tableItems = JetBrains_Mono({
-    weight: ["300","400", "500", "600", "700"],
-    subsets: ["latin"],
-})
+export const creditFont = jetbrainsMono;
+export const tablePropsHeading = jetbrainsMono;
+export const tableItems = jetbrainsMono;
+export const stepsFont = jetbrainsMono;
 
-export const stepsFont = JetBrains_Mono({
-    weight: ["400", "500", "600", "700"],
-    subsets: ["latin"],
-})
-
-export const comment = Handlee({
+// Handlee
+export const comment = localFont({
+    src: "./fonts/Handlee-Regular.ttf",
     weight: "400",
-    subsets: ["latin"],
+    display: "swap",
 });
-
